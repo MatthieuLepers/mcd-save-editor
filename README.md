@@ -1,24 +1,18 @@
-# mcd-save-editor
+# MCD Save Editor
 
-> An electron-vue project
+A Minecraft: Dungeons Save Editor for PC Users
 
-#### Build Setup
+## Installation
 
-``` bash
-# install dependencies
-npm install
+Download and isntall [the last release](https://github.com/MatthieuLepers/mcd-save-editor/releases/download/v1.0.0/MCD.Save.Editor.v1.0.0.exe).
 
-# serve with hot reload at localhost:9080
-npm run dev
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. **Use develop branch for pull requests.**
 
-# build electron application for production
-npm run build
+Please make sure to update tests as appropriate.
 
-
-# lint all JS/Vue component files in `src/`
-npm run lint
-
-```
+## License
+[ISC](https://www.isc.org/licenses/)
 
 ---
 
