@@ -1,0 +1,30 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDImportButton {
+  display: inline-block;
+}
+
+#ImportConfirmModal {
+  .ImportedItemDetails {
+    display: flex;
+    justify-content: center;
+
+    &Infos {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .MCDItem {
+    height: fit-content;
+  }
+
+  .ModalContent p {
+    margin: 0 0 0 16px;
+    max-width: 307px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  }
+}

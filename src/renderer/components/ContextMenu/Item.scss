@@ -1,0 +1,62 @@
+@import '../../assets/scss/utilities.scss';
+
+.ContextMenuItem {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 5px 25px;
+  width: 100%;
+  @include font-size(14);
+  line-height: rem(16px);
+
+  &:not(.Separator) {
+    cursor: pointer;
+
+    &:hover, &:focus {
+      outline: none;
+      background-color: color(secondary);
+    }
+  }
+
+  &.Separator {
+    background-color: rgba(color(f), .1);
+    width: calc(100% - 20px);
+    height: 1px;
+    padding: 0;
+    margin: 5px 10px;
+  }
+
+  &.ArrowRight {
+    &:after, &:before {
+      content: '';
+      width: 8px;
+      height: 2px;
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 15px;
+      background-color: invert(color(primary));
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+      transform-origin: calc(100% - 1px) 50%;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      transform-origin: calc(100% - 1px) 50%;
+    }
+  }
+
+  &Icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-size(12);
+  }
+}

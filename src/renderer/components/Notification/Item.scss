@@ -1,0 +1,71 @@
+@import '../../assets/scss/utilities.scss';
+
+@keyframes appear {
+  from {
+    bottom: -42px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -100%;
+    opacity: 0;
+  }
+}
+
+.NotificationItem {
+  position: relative;
+  animation: appear .5s forwards;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  @include font-family('Open Sans', 600);
+
+  &:not(:last-of-type) {margin-bottom: 5px;}
+
+  &:before {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &.success {
+    background-color: color(success);
+    color: color(f);
+
+    &:before {
+      @include icon('check');
+    }
+  }
+
+  &.warning {
+    background-color: color(warning);
+    color: color(f);
+
+    &:before {
+      @include icon('warning');
+    }
+  }
+
+  &.danger {
+    background-color: color(danger);
+    color: color(f);
+
+    &:before {
+      @include icon('close');
+    }
+  }
+
+  &.disapear {animation: disappear .5s forwards;}
+}

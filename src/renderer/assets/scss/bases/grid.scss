@@ -1,0 +1,279 @@
+// Credits to : http://codepen.io/absolutholz/post/flex-box-grid-with-sass-mixins
+// for this awesome port of Kristopher Joseph's
+// awesome http://flexboxgrid.com/
+
+$viewport-layouts: ();
+
+@each $key, $value in $breakpoints {
+  $map: (
+    #{$key}: ('min-width': $value),
+  );
+  $viewport-layouts: map-merge($viewport-layouts, $map);
+}
+
+$columns: 12;
+
+$gutter-width: 20px;
+$half-gutter-width: $gutter-width / 2;
+
+$gap-width: 20px;
+$half-gap-width: $gap-width / 2;
+
+@mixin grid-row ($reverse: false) {
+  @include grid-row-direction($reverse);
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@mixin grid-row-direction ($reverse: false) {
+  @if ($reverse) {
+    flex-direction: row-reverse;
+  } @else {
+    flex-direction: row;
+  }
+}
+
+@mixin grid-row-alignment-horizontal ($alignment) {
+  $justify: inherit;
+
+  @if ($alignment == center) {
+    $justify: center;
+  } @else if ($alignment == end) {
+    $justify: flex-end;
+  } @else if ($alignment == start) {
+    $justify: flex-start;
+  }
+
+  justify-content: $justify;
+  text-align: $alignment;
+}
+
+@mixin grid-row-alignment-vertical ($alignment) {
+  @if ($alignment == middle) {
+    align-items: center;
+  } @else if ($alignment == bottom) {
+    align-items: flex-end;
+  } @else {
+    align-items: flex-start;
+  }
+}
+
+@mixin grid-row-spacing ($spacing) {
+  justify-content: $spacing;
+}
+
+@mixin grid-column ($reverse: false) {
+  // @include grid-column-direction($reverse);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@mixin grid-column-direction ($reverse: false) {
+  @if ($reverse) {
+    flex-direction: column-reverse;
+  } @else {
+    flex-direction: column;
+  }
+}
+
+@mixin grid-column-span ($columns-to-span: $columns, $total-columns-in-row: $columns) {
+  @if ($columns-to-span == auto) {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+
+  } @else {
+    $span-percentage: $columns-to-span / $total-columns-in-row;
+
+    flex-basis: $span-percentage * 100%;
+    max-width: $span-percentage * 100%;
+  }
+}
+
+@mixin grid-column-offset ($columns-to-offset, $total-columns-in-row: $columns) {
+  margin-left: ($columns-to-offset / $total-columns-in-row) * 100%;
+}
+
+@mixin grid-column-pull ($columns-to-offset, $total-columns-in-row: $columns) {
+  margin-right: ($columns-to-offset / $total-columns-in-row) * 100%;
+}
+
+@mixin grid-column-order ($position) {
+  @if ($position == last) {
+    $position: 9999;
+  } @else if ($position == first) {
+    $position: -9999;
+  }
+
+  order: $position;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  @include grid-row;
+
+  &-gap {
+    @include grid-row;
+    margin-right: -#{$half-gap-width};
+    margin-left: -#{$half-gap-width};
+    width: calc(100% + #{$gap-width});
+  }
+}
+
+.row.reverse,
+.row-gap.reverse {
+  @include grid-row-direction(true);
+}
+
+.col.reverse {
+  @include grid-column-direction(true);
+}
+
+.flex-wrap {flex-wrap: wrap;}
+
+.gutter {
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+}
+
+.gutter-left {
+  padding-left: $half-gutter-width;
+}
+
+.gutter-right {
+  padding-right: $half-gutter-width;
+}
+
+@mixin example-viewport ($key) {
+  .col-#{$key} {
+    $str: '#{&}';
+    @for $i from 1 through $columns {
+      $str: '#{$str},#{&}-#{$i},#{&}-offset-#{$i}';
+    }
+
+    @at-root #{$str} {
+      @include grid-column;
+    }
+
+    & {
+      // no idea why the indenting no longer works for this and why I need & {}
+      @include grid-column-span(auto);
+    }
+
+    @for $i from 1 through $columns {
+      &-#{$i} {
+        @include grid-column-span($i);
+
+        &-gap {
+          @include grid-column;
+          $spanPercentage: $i / $columns;
+          $w:$spanPercentage * 100%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: calc(#{$w} - #{$gap-width});
+          // flex: 0 0 calc(#{$w} - #{$gap-width});
+          max-width: calc(#{$w} - #{$gap-width});
+          margin-left: $half-gap-width;
+          margin-right: $half-gap-width;
+        }
+        &-gap-left {
+          @include grid-column;
+          $spanPercentage: $i / $columns;
+          $w:$spanPercentage * 100%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: calc(#{$w} - #{$half-gap-width});
+          // flex: 0 0 calc(#{$w} - #{$half-gap-width});
+          max-width: calc(#{$w} - #{$half-gap-width});
+          margin-left: $half-gap-width;
+        }
+        &-gap-right {
+          @include grid-column;
+          $spanPercentage: $i / $columns;
+          $w:$spanPercentage * 100%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: calc(#{$w} - #{$half-gap-width});
+          // flex: 0 0 calc(#{$w} - #{$half-gap-width});
+          max-width: calc(#{$w} - #{$half-gap-width});
+          margin-right: $half-gap-width;
+        }
+      }
+
+      &-offset-#{$i} {
+        @include grid-column-offset($i);
+      }
+
+      &-pull-#{$i} {
+        @include grid-column-pull($i);
+      }
+    }
+  }
+
+  .start-#{$key} {
+    @include grid-row-alignment-horizontal(start);
+  }
+
+  .center-#{$key} {
+    @include grid-row-alignment-horizontal(center);
+  }
+
+  .end-#{$key} {
+    @include grid-row-alignment-horizontal(end);
+  }
+
+  .top-#{$key} {
+    @include grid-row-alignment-vertical(top);
+  }
+
+  .middle-#{$key} {
+    @include grid-row-alignment-vertical(middle);
+  }
+
+  .bottom-#{$key} {
+    @include grid-row-alignment-vertical(bottom);
+  }
+
+  .around-#{$key} {
+    @include grid-row-spacing(space-around);
+  }
+
+  .between-#{$key} {
+    @include grid-row-spacing(space-between);
+  }
+
+  .first-#{$key} {
+    @include grid-column-order(first);
+  }
+
+  .last-#{$key} {
+    @include grid-column-order(last);
+  }
+}
+
+@each $key, $value in $viewport-layouts {
+
+  @if ($key == xs) {
+    @include example-viewport($key);
+  } @else {
+    $min-width: map-get($value, 'min-width');
+
+    @media screen and (min-width: $min-width) {
+      @include example-viewport($key);
+
+      .container {
+        width: $min-width;
+      }
+    }
+  }
+}

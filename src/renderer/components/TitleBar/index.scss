@@ -1,0 +1,41 @@
+@import '../../assets/scss/utilities.scss';
+
+.TitleBar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  background-color: lighten(color(primary), 11.76);
+  color: invert(color(primary));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+
+  &Button {
+    -webkit-app-region: no-drag;
+    width: 42px;
+    height: 100%;
+    transition: background-color;
+    color: color(f);
+    @include font-size(12);
+
+    &:not([disabled]) {
+      &:hover, &:focus {
+        outline: none;
+        background-color: rgba(color(f), .1);
+      }
+    }
+
+    &[disabled] {
+      opacity: .3;
+      cursor: auto;
+    }
+
+    &Ctn {height: 100%;}
+
+    &Close:not([disabled]) {
+      &:hover, &:focus {
+        background-color: color(danger);
+      }
+    }
+  }
+}

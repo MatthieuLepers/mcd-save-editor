@@ -1,0 +1,33 @@
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin font-size($size, $base: 16)  {
+  font-size: ($size / $base) * 1rem;
+}
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+@mixin circle($radius: 32px, $color: f, $size: 16px) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  color: color($color);
+  font-size: rem($size);
+  padding: 0;
+}

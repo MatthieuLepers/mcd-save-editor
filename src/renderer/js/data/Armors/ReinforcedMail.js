@@ -1,0 +1,33 @@
+export default {
+  ReinforcedMail: {
+    name: 'ReinforcedMail',
+    type: 'Armor',
+    rarity: ['Common', 'Rare'],
+    image: 'static/img/Items/Armors/ReinforcedMail.png',
+    armorproperties: [
+      'SuperbDamageAbsorption',
+      'MissChance',
+      'DodgeCooldownIncrease',
+    ],
+    i18n: {
+      'fr-FR': 'Cotte de mailles renforcée',
+      'en-En': 'Reinforced mail',
+    },
+  },
+  ReinforcedMail_Unique1: {
+    name: 'ReinforcedMail_Unique1',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/StalwartArmor.png',
+    activeEnchants: ['PotionFortification'],
+    armorproperties: [
+      'SuperbDamageAbsorption',
+      'MissChance',
+      'DodgeCooldownIncrease',
+    ],
+    i18n: {
+      'fr-FR': 'Armure fidèle',
+      'en-EN': 'Stalwart armor',
+    },
+  },
+};

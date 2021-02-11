@@ -1,0 +1,103 @@
+@import '../../assets/scss/utilities.scss';
+
+.Tutorial {
+  .ModalBackDrop {
+    background: none;
+    pointer-events: none;
+  }
+
+  .Modal {
+    pointer-events: all;
+
+    &Content p {
+      @include font-size(14);
+    }
+  }
+
+  #TutorialDragAndDropModal,
+  #TutorialEquipUnequipModal {
+    position: absolute;
+    right: 25px;
+  }
+
+  #TutorialEditItemTypeModal {
+    position: absolute;
+    left: 25px;
+  }
+
+  #TutorialEditEnchantmentModal,
+  #TutorialEditEnchantment2Modal {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+
+    .ModalTitle {
+      @include font-size(20);
+    }
+  }
+
+  #TutorialTutorialDisabledModal .ModalTitle {
+    @include font-size(20);
+  }
+
+  &StepObjectives {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+    @include font-size(12);
+
+    li:not(:last-of-type) {
+      margin-bottom: 4px;
+    }
+
+    &Bubble {
+      position: relative;
+      padding: 5px;
+      border: 1px solid color(f);
+      border-radius: 6px;
+      margin: 10px 0;
+      background-color: rgba(color(f), .2);
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: calc(100% + 1px);
+        left: 3px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent color(f) transparent;
+      }
+    }
+
+    .icon-check {
+      color: color(success);
+      margin: 0 4px 0 3px;
+    }
+
+    .icon-close {
+      color: color(danger);
+      margin: 0 4px 0 3px;
+    }
+
+    .icon-neutral {
+      display: inline-flex;
+      width: 12px;
+      height: 16px;
+      position: relative;
+      margin: 0 4px 0 3px;
+
+      &:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border: 2px solid color(f);
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 4px);
+        left: calc(50% - 6px);
+      }
+    }
+  }
+}

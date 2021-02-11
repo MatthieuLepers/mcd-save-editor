@@ -1,0 +1,25 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDItemEnchantmentList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 20px);
+
+  &Title {
+    @include font-size(18);
+    @include font-family('open-sans', 700);
+    text-align: center;
+    width: 100%;
+  }
+
+  &Container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+  }
+}

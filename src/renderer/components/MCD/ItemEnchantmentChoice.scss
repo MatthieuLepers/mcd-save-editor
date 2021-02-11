@@ -1,0 +1,173 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDItemEnchantmentChoice {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 33.3333%;
+  position: relative;
+
+  &:after {
+    content: '';
+    border: 2px solid #D3A3E5;
+    position: absolute;
+    width: 45%;
+    padding-bottom: 45%;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+    top: 0px;
+    left: 25px;
+    z-index: 0;
+    opacity: .8;
+  }
+
+  &:before {
+    @include icon('enchanted');
+    position: absolute;
+    color: #E4C3EF;
+    left: calc(50% - 8px);
+    top: 4px;
+    font-size: 14px;
+  }
+
+  .MCDItemEnchant {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 33.3333%;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.3));
+    align-items: center;
+    padding-bottom: 33.3333%;
+    transform: rotate(45deg);
+    overflow: hidden;
+
+    img {
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150%;
+      margin: -25%;
+    }
+
+    &-0 {
+      top: 8px;
+      left: 8px;
+    }
+
+    &-2 {
+      top: 34px;
+      left: 34.42px;
+    }
+
+    &-1 {
+      top: 8px;
+      right: 8px;
+    }
+  }
+
+  .MCDItemEnchantSlot {
+    width: 100%;
+    position: relative;
+
+    &Info {
+      width: 100%;
+      padding-top: 80px;
+      @include font-size(12);
+      @include font-family('open-sans', 700);
+
+      .EmptySlot, .EnchName, .Rarity {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+
+      .EnchName {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .Tier {
+        @include font-family('open-sans', 700);
+        text-transform: uppercase;
+        color: #8a41b1;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    &Tier {
+      position: absolute;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      @include font-family('open-sans', 700, true);
+      @include font-size(11);
+      z-index: 2;
+      right: calc(50% - 26px);
+      top: -1px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:before {
+        content: '';
+        background-color: #8a41b1;
+        transform: rotate(45deg);
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -1px;
+      }
+    }
+  }
+
+  &.selected-0 .MCDItemEnchant-1,
+  &.selected-0 .MCDItemEnchant-2,
+  &.selected-1 .MCDItemEnchant-0,
+  &.selected-1 .MCDItemEnchant-2,
+  &.selected-2 .MCDItemEnchant-0,
+  &.selected-2 .MCDItemEnchant-1 {
+    display: none;
+  }
+
+  &.selected-0 .MCDItemEnchant-0,
+  &.selected-1 .MCDItemEnchant-1,
+  &.selected-2 .MCDItemEnchant-2 {
+    filter: none;
+    width: 50%;
+    padding-bottom: 50%;
+    top: -2px;
+    left: 24px;
+
+    img {
+      top: 1px;
+      left: 1px;
+    }
+
+    &.Common:before, &.Powerful:before {
+      content: '';
+      width: 74px;
+      height: 74px;
+      display: block;
+      position: absolute;
+      top: -10px;
+      z-index: 0;
+      left: -10px;
+      transform: rotate(-45deg);
+      background-size: cover;
+    }
+
+    // &.Common:before {background-image: url('static/img/UI/SelectedEnchant_Common.png');}
+    &.Common:before {background-image: url('../../../../static/img/UI/SelectedEnchant_Common.png');}
+
+    // &.Powerful:before {background-image: url('static/img/UI/SelectedEnchant_Powerful.png');}
+    &.Powerful:before {background-image: url('../../../../static/img/UI/SelectedEnchant_Powerful.png');}
+  }
+}

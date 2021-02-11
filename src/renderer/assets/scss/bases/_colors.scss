@@ -1,0 +1,21 @@
+$colors: (
+  0         : #000,    // Tenebrea black
+  f         : #fff,    // Auram white
+  primary   : #1E1E1E, // Theme primary
+  text      : invert(#1E1E1E), // Text
+  secondary : #094771, // Theme secondary
+  warning   : #FE9730, // Orange warning
+  success   : #4DC722, // Green success
+  danger    : #FE3030, // Red danger
+  rare      : #1EC27F, // Rare items
+  unique    : #FA7B00, // Unique items
+  unique2   : #F4AA15, // Unique items
+  dark      : #29282E, // Item tile background
+  border    : #8C868A, // Item tile border
+  light     : #8C868A, // Light grey
+  cancel    : #8C868A, // Cancel grey
+);
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}

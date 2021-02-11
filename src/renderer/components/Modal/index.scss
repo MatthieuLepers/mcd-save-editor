@@ -1,0 +1,141 @@
+@import '../../assets/scss/utilities.scss';
+
+.ModalBackDrop {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(color(0), .8);
+  z-index: 98;
+  @include transition(opacity .2s);
+  opacity: 0;
+
+  &.is-open {
+    width: 100vw;
+    height: calc(100vh - 30px);
+    opacity: 1;
+  }
+
+  .Modal {
+    position: relative;
+    background-color: color(primary);
+    color: color(text);
+
+    &:after {
+      content: '';
+      background-color: color(f);
+      width: 100%;
+      height: calc(100% + 10px);
+      position: absolute;
+      top: -5px;
+      z-index: -1;
+    }
+
+    &:before {
+      content: '';
+      background-color: color(f);
+      width: calc(100% + 10px);
+      height: 100%;
+      position: absolute;
+      left: -5px;
+      z-index: -1;
+    }
+
+    &.size-xs,
+    &.size-sm,
+    &.size-md,
+    &.size-lg,
+    &.size-xl {max-width: 300px;}
+
+    @include media-breakpoint-up(sm) {
+      &.size-sm,
+      &.size-md,
+      &.size-lg,
+      &.size-xl {max-width: 740px;}
+    }
+
+    @include media-breakpoint-up(md) {
+      &.size-md
+      &.size-lg,
+      &.size-xl {max-width: 960px;}
+    }
+
+    @include media-breakpoint-up(lg) {
+      &.size-lg,
+      &.size-xl {max-width: 1080px;}
+    }
+
+    @include media-breakpoint-up(xl) {
+      &.size-xl {max-width: 1420px;}
+    }
+
+    &Title {
+      @include font-family('Open Sans', 700);
+      @include font-size(24);
+      padding: 20px 60px 20px 30px;
+    }
+
+    &Content {
+      padding: 0 30px 20px;
+      @include font-size(16);
+
+      &>p:first-of-type {margin-top: 0;}
+      &>p:last-of-type {margin-bottom: 0;}
+    }
+
+    &Actions {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      .btn:not(:last-of-type) {margin-right: 15px;}
+
+      .btn {
+        min-width: 100px;
+        height: 42px;
+        border-radius: 6px;
+        @include font-family('Open Sans', 700);
+        background-color: rgba(color(cancel), .5);
+      }
+
+      .btn-accept {
+        background-color: rgba(color(success), .5);
+      }
+
+      .btn-refuse {
+        background-color: rgba(color(cancel), .5);
+      }
+    }
+
+    &CloseBtn {
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: none;
+
+      &:after, &:before {
+        content: "";
+        display: block;
+        background-color: color(text);
+        width: 20px;
+        height: 3px;
+        position: absolute;
+        top: calc(50% - 1.5px);
+        left: calc(50% - 10px);
+        transform-origin: 50% 50%;
+      }
+
+      &:after {transform: rotate(-45deg);}
+      &:before {transform: rotate(45deg);}
+    }
+  }
+}

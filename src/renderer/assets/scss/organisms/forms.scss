@@ -1,0 +1,106 @@
+.FormErrors {
+  &:empty {display: none;}
+
+  display: block;
+  list-style: none;
+  padding: 0;
+  color: color(danger);
+}
+
+.field-ctn {
+  &, &-outlined {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+
+    .label {
+      margin-bottom: 13px;
+      color: color(text);
+      @include font-family('Open Sans', 600);
+      @include transition(color .2s);
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-outlined .field {
+    padding: 10px 15px;
+    border-radius: 9px;
+    border: 1px solid color(border);
+    @include transition(border-color .2s, color .2s);
+    color: color(text);
+    width: 100%;
+  }
+
+  &-outlined input[type="password"].field,
+  &-outlined input[type="text"].field,
+  &-outlined input[type="number"].field,
+  &-outlined input[type="email"].field,
+  &-outlined input[type="search"].field {
+    @include placeholder {
+      color: color(border);
+    }
+
+    &:focus {border-color: color(primary);}
+
+    &[required]:invalid {
+      box-shadow: none;
+    }
+
+    &.invalid {
+      border-color: color(danger);
+      box-shadow: none;
+      color: color(danger);
+
+      &+.label {color: color(danger);}
+    }
+
+    &.valid {
+      border-color: color(success);
+      box-shadow: none;
+    }
+  }
+}
+
+.SubmitLine {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 30px 50px;
+  background: linear-gradient(0deg, rgba(color(border), 1) 0%, rgba(color(border), 1) 50%, rgba(color(border), 0) 100%);
+
+  .btn:not(:last-of-type) {margin-right: 20px;}
+
+  .btn {
+    &.btn-primary-contained {box-shadow: 0 0 10px color(primary);}
+
+    &.btn-danger-contained {box-shadow: 0 0 10px color(danger);}
+  
+    &.btn-cancel-contained,
+    &.btn-primary-contained[disabled] {box-shadow: 0 0 10px color(cancel);}
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 20px 30px;
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+
+      .icomoon {
+        @include font-size(20);
+        position: static;
+      }
+  
+      span {display: none;}
+    }
+  }
+}

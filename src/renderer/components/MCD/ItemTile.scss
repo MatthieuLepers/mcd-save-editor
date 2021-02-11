@@ -1,0 +1,140 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDItemTile {
+  width: 90px;
+  height: 90px;
+  border: 2px solid color(border);
+  background-color: color(dark);
+  position: relative;
+
+  &.new:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 16px 16px 0;
+    border-color: transparent yellow transparent transparent;
+    z-index: 2;
+  }
+
+  &Image {
+    position: absolute;
+    top: 7.5%;
+    left: 7.5%;
+    width: 85%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &Event {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    z-index: 2;
+    width: 20px;
+  }
+
+  &InnerBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: color(dark);
+    z-index: 1;
+
+    &Segment {
+      position: absolute;
+
+      &.Top {
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: 2px;
+      }
+
+      &.Left {
+        top: 1px;
+        left: 1px;
+        width: 2px;
+        height: calc(100% - 2px);
+      }
+
+      &.Bottom {
+        bottom: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: 2px;
+      }
+    }
+
+    &Body {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+    }
+  }
+
+  &.rare {
+    border: 0;
+    width: 86px;
+    height: 86px;
+    margin: 2px;
+
+    &:after {
+      content: '';
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(-45deg, color(rare) 0%, color(border) 70%);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      z-index: 0;
+    }
+
+    .MCDItemTileInnerBox {
+      &Segment {
+        &.Top {background: linear-gradient(90deg, color(rare) 0%, color(dark) 60%);}
+
+        &.Left {background-color: color(rare);}
+
+        &.Bottom {background: linear-gradient(90deg, color(rare) 0%, color(dark) 50%);}
+      }
+
+      &Body {background: linear-gradient(135deg, color(rare) 0%, color(dark) 30%);}
+    }
+  }
+
+  &.unique {
+    border: 0;
+    width: 86px;
+    height: 86px;
+    margin: 2px;
+
+    &:after {
+      content: '';
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(-45deg, color(unique2) 0%, color(border) 70%);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      z-index: 0;
+    }
+
+    .MCDItemTileInnerBox {
+      &Segment {
+        &.Top {background: linear-gradient(90deg, color(unique) 0%, color(dark) 80%);}
+
+        &.Left {background-color: color(unique);}
+
+        &.Bottom {background: linear-gradient(90deg, color(unique) 0%, color(dark) 50%);}
+      }
+
+      &Body {background: linear-gradient(135deg, color(unique) 0%, color(dark) 40%);}
+    }
+  }
+}

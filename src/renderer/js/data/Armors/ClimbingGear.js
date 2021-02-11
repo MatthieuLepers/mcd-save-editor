@@ -1,0 +1,48 @@
+export default {
+  ClimbingGear: {
+    dlc: 'Howling Peaks',
+    name: 'ClimbingGear',
+    type: 'Armor',
+    rarity: ['Common', 'Rare'],
+    image: 'static/img/Items/Armors/ClimbingGear.png',
+    armorproperties: [
+      'ItemCooldownDecrease',
+      'Heavyweight',
+    ],
+    i18n: {
+      'fr-FR': 'Équipement d\'escalade',
+      'en-EN': 'Climbing gear',
+    },
+  },
+  ClimbingGear_Unique1: {
+    dlc: 'Howling Peaks',
+    name: 'ClimbingGear_Unique1',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/RuggedClimbingGear.png',
+    armorproperties: [
+      'SlowResistance',
+      'ItemCooldownDecrease',
+      'Heavyweight',
+    ],
+    i18n: {
+      'fr-FR': 'Équipement d\'escalade robuste',
+      'en-EN': 'Rugged climbing gear',
+    },
+  },
+  ClimbingGear_Unique2: {
+    dlc: 'Howling Peaks',
+    name: 'ClimbingGear_Unique2',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/GoatGear.png',
+    activeEnchants: ['MultiDodge'],
+    armorproperties: [
+      'ItemCooldownDecrease',
+    ],
+    i18n: {
+      'fr-FR': 'Équipement de chèvre',
+      'en-EN': 'Goat gear',
+    },
+  },
+};

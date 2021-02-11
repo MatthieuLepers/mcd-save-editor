@@ -1,0 +1,146 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDEnchantSelect {
+  position: relative;
+
+  &:hover, &.focus {
+    .MCDEnchantSelectOuter {
+      padding: 3px 5px;
+      cursor: pointer;
+
+      &:after, &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      &:before {
+        border-left: 3px solid color(primary);
+        border-right: 3px solid color(primary);
+        top: 0;
+        left: -3px;
+      }
+  
+      &:after {
+        border-top: 3px solid color(primary);
+        border-bottom: 3px solid color(primary);
+        top: -3px;
+        left: 0;
+      }
+    }
+  }
+
+  &Outer {
+    text-transform: uppercase;
+    @include font-size(18);
+    @include font-family('open-sans', 900);
+    word-break: break-word;
+    position: relative;
+    z-index: 11;
+  }
+
+  &Inner {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    z-index: 9;
+    background: color(f);
+    min-width: 300px;
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &:before {
+      border-left: 3px solid color(primary);
+      border-right: 3px solid color(primary);
+      top: 0;
+      left: -3px;
+    }
+
+    &:after {
+      border-top: 3px solid color(primary);
+      border-bottom: 3px solid color(primary);
+      top: -3px;
+      left: 0;
+    }
+  }
+
+  &ChoiceList {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 225px;
+    overflow-y: auto;
+  }
+
+  &Choice {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    width: 100%;
+    cursor: pointer;
+    margin: 2px 0;
+    padding: 5px;
+    @include transition(background-color .3s ease);
+
+    &:hover, &.selected {
+      background-color: rgba(color(primary), .1);
+    }
+
+    &:first-of-type {margin-top: 0;}
+
+    &:last-of-type {margin-bottom: 0;}
+
+    &Image {
+      width: 26px;
+      height: 26px;
+    }
+
+    &Name {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 40px);
+      padding-left: 5px;
+
+      @include font-size(14);
+
+      strong {white-space: nowrap;}
+
+      span {
+        @include font-size(12);
+        opacity: .5;
+      }
+    }
+  }
+
+  &InputSearch {
+    position: relative;
+    margin-bottom: 5px;
+
+    input {
+      width: calc(100% - 20px);
+      margin: 0 10px;
+      background-color: color(f);
+      padding: 3px 20px 3px 5px;
+      color: color(primary);
+      @include font-size(14);
+      @include font-family('open-sans');
+      border: 1px solid lighten(color(primary), 8.76)
+    }
+
+    i {
+      position: absolute;
+      top: calc(50% - 2px);
+      right: 20px;
+      @include font-size(12);
+      color: color(primary);
+      pointer-events: none;
+    }
+  }
+}

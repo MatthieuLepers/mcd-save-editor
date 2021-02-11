@@ -1,0 +1,47 @@
+@import '../../assets/scss/utilities.scss';
+
+.MCDInventory {
+  flex-direction: column;
+
+  &Filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px calc((100% - 282px) / 2) 15px;
+  }
+
+  &Filter {
+    position: relative;
+    opacity: .5;
+
+    i {
+      @include font-size(18);
+    }
+
+    span {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    &.selected {
+      opacity: 1;
+
+      span {display: block;}
+    }
+  }
+
+  &Items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 calc((100% - 288px) / 2);
+    max-height: calc(100vh - 176px);
+    overflow-y: auto;
+  }
+
+  .MCDItem {
+    margin: 3px;
+  }
+}

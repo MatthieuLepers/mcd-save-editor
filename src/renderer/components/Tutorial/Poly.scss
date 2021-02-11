@@ -1,0 +1,15 @@
+@import '../../assets/scss/utilities.scss';
+
+.TutorialPoly {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  z-index: 90;
+  pointer-events: none;
+
+  &BackDrop {
+    fill: color(0);
+    opacity: .8;
+    pointer-events: all;
+  }
+}

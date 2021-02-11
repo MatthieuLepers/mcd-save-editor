@@ -1,0 +1,41 @@
+$data: (
+  'm': 'margin',
+  'p': 'padding',
+);
+$start: 0;
+$end: 50;
+$step: 5;
+
+@each $type, $attr in $data {
+  @each $bpName, $bpWidth in $breakpoints {
+    @for $i from $start through ($end / $step) {
+      $value: $i * $step;
+
+      @include media-breakpoint-up($bpName) {
+        .#{$type}t-#{$bpName}-#{$value},
+        .#{$type}y-#{$bpName}-#{$value},
+        .#{$type}-#{$bpName}-#{$value} {
+          #{$attr}-top: #{$value}px;
+        }
+  
+        .#{$type}b-#{$bpName}-#{$value},
+        .#{$type}y-#{$bpName}-#{$value},
+        .#{$type}-#{$bpName}-#{$value} {
+          #{$attr}-bottom: #{$value}px;
+        }
+  
+        .#{$type}l-#{$bpName}-#{$value},
+        .#{$type}x-#{$bpName}-#{$value},
+        .#{$type}-#{$bpName}-#{$value} {
+          #{$attr}-left: #{$value}px;
+        }
+  
+        .#{$type}r-#{$bpName}-#{$value},
+        .#{$type}x-#{$bpName}-#{$value},
+        .#{$type}-#{$bpName}-#{$value} {
+          #{$attr}-right: #{$value}px;
+        }
+      }
+    }
+  }
+}
