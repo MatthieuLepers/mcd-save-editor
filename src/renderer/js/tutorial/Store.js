@@ -28,6 +28,18 @@ class TutorialStore {
     });
   }
 
+  /**
+   * @param {String} objective
+   * @param {Array[]} polygonList
+   */
+  refreshPolygonListForObjective(objective, polygonList = []) {
+    Vue.nextTick(() => {
+      if (this.stepData.objectiveList[objective]) {
+        this.stepData.objectiveList[objective].polygonList = polygonList;
+      }
+    });
+  }
+
   disableTutorial() {
     this.currentStep = 'TutorialDisabled';
     this.stepData = TutorialStepList.TutorialDisabled;

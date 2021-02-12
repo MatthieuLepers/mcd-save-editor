@@ -96,7 +96,7 @@ export default class PolygonEnum {
   static ITEM_SELECTOR() {
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter');
     const { x, y, width, height } = itemSelectOuter.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height + 6) - 30], [x, (y + height + 6) - 30]];
+    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height + 6) - 36], [x, (y + height + 6) - 36]];
   }
 
   /**
@@ -114,6 +114,15 @@ export default class PolygonEnum {
   static ITEM_RARITY_LABEL() {
     const itemRarityLabel = document.querySelector('.MCDRarityLabel');
     const { x, y, width, height } = itemRarityLabel.getBoundingClientRect();
+    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height) - 30], [x, (y + height) - 30]];
+  }
+
+  /**
+   * @return {Array[]}
+   */
+  static ITEM_POWER_LABEL() {
+    const itemPowerLabel = document.querySelector('.MCDItemTitlePower');
+    const { x, y, width, height } = itemPowerLabel.getBoundingClientRect();
     return [[x, y - 30], [x + width, y - 30], [x + width, (y + height) - 30], [x, (y + height) - 30]];
   }
 

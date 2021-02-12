@@ -1,10 +1,10 @@
 export default {
-  SnowBow: {
+  SlowBow: {
     dlc: 'Creeping Winter',
-    name: 'SnowBow',
+    name: 'SlowBow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: 'static/img/Items/RangedWeapons/SnowBow.png',
+    image: 'static/img/Items/RangedWeapons/SlowBow.png',
     i18n: {
       'fr-FR': 'Arc des neiges',
       'en-EN': 'Snow bow',

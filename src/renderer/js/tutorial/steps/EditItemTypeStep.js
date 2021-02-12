@@ -29,7 +29,11 @@ class EditItemTypeStep extends AbstractStep {
       name: 'ChooseNewItem',
       onFullfilled: () => { this.objectiveList.ChangeRarity.polygonList = [PolygonEnum.ITEM_RARITY_LABEL()]; },
     });
-    this.addObjective({ name: 'ChangeRarity' });
+    this.addObjective({
+      name: 'ChangeRarity',
+      onFullfilled: () => { this.objectiveList.ChangeLevel.polygonList = [PolygonEnum.ITEM_POWER_LABEL()]; },
+    });
+    this.addObjective({ name: 'ChangeLevel' });
   }
 }
 

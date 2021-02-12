@@ -41,6 +41,7 @@
 
 <script>
 import GlobalStore from '@/js/stores/GlobalStore';
+import TutorialStore from '@/js/tutorial/Store';
 import Item from '@/js/classes/Item';
 
 import MCDItemSelect from './ItemSelect';
@@ -68,6 +69,7 @@ export default {
       window.onmousewheel = (e) => {
         const direction = (e.deltaY > 0 ? -1 : 1);
         this.item.$data.power += direction / 10;
+        TutorialStore.setFullfilled('ChangeLevel', true);
       };
     },
     handleMouseOut() {

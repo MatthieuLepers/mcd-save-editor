@@ -39,7 +39,7 @@ export default class Item {
     } else if (this.$data.armorproperties) {
       return ItemTypeEnum.ARMOR;
     } else if (this.$data.enchantments) {
-      const [[type]] = this.enchantments.filter(ench => ench.enchantData.type.length === 1);
+      const [[type]] = this.enchantments.filter(ench => ench.enchantData.type.length === 1).map(ench => ench.enchantData.type);
       return type;
     }
     return ItemTypeEnum.ARTEFACT;

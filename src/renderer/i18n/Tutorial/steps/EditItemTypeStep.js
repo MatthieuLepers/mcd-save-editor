@@ -19,6 +19,9 @@ export default {
         ChangeRarity: {
           title: 'Cliquez pour changer la rareté',
         },
+        ChangeLevel: {
+          title: 'Utilisez la molette pour changer le niveau',
+        },
       },
     },
     'en-EN': {
@@ -39,6 +42,9 @@ export default {
         },
         ChangeRarity: {
           title: 'Click to change rarity',
+        },
+        ChangeLevel: {
+          title: 'Scroll up or down to change item level',
         },
       },
     },

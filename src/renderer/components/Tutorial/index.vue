@@ -84,12 +84,12 @@ export default {
     value(value) {
       this.active = value;
       if (value) {
-        ModalStore.showModal(`Tutorial${TutorialStore.currentStep}Modal`);
         if (!this.characterHasEnoughResources()) {
           TutorialStore.disableTutorial();
         } else {
           TutorialStore.enableTutorial();
         }
+        ModalStore.showModal(`Tutorial${TutorialStore.currentStep}Modal`);
       }
     },
   },

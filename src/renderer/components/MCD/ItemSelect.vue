@@ -1,6 +1,6 @@
 <template>
   <div class="MCDItemSelect" :class="{focus: open, noFilters: value.isEquipped()}">
-    <div class="MCDItemSelectOuter" @click="handleClickToggle">
+    <div class="MCDItemSelectOuter" @click="handleClickToggle" @mouseover="refreshTutorialPolygonList" @mouseout="refreshTutorialPolygonList">
       {{ $t(`MCD.Game.Items.${value.itemIdentifier}`) }}
     </div>
     <div class="MCDItemSelectInner" v-show="open">
@@ -44,6 +44,7 @@
 <script>
 import GlobalStore from '@/js/stores/GlobalStore';
 import TutorialStore from '@/js/tutorial/Store';
+import PolygonEnum from '@/js/tutorial//PolygonEnum';
 import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
 import ItemsData from '@/js/data/Items';
 import DLCsData from '@/js/data/DLCs';
@@ -130,6 +131,9 @@ export default {
         TutorialStore.setFullfilled('OpenSelector', true);
       }
       this.open = !this.open;
+    },
+    refreshTutorialPolygonList() {
+      TutorialStore.refreshPolygonListForObjective('OpenSelector', [PolygonEnum.ITEM_SELECTOR()]);
     },
   },
   watch: {
