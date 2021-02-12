@@ -37,18 +37,6 @@ export default {
       french: 'French',
       english: 'English',
     },
-    dlcMenu: {
-      label: 'DLCs',
-      modal: {
-        title: 'Warning !',
-        okLabel: 'Yes',
-        cancelLabel: 'No',
-        paragraph: [
-          'You are about to activate the DLC "{dlc}" which was not detected in your savegame.',
-          'If you don\'t have this DLC your save might get corrupted, do you want to continue anyway?',
-        ],
-      },
-    },
   },
   Tutorial: {
     steps: {

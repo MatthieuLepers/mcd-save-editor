@@ -24,9 +24,6 @@
 
 <script>
 import Item from '@/js/classes/Item';
-import GlobalStore from '@/js/stores/GlobalStore';
-
-import DLCsData from '@/js/data/DLCs';
 import ArmorPropertiesData from '@/js/data/ArmorProperties';
 
 export default {
@@ -37,7 +34,6 @@ export default {
   },
   data() {
     return {
-      DLCsData,
       open: false,
       searchString: '',
     };
@@ -45,7 +41,7 @@ export default {
   computed: {
     filteredList() {
       const itemProperties = this.item.$data.armorproperties.map(property => property.id);
-      const list = Object.values(ArmorPropertiesData).filter(data => !data.disabled && itemProperties.indexOf(data.name) < 0 && data.name !== this.property.id && this.$t(`MCD.Game.ArmorProperties.${data.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && (data.dlc ? GlobalStore.selectedCharacter.isDLCEnabled(data.dlc) : true));
+      const list = Object.values(ArmorPropertiesData).filter(data => !data.disabled && itemProperties.indexOf(data.name) < 0 && data.name !== this.property.id && this.$t(`MCD.Game.ArmorProperties.${data.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0);
       list.sort((a, b) => this.$t(`MCD.Game.ArmorProperties.${a.name}`).localeCompare(this.$t(`MCD.Game.ArmorProperties.${b.name}`)));
       return list;
     },

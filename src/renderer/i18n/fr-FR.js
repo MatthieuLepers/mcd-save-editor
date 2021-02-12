@@ -37,18 +37,6 @@ export default {
       french: 'Français',
       english: 'Anglais',
     },
-    dlcMenu: {
-      label: 'DLCs',
-      modal: {
-        title: 'Attention !',
-        okLabel: 'Oui',
-        cancelLabel: 'Non',
-        paragraph: [
-          'Vous êtes sur le point d\'activer le DLC "{dlc}" qui n\'a pas été détécter dans votre sauvegarde.',
-          'Si vous ne possédez pas ce DLC, votre sauvegarde risque d\'être corrompue, souhaitez-vous continuer malgré tout ?',
-        ],
-      },
-    },
   },
   Tutorial: {
     steps: {

@@ -20,7 +20,6 @@ export default class Character {
     this.$filePath = filePath;
     this.currencies = new Currencies(this.$data.currency);
     this.inventory = new Inventory(this.$data.items);
-    this.dlcs = this.inventory.checkForEnabledDLCs();
   }
 
   /**
@@ -66,15 +65,6 @@ export default class Character {
   }
 
   /**
-   * @param {String} dlcName
-   * @return {Boolean}
-   */
-  isDLCEnabled(dlcName) {
-    const [dlc] = this.dlcs.filter(({ id }) => id === dlcName);
-    return dlc && dlc.enabled;
-  }
-
-  /**
    * @return {Promise<Boolean>}
    */
   save() {
@@ -85,7 +75,6 @@ export default class Character {
     this.$data = await EncryptionService.decrypt(this.$filePath, true);
     this.currencies = new Currencies(this.$data.currency);
     this.inventory = new Inventory(this.$data.items);
-    this.dlcs = this.inventory.checkForEnabledDLCs();
     GlobalStore.selectedCharacter = this;
   }
 

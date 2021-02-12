@@ -26,7 +26,6 @@
 
 <script>
 import GlobalStore from '@/js/stores/GlobalStore';
-import DLCsData from '@/js/data/DLCs';
 import EnchantsData from '@/js/data/Enchants';
 import TutorialStore from '@/js/tutorial/Store';
 
@@ -40,17 +39,15 @@ export default {
       EnchantsData,
       open: false,
       searchString: '',
-      DLCsData,
     };
   },
   computed: {
     filteredList() {
       const { type, soulgathering, activeEnchants } = GlobalStore.selectedItem.itemData;
-      const checkDlc = data => (data.dlc ? GlobalStore.selectedCharacter.isDLCEnabled(data.dlc) : true);
       const checkSoulgathering = data => (data.soulgathering ? data.soulgathering === soulgathering : true);
       const checkActiveEnchants = data => (activeEnchants ? activeEnchants.indexOf(data.name) < 0 : true);
 
-      return Object.values(EnchantsData).filter(data => !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkDlc(data) && checkActiveEnchants(data));
+      return Object.values(EnchantsData).filter(data => !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data));
     },
   },
   methods: {

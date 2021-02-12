@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
 import TutorialStore from '@/js/tutorial/Store';
 import PolygonEnum from '@/js/tutorial//PolygonEnum';
 import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
@@ -75,7 +74,7 @@ export default {
   },
   computed: {
     filteredItemList() {
-      const baseFilterFn = itemData => !itemData.disabled && itemData.name !== this.value.$data.type && this.$t(`MCD.Game.Items.${itemData.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && (itemData.dlc ? GlobalStore.selectedCharacter.isDLCEnabled(itemData.dlc) : true);
+      const baseFilterFn = itemData => !itemData.disabled && itemData.name !== this.value.$data.type && this.$t(`MCD.Game.Items.${itemData.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0;
 
       if (this.value.isEquipped()) {
         const slot = (this.value.isGear() ? this.value.gearType : 'Artefact');

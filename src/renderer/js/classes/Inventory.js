@@ -1,9 +1,7 @@
 import Item from './Item';
-import DLC from './DLC';
 
 import ItemTypeEnum from './enums/ItemTypeEnum';
 
-import DLCsData from '../data/DLCs';
 import GlobalStore from '../stores/GlobalStore';
 
 /**
@@ -92,19 +90,6 @@ export default class Inventory {
     this.items.splice(this.items.indexOf(item), 1);
 
     this.checkIntegrity();
-  }
-
-  /**
-   * @return {DLC[]}
-   */
-  checkForEnabledDLCs() {
-    const detectedDLCs = this.items
-      .filter(item => item.itemData.dlc)
-      .map(item => item.itemData.dlc)
-      .filter((val, index, arr) => arr.indexOf(val) === index)
-    ;
-
-    return Object.keys(DLCsData).map(name => new DLC(name, detectedDLCs.indexOf(name) >= 0));
   }
 
   checkIntegrity() {
