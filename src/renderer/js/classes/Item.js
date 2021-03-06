@@ -18,6 +18,7 @@ export default class Item {
    */
   constructor(data) {
     this.$data = data;
+    this.$key = 0;
   }
 
   /**
@@ -39,7 +40,7 @@ export default class Item {
     } else if (this.$data.armorproperties) {
       return ItemTypeEnum.ARMOR;
     } else if (this.$data.enchantments) {
-      const [[type]] = this.enchantments.filter(ench => ench.enchantData.type.length === 1).map(ench => ench.enchantData.type);
+      const [[type]] = this.enchantments.filter(ench => ench.enchantData.type && ench.enchantData.type.length === 1).map(ench => ench.enchantData.type);
       return type;
     }
     return ItemTypeEnum.ARTEFACT;
@@ -109,6 +110,13 @@ export default class Item {
    */
   isUnique() {
     return this.$data.rarity === RarityEnum.UNIQUE;
+  }
+
+  /**
+   * @return {Boolean}
+   */
+  isGilded() {
+    return !!this.$data.netheriteEnchant && this.$data.netheriteEnchant.id !== 'Unset' && this.$data.netheriteEnchant.level > 0;
   }
 
   /**
@@ -199,6 +207,22 @@ export default class Item {
     return (this.$data.enchantments || [])
       .map(enchantmentData => new Enchantment(enchantmentData))
     ;
+  }
+
+  /**
+   * @return {Enchantment}
+   */
+  get netheriteEnchant() {
+    const enchant = this.isGilded() ? new Enchantment(this.$data.netheriteEnchant) : Enchantment.UNSET;
+    enchant.setNetherite(true);
+    return enchant;
+  }
+
+  /**
+   * @param {Enchantment} enchant
+   */
+  set netheriteEnchant(enchant) {
+    this.$data.netheriteEnchant = enchant.$data;
   }
 
   /**

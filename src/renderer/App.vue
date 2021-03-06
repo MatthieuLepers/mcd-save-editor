@@ -70,7 +70,7 @@ export default {
       ModalStore,
       notifier: NotificationStore,
       showTutorial: AppSettings.firstStart,
-      mcdVersion: '1.7.3.0',
+      mcdVersion: '1.8.0.0',
     };
   },
   methods: {

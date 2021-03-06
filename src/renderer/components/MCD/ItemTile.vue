@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`MCDItemTile ${rarity.toLowerCase()} ${isNew ? 'new' : ''}`"
+    :class="`MCDItemTile ${rarity.toLowerCase()}${isNew ? ' new' : ''}`"
     draggable="true"
     @dragstart="$emit('dragstart', $event)"
     @dragend="$emit('dragend', $event)"

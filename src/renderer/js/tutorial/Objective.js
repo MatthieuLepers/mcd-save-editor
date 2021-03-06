@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import TutorialStore from './Store';
 
 /**
@@ -17,6 +18,7 @@ export default class Objective {
     this.fullfilled = null;
     this.reasonId = null;
     this.onFullfilled = null;
+    this.onError = null;
 
     Object.assign(this, options);
   }
@@ -33,7 +35,14 @@ export default class Objective {
       this.fullfilled = val;
       this.reasonId = reasonId;
       if (this.isFullfilled() && typeof this.onFullfilled === 'function') {
-        this.onFullfilled();
+        Vue.nextTick(() => {
+          this.onFullfilled();
+        });
+      }
+      if (!this.isFullfilled() && typeof this.onError === 'function') {
+        Vue.nextTick(() => {
+          this.onError();
+        });
       }
     }
     return this;

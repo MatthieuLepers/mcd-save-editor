@@ -6,6 +6,10 @@
         <input class="SlotInput" type="number" v-model="character.currencies.Emerald" />
       </div>
       <div class="Slot EmeraldSlot">
+        <img src="static/img/UI/Gold.png" alt="Gold" />
+        <input class="SlotInput" type="number" v-model="character.currencies.Gold" />
+      </div>
+      <div class="Slot EmeraldSlot">
         <img src="static/img/UI/EnchantmentPoint.png" alt="EnchantmentPoint" />
         <span>{{ character.enchantmentPoints }}</span>
       </div>

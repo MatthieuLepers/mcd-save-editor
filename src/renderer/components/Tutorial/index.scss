@@ -36,6 +36,27 @@
     }
   }
 
+  #TutorialAddNetheriteEnchantmentModal,
+  #TutorialRemoveNetheriteEnchantmentModal {
+    position: absolute;
+    right: 25px;
+
+    .ModalTitle {
+      @include font-size(20);
+    }
+  }
+
+  .Finished #TutorialAddNetheriteEnchantmentModal,
+  .ClickNetheriteEnchantmentSlot #TutorialAddNetheriteEnchantmentModal,
+  .Finished #TutorialRemoveNetheriteEnchantmentModal,
+  .ClickNetheriteEnchantmentSlot #TutorialRemoveNetheriteEnchantmentModal {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
   #TutorialTutorialDisabledModal .ModalTitle {
     @include font-size(20);
   }

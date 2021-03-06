@@ -23,7 +23,7 @@ export default {
           title: 'Améliorez l\'enchantement au niveau 3',
         },
         CloseEditor: {
-          title: 'Fermez l\'éditeur d\'enchantements',
+          title: 'Fermez l\'éditeur d\'enchantement',
         },
       },
     },

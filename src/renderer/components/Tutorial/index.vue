@@ -4,6 +4,7 @@
 
     <Modal
       :name="`Tutorial${TutorialStore.currentStep}Modal`"
+      :class="`${TutorialStore.stepData.currentObjective.name || ''} ${TutorialStore.stepData.isFinished() ? 'Finished' : ''}`"
       :title="$t(`Tutorial.steps.${TutorialStore.currentStep}.title`)"
       size="xs"
       @close="handleClose"

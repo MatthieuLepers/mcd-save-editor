@@ -54,8 +54,13 @@ export default {
     selectEnchant(ench) {
       this.value.id = ench.name;
       TutorialStore.setFullfilled('ChooseNewEnchantment', true);
+      GlobalStore.selectedItem.$key += 1;
       if (ench.name === 'Unset') {
         this.value.level = 0;
+        TutorialStore.setFullfilled('ChooseUnsetEnchantment', true);
+      } else {
+        TutorialStore.setFullfilled('ChooseUnsetEnchantment', false, 'InvalidSelection');
+        TutorialStore.stepData.currentObjective.onError = () => { this.open = true; };
       }
       this.open = false;
     },

@@ -1,5 +1,6 @@
 import Bow from './RangedWeapons/Bow';
 import BurstCrossbow from './RangedWeapons/BurstCrossbow';
+import CogCrossbow from './RangedWeapons/CogCrossbow';
 import Crossbow from './RangedWeapons/Crossbow';
 import DualCrossbows from './RangedWeapons/DualCrossbows';
 import ExplodingCrossbow from './RangedWeapons/ExplodingCrossbow';
@@ -14,11 +15,13 @@ import SlowBow from './RangedWeapons/SlowBow';
 import SoulBow from './RangedWeapons/SoulBow';
 import SoulCrossbow from './RangedWeapons/SoulCrossbow';
 import Trickbow from './RangedWeapons/Trickbow';
+import TwistingVineBow from './RangedWeapons/TwistingVineBow';
 import WindBow from './RangedWeapons/WindBow';
 
 export default {
   ...Bow,
   ...BurstCrossbow,
+  ...CogCrossbow,
   ...Crossbow,
   ...DualCrossbows,
   ...ExplodingCrossbow,
@@ -33,5 +36,6 @@ export default {
   ...SoulBow,
   ...SoulCrossbow,
   ...Trickbow,
+  ...TwistingVineBow,
   ...WindBow,
 };

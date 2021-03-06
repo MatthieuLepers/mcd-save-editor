@@ -48,7 +48,7 @@ export default {
     handleMouseOver() {
       window.onmousewheel = (e) => {
         const direction = (e.deltaY > 0 ? -1 : 1);
-        GlobalStore.selectedCharacter.$data.xp += CharacterUtils.getXpForLevel(this.level) * (direction / 20);
+        GlobalStore.selectedCharacter.$data.xp += CharacterUtils.getXpForLevel(this.level) * (direction / 10);
       };
     },
     handleMouseOut() {

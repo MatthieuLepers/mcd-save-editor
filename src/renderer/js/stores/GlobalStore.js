@@ -80,6 +80,14 @@ class GlobalStore {
    * @param {Enchantment} enchant
    */
   set selectedEnchant(enchant) {
+    if (this.selectedEnchant.$isNetherite) {
+      if (this.selectedEnchant.id !== 'Unset' && this.selectedEnchant.level > 0) {
+        this.selectedItem.netheriteEnchant = this.selectedEnchant;
+      } else {
+        delete this.selectedItem.$data.netheriteEnchant;
+      }
+      this.selectedItem.$key += 1;
+    }
     this.$selectedEnchant = enchant;
   }
 }

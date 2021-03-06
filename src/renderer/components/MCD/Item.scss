@@ -53,6 +53,21 @@
     }
   }
 
+  &.gilded {
+    .MCDItemTileInnerBoxBody {
+      background: url('../../../../static/img/UI/GildedBackground.png');
+      background-size: cover;
+    }
+
+    img {
+      filter: drop-shadow(4px 8px 0px rgba(color(0), .5));
+    }
+
+    .MCDItemLevel {
+      background-color: rgba(color(0), .5);
+    }
+  }
+
   &SoulGathering {
     position: absolute;
     top: 6px;
@@ -64,14 +79,15 @@
   &Level {
     position: absolute;
     bottom: 3px;
-    right: 6px;
+    right: 3px;
     z-index: 5;
     @include font-family('opensans', 700);
     @include font-size(14);
+    padding: 0 3px;
 
     i {
       @include font-size(10);
-      color: darken(color(f), 40);
+      color: darken(color(f), 25);
     }
   }
 

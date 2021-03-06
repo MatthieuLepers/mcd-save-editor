@@ -1,7 +1,8 @@
 <template>
   <div
+    :key="item.$key"
     class="MCDItem"
-    :class="{ selected: item === GlobalStore.selectedItem, DragHolded: isHolded }"
+    :class="{ selected: item === GlobalStore.selectedItem, DragHolded: isHolded, gilded: item.isGilded() }"
     @mousedown="selectItem"
     @dragover.stop="handleDragOver"
     @drop.stop="handleDrop"

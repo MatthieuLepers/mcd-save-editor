@@ -7,6 +7,7 @@ import BusyBee from './Enchants/Melee/BusyBee';
 import Chains from './Enchants/Melee/Chains';
 import Committed from './Enchants/Melee/Committed';
 import CriticalHit from './Enchants/Melee/CriticalHit';
+import DamageSynergy from './Enchants/Melee/DamageSynergy';
 import DynamoMelee from './Enchants/Melee/DynamoMelee';
 import Echo from './Enchants/Melee/Echo';
 import EnigmaResonatorMelee from './Enchants/Melee/EnigmaResonatorMelee';
@@ -16,6 +17,7 @@ import Freezing from './Enchants/Melee/Freezing';
 import GravityMelee from './Enchants/Melee/GravityMelee';
 import Leeching from './Enchants/Melee/Leeching';
 import Looting from './Enchants/Melee/Looting';
+import PainCycle from './Enchants/Melee/PainCycle';
 import PoisonedMelee from './Enchants/Melee/PoisonedMelee';
 import Prospector from './Enchants/Melee/Prospector';
 import RadianceMelee from './Enchants/Melee/RadianceMelee';
@@ -31,6 +33,9 @@ import Weakening from './Enchants/Melee/Weakening';
 
 import Acrobat from './Enchants/Armor/Acrobat';
 import BagOfSouls from './Enchants/Armor/BagOfSouls';
+import BeastBoss from './Enchants/Armor/BeastBoss';
+import BeastBurst from './Enchants/Armor/BeastBurst';
+import BeastSurge from './Enchants/Armor/BeastSurge';
 import Burning from './Enchants/Armor/Burning';
 import Celerity from './Enchants/Armor/Celerity';
 import Chilling from './Enchants/Armor/Chilling';
@@ -41,17 +46,22 @@ import Electrified from './Enchants/Armor/Electrified';
 import EmeraldDivination from './Enchants/Armor/EmeraldDivination';
 import Explorer from './Enchants/Armor/Explorer';
 import FinalShout from './Enchants/Armor/FinalShout';
+import FireFocus from './Enchants/Armor/FireFocus';
 import FireTrail from './Enchants/Armor/FireTrail';
 import FoodReserves from './Enchants/Armor/FoodReserves';
 import Frenzied from './Enchants/Armor/Frenzied';
 import GravityPulse from './Enchants/Armor/GravityPulse';
 import HealthSynergy from './Enchants/Armor/HealthSynergy';
+import LightningFocus from './Enchants/Armor/LightningFocus';
 import MultiDodge from './Enchants/Armor/MultiDodge';
+import PoisonFocus from './Enchants/Armor/PoisonFocus';
 import PotionFortification from './Enchants/Armor/PotionFortification';
 import Protection from './Enchants/Armor/Protection';
+import Reckless from './Enchants/Armor/Reckless';
 import Recycler from './Enchants/Armor/Recycler';
 import ResurrectionSurge from './Enchants/Armor/ResurrectionSurge';
 import Snowing from './Enchants/Armor/Snowing';
+import SoulFocus from './Enchants/Armor/SoulFocus';
 import SpeedSynergy from './Enchants/Armor/SpeedSynergy';
 import SpiritSpeed from './Enchants/Armor/SpiritSpeed';
 import SurpriseGift from './Enchants/Armor/SurpriseGift';
@@ -60,9 +70,11 @@ import Thorns from './Enchants/Armor/Thorns';
 import TumbleBee from './Enchants/Armor/TumbleBee';
 
 import Accelerating from './Enchants/Ranged/Accelerating';
+import ArtifactCharge from './Enchants/Ranged/ArtifactCharge';
 import BonusShot from './Enchants/Ranged/BonusShot';
 import BurstBowstring from './Enchants/Ranged/BurstBowstring';
 import ChainReaction from './Enchants/Ranged/ChainReaction';
+import CooldownShot from './Enchants/Ranged/CooldownShot';
 import DynamoRanged from './Enchants/Ranged/DynamoRanged';
 import EnigmaResonatorRanged from './Enchants/Ranged/EnigmaResonatorRanged';
 import FuseShot from './Enchants/Ranged/FuseShot';
@@ -78,6 +90,7 @@ import RadianceRanged from './Enchants/Ranged/RadianceRanged';
 import RapidFire from './Enchants/Ranged/RapidFire';
 import Ricochet from './Enchants/Ranged/Ricochet';
 import RollCharge from './Enchants/Ranged/RollCharge';
+import ShockWeb from './Enchants/Ranged/ShockWeb';
 import Supercharge from './Enchants/Ranged/Supercharge';
 import TempoTheft from './Enchants/Ranged/TempoTheft';
 import Unchanting from './Enchants/Ranged/Unchanting';
@@ -95,6 +108,7 @@ export default {
   Chains,
   Committed,
   CriticalHit,
+  DamageSynergy,
   DynamoMelee,
   Echo,
   EnigmaResonatorMelee,
@@ -104,6 +118,7 @@ export default {
   GravityMelee,
   Leeching,
   Looting,
+  PainCycle,
   PoisonedMelee,
   Prospector,
   RadianceMelee,
@@ -120,6 +135,9 @@ export default {
   // Armor
   Acrobat,
   BagOfSouls,
+  BeastBoss,
+  BeastBurst,
+  BeastSurge,
   Burning,
   Celerity,
   Chilling,
@@ -130,17 +148,22 @@ export default {
   EmeraldDivination,
   Explorer,
   FinalShout,
+  FireFocus,
   FireTrail,
   FoodReserves,
   Frenzied,
   GravityPulse,
   HealthSynergy,
+  LightningFocus,
   MultiDodge,
+  PoisonFocus,
   PotionFortification,
   Protection,
+  Reckless,
   Recycler,
   ResurrectionSurge,
   Snowing,
+  SoulFocus,
   SpeedSynergy,
   SpiritSpeed,
   SurpriseGift,
@@ -150,9 +173,11 @@ export default {
 
   // Ranged
   Accelerating,
+  ArtifactCharge,
   BonusShot,
   BurstBowstring,
   ChainReaction,
+  CooldownShot,
   DynamoRanged,
   EnigmaResonatorRanged,
   FuseShot,
@@ -168,6 +193,7 @@ export default {
   RapidFire,
   Ricochet,
   RollCharge,
+  ShockWeb,
   Supercharge,
   TempoTheft,
   Unchanting,

@@ -16,11 +16,13 @@ import MercenaryArmor from './Armors/MercenaryArmor';
 import MysteryArmor from './Armors/MysteryArmor';
 import OcelotArmor from './Armors/OcelotArmor';
 import PhantomArmor from './Armors/PhantomArmor';
+import PiglinArmor from './Armors/PiglinArmor';
 import ReinforcedMail from './Armors/ReinforcedMail';
 import ScaleMail from './Armors/ScaleMail';
 import SnowArmor from './Armors/SnowArmor';
 import SoulRobe from './Armors/SoulRobe';
 import SpelunkersArmor from './Armors/SpelunkersArmor';
+import SproutArmor from './Armors/SproutArmor';
 import WolfArmor from './Armors/WolfArmor';
 
 export default {
@@ -41,10 +43,12 @@ export default {
   ...MysteryArmor,
   ...OcelotArmor,
   ...PhantomArmor,
+  ...PiglinArmor,
   ...ReinforcedMail,
   ...ScaleMail,
   ...SnowArmor,
   ...SoulRobe,
   ...SpelunkersArmor,
+  ...SproutArmor,
   ...WolfArmor,
 };

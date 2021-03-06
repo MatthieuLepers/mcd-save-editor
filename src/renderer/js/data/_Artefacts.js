@@ -17,12 +17,16 @@ import IronHideAmulet from './Artefacts/IronHideAmulet';
 import LightFeather from './Artefacts/LightFeather';
 import LightningRod from './Artefacts/LightningRod';
 import LoveMedallion from './Artefacts/LoveMedallion';
+import MobMasher from './Artefacts/MobMasher';
+import NetherWartSporeGrenade from './Artefacts/NetherWartSporeGrenade';
 import RainbowGrass from './Artefacts/RainbowGrass';
 import SatchelOfTheElements from './Artefacts/SatchelOfTheElements';
 import ShockPowder from './Artefacts/ShockPowder';
 import SoulHealer from './Artefacts/SoulHealer';
 import SoulLantern from './Artefacts/SoulLantern';
+import SpinWheel from './Artefacts/SpinWheel';
 import TastyBone from './Artefacts/TastyBone';
+import ThunderingQuiver from './Artefacts/ThunderingQuiver';
 import TormentQuiver from './Artefacts/TormentQuiver';
 import TotemOfRegeneration from './Artefacts/TotemOfRegeneration';
 import TotemOfShielding from './Artefacts/TotemOfShielding';
@@ -51,12 +55,16 @@ export default {
   ...LightFeather,
   ...LightningRod,
   ...LoveMedallion,
+  ...MobMasher,
+  ...NetherWartSporeGrenade,
   ...RainbowGrass,
   ...SatchelOfTheElements,
   ...ShockPowder,
   ...SoulHealer,
   ...SoulLantern,
+  ...SpinWheel,
   ...TastyBone,
+  ...ThunderingQuiver,
   ...TormentQuiver,
   ...TotemOfRegeneration,
   ...TotemOfShielding,

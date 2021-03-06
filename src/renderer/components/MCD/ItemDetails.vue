@@ -1,5 +1,5 @@
 <template>
-  <div class="MCDItemDetails" v-if="!!item.$data.type">
+  <div class="MCDItemDetails" v-if="!!item.$data.type" :key="item.$key">
     <div class="MCDItemDetailsInfos">
       <div class="MCDItemTitle">
         <div class="MCDItemTitleContainer">
@@ -14,6 +14,7 @@
             <i :class="`icon-${item.itemType.toLowerCase()}`"></i>
           </div>
           <MCDRarityLabel :item="item" />
+          <MCDGildedLabel :item="item" />
         </div>
         <MCDItemSelect v-model="item" />
 
@@ -23,6 +24,8 @@
             <MCDArmorPropertySelect :property="armorProperty" :item="item" v-else />
           </li>
         </ul>
+
+        <MCDGildedEnchant v-model="item.netheriteEnchant" v-if="item.itemType !== 'Artefact'" />
       </div>
 
       <div class="MCDItemImage">
@@ -35,7 +38,7 @@
       </div>
     </div>
 
-    <MCDItemEnchantmentList v-if="item.itemData.type !== 'Artefact'" :item="item" @input="setEnchantments" />
+    <MCDItemEnchantmentList v-if="item.itemType !== 'Artefact'" :item="item" @input="setEnchantments" />
   </div>
 </template>
 
@@ -47,6 +50,8 @@ import Item from '@/js/classes/Item';
 import MCDItemSelect from './ItemSelect';
 import MCDArmorPropertySelect from './ArmorPropertySelect';
 import MCDRarityLabel from './RarityLabel';
+import MCDGildedLabel from './GildedLabel';
+import MCDGildedEnchant from './GildedEnchant';
 import MCDItemEnchantmentList from './ItemEnchantmentList';
 import MCDImportButton from './ImportButton';
 import MCDExportButton from './ExportButton';
@@ -54,7 +59,7 @@ import MCDDeleteButton from './DeleteButton';
 
 export default {
   name: 'MCDItemDetails',
-  components: { MCDRarityLabel, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
+  components: { MCDRarityLabel, MCDGildedLabel, MCDGildedEnchant, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
   props: {
     item: { type: Item, required: true },
   },

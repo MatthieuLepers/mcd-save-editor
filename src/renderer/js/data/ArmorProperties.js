@@ -10,6 +10,7 @@ import Heavyweight from './ArmorProperties/Heavyweight';
 import IncreasedArrowBundleSize from './ArmorProperties/IncreasedArrowBundleSize';
 import IncreasedMobTargeting from './ArmorProperties/IncreasedMobTargeting';
 import ItemCooldownDecrease from './ArmorProperties/ItemCooldownDecrease';
+import ItemCooldownReset from './ArmorProperties/ItemCooldownReset';
 import ItemDamageBoost from './ArmorProperties/ItemDamageBoost';
 import LifeStealAura from './ArmorProperties/LifeStealAura';
 import MeleeAttackSpeedBoost from './ArmorProperties/MeleeAttackSpeedBoost';
@@ -39,6 +40,7 @@ export default {
   IncreasedArrowBundleSize,
   IncreasedMobTargeting,
   ItemCooldownDecrease,
+  ItemCooldownReset,
   ItemDamageBoost,
   LifeStealAura,
   MeleeAttackSpeedBoost,

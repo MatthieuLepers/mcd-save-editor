@@ -93,6 +93,15 @@ export default class PolygonEnum {
   /**
    * @return {Array[]}
    */
+  static NETHERITE_ENCHANTMENT_SLOT() {
+    const gildedEnchant = document.querySelector('.MCDGildedEnchant');
+    const { x, y, width, height } = gildedEnchant.getBoundingClientRect();
+    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height + 6) - 36], [x, (y + height + 6) - 36]];
+  }
+
+  /**
+   * @return {Array[]}
+   */
   static ITEM_SELECTOR() {
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter');
     const { x, y, width, height } = itemSelectOuter.getBoundingClientRect();

@@ -11,4 +11,8 @@ export default {
     name: 'Howling Peaks',
     releasedAt: new Date('2020/12/09'),
   },
+  'Flames of the Nether': {
+    name: 'Flames of the Nether',
+    releasedAt: new Date('2021/02/24'),
+  },
 };

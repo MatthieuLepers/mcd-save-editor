@@ -12,7 +12,7 @@ class EditEnchantment2Step extends AbstractStep {
   constructor() {
     super({
       prevStepId: 'EditEnchantment',
-      nextStepId: 'TutorialFinish',
+      nextStepId: 'AddNetheriteEnchantment',
     });
     this.addObjective({
       name: 'ClickUpgradedEnchantment',

@@ -13,6 +13,7 @@ export default class Enchantment {
    */
   constructor(data) {
     this.$data = data;
+    this.$isNetherite = false;
 
     Object.keys(this.$data).forEach((key) => {
       Object.defineProperty(this, key, {
@@ -72,5 +73,12 @@ export default class Enchantment {
     return [...Array(3).keys()]
       .map(t => t + 1 + offset)[level - 1]
     ;
+  }
+
+  /**
+   * @param {Boolean} value
+   */
+  setNetherite(value) {
+    this.$isNetherite = value;
   }
 }

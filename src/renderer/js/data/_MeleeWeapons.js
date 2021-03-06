@@ -1,6 +1,7 @@
-/* eslint-disable camelcase */
 import Axe from './MeleeWeapons/Axe';
 import Battlestaff from './MeleeWeapons/Battlestaff';
+import BoneClub from './MeleeWeapons/Boneclub';
+import Chainsword from './MeleeWeapons/Chainsword';
 import Claymore from './MeleeWeapons/Claymore';
 import Cutlass from './MeleeWeapons/Cutlass';
 import Daggers from './MeleeWeapons/Daggers';
@@ -23,6 +24,8 @@ import Whip from './MeleeWeapons/Whip';
 export default {
   ...Axe,
   ...Battlestaff,
+  ...BoneClub,
+  ...Chainsword,
   ...Claymore,
   ...Cutlass,
   ...Daggers,

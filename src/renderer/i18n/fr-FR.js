@@ -75,6 +75,7 @@ export default {
       unique: 'Unique',
       clickToToggle: 'Cliquez pour changer',
     },
+    GildedLabel: 'Doré',
     ItemEnchantmentList: {
       title: 'Enchantements',
     },

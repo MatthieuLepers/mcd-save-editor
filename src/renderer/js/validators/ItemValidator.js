@@ -1,6 +1,7 @@
 import AbstractValidator from './AbstractValidator';
 import ArmorPropertyListValidator from './ArmorPropertyListValidator';
 import EnchantmentListValidator from './EnchantmentListValidator';
+import EnchantmentValidator from './EnchantmentValidator';
 
 import ItemsData from '../data/Items';
 import RarityEnum from '../classes/enums/RarityEnum';
@@ -60,6 +61,16 @@ function $validateEquipmentSlot() {
 function $validateInventoryIndex() {
   return this.hasKeys('inventoryIndex')
     ? typeof this.data.inventoryIndex === 'number' && this.data.inventoryIndex >= 0
+    : true
+  ;
+}
+
+/**
+ * @return {Boolean}
+ */
+function $validateNetheriteEnchant() {
+  return this.hasKeys('netheriteEnchant')
+    ? typeof this.data.netheriteEnchant === 'object' && new EnchantmentValidator(this.data.netheriteEnchant).isValid()
     : true
   ;
 }
@@ -129,6 +140,7 @@ export default class ItemValidator extends AbstractValidator {
       && $validateGifted.call(this)
       && $validateEquipmentSlot.call(this)
       && $validateInventoryIndex.call(this)
+      && $validateNetheriteEnchant.call(this)
       && $validateMarkedNew.call(this)
       && $validatePower.call(this)
       && $validateRarity.call(this)
