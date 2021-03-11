@@ -8,15 +8,26 @@
 @import './organisms/forms.scss';
 
 #app {
+  display: grid;
+  grid-template-columns: 48px auto;
+  grid-template-rows: 30px auto;
+  height: 100vh;
+
+  .TitleBar {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .Page {
+    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
   main {
     height: calc(100vh - 30px);
+    width: calc(100vw - 80px);
     overflow: hidden;
-
-    &>div {
-      display: flex;
-      flex-wrap: wrap;
-      height: 100%;
-    }
 
     .WaitBloc {
       display: flex;

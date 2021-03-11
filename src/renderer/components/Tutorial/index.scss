@@ -1,6 +1,14 @@
 @import '../../assets/scss/utilities.scss';
 
 .Tutorial {
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  pointer-events: none;
+
   .ModalBackDrop {
     background: none;
     pointer-events: none;

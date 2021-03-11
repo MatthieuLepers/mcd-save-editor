@@ -23,7 +23,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000,
+    width: 1048,
     frame: false,
     webPreferences: {
       nodeIntegration: true,

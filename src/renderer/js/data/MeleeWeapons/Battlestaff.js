@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/BattleStaff.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Bâton de combat',
       'en-EN': 'Battlestaff',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/GrowingStaff.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['Committed'],
     i18n: {
       'fr-FR': 'Bâton de croissance',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/BattlestaffofTerror.png',
+    ancientHuntRunes: ['i', 'a'],
     activeEnchants: ['Exploding'],
     i18n: {
       'fr-FR': 'Bâton de combat de la terreur',

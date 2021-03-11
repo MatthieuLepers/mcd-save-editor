@@ -4,6 +4,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/CorruptedBeacon.png',
+    ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {
       'fr-FR': 'Balise corrompue',
@@ -16,6 +17,7 @@ export default {
     type: 'Artefact',
     rarity: ['Unique'],
     image: 'static/img/Items/Artefacts/CorruptedPumpkin.png',
+    ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {
       'fr-FR': 'Citrouille corrompue',

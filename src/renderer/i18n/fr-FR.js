@@ -25,6 +25,10 @@ export default {
     },
     loadingProfils: 'Chargement des profils...',
     noProfilFound: 'Aucun profil trouvé.',
+    Navigation: {
+      inventory: 'Inventaire',
+      ancientHunts: 'Chasses anciennes',
+    },
   },
   TitleBarMenu: {
     fileMenu: {
@@ -50,9 +54,23 @@ export default {
   },
   MCD: {
     Game: {
+      AncientMobs: GlobalI18N.AncientMobsData('fr-FR'),
       ArmorProperties: GlobalI18N.ArmorProperties('fr-FR'),
       Enchants: GlobalI18N.Enchants('fr-FR'),
       Items: GlobalI18N.Items('fr-FR'),
+    },
+    AncientHunts: {
+      title: 'Chasses anciennes',
+      requiredRunes: 'Requis pour l\'invocation :',
+      button: 'Ajouter les offrandes trouvées dans mon inventaire',
+      refresh: 'Rafraîchir',
+      reset: 'Réinitialiser',
+      successMessage: '{count} objet{pluralize} ajouté{pluralize} à votre inventaire.',
+      errorMessage: 'Ajout impossible, votre inventaire ne contiens pas assès de place libre.',
+    },
+    AncientMobSelect: {
+      title: 'Choisir des anciennes créatures',
+      search: 'Rechercher...',
     },
     LevelBadge: {
       level: 'Niveau',

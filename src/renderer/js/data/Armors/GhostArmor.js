@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/GhostlyArmor.png',
+    ancientHuntRunes: ['c', 'p'],
     armorproperties: [
       'DodgeGhostForm',
       'MissChance',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/GhostKindlerArmor.png',
+    ancientHuntRunes: ['c', 'i', 'p'],
     activeEnchants: ['FireTrail'],
     armorproperties: [
       'DodgeGhostForm',

@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/BattleRobe.png',
+    ancientHuntRunes: ['i', 'a'],
     armorproperties: [
       'ItemCooldownDecrease',
       'MeleeDamageBoost',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/SplendidRobe.png',
+    ancientHuntRunes: ['r', 'i', 'a'],
     armorproperties: [
       'ItemDamageBoost',
       'ItemCooldownDecrease',

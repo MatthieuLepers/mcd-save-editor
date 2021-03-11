@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/GrimArmor.png',
+    ancientHuntRunes: ['o', 's'],
     soulgathering: true,
     armorproperties: [
       'SoulGatheringBoost',
@@ -19,6 +20,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/WitherArmor.png',
+    ancientHuntRunes: ['o', 's', 't'],
     soulgathering: true,
     armorproperties: [
       'SoulGatheringBoost',

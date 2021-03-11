@@ -50,9 +50,11 @@
       border-bottom: 3px solid rgba(color(f), .4);
     }
 
-    &:hover, &:focus {
-      &:after, &:before {
-        border-color: color(f);
+    &:not([disabled]) {
+      &:hover, &:focus {
+        &:after, &:before {
+          border-color: color(f);
+        }
       }
     }
   }
@@ -70,10 +72,29 @@
       border-bottom: 3px solid rgba(color(0), .4);
     }
 
-    &:hover, &:focus {
-      &:after, &:before {
-        border-color: color(0);
+    &:not([disabled]) {
+      &:hover, &:focus {
+        &:after, &:before {
+          border-color: color(0);
+        }
       }
+    }
+  }
+
+  &--success {
+    @include font-family('open-sans', 700);
+    color: color(f);
+    padding: 0 20px;
+    background-color: rgba(color(success), .5);
+
+    &:before {
+      border-left: 3px solid color(f);
+      border-right: 3px solid color(f);
+    }
+
+    &:after {
+      border-top: 3px solid color(f);
+      border-bottom: 3px solid color(f);
     }
   }
 }

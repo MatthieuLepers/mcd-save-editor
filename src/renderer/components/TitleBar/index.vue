@@ -5,7 +5,7 @@
       {{ appTitle }}
     </div>
     <div class="TitleBarButtonCtn">
-      <button v-if="btnHelp" class="TitleBarButton TitleBarButtonHelp" @click="$emit('help')">
+      <button v-if="btnHelp" :disabled="!GlobalStore.enableTutorialOnRoute(this.$route)" class="TitleBarButton TitleBarButtonHelp" @click="$emit('help')">
         <i class="icon-help"></i>
       </button>
       <button :disabled="!btnMinimize" class="TitleBarButton TitleBarButtonMinimize" @click="minimize">
@@ -23,6 +23,7 @@
 
 <script>
 import { remote } from 'electron';
+import GlobalStore from '@/js/stores/GlobalStore';
 import TitleBarMenu from './Menu';
 
 export default {
@@ -37,6 +38,7 @@ export default {
   },
   data() {
     return {
+      GlobalStore,
       window: remote.getCurrentWindow(),
     };
   },

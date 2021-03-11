@@ -5,9 +5,10 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/SproutArmor.png',
+    ancientHuntRunes: ['c'],
     armorproperties: [
       'AreaHeal',
-      '???', // TODO
+      'DodgeRoot',
     ],
     i18n: {
       'fr-FR': 'Armure végétale',
@@ -20,11 +21,12 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/LivingVinesArmor.png',
+    ancientHuntRunes: ['c'],
     activeEnchants: ['Acrobat'],
     armorproperties: [
       'DodgeSpeedIncrease',
       'AreaHeal',
-      '???', // TODO
+      'DodgeRoot',
     ],
     i18n: {
       'fr-FR': 'Armure de liannes vivantes',

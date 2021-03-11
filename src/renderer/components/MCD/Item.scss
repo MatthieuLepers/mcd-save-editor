@@ -3,6 +3,7 @@
 .MCDItem {
   cursor: pointer;
   position: relative;
+  height: fit-content;
 
   &Empty {
     cursor: auto;
@@ -114,6 +115,21 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+  }
+
+  .MCDRuneList {
+    &Container {
+      position: absolute;
+      left: -1px;
+      bottom: -1px;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+    }
+
+    &--ipair .MCDRuneListContainer img:first-child {
+      margin-right: 18px;
     }
   }
 }

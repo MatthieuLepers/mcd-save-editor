@@ -5,6 +5,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/OcelotArmor.png',
+    ancientHuntRunes: ['c'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'DodgeSpeedIncrease',
@@ -20,6 +21,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/ShadowWalker.png',
+    ancientHuntRunes: ['c', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'DodgeSpeedIncrease',

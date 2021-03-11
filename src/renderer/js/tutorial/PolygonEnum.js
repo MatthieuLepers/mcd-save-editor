@@ -1,3 +1,6 @@
+const OFFSET_X = 48;
+const OFFSET_Y = -30;
+
 /**
  * @author Matthieu LEPERS
  * @version 1.0.0
@@ -7,42 +10,72 @@ export default class PolygonEnum {
    * @return {Array[]}
    */
   static get GEAR_MELEE() {
-    return [[25, 177], [95, 177], [95, 247], [25, 247]];
+    return [
+      [25 + OFFSET_X, 207 + OFFSET_Y],
+      [95 + OFFSET_X, 207 + OFFSET_Y],
+      [95 + OFFSET_X, 277 + OFFSET_Y],
+      [25 + OFFSET_X, 277 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get GEAR_ARMOR() {
-    return [[135, 147], [205, 147], [205, 217], [135, 217]];
+    return [
+      [135 + OFFSET_X, 177 + OFFSET_Y],
+      [205 + OFFSET_X, 177 + OFFSET_Y],
+      [205 + OFFSET_X, 247 + OFFSET_Y],
+      [135 + OFFSET_X, 247 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get GEAR_RANGED() {
-    return [[245, 177], [315, 177], [315, 247], [245, 247]];
+    return [
+      [245 + OFFSET_X, 207 + OFFSET_Y],
+      [315 + OFFSET_X, 207 + OFFSET_Y],
+      [315 + OFFSET_X, 277 + OFFSET_Y],
+      [245 + OFFSET_X, 277 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get HOTBAR_SLOT1() {
-    return [[45, 440], [115, 440], [115, 510], [45, 510]];
+    return [
+      [45 + OFFSET_X, 470 + OFFSET_Y],
+      [115 + OFFSET_X, 470 + OFFSET_Y],
+      [115 + OFFSET_X, 540 + OFFSET_Y],
+      [45 + OFFSET_X, 540 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get HOTBAR_SLOT2() {
-    return [[135, 440], [205, 440], [205, 510], [135, 510]];
+    return [
+      [135 + OFFSET_X, 470 + OFFSET_Y],
+      [205 + OFFSET_X, 470 + OFFSET_Y],
+      [205 + OFFSET_X, 540 + OFFSET_Y],
+      [135 + OFFSET_X, 540 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get HOTBAR_SLOT3() {
-    return [[225, 440], [295, 440], [295, 510], [225, 510]];
+    return [
+      [225 + OFFSET_X, 470 + OFFSET_Y],
+      [295 + OFFSET_X, 470 + OFFSET_Y],
+      [295 + OFFSET_X, 540 + OFFSET_Y],
+      [225 + OFFSET_X, 540 + OFFSET_Y],
+    ];
   }
 
   /**
@@ -55,10 +88,10 @@ export default class PolygonEnum {
       y: (Math.floor((index - 1) / 3) * 90) + (Math.floor((index - 1) / 3) * 6),
     };
     return [
-      [359 + offset.x, 149 + offset.y],
-      [449 + offset.x, 149 + offset.y],
-      [449 + offset.x, 239 + offset.y],
-      [359 + offset.x, 239 + offset.y],
+      [359 + offset.x + OFFSET_X, 179 + offset.y + OFFSET_Y],
+      [449 + offset.x + OFFSET_X, 179 + offset.y + OFFSET_Y],
+      [449 + offset.x + OFFSET_X, 269 + offset.y + OFFSET_Y],
+      [359 + offset.x + OFFSET_X, 269 + offset.y + OFFSET_Y],
     ];
   }
 
@@ -66,28 +99,53 @@ export default class PolygonEnum {
    * @return {Array[]}
    */
   static get SELECTED_ENCHANTMENT() {
-    return [[735, 395], [748.5, 408.5], [752.7, 404.7], [766, 418.4], [762.3, 422.4], [775, 435], [735, 475], [695, 435], [735, 395]];
+    return [
+      [735 + OFFSET_X, 425 + OFFSET_Y],
+      [748.5 + OFFSET_X, 438.5 + OFFSET_Y],
+      [752.7 + OFFSET_X, 434.7 + OFFSET_Y],
+      [766 + OFFSET_X, 448.4 + OFFSET_Y],
+      [762.3 + OFFSET_X, 452.4 + OFFSET_Y],
+      [775 + OFFSET_X, 465 + OFFSET_Y],
+      [735 + OFFSET_X, 505 + OFFSET_Y],
+      [695 + OFFSET_X, 465 + OFFSET_Y],
+      [735 + OFFSET_X, 425 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get ENCHANTMENT_SLOT1() {
-    return [[711, 415], [731, 435], [711, 455], [691, 435]];
+    return [
+      [711 + OFFSET_X, 445 + OFFSET_Y],
+      [731 + OFFSET_X, 465 + OFFSET_Y],
+      [711 + OFFSET_X, 485 + OFFSET_Y],
+      [691 + OFFSET_X, 465 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get ENCHANTMENT_SLOT2() {
-    return [[736, 441], [756, 461], [736, 481], [716, 461]];
+    return [
+      [736 + OFFSET_X, 471 + OFFSET_Y],
+      [756 + OFFSET_X, 491 + OFFSET_Y],
+      [736 + OFFSET_X, 511 + OFFSET_Y],
+      [716 + OFFSET_X, 491 + OFFSET_Y],
+    ];
   }
 
   /**
    * @return {Array[]}
    */
   static get ENCHANTMENT_SLOT3() {
-    return [[763, 415], [783, 435], [763, 455], [743, 435]];
+    return [
+      [763 + OFFSET_X, 445 + OFFSET_Y],
+      [783 + OFFSET_X, 465 + OFFSET_Y],
+      [763 + OFFSET_X, 485 + OFFSET_Y],
+      [743 + OFFSET_X, 465 + OFFSET_Y],
+    ];
   }
 
   /**
@@ -96,7 +154,12 @@ export default class PolygonEnum {
   static NETHERITE_ENCHANTMENT_SLOT() {
     const gildedEnchant = document.querySelector('.MCDGildedEnchant');
     const { x, y, width, height } = gildedEnchant.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height + 6) - 36], [x, (y + height + 6) - 36]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width, y + OFFSET_Y],
+      [x + width, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 
   /**
@@ -105,7 +168,12 @@ export default class PolygonEnum {
   static ITEM_SELECTOR() {
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter');
     const { x, y, width, height } = itemSelectOuter.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height + 6) - 36], [x, (y + height + 6) - 36]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width, y + OFFSET_Y],
+      [x + width, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 
   /**
@@ -114,7 +182,12 @@ export default class PolygonEnum {
   static ITEM_SELECTOR_DROPDOWN() {
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter');
     const { x, y, height } = itemSelectOuter.getBoundingClientRect();
-    return [[x, (y + height) - 21], [x + 300, (y + height) - 21], [x + 300, y + height + 271], [x, y + height + 271]];
+    return [
+      [x, y + height + 9 + OFFSET_Y],
+      [x + 300, y + height + 9 + OFFSET_Y],
+      [x + 300, y + height + 301 + OFFSET_Y],
+      [x, y + height + 301 + OFFSET_Y],
+    ];
   }
 
   /**
@@ -123,7 +196,12 @@ export default class PolygonEnum {
   static ITEM_RARITY_LABEL() {
     const itemRarityLabel = document.querySelector('.MCDRarityLabel');
     const { x, y, width, height } = itemRarityLabel.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height) - 30], [x, (y + height) - 30]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width, y + OFFSET_Y],
+      [x + width, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 
   /**
@@ -132,7 +210,12 @@ export default class PolygonEnum {
   static ITEM_POWER_LABEL() {
     const itemPowerLabel = document.querySelector('.MCDItemTitlePower');
     const { x, y, width, height } = itemPowerLabel.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height) - 30], [x, (y + height) - 30]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width, y + OFFSET_Y],
+      [x + width, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 
   /**
@@ -141,7 +224,12 @@ export default class PolygonEnum {
   static ENCHANTMENT_SELECTOR() {
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect');
     const { x, y, width, height } = enchantSelectOuter.getBoundingClientRect();
-    return [[x, y - 33], [x + width + 10, y - 33], [x + width + 10, (y + height + 6) - 33], [x, (y + height + 6) - 33]];
+    return [
+      [x, (y - 3) + OFFSET_Y],
+      [x + width + 10, (y - 3) + OFFSET_Y],
+      [x + width + 10, y + height + 3 + OFFSET_Y],
+      [x, y + height + 3 + OFFSET_Y],
+    ];
   }
 
   /**
@@ -150,7 +238,12 @@ export default class PolygonEnum {
   static ENCHANTMENT_SELECTOR_DROPDOWN() {
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect');
     const { x, y, height } = enchantSelectOuter.getBoundingClientRect();
-    return [[x, (y + height) - 21], [x + 300, (y + height) - 21], [x + 300, y + height + 241], [x, y + height + 241]];
+    return [
+      [x, y + height + 9 + OFFSET_Y],
+      [x + 300, y + height + 9 + OFFSET_Y],
+      [x + 300, y + height + 271 + OFFSET_Y],
+      [x, y + height + 271 + OFFSET_Y],
+    ];
   }
 
   /**
@@ -159,7 +252,12 @@ export default class PolygonEnum {
   static ENCHANTMENT_TIER_LIST() {
     const enchantTierList = document.querySelector('.TierContainer');
     const { x, y, width, height } = enchantTierList.getBoundingClientRect();
-    return [[x, y - 30], [x + width + 17, y - 30], [x + width + 17, (y + height) - 30], [x, (y + height) - 30]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width + 17, y + OFFSET_Y],
+      [x + width + 17, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 
   /**
@@ -168,6 +266,11 @@ export default class PolygonEnum {
   static ENCHANTMENT_EDITOR_CLOSE_BUTTON() {
     const closeButton = document.querySelector('.MCDEnchantmentEditor h2 .MCDButton');
     const { x, y, width, height } = closeButton.getBoundingClientRect();
-    return [[x, y - 30], [x + width, y - 30], [x + width, (y + height) - 30], [x, (y + height) - 30]];
+    return [
+      [x, y + OFFSET_Y],
+      [x + width, y + OFFSET_Y],
+      [x + width, y + height + OFFSET_Y],
+      [x, y + height + OFFSET_Y],
+    ];
   }
 }

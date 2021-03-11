@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Axe.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Hache',
       'en-EN': 'Axe',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FireBrand.png',
+    ancientHuntRunes: ['i', 'a'],
     i18n: {
       'fr-FR': 'Tison',
       'en-EN': 'Firebrand',
@@ -24,6 +26,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/HighlandAxe.png',
+    ancientHuntRunes: ['s', 'i'],
     activeEnchants: ['Stunning'],
     i18n: {
       'fr-FR': 'Hache highlandaise',

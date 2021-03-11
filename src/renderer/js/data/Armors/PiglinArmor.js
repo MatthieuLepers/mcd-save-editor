@@ -5,6 +5,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/PiglinArmor.png',
+    ancientHuntRunes: ['a'],
     armorproperties: [
       'ItemCooldownReset',
       'ItemDamageBoost',
@@ -20,6 +21,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/GoldenPiglinArmor.png',
+    ancientHuntRunes: ['s', 'a'],
     activeEnchants: ['SurpriseGift'],
     armorproperties: [
       'ItemCooldownReset',

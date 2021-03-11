@@ -5,6 +5,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/SnowArmor.png',
+    ancientHuntRunes: ['t'],
     activeEnchants: ['Chilling'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -12,7 +13,7 @@ export default {
     ],
     i18n: {
       'fr-FR': 'Armure de neige',
-      'en-EN': 'Frost armor',
+      'en-EN': 'Snow armor',
     },
   },
   SnowArmor_Unique1: {
@@ -21,13 +22,14 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/FrostArmor.png',
+    ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'SlowResistance',
     ],
     i18n: {
       'fr-FR': 'Armure de givre',
-      'en-EN': 'Snow armor',
+      'en-EN': 'Frost armor',
     },
   },
 };

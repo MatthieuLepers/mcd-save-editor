@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/ScatterCrossbow.png',
+    ancientHuntRunes: ['t'],
     i18n: {
       'fr-FR': 'Arbalète à dispersion',
       'en-EN': 'Scatter crossbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/HarpCrossbow.png',
+    ancientHuntRunes: ['i', 't'],
     i18n: {
       'fr-FR': 'Harpbalète',
       'en-EN': 'Harp crossbow',
@@ -24,6 +26,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/LightningHarpCrossbow.png',
+    ancientHuntRunes: ['i', 't'],
     activeEnchants: ['Ricochet'],
     i18n: {
       'fr-FR': 'Harpbalète de foudre',

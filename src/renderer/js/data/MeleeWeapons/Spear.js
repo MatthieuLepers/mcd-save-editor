@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Spear.png',
+    ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Lance',
       'en-EN': 'Spear',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/WhisperingSpear.png',
+    ancientHuntRunes: ['s', 'i'],
     activeEnchants: ['Echo'],
     i18n: {
       'fr-FR': 'Lance chuchotante',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FortuneSpear.png',
+    ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Lance de chance',
       'en-EN': 'Fortune spear',

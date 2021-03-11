@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/PlateArmor.png',
+    ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'MissChance',
@@ -19,6 +20,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/FullMetalArmor.png',
+    ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'MissChance',

@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/Champion\'sArmor.png',
+    ancientHuntRunes: ['t'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'IncreasedMobTargeting',
@@ -19,6 +20,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/Hero\'sArmor.png',
+    ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'AreaHeal',

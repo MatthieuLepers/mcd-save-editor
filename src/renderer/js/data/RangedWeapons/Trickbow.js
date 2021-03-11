@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Trickbow.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Arc piège',
       'en-EN': 'Trickbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TheGreenMenace.png',
+    ancientHuntRunes: ['r', 'a'],
     activeEnchants: ['PoisonedRanged'],
     i18n: {
       'fr-FR': 'La menace verte',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ThePinkScoundrel.png',
+    ancientHuntRunes: ['r', 'i'],
     activeEnchants: ['WildRage'],
     i18n: {
       'fr-FR': 'La crapule rose',

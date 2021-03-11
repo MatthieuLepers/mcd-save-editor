@@ -25,6 +25,10 @@ export default {
     },
     loadingProfils: 'Loading profils...',
     noProfilFound: 'No profil found.',
+    Navigation: {
+      inventory: 'Inventory',
+      ancientHunts: 'Ancient hunts',
+    },
   },
   TitleBarMenu: {
     fileMenu: {
@@ -50,9 +54,23 @@ export default {
   },
   MCD: {
     Game: {
+      AncientMobs: GlobalI18N.AncientMobsData('en-EN'),
       ArmorProperties: GlobalI18N.ArmorProperties('en-EN'),
       Enchants: GlobalI18N.Enchants('en-EN'),
       Items: GlobalI18N.Items('en-EN'),
+    },
+    AncientHunts: {
+      title: 'Ancient Hunts',
+      requiredRunes: 'Invocation requires:',
+      button: 'Add found offers to my inventory',
+      refresh: 'Refresh',
+      reset: 'Reset',
+      successMessage: 'Successfully adde {count} item{pluralize} to your inventory.',
+      errorMessage: 'Addition not possible, your inventory does not contain enough free space.',
+    },
+    AncientMobSelect: {
+      title: 'Pick ancient creatures',
+      search: 'Search...',
     },
     LevelBadge: {
       level: 'Level',

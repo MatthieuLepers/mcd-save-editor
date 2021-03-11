@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/SoulKnife.png',
+    ancientHuntRunes: ['o'],
     activeEnchants: ['SoulSiphon'],
     i18n: {
       'fr-FR': 'Couteau des âmes',
@@ -16,6 +17,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/TruthSeeker.png',
+    ancientHuntRunes: ['o', 'i'],
     activeEnchants: ['Committed'],
     i18n: {
       'fr-FR': 'Chercheur de vérité',
@@ -28,6 +30,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/EternalKnife.png',
+    ancientHuntRunes: ['o'],
     i18n: {
       'fr-FR': 'Couteau éternel',
       'en-EN': 'Eternal knife',

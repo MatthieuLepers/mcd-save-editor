@@ -4,6 +4,8 @@ import ItemTypeEnum from './enums/ItemTypeEnum';
 
 import GlobalStore from '../stores/GlobalStore';
 
+const MAX_INVENTORY_SIZE = 180;
+
 /**
  * @author Matthieu LEPERS
  * @version 1.0.0
@@ -61,7 +63,14 @@ export default class Inventory {
    * @return {Boolean}
    */
   isFull() {
-    return this.inventory.length === 180;
+    return this.inventory.length === MAX_INVENTORY_SIZE;
+  }
+
+  /**
+   * @return {Number}
+   */
+  getAvailableSlotCount() {
+    return MAX_INVENTORY_SIZE - this.inventory.length;
   }
 
   /**

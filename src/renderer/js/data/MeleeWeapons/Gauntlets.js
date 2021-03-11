@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Gauntlets.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Gantelets',
       'en-EN': 'Gauntlets',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SoulFists.png',
+    ancientHuntRunes: ['s', 'i'],
     activeEnchants: ['EnigmaResonatorMelee'],
     i18n: {
       'fr-FR': 'Poings de l\'âme',
@@ -26,6 +28,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Maulers.png',
+    ancientHuntRunes: ['c', 'i'],
     i18n: {
       'fr-FR': 'Boxeurs',
       'en-EN': 'Maulers',
@@ -36,6 +39,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FightersBindings.png',
+    ancientHuntRunes: ['c', 'i'],
     i18n: {
       'fr-FR': 'Bandages de combattant',
       'en-EN': 'Fighter\'s bindings',

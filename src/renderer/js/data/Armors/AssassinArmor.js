@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/ThiefArmor.png',
+    ancientHuntRunes: ['i'],
     armorproperties: [
       'MeleeAttackSpeedBoost',
     ],
@@ -17,6 +18,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/SpiderArmor.png',
+    ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'LifeStealAura',
       'MeleeAttackSpeedBoost',

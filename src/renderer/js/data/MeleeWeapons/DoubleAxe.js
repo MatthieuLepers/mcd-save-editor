@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/DoubleAxe.png',
+    ancientHuntRunes: ['i', 't'],
     i18n: {
       'fr-FR': 'Labrys',
       'en-EN': 'Double axe',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Whirlwind.png',
+    ancientHuntRunes: ['i', 't', 'a'],
     activeEnchants: ['Shockwave'],
     i18n: {
       'fr-FR': 'Tourbillons',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/CursedAxe.png',
+    ancientHuntRunes: ['i', 't', 'a'],
     activeEnchants: ['Exploding'],
     i18n: {
       'fr-FR': 'Hache maudite',

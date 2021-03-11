@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Claymore.png',
+    ancientHuntRunes: ['t'],
     i18n: {
       'fr-FR': 'Claymore',
       'en-EN': 'Claymore',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Heartstealer.png',
+    ancientHuntRunes: ['i', 't'],
     i18n: {
       'fr-FR': 'Voleur de cœur',
       'en-EN': 'Heartstealer',
@@ -24,6 +26,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Broadsword.png',
+    ancientHuntRunes: ['i', 't'],
     i18n: {
       'fr-FR': 'Broadsword',
       'en-EN': 'Broadsword',
@@ -34,6 +37,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/GreatAxeblade.png',
+    ancientHuntRunes: ['c', 't'],
     activeEnchants: ['DynamoMelee'],
     i18n: {
       'fr-FR': 'Hache majestueuse',
@@ -46,6 +50,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FrostSlayer.png',
+    ancientHuntRunes: ['i', 't'],
     i18n: {
       'fr-FR': 'Tranche-givre',
       'en-EN': 'Frost slayer',

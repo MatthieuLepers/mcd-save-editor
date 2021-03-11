@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/WolfArmor.png',
+    ancientHuntRunes: ['u', 's'],
     armorproperties: [
       'AllyDamageBoost',
       'AreaHeal',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/FoxArmor.png',
+    ancientHuntRunes: ['u', 's', 't'],
     armorproperties: [
       'MissChance',
       'AllyDamageBoost',
@@ -33,6 +35,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/NightWolfArmor.png',
+    ancientHuntRunes: ['u', 'c', 's'],
     activeEnchants: ['Acrobat'],
     armorproperties: [
       'AllyDamageBoost',
@@ -49,6 +52,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/ArcticFoxArmor.png',
+    ancientHuntRunes: ['u', 'o', 't'],
     armorproperties: [
       'MissChance',
       'AllyDamageBoost',

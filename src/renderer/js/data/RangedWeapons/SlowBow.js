@@ -5,6 +5,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/SlowBow.png',
+    ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Arc des neiges',
       'en-EN': 'Snow bow',
@@ -16,6 +17,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Winter\'sTouch.png',
+    ancientHuntRunes: ['s', 'r'],
     i18n: {
       'fr-FR': 'Toucher de l\'hiver',
       'en-EN': 'Winter\'s touch',

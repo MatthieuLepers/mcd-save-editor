@@ -5,6 +5,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/IceWand.png',
+    ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Baguette de glace',
       'en-EN': 'Ice wand',

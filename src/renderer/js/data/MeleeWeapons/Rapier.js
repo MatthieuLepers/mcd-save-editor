@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/RapierSword.png',
+    ancientHuntRunes: ['i', 'p'],
     i18n: {
       'fr-FR': 'Rapière',
       'en-EN': 'Rapier',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/BeeStingerSword.png',
+    ancientHuntRunes: ['u', 'i', 'p'],
     activeEnchants: ['BusyBee'],
     i18n: {
       'fr-FR': 'Dard d\'abeille',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FreezingFoilSword.png',
+    ancientHuntRunes: ['s', 'i', 'p'],
     activeEnchants: ['Freezing'],
     i18n: {
       'fr-FR': 'Feuille de congélation',

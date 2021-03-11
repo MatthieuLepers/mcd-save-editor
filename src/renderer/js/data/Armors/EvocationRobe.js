@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/EvocationRobe.png',
+    ancientHuntRunes: ['s', 'a'],
     armorproperties: [
       'ItemCooldownDecrease',
       'MoveSpeedAura',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/EmberRobe.png',
+    ancientHuntRunes: ['s', 'i', 'a'],
     activeEnchants: ['Burning'],
     armorproperties: [
       'ItemCooldownDecrease',
@@ -33,6 +35,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/VerdantRobe.png',
+    ancientHuntRunes: ['o', 's', 'a'],
     activeEnchants: ['BagOfSouls'],
     armorproperties: [
       'ItemCooldownDecrease',

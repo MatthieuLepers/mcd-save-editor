@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Crossbow.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Arbalète',
       'en-En': 'Crossbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TheSlicer.png',
+    ancientHuntRunes: ['r'],
     activeEnchants: ['Piercing'],
     i18n: {
       'fr-FR': 'La trancheuse',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/AzureSeeker.png',
+    ancientHuntRunes: ['c', 'r'],
     activeEnchants: ['RapidFire'],
     i18n: {
       'fr-FR': 'Chercheur d\'azure',

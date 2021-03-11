@@ -90,6 +90,14 @@ class GlobalStore {
     }
     this.$selectedEnchant = enchant;
   }
+
+  /**
+   * @param {Object} route
+   * @return {Boolean}
+   */
+  enableTutorialOnRoute(route) {
+    return route.name === 'Home';
+  }
 }
 
 export default new GlobalStore();

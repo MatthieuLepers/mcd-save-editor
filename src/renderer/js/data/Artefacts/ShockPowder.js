@@ -4,6 +4,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/ShockPowder.png',
+    ancientHuntRunes: ['s', 't'],
     i18n: {
       'fr-FR': 'Poudre de choc',
       'en-EN': 'Shock powder',

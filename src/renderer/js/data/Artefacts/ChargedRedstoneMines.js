@@ -5,6 +5,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/ScatterMines.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Mines éparpillées',
       'en-EN': 'Scatter mines',
