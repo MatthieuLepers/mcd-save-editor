@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/FirstEnchanter.png',
   rewards: ['ScaleMail', 'Claymore', 'SoulScythe'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Premier Enchanteur',
     'en-EN': 'First Enchanter',
   },
 };

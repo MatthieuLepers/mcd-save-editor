@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/TheTinyScourge.png',
   rewards: ['Daggers', 'SoulRobe', 'AssassinArmor'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Le Petit Fléau',
     'en-EN': 'The Tiny Scourge',
   },
 };

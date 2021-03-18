@@ -61,7 +61,7 @@ export default class Character {
    * @return {Number}
    */
   get enchantmentPoints() {
-    return this.level - this.enchantmentPointsInvested;
+    return this.level - this.enchantmentPointsInvested - 1;
   }
 
   /**

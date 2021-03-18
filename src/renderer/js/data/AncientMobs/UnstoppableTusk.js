@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/UnstoppableTusk.png',
   rewards: ['Chainsword', 'CogCrossbow', 'SproutArmor'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Défense Imparable',
     'en-EN': 'Unstoppable Tusk',
   },
 };

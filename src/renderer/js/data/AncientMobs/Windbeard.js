@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/Windbeard.png',
   rewards: ['TempestKnife', 'WindBow', 'ClimbingGear', 'EmeraldArmor'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Barbe-Vent',
     'en-EN': 'Windbeard',
   },
 };

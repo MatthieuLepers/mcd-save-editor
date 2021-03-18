@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/Barrage.png',
   rewards: ['Bow', 'SoulBow', 'ArchersStrappings'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Barrage',
     'en-EN': 'Barrage',
   },
 };

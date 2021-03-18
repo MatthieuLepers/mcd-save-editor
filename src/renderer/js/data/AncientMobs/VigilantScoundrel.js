@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/VigilantScoundrel.png',
   rewards: ['Crossbow', 'Mace', 'ReinforcedMail'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Vaurien Vigilant',
     'en-EN': 'Vigilant Scoundrel',
   },
 };

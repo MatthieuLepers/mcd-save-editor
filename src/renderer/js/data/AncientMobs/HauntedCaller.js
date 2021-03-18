@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/HauntedCaller.png',
   rewards: ['Longbow', 'RapidCrossbow', 'Sickles', 'SpelunkersAmor'],
   i18n: {
-    'fr-FR': '???', // TODO
+    'fr-FR': 'Invocateur Hanté',
     'en-EN': 'Haunted Caller',
   },
 };
