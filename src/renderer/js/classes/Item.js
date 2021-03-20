@@ -6,7 +6,7 @@ import RarityEnum from './enums/RarityEnum';
 
 import ItemsData from '../data/Items';
 import GlobalStore from '../stores/GlobalStore';
-import RuneSequence from './RuneSequence';
+import RuneList from './RuneList';
 
 /**
  * @author Matthieu LEPERS
@@ -236,10 +236,10 @@ export default class Item {
   }
 
   /**
-   * @return {RunesSequence}
+   * @return {RuneList}
    */
-  get runeSequence() {
-    return new RuneSequence(this.itemData.ancientHuntRunes);
+  get runeList() {
+    return new RuneList(this.itemData.ancientHuntRunes);
   }
 
   /**

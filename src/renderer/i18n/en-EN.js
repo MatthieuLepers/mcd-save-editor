@@ -61,7 +61,8 @@ export default {
     },
     AncientHunts: {
       title: 'Ancient Hunts',
-      requiredRunes: 'Invocation requires:',
+      invocationRunes: 'Invocation requires:',
+      residualRunes: 'Rune{pluralize} in excess :',
       button: 'Add found offers to my inventory',
       refresh: 'Refresh',
       reset: 'Reset',

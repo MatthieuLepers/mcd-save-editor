@@ -5,7 +5,7 @@
 
     <div class="MCDAncientMobInfos">
       <h4>{{ $t(`MCD.Game.AncientMobs.${ancientMob.name}`) }}</h4>
-      <RuneList :list="ancientMob.runeSequence" />
+      <RuneList :list="ancientMob.runeList" />
     </div>
   </label>
 </template>

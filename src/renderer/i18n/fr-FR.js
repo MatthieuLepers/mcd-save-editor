@@ -61,7 +61,8 @@ export default {
     },
     AncientHunts: {
       title: 'Chasses anciennes',
-      requiredRunes: 'Requis pour l\'invocation :',
+      invocationRunes: 'L\'invocation requiert :',
+      residualRunes: 'Rune{pluralize} en surplus :',
       button: 'Ajouter les offrandes trouvées dans mon inventaire',
       refresh: 'Rafraîchir',
       reset: 'Réinitialiser',

@@ -1,16 +1,16 @@
 <template>
-  <div :class="`MCDRuneList MCDRuneList--${list.$runeList.length % 2 === 0 ? 'pair' : 'ipair'}`" v-if="list.$runeList.length">
+  <div :class="`MCDRuneList MCDRuneList--${list.length % 2 === 0 ? 'pair' : 'ipair'}`" v-if="list.length">
     <div class="MCDRuneListContainer" v-if="!compress">
       <img
         :src="`static/img/runes/${rune}.png`"
         :alt="`Rune ${rune.toUpperCase()}`"
         :title="`Rune ${rune.toUpperCase()}`"
-        v-for="(rune, i) in list.$runeList"
+        v-for="(rune, i) in list.$list"
         :key="`rune${i}`"
       />
     </div>
     <div class="MCDRuneListContainer--Compressed" v-else>
-      <div class="MCDRuneListItem" v-for="([rune, value], i) in Object.entries(list.sequence)" :key="`rune${i}`">
+      <div class="MCDRuneListItem" v-for="([rune, value], i) in Object.entries(list.compressed)" :key="`rune${i}`">
         <img :src="`static/img/runes/${rune}.png`" :alt="`Rune ${rune.toUpperCase()}`" :title="`Rune ${rune.toUpperCase()}`" v-for="n in value" :key="n" :class="`MCDRuneListItemImage MCDRuneListItemImage--${n}`" />
         <span>{{ value }}</span>
       </div>
@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import RuneSequence from '@/js/classes/RuneSequence';
+import RuneList from '@/js/classes/RuneList';
 
 export default {
   name: 'MCDRuneList',
   props: {
-    list: { type: RuneSequence, required: true },
+    list: { type: RuneList, required: true },
     compress: { type: Boolean, default: false },
   },
 };

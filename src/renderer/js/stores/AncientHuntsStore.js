@@ -1,5 +1,5 @@
 import Item from '../classes/Item';
-import RuneSequence from '../classes/RuneSequence';
+import RuneList from '../classes/RuneList';
 import ArmorItemsData from '../data/_Armors';
 import MeleeItemsData from '../data/_MeleeWeapons';
 import RangedItemsData from '../data/_RangedWeapons';
@@ -46,7 +46,11 @@ function $createItem(itemData, index) {
     itemObj.enchantments = [...Array(9).keys()].map(() => $createRandomEnchantmentByType(itemData.type));
   }
   if (itemData.type === 'Armor') {
-    itemObj.armorproperties = itemData.armorproperties.map(prop => ({ id: prop, rarity: 'Common' }));
+    if (itemData.name === 'MysteryArmor') {
+      itemObj.armorproperties = $shuffleArray(itemData.armorproperties.map(prop => ({ id: prop, rarity: 'Common' }))).slice(0, 2);
+    } else {
+      itemObj.armorproperties = itemData.armorproperties.map(prop => ({ id: prop, rarity: 'Common' }));
+    }
   }
   return new Item(itemObj);
 }
@@ -86,43 +90,38 @@ class AncientHuntsStore {
   }
 
   /**
-   * @return {String[]}
+   * @return {RuneList}
    */
-  get runeSequence() {
-    const groupedRunes = this.ancientMobList
-      .map(mob => mob.groupedRunes)
-      .reduce((acc, val) => {
-        Object.entries(val).forEach(([rune, amount]) => { acc[rune] = Math.max(acc[rune] || 0, amount); });
-        return acc;
-      }, {})
+  get runeList() {
+    return this.ancientMobList
+      .reduce((acc, mob) => acc.merge(mob.runeList), new RuneList())
     ;
-    return new RuneSequence(Object.entries(groupedRunes).reduce((acc, [key, val]) => acc.concat([...Array(val).keys()].map(() => key)), []));
   }
 
   /**
-   * @param {RuneSequence} runes
+   * @param {RuneList} runes
    * @return {Item[]}
    */
   getBestStartingItemList(runes) {
     return $shuffleArray(Object.values({ ...MeleeItemsData, ...RangedItemsData, ...ArmorItemsData })
-      .filter(data => !data.disabled && data.name !== 'MysteryArmor')
+      .filter(data => !data.disabled)
       .map($createItem.bind(this))
-      .sort((a, b) => runes.countContains(b.runeSequence) - runes.countContains(a.runeSequence))
-      .filter((item, i, array) => runes.countContains(item.runeSequence) >= runes.countContains(array[0].runeSequence)),
+      .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
+      .filter((item, i, array) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)),
     );
   }
 
   /**
-   * @param {RuneSequence} runes
+   * @param {RuneList} runes
    * @param {String[]} excludeTypes
    * @return {Item[]}
    */
   getNextItemListExcludingTypes(runes, excludeTypes = []) {
     return $shuffleArray(Object.values(ItemsData)
-      .filter(data => !data.disabled && !excludeTypes.includes(data.type) && data.name !== 'MysteryArmor')
+      .filter(data => !data.disabled && !excludeTypes.includes(data.type))
       .map($createItem.bind(this))
-      .sort((a, b) => runes.countContains(b.runeSequence) - runes.countContains(a.runeSequence))
-      .filter((item, i, array) => runes.countContains(item.runeSequence) >= runes.countContains(array[0].runeSequence)),
+      .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
+      .filter((item, i, array) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)),
     );
   }
 
@@ -137,7 +136,7 @@ class AncientHuntsStore {
       const [artefactItem] = list.filter(item => item && item.itemType === ItemTypeEnum.ARTEFACT);
       return [meleeItem, rangedItem, armorItem, artefactItem];
     };
-    const runes = this.runeSequence;
+    const runes = this.runeList;
 
     if (runes.isEmpty() || runes.length > 11) {
       return [null, null, null, null];
@@ -150,7 +149,7 @@ class AncientHuntsStore {
     let fourthItem = null;
 
     while (firstItem) {
-      const firstItemRunes = runes.sub(firstItem.runeSequence);
+      const firstItemRunes = runes.sub(firstItem.runeList);
 
       if (firstItemRunes.isEmpty()) {
         return orderResult([firstItem, secondItem, thirdItem, fourthItem]);
@@ -159,7 +158,7 @@ class AncientHuntsStore {
       const validSecondItemList = this.getNextItemListExcludingTypes(firstItemRunes, [firstItem.itemType]);
       secondItem = validSecondItemList.shift();
       while (secondItem) {
-        const secondItemRunes = firstItemRunes.sub(secondItem.runeSequence);
+        const secondItemRunes = firstItemRunes.sub(secondItem.runeList);
 
         if (secondItemRunes.isEmpty()) {
           return orderResult([firstItem, secondItem, thirdItem, fourthItem]);
@@ -168,7 +167,7 @@ class AncientHuntsStore {
         const validThirdItemList = this.getNextItemListExcludingTypes(secondItemRunes, [firstItem.itemType, secondItem.itemType]);
         thirdItem = validThirdItemList.shift();
         while (thirdItem) {
-          const thirdItemRunes = secondItemRunes.sub(thirdItem.runeSequence);
+          const thirdItemRunes = secondItemRunes.sub(thirdItem.runeList);
 
           if (thirdItemRunes.isEmpty()) {
             return orderResult([firstItem, secondItem, thirdItem, fourthItem]);
@@ -177,7 +176,7 @@ class AncientHuntsStore {
           const validFourthItemList = this.getNextItemListExcludingTypes(secondItemRunes, [firstItem.itemType, secondItem.itemType, thirdItem.itemType]);
           fourthItem = validFourthItemList.shift();
           while (fourthItem) {
-            const fourthItemRunes = thirdItemRunes.sub(fourthItem.runeSequence);
+            const fourthItemRunes = thirdItemRunes.sub(fourthItem.runeList);
 
             if (fourthItemRunes.isEmpty()) {
               return orderResult([firstItem, secondItem, thirdItem, fourthItem]);

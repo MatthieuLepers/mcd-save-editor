@@ -54,6 +54,9 @@ app.on('activate', () => {
   }
 });
 
+/* ************************** */
+/* *     ProfilLister.js    * */
+/* ************************** */
 const SAVE_PATH = `${os.homedir()}/Saved Games/Mojang Studios/Dungeons`;
 
 /**
@@ -76,6 +79,9 @@ ipcMain.on('fetch-profil-folders', (e) => {
   }
 });
 
+/* ******************** */
+/* *     Profil.js    * */
+/* ******************** */
 /**
  * Profil.loadCharacters
  */
@@ -91,6 +97,9 @@ ipcMain.on('fetch-characters-files', (e, profilId) => {
   }
 });
 
+/* ******************************* */
+/* *     EncryptionService.js    * */
+/* ******************************* */
 /**
  * @param {String} file
  * @return {Boolean}
@@ -160,6 +169,10 @@ ipcMain.handle('decrypt-file', async (e, file, force) => {
   return JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
 });
 
+
+/* **************************** */
+/* *     SaveFileDialog.js    * */
+/* **************************** */
 /**
  * SaveFileDialog.saveFile
  */
@@ -167,6 +180,10 @@ ipcMain.on('write-file-sync', (e, filePath, data) => {
   e.returnValue = fs.writeFileSync(filePath, data);
 });
 
+
+/* **************************** */
+/* *     OpenFileDialog.js    * */
+/* **************************** */
 /**
  * OpenFileDialog.openFile
  */
@@ -174,6 +191,10 @@ ipcMain.on('read-file-sync', (e, file) => {
   e.returnValue = `${fs.readFileSync(file)}`;
 });
 
+
+/* ********************** */
+/* *     Settings.js    * */
+/* ********************** */
 const SETTINGS_FILE = `${SAVE_PATH}/settings.json`;
 const DEFAULT_SETTINGS = {
   firstStart: true,

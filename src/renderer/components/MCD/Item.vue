@@ -23,7 +23,7 @@
       @dragstart.stop="handleDragStart"
       @dragend.stop="handleDragEnd"
     />
-    <MCDRuneList :list="item.runeSequence" v-if="showRuneList" />
+    <MCDRuneList :list="item.runeList" v-if="showRuneList" />
   </div>
 </template>
 

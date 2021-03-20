@@ -7,9 +7,13 @@
       <MCDButton class="AncientHuntsPageButtonReset" icon="close" :title="$t('MCD.AncientHunts.reset')" @click="reset" />
       <MCDButton class="AncientHuntsPageButtonReload" icon="reload" :title="$t('MCD.AncientHunts.refresh')" @click="refresh" />
 
-      <div class="AncientHuntsPageRuneList" v-if="AncientHuntsStore.runeSequence.length">
-        <h6>{{ $t('MCD.AncientHunts.requiredRunes') }}</h6>
-        <MCDRuneList :list="AncientHuntsStore.runeSequence" :compress="true" />
+      <div class="AncientHuntsPageRuneList" v-if="AncientHuntsStore.runeList.length">
+        <h6>{{ $t('MCD.AncientHunts.invocationRunes') }}</h6>
+        <MCDRuneList :list="invocationRuneList" :compress="true" />
+        <div class="AncientHuntsPageRuneList--ResidualList" v-if="!residualRuneList.isEmpty()">
+          <h6>{{ $t('MCD.AncientHunts.residualRunes', { pluralize: residualRuneList.length > 1 ? 's' : '' }) }}</h6>
+          <MCDRuneList :list="residualRuneList" :compress="true" />
+        </div>
       </div>
 
       <div class="AncientHuntsPageItemList">
@@ -33,6 +37,7 @@
 import AncientMob from '@/js/classes/AncientMob';
 import Character from '@/js/classes/Character';
 import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
+import RuneList from '@/js/classes/RuneList';
 import GlobalStore from '@/js/stores/GlobalStore';
 import AncientHuntsStore from '@/js/stores/AncientHuntsStore';
 import ItemsData from '@/js/data/Items';
@@ -69,6 +74,16 @@ export default {
     },
     foundOffersWithoutNull() {
       return this.foundOffers.filter(item => !!item);
+    },
+    invocationRuneList() {
+      return AncientHuntsStore.runeList;
+    },
+    residualRuneList() {
+      const offersRuneList = this.foundOffers
+        .filter(item => !!item)
+        .reduce((acc, val) => acc.add(val.runeList), new RuneList())
+      ;
+      return offersRuneList.sub(this.invocationRuneList);
     },
   },
   methods: {

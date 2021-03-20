@@ -1,4 +1,4 @@
-import RuneSequence from './RuneSequence';
+import RuneList from './RuneList';
 
 /**
  * @author Matthieu LEPERS
@@ -21,16 +21,16 @@ export default class AncientMob {
   }
 
   /**
-   * @return {Object}
+   * @return {RuneList}
    */
-  get groupedRunes() {
-    return this.neededRunes.reduce((acc, val) => ({ ...acc, [val]: (acc[val] || 0) + 1 }), {});
+  get runeList() {
+    return new RuneList(this.neededRunes);
   }
 
   /**
-   * @return {RunesSequence}
+   * @return {Object}
    */
-  get runeSequence() {
-    return new RuneSequence(this.neededRunes);
+  get groupedRunes() {
+    return this.runeList.compressed;
   }
 }

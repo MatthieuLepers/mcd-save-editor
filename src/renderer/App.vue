@@ -2,7 +2,7 @@
   <div id="app">
     <TitleBar :btnMaximize="false" :appTitle="`Save editor for MCD ≤ ${mcdVersion}`" @help="showTutorial = true" />
     <main v-if="ready" class="Page">
-      <Tabs :tabs="tabs" v-show="tabs.length" @tabChanged="handleTabChanged">
+      <Tabs :tabs="tabs" v-if="tabs.length" @tabChanged="handleTabChanged">
         <template v-slot:[`nav${character.uuid}`] v-for="(character, i) in GlobalStore.selectedProfil.characters">
           <span :key="`navspan${i}`">{{ character.$data.name || $t('App.tabs.unamedCharacter') }}</span>
           <div class="CharacterActionContainer" :key="`actionctn${i}`">
@@ -29,10 +29,10 @@
           </div>
         </template>
         <template v-slot:[character.uuid] v-for="(character, i) in GlobalStore.selectedProfil.characters">
-          <router-view :key="`character${i}`" :character="character"></router-view>
+          <router-view :key="`character${i}`" :character="character" />
         </template>
-        </Tabs>
-      <div v-if="!tabs.length" class="WaitBloc">
+      </Tabs>
+      <div v-else class="WaitBloc">
         {{ $t('App.noProfilFound') }}
       </div>
     </main>
