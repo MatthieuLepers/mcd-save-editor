@@ -17,7 +17,7 @@
           </button>
         </slot>
       </div>
-      <button class="ModalCloseBtn" @click="hide"></button>
+      <button class="ModalCloseBtn" v-if="closable" @click="hide"></button>
     </div>
   </div>
 </template>
@@ -36,6 +36,9 @@ export default {
     cancelLabel: { type: String, default: 'Cancel' },
     okLabel: { type: String, default: 'Ok' },
     size: { type: String, default: 'xs' },
+    closable: { type: Boolean, default: true },
+    autoCloseOnConfirm: { type: Boolean, default: true },
+    autoCloseOnRefuse: { type: Boolean, default: true },
   },
   data() {
     return {
@@ -46,12 +49,14 @@ export default {
   methods: {
     show() {
       this.open = true;
-      window.onclick = (e) => {
-        if (e.target.matches('.ModalBackDrop')) {
-          this.open = false;
-          window.onclick = null;
-        }
-      };
+      if (this.closable) {
+        window.onclick = (e) => {
+          if (e.target.matches('.ModalBackDrop')) {
+            this.open = false;
+            window.onclick = null;
+          }
+        };
+      }
     },
     hide() {
       this.open = false;
@@ -59,11 +64,15 @@ export default {
     },
     refuse() {
       this.$emit('refuse');
-      this.hide();
+      if (this.autoCloseOnRefuse) {
+        this.hide();
+      }
     },
     accept() {
       this.$emit('confirm');
-      this.hide();
+      if (this.autoCloseOnConfirm) {
+        this.hide();
+      }
     },
   },
   mounted() {

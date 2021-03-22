@@ -57,7 +57,7 @@ class GlobalStore {
    * @return {Item}
    */
   get selectedItem() {
-    return this.$selectedItem || {};
+    return this.$selectedItem || null;
   }
 
   /**

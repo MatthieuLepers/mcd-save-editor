@@ -21,6 +21,7 @@ export default {
         label: 'Save',
         success: 'Saved successfully!',
         error: 'Failed to save data.',
+        corruptedError: 'Unable to save, data are corrupted, try to reload.',
       },
     },
     loadingProfils: 'Loading profils...',
@@ -66,12 +67,25 @@ export default {
       button: 'Add found offers to my inventory',
       refresh: 'Refresh',
       reset: 'Reset',
-      successMessage: 'Successfully adde {count} item{pluralize} to your inventory.',
+      successMessage: 'Successfully added {count} item{pluralize} to your inventory.',
       errorMessage: 'Addition not possible, your inventory does not contain enough free space.',
     },
     AncientMobSelect: {
       title: 'Pick ancient creatures',
       search: 'Search...',
+    },
+    CharacterCorruptionDetection: {
+      title: 'Oops!',
+      contentBackupAvailable: [
+        'This character\'s data is corrupted, the last valid backup dates from {date}.',
+        'Do you want to restore it?',
+      ],
+      contentNoBackupAvailable: [
+        'This character\'s data is corrupted but there is no valid backup to restore.',
+        'You can try to reload the current tab.',
+      ],
+      okLabel: 'Restore',
+      dateFormat: 'dS F Y - Hhi',
     },
     LevelBadge: {
       level: 'Level',
@@ -153,5 +167,11 @@ export default {
         json: 'JSON file',
       },
     },
+  },
+  Date: {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daySuffix: ['st', 'nd', 'rd'],
+    defaultDaySuffix: 'th',
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   },
 };

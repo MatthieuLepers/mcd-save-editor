@@ -27,7 +27,7 @@
   }
 
   &.ArrowRight {
-    &:after, &:before {
+    &::after, &::before {
       content: '';
       width: 8px;
       height: 2px;
@@ -37,18 +37,19 @@
       background-color: invert(color(primary));
     }
 
-    &:before {
+    &::before {
       transform: rotate(-45deg);
       transform-origin: calc(100% - 1px) 50%;
     }
 
-    &:after {
+    &::after {
       transform: rotate(45deg);
       transform-origin: calc(100% - 1px) 50%;
     }
   }
 
   &Icon {
+    @include font-size(12);
     position: absolute;
     top: 0;
     left: 0;
@@ -57,6 +58,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include font-size(12);
   }
 }

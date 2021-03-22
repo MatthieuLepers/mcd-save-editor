@@ -40,16 +40,16 @@
         margin-right: 10px;
 
         span {
-          line-height: rem(18px);
-          @include font-size(18);
           @include font-family('open-sans', 700);
+          @include font-size(18);
+          line-height: rem(18px);
           text-shadow: 3px 2px 0 rgba(color(0), .5);
         }
   
         i {
+          @include font-size(12);
           margin-left: 5px;
           color: #999999;
-          @include font-size(12);
         }
       }
     }
@@ -65,10 +65,10 @@
   }
 
   .MCDItemArmorProperties {
+    @include font-size(12);
     padding: 0;
     margin: 12px 0 0 0;
     list-style: none;
-    @include font-size(12);
 
     &Item:not(:last-of-type) {
       margin-bottom: 8px;

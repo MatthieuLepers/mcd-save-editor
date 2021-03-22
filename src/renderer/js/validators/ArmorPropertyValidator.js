@@ -39,7 +39,8 @@ export default class EnchantmentValidator extends AbstractValidator {
    * @inheritdoc
    */
   isValid() {
-    return $validateKeys.call(this)
+    return super.isValid()
+      && $validateKeys.call(this)
       && $validateId.call(this)
       && $validateRarity.call(this)
     ;

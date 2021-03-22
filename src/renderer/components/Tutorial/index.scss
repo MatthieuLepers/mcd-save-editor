@@ -70,10 +70,10 @@
   }
 
   &StepObjectives {
+    @include font-size(12);
     margin: 16px 0 0;
     padding: 0;
     list-style: none;
-    @include font-size(12);
 
     li:not(:last-of-type) {
       margin-bottom: 4px;
@@ -87,7 +87,7 @@
       margin: 10px 0;
       background-color: rgba(color(f), .2);
 
-      &:before {
+      &::before {
         content: '';
         position: absolute;
         bottom: calc(100% + 1px);
@@ -117,7 +117,7 @@
       position: relative;
       margin: 0 4px 0 3px;
 
-      &:after {
+      &::after {
         content: '';
         width: 10px;
         height: 10px;

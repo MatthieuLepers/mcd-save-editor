@@ -21,6 +21,7 @@ export default {
         label: 'Sauvegarder',
         success: 'Sauvegarde réussi !',
         error: 'La sauvegarde a échouée.',
+        corruptedError: 'Sauvegarde impossible, les données sont corrompues, essayez de recharger.',
       },
     },
     loadingProfils: 'Chargement des profils...',
@@ -72,6 +73,19 @@ export default {
     AncientMobSelect: {
       title: 'Choisir des anciennes créatures',
       search: 'Rechercher...',
+    },
+    CharacterCorruptionDetection: {
+      title: 'Oups !',
+      contentBackupAvailable: [
+        'Les données de ce personnage sont corrompues, la dernière backup valide date du {date}.',
+        'Voulez-vous la réstaurée ?',
+      ],
+      contentNoBackupAvailable: [
+        'Les données de ce personnage sont corrompues mais il n\'y a aucune backup disponible.',
+        'Vous pouvez essayer de recharger l\'onglet.',
+      ],
+      okLabel: 'Restaurer',
+      dateFormat: 'dS F Y - Hhi',
     },
     LevelBadge: {
       level: 'Niveau',
@@ -153,5 +167,11 @@ export default {
         json: 'Fichier JSON',
       },
     },
+  },
+  Date: {
+    days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+    daySuffix: ['er'],
+    defaultDaySuffix: '',
+    months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   },
 };

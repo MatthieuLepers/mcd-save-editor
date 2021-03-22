@@ -1,3 +1,5 @@
+import ItemValidator from '../validators/ItemValidator';
+
 /**
  * @author Matthieu LEPERS
  * @version 1.0.0
@@ -35,5 +37,13 @@ export default class CharacterUtils {
       level += 1;
     }
     return (CharacterUtils.level2Xp(level) === xp ? level : level - 1);
+  }
+
+  /**
+   * @param {Object} data
+   * @return {Boolean}
+   */
+  static isDataCorrupted(data) {
+    return !data.items.reduce((acc, item) => acc && new ItemValidator(item).isValid(), true);
   }
 }

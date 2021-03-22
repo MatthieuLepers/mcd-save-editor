@@ -1,12 +1,12 @@
 import Enchantment from './Enchantment';
 import ArmorProperty from './ArmorProperty';
+import RuneList from './RuneList';
 
 import ItemTypeEnum from './enums/ItemTypeEnum';
 import RarityEnum from './enums/RarityEnum';
 
 import ItemsData from '../data/Items';
 import GlobalStore from '../stores/GlobalStore';
-import RuneList from './RuneList';
 
 /**
  * @author Matthieu LEPERS

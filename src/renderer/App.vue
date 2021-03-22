@@ -52,7 +52,7 @@ import GlobalStore from '@/js/stores/GlobalStore';
 import AppSettings from '@/js/AppSettings';
 import TutorialStore from '@/js/tutorial/Store';
 
-import AppNavigation from '@/components/AppNavigation/index';
+import AppNavigation from '@/components/App/Navigation/index';
 import TitleBar from '@/components/TitleBar/index';
 import Tabs from '@/components/Tabs/index';
 import NotificationList from '@/components/Notification/List';
@@ -92,18 +92,22 @@ export default {
       ;
     },
     save(character) {
-      character.save()
-        .then((success) => {
-          if (success) {
-            this.notifier.success(this.$t('App.tabs.save.success'));
-          } else {
+      if (!character.$corrupted) {
+        character.save()
+          .then((success) => {
+            if (success) {
+              this.notifier.success(this.$t('App.tabs.save.success'));
+            } else {
+              this.notifier.error(this.$t('App.tabs.save.error'));
+            }
+          })
+          .catch(() => {
             this.notifier.error(this.$t('App.tabs.save.error'));
-          }
-        })
-        .catch(() => {
-          this.notifier.error(this.$t('App.tabs.save.error'));
-        })
-      ;
+          })
+        ;
+      } else {
+        this.notifier.error(this.$t('App.tabs.save.corruptedError'));
+      }
     },
     handleTabChanged(tabIndex) {
       GlobalStore.selectedCharacter = GlobalStore.selectedProfil.characters[tabIndex];

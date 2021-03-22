@@ -1,6 +1,7 @@
 @import '../../assets/scss/utilities.scss';
 
 .MCDGildedLabel {
+  @include font-family('opensans', 700);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -9,8 +10,8 @@
   margin-left: 6px;
   text-transform: uppercase;
   box-shadow: 3px 2px 0 rgba(color(0), .5);
-  @include font-family('opensans', 700);
   color: color(0);
+  user-select: none;
   -webkit-user-select: none;
   background: url('../../../../static/img/UI/GildedBackground.png');
   background-size: 100% 100%;

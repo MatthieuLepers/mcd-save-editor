@@ -24,6 +24,9 @@ export default class Profil {
     return this;
   }
 
+  /**
+   * @return {Profil[]}
+   */
   static getListFromSaveDirectory() {
     return ipcRenderer
       .sendSync('fetch-profil-folders')

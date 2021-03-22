@@ -1,6 +1,7 @@
 @import '../../assets/scss/utilities.scss';
 
 .MCDRarityLabel {
+  @include font-family('opensans', 700);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -8,8 +9,8 @@
   padding: 0 10px;
   text-transform: uppercase;
   box-shadow: 3px 2px 0 rgba(color(0), .5);
-  @include font-family('opensans', 700);
   color: color(0);
+  user-select: none;
   -webkit-user-select: none;
 
   &.unique {

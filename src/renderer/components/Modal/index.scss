@@ -1,6 +1,7 @@
 @import '../../assets/scss/utilities.scss';
 
 .ModalBackDrop {
+  @include transition(opacity .2s);
   position: fixed;
   top: 30px;
   left: 0;
@@ -12,7 +13,6 @@
   justify-content: center;
   background-color: rgba(color(0), .8);
   z-index: 98;
-  @include transition(opacity .2s);
   opacity: 0;
 
   &.is-open {
@@ -26,7 +26,7 @@
     background-color: color(primary);
     color: color(text);
 
-    &:after {
+    &::after {
       content: '';
       background-color: color(f);
       width: 100%;
@@ -36,7 +36,7 @@
       z-index: -1;
     }
 
-    &:before {
+    &::before {
       content: '';
       background-color: color(f);
       width: calc(100% + 10px);
@@ -97,10 +97,10 @@
       .btn:not(:last-of-type) {margin-right: 15px;}
 
       .btn {
+        @include font-family('Open Sans', 700);
         min-width: 100px;
         height: 42px;
         border-radius: 6px;
-        @include font-family('Open Sans', 700);
         background-color: rgba(color(cancel), .5);
       }
 
@@ -122,7 +122,7 @@
       border-radius: 50%;
       background: none;
 
-      &:after, &:before {
+      &::after, &::before {
         content: "";
         display: block;
         background-color: color(text);
@@ -134,8 +134,8 @@
         transform-origin: 50% 50%;
       }
 
-      &:after {transform: rotate(-45deg);}
-      &:before {transform: rotate(45deg);}
+      &::after {transform: rotate(-45deg);}
+      &::before {transform: rotate(45deg);}
     }
   }
 }

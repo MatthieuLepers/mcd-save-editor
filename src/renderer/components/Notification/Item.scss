@@ -25,17 +25,17 @@
 }
 
 .NotificationItem {
+  @include font-family('Open Sans', 600);
   position: relative;
   animation: appear .5s forwards;
   width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  @include font-family('Open Sans', 600);
 
   &:not(:last-of-type) {margin-bottom: 5px;}
 
-  &:before {
+  &::before {
     display: inline-block;
     margin-right: 10px;
   }
@@ -44,7 +44,7 @@
     background-color: color(success);
     color: color(f);
 
-    &:before {
+    &::before {
       @include icon('check');
     }
   }
@@ -53,7 +53,7 @@
     background-color: color(warning);
     color: color(f);
 
-    &:before {
+    &::before {
       @include icon('warning');
     }
   }
@@ -62,7 +62,7 @@
     background-color: color(danger);
     color: color(f);
 
-    &:before {
+    &::before {
       @include icon('close');
     }
   }
