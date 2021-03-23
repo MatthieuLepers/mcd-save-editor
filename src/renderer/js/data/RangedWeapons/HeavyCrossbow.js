@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/HeavyCrossbow.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Arbalète lourde',
       'en-EN': 'Heavy crossbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/DoomCrossbow.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['Punch'],
     i18n: {
       'fr-FR': 'Arbalète de la mort',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/SlayerCrossbow.png',
+    ancientHuntRunes: ['r', 'i'],
     activeEnchants: ['Ricochet'],
     i18n: {
       'fr-FR': 'Arbalète du tueur',

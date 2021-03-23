@@ -113,7 +113,7 @@ function $validateType() {
       (ItemsData[this.data.type].type === 'Armor' && $validateArmorProperties.call(this) && $validateEnchantments.call(this))
       || (ItemsData[this.data.type].type === 'Melee' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
       || (ItemsData[this.data.type].type === 'Ranged' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
-      || (ItemsData[this.data.type].type === 'Artefact' && this.hasKeys('!enchantments', '!armorproperties') && $validateEnchantments.call(this))
+      || (ItemsData[this.data.type].type === 'Artefact' && this.hasKeys('!enchantments', '!netheriteEnchant', '!armorproperties'))
     )
   ;
 }
@@ -136,7 +136,8 @@ export default class ItemValidator extends AbstractValidator {
    * @inheritdoc
    */
   isValid() {
-    return $validateKeys.call(this)
+    return super.isValid()
+      && $validateKeys.call(this)
       && $validateGifted.call(this)
       && $validateEquipmentSlot.call(this)
       && $validateInventoryIndex.call(this)

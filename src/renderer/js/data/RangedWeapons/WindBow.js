@@ -5,6 +5,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/WindBow.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Arc soufflant',
       'en-EN': 'Wind bow',
@@ -16,6 +17,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/EchoOfTheValley.png',
+    ancientHuntRunes: ['r', 'i'],
     activeEnchants: ['Ricochet'],
     i18n: {
       'fr-FR': 'Écho de la vallée',
@@ -28,6 +30,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/BurstGaleBow.png',
+    ancientHuntRunes: ['c', 'i'],
     activeEnchants: ['RollCharge'],
     i18n: {
       'fr-FR': 'Arc explosif des rafales',

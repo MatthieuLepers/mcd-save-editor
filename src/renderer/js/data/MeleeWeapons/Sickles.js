@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Sickles.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Faucilles',
       'en-EN': 'Sickles',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Nightmare\'sBite.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['PoisonedMelee'],
     i18n: {
       'fr-FR': 'Morsure du cauhcemar',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/TheLastLaugh.png',
+    ancientHuntRunes: ['i', 'a'],
     i18n: {
       'fr-FR': 'Le dernier rire',
       'en-EN': 'The last laungh',

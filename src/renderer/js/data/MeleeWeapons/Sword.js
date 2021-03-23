@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Sword.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Épée',
       'en-EN': 'Sword',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/DiamondSword.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Épée en diamant',
       'en-EN': 'Diamond sword',
@@ -24,6 +26,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Hawkbrand.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Hawkbrand',
@@ -36,6 +39,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SinisterSword.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Épée sinistre',

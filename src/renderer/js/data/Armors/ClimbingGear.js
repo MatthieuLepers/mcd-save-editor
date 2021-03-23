@@ -5,6 +5,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/ClimbingGear.png',
+    ancientHuntRunes: ['t'],
     armorproperties: [
       'ItemCooldownDecrease',
       'Heavyweight',
@@ -20,6 +21,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/RuggedClimbingGear.png',
+    ancientHuntRunes: ['t'],
     armorproperties: [
       'SlowResistance',
       'ItemCooldownDecrease',
@@ -36,6 +38,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/GoatGear.png',
+    ancientHuntRunes: ['c', 't'],
     activeEnchants: ['MultiDodge'],
     armorproperties: [
       'ItemCooldownDecrease',

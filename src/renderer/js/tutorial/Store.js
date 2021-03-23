@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import TutorialStepList from '@/js/tutorial/StepList';
+import AppSettings from '../AppSettings';
 
 /**
  * @author Matthieu LEPERS
@@ -12,6 +13,7 @@ class TutorialStore {
   constructor() {
     this.currentStep = 'Welcome';
     this.stepData = TutorialStepList.Welcome;
+    this.show = AppSettings.firstStart;
   }
 
   /**

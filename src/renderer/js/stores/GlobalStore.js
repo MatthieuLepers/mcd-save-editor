@@ -57,7 +57,7 @@ class GlobalStore {
    * @return {Item}
    */
   get selectedItem() {
-    return this.$selectedItem || {};
+    return this.$selectedItem || null;
   }
 
   /**
@@ -89,6 +89,14 @@ class GlobalStore {
       this.selectedItem.$key += 1;
     }
     this.$selectedEnchant = enchant;
+  }
+
+  /**
+   * @param {Object} route
+   * @return {Boolean}
+   */
+  enableTutorialOnRoute(route) {
+    return route.name === 'Home';
   }
 }
 

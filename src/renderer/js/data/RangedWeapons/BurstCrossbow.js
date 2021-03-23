@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/BurstCrossbow.png',
+    ancientHuntRunes: ['r', 'p'],
     i18n: {
       'fr-FR': 'Arbalète explosive',
       'en-EN': 'Burst crossbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/SoulHunterCrossbow.png',
+    ancientHuntRunes: ['o', 'r', 'p'],
     activeEnchants: ['EnigmaResonatorRanged'],
     i18n: {
       'fr-FR': 'Arbalète de chasseur d\'âmes',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/CorruptedCrossbow.png',
+    ancientHuntRunes: ['c', 'r', 'p'],
     activeEnchants: ['DynamoRanged'],
     i18n: {
       'fr-FR': 'Arbalète corrompue',

@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/ScaleMail.png',
+    ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'MeleeDamageBoost',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/HighlandArmor.png',
+    ancientHuntRunes: ['c', 'i', 't'],
     activeEnchants: ['Swiftfooted'],
     armorproperties: [
       'SuperbDamageAbsorption',

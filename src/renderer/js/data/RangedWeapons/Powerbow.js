@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/PowerBow.png',
+    ancientHuntRunes: ['r', 'i'],
     i18n: {
       'fr-FR': 'Arc de puissance',
       'en-EN': 'Power bow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ElitePowerBow.png',
+    ancientHuntRunes: ['r', 'i'],
     activeEnchants: ['Power'],
     i18n: {
       'fr-FR': 'Arc de puissance d\'élite',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Sabrewing.png',
+    ancientHuntRunes: ['s', 'r', 'i'],
     activeEnchants: ['RadianceRanged'],
     i18n: {
       'fr-FR': 'Colibri',

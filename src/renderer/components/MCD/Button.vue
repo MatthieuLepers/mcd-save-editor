@@ -1,5 +1,5 @@
 <template>
-  <button :class="`MCDButton MCDButton--${variant} MCDButton--${size}`" :title="title" @click="$emit('click')">
+  <button :disabled="disabled" :class="`MCDButton MCDButton--${variant} MCDButton--${size}`" :title="title" @click="$emit('click')">
     <i :class="`icon-${icon}`" v-if="icon"></i>
     <span v-if="label">{{ label }}</span>
   </button>
@@ -14,6 +14,7 @@ export default {
     title: { type: String, default: null },
     variant: { type: String, default: 'light' },
     size: { type: String, default: 'sm' },
+    disabled: { type: Boolean, default: false },
   },
 };
 </script>

@@ -4,6 +4,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/TotemOfShielding.png',
+    ancientHuntRunes: ['s', 't'],
     i18n: {
       'fr-FR': 'Totem de blindage',
       'en-EN': 'Totem of shielding',

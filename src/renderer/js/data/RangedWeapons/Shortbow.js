@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Shortbow.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Arc court',
       'en-EN': 'Shortbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/PurpleStorm.png',
+    ancientHuntRunes: ['c', 'r'],
     activeEnchants: ['RapidFire'],
     i18n: {
       'fr-FR': 'Arc violet',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/MechanicalShortbow.png',
+    ancientHuntRunes: ['c', 'r'],
     activeEnchants: ['Accelerating'],
     i18n: {
       'fr-FR': 'Petit arc mécanique',
@@ -36,6 +39,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/LoveSpellBow.png',
+    ancientHuntRunes: ['s', 'r'],
     activeEnchants: ['RadianceRanged'],
     i18n: {
       'fr-FR': 'Arc de charme d\'amour',

@@ -18,7 +18,6 @@
     display: flex;
     flex-wrap: wrap;
     background-image: url('../../../../static/img/UI/parchment.png');
-    // background-image: url('../static/img/UI/parchment.png');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -39,8 +38,8 @@
   }
 
   &Left {
-    width: 60%;
     @include font-size(14);
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,7 +72,7 @@
           background-color: #F3E2C9;
           position: relative;
 
-          &:after {
+          &::after {
             content: '';
             border-left: 17px solid #F3E2C9;
             border-top: 17px solid transparent;
@@ -83,7 +82,7 @@
             left: 100%;
           }
 
-          .tier:before {background-color: #428D4F;}
+          .tier::before {background-color: #428D4F;}
 
           input[type="checkbox"]+label {
             color: color(0);
@@ -107,7 +106,7 @@
       margin-right: 10px;
       position: relative;
 
-      &:before {
+      &::before {
         content: "";
         width: 20px;
         height: 20px;
@@ -123,11 +122,11 @@
       }
 
       span {
+        @include font-family('open-sans', 700, true);
+        @include font-size(13);
         position: relative;
         z-index: 1;
         letter-spacing: 1px;
-        @include font-family('open-sans', 700, true);
-        @include font-size(13);
       }
     }
 

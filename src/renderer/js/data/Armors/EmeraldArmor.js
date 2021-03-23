@@ -5,6 +5,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/EmeraldGear.png',
+    ancientHuntRunes: ['a'],
     activeEnchants: ['EmeraldDivination'],
     armorproperties: [
       'MeleeAttackSpeedBoost',
@@ -20,6 +21,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/OpulentArmor.png',
+    ancientHuntRunes: ['t', 'a'],
     activeEnchants: ['EmeraldDivination'],
     armorproperties: [
       'MeleeAttackSpeedBoost',
@@ -35,6 +37,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/GildedGlory.png',
+    ancientHuntRunes: ['i', 'a'],
     activeEnchants: ['DeathBarter', 'EmeraldDivination'],
     armorproperties: [
       'MeleeAttackSpeedBoost',

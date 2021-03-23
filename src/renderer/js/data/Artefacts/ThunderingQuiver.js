@@ -5,6 +5,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/ThunderingQuiver.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Carquois foudroyant',
       'en-EN': 'Thundering quiver',

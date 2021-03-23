@@ -5,6 +5,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/TwistingVineBow.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Arc en lianes tortueuses',
       'en-EN': 'Twisting vine bow',
@@ -16,6 +17,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/WeepingVineBow.png',
+    ancientHuntRunes: ['c', 'r'],
     activeEnchants: ['RollCharge'],
     i18n: {
       'fr-FR': 'Arc de lianes pleureuses',

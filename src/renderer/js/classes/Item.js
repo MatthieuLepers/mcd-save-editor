@@ -1,5 +1,6 @@
 import Enchantment from './Enchantment';
 import ArmorProperty from './ArmorProperty';
+import RuneList from './RuneList';
 
 import ItemTypeEnum from './enums/ItemTypeEnum';
 import RarityEnum from './enums/RarityEnum';
@@ -232,6 +233,13 @@ export default class Item {
     return (this.$data.armorproperties || [])
       .map(armorPropertyData => new ArmorProperty(armorPropertyData))
     ;
+  }
+
+  /**
+   * @return {RuneList}
+   */
+  get runeList() {
+    return new RuneList(this.itemData.ancientHuntRunes);
   }
 
   /**

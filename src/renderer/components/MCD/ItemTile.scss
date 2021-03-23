@@ -7,7 +7,7 @@
   background-color: color(dark);
   position: relative;
 
-  &.new:before {
+  &.new::before {
     content: '';
     position: absolute;
     top: -2px;
@@ -84,7 +84,7 @@
     height: 86px;
     margin: 2px;
 
-    &:after {
+    &::after {
       content: '';
       width: calc(100% + 4px);
       height: calc(100% + 4px);
@@ -114,7 +114,7 @@
     height: 86px;
     margin: 2px;
 
-    &:after {
+    &::after {
       content: '';
       width: calc(100% + 4px);
       height: calc(100% + 4px);

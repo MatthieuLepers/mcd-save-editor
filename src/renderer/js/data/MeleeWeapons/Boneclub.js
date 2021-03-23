@@ -5,6 +5,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Boneclub.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Gourdin en os',
       'en-EN': 'Boneclub',
@@ -16,6 +17,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/BoneCudgel.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['BaneOfIllagers'],
     i18n: {
       'fr-FR': 'Massue en os',

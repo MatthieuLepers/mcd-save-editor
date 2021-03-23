@@ -12,7 +12,7 @@
       padding: 3px 5px;
       cursor: pointer;
 
-      &:after, &:before {
+      &::after, &::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -20,14 +20,14 @@
         pointer-events: none;
       }
 
-      &:before {
+      &::before {
         border-left: 3px solid color(f);
         border-right: 3px solid color(f);
         top: 0;
         left: -3px;
       }
   
-      &:after {
+      &::after {
         border-top: 3px solid color(f);
         border-bottom: 3px solid color(f);
         top: -3px;
@@ -51,7 +51,7 @@
     background: color(primary);
     width: 300px;
 
-    &:after, &:before {
+    &::after, &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -59,14 +59,14 @@
       pointer-events: none;
     }
 
-    &:before {
+    &::before {
       border-left: 3px solid color(f);
       border-right: 3px solid color(f);
       top: 0;
       left: -3px;
     }
 
-    &:after {
+    &::after {
       border-top: 3px solid color(f);
       border-bottom: 3px solid color(f);
       top: -3px;
@@ -82,13 +82,13 @@
   }
 
   &Choice {
+    @include transition(background-color .3s ease);
     display: flex;
     align-items: center;
     width: 100%;
     cursor: pointer;
     margin: 2px 0;
     padding: 5px;
-    @include transition(background-color .3s ease);
 
     &:hover, &.selected {
       background-color: lighten(color(primary), 11.76);
@@ -104,12 +104,11 @@
     }
 
     &Name {
+      @include font-size(12);
       display: flex;
       flex-direction: column;
       width: 100%;
       padding-left: 5px;
-
-      @include font-size(12);
 
       strong {font-weight: 400;}
 
@@ -125,21 +124,21 @@
     margin: 10px 0 5px;
 
     input {
+      @include font-size(14);
+      @include font-family('open-sans');
       width: calc(100% - 20px);
       margin: 0 10px;
       background-color: lighten(color(primary), 11.76);
       padding: 3px 20px 3px 5px;
       color: color(f);
-      @include font-size(14);
-      @include font-family('open-sans');
       border: 1px solid lighten(color(primary), 8.76)
     }
 
     i {
+      @include font-size(12);
       position: absolute;
       top: calc(50% - 7px);
       right: 20px;
-      @include font-size(12);
       color: color(f);
       pointer-events: none;
     }

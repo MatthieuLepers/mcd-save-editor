@@ -4,6 +4,7 @@ import Beekeeper from './ArmorProperties/Beekeeper';
 import DodgeCooldownIncrease from './ArmorProperties/DodgeCooldownIncrease';
 import DodgeGhostForm from './ArmorProperties/DodgeGhostForm';
 import DodgeInvulnerability from './ArmorProperties/DodgeInvulnerability';
+import DodgeRoot from './ArmorProperties/DodgeRoot';
 import DodgeSpeedIncrease from './ArmorProperties/DodgeSpeedIncrease';
 import EmeraldShield from './ArmorProperties/EmeraldShield';
 import Heavyweight from './ArmorProperties/Heavyweight';
@@ -34,6 +35,7 @@ export default {
   DodgeCooldownIncrease,
   DodgeGhostForm,
   DodgeInvulnerability,
+  DodgeRoot,
   DodgeSpeedIncrease,
   EmeraldShield,
   Heavyweight,

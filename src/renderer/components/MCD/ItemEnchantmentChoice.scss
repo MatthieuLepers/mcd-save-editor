@@ -7,7 +7,7 @@
   width: 33.3333%;
   position: relative;
 
-  &:after {
+  &::after {
     content: '';
     border: 2px solid #D3A3E5;
     position: absolute;
@@ -21,7 +21,7 @@
     opacity: .8;
   }
 
-  &:before {
+  &::before {
     @include icon('enchanted');
     position: absolute;
     color: #E4C3EF;
@@ -72,10 +72,10 @@
     position: relative;
 
     &Info {
+      @include font-family('open-sans', 700);
+      @include font-size(12);
       width: 100%;
       padding-top: 80px;
-      @include font-size(12);
-      @include font-family('open-sans', 700);
 
       .EmptySlot, .EnchName, .Rarity {
         display: block;
@@ -99,11 +99,11 @@
     }
 
     &Tier {
+      @include font-family('open-sans', 700, true);
+      @include font-size(11);
       position: absolute;
       text-transform: uppercase;
       letter-spacing: 1px;
-      @include font-family('open-sans', 700, true);
-      @include font-size(11);
       z-index: 2;
       right: calc(50% - 26px);
       top: -1px;
@@ -113,7 +113,7 @@
       justify-content: center;
       align-items: center;
 
-      &:before {
+      &::before {
         content: '';
         background-color: #8a41b1;
         transform: rotate(45deg);
@@ -151,7 +151,7 @@
       left: 1px;
     }
 
-    &.Common:before, &.Powerful:before {
+    &.Common::before, &.Powerful::before {
       content: '';
       width: 74px;
       height: 74px;
@@ -164,10 +164,8 @@
       background-size: cover;
     }
 
-    // &.Common:before {background-image: url('static/img/UI/SelectedEnchant_Common.png');}
-    &.Common:before {background-image: url('../../../../static/img/UI/SelectedEnchant_Common.png');}
+    &.Common::before {background-image: url('../../../../static/img/UI/SelectedEnchant_Common.png');}
 
-    // &.Powerful:before {background-image: url('static/img/UI/SelectedEnchant_Powerful.png');}
-    &.Powerful:before {background-image: url('../../../../static/img/UI/SelectedEnchant_Powerful.png');}
+    &.Powerful::before {background-image: url('../../../../static/img/UI/SelectedEnchant_Powerful.png');}
   }
 }

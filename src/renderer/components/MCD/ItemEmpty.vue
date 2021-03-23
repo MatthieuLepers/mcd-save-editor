@@ -28,7 +28,7 @@ export default {
     handleDragOver(e) {
       DragDropStore.setDragTo({ type: this.itemType, slot: this.hotbarSlot });
 
-      if (DragDropStore.from.itemData.type === this.itemType) {
+      if (DragDropStore.from && DragDropStore.from.itemData.type === this.itemType) {
         e.preventDefault();
       }
     },

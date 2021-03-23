@@ -10,8 +10,8 @@
   width: calc(100% - 20px);
 
   &Title {
-    @include font-size(18);
     @include font-family('open-sans', 700);
+    @include font-size(18);
     text-align: center;
     width: 100%;
   }

@@ -19,10 +19,11 @@
       :rarity="item.$data.rarity"
       :item="item.itemData.image || null"
       :isNew="item.$data.markedNew"
-      :isEvent="!!item.itemData.event"
+      :isEvent="!!item.itemData.event && !showRuneList"
       @dragstart.stop="handleDragStart"
       @dragend.stop="handleDragEnd"
     />
+    <MCDRuneList :list="item.runeList" v-if="showRuneList" />
   </div>
 </template>
 
@@ -33,12 +34,14 @@ import DragDropStore from '@/js/stores/DragDropStore';
 import TutorialStore from '@/js/tutorial/Store';
 
 import MCDItemTile from './ItemTile';
+import MCDRuneList from './RuneList';
 
 export default {
   name: 'MCDItem',
-  components: { MCDItemTile },
+  components: { MCDItemTile, MCDRuneList },
   props: {
     item: { type: Item, required: true },
+    showRuneList: { type: Boolean, default: false },
     noDragEvent: { type: Boolean, default: false },
   },
   data() {
@@ -49,6 +52,9 @@ export default {
   },
   methods: {
     selectItem(e) {
+      if (this.showRuneList) {
+        return;
+      }
       GlobalStore.selectedItem = this.item;
       if (this.item.$data.markedNew) {
         delete this.item.$data.markedNew;

@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Glaive.png',
+    ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Hallebarde',
       'en-EN': 'Glaive',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/GraveBane.png',
+    ancientHuntRunes: ['s', 'i'],
     i18n: {
       'fr-FR': 'Fléau funéraire',
       'en-EN': 'Grave bane',
@@ -24,6 +26,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/VenomGlaive.png',
+    ancientHuntRunes: ['s', 'a'],
     activeEnchants: ['PoisonedMelee'],
     i18n: {
       'fr-FR': 'Hallebarde venimeuse',

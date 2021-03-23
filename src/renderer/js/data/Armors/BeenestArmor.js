@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/BeeNest.png',
+    ancientHuntRunes: ['u', 'p', 't'],
     armorproperties: [
       'AreaHeal',
       'Beekeeper',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/BeeHiveArmor.png',
+    ancientHuntRunes: ['u', 'p'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'Beekeeper',

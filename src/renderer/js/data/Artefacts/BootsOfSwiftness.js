@@ -4,6 +4,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/BootsOfSwiftness.png',
+    ancientHuntRunes: ['c'],
     i18n: {
       'fr-FR': 'Bottes de célérité',
       'en-EN': 'Boots of swiftness',

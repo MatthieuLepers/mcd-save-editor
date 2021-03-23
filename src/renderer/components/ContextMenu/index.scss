@@ -9,8 +9,19 @@
   position: absolute;
   z-index: 99;
 
-  &.top {top: -8px;}
-  &.right {left: 100%;}
-  &.bottom {top: 100%;}
-  &.left {left: 0;}
+  &.top {
+    top: -8px;
+  }
+
+  &.right {
+    left: 100%;
+  }
+
+  &.bottom {
+    top: 100%;
+  }
+
+  &.left {
+    left: 0;
+  }
 }

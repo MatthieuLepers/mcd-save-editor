@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/MercenaryArmor.png',
+    ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'AllyDamageBoost',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/RenegadeArmor.png',
+    ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
       'AllyDamageBoost',
@@ -34,6 +36,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/HungryHorror.png',
+    ancientHuntRunes: ['c', 's', 't'],
     armorproperties: [
       'MeleeAttackSpeedBoost',
       'SuperbDamageAbsorption',

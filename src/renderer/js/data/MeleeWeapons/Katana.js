@@ -4,6 +4,7 @@ export default {
     type: 'Melee',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Katana.png',
+    ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Katana',
       'en-EN': 'Katana',
@@ -14,6 +15,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Master\'sKatana.png',
+    ancientHuntRunes: ['i'],
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Katana du maître',
@@ -25,6 +27,7 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/DarkKatana.png',
+    ancientHuntRunes: ['i', 'a'],
     i18n: {
       'fr-FR': 'Katana sombre',
       'en-EN': 'Dark katana',

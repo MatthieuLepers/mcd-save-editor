@@ -3,11 +3,12 @@
 .MCDItem {
   cursor: pointer;
   position: relative;
+  height: fit-content;
 
   &Empty {
     cursor: auto;
 
-    &:after {
+    &::after {
       content: "+";
       display: flex;
       position: absolute;
@@ -30,7 +31,7 @@
       &:before, &:after {content: none;}
     }
 
-    &:before {
+    &::before {
       content: "";
       background-color: color(f);
       width: calc(100% + 6px);
@@ -41,7 +42,7 @@
       z-index: -1;
     }
 
-    &:after {
+    &::after {
       content: "";
       background-color: color(f);
       width: 100%;
@@ -69,20 +70,20 @@
   }
 
   &SoulGathering {
+    @include font-size(14);
     position: absolute;
     top: 6px;
     right: 5px;
-    @include font-size(14);
     z-index: 5;
   }
 
   &Level {
+    @include font-family('opensans', 700);
+    @include font-size(14);
     position: absolute;
     bottom: 3px;
     right: 3px;
     z-index: 5;
-    @include font-family('opensans', 700);
-    @include font-size(14);
     padding: 0 3px;
 
     i {
@@ -92,21 +93,21 @@
   }
 
   &Enchanted {
+    @include font-family('open-sans', 700);
+    @include font-size(14);
     position: absolute;
     top: 5px;
     left: 7px;
     z-index: 5;
     text-shadow: 1px 1px 5px color(0);
     color: color(f);
-    @include font-family('open-sans', 700);
-    @include font-size(14);
 
     i {
-      color: #D372F4;
       @include font-size(14);
+      color: #D372F4;
     }
 
-    &+.MCDItemTile .MCDItemTileInnerBox:after {
+    &+.MCDItemTile .MCDItemTileInnerBox::after {
       content: '';
       background: radial-gradient(circle at 50%, rgba(#D372F4, .4), transparent 60%);
       width: 100%;
@@ -114,6 +115,21 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+  }
+
+  .MCDRuneList {
+    &Container {
+      position: absolute;
+      left: -1px;
+      bottom: -1px;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+    }
+
+    &--ipair .MCDRuneListContainer img:first-child {
+      margin-right: 18px;
     }
   }
 }

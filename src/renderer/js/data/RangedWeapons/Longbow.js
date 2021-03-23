@@ -4,6 +4,7 @@ export default {
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Longbow.png',
+    ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Arc long',
       'en-EN': 'Longbow',
@@ -14,6 +15,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/GuardianBow.png',
+    ancientHuntRunes: ['s', 'r'],
     activeEnchants: ['Supercharge'],
     i18n: {
       'fr-FR': 'Arc de garde',
@@ -25,6 +27,7 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/RedSnake.png',
+    ancientHuntRunes: ['r', 'a'],
     activeEnchants: ['FuseShot'],
     i18n: {
       'fr-FR': 'Serpent rouge',

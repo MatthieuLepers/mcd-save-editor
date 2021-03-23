@@ -21,10 +21,15 @@ export default {
         label: 'Sauvegarder',
         success: 'Sauvegarde réussi !',
         error: 'La sauvegarde a échouée.',
+        corruptedError: 'Sauvegarde impossible, les données sont corrompues, essayez de recharger.',
       },
     },
     loadingProfils: 'Chargement des profils...',
     noProfilFound: 'Aucun profil trouvé.',
+    Navigation: {
+      inventory: 'Inventaire',
+      ancientHunts: 'Chasses anciennes',
+    },
   },
   TitleBarMenu: {
     fileMenu: {
@@ -50,9 +55,37 @@ export default {
   },
   MCD: {
     Game: {
+      AncientMobs: GlobalI18N.AncientMobsData('fr-FR'),
       ArmorProperties: GlobalI18N.ArmorProperties('fr-FR'),
       Enchants: GlobalI18N.Enchants('fr-FR'),
       Items: GlobalI18N.Items('fr-FR'),
+    },
+    AncientHunts: {
+      title: 'Chasses anciennes',
+      invocationRunes: 'L\'invocation requiert :',
+      residualRunes: 'Rune{pluralize} en surplus :',
+      button: 'Ajouter les offrandes trouvées dans mon inventaire',
+      refresh: 'Rafraîchir',
+      reset: 'Réinitialiser',
+      successMessage: '{count} objet{pluralize} ajouté{pluralize} à votre inventaire.',
+      errorMessage: 'Ajout impossible, votre inventaire ne contiens pas assès de place libre.',
+    },
+    AncientMobSelect: {
+      title: 'Choisir des anciennes créatures',
+      search: 'Rechercher...',
+    },
+    CharacterCorruptionDetection: {
+      title: 'Oups !',
+      contentBackupAvailable: [
+        'Les données de ce personnage sont corrompues, la dernière backup valide date du {date}.',
+        'Voulez-vous la réstaurée ?',
+      ],
+      contentNoBackupAvailable: [
+        'Les données de ce personnage sont corrompues mais il n\'y a aucune backup disponible.',
+        'Vous pouvez essayer de recharger l\'onglet.',
+      ],
+      okLabel: 'Restaurer',
+      dateFormat: 'dS F Y - Hhi',
     },
     LevelBadge: {
       level: 'Niveau',
@@ -134,5 +167,11 @@ export default {
         json: 'Fichier JSON',
       },
     },
+  },
+  Date: {
+    days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+    daySuffix: ['er'],
+    defaultDaySuffix: '',
+    months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   },
 };

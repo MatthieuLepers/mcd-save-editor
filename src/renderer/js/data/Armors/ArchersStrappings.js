@@ -4,6 +4,7 @@ export default {
     type: 'Armor',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/Hunter\'sArmor.png',
+    ancientHuntRunes: ['r'],
     armorproperties: [
       'IncreasedArrowBundleSize',
       'RangedDamageBoost',
@@ -18,6 +19,7 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/Archer\'sArmor.png',
+    ancientHuntRunes: ['c', 'r'],
     armorproperties: [
       'IncreasedArrowBundleSize',
       'RangedDamageBoost',

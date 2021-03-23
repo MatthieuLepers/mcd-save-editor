@@ -1,5 +1,7 @@
+import { ipcRenderer } from 'electron';
 import Currencies from './Currencies';
 import Inventory from './Inventory';
+import CharacterBackup from './CharacterBackup';
 
 import GlobalStore from '../stores/GlobalStore';
 import EncryptionService from '../services/EncryptionService';
@@ -17,23 +19,31 @@ export default class Character {
    */
   constructor(data, filePath) {
     this.$data = data;
+    this.$corrupted = CharacterUtils.isDataCorrupted(this.$data);
     this.$filePath = filePath;
-    this.currencies = new Currencies(this.$data.currency);
-    this.inventory = new Inventory(this.$data.items);
+    this.currencies = new Currencies(!this.$corrupted ? this.$data.currency : []);
+    this.inventory = new Inventory(!this.$corrupted ? this.$data.items : []);
   }
 
   /**
-   * @return {String}
+   * @return {tring}
    */
   get id() {
-    return this.$data.playerId;
+    return this.$filePath.replace('.dat', '').split('/').pop();
+  }
+
+  /**
+   * @return {tring}
+   */
+  get profilId() {
+    return this.$filePath.replace('.dat', '').split('/').shift();
   }
 
   /**
    * @return {String}
    */
   get uuid() {
-    return this.id.replace(/-/, '');
+    return this.$data.playerId.replace(/-/, '');
   }
 
   /**
@@ -61,7 +71,7 @@ export default class Character {
    * @return {Number}
    */
   get enchantmentPoints() {
-    return this.level - this.enchantmentPointsInvested;
+    return this.level - this.enchantmentPointsInvested - 1;
   }
 
   /**
@@ -73,6 +83,7 @@ export default class Character {
 
   async reload() {
     this.$data = await EncryptionService.decrypt(this.$filePath, true);
+    this.$corrupted = false;
     this.currencies = new Currencies(this.$data.currency);
     this.inventory = new Inventory(this.$data.items);
     GlobalStore.selectedCharacter = this;
@@ -86,5 +97,16 @@ export default class Character {
   static async loadFromFile(filePath, force = false) {
     const data = await EncryptionService.decrypt(filePath, force);
     return new Character(data, filePath);
+  }
+
+  /**
+   * @return {CharacterBackup[]}
+   */
+  getAvailableBackup() {
+    return ipcRenderer
+      .sendSync('fetch-character-backups', this.$filePath)
+      .map(filePath => new CharacterBackup({ filePath, profilId: this.profilId, characterId: this.id }))
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    ;
   }
 }

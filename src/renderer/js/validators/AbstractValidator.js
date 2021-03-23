@@ -12,7 +12,7 @@ export default class AbstractValidator {
       throw new Error('Cannot instanciate abstract class "AbstractValidator"');
     }
     this.data = data;
-    this.$keys = (typeof this.data === 'object' ? Object.keys(this.data) : []);
+    this.$keys = (typeof this.data === 'object' && this.data ? Object.keys(this.data) : []);
   }
 
   /**
@@ -32,6 +32,6 @@ export default class AbstractValidator {
    * @return {Boolean}
    */
   isValid() {
-    throw new Error('You must implement the "isValid" method.');
+    return !!this.data;
   }
 }

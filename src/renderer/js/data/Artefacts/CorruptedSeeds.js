@@ -5,6 +5,7 @@ export default {
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Artefacts/CorruptedSeeds.png',
+    ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Graines corrompues',
       'en-EN': 'Corrupted seeds',
