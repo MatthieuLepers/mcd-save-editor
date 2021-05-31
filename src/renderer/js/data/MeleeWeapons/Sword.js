@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Sword.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 5.8, speed: 3.3, area: 3.1 },
     i18n: {
       'fr-FR': 'Épée',
       'en-EN': 'Sword',
@@ -16,6 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/DiamondSword.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 5.8, speed: 3.3, area: 3.1 },
     i18n: {
       'fr-FR': 'Épée en diamant',
       'en-EN': 'Diamond sword',
@@ -27,6 +29,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Hawkbrand.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 5.8, speed: 3.3, area: 3.1 },
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Hawkbrand',
@@ -40,6 +43,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SinisterSword.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 5.8, speed: 3.3, area: 3.1 },
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Épée sinistre',

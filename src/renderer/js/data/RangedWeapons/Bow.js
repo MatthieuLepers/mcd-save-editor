@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Bow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 4.2, speed: 3.7, ammo: 5.3 },
     i18n: {
       'fr-FR': 'Arc',
       'en-EN': 'Bow',
@@ -16,6 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Bonebow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 4.2, speed: 3.7, ammo: 6.6 },
     activeEnchants: ['Growing'],
     i18n: {
       'fr-FR': 'Arc d\'os',
@@ -28,6 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TwinBow.png',
     ancientHuntRunes: ['s', 'r'],
+    stats: { power: 4.2, speed: 3.7, ammo: 6.6 },
     activeEnchants: ['BonusShot'],
     i18n: {
       'fr-FR': 'Arc jumeaux',
@@ -41,6 +44,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/HauntedBow.png',
     ancientHuntRunes: ['s', 'i'],
+    stats: { power: 4.2, speed: 3.7, ammo: 6.6 },
     activeEnchants: ['BonusShot'],
     i18n: {
       'fr-FR': 'Arc hanté',

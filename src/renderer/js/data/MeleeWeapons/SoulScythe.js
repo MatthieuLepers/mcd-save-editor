@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/SoulScythe.png',
     ancientHuntRunes: ['o'],
+    stats: { power: 7.5, speed: 1.8, area: 9 },
     soulgathering: true,
     i18n: {
       'fr-FR': 'Faux des âmes',
@@ -17,6 +18,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/JailorsScythe.png',
     ancientHuntRunes: ['o', 'a'],
+    stats: { power: 7.5, speed: 1.8, area: 9 },
     soulgathering: true,
     i18n: {
       'fr-FR': 'Faux du geôlier',
@@ -29,6 +31,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FrostScythe.png',
     ancientHuntRunes: ['o', 's'],
+    stats: { power: 7.5, speed: 1.8, area: 9 },
     activeEnchants: ['Freezing'],
     soulgathering: true,
     i18n: {

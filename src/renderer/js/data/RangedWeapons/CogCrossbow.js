@@ -6,6 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/CogCrossbow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 12.3, speed: 12.2, ammo: 2.9 },
     i18n: {
       'fr-FR': 'Arbalète mécanique',
       'en-EN': 'Cog crossbow',
@@ -18,6 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/PrideOfThePiglins.png',
     ancientHuntRunes: ['r', 'i'],
+    stats: { power: 12.3, speed: 12.2, ammo: 2.9 },
     activeEnchants: ['Piercing'],
     i18n: {
       'fr-FR': 'Fierté des piglins',

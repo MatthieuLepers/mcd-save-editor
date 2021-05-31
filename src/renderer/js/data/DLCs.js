@@ -15,4 +15,8 @@ export default {
     name: 'Flames of the Nether',
     releasedAt: new Date('2021/02/24'),
   },
+  'Hidden Depths': {
+    name: 'Hidden Depths',
+    releasedAt: new Date('2021/05/26'),
+  },
 };

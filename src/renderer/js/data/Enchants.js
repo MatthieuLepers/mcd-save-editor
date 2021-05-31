@@ -15,10 +15,12 @@ import Exploding from './Enchants/Melee/Exploding';
 import FireAspect from './Enchants/Melee/FireAspect';
 import Freezing from './Enchants/Melee/Freezing';
 import GravityMelee from './Enchants/Melee/GravityMelee';
+import GuardingStrike from './Enchants/Melee/GuardingStrike';
 import Leeching from './Enchants/Melee/Leeching';
 import Looting from './Enchants/Melee/Looting';
 import PainCycle from './Enchants/Melee/PainCycle';
 import PoisonedMelee from './Enchants/Melee/PoisonedMelee';
+import PotionThirstMelee from './Enchants/Melee/PotionThirstMelee';
 import Prospector from './Enchants/Melee/Prospector';
 import RadianceMelee from './Enchants/Melee/RadianceMelee';
 import Rampaging from './Enchants/Melee/Rampaging';
@@ -48,11 +50,13 @@ import Explorer from './Enchants/Armor/Explorer';
 import FinalShout from './Enchants/Armor/FinalShout';
 import FireFocus from './Enchants/Armor/FireFocus';
 import FireTrail from './Enchants/Armor/FireTrail';
+import Flee from './Enchants/Armor/Flee';
 import FoodReserves from './Enchants/Armor/FoodReserves';
 import Frenzied from './Enchants/Armor/Frenzied';
 import GravityPulse from './Enchants/Armor/GravityPulse';
 import HealthSynergy from './Enchants/Armor/HealthSynergy';
 import LightningFocus from './Enchants/Armor/LightningFocus';
+import LuckOfTheSea from './Enchants/Armor/LuckOfTheSea';
 import MultiDodge from './Enchants/Armor/MultiDodge';
 import PoisonFocus from './Enchants/Armor/PoisonFocus';
 import PotionFortification from './Enchants/Armor/PotionFortification';
@@ -81,9 +85,11 @@ import FuseShot from './Enchants/Ranged/FuseShot';
 import Gravity from './Enchants/Ranged/Gravity';
 import Growing from './Enchants/Ranged/Growing';
 import Infinity from './Enchants/Ranged/Infinity';
+import MultiCharge from './Enchants/Ranged/MultiCharge';
 import MultiShot from './Enchants/Ranged/MultiShot';
 import Piercing from './Enchants/Ranged/Piercing';
 import PoisonedRanged from './Enchants/Ranged/PoisonedRanged';
+import PotionThirstRanged from './Enchants/Ranged/PotionThirstRanged';
 import Power from './Enchants/Ranged/Power';
 import Punch from './Enchants/Ranged/Punch';
 import RadianceRanged from './Enchants/Ranged/RadianceRanged';
@@ -116,10 +122,12 @@ export default {
   FireAspect,
   Freezing,
   GravityMelee,
+  GuardingStrike,
   Leeching,
   Looting,
   PainCycle,
   PoisonedMelee,
+  PotionThirstMelee,
   Prospector,
   RadianceMelee,
   Rampaging,
@@ -150,11 +158,13 @@ export default {
   FinalShout,
   FireFocus,
   FireTrail,
+  Flee,
   FoodReserves,
   Frenzied,
   GravityPulse,
   HealthSynergy,
   LightningFocus,
+  LuckOfTheSea,
   MultiDodge,
   PoisonFocus,
   PotionFortification,
@@ -184,9 +194,11 @@ export default {
   Gravity,
   Growing,
   Infinity,
+  MultiCharge,
   MultiShot,
   Piercing,
   PoisonedRanged,
+  PotionThirstRanged,
   Power,
   Punch,
   RadianceRanged,

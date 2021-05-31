@@ -19,10 +19,10 @@ export default class Character {
    */
   constructor(data, filePath) {
     this.$data = data;
-    this.$corrupted = CharacterUtils.isDataCorrupted(this.$data);
+    this.$corrupted = CharacterUtils.getDataCorrupted(this.$data);
     this.$filePath = filePath;
-    this.currencies = new Currencies(!this.$corrupted ? this.$data.currency : []);
-    this.inventory = new Inventory(!this.$corrupted ? this.$data.items : []);
+    this.currencies = new Currencies(!this.$corrupted.length ? this.$data.currency : []);
+    this.inventory = new Inventory(!this.$corrupted.length ? this.$data.items : []);
   }
 
   /**
@@ -83,7 +83,7 @@ export default class Character {
 
   async reload() {
     this.$data = await EncryptionService.decrypt(this.$filePath, true);
-    this.$corrupted = false;
+    this.$corrupted = [];
     this.currencies = new Currencies(this.$data.currency);
     this.inventory = new Inventory(this.$data.items);
     GlobalStore.selectedCharacter = this;

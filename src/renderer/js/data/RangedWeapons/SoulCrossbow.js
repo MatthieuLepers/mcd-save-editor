@@ -5,10 +5,11 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/SoulCrossbow.png',
     ancientHuntRunes: ['o'],
+    stats: { power: 5.3, speed: 2.3, ammo: 2.9 },
     soulgathering: true,
     i18n: {
       'fr-FR': 'Arblète des âmes',
-      'en-En': 'Soul crossbow',
+      'en-EN': 'Soul crossbow',
     },
   },
   SoulCrossbow_Unique1: {
@@ -17,11 +18,12 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/FeralSoulCrossbow.png',
     ancientHuntRunes: ['o'],
+    stats: { power: 5.3, speed: 2.3, ammo: 3.9 },
     activeEnchants: ['EnigmaResonatorRanged'],
     soulgathering: true,
     i18n: {
       'fr-FR': 'Arbalète sauvage des âmes',
-      'en-En': 'Feral soul crossbow',
+      'en-EN': 'Feral soul crossbow',
     },
   },
   SoulCrossbow_Unique2: {
@@ -30,11 +32,12 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Voidcaller.png',
     ancientHuntRunes: ['o', 'a'],
+    stats: { power: 5.3, speed: 2.3, ammo: 2.9 },
     activeEnchants: ['Gravity'],
     soulgathering: true,
     i18n: {
       'fr-FR': 'Crystal de vide',
-      'en-En': 'Voidcaller',
+      'en-EN': 'Voidcaller',
     },
   },
 };

@@ -45,4 +45,14 @@ export default class EnchantmentValidator extends AbstractValidator {
       && $validateRarity.call(this)
     ;
   }
+
+  /**
+   * @return {Boolean}
+   */
+  seemsValid() {
+    return super.isValid()
+      && $validateKeys.call(this)
+      && $validateRarity.call(this)
+    ;
+  }
 }

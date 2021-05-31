@@ -23,6 +23,8 @@ import SnowArmor from './Armors/SnowArmor';
 import SoulRobe from './Armors/SoulRobe';
 import SpelunkersArmor from './Armors/SpelunkersArmor';
 import SproutArmor from './Armors/SproutArmor';
+import SquidArmor from './Armors/SquidArmor';
+import TurtleArmor from './Armors/TurtleArmor';
 import WolfArmor from './Armors/WolfArmor';
 
 export default {
@@ -50,5 +52,7 @@ export default {
   ...SoulRobe,
   ...SpelunkersArmor,
   ...SproutArmor,
+  ...SquidArmor,
+  ...TurtleArmor,
   ...WolfArmor,
 };

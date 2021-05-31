@@ -6,6 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/BrokenSawblade.png',
     ancientHuntRunes: ['u', 't'],
+    stats: { power: 3.9, speed: 8.5, area: 1.5 },
     i18n: {
       'fr-FR': 'Lame de scie cassée',
       'en-EN': 'Broken sawblade',
@@ -18,6 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/MechanizedSawblade.png',
     ancientHuntRunes: ['c', 't'],
+    stats: { power: 3.9, speed: 8.5, area: 1.5 },
     i18n: {
       'fr-FR': 'Lame de scie mécanique',
       'en-EN': 'Mechanized sawblade',

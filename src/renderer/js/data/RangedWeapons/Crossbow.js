@@ -5,9 +5,10 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Crossbow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 7.1, speed: 2.3, ammo: 4.1 },
     i18n: {
       'fr-FR': 'Arbalète',
-      'en-En': 'Crossbow',
+      'en-EN': 'Crossbow',
     },
   },
   Crossbow_Unique1: {
@@ -16,10 +17,11 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TheSlicer.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 7.1, speed: 2.3, ammo: 4.1 },
     activeEnchants: ['Piercing'],
     i18n: {
       'fr-FR': 'La trancheuse',
-      'en-En': 'Slayer crossbow',
+      'en-EN': 'Slayer crossbow',
     },
   },
   Crossbow_Unique2: {
@@ -28,10 +30,11 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/AzureSeeker.png',
     ancientHuntRunes: ['c', 'r'],
+    stats: { power: 7.1, speed: 2.3, ammo: 4.1 },
     activeEnchants: ['RapidFire'],
     i18n: {
       'fr-FR': 'Chercheur d\'azure',
-      'en-En': 'Azure seeker',
+      'en-EN': 'Azure seeker',
     },
   },
 };

@@ -93,8 +93,8 @@ async function $handleRestoreBackup(e, profilId, characterId, file) {
   const filePath = `${Constants.SAVE_PATH}/${profilId}/Characters/${characterId}/${file}`;
   if (fs.existsSync(filePath)) {
     const destFilePath = `${Constants.SAVE_PATH}/${profilId}/Characters/${characterId}.json`;
-    fs.renameSync(filePath, destFilePath);
-    const encryptSuccess = await $execCommandAsync(`${process.cwd()}/static/dtools.exe "${destFilePath}"}`);
+    fs.copyFileSync(filePath, destFilePath);
+    const encryptSuccess = await $execCommandAsync(`${process.cwd()}/static/dtools.exe "${destFilePath}"`);
     return encryptSuccess;
   }
   return false;

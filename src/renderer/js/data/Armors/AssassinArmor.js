@@ -6,7 +6,7 @@ export default {
     image: 'static/img/Items/Armors/ThiefArmor.png',
     ancientHuntRunes: ['i'],
     armorproperties: [
-      'MeleeAttackSpeedBoost',
+      { id: 'MeleeAttackSpeedBoost', rarity: 'Common' },
     ],
     i18n: {
       'fr-FR': 'Armure de voleur',
@@ -20,8 +20,8 @@ export default {
     image: 'static/img/Items/Armors/SpiderArmor.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
-      'LifeStealAura',
-      'MeleeAttackSpeedBoost',
+      { id: 'LifeStealAura', rarity: 'Common' },
+      { id: 'MeleeAttackSpeedBoost', rarity: 'Common' },
     ],
     i18n: {
       'fr-FR': 'Armure d\'araignée',

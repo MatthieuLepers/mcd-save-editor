@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/DualCrossbows.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 3.9, speed: 3.9, ammo: 3.5 },
     i18n: {
       'fr-FR': 'Doubles arbalètes',
       'en-EN': 'Dual crossbows',
@@ -16,6 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/SpellboundCrossbows.png',
     ancientHuntRunes: ['r', 'a'],
+    stats: { power: 3.9, speed: 4.9, ammo: 3.5 },
     activeEnchants: ['Unchanting'],
     i18n: {
       'fr-FR': 'Arbalètes ensorcelées',
@@ -28,6 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/BabyCrossbows.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 3.9, speed: 3.9, ammo: 3.5 },
     activeEnchants: ['Growing'],
     i18n: {
       'fr-FR': 'Mini arbalètes',

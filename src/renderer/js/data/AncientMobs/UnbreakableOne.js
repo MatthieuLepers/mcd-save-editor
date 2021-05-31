@@ -1,6 +1,6 @@
 export default {
   name: 'UnbreakableOne',
-  neededRunes: ['s', 'i', 't', 't'],
+  neededRunes: ['i', 't', 't'],
   image: 'static/img/AncientMobs/UnbreakableOne.png',
   rewards: ['Hammer', 'Claymore', 'Powerbow', 'FullPlateArmor'],
   i18n: {

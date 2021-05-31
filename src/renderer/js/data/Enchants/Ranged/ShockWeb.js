@@ -4,6 +4,7 @@ export default {
   type: ['Ranged'],
   tier: 'Powerful',
   image: 'static/img/Enchants/ShockWeb.png',
+  weaponType: 'Bow',
   i18n: {
     'fr-FR': {
       name: 'Toile électrique',

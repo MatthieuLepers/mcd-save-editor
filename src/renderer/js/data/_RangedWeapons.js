@@ -1,9 +1,11 @@
 import Bow from './RangedWeapons/Bow';
+import BubbleBow from './RangedWeapons/BubbleBow';
 import BurstCrossbow from './RangedWeapons/BurstCrossbow';
 import CogCrossbow from './RangedWeapons/CogCrossbow';
 import Crossbow from './RangedWeapons/Crossbow';
 import DualCrossbows from './RangedWeapons/DualCrossbows';
 import ExplodingCrossbow from './RangedWeapons/ExplodingCrossbow';
+import HarpoonCrossbow from './RangedWeapons/HarpoonCrossbow';
 import HeavyCrossbow from './RangedWeapons/HeavyCrossbow';
 import HuntingBow from './RangedWeapons/HuntingBow';
 import Longbow from './RangedWeapons/Longbow';
@@ -20,11 +22,13 @@ import WindBow from './RangedWeapons/WindBow';
 
 export default {
   ...Bow,
+  ...BubbleBow,
   ...BurstCrossbow,
   ...CogCrossbow,
   ...Crossbow,
   ...DualCrossbows,
   ...ExplodingCrossbow,
+  ...HarpoonCrossbow,
   ...HeavyCrossbow,
   ...HuntingBow,
   ...Longbow,

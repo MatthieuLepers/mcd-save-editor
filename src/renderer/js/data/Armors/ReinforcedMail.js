@@ -12,7 +12,7 @@ export default {
     ],
     i18n: {
       'fr-FR': 'Cotte de mailles renforcée',
-      'en-En': 'Reinforced mail',
+      'en-EN': 'Reinforced mail',
     },
   },
   ReinforcedMail_Unique1: {
