@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/SoulBow.png',
     ancientHuntRunes: ['o'],
+    stats: { power: 4.2, speed: 3.7, ammo: 5.3 },
     soulgathering: true,
     i18n: {
       'fr-FR': 'Arc des âmes',
@@ -17,6 +18,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/NocturnalBow.png',
     ancientHuntRunes: ['c', 'o'],
+    stats: { power: 4.2, speed: 3.7, ammo: 5.3 },
     activeEnchants: ['TempoTheft'],
     soulgathering: true,
     i18n: {
@@ -30,6 +32,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/BowOfLostSouls.png',
     ancientHuntRunes: ['o', 'r'],
+    stats: { power: 4.2, speed: 3.7, ammo: 5.3 },
     activeEnchants: ['Multishot'],
     soulgathering: true,
     i18n: {
@@ -44,6 +47,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ShiveringBow.png',
     ancientHuntRunes: ['o', 't'],
+    stats: { power: 4.2, speed: 3.7, ammo: 5.3 },
     activeEnchants: ['TempoTheft'],
     soulgathering: true,
     i18n: {

@@ -1,3 +1,4 @@
+import i18n from '@/plugins/i18n';
 import Enchantment from './Enchantment';
 import ArmorProperty from './ArmorProperty';
 import RuneList from './RuneList';
@@ -79,10 +80,10 @@ export default class Item {
   }
 
   /**
-   * @return {Boolean}
+   * @return {String}
    */
-  isCrossbow() {
-    return this.$data.type.toLowerCase().indexOf('crossbow') >= 0;
+  get weaponType() {
+    return this.$data.type.toLowerCase().indexOf('crossbow') >= 0 ? 'Crossbow' : 'Bow';
   }
 
   /**
@@ -256,6 +257,10 @@ export default class Item {
     if (itemType === ItemTypeEnum.ARTEFACT && this.$data.enchantments) {
       delete this.$data.enchantments;
     }
+    if (this.$data.netheriteEnchant) {
+      delete this.$data.netheriteEnchant;
+      this.$key += 1;
+    }
     if (itemType !== ItemTypeEnum.ARTEFACT) {
       this.$data.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.$data);
     }
@@ -302,5 +307,12 @@ export default class Item {
     delete this.$data.equipmentSlot;
 
     GlobalStore.selectedCharacter.inventory.checkIntegrity();
+  }
+
+  /**
+   * @return {String}
+   */
+  toString() {
+    return i18n.t(`MCD.Game.Items.${this.itemIdentifier}`);
   }
 }

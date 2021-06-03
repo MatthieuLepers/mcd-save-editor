@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Mace.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 6.9, speed: 2.2, area: 2.9 },
     i18n: {
       'fr-FR': 'Masse',
       'en-EN': 'Mace',
@@ -16,6 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Sun\'sGrace.png',
     ancientHuntRunes: ['s', 'i'],
+    stats: { power: 6.9, speed: 2.2, area: 2.9 },
     i18n: {
       'fr-FR': 'Grâce du soleil',
       'en-EN': 'Sun\'s grace',
@@ -27,6 +29,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Flail.png',
     ancientHuntRunes: ['i', 'a'],
+    stats: { power: 6.9, speed: 2.2, area: 9.2 },
     i18n: {
       'fr-FR': 'Fléau',
       'en-EN': 'Flail',

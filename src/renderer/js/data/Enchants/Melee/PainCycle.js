@@ -16,7 +16,7 @@ export default {
     },
     'en-EN': {
       name: 'Pain Cycle',
-      desc: 'Attacking drains your life to grant you one stack of Pain Cycle. At 5 stacks, your pain is channeled into your next attack.', // TODO
+      desc: 'Attacking drains your life to grant you one stack of Pain Cycle. At 5 stacks, your pain is channeled into your next attack.',
       level: [
         'Max stack does triple damage',
         'Max stack does quadruple damage',

@@ -54,6 +54,9 @@ export default {
       }
     },
     close() {
+      if (process.env.NODE_ENV === 'development' && this.window.isDevToolsOpened()) {
+        this.window.closeDevTools();
+      }
       this.window.close();
     },
   },

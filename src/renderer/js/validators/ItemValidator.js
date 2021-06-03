@@ -149,4 +149,21 @@ export default class ItemValidator extends AbstractValidator {
       && $validateUpgraded.call(this)
     ;
   }
+
+  /**
+   * @return {Boolean}
+   */
+  seemsValid() {
+    return super.isValid()
+      && $validateKeys.call(this)
+      && $validateGifted.call(this)
+      && $validateEquipmentSlot.call(this)
+      && $validateInventoryIndex.call(this)
+      && $validateNetheriteEnchant.call(this)
+      && $validateMarkedNew.call(this)
+      && $validatePower.call(this)
+      && $validateRarity.call(this)
+      && $validateUpgraded.call(this)
+    ;
+  }
 }

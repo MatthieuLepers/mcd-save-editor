@@ -7,6 +7,7 @@ import DodgeInvulnerability from './ArmorProperties/DodgeInvulnerability';
 import DodgeRoot from './ArmorProperties/DodgeRoot';
 import DodgeSpeedIncrease from './ArmorProperties/DodgeSpeedIncrease';
 import EmeraldShield from './ArmorProperties/EmeraldShield';
+import HealingAura from './ArmorProperties/HealingAura';
 import Heavyweight from './ArmorProperties/Heavyweight';
 import IncreasedArrowBundleSize from './ArmorProperties/IncreasedArrowBundleSize';
 import IncreasedMobTargeting from './ArmorProperties/IncreasedMobTargeting';
@@ -24,6 +25,8 @@ import PotionCooldownDecrease from './ArmorProperties/PotionCooldownDecrease';
 import RangedDamageBoost from './ArmorProperties/RangedDamageBoost';
 import SlowResistance from './ArmorProperties/SlowResistance';
 import SoulGatheringBoost from './ArmorProperties/SoulGatheringBoost';
+import SquidRollLimited from './ArmorProperties/SquidRollLimited';
+import SquidRollQuick from './ArmorProperties/SquidRollQuick';
 import SuperbDamageAbsorption from './ArmorProperties/SuperbDamageAbsorption';
 import TeleportChance from './ArmorProperties/TeleportChance';
 import Unknown from './ArmorProperties/Unknown';
@@ -38,6 +41,7 @@ export default {
   DodgeRoot,
   DodgeSpeedIncrease,
   EmeraldShield,
+  HealingAura,
   Heavyweight,
   IncreasedArrowBundleSize,
   IncreasedMobTargeting,
@@ -55,6 +59,8 @@ export default {
   RangedDamageBoost,
   SlowResistance,
   SoulGatheringBoost,
+  SquidRollLimited,
+  SquidRollQuick,
   SuperbDamageAbsorption,
   TeleportChance,
   Unknown,

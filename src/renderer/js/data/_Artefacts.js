@@ -11,7 +11,9 @@ import FlamingQuiver from './Artefacts/FlamingQuiver';
 import GhostCloak from './Artefacts/GhostCloak';
 import GolemKit from './Artefacts/GolemKit';
 import GongOfWeakening from './Artefacts/GongOfWeakening';
+import GuardianEye from './Artefacts/GuardianEye';
 import Harvester from './Artefacts/Harvester';
+import HeavyHarpoonQuiver from './Artefacts/HeavyHarpoonQuiver';
 import IceWand from './Artefacts/IceWand';
 import IronHideAmulet from './Artefacts/IronHideAmulet';
 import LightFeather from './Artefacts/LightFeather';
@@ -20,6 +22,8 @@ import LoveMedallion from './Artefacts/LoveMedallion';
 import MobMasher from './Artefacts/MobMasher';
 import NetherWartSporeGrenade from './Artefacts/NetherWartSporeGrenade';
 import RainbowGrass from './Artefacts/RainbowGrass';
+import SatchelOfNeed from './Artefacts/SatchelOfNeed';
+import SatchelOfNourishment from './Artefacts/SatchelOfNourishment';
 import SatchelOfTheElements from './Artefacts/SatchelOfTheElements';
 import ShockPowder from './Artefacts/ShockPowder';
 import SoulHealer from './Artefacts/SoulHealer';
@@ -49,7 +53,9 @@ export default {
   ...GhostCloak,
   ...GolemKit,
   ...GongOfWeakening,
+  ...GuardianEye,
   ...Harvester,
+  ...HeavyHarpoonQuiver,
   ...IceWand,
   ...IronHideAmulet,
   ...LightFeather,
@@ -58,6 +64,8 @@ export default {
   ...MobMasher,
   ...NetherWartSporeGrenade,
   ...RainbowGrass,
+  ...SatchelOfNeed,
+  ...SatchelOfNourishment,
   ...SatchelOfTheElements,
   ...ShockPowder,
   ...SoulHealer,

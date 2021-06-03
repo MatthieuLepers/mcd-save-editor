@@ -24,7 +24,7 @@
 
       <MCDItemDetails v-if="!!GlobalStore.selectedItem" :item="GlobalStore.selectedItem" />
     </div>
-    <MCDCharacterCorruptionDetection v-if="character.$corrupted" :character="character" />
+    <MCDCharacterCorruptionDetection v-if="character.$corrupted.length" :character="character" />
   </div>
 </template>
 

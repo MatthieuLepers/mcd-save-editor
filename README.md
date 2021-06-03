@@ -4,12 +4,10 @@ A Minecraft: Dungeons Save Editor for PC Users
 
 ## Installation
 
-Download and install [the last release](https://github.com/MatthieuLepers/mcd-save-editor/releases/download/v1.2.0/MCD.Save.Editor.v1.2.0.exe).
+Download and install [the last release](https://github.com/MatthieuLepers/mcd-save-editor/releases/download/v1.3.0/MCD.Save.Editor.v1.3.0.exe).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. **Use develop branch for pull requests.**
-
-Please make sure to update tests as appropriate.
 
 ## License
 [ISC](https://www.isc.org/licenses/)

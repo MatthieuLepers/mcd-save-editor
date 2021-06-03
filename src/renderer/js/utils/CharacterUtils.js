@@ -44,6 +44,20 @@ export default class CharacterUtils {
    * @return {Boolean}
    */
   static isDataCorrupted(data) {
-    return !data.items.reduce((acc, item) => acc && new ItemValidator(item).isValid(), true);
+    return !data.items.reduce((acc, item) => {
+      const itemValidator = new ItemValidator(item);
+      return acc && itemValidator.isValid() && itemValidator.seemsValid();
+    }, true);
+  }
+
+  /**
+   * @param {Object} data
+   * @return {Object[]]}
+   */
+  static getDataCorrupted(data) {
+    return data.items.filter((item) => {
+      const itemValidator = new ItemValidator(item);
+      return !itemValidator.isValid() && !itemValidator.seemsValid();
+    });
   }
 }

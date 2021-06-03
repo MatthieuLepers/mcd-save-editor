@@ -2,7 +2,7 @@ export default {
   i18n: {
     'fr-FR': {
       title: 'Fin !',
-      desc: 'Ce tutoriel est terminé, merci d\'y avoir aprticipé ! Vous connaissez désormais les bases de MCD Save Editor. En cliquant sur "terminer", les changements que vous avez apportés via le tutoriel seront annulés.',
+      desc: 'Ce tutoriel est terminé, merci d\'y avoir participé ! Vous connaissez désormais les bases de MCD Save Editor. En cliquant sur "terminer", les changements que vous avez apportés via le tutoriel seront annulés.',
     },
     'en-EN': {
       title: 'Finished !',

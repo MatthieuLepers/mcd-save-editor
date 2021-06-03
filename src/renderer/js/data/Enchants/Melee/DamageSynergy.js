@@ -7,7 +7,7 @@ export default {
   i18n: {
     'fr-FR': {
       name: 'Synergie d\'artéfacts',
-      desc: 'Chaque fois que vous utilisez un artéfact, votre prochaine attaque inflige dégâts supplémentaires.',
+      desc: 'Chaque fois que vous utilisez un artéfact, votre prochaine attaque inflige des dégâts supplémentaires.',
       level: [
         'Inflige 40% de dégâts supplémentaires',
         'Inflige 60% de dégâts supplémentaires',

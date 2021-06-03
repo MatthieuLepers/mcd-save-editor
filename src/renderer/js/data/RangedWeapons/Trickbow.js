@@ -5,6 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Trickbow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
     i18n: {
       'fr-FR': 'Arc piège',
       'en-EN': 'Trickbow',
@@ -16,6 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TheGreenMenace.png',
     ancientHuntRunes: ['r', 'a'],
+    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
     activeEnchants: ['PoisonedRanged'],
     i18n: {
       'fr-FR': 'La menace verte',
@@ -28,10 +30,25 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ThePinkScoundrel.png',
     ancientHuntRunes: ['r', 'i'],
+    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
     activeEnchants: ['WildRage'],
     i18n: {
       'fr-FR': 'La crapule rose',
       'en-EN': 'The pink scoundrel',
+    },
+  },
+  Trickbow_Year1: {
+    event: 'Anniversary',
+    name: 'Trickbow_Year1',
+    type: 'Ranged',
+    rarity: ['Unique'],
+    image: 'static/img/Items/RangedWeapons/SugarRush.png',
+    ancientHuntRunes: ['r', 'i'],
+    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
+    activeEnchants: ['WildRage', 'Ricochet'],
+    i18n: {
+      'fr-FR': 'Arc en sucre',
+      'en-EN': 'Sugar Rush',
     },
   },
 };

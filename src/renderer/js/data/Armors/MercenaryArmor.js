@@ -21,9 +21,9 @@ export default {
     image: 'static/img/Items/Armors/RenegadeArmor.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
+      'MeleeAttackSpeedBoost',
       'SuperbDamageAbsorption',
       'AllyDamageBoost',
-      'MeleeAttackSpeedBoost',
     ],
     i18n: {
       'fr-FR': 'Armure de rebelle',

@@ -20,6 +20,7 @@
 
         <ul class="MCDItemArmorProperties" v-if="item.isArmor()">
           <li :class="`MCDItemArmorPropertiesItem ${armorProperty.rarity.toLowerCase()}`" v-for="(armorProperty, i) in item.armorproperties" :key="i">
+            <img class="MCDItemArmorPropertiesRarity" :src="`static/img/UI/${armorProperty.rarity.toLowerCase()}.png`" :alt="armorProperty.rarity" />
             <span v-if="item.$data.type !== 'MysteryArmor'">{{ $t(`MCD.Game.ArmorProperties.${armorProperty.armorPropertyIdentifier}`) }}</span>
             <MCDArmorPropertySelect :property="armorProperty" :item="item" v-else />
           </li>

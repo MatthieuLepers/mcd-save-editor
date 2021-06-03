@@ -1,8 +1,10 @@
+import Anchor from './MeleeWeapons/Anchor';
 import Axe from './MeleeWeapons/Axe';
 import Battlestaff from './MeleeWeapons/Battlestaff';
 import BoneClub from './MeleeWeapons/Boneclub';
 import Chainsword from './MeleeWeapons/Chainsword';
 import Claymore from './MeleeWeapons/Claymore';
+import CoralBlade from './MeleeWeapons/CoralBlade';
 import Cutlass from './MeleeWeapons/Cutlass';
 import Daggers from './MeleeWeapons/Daggers';
 import DoubleAxe from './MeleeWeapons/DoubleAxe';
@@ -22,11 +24,13 @@ import TempestKnife from './MeleeWeapons/TempestKnife';
 import Whip from './MeleeWeapons/Whip';
 
 export default {
+  ...Anchor,
   ...Axe,
   ...Battlestaff,
   ...BoneClub,
   ...Chainsword,
   ...Claymore,
+  ...CoralBlade,
   ...Cutlass,
   ...Daggers,
   ...DoubleAxe,

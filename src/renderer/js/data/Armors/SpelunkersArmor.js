@@ -11,7 +11,7 @@ export default {
     ],
     i18n: {
       'fr-FR': 'Armure du spéléologue',
-      'en-En': 'Spelunker armor',
+      'en-EN': 'Spelunker armor',
     },
   },
   SpelunkersArmor_Unique1: {
@@ -28,6 +28,23 @@ export default {
     i18n: {
       'fr-FR': 'Armure du rampeur',
       'en-EN': 'Cave crawler',
+    },
+  },
+  SpelunkersArmor_Year1: {
+    event: 'Anniversary',
+    name: 'SpelunkersArmor_Year1',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/SweetTooth.png',
+    ancientHuntRunes: ['u', 'i'],
+    armorproperties: [
+      'ItemDamageBoost',
+      'AllyDamageBoost',
+      'PetBat',
+    ],
+    i18n: {
+      'fr-FR': 'Armure gourmande',
+      'en-EN': 'Sweet tooth',
     },
   },
 };

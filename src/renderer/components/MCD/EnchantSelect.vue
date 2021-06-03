@@ -1,7 +1,7 @@
 <template>
   <div class="MCDEnchantSelect" :class="{focus: open}">
     <div class="MCDEnchantSelectOuter" @click="handleClickToggle">
-      {{ $t(`MCD.Game.Enchants.${value.enchantIdentifier}.name`) }}
+      {{ value.toString() }}
     </div>
     <div class="MCDEnchantSelectInner" v-show="open">
       <div class="MCDEnchantSelectFiltersContainer">
@@ -27,6 +27,7 @@
 <script>
 import GlobalStore from '@/js/stores/GlobalStore';
 import EnchantsData from '@/js/data/Enchants';
+import DLCsData from '@/js/data/DLCs';
 import TutorialStore from '@/js/tutorial/Store';
 
 export default {
@@ -46,8 +47,12 @@ export default {
       const { type, soulgathering, activeEnchants } = GlobalStore.selectedItem.itemData;
       const checkSoulgathering = data => (data.soulgathering ? data.soulgathering === soulgathering : true);
       const checkActiveEnchants = data => (activeEnchants ? activeEnchants.indexOf(data.name) < 0 : true);
+      const checkWeaponType = data => (GlobalStore.selectedItem.weaponType && data.weaponType ? GlobalStore.selectedItem.weaponType === data.weaponType : true);
 
-      return Object.values(EnchantsData).filter(data => !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data));
+      return Object.values(EnchantsData)
+        .filter(data => !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data) && checkWeaponType(data))
+        .sort((a, b) => !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))) || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))
+      ;
     },
   },
   methods: {

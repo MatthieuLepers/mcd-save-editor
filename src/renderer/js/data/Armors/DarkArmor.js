@@ -12,7 +12,7 @@ export default {
     ],
     i18n: {
       'fr-FR': 'Armure noire',
-      'en-En': 'Dark armor',
+      'en-EN': 'Dark armor',
     },
   },
   DarkArmor_Unique1: {

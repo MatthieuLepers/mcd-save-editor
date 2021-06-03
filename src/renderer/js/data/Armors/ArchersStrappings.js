@@ -21,9 +21,9 @@ export default {
     image: 'static/img/Items/Armors/Archer\'sArmor.png',
     ancientHuntRunes: ['c', 'r'],
     armorproperties: [
+      'MoveSpeedAura',
       'IncreasedArrowBundleSize',
       'RangedDamageBoost',
-      'MoveSpeedAura',
     ],
     i18n: {
       'fr-FR': 'Armure d\'archer',

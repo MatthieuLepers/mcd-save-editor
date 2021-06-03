@@ -4,6 +4,7 @@ export default {
   type: ['Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/CooldownShot.png',
+  weaponType: 'Bow',
   i18n: {
     'fr-FR': {
       name: 'Tir de recharge',

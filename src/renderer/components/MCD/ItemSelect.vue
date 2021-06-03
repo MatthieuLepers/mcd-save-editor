@@ -1,7 +1,7 @@
 <template>
   <div class="MCDItemSelect" :class="{focus: open, noFilters: value.isEquipped()}">
     <div class="MCDItemSelectOuter" @click="handleClickToggle" @mouseover="refreshTutorialPolygonList" @mouseout="refreshTutorialPolygonList">
-      {{ $t(`MCD.Game.Items.${value.itemIdentifier}`) }}
+      {{ value.toString() }}
     </div>
     <div class="MCDItemSelectInner" v-show="open">
       <div class="MCDItemSelectFiltersContainer">
@@ -90,20 +90,18 @@ export default {
         ;
       }
       if (this.filter === 'Event') {
-        const itemList = Object
+        return Object
           .values(ItemsData)
           .filter(itemData => itemData.event && baseFilterFn(itemData))
+          .sort((a, b) => EventsData[a.event].startedAt.getTime() - EventsData[b.event].startedAt.getTime())
         ;
-        itemList.sort((a, b) => EventsData[a.event].startedAt.getTime() - EventsData[b.event].startedAt.getTime());
-        return itemList;
       }
       if (this.filter === 'DLC') {
-        const itemList = Object
+        return Object
           .values(ItemsData)
           .filter(itemData => itemData.dlc && baseFilterFn(itemData))
+          .sort((a, b) => DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime())
         ;
-        itemList.sort((a, b) => DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime());
-        return itemList;
       }
       return Object
         .values(ItemsData)

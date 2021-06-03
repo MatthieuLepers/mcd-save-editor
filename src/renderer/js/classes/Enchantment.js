@@ -1,5 +1,5 @@
+import i18n from '@/plugins/i18n';
 import EnchantmentTierEnum from './enums/EnchantmentTierEnum';
-
 import EnchantsData from '../data/Enchants';
 
 /**
@@ -80,5 +80,12 @@ export default class Enchantment {
    */
   setNetherite(value) {
     this.$isNetherite = value;
+  }
+
+  /**
+   * @return {String}
+   */
+  toString() {
+    return i18n.t(`MCD.Game.Enchants.${this.enchantIdentifier}.name`);
   }
 }

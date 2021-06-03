@@ -70,8 +70,23 @@
     margin: 12px 0 0 0;
     list-style: none;
 
-    &Item:not(:last-of-type) {
-      margin-bottom: 8px;
+    &Item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &Rarity {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+
+      &+* {
+        width: calc(100% - 20px);
+      }
     }
   }
 }

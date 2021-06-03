@@ -43,4 +43,14 @@ export default class EnchantmentValidator extends AbstractValidator {
       && $validateLevel.call(this)
     ;
   }
+
+  /**
+   * @return {Boolean}
+   */
+  seemsValid() {
+    return super.isValid()
+      && $validateKeys.call(this)
+      && $validateLevel.call(this)
+    ;
+  }
 }
