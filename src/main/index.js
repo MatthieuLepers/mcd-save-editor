@@ -1,10 +1,10 @@
-import { app, BrowserWindow, ipcMain } from 'electron' // eslint-disable-line
+import { app, BrowserWindow } from 'electron' // eslint-disable-line
 
 import ModuleManager from './modules/Manager';
 import ProfilListerModule from './modules/ProfilLister';
 import ProfilModule from './modules/Profil';
 import CharacterModule from './modules/Character';
-import EncryptionModule from './modules/Encryption';
+import EncryptionModule from './modules/Encryption';// eslint-disable-line
 import ElectronUIModule from './modules/ElectronUI';
 import SettingsModule from './modules/Settings';
 
@@ -43,6 +43,8 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);

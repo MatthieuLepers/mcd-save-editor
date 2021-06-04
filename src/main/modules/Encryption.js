@@ -1,8 +1,13 @@
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import fs from 'fs';
 import Constants from '../Constants';
 import Module from './Module';
 import CharacterUtils from '../../renderer/js/utils/CharacterUtils';
+
+const DTOOLS_PATH = process.env.NODE_ENV === 'development'
+  ? `${process.cwd()}/static/dtools.exe`
+  : require('path').join(__dirname, '/static/dtools.exe').replace(/\\/g, '/')
+;
 
 /**
  * @param {String} file
@@ -26,12 +31,13 @@ function $makeFileBackup(file) {
 }
 
 /**
- * @param {String} command
+ * @param {String} file
+ * @param {String[]} options
  * @return {Promise}
  */
-function $execCommandAsync(command) {
+function $execFileAsync(file, options = []) {
   return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
+    execFile(file, options, (error, stdout, stderr) => {
       if (error) {
         reject(error);
       }
@@ -56,7 +62,8 @@ async function $handleEncryptFile(e, data, file, overwrite = true) {
 
   let success = false;
   if (fs.existsSync(decryptedFilePath)) {
-    success = await $execCommandAsync(`${process.cwd()}/static/dtools.exe "${decryptedFilePath}"${overwrite ? ' --overwrite=false' : ''}`);
+    // success = await $execCommandAsync(`${DTOOLS_PATH} "${decryptedFilePath}"${overwrite ? ' --overwrite=false' : ''}`);
+    success = await $execFileAsync(DTOOLS_PATH, overwrite ? [`"${decryptedFilePath}"`, '--overwrite=false'] : [`"${decryptedFilePath}"`]);
   }
   return success;
 }
@@ -71,7 +78,8 @@ async function $handleDecryptFile(e, file, force) {
   const filePath = `${Constants.SAVE_PATH}/${file}`;
   const decryptedFilePath = filePath.replace('.dat', '.json');
   if (!fs.existsSync(decryptedFilePath) || force) {
-    const success = await $execCommandAsync(`${process.cwd()}/static/dtools.exe "${filePath}"`);
+    // const success = await $execCommandAsync(`${DTOOLS_PATH} "${filePath}"`, e);
+    const success = await $execFileAsync(DTOOLS_PATH, [`"${filePath}"`]);
     const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
     const corrupted = CharacterUtils.isDataCorrupted(fileContent);
     if (success && ((!corrupted && $makeFileBackup(decryptedFilePath)) || corrupted)) {
@@ -94,7 +102,8 @@ async function $handleRestoreBackup(e, profilId, characterId, file) {
   if (fs.existsSync(filePath)) {
     const destFilePath = `${Constants.SAVE_PATH}/${profilId}/Characters/${characterId}.json`;
     fs.copyFileSync(filePath, destFilePath);
-    const encryptSuccess = await $execCommandAsync(`${process.cwd()}/static/dtools.exe "${destFilePath}"`);
+    // const encryptSuccess = await $execCommandAsync(`${DTOOLS_PATH} "${destFilePath}"`);
+    const encryptSuccess = await $execFileAsync(DTOOLS_PATH, [`"${destFilePath}"`]);
     return encryptSuccess;
   }
   return false;
