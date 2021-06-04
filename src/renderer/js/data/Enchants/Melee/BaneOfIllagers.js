@@ -3,7 +3,7 @@ export default {
   name: 'BaneOfIllagers',
   type: ['Melee'],
   tier: 'Common',
-  image: 'static/img/enchants/IllagersBane.png',
+  image: 'static/img/Enchants/IllagersBane.png',
   i18n: {
     'fr-FR': {
       name: 'Fléau des illageois',

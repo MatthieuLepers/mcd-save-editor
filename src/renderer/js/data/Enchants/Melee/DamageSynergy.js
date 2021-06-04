@@ -3,7 +3,7 @@ export default {
   name: 'DamageSynergy',
   type: ['Melee'],
   tier: 'Common',
-  image: 'static/img/enchants/DamageSynergy.png',
+  image: 'static/img/Enchants/DamageSynergy.png',
   i18n: {
     'fr-FR': {
       name: 'Synergie d\'artéfacts',
