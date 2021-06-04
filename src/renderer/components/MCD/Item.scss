@@ -67,6 +67,34 @@
     .MCDItemLevel {
       background-color: rgba(color(0), .5);
     }
+
+    .MCDItemEnchanted {
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: rgba(color(0), .5);
+        width: calc(100% + 6px);
+        height: calc(100% + 3px);
+        left: -4px;
+        top: -2px;
+        z-index: -1;
+      }
+
+      & + .MCDItemTile .MCDItemTileInnerBox::after {
+        background: radial-gradient(circle at 50%, rgba(#D372F4, .8), transparent 80%);
+      }
+    }
+
+    .MCDItemSoulGathering::after {
+      content: '';
+      position: absolute;
+      background-color: rgba(color(0), .5);
+      width: calc(100% + 4px);
+      height: calc(100% + 6px);
+      z-index: -1;
+      right: -2px;
+      top: -4px;
+    }
   }
 
   &SoulGathering {
