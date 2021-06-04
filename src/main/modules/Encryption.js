@@ -62,8 +62,7 @@ async function $handleEncryptFile(e, data, file, overwrite = true) {
 
   let success = false;
   if (fs.existsSync(decryptedFilePath)) {
-    // success = await $execCommandAsync(`${DTOOLS_PATH} "${decryptedFilePath}"${overwrite ? ' --overwrite=false' : ''}`);
-    success = await $execFileAsync(DTOOLS_PATH, overwrite ? [`"${decryptedFilePath}"`, '--overwrite=false'] : [`"${decryptedFilePath}"`]);
+    success = await $execFileAsync(DTOOLS_PATH, overwrite ? [decryptedFilePath, '--overwrite=false'] : [decryptedFilePath]);
   }
   return success;
 }
@@ -78,8 +77,7 @@ async function $handleDecryptFile(e, file, force) {
   const filePath = `${Constants.SAVE_PATH}/${file}`;
   const decryptedFilePath = filePath.replace('.dat', '.json');
   if (!fs.existsSync(decryptedFilePath) || force) {
-    // const success = await $execCommandAsync(`${DTOOLS_PATH} "${filePath}"`, e);
-    const success = await $execFileAsync(DTOOLS_PATH, [`"${filePath}"`]);
+    const success = await $execFileAsync(DTOOLS_PATH, [filePath]);
     const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
     const corrupted = CharacterUtils.isDataCorrupted(fileContent);
     if (success && ((!corrupted && $makeFileBackup(decryptedFilePath)) || corrupted)) {
@@ -102,8 +100,7 @@ async function $handleRestoreBackup(e, profilId, characterId, file) {
   if (fs.existsSync(filePath)) {
     const destFilePath = `${Constants.SAVE_PATH}/${profilId}/Characters/${characterId}.json`;
     fs.copyFileSync(filePath, destFilePath);
-    // const encryptSuccess = await $execCommandAsync(`${DTOOLS_PATH} "${destFilePath}"`);
-    const encryptSuccess = await $execFileAsync(DTOOLS_PATH, [`"${destFilePath}"`]);
+    const encryptSuccess = await $execFileAsync(DTOOLS_PATH, [destFilePath]);
     return encryptSuccess;
   }
   return false;
