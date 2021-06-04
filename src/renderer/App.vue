@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import { ipcRenderer } from 'electron';
 import GlobalStore from '@/js/stores/GlobalStore';
 import AppSettings from '@/js/AppSettings';
 import TutorialStore from '@/js/tutorial/Store';
@@ -133,7 +132,6 @@ export default {
     } else {
       this.ready = true;
     }
-    ipcRenderer.on('console-log', (e, ...data) => console.log(...data));
   },
 };
 </script>
