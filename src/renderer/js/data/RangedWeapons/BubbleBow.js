@@ -6,6 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/BubbleBow.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 3.02, speed: 3.41, area: 6.57 },
     i18n: {
       'fr-FR': 'Arc à bulles',
       'en-EN': 'Bubble bow',
@@ -18,6 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/BubbleBurster.png',
     ancientHuntRunes: ['r'],
+    stats: { power: 3.02, speed: 3.41, area: 6.57 },
     i18n: {
       'fr-FR': 'Éclat\'bulles',
       'en-EN': 'Bubble burster',

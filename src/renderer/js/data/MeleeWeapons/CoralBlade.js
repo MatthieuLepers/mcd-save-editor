@@ -6,6 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/CoralBlade.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 1.86, speed: 4.54, area: 2.39 },
     i18n: {
       'fr-FR': 'Lame de corail',
       'en-EN': 'Coral blade',
@@ -18,6 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SpongeStriker.png',
     ancientHuntRunes: ['i'],
+    stats: { power: 1.86, speed: 4.54, area: 2.39 },
     i18n: {
       'fr-FR': 'Lame-Éponge',
       'en-EN': 'Sponge striker',
