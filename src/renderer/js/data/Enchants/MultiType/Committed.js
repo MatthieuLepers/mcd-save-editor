@@ -1,6 +1,6 @@
 export default {
   name: 'Committed',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Committed.png',
   i18n: {

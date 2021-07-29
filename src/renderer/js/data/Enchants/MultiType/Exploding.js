@@ -1,6 +1,6 @@
 export default {
   name: 'Exploding',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Powerful',
   image: 'static/img/Enchants/Exploding.png',
   i18n: {

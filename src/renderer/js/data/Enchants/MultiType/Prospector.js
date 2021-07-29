@@ -1,6 +1,6 @@
 export default {
   name: 'Prospector',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Prospector.png',
   i18n: {

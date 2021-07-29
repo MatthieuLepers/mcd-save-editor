@@ -1,6 +1,6 @@
 export default {
   name: 'SoulSiphon',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/SoulSiphon.png',
   soulgathering: true,

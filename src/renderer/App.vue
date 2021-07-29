@@ -68,7 +68,7 @@ export default {
     return {
       showTutorial: AppSettings.firstStart,
       ready: false,
-      mcdVersion: '1.9.1.0',
+      mcdVersion: '1.10.2.0',
       TutorialStore,
       loadingTabs: [],
       GlobalStore,

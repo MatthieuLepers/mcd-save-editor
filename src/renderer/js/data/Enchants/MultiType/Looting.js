@@ -1,6 +1,6 @@
 export default {
   name: 'Looting',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Looting.png',
   i18n: {

@@ -1,6 +1,6 @@
 export default {
   name: 'Unchanting',
-  type: ['Ranged'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Unchanting.png',
   i18n: {

@@ -1,6 +1,6 @@
 export default {
   name: 'Weakening',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Weakening.png',
   i18n: {

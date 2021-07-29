@@ -1,6 +1,6 @@
 export default {
   name: 'Smiting',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/Smiting.png',
   i18n: {

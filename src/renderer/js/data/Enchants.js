@@ -1,37 +1,39 @@
 import Unknown from './Enchants/Unknown';
 import Unset from './Enchants/Unset';
 
+import Committed from './Enchants/MultiType/Committed';
+import CriticalHit from './Enchants/MultiType/CriticalHit';
+import Exploding from './Enchants/MultiType/Exploding';
+import FireAspect from './Enchants/MultiType/FireAspect';
+import Looting from './Enchants/MultiType/Looting';
+import Prospector from './Enchants/MultiType/Prospector';
+import Smiting from './Enchants/MultiType/Smiting';
+import SoulSiphon from './Enchants/MultiType/SoulSiphon';
+import Unchanting from './Enchants/MultiType/Unchanting';
+import Weakening from './Enchants/MultiType/Weakening';
+
 import AnimaConduitMelee from './Enchants/Melee/AnimaConduitMelee';
 import BaneOfIllagers from './Enchants/Melee/BaneOfIllagers';
 import BusyBee from './Enchants/Melee/BusyBee';
 import Chains from './Enchants/Melee/Chains';
-import Committed from './Enchants/Melee/Committed';
-import CriticalHit from './Enchants/Melee/CriticalHit';
 import DamageSynergy from './Enchants/Melee/DamageSynergy';
 import DynamoMelee from './Enchants/Melee/DynamoMelee';
 import Echo from './Enchants/Melee/Echo';
 import EnigmaResonatorMelee from './Enchants/Melee/EnigmaResonatorMelee';
-import Exploding from './Enchants/Melee/Exploding';
-import FireAspect from './Enchants/Melee/FireAspect';
 import Freezing from './Enchants/Melee/Freezing';
 import GravityMelee from './Enchants/Melee/GravityMelee';
 import GuardingStrike from './Enchants/Melee/GuardingStrike';
 import Leeching from './Enchants/Melee/Leeching';
-import Looting from './Enchants/Melee/Looting';
 import PainCycle from './Enchants/Melee/PainCycle';
 import PoisonedMelee from './Enchants/Melee/PoisonedMelee';
 import PotionThirstMelee from './Enchants/Melee/PotionThirstMelee';
-import Prospector from './Enchants/Melee/Prospector';
 import RadianceMelee from './Enchants/Melee/RadianceMelee';
 import Rampaging from './Enchants/Melee/Rampaging';
 import Sharpness from './Enchants/Melee/Sharpness';
 import Shockwave from './Enchants/Melee/Shockwave';
-import Smiting from './Enchants/Melee/Smiting';
-import SoulSiphon from './Enchants/Melee/SoulSiphon';
 import Stunning from './Enchants/Melee/Stunning';
 import Swirling from './Enchants/Melee/Swirling';
 import Thundering from './Enchants/Melee/Thundering';
-import Weakening from './Enchants/Melee/Weakening';
 
 import Acrobat from './Enchants/Armor/Acrobat';
 import BagOfSouls from './Enchants/Armor/BagOfSouls';
@@ -99,7 +101,6 @@ import RollCharge from './Enchants/Ranged/RollCharge';
 import ShockWeb from './Enchants/Ranged/ShockWeb';
 import Supercharge from './Enchants/Ranged/Supercharge';
 import TempoTheft from './Enchants/Ranged/TempoTheft';
-import Unchanting from './Enchants/Ranged/Unchanting';
 import WildRage from './Enchants/Ranged/WildRage';
 
 export default {

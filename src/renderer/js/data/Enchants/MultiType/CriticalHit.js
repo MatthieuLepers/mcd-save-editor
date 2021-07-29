@@ -1,6 +1,6 @@
 export default {
   name: 'CriticalHit',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Powerful',
   image: 'static/img/Enchants/CriticalHit.png',
   i18n: {

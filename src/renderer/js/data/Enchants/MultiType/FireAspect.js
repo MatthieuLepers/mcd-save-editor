@@ -1,6 +1,6 @@
 export default {
   name: 'FireAspect',
-  type: ['Melee'],
+  type: ['Melee', 'Ranged'],
   tier: 'Common',
   image: 'static/img/Enchants/FireAspect.png',
   i18n: {
