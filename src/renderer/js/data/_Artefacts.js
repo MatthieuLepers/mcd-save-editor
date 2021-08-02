@@ -18,6 +18,7 @@ import IceWand from './Artefacts/IceWand';
 import IronHideAmulet from './Artefacts/IronHideAmulet';
 import LightFeather from './Artefacts/LightFeather';
 import LightningRod from './Artefacts/LightningRod';
+import LostEvocation from './Artefacts/LostEvocation';
 import LoveMedallion from './Artefacts/LoveMedallion';
 import MobMasher from './Artefacts/MobMasher';
 import NetherWartSporeGrenade from './Artefacts/NetherWartSporeGrenade';
@@ -25,12 +26,14 @@ import RainbowGrass from './Artefacts/RainbowGrass';
 import SatchelOfNeed from './Artefacts/SatchelOfNeed';
 import SatchelOfNourishment from './Artefacts/SatchelOfNourishment';
 import SatchelOfTheElements from './Artefacts/SatchelOfTheElements';
+import ShadowSplinter from './Artefacts/ShadowSplinter';
 import ShockPowder from './Artefacts/ShockPowder';
 import SoulHealer from './Artefacts/SoulHealer';
 import SoulLantern from './Artefacts/SoulLantern';
 import SpinWheel from './Artefacts/SpinWheel';
 import TastyBone from './Artefacts/TastyBone';
 import ThunderingQuiver from './Artefacts/ThunderingQuiver';
+import TomeOfDuplication from './Artefacts/TomeOfDuplication';
 import TormentQuiver from './Artefacts/TormentQuiver';
 import TotemOfRegeneration from './Artefacts/TotemOfRegeneration';
 import TotemOfShielding from './Artefacts/TotemOfShielding';
@@ -60,6 +63,7 @@ export default {
   ...IronHideAmulet,
   ...LightFeather,
   ...LightningRod,
+  ...LostEvocation,
   ...LoveMedallion,
   ...MobMasher,
   ...NetherWartSporeGrenade,
@@ -67,12 +71,14 @@ export default {
   ...SatchelOfNeed,
   ...SatchelOfNourishment,
   ...SatchelOfTheElements,
+  ...ShadowSplinter,
   ...ShockPowder,
   ...SoulHealer,
   ...SoulLantern,
   ...SpinWheel,
   ...TastyBone,
   ...ThunderingQuiver,
+  ...TomeOfDuplication,
   ...TormentQuiver,
   ...TotemOfRegeneration,
   ...TotemOfShielding,

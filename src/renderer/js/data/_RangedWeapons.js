@@ -12,12 +12,14 @@ import Longbow from './RangedWeapons/Longbow';
 import Powerbow from './RangedWeapons/Powerbow';
 import RapidCrossbow from './RangedWeapons/RapidCrossbow';
 import ScatterCrossbow from './RangedWeapons/ScatterCrossbow';
+import ShadowCrossbow from './RangedWeapons/ShadowCrossbow';
 import Shortbow from './RangedWeapons/Shortbow';
 import SlowBow from './RangedWeapons/SlowBow';
 import SoulBow from './RangedWeapons/SoulBow';
 import SoulCrossbow from './RangedWeapons/SoulCrossbow';
 import Trickbow from './RangedWeapons/Trickbow';
 import TwistingVineBow from './RangedWeapons/TwistingVineBow';
+import VoidBow from './RangedWeapons/VoidBow';
 import WindBow from './RangedWeapons/WindBow';
 
 export default {
@@ -35,11 +37,13 @@ export default {
   ...Powerbow,
   ...RapidCrossbow,
   ...ScatterCrossbow,
+  ...ShadowCrossbow,
   ...Shortbow,
   ...SlowBow,
   ...SoulBow,
   ...SoulCrossbow,
   ...Trickbow,
   ...TwistingVineBow,
+  ...VoidBow,
   ...WindBow,
 };

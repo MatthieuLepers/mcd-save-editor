@@ -147,6 +147,9 @@ export default {
     DeleteButton: {
       label: 'Delete',
     },
+    CloneButton: {
+      label: 'Clone',
+    },
     EnchantmentEditor: {
       upgradeTiers: 'Upgrade tiers',
       costError: 'You need {cost} enchantment point{pluralize} to do that.',

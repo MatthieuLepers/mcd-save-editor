@@ -1,6 +1,6 @@
-// Base game
 import ArchersStrappings from './Armors/ArchersStrappings';
 import AssassinArmor from './Armors/AssassinArmor';
+import BardsGarb from './Armors/BardsGarb';
 import BattleRobe from './Armors/BattleRobe';
 import BeenestArmor from './Armors/BeenestArmor';
 import ChampionsArmor from './Armors/ChampionsArmor';
@@ -8,6 +8,7 @@ import ClimbingGear from './Armors/ClimbingGear';
 import CowardsArmor from './Armors/CowardsArmor';
 import DarkArmor from './Armors/DarkArmor';
 import EmeraldArmor from './Armors/EmeraldArmor';
+import EndRobes from './Armors/EndRobes';
 import EvocationRobe from './Armors/EvocationRobe';
 import FullPlateArmor from './Armors/FullPlateArmor';
 import GhostArmor from './Armors/GhostArmor';
@@ -19,6 +20,7 @@ import PhantomArmor from './Armors/PhantomArmor';
 import PiglinArmor from './Armors/PiglinArmor';
 import ReinforcedMail from './Armors/ReinforcedMail';
 import ScaleMail from './Armors/ScaleMail';
+import ShulkerArmor from './Armors/ShulkerArmor';
 import SnowArmor from './Armors/SnowArmor';
 import SoulRobe from './Armors/SoulRobe';
 import SpelunkersArmor from './Armors/SpelunkersArmor';
@@ -30,6 +32,7 @@ import WolfArmor from './Armors/WolfArmor';
 export default {
   ...ArchersStrappings,
   ...AssassinArmor,
+  ...BardsGarb,
   ...BattleRobe,
   ...BeenestArmor,
   ...ChampionsArmor,
@@ -37,6 +40,7 @@ export default {
   ...CowardsArmor,
   ...DarkArmor,
   ...EmeraldArmor,
+  ...EndRobes,
   ...EvocationRobe,
   ...FullPlateArmor,
   ...GhostArmor,
@@ -48,6 +52,7 @@ export default {
   ...PiglinArmor,
   ...ReinforcedMail,
   ...ScaleMail,
+  ...ShulkerArmor,
   ...SnowArmor,
   ...SoulRobe,
   ...SpelunkersArmor,

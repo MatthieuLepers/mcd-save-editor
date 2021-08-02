@@ -19,4 +19,8 @@ export default {
     name: 'Hidden Depths',
     releasedAt: new Date('2021/05/26'),
   },
+  'Echoing Void': {
+    name: 'Echoing Void',
+    releasedAt: new Date('2021/07/28'),
+  },
 };

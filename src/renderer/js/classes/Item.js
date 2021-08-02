@@ -315,4 +315,11 @@ export default class Item {
   toString() {
     return i18n.t(`MCD.Game.Items.${this.itemIdentifier}`);
   }
+
+  /**
+   * @return {Item}
+   */
+  clone() {
+    return new Item(JSON.parse(JSON.stringify(this.$data)));
+  }
 }

@@ -23,6 +23,7 @@ import MoveSpeedReduction from './ArmorProperties/MoveSpeedReduction';
 import PetBat from './ArmorProperties/PetBat';
 import PotionCooldownDecrease from './ArmorProperties/PotionCooldownDecrease';
 import RangedDamageBoost from './ArmorProperties/RangedDamageBoost';
+import Resonant from './ArmorProperties/Resonant';
 import SlowResistance from './ArmorProperties/SlowResistance';
 import SoulGatheringBoost from './ArmorProperties/SoulGatheringBoost';
 import SquidRollLimited from './ArmorProperties/SquidRollLimited';
@@ -57,6 +58,7 @@ export default {
   PetBat,
   PotionCooldownDecrease,
   RangedDamageBoost,
+  Resonant,
   SlowResistance,
   SoulGatheringBoost,
   SquidRollLimited,
