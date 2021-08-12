@@ -6,7 +6,7 @@ import RuneList from './RuneList';
 import ItemTypeEnum from './enums/ItemTypeEnum';
 import RarityEnum from './enums/RarityEnum';
 
-import ItemsData from '../data/Items';
+import { Items } from '../data/Content';
 import GlobalStore from '../stores/GlobalStore';
 
 /**
@@ -27,10 +27,10 @@ export default class Item {
    * @return {Object}
    */
   get itemData() {
-    if (!ItemsData[this.$data.type]) {
-      return ItemsData.Unknown;
+    if (!Items[this.$data.type]) {
+      return Items.Unknown;
     }
-    return ItemsData[this.$data.type];
+    return Items[this.$data.type];
   }
 
   /**

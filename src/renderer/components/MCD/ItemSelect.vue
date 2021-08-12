@@ -45,7 +45,7 @@
 import TutorialStore from '@/js/tutorial/Store';
 import PolygonEnum from '@/js/tutorial//PolygonEnum';
 import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
-import ItemsData from '@/js/data/Items';
+import { Items } from '@/js/data/Content';
 import DLCsData from '@/js/data/DLCs';
 import EventsData from '@/js/data/Events';
 
@@ -79,32 +79,32 @@ export default {
       if (this.value.isEquipped()) {
         const slot = (this.value.isGear() ? this.value.gearType : 'Artefact');
         return Object
-          .values(ItemsData)
+          .values(Items)
           .filter(itemData => itemData.type === slot && baseFilterFn(itemData))
         ;
       }
       if (this.filter === 'all') {
         return Object
-          .values(ItemsData)
+          .values(Items)
           .filter(baseFilterFn)
         ;
       }
       if (this.filter === 'Event') {
         return Object
-          .values(ItemsData)
+          .values(Items)
           .filter(itemData => itemData.event && baseFilterFn(itemData))
           .sort((a, b) => EventsData[a.event].startedAt.getTime() - EventsData[b.event].startedAt.getTime())
         ;
       }
       if (this.filter === 'DLC') {
         return Object
-          .values(ItemsData)
+          .values(Items)
           .filter(itemData => itemData.dlc && baseFilterFn(itemData))
           .sort((a, b) => DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime())
         ;
       }
       return Object
-        .values(ItemsData)
+        .values(Items)
         .filter(itemData => itemData.type === this.filter && baseFilterFn(itemData))
       ;
     },

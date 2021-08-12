@@ -3,7 +3,7 @@ import ArmorPropertyListValidator from './ArmorPropertyListValidator';
 import EnchantmentListValidator from './EnchantmentListValidator';
 import EnchantmentValidator from './EnchantmentValidator';
 
-import ItemsData from '../data/Items';
+import { Items } from '../data/Content';
 import RarityEnum from '../classes/enums/RarityEnum';
 import EquipmentSlotEnum from '../classes/enums/EquipmentSlotEnum';
 
@@ -108,12 +108,12 @@ function $validateRarity() {
  */
 function $validateType() {
   return typeof this.data.type === 'string'
-    && !!ItemsData[this.data.type]
+    && !!Items[this.data.type]
     && (
-      (ItemsData[this.data.type].type === 'Armor' && $validateArmorProperties.call(this) && $validateEnchantments.call(this))
-      || (ItemsData[this.data.type].type === 'Melee' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
-      || (ItemsData[this.data.type].type === 'Ranged' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
-      || (ItemsData[this.data.type].type === 'Artefact' && this.hasKeys('!enchantments', '!netheriteEnchant', '!armorproperties'))
+      (Items[this.data.type].type === 'Armor' && $validateArmorProperties.call(this) && $validateEnchantments.call(this))
+      || (Items[this.data.type].type === 'Melee' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
+      || (Items[this.data.type].type === 'Ranged' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
+      || (Items[this.data.type].type === 'Artefact' && this.hasKeys('!enchantments', '!netheriteEnchant', '!armorproperties'))
     )
   ;
 }
