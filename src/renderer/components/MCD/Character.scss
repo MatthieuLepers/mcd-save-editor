@@ -1,6 +1,8 @@
 @import '../../assets/scss/utilities.scss';
 
 .MCDCharacter {
+  height: 100%;
+
   &Container {
     overflow: auto;
     width: 100%;
