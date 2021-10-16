@@ -7,7 +7,7 @@ export default {
   i18n: {
     'fr-FR': {
       name: 'Afflux d\'ombre',
-      desc: 'Les créature vaincues sous votre forme d\'ombre vous octroient  des âmes supplémentaires.',
+      desc: 'Les créature vaincues sous votre forme d\'ombre vous octroient des âmes supplémentaires.',
       level: [
         '6 âmes par créature',
         '12 âmes par créature',
