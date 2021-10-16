@@ -6,7 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/TwistingVineBow.png',
     ancientHuntRunes: ['r'],
-    stats: { power: 4.2, speed: 3.7, ammo: 1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 1 },
     i18n: {
       'fr-FR': 'Arc en lianes tortueuses',
       'en-EN': 'Twisting vine bow',
@@ -19,7 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/WeepingVineBow.png',
     ancientHuntRunes: ['c', 'r'],
-    stats: { power: 4.2, speed: 3.7, ammo: 1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 1 },
     activeEnchants: ['RollCharge'],
     i18n: {
       'fr-FR': 'Arc de lianes pleureuses',

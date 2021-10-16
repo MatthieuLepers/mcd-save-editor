@@ -6,8 +6,8 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/VoidTouchedBlades.png',
     ancientHuntRunes: ['s'],
-    stats: { power: 0, speed: 0, area: 0 }, // TODO
-    // activeEnchants: ['VoidStrike'], // TODO
+    stats: { power: 5.71, speed: 3.11, area: 2.2 },
+    activeEnchants: ['VoidTouchedMelee'],
     i18n: {
       'fr-FR': 'Lames touchées par le vide',
       'en-EN': 'Void touched blades',
@@ -19,12 +19,12 @@ export default {
     type: 'Melee',
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/TheBeginningAndTheEnd.png',
-    ancientHuntRunes: [], // TODO
-    stats: { power: 0, speed: 0, area: 0 }, // TODO
-    // activeEnchants: ['VoidStrike', 'Leeching'], // TODO
+    ancientHuntRunes: ['s', 'i'],
+    stats: { power: 5.71, speed: 3.11, area: 2.2 },
+    activeEnchants: ['VoidTouchedMelee', 'Leeching'],
     i18n: {
-      'fr-FR': '???',
-      'en-EN': 'The beginning and the end', // TODO
+      'fr-FR': 'Le début et la fin',
+      'en-EN': 'The beginning and the end',
     },
   },
 };

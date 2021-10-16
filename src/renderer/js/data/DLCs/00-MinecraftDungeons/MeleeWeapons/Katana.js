@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Katana.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 9.5, speed: 1, area: 7 },
+    stats: { power: 8.24, speed: 1.52, area: 6.51 },
     i18n: {
       'fr-FR': 'Katana',
       'en-EN': 'Katana',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Master\'sKatana.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 9.5, speed: 1, area: 7 },
+    stats: { power: 8.24, speed: 1.52, area: 6.51 },
     activeEnchants: ['CriticalHit'],
     i18n: {
       'fr-FR': 'Katana du maître',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/DarkKatana.png',
     ancientHuntRunes: ['i', 'a'],
-    stats: { power: 9.5, speed: 1, area: 7 },
+    stats: { power: 8.24, speed: 1.52, area: 6.51 },
     i18n: {
       'fr-FR': 'Katana sombre',
       'en-EN': 'Dark katana',

@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/RapierSword.png',
     ancientHuntRunes: ['i', 'p'],
-    stats: { power: 1.1, speed: 11.7, area: 6.1 },
+    stats: { power: 1, speed: 11.66, area: 5.66 },
     i18n: {
       'fr-FR': 'Rapière',
       'en-EN': 'Rapier',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/BeeStingerSword.png',
     ancientHuntRunes: ['u', 'i', 'p'],
-    stats: { power: 1, speed: 11.7, area: 6.1 },
+    stats: { power: 1, speed: 11.66, area: 5.66 },
     activeEnchants: ['BusyBee'],
     i18n: {
       'fr-FR': 'Dard d\'abeille',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FreezingFoilSword.png',
     ancientHuntRunes: ['s', 'i', 'p'],
-    stats: { power: 1.2, speed: 11.4, area: 6.1 },
+    stats: { power: 1.07, speed: 11.34, area: 5.66 },
     activeEnchants: ['Freezing'],
     i18n: {
       'fr-FR': 'Feuille de congélation',

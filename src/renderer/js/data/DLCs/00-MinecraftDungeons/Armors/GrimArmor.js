@@ -32,4 +32,22 @@ export default {
       'en-EN': 'Wither armor',
     },
   },
+  GrimArmor_Spooky2: {
+    event: 'Spookier Fall',
+    name: 'GrimArmor_Spooky2',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/TheGourdianArmour.png',
+    ancientHuntRunes: ['t', 'o', 's'],
+    soulgathering: true,
+    armorproperties: [
+      'SoulGatheringBoost',
+      'SuperbDamageAbsorption',
+      'LifeStealAura',
+    ],
+    i18n: {
+      'fr-FR': 'L\'armure de gourdien',
+      'en-EN': 'The gourdian armor',
+    },
+  },
 };

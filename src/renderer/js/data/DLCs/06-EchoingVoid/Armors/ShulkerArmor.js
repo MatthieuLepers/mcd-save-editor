@@ -6,7 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/Armors/ShulkerArmor.png',
     ancientHuntRunes: ['t', 'i'],
-    // activeEnchants: ['Deflect', 'Swarm Protection'], // TODO
+    activeEnchants: ['Deflect', 'SwarmProtection'],
     armorproperties: [
       'IncreasedMobTargeting',
     ],
@@ -22,7 +22,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/SturdyShulkerArmor.png',
     ancientHuntRunes: ['s', 't', 'i'],
-    // activeEnchants: ['Deflect', 'Swarm Protection'], // TODO
+    activeEnchants: ['Deflect', 'SwarmProtection'],
     armorproperties: [
       'IncreasedMobTargeting',
     ],

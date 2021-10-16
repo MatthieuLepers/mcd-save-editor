@@ -6,8 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/ShadowCrossbow.png',
     ancientHuntRunes: ['r'],
-    stats: { power: 0, speed: 0, ammo: 0 }, // TODO
-    // activeEnchants: ['Shadow Shot'], // TODO
+    stats: { power: 4.76, speed: 1.95, ammo: 4.1 },
     i18n: {
       'fr-FR': 'Arbalète de l\'ombre',
       'en-EN': 'Shadow crossbow',
@@ -19,12 +18,12 @@ export default {
     type: 'Ranged',
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/VeiledCrossbow.png',
-    ancientHuntRunes: [], // TODO
-    stats: { power: 0, speed: 0, ammo: 0 }, // TODO
-    // activeEnchants: ['Shadow Shot'], // TODO
+    ancientHuntRunes: ['r', 'c'],
+    stats: { power: 4.76, speed: 1.47, ammo: 4.1 },
+    activeEnchants: ['ShadowShot'],
     i18n: {
-      'fr-FR': '', // TODO
-      'en-EN': 'Veiled crossbow', // TODO
+      'fr-FR': 'Arbalète voilée',
+      'en-EN': 'Veiled crossbow',
     },
   },
 };

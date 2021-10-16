@@ -3,7 +3,7 @@ export default {
   name: 'ShadowFeast',
   type: ['Armor'],
   tier: 'Common',
-  image: 'static/img/Enchants/ShadowSurge.png', // TODO
+  image: 'static/img/Enchants/ShadowFeast.png',
   i18n: {
     'fr-FR': {
       name: 'Afflux d\'ombre',

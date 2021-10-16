@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Gauntlets.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 2.6, speed: 6.6, area: 1.8 },
+    stats: { power: 2.19, speed: 6.55, area: 1.73 },
     i18n: {
       'fr-FR': 'Gantelets',
       'en-EN': 'Gauntlets',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SoulFists.png',
     ancientHuntRunes: ['s', 'i'],
-    stats: { power: 2.6, speed: 6.6, area: 1.8 },
+    stats: { power: 2.19, speed: 6.55, area: 1.73 },
     activeEnchants: ['EnigmaResonatorMelee'],
     i18n: {
       'fr-FR': 'Poings de l\'âme',
@@ -31,7 +31,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Maulers.png',
     ancientHuntRunes: ['c', 'i'],
-    stats: { power: 2.6, speed: 6.6, area: 1.8 },
+    stats: { power: 2.19, speed: 6.55, area: 1.73 },
     i18n: {
       'fr-FR': 'Boxeurs',
       'en-EN': 'Maulers',
@@ -43,7 +43,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FightersBindings.png',
     ancientHuntRunes: ['c', 'i'],
-    stats: { power: 2.5, speed: 14, area: 1.5 },
+    stats: { power: 2.04, speed: 14, area: 1.47 },
     i18n: {
       'fr-FR': 'Bandages de combattant',
       'en-EN': 'Fighter\'s bindings',

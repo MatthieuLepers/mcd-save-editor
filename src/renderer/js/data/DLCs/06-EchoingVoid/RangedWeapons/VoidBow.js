@@ -6,7 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/VoidBow.png',
     ancientHuntRunes: ['r'],
-    stats: { power: 0, speed: 0, ammo: 0 }, // TODO
+    stats: { power: 5.1, speed: 2.63, ammo: 4.1 },
     activeEnchants: ['VoidTouchedRanged'],
     i18n: {
       'fr-FR': 'Arc du vide',
@@ -20,7 +20,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/CallOfTheVoid.png',
     ancientHuntRunes: ['r', 'a'],
-    stats: { power: 0, speed: 0, ammo: 0 }, // TODO
+    stats: { power: 5.1, speed: 2.63, ammo: 4.1 },
     activeEnchants: ['VoidTouchedRanged', 'FuseShot'],
     i18n: {
       'fr-FR': 'Appel du vide',

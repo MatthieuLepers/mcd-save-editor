@@ -3,7 +3,7 @@ export default {
   name: 'VoidTouchedRanged',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: 'static/img/Enchants/VoidTouchedRanged.png', // TODO
+  image: 'static/img/Enchants/VoidStrikeRanged.png',
   i18n: {
     'fr-FR': {
       name: 'Frappe du vide',

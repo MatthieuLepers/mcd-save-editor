@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/SoulCrossbow.png',
     ancientHuntRunes: ['o'],
-    stats: { power: 5.3, speed: 2.3, ammo: 2.9 },
+    stats: { power: 5.33, speed: 1.95, ammo: 2.86 },
     soulgathering: true,
     i18n: {
       'fr-FR': 'Arblète des âmes',
@@ -18,7 +18,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/FeralSoulCrossbow.png',
     ancientHuntRunes: ['o'],
-    stats: { power: 5.3, speed: 2.3, ammo: 3.9 },
+    stats: { power: 5.33, speed: 1.95, ammo: 2.86 },
     activeEnchants: ['EnigmaResonatorRanged'],
     soulgathering: true,
     i18n: {
@@ -32,7 +32,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Voidcaller.png',
     ancientHuntRunes: ['o', 'a'],
-    stats: { power: 5.3, speed: 2.3, ammo: 2.9 },
+    stats: { power: 5.33, speed: 1.95, ammo: 2.86 },
     activeEnchants: ['Gravity'],
     soulgathering: true,
     i18n: {

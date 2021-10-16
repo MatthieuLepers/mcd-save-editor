@@ -19,7 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SpongeStriker.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 1.86, speed: 4.54, area: 2.39 },
+    stats: { power: 2.57, speed: 3.48, area: 4.32 },
     i18n: {
       'fr-FR': 'Lame-Éponge',
       'en-EN': 'Sponge striker',

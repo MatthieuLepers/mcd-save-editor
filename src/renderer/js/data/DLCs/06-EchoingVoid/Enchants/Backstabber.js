@@ -3,7 +3,7 @@ export default {
   name: 'Backstabber',
   type: ['Melee'],
   tier: 'Common',
-  image: 'static/img/Enchants/Ambush.png', // TODO
+  image: 'static/img/Enchants/Backstabber.png',
   i18n: {
     'fr-FR': {
       name: 'Embuscade',

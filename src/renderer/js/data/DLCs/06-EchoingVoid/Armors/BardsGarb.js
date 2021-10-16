@@ -21,11 +21,14 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/TheTroubadour.png',
-    ancientHuntRunes: [], // TODO
-    armorproperties: [], // TODO
+    ancientHuntRunes: ['s', 't'],
+    armorproperties: [
+      'AreaHeal',
+      'Resonant',
+    ],
     i18n: {
-      'fr-FR': '???', // TODO
-      'en-EN': 'The troubadour', // TODO
+      'fr-FR': 'Le troubadour',
+      'en-EN': 'The troubadour',
     },
   },
 };

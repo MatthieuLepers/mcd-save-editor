@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Daggers.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 3.5, speed: 7.3, area: 1.7 },
+    stats: { power: 2.93, speed: 7.2, area: 1.86 },
     i18n: {
       'fr-FR': 'Dagues',
       'en-EN': 'Daggers',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FangsOfFrost.png',
     ancientHuntRunes: ['i', 't'],
-    stats: { power: 3.5, speed: 7.3, area: 1 },
+    stats: { power: 2.93, speed: 7.2, area: 1.86 },
     activeEnchants: ['Freezing'],
     i18n: {
       'fr-FR': 'Mâchoires du froid',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/MoonDaggers.png',
     ancientHuntRunes: ['s', 'i'],
-    stats: { power: 3.5, speed: 7.3, area: 1 },
+    stats: { power: 2.93, speed: 7.2, area: 1.86 },
     activeEnchants: ['EnigmaResonatorMelee'],
     i18n: {
       'fr-FR': 'Dagues lunaires',
@@ -43,7 +43,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/SheerDaggers.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 3.5, speed: 7.3, area: 1 },
+    stats: { power: 2.93, speed: 7.2, area: 1.86 },
     activeEnchants: ['Swirling'],
     i18n: {
       'fr-FR': 'Dagues de cisaillement',

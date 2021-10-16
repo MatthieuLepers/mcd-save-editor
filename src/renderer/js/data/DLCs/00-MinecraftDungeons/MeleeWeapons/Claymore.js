@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Claymore.png',
     ancientHuntRunes: ['t'],
-    stats: { power: 11.4, speed: 1, area: 6.5 },
+    stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
       'fr-FR': 'Claymore',
       'en-EN': 'Claymore',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Heartstealer.png',
     ancientHuntRunes: ['i', 't'],
-    stats: { power: 11.4, speed: 1, area: 6.5 },
+    stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
       'fr-FR': 'Voleur de cœur',
       'en-EN': 'Heartstealer',
@@ -29,7 +29,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Broadsword.png',
     ancientHuntRunes: ['i', 't'],
-    stats: { power: 11.4, speed: 1, area: 6.5 },
+    stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
       'fr-FR': 'Broadsword',
       'en-EN': 'Broadsword',
@@ -41,7 +41,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/GreatAxeblade.png',
     ancientHuntRunes: ['c', 't'],
-    stats: { power: 11.4, speed: 1, area: 6.5 },
+    stats: { power: 9.96, speed: 1, area: 6 },
     activeEnchants: ['DynamoMelee'],
     i18n: {
       'fr-FR': 'Hache majestueuse',
@@ -55,7 +55,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/FrostSlayer.png',
     ancientHuntRunes: ['i', 't'],
-    stats: { power: 11.4, speed: 1, area: 6.5 },
+    stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
       'fr-FR': 'Tranche-givre',
       'en-EN': 'Frost slayer',

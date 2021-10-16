@@ -32,4 +32,22 @@ export default {
       'en-EN': 'Full metal armor',
     },
   },
+  FullPlateArmor_Spooky2: {
+    event: 'Spookier Fall',
+    name: 'FullPlateArmor_Spooky2',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/CauldronArmor.png',
+    ancientHuntRunes: [], // TODO
+    armorproperties: [
+      'SuperbDamageAbsorption',
+      'MissChance',
+      'MeleeDamageBoost',
+      'DodgeCooldownIncrease',
+    ],
+    i18n: {
+      'fr-FR': '???', // TODO
+      'en-EN': 'Cauldron armor', // TODO
+    },
+  },
 };

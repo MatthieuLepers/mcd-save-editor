@@ -6,7 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/ObsidianClaymore.png',
     ancientHuntRunes: ['t'],
-    stats: { power: 0, speed: 0, area: 0 }, // TODO
+    stats: { power: 14, speed: 1, area: 9.24 },
     i18n: {
       'fr-FR': 'Claymore d\'obsidienne',
       'en-EN': 'Obsidian claymore',
@@ -19,8 +19,8 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/TheStarlessNight.png',
     ancientHuntRunes: ['t', 'i'],
-    stats: { power: 0, speed: 0, area: 0 }, // TODO
-    // activeEnchants: ['???'], // TODO
+    stats: { power: 14, speed: 1, area: 9.24 },
+    activeEnchants: ['SharedPain'],
     i18n: {
       'fr-FR': 'La nuit sans étoiles',
       'en-EN': 'The starless night',

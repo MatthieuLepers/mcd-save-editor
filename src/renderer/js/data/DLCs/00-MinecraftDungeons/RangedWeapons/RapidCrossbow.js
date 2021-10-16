@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/RapidCrossbow.png',
     ancientHuntRunes: ['r'],
-    stats: { power: 1, speed: 9.4, ammo: 11.5 },
+    stats: { power: 1, speed: 9.28, ammo: 11.52 },
     i18n: {
       'fr-FR': 'Arbalète rapide',
       'en-EN': 'Rapid crossbow',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ButterflyCrossbow.png',
     ancientHuntRunes: ['s', 'r'],
-    stats: { power: 1, speed: 9.4, ammo: 11.5 },
+    stats: { power: 1, speed: 9.28, ammo: 11.52 },
     activeEnchants: ['BonusShot'],
     i18n: {
       'fr-FR': 'Arbalète papillon',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/AutoCrossbow.png',
     ancientHuntRunes: ['c', 'r'],
-    stats: { power: 1, speed: 9.4, ammo: 11.5 },
+    stats: { power: 1, speed: 9.28, ammo: 11.52 },
     activeEnchants: ['Accelerating'],
     i18n: {
       'fr-FR': 'Arbalète automatique',

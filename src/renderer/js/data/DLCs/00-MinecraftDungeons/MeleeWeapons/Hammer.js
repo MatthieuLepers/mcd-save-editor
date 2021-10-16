@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/GreatHammer.png',
     ancientHuntRunes: ['t'],
-    stats: { power: 9.9, speed: 1, area: 8.4 },
+    stats: { power: 8.69, speed: 1, area: 7.76 },
     i18n: {
       'fr-FR': 'Grand marteau',
       'en-EN': 'Great hammer',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Stormlander.png',
     ancientHuntRunes: ['t', 'a'],
-    stats: { power: 9.9, speed: 1, area: 8.4 },
+    stats: { power: 8.69, speed: 1, area: 7.76 },
     activeEnchants: ['Thundering'],
     i18n: {
       'fr-FR': 'Faiseur de tempêtes',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/HammerOfGravity.png',
     ancientHuntRunes: ['t', 'a'],
-    stats: { power: 9.9, speed: 1, area: 8.4 },
+    stats: { power: 8.69, speed: 1, area: 7.76 },
     activeEnchants: ['GravityMelee'],
     i18n: {
       'fr-FR': 'Marteau de la gravité',

@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Cutlass.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 4.9, speed: 3.6, area: 4.9 },
+    stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
       'fr-FR': 'Coutelas',
       'en-EN': 'Cutlass',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/NamelessBlade.png',
     ancientHuntRunes: ['s', 'i'],
-    stats: { power: 4.9, speed: 3.6, area: 4.9 },
+    stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
       'fr-FR': 'Lame sans nom',
       'en-EN': 'Nameless blade',
@@ -29,7 +29,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/DancersSword.png',
     ancientHuntRunes: ['c', 'i'],
-    stats: { power: 4.9, speed: 3.6, area: 4.9 },
+    stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
       'fr-FR': 'Épée de danseur',
       'en-EN': 'Dancer\'s sword',
@@ -42,7 +42,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/Sparkler.png',
     ancientHuntRunes: ['c', 'i'],
-    stats: { power: 4.9, speed: 3.6, area: 4.9 },
+    stats: { power: 4.26, speed: 3.49, area: 4.58 },
     activeEnchants: ['Rampaging'],
     i18n: {
       'fr-FR': 'Étinceleur',

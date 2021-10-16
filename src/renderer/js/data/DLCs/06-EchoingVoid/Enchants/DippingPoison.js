@@ -3,11 +3,11 @@ export default {
   name: 'DippingPoison',
   type: ['Ranged'],
   tier: 'Common',
-  image: 'static/img/Enchants/DippingPoison.png', // TODO
+  image: 'static/img/Enchants/DippingPoison.png',
   i18n: {
     'fr-FR': {
       name: 'Imprégné de poison',
-      desc: 'Lorsque vous utilisez une potion de soins, vous recevez un carquois de flèches empoisonnées.', // TODO
+      desc: 'Lorsque vous utilisez une potion de soins, vous recevez un carquois de flèches empoisonnées.',
       level: [
         '4 flèches empoisonnées',
         '6 flèches empoisonnées',

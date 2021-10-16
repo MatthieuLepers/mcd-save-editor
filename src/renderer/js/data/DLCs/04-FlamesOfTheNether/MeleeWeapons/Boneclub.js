@@ -6,7 +6,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/MeleeWeapons/Boneclub.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 14, speed: 1, area: 9.2 },
+    stats: { power: 13.32, speed: 1, area: 8.55 },
     i18n: {
       'fr-FR': 'Gourdin en os',
       'en-EN': 'Boneclub',
@@ -19,7 +19,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/MeleeWeapons/BoneCudgel.png',
     ancientHuntRunes: ['i'],
-    stats: { power: 14, speed: 1, area: 9.2 },
+    stats: { power: 13.32, speed: 1, area: 8.55 },
     activeEnchants: ['BaneOfIllagers'],
     i18n: {
       'fr-FR': 'Massue en os',

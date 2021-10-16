@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/Trickbow.png',
     ancientHuntRunes: ['r'],
-    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
+    stats: { power: 1.87, speed: 3.41, ammo: 5.33 },
     i18n: {
       'fr-FR': 'Arc piège',
       'en-EN': 'Trickbow',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/TheGreenMenace.png',
     ancientHuntRunes: ['r', 'a'],
-    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
+    stats: { power: 1.87, speed: 3.41, ammo: 5.33 },
     activeEnchants: ['PoisonedRanged'],
     i18n: {
       'fr-FR': 'La menace verte',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/ThePinkScoundrel.png',
     ancientHuntRunes: ['r', 'i'],
-    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
+    stats: { power: 1.87, speed: 3.41, ammo: 5.33 },
     activeEnchants: ['WildRage'],
     i18n: {
       'fr-FR': 'La crapule rose',
@@ -44,7 +44,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/SugarRush.png',
     ancientHuntRunes: ['r', 'i'],
-    stats: { power: 1.3, speed: 3.7, ammo: 5.3 },
+    stats: { power: 1.87, speed: 3.41, ammo: 5.33 },
     activeEnchants: ['WildRage', 'Ricochet'],
     i18n: {
       'fr-FR': 'Arc en sucre',

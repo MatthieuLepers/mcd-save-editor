@@ -45,7 +45,7 @@ export default class Enchantment {
    */
   get enchantmentPointsInvested() {
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1);
+    const offset = (tier === EnchantmentTierEnum.COMMON && !this.$isNetherite ? 0 : 1);
 
     return [...Array(this.level).keys()]
       .map(t => t + 1 + offset)

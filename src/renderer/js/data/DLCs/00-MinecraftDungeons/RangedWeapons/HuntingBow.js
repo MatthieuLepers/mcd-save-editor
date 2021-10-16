@@ -5,7 +5,7 @@ export default {
     rarity: ['Common', 'Rare'],
     image: 'static/img/Items/RangedWeapons/HuntingBow.png',
     ancientHuntRunes: ['u'],
-    stats: { power: 4.2, speed: 3.7, ammo: 4.1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     i18n: {
       'fr-FR': 'Arc de chasse',
       'en-EN': 'Hunting',
@@ -17,7 +17,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/Hunter\'sPromise.png',
     ancientHuntRunes: ['u', 'r'],
-    stats: { power: 4.2, speed: 3.7, ammo: 4.1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     activeEnchants: ['Infinity'],
     i18n: {
       'fr-FR': 'Promesse du chasseur',
@@ -30,7 +30,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/MasterBow.png',
     ancientHuntRunes: ['u', 'r'],
-    stats: { power: 4.2, speed: 3.7, ammo: 4.1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     activeEnchants: ['Power'],
     i18n: {
       'fr-FR': 'Arc du maître',
@@ -43,7 +43,7 @@ export default {
     rarity: ['Unique'],
     image: 'static/img/Items/RangedWeapons/AncientBow.png',
     ancientHuntRunes: ['u', 'c'],
-    stats: { power: 4.2, speed: 3.7, ammo: 4.1 },
+    stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     activeEnchants: ['DynamoRanged'],
     i18n: {
       'fr-FR': 'Arc antique',

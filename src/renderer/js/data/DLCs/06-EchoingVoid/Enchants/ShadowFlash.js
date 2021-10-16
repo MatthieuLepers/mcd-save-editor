@@ -3,7 +3,7 @@ export default {
   name: 'ShadowFlash',
   type: ['Armor'],
   tier: 'Common',
-  image: 'static/img/Enchants/ShadowBlast.png', // TODO
+  image: 'static/img/Enchants/ShadowFlash.png',
   i18n: {
     'fr-FR': {
       name: 'Explosion d\'ombre',

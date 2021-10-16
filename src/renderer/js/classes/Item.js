@@ -198,7 +198,7 @@ export default class Item {
    */
   get enchantmentPointsInvested() {
     return this.enchantments
-      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, 0)
+      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, this.netheriteEnchant.enchantmentPointsInvested)
     ;
   }
 

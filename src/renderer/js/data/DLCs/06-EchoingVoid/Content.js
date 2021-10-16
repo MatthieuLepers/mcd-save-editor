@@ -16,6 +16,7 @@ import VoidQuiver from './Artefacts/VoidQuiver';
 // Enchants
 import BackstabberEnchant from './Enchants/Backstabber';
 import DippingPoison from './Enchants/DippingPoison';
+import LevitationShot from './Enchants/LevitationShot';
 import ShadowFeast from './Enchants/ShadowFeast';
 import ShadowFlash from './Enchants/ShadowFlash';
 import VoidTouchedMelee from './Enchants/VoidTouchedMelee';
@@ -49,6 +50,7 @@ export default {
   Enchants: {
     Backstabber: BackstabberEnchant,
     DippingPoison,
+    LevitationShot,
     ShadowFeast,
     ShadowFlash,
     VoidTouchedMelee,
