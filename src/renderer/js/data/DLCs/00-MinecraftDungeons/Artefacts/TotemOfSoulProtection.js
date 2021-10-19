@@ -7,8 +7,8 @@ export default {
     image: 'static/img/Items/Artefacts/TotemOfSoulProtection.png',
     ancientHuntRunes: [],
     i18n: {
-      'fr-FR': '???', // TODO
-      'en-EN': '???', // TODO
+      'fr-FR': 'Totem de protection de l\'âme',
+      'en-EN': 'Totem of soul protection',
     },
   },
 };

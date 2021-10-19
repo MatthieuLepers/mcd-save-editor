@@ -27,7 +27,7 @@ export default {
       'IncreasedArrowBundleSize',
     ],
     i18n: {
-      'fr-FR': '???', // TODO
+      'fr-FR': 'Armure curieuse',
       'en-EN': 'Curious armor',
     },
   },

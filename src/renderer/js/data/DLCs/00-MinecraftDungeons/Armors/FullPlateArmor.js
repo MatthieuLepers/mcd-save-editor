@@ -38,16 +38,16 @@ export default {
     type: 'Armor',
     rarity: ['Unique'],
     image: 'static/img/Items/Armors/CauldronArmor.png',
-    ancientHuntRunes: [], // TODO
+    ancientHuntRunes: ['i', 't'],
     armorproperties: [
-      'SuperbDamageAbsorption',
-      'MissChance',
       'MeleeDamageBoost',
+      'MissChance',
+      'SuperbDamageAbsorption',
       'DodgeCooldownIncrease',
     ],
     i18n: {
-      'fr-FR': '???', // TODO
-      'en-EN': 'Cauldron armor', // TODO
+      'fr-FR': 'Armure chaudron',
+      'en-EN': 'Cauldron armor',
     },
   },
 };
