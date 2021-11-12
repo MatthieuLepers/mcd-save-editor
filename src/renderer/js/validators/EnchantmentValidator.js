@@ -1,5 +1,5 @@
 import AbstractValidator from './AbstractValidator';
-import EnchantmentsData from '../data/Enchants';
+import { Enchants } from '../data/Content';
 
 /**
  * @return {Boolean}
@@ -15,7 +15,7 @@ function $validateKeys() {
  */
 function $validateId() {
   return typeof this.data.id === 'string'
-    && !!EnchantmentsData[this.data.id]
+    && !!Enchants[this.data.id]
   ;
 }
 

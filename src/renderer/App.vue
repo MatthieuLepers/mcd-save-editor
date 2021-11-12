@@ -61,6 +61,7 @@ import Tutorial from '@/components/Tutorial/index';
 import Modal from '@/components/Modal/index';
 import ModalStore from '@/components/Modal/Store';
 
+// Data from https://dungeoncollector.co.uk/
 export default {
   name: 'MCDSaveEditor',
   components: { TitleBar, AppNavigation, Tabs, NotificationList, Tutorial, Modal },
@@ -68,7 +69,7 @@ export default {
     return {
       showTutorial: AppSettings.firstStart,
       ready: false,
-      mcdVersion: '1.9.1.0',
+      mcdVersion: '1.11.1.0',
       TutorialStore,
       loadingTabs: [],
       GlobalStore,

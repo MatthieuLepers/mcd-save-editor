@@ -1,5 +1,5 @@
 import ArmorPropertyValidator from './ArmorPropertyValidator';
-import ItemsData from '../data/Items';
+import { Items } from '../data/Content';
 
 /**
  * @return {Boolean}
@@ -50,7 +50,7 @@ export default class ArmorPropertyListValidator {
   constructor(list, itemId) {
     this.list = list;
     this.itemId = itemId;
-    this.itemData = ItemsData[this.itemId];
+    this.itemData = Items[this.itemId];
   }
 
   /**

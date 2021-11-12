@@ -1,7 +1,5 @@
 import Item from './Item';
-
 import ItemTypeEnum from './enums/ItemTypeEnum';
-
 import GlobalStore from '../stores/GlobalStore';
 
 const MAX_INVENTORY_SIZE = 180;

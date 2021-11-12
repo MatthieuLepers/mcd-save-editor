@@ -14,4 +14,9 @@ export default {
     startedAt: new Date('2021-05-26'),
     endedAt: new Date('2021-06-07'),
   },
+  'Spookier Fall': {
+    name: 'Spookier Fall',
+    startedAt: new Date('2021-10-13'),
+    endedAt: new Date('2021-11-02'),
+  },
 };
