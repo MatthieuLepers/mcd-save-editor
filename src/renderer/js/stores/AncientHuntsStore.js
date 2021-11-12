@@ -1,10 +1,6 @@
 import Item from '../classes/Item';
 import RuneList from '../classes/RuneList';
-import ArmorItemsData from '../data/_Armors';
-import MeleeItemsData from '../data/_MeleeWeapons';
-import RangedItemsData from '../data/_RangedWeapons';
-import EnchantsData from '../data/Enchants';
-import ItemsData from '../data/Items';
+import { Armors, Enchants, MeleeWeapons, RangedWeapons, Items } from '../data/Content';
 import ItemTypeEnum from '../classes/enums/ItemTypeEnum';
 
 /**
@@ -24,7 +20,7 @@ function $shuffleArray(array) {
  * @return {Object}
  */
 function $createRandomEnchantmentByType(type) {
-  const [enchant] = $shuffleArray(Object.values(EnchantsData)
+  const [enchant] = $shuffleArray(Object.values(Enchants)
     .filter(data => !data.disabled && data.type.includes(type) && (!data.activeEnchants || !data.activeEnchants.includes(data.name))),
   );
   return { id: enchant.name, level: 0 };
@@ -103,7 +99,7 @@ class AncientHuntsStore {
    * @return {Item[]}
    */
   getBestStartingItemList(runes) {
-    return $shuffleArray(Object.values({ ...MeleeItemsData, ...RangedItemsData, ...ArmorItemsData })
+    return $shuffleArray(Object.values({ ...MeleeWeapons, ...RangedWeapons, ...Armors })
       .filter(data => !data.disabled)
       .map($createItem.bind(this))
       .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
@@ -117,7 +113,7 @@ class AncientHuntsStore {
    * @return {Item[]}
    */
   getNextItemListExcludingTypes(runes, excludeTypes = []) {
-    return $shuffleArray(Object.values(ItemsData)
+    return $shuffleArray(Object.values(Items)
       .filter(data => !data.disabled && !excludeTypes.includes(data.type))
       .map($createItem.bind(this))
       .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))

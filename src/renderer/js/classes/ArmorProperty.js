@@ -1,4 +1,4 @@
-import ArmorPropertiesData from '../data/ArmorProperties';
+import { ArmorProperties } from '../data/Content';
 
 /**
  * @author Matthieu LEPERS
@@ -24,10 +24,10 @@ export default class ArmorPromerty {
    * @return {Object}
    */
   get armorPropertyData() {
-    if (!ArmorPropertiesData[this.id]) {
-      return ArmorPropertiesData.Unknown;
+    if (!ArmorProperties[this.id]) {
+      return ArmorProperties.Unknown;
     }
-    return ArmorPropertiesData[this.id];
+    return ArmorProperties[this.id];
   }
 
   /**

@@ -49,9 +49,9 @@ class DragDropStore {
 
     // Swaping items in inventory array
     character.inventory.items[toIndex] = this.from;
-    character.$data.items[toIndex] = this.from.data;
+    character.$data.items[toIndex] = this.from.$data;
     character.inventory.items[fromIndex] = this.to;
-    character.$data.items[fromIndex] = this.to.data;
+    character.$data.items[fromIndex] = this.to.$data;
   }
 
   dropEquippedToInventory() {

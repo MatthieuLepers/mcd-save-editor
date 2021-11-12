@@ -40,7 +40,7 @@ import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
 import RuneList from '@/js/classes/RuneList';
 import GlobalStore from '@/js/stores/GlobalStore';
 import AncientHuntsStore from '@/js/stores/AncientHuntsStore';
-import ItemsData from '@/js/data/Items';
+import { Items } from '@/js/data/Content';
 import AncientMobsData from '@/js/data/AncientMobs';
 import MCDAncientMob from '@/components/MCD/AncientMob';
 import MCDItem from '@/components/MCD/Item';
@@ -59,7 +59,7 @@ export default {
     return {
       AncientMobsData,
       AncientHuntsStore,
-      ItemsData,
+      Items,
       ItemTypeEnum,
       foundOffers: [null, null, null, null],
     };

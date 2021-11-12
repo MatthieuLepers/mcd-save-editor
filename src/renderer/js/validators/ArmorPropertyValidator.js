@@ -1,6 +1,6 @@
 import AbstractValidator from './AbstractValidator';
 
-import ArmorPropertiesData from '../data/ArmorProperties';
+import { ArmorProperties } from '../data/Content';
 import RarityEnum from '../classes/enums/RarityEnum';
 
 /**
@@ -17,7 +17,7 @@ function $validateKeys() {
  */
 function $validateId() {
   return typeof this.data.id === 'string'
-    && !!ArmorPropertiesData[this.data.id]
+    && !!ArmorProperties[this.data.id]
   ;
 }
 

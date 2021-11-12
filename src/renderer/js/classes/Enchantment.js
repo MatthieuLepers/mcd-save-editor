@@ -1,6 +1,6 @@
 import i18n from '@/plugins/i18n';
 import EnchantmentTierEnum from './enums/EnchantmentTierEnum';
-import EnchantsData from '../data/Enchants';
+import { Enchants } from '../data/Content';
 
 /**
  * @author Matthieu LEPERS
@@ -34,10 +34,10 @@ export default class Enchantment {
    * @return {Object}
    */
   get enchantData() {
-    if (!EnchantsData[this.id]) {
-      return EnchantsData.Unknown;
+    if (!Enchants[this.id]) {
+      return Enchants.Unknown;
     }
-    return EnchantsData[this.id];
+    return Enchants[this.id];
   }
 
   /**
@@ -45,7 +45,7 @@ export default class Enchantment {
    */
   get enchantmentPointsInvested() {
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1);
+    const offset = (tier === EnchantmentTierEnum.COMMON && !this.$isNetherite ? 0 : 1);
 
     return [...Array(this.level).keys()]
       .map(t => t + 1 + offset)

@@ -34,6 +34,7 @@
         <div class="MCDItemDetailsActions">
           <MCDImportButton v-if="!GlobalStore.selectedCharacter.inventory.isFull()" />
           <MCDExportButton :item="item" />
+          <MCDCloneButton :item="item" />
           <MCDDeleteButton :item="item" />
         </div>
       </div>
@@ -56,11 +57,12 @@ import MCDGildedEnchant from './GildedEnchant';
 import MCDItemEnchantmentList from './ItemEnchantmentList';
 import MCDImportButton from './ImportButton';
 import MCDExportButton from './ExportButton';
+import MCDCloneButton from './CloneButton';
 import MCDDeleteButton from './DeleteButton';
 
 export default {
   name: 'MCDItemDetails',
-  components: { MCDRarityLabel, MCDGildedLabel, MCDGildedEnchant, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
+  components: { MCDRarityLabel, MCDGildedLabel, MCDGildedEnchant, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDCloneButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
   props: {
     item: { type: Item, required: true },
   },

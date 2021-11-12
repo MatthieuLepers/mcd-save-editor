@@ -6,7 +6,7 @@ import RuneList from './RuneList';
 import ItemTypeEnum from './enums/ItemTypeEnum';
 import RarityEnum from './enums/RarityEnum';
 
-import ItemsData from '../data/Items';
+import { Items } from '../data/Content';
 import GlobalStore from '../stores/GlobalStore';
 
 /**
@@ -27,10 +27,10 @@ export default class Item {
    * @return {Object}
    */
   get itemData() {
-    if (!ItemsData[this.$data.type]) {
-      return ItemsData.Unknown;
+    if (!Items[this.$data.type]) {
+      return Items.Unknown;
     }
-    return ItemsData[this.$data.type];
+    return Items[this.$data.type];
   }
 
   /**
@@ -198,7 +198,7 @@ export default class Item {
    */
   get enchantmentPointsInvested() {
     return this.enchantments
-      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, 0)
+      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, this.netheriteEnchant.enchantmentPointsInvested)
     ;
   }
 
@@ -314,5 +314,12 @@ export default class Item {
    */
   toString() {
     return i18n.t(`MCD.Game.Items.${this.itemIdentifier}`);
+  }
+
+  /**
+   * @return {Item}
+   */
+  clone() {
+    return new Item(JSON.parse(JSON.stringify(this.$data)));
   }
 }
