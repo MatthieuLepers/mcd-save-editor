@@ -11,7 +11,7 @@ export default class CharacterUtils {
    */
   static getXpForLevel(lvl) {
     // eslint-disable-next-line no-nested-ternary
-    const f = x => (x <= 1 ? 0 : (x === 2 ? 500 : f(x - 1) + 600));
+    const f = (x) => (x <= 1 ? 0 : (x === 2 ? 500 : f(x - 1) + 600));
 
     return f(lvl);
   }

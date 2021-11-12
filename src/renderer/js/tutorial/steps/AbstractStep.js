@@ -27,7 +27,7 @@ export default class AbstractStep {
    */
   get polygonList() {
     if (this.hasObjectives()) {
-      const [objective] = Object.values(this.objectiveList).filter(objective => !objective.isFullfilled());
+      const [objective] = Object.values(this.objectiveList).filter((objective) => !objective.isFullfilled());
       return (objective || {}).polygonList || [];
     }
     return [];
@@ -38,7 +38,7 @@ export default class AbstractStep {
    */
   get currentObjective() {
     if (this.hasObjectives()) {
-      const [objective] = Object.values(this.objectiveList).filter(objective => !objective.isFullfilled());
+      const [objective] = Object.values(this.objectiveList).filter((objective) => !objective.isFullfilled());
       return (objective || {});
     }
     return {};

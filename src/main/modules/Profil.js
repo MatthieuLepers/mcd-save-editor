@@ -11,7 +11,7 @@ function $fetchCharactersFiles(e, profilId) {
   if (fs.existsSync(path)) {
     e.returnValue = fs
       .readdirSync(path)
-      .filter(file => /^.*\.dat?$/.test(file))
+      .filter((file) => /^.*\.dat?$/.test(file))
     ;
   } else {
     e.returnValue = [];

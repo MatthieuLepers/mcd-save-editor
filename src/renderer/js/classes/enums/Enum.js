@@ -5,8 +5,8 @@ export default class Enum {
   static get list() {
     return Object
       .keys(Object.getOwnPropertyDescriptors(this))
-      .filter(descriptor => descriptor.toUpperCase() === descriptor)
-      .map(descriptor => this[descriptor])
+      .filter((descriptor) => descriptor.toUpperCase() === descriptor)
+      .map((descriptor) => this[descriptor])
     ;
   }
 }

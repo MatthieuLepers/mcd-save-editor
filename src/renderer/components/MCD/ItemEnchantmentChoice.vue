@@ -44,7 +44,7 @@ export default {
       return ench.level > 0;
     },
     getTier(level) {
-      return [...Array(level).keys()].reduce(acc => `i${acc}`, '');
+      return [...Array(level).keys()].reduce((acc) => `i${acc}`, '');
     },
     handleSelectEnchant(ench) {
       GlobalStore.selectedEnchant = ench;

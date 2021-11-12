@@ -100,39 +100,43 @@ export default class PolygonEnum {
    */
   static get SELECTED_ENCHANTMENT() {
     return [
-      [735 + OFFSET_X, 425 + OFFSET_Y],
-      [748.5 + OFFSET_X, 438.5 + OFFSET_Y],
-      [752.7 + OFFSET_X, 434.7 + OFFSET_Y],
-      [766 + OFFSET_X, 448.4 + OFFSET_Y],
-      [762.3 + OFFSET_X, 452.4 + OFFSET_Y],
-      [775 + OFFSET_X, 465 + OFFSET_Y],
-      [735 + OFFSET_X, 505 + OFFSET_Y],
-      [695 + OFFSET_X, 465 + OFFSET_Y],
-      [735 + OFFSET_X, 425 + OFFSET_Y],
+      [735 + OFFSET_X, 435 + OFFSET_Y],
+      [746.5 + OFFSET_X, 444.5 + OFFSET_Y],
+      [751.7 + OFFSET_X, 438.7 + OFFSET_Y],
+      [766 + OFFSET_X, 453.4 + OFFSET_Y],
+      [762.3 + OFFSET_X, 459.4 + OFFSET_Y],
+      [771 + OFFSET_X, 470 + OFFSET_Y],
+      [735 + OFFSET_X, 507 + OFFSET_Y],
+      [698 + OFFSET_X, 470 + OFFSET_Y],
+      [735 + OFFSET_X, 435 + OFFSET_Y],
     ];
   }
 
   /**
    * @return {Array[]}
+   * old M0,0V563H1048V0z M758,420L778,440L758,460L738,440
+   * new M0,0V563H1048V0z M758,419L779,440L758,461L738,439
    */
   static get ENCHANTMENT_SLOT1() {
     return [
-      [711 + OFFSET_X, 445 + OFFSET_Y],
-      [731 + OFFSET_X, 465 + OFFSET_Y],
-      [711 + OFFSET_X, 485 + OFFSET_Y],
-      [691 + OFFSET_X, 465 + OFFSET_Y],
+      [710 + OFFSET_X, 449 + OFFSET_Y],
+      [731 + OFFSET_X, 470 + OFFSET_Y],
+      [710 + OFFSET_X, 491 + OFFSET_Y],
+      [690 + OFFSET_X, 469 + OFFSET_Y],
     ];
   }
 
   /**
    * @return {Array[]}
+   * old M0,0V563H1048V0z M783,446L803,466L783,486L763,466
+   * new M0,0V563H1048V0z M784,445L805,466L784,487L763,466
    */
   static get ENCHANTMENT_SLOT2() {
     return [
-      [736 + OFFSET_X, 471 + OFFSET_Y],
-      [756 + OFFSET_X, 491 + OFFSET_Y],
-      [736 + OFFSET_X, 511 + OFFSET_Y],
-      [716 + OFFSET_X, 491 + OFFSET_Y],
+      [736 + OFFSET_X, 476 + OFFSET_Y],
+      [757 + OFFSET_X, 496 + OFFSET_Y],
+      [736 + OFFSET_X, 517 + OFFSET_Y],
+      [715 + OFFSET_X, 496 + OFFSET_Y],
     ];
   }
 
@@ -141,10 +145,10 @@ export default class PolygonEnum {
    */
   static get ENCHANTMENT_SLOT3() {
     return [
-      [763 + OFFSET_X, 445 + OFFSET_Y],
-      [783 + OFFSET_X, 465 + OFFSET_Y],
-      [763 + OFFSET_X, 485 + OFFSET_Y],
-      [743 + OFFSET_X, 465 + OFFSET_Y],
+      [762 + OFFSET_X, 450 + OFFSET_Y],
+      [782 + OFFSET_X, 470 + OFFSET_Y],
+      [762 + OFFSET_X, 490 + OFFSET_Y],
+      [742 + OFFSET_X, 470 + OFFSET_Y],
     ];
   }
 

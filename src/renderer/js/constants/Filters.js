@@ -11,26 +11,26 @@ export default {
   MELEE: {
     name: 'melee',
     icon: 'melee',
-    filterByItem: item => item.isMelee(),
+    filterByItem: (item) => item.isMelee(),
   },
   ARMOR: {
     name: 'armor',
     icon: 'helm',
-    filterByItem: item => item.isArmor(),
+    filterByItem: (item) => item.isArmor(),
   },
   RANGED: {
     name: 'ranged',
     icon: 'ranged',
-    filterByItem: item => item.isRanged(),
+    filterByItem: (item) => item.isRanged(),
   },
   ARTEFACT: {
     name: 'artefact',
     icon: 'artefact',
-    filterByItem: item => item.isArtefact(),
+    filterByItem: (item) => item.isArtefact(),
   },
   ENCHANTED: {
     name: 'enchanted',
     icon: 'enchanted',
-    filterByItem: item => item.isEnchanted(),
+    filterByItem: (item) => item.isEnchanted(),
   },
 };

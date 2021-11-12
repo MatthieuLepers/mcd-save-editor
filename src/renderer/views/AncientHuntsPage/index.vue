@@ -68,19 +68,19 @@ export default {
     mobList() {
       return Object
         .values(AncientMobsData)
-        .map(mobData => new AncientMob(mobData))
+        .map((mobData) => new AncientMob(mobData))
         .sort((a, b) => this.$t(`MCD.Game.AncientMobs.${a.name}`).localeCompare(this.$t(`MCD.Game.AncientMobs.${b.name}`)))
       ;
     },
     foundOffersWithoutNull() {
-      return this.foundOffers.filter(item => !!item);
+      return this.foundOffers.filter((item) => !!item);
     },
     invocationRuneList() {
       return AncientHuntsStore.runeList;
     },
     residualRuneList() {
       const offersRuneList = this.foundOffers
-        .filter(item => !!item)
+        .filter((item) => !!item)
         .reduce((acc, val) => acc.add(val.runeList), new RuneList())
       ;
       return offersRuneList.sub(this.invocationRuneList);

@@ -39,10 +39,10 @@ export default class Item {
   get itemType() {
     if (this.itemData.type) {
       return this.itemData.type;
-    } else if (this.$data.armorproperties) {
+    } if (this.$data.armorproperties) {
       return ItemTypeEnum.ARMOR;
-    } else if (this.$data.enchantments) {
-      const [[type]] = this.enchantments.filter(ench => ench.enchantData.type && ench.enchantData.type.length === 1).map(ench => ench.enchantData.type);
+    } if (this.$data.enchantments) {
+      const [[type]] = this.enchantments.filter((ench) => ench.enchantData.type && ench.enchantData.type.length === 1).map((ench) => ench.enchantData.type);
       return type;
     }
     return ItemTypeEnum.ARTEFACT;
@@ -207,7 +207,7 @@ export default class Item {
    */
   get enchantments() {
     return (this.$data.enchantments || [])
-      .map(enchantmentData => new Enchantment(enchantmentData))
+      .map((enchantmentData) => new Enchantment(enchantmentData))
     ;
   }
 
@@ -232,7 +232,7 @@ export default class Item {
    */
   get armorproperties() {
     return (this.$data.armorproperties || [])
-      .map(armorPropertyData => new ArmorProperty(armorPropertyData))
+      .map((armorPropertyData) => new ArmorProperty(armorPropertyData))
     ;
   }
 
@@ -269,11 +269,11 @@ export default class Item {
     }
     if (itemType === ItemTypeEnum.ARMOR) {
       if (itemData.name === 'MysteryArmor') {
-        const possibleProperties = itemData.armorproperties.map(prop => ({ id: prop, rarity: RarityEnum.COMMON }));
+        const possibleProperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: RarityEnum.COMMON }));
         possibleProperties.sort(() => 0.5 - Math.random());
         this.$data.armorproperties = possibleProperties.slice(0, 3);
       } else {
-        this.$data.armorproperties = itemData.armorproperties.map(prop => ({ id: prop, rarity: RarityEnum.COMMON }));
+        this.$data.armorproperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: RarityEnum.COMMON }));
       }
     }
   }
@@ -284,15 +284,15 @@ export default class Item {
 
     delete this.$data.inventoryIndex;
     if (type !== ItemTypeEnum.ARTEFACT) {
-      [equipedItem] = GlobalStore.selectedCharacter.inventory.gears.filter(item => item && item.gearType === type);
+      [equipedItem] = GlobalStore.selectedCharacter.inventory.gears.filter((item) => item && item.gearType === type);
       this.gearType = type;
     } else {
-      const equipedSlots = GlobalStore.selectedCharacter.inventory.hotbar.map(item => (item ? item.hotbarSlot : null));
-      const [emptySlot] = [1, 2, 3].filter(slot => equipedSlots.indexOf(slot) < 0);
+      const equipedSlots = GlobalStore.selectedCharacter.inventory.hotbar.map((item) => (item ? item.hotbarSlot : null));
+      const [emptySlot] = [1, 2, 3].filter((slot) => equipedSlots.indexOf(slot) < 0);
       const oldSelectedItemValid = GlobalStore.$oldSelectedItem && GlobalStore.$oldSelectedItem.isArtefact();
       const slot = emptySlot || (oldSelectedItemValid && GlobalStore.$oldSelectedItem.hotbarSlot) || 1;
 
-      [equipedItem] = GlobalStore.selectedCharacter.inventory.hotbar.filter(item => item && item.hotbarSlot === slot);
+      [equipedItem] = GlobalStore.selectedCharacter.inventory.hotbar.filter((item) => item && item.hotbarSlot === slot);
       this.hotbarSlot = slot;
     }
     if (equipedItem) {
