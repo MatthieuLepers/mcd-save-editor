@@ -21,7 +21,7 @@ function $shuffleArray(array) {
  */
 function $createRandomEnchantmentByType(type) {
   const [enchant] = $shuffleArray(Object.values(Enchants)
-    .filter(data => !data.disabled && data.type.includes(type) && (!data.activeEnchants || !data.activeEnchants.includes(data.name))),
+    .filter((data) => !data.disabled && data.type.includes(type) && (!data.activeEnchants || !data.activeEnchants.includes(data.name))),
   );
   return { id: enchant.name, level: 0 };
 }
@@ -43,9 +43,9 @@ function $createItem(itemData, index) {
   }
   if (itemData.type === 'Armor') {
     if (itemData.name === 'MysteryArmor') {
-      itemObj.armorproperties = $shuffleArray(itemData.armorproperties.map(prop => ({ id: prop, rarity: 'Common' }))).slice(0, 2);
+      itemObj.armorproperties = $shuffleArray(itemData.armorproperties.map((prop) => ({ id: prop, rarity: 'Common' }))).slice(0, 2);
     } else {
-      itemObj.armorproperties = itemData.armorproperties.map(prop => ({ id: prop, rarity: 'Common' }));
+      itemObj.armorproperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: 'Common' }));
     }
   }
   return new Item(itemObj);
@@ -74,7 +74,7 @@ class AncientHuntsStore {
    * @param {AncientMob} mob
    */
   removeMob(mob) {
-    this.ancientMobList = this.ancientMobList.filter(m => m.name !== mob.name);
+    this.ancientMobList = this.ancientMobList.filter((m) => m.name !== mob.name);
   }
 
   /**
@@ -82,7 +82,7 @@ class AncientHuntsStore {
    * @return {Boolean}
    */
   isMobPicked(mob) {
-    return !!this.ancientMobList.filter(m => m.name === mob.name).length;
+    return !!this.ancientMobList.filter((m) => m.name === mob.name).length;
   }
 
   /**
@@ -100,7 +100,7 @@ class AncientHuntsStore {
    */
   getBestStartingItemList(runes) {
     return $shuffleArray(Object.values({ ...MeleeWeapons, ...RangedWeapons, ...Armors })
-      .filter(data => !data.disabled)
+      .filter((data) => !data.disabled)
       .map($createItem.bind(this))
       .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
       .filter((item, i, array) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)),
@@ -114,7 +114,7 @@ class AncientHuntsStore {
    */
   getNextItemListExcludingTypes(runes, excludeTypes = []) {
     return $shuffleArray(Object.values(Items)
-      .filter(data => !data.disabled && !excludeTypes.includes(data.type))
+      .filter((data) => !data.disabled && !excludeTypes.includes(data.type))
       .map($createItem.bind(this))
       .sort((a, b) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
       .filter((item, i, array) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)),
@@ -126,10 +126,10 @@ class AncientHuntsStore {
    */
   findOffers() {
     const orderResult = (list) => {
-      const [meleeItem] = list.filter(item => item && item.itemType === ItemTypeEnum.MELEE);
-      const [rangedItem] = list.filter(item => item && item.itemType === ItemTypeEnum.RANGED);
-      const [armorItem] = list.filter(item => item && item.itemType === ItemTypeEnum.ARMOR);
-      const [artefactItem] = list.filter(item => item && item.itemType === ItemTypeEnum.ARTEFACT);
+      const [meleeItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.MELEE);
+      const [rangedItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.RANGED);
+      const [armorItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.ARMOR);
+      const [artefactItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.ARTEFACT);
       return [meleeItem, rangedItem, armorItem, artefactItem];
     };
     const runes = this.runeList;

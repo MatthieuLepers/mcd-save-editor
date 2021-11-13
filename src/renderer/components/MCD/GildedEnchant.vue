@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     tier() {
-      return [...Array(this.ench.level).keys()].reduce(acc => `i${acc}`, '');
+      return [...Array(this.ench.level).keys()].reduce((acc) => `i${acc}`, '');
     },
   },
   watch: {

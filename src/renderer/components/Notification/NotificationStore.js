@@ -1,4 +1,7 @@
 class NotificationStore {
+  /**
+   * @constructor
+   */
   constructor() {
     this.storage = [];
     this.timers = [];

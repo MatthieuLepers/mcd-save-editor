@@ -12,7 +12,7 @@ function $fetchCharacterBackups(e, filePath) {
   if (fs.existsSync(backupFolder)) {
     e.returnValue = fs
       .readdirSync(backupFolder)
-      .filter(file => new RegExp(`^${characterId}-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}h[0-9]{2}\\.json\\.bak$`).test(file))
+      .filter((file) => new RegExp(`^${characterId}-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}h[0-9]{2}\\.json\\.bak$`).test(file))
     ;
   } else {
     e.returnValue = [];

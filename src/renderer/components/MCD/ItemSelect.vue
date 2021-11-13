@@ -74,13 +74,13 @@ export default {
   },
   computed: {
     filteredItemList() {
-      const baseFilterFn = itemData => !itemData.disabled && itemData.name !== this.value.$data.type && this.$t(`MCD.Game.Items.${itemData.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0;
+      const baseFilterFn = (itemData) => !itemData.disabled && itemData.name !== this.value.$data.type && this.$t(`MCD.Game.Items.${itemData.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0;
 
       if (this.value.isEquipped()) {
         const slot = (this.value.isGear() ? this.value.gearType : 'Artefact');
         return Object
           .values(Items)
-          .filter(itemData => itemData.type === slot && baseFilterFn(itemData))
+          .filter((itemData) => itemData.type === slot && baseFilterFn(itemData))
         ;
       }
       if (this.filter === 'all') {
@@ -92,20 +92,20 @@ export default {
       if (this.filter === 'Event') {
         return Object
           .values(Items)
-          .filter(itemData => itemData.event && baseFilterFn(itemData))
+          .filter((itemData) => itemData.event && baseFilterFn(itemData))
           .sort((a, b) => EventsData[a.event].startedAt.getTime() - EventsData[b.event].startedAt.getTime())
         ;
       }
       if (this.filter === 'DLC') {
         return Object
           .values(Items)
-          .filter(itemData => itemData.dlc && baseFilterFn(itemData))
+          .filter((itemData) => itemData.dlc && baseFilterFn(itemData))
           .sort((a, b) => DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime())
         ;
       }
       return Object
         .values(Items)
-        .filter(itemData => itemData.type === this.filter && baseFilterFn(itemData))
+        .filter((itemData) => itemData.type === this.filter && baseFilterFn(itemData))
       ;
     },
   },

@@ -66,7 +66,7 @@ export default {
       }
     },
     getUpgradeTier(level) {
-      return [...Array(level).keys()].reduce(acc => `${acc}i`, '');
+      return [...Array(level).keys()].reduce((acc) => `${acc}i`, '');
     },
     closeEditor() {
       GlobalStore.selectedEnchant = null;

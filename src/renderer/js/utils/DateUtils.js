@@ -172,7 +172,7 @@ class DateUtils {
   format(date, format) {
     return format
       .split('')
-      .map(letter => (typeof this[letter] === 'function' ? this[letter](date) : letter))
+      .map((letter) => (typeof this[letter] === 'function' ? this[letter](date) : letter))
       .join('')
     ;
   }

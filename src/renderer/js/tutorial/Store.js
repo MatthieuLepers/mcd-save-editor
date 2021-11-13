@@ -12,6 +12,7 @@ class TutorialStore {
    */
   constructor() {
     this.currentStep = 'Welcome';
+    this.isDisabled = false;
     this.stepData = TutorialStepList.Welcome;
     this.show = AppSettings.firstStart;
   }
@@ -43,11 +44,13 @@ class TutorialStore {
   }
 
   disableTutorial() {
+    this.isDisabled = true;
     this.currentStep = 'TutorialDisabled';
     this.stepData = TutorialStepList.TutorialDisabled;
   }
 
   enableTutorial() {
+    this.isDisabled = false;
     this.currentStep = 'Welcome';
     this.stepData = TutorialStepList.Welcome;
   }

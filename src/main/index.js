@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import { app, BrowserWindow } from 'electron' // eslint-disable-line
 
 import ModuleManager from './modules/Manager';
