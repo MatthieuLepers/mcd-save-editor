@@ -7,12 +7,14 @@
 .MCDArmorPropertySelect {
   position: relative;
 
-  &:hover, &.focus {
+  &:hover,
+  &--Focus {
     .MCDArmorPropertySelectOuter {
       padding: 3px 5px;
       cursor: pointer;
 
-      &::after, &::before {
+      &::after,
+      &::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -51,7 +53,8 @@
     background: color(primary);
     width: 284px;
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -90,7 +93,8 @@
     margin: 2px 0;
     padding: 5px;
 
-    &:hover, &.selected {
+    &:hover,
+    &--Selected {
       background-color: lighten(color(primary), 11.76);
     }
 

@@ -2,7 +2,7 @@
   <div class="Tabs">
     <nav class="TabsNavigation">
       <ul class="TabsNavigationList">
-        <li class="TabsNavigationListItem" :class="{active: selected === i}" v-for="(tab, i) in tabs" :key="`tabnavitem${i}`" @click.prevent.stop="handleSelect(i)">
+        <li :class="GenerateModifiers('TabsNavigationListItem', { Active: selected === i })" v-for="(tab, i) in tabs" :key="`tabnavitem${i}`" @click.prevent.stop="handleSelect(i)">
           <slot :name="`nav${tab.name}`" :tab="tab" :index="i">
             {{ tab.label }}
           </slot>

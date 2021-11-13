@@ -1,5 +1,5 @@
 <template>
-  <button :disabled="disabled" :class="`MCDButton MCDButton--${variant} MCDButton--${size}`" :title="title" @click="$emit('click')">
+  <button :disabled="disabled" :class="GenerateModifiers('MCDButton', { [variant]: true, [size]: true })" :title="title" @click="$emit('click')">
     <i :class="`icon-${icon}`" v-if="icon"></i>
     <span v-if="label">{{ label }}</span>
   </button>

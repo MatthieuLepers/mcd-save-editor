@@ -20,7 +20,8 @@
     color: color(f);
 
     &:not([disabled]) {
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         outline: none;
         background-color: rgba(color(f), .1);
       }
@@ -31,7 +32,9 @@
       cursor: auto;
     }
 
-    &Ctn {height: 100%;}
+    &Ctn {
+      height: 100%;
+    }
 
     &Close:not([disabled]) {
       &:hover, &:focus {

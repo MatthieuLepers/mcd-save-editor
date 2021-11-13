@@ -1,7 +1,7 @@
 <template>
   <div class="MCDInventory" :key="GlobalStore.key">
     <div class="MCDInventoryFilters">
-      <button v-for="(filter, i) in Object.values(Filters)" :key="i" class="MCDInventoryFilter" :class="{ selected: FilteredInventoryStore.filter === filter }" @click="setFilter(filter)">
+      <button v-for="(filter, i) in Object.values(Filters)" :key="i" :class="GenerateModifiers('MCDInventoryFilter', { Selected: FilteredInventoryStore.filter === filter })" @click="setFilter(filter)">
         <span>{{ $t(`MCD.Inventory.filters.${filter.name}`) }}</span>
         <i :class="`icon-${filter.icon}`"></i>
       </button>

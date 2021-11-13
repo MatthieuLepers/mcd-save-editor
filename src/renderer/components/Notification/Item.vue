@@ -1,5 +1,5 @@
 <template>
-  <div :class="`NotificationItem ${variant} ${disapear ? 'disapear' : ''}`">
+  <div :class="GenerateModifiers('NotificationItem', { [variant]: true, Disapear: disapear })">
     <slot />
   </div>
 </template>

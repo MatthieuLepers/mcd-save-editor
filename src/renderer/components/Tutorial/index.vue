@@ -24,13 +24,13 @@
         </li>
       </ul>
       <template v-slot:footer="{ close }">
-        <button class="btn" v-if="TutorialStore.stepData.prevStepId && TutorialStore.stepData.isFinished()" @click="TutorialStore.stepData.prev()">
+        <button class="ModalButton" v-if="TutorialStore.stepData.prevStepId && TutorialStore.stepData.isFinished()" @click="TutorialStore.stepData.prev()">
           {{ $t('Tutorial.buttons.prev') }}
         </button>
-        <button class="btn" v-if="TutorialStore.stepData.nextStepId && TutorialStore.stepData.isFinished()" @click="TutorialStore.stepData.next()">
+        <button class="ModalButton" v-if="TutorialStore.stepData.nextStepId && TutorialStore.stepData.isFinished()" @click="TutorialStore.stepData.next()">
           {{ $t('Tutorial.buttons.next') }}
         </button>
-        <button class="btn" v-if="!TutorialStore.stepData.nextStepId && TutorialStore.stepData.isFinished()" @click="handleFinishTutorial(close)">
+        <button class="ModalButton" v-if="!TutorialStore.stepData.nextStepId && TutorialStore.stepData.isFinished()" @click="handleFinishTutorial(close)">
           {{ $t('Tutorial.buttons.finished') }}
         </button>
       </template>

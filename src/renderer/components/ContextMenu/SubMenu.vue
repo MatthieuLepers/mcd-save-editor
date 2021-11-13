@@ -1,5 +1,5 @@
 <template>
-  <div :class="`ContextMenuItem ArrowRight ${disabled ? 'disabled' : ''}`" v-show="visible" @mouseover="$emit('hover')" @mouseout="$emit('out')">
+  <div :class="GenerateModifiers('ContextMenuItem', { ArrowRight: true, Disabled: disabled })" v-show="visible" @mouseover="$emit('hover')" @mouseout="$emit('out')">
     <div class="ContextMenuItemName">
       {{ label }}
     </div>

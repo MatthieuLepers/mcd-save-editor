@@ -48,13 +48,14 @@
     }
   }
 
-  &--selected {
+  &--Selected {
     filter: none;
     opacity: 1;
     border: none;
     position: relative;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       display: block;

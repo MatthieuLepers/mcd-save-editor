@@ -1,5 +1,5 @@
 <template>
-  <div class="MCDItemSelect" :class="{focus: open, noFilters: value.isEquipped()}">
+  <div :class="GenerateModifiers('MCDItemSelect', { Focus: open, NoFilters: value.isEquipped() })">
     <div class="MCDItemSelectOuter" @click="handleClickToggle" @mouseover="refreshTutorialPolygonList" @mouseout="refreshTutorialPolygonList">
       {{ value.toString() }}
     </div>
@@ -7,8 +7,7 @@
       <div class="MCDItemSelectFiltersContainer">
         <div v-if="!value.isEquipped()" class="MCDItemSelectFilters">
           <button
-            class="MCDItemSelectFilter"
-            :class="{selected: filter === name}"
+            :class="GenerateModifiers('MCDItemSelectFilter', { Selected: filter === name })"
             :title="$t(`MCD.Inventory.filters.${name.toLowerCase()}`)"
             @click.stop="setFilter(name)"
             v-for="({ name, icon }, i) in filtersList"

@@ -1,5 +1,5 @@
 <template>
-  <label :for="`ancientMob${_uid}`" class="MCDAncientMob" :class="{'MCDAncientMob--selected': isSelected}">
+  <label :for="`ancientMob${_uid}`" :class="GenerateModifiers('MCDAncientMob', { Selected: isSelected})">
     <input type="checkbox" :id="`ancientMob${_uid}`" :checked="isSelected" :value="ancientMob.name" @click="handleSelectMob" />
     <img class="MCDAncientMobImage" :src="ancientMob.image" :alt="ancientMob.name" :title="$t(`MCD.Game.AncientMobs.${ancientMob.name}`)" />
 

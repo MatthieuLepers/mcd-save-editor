@@ -7,7 +7,7 @@
   background-color: color(dark);
   position: relative;
 
-  &.new::before {
+  &--New::before {
     content: '';
     position: absolute;
     top: -2px;
@@ -78,7 +78,7 @@
     }
   }
 
-  &.rare {
+  &--rare {
     border: 0;
     width: 86px;
     height: 86px;
@@ -108,7 +108,7 @@
     }
   }
 
-  &.unique {
+  &--unique {
     border: 0;
     width: 86px;
     height: 86px;

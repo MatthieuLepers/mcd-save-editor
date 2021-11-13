@@ -1,5 +1,5 @@
 <template>
-  <div class="MCDArmorPropertySelect" :class="{focus: open}">
+  <div :class="GenerateModifiers('MCDArmorPropertySelect', { Focus: open })">
     <div class="MCDArmorPropertySelectOuter" @click="open = !open">
       {{ $t(`MCD.Game.ArmorProperties.${property.armorPropertyIdentifier}`) }}
     </div>

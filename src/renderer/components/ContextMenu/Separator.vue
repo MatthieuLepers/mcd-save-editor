@@ -1,5 +1,5 @@
 <template>
-  <div class="ContextMenuItem Separator"></div>
+  <div :class="GenerateModifiers('ContextMenuItem', { Separator: true })"></div>
 </template>
 
 <script>
