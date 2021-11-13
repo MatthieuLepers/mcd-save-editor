@@ -41,8 +41,8 @@ export default {
   },
   computed: {
     filteredList() {
-      const itemProperties = this.item.$data.armorproperties.map(property => property.id);
-      const list = Object.values(ArmorProperties).filter(data => !data.disabled && itemProperties.indexOf(data.name) < 0 && data.name !== this.property.id && this.$t(`MCD.Game.ArmorProperties.${data.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0);
+      const itemProperties = this.item.$data.armorproperties.map((property) => property.id);
+      const list = Object.values(ArmorProperties).filter((data) => !data.disabled && itemProperties.indexOf(data.name) < 0 && data.name !== this.property.id && this.$t(`MCD.Game.ArmorProperties.${data.name}`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0);
       list.sort((a, b) => !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || this.$t(`MCD.Game.ArmorProperties.${a.name}`).localeCompare(this.$t(`MCD.Game.ArmorProperties.${b.name}`)))) || this.$t(`MCD.Game.ArmorProperties.${a.name}`).localeCompare(this.$t(`MCD.Game.ArmorProperties.${b.name}`)));
 
       return list;

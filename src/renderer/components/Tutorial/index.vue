@@ -3,8 +3,8 @@
     <TutorialPoly :polygonList="TutorialStore.stepData.polygonList" />
 
     <Modal
-      :name="`Tutorial${TutorialStore.currentStep}Modal`"
-      :class="`${TutorialStore.stepData.currentObjective.name || ''} ${TutorialStore.stepData.isFinished() ? 'Finished' : ''}`"
+      name="TutorialModal"
+      :class="`Tutorial${TutorialStore.currentStep}Modal ${TutorialStore.stepData.currentObjective.name || ''} ${TutorialStore.stepData.isFinished() ? 'Finished' : ''}`"
       :title="$t(`Tutorial.steps.${TutorialStore.currentStep}.title`)"
       size="xs"
       @close="handleClose"
@@ -63,14 +63,18 @@ export default {
   methods: {
     characterHasEnoughResources() {
       const hasMinimum2ItemsInInventory = GlobalStore.selectedCharacter.inventory.inventory.length >= 2;
-      const hasMeleeWeaponEquipped = GlobalStore.selectedCharacter.inventory.gears.filter(item => item && item.isMelee()).length === 1;
-      const hasMinimum9EnchantmentPoints = GlobalStore.selectedCharacter.enchantmentPoints >= 9;
+      const hasMeleeWeaponEquipped = GlobalStore.selectedCharacter.inventory.gears.filter((item) => item && item.isMelee()).length === 1;
+      const hasMinimum18EnchantmentPoints = GlobalStore.selectedCharacter.enchantmentPoints >= 18;
       return hasMinimum2ItemsInInventory
         && hasMeleeWeaponEquipped
-        && hasMinimum9EnchantmentPoints
+        && hasMinimum18EnchantmentPoints
       ;
     },
     handleFinishTutorial(closeModalFn) {
+      if (TutorialStore.isDisabled) {
+        closeModalFn();
+        return;
+      }
       GlobalStore.selectedCharacter.reload().then(() => {
         closeModalFn();
         AppSettings.firstStart = false;
@@ -90,7 +94,7 @@ export default {
         } else {
           TutorialStore.enableTutorial();
         }
-        ModalStore.showModal(`Tutorial${TutorialStore.currentStep}Modal`);
+        ModalStore.showModal('TutorialModal');
       }
     },
   },

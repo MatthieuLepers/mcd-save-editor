@@ -22,19 +22,19 @@
     }
   }
 
-  #TutorialDragAndDropModal,
-  #TutorialEquipUnequipModal {
+  .TutorialDragAndDropModal .Modal,
+  .TutorialEquipUnequipModal .Modal {
     position: absolute;
     right: 25px;
   }
 
-  #TutorialEditItemTypeModal {
+  .TutorialEditItemTypeModal .Modal {
     position: absolute;
     left: 25px;
   }
 
-  #TutorialEditEnchantmentModal,
-  #TutorialEditEnchantment2Modal {
+  .TutorialEditEnchantmentModal .Modal,
+  .TutorialEditEnchantment2Modal .Modal {
     position: absolute;
     right: 25px;
     top: 10px;
@@ -44,20 +44,27 @@
     }
   }
 
-  #TutorialAddNetheriteEnchantmentModal,
-  #TutorialRemoveNetheriteEnchantmentModal {
+  .TutorialAddNetheriteEnchantmentModal .Modal,
+  .TutorialRemoveNetheriteEnchantmentModal .Modal {
     position: absolute;
     right: 25px;
-
+    
     .ModalTitle {
       @include font-size(20);
     }
   }
 
-  .Finished #TutorialAddNetheriteEnchantmentModal,
-  .ClickNetheriteEnchantmentSlot #TutorialAddNetheriteEnchantmentModal,
-  .Finished #TutorialRemoveNetheriteEnchantmentModal,
-  .ClickNetheriteEnchantmentSlot #TutorialRemoveNetheriteEnchantmentModal {
+  .TutorialAddNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .Modal,
+  .TutorialRemoveNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .Modal {
+    position: absolute;
+    right: auto;
+    left: 25px;
+  }
+
+  .Finished .TutorialAddNetheriteEnchantmentModal .Modal,
+  .ClickNetheriteEnchantmentSlot .TutorialAddNetheriteEnchantmentModal .Modal,
+  .Finished .TutorialRemoveNetheriteEnchantmentModal .Modal,
+  .ClickNetheriteEnchantmentSlot .TutorialRemoveNetheriteEnchantmentModal .Modal {
     position: relative;
     top: auto;
     left: auto;
@@ -65,7 +72,7 @@
     bottom: auto;
   }
 
-  #TutorialTutorialDisabledModal .ModalTitle {
+  .TutorialTutorialDisabledModal .ModalTitle {
     @include font-size(20);
   }
 

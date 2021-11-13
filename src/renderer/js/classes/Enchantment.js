@@ -48,7 +48,7 @@ export default class Enchantment {
     const offset = (tier === EnchantmentTierEnum.COMMON && !this.$isNetherite ? 0 : 1);
 
     return [...Array(this.level).keys()]
-      .map(t => t + 1 + offset)
+      .map((t) => t + 1 + offset)
       .reduce((acc, val) => acc + val, 0)
     ;
   }
@@ -71,7 +71,7 @@ export default class Enchantment {
     const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1);
 
     return [...Array(3).keys()]
-      .map(t => t + 1 + offset)[level - 1]
+      .map((t) => t + 1 + offset)[level - 1]
     ;
   }
 

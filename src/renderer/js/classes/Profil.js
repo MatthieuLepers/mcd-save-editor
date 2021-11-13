@@ -20,7 +20,7 @@ export default class Profil {
    */
   async fetchCharacters() {
     const characterFiles = ipcRenderer.sendSync('fetch-characters-files', this.id);
-    this.characters = await Promise.all(characterFiles.map(file => Character.loadFromFile(`${this.id}/Characters/${file}`)));
+    this.characters = await Promise.all(characterFiles.map((file) => Character.loadFromFile(`${this.id}/Characters/${file}`)));
     return this;
   }
 
@@ -30,7 +30,7 @@ export default class Profil {
   static getListFromSaveDirectory() {
     return ipcRenderer
       .sendSync('fetch-profil-folders')
-      .map(id => new Profil(id))
+      .map((id) => new Profil(id))
     ;
   }
 }

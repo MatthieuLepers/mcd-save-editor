@@ -105,7 +105,7 @@ export default class Character {
   getAvailableBackup() {
     return ipcRenderer
       .sendSync('fetch-character-backups', this.$filePath)
-      .map(filePath => new CharacterBackup({ filePath, profilId: this.profilId, characterId: this.id }))
+      .map((filePath) => new CharacterBackup({ filePath, profilId: this.profilId, characterId: this.id }))
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
     ;
   }

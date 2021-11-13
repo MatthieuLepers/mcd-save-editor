@@ -116,7 +116,7 @@ export default {
   computed: {
     tabs() {
       if (GlobalStore.profilList.length) {
-        return GlobalStore.selectedProfil.characters.map(character => ({ name: character.uuid, label: character.$data.name }));
+        return GlobalStore.selectedProfil.characters.map((character) => ({ name: character.uuid, label: character.$data.name }));
       }
       return [];
     },
@@ -124,7 +124,7 @@ export default {
   mounted() {
     if (GlobalStore.profilList.length) {
       Promise
-        .all(GlobalStore.profilList.map(profil => profil.fetchCharacters()))
+        .all(GlobalStore.profilList.map((profil) => profil.fetchCharacters()))
         .then((profilList) => {
           this.ready = true;
           [GlobalStore.selectedProfil] = profilList;

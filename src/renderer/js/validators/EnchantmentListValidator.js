@@ -14,7 +14,7 @@ function $validateList() {
  */
 function $validateChunkMaxEnchantmentLevel() {
   return this.chunks
-    .map(chunk => chunk.reduce((acc, enchData) => enchData.level + acc, 0) <= 3)
+    .map((chunk) => chunk.reduce((acc, enchData) => enchData.level + acc, 0) <= 3)
     .reduce((acc, val) => val && acc, true)
   ;
 }
@@ -24,7 +24,7 @@ function $validateChunkMaxEnchantmentLevel() {
  */
 function $validateChunkUniqueEnchantmentLevelNonZero() {
   return this.chunks
-    .reduce((acc, chunk) => acc && [0, 1].indexOf(chunk.filter(enchData => enchData.level > 0).length) >= 0, true)
+    .reduce((acc, chunk) => acc && [0, 1].indexOf(chunk.filter((enchData) => enchData.level > 0).length) >= 0, true)
   ;
 }
 

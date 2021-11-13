@@ -8,7 +8,7 @@ export default {
           title: 'Cliquez sur l\'enchantement à modifier',
         },
         DowngradeEnchantment: {
-          title: 'Retirer les niveaux d\'amélioration',
+          title: 'Retirez les niveaux d\'amélioration',
         },
         ChooseEnchantmentToEdit: {
           title: 'Choissiez un autre enchantement',
