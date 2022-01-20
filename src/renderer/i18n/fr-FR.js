@@ -29,6 +29,7 @@ export default {
     Navigation: {
       inventory: 'Inventaire',
       ancientHunts: 'Chasses anciennes',
+      tower: 'La tour',
     },
   },
   TitleBarMenu: {
@@ -59,6 +60,11 @@ export default {
       ArmorProperties: GlobalI18N.ArmorProperties('fr-FR'),
       Enchants: GlobalI18N.Enchants('fr-FR'),
       Items: GlobalI18N.Items('fr-FR'),
+      Tower: {
+        Challenges: GlobalI18N.TowerChallengesData('fr-FR'),
+        Bosses: GlobalI18N.TowerBossesData('fr-FR'),
+        Merchants: GlobalI18N.TowerMerchantsData('fr-FR'),
+      },
     },
     AncientHunts: {
       title: 'Chasses anciennes',
@@ -153,6 +159,19 @@ export default {
     EnchantmentEditor: {
       upgradeTiers: 'Niveaux d\'amélioration',
       costError: 'Vous avez besoin de {cost} point{pluralize} d\'enchantement pour effectuer cette action.',
+    },
+    TowerConfiguration: {
+      title: 'Configuration de la tour',
+    },
+    TowerFloor: {
+      floor: 'Étage',
+      map: 'Carte',
+      difficulty: 'Difficulté',
+      difficulties: {
+        easy: 'facile',
+        medium: 'moyen',
+        hard: 'difficile',
+      },
     },
   },
   Electron: {

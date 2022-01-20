@@ -1,0 +1,15 @@
+@import "@/assets/scss/utilities.scss";
+
+.MCDTowerFloor {
+  border: 1px solid lighten(color(primary), 11.74);
+  padding: 8px;
+  margin-bottom: 4px;
+
+  &--Done {
+    border-color: color(rare);
+  }
+
+  &--Current {
+    border-color: color(secondary);
+  }
+}
