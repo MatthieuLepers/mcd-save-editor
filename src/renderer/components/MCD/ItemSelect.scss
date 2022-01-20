@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .modal .MCDItemSelect.focus .MCDItemSelectOuter {
   z-index: 11;
@@ -6,6 +6,7 @@
 
 .MCDItemSelect {
   position: relative;
+  z-index: 9;
 
   &:hover,
   &--Focus {

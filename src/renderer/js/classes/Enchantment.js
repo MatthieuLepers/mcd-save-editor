@@ -10,10 +10,12 @@ export default class Enchantment {
   /**
    * @constructor
    * @param {Object} data
+   * @param {Boolean} itemIsGilded
    */
-  constructor(data) {
+  constructor(data, itemIsGilded = false) {
     this.$data = data;
-    this.$isNetherite = false;
+    this.$netherite = false;
+    this.itemIsGilded = itemIsGilded;
 
     Object.keys(this.$data).forEach((key) => {
       Object.defineProperty(this, key, {
@@ -44,8 +46,9 @@ export default class Enchantment {
    * @return {Number}
    */
   get enchantmentPointsInvested() {
+    if (this.$netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON && !this.$isNetherite ? 0 : 1);
+    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.itemIsGilded;
 
     return [...Array(this.level).keys()]
       .map((t) => t + 1 + offset)
@@ -67,8 +70,9 @@ export default class Enchantment {
    * @return {Number}
    */
   getInvestmentCostForLevel(level) {
+    if (this.$netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1);
+    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.itemIsGilded;
 
     return [...Array(3).keys()]
       .map((t) => t + 1 + offset)[level - 1]
@@ -76,10 +80,10 @@ export default class Enchantment {
   }
 
   /**
-   * @param {Boolean} value
+   * @param {Boolean} netherite
    */
-  setNetherite(value) {
-    this.$isNetherite = value;
+  setNetherite(netherite) {
+    this.$netherite = netherite;
   }
 
   /**

@@ -1,7 +1,7 @@
 <template>
   <div
     :key="item.$key"
-    :class="GenerateModifiers('MCDItem', { Selected: item === GlobalStore.selectedItem, DragHolded: isHolded, Gilded: item.isGilded() })"
+    :class="GenerateModifiers('MCDItem', { Selected: item === GlobalStore.selectedItem, DragHolded: isHolded, Gilded: item.isGilded(), [item.$data.rarity]: true })"
     @mousedown="selectItem"
     @dragover.stop="handleDragOver"
     @drop.stop="handleDrop"
@@ -71,19 +71,19 @@ export default {
       }
     },
     handleDragStart() {
-      if (!this.noDragEvent) {
+      if (!this.noDragEvent && !this.item.isTower) {
         this.isHolded = true;
         DragDropStore.setDragFrom(this.item);
       }
     },
     handleDragEnd() {
-      if (!this.noDragEvent) {
+      if (!this.noDragEvent && !this.item.isTower) {
         this.isHolded = false;
         TutorialStore.setFullfilled('DragNDrop', false);
       }
     },
     handleDragOver(e) {
-      if (!this.noDragEvent) {
+      if (!this.noDragEvent && !this.item.isTower) {
         DragDropStore.setDragTo(this.item);
 
         const itemsAreDifferent = DragDropStore.from !== DragDropStore.to;
@@ -99,7 +99,7 @@ export default {
       }
     },
     handleDrop() {
-      if (!this.noDragEvent) {
+      if (!this.noDragEvent && !this.item.isTower) {
         DragDropStore.handleDrop(GlobalStore.selectedCharacter);
         GlobalStore.selectedItem = DragDropStore.from;
         GlobalStore.key += 1;

@@ -3,7 +3,7 @@
     <div class="MCDGearsContainers col-xs-12">
       <component
         :is="!!item ? 'MCDItem' : 'MCDItemEmpty'"
-        v-for="(item, i) in GlobalStore.selectedCharacter.inventory.gears"
+        v-for="(item, i) in gears"
         :key="i"
         :item="item"
         :itemType="ItemTypeEnum.list[i]"
@@ -16,7 +16,7 @@
     <div class="MCDArtefacts col-xs-12">
       <component
         :is="!!item ? 'MCDItem' : 'MCDItemEmpty'"
-        v-for="(item, i) in GlobalStore.selectedCharacter.inventory.hotbar"
+        v-for="(item, i) in hotbar"
         :key="i"
         :item="item"
         itemType="Artefact"
@@ -37,6 +37,10 @@ import MCDLevelBadge from './LevelBadge';
 export default {
   name: 'MCDGears',
   components: { MCDItem, MCDItemEmpty, MCDLevelBadge },
+  props: {
+    gears: { type: Array, required: true },
+    hotbar: { type: Array, required: true },
+  },
   data() {
     return {
       GlobalStore,

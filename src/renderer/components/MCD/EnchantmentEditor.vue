@@ -43,6 +43,9 @@ import MCDEnchantSelect from './EnchantSelect';
 export default {
   name: 'MCDEnchantmentEditor',
   components: { MCDButton, MCDEnchantSelect },
+  props: {
+    towerMode: { type: Boolean, default: false },
+  },
   data() {
     return { GlobalStore };
   },
@@ -50,7 +53,7 @@ export default {
     setLevel(e, level) {
       if (e.target.checked) {
         const cost = GlobalStore.selectedEnchant.getInvestmentCostForLevel(level);
-        if (GlobalStore.selectedCharacter.enchantmentPoints >= cost) {
+        if ((this.towerMode && GlobalStore.selectedCharacter.towerData.towerInfo.enchantmentPoints >= cost) || GlobalStore.selectedCharacter.enchantmentPoints >= cost) {
           GlobalStore.selectedEnchant.level = level;
         } else {
           NotificationStore.error(this.$t('MCD.EnchantmentEditor.costError', { cost, pluralize: cost >= 1 ? 's' : '' }));

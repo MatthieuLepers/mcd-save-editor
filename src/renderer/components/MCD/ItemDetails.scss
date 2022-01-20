@@ -1,9 +1,10 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .MCDItemDetails {
   padding-left: 20px;
   padding-bottom: 160px;
   position: relative;
+  height: 100%;
 
   &Infos {
     width: 100%;
