@@ -1,5 +1,5 @@
 <template>
-  <div class="MCDEnchantSelect" :class="{focus: open}">
+  <div :class="GenerateModifiers('MCDEnchantSelect', { Focus: open })">
     <div class="MCDEnchantSelectOuter" @click="handleClickToggle">
       {{ value.toString() }}
     </div>

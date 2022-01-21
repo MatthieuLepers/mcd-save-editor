@@ -1,6 +1,6 @@
 <template>
   <div
-    class="MCDItem MCDItemEmpty"
+    :class="GenerateModifiers('MCDItem', { Empty: true })"
     @dragover.stop="handleDragOver"
     @drop.stop="handleDrop"
   >

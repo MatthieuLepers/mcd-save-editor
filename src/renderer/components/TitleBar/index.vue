@@ -5,16 +5,16 @@
       {{ appTitle }}
     </div>
     <div class="TitleBarButtonCtn">
-      <button v-if="btnHelp" :disabled="!GlobalStore.enableTutorialOnRoute(this.$route)" class="TitleBarButton TitleBarButtonHelp" @click="$emit('help')">
+      <button v-if="btnHelp" :disabled="!GlobalStore.enableTutorialOnRoute(this.$route)" class="TitleBarButton" @click="$emit('help')">
         <i class="icon-help"></i>
       </button>
-      <button :disabled="!btnMinimize" class="TitleBarButton TitleBarButtonMinimize" @click="minimize">
+      <button :disabled="!btnMinimize" class="TitleBarButton" @click="minimize">
         <i class="icon-minimize"></i>
       </button>
-      <button :disabled="!btnMaximize" class="TitleBarButton TitleBarButtonMaximize" @click="maximize">
+      <button :disabled="!btnMaximize" class="TitleBarButton" @click="maximize">
         <i class="icon-maximize"></i>
       </button>
-      <button :disabled="!btnClose" class="TitleBarButton TitleBarButtonClose" @click="close">
+      <button :disabled="!btnClose" class="TitleBarButton" @click="close">
         <i class="icon-close"></i>
       </button>
     </div>

@@ -28,8 +28,8 @@ export default {
     this.attachMenu();
   },
   watch: {
-    visible() {
-      this.isVisible = this.visible;
+    visible(value) {
+      this.isVisible = value;
     },
   },
 };

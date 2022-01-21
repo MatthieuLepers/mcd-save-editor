@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .ModalBackDrop {
   @include transition(opacity .2s);
@@ -15,7 +15,7 @@
   z-index: 98;
   opacity: 0;
 
-  &.is-open {
+  &--Open {
     width: 100vw;
     height: calc(100vh - 30px);
     opacity: 1;
@@ -46,32 +46,32 @@
       z-index: -1;
     }
 
-    &.size-xs,
-    &.size-sm,
-    &.size-md,
-    &.size-lg,
-    &.size-xl {max-width: 300px;}
+    &--xs,
+    &--sm,
+    &--md,
+    &--lg,
+    &--xl {max-width: 300px;}
 
     @include media-breakpoint-up(sm) {
-      &.size-sm,
-      &.size-md,
-      &.size-lg,
-      &.size-xl {max-width: 740px;}
+      &--sm,
+      &--md,
+      &--lg,
+      &--xl {max-width: 740px;}
     }
 
     @include media-breakpoint-up(md) {
-      &.size-md
-      &.size-lg,
-      &.size-xl {max-width: 960px;}
+      &--md
+      &--lg,
+      &--xl {max-width: 960px;}
     }
 
     @include media-breakpoint-up(lg) {
-      &.size-lg,
-      &.size-xl {max-width: 1080px;}
+      &--lg,
+      &--xl {max-width: 1080px;}
     }
 
     @include media-breakpoint-up(xl) {
-      &.size-xl {max-width: 1420px;}
+      &--xl {max-width: 1420px;}
     }
 
     &Title {
@@ -93,49 +93,57 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-
-      .btn:not(:last-of-type) {margin-right: 15px;}
-
-      .btn {
-        @include font-family('Open Sans', 700);
-        min-width: 100px;
-        height: 42px;
-        border-radius: 6px;
-        background-color: rgba(color(cancel), .5);
-      }
-
-      .btn-accept {
-        background-color: rgba(color(success), .5);
-      }
-
-      .btn-refuse {
-        background-color: rgba(color(cancel), .5);
-      }
     }
 
-    &CloseBtn {
-      position: absolute;
-      top: 17px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: none;
+    &Button {
+      @include font-family('Open Sans', 700);
+      min-width: 100px;
+      height: 42px;
+      border-radius: 6px;
+      background-color: rgba(color(cancel), .5);
 
-      &::after, &::before {
-        content: "";
-        display: block;
-        background-color: color(text);
-        width: 20px;
-        height: 3px;
-        position: absolute;
-        top: calc(50% - 1.5px);
-        left: calc(50% - 10px);
-        transform-origin: 50% 50%;
+      &:not(:last-of-type) {
+        margin-right: 15px;
       }
 
-      &::after {transform: rotate(-45deg);}
-      &::before {transform: rotate(45deg);}
+      &--Accept {
+        background-color: rgba(color(success), .5);
+      }
+  
+      &--Refuse {
+        background-color: rgba(color(cancel), .5);
+      }
+
+      &--Close {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: none;
+        min-width: 0;
+  
+        &::after, &::before {
+          content: "";
+          display: block;
+          background-color: color(text);
+          width: 20px;
+          height: 3px;
+          position: absolute;
+          top: calc(50% - 1.5px);
+          left: calc(50% - 10px);
+          transform-origin: 50% 50%;
+        }
+  
+        &::after {
+          transform: rotate(-45deg);
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+      }
     }
   }
 }

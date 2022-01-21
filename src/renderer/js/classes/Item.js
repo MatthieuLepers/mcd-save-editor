@@ -21,6 +21,12 @@ export default class Item {
   constructor(data) {
     this.$data = data;
     this.$key = 0;
+
+    if (this.$data.enchantments && this.$data.enchantments.length < 9) {
+      [...Array(9 - this.$data.enchantments.length).keys()].forEach(() => {
+        this.$data.enchantments.push(Enchantment.UNSET.$data);
+      });
+    }
   }
 
   /**
@@ -153,7 +159,7 @@ export default class Item {
    * @return {String}
    */
   get gearType() {
-    return this.$data.equipmentSlot.replace('Gear', '');
+    return this.itemData.type;
   }
 
   /**
@@ -198,7 +204,7 @@ export default class Item {
    */
   get enchantmentPointsInvested() {
     return this.enchantments
-      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, this.netheriteEnchant.enchantmentPointsInvested)
+      .reduce((acc, enchantment) => acc + enchantment.enchantmentPointsInvested, 0)
     ;
   }
 
@@ -207,7 +213,7 @@ export default class Item {
    */
   get enchantments() {
     return (this.$data.enchantments || [])
-      .map((enchantmentData) => new Enchantment(enchantmentData))
+      .map((enchantmentData) => new Enchantment(enchantmentData, this.isGilded()))
     ;
   }
 

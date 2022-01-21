@@ -1,6 +1,6 @@
 <template>
-  <div :class="`NotificationItem ${variant} ${disapear ? 'disapear' : ''}`">
-    <slot />
+  <div :class="GenerateModifiers('NotificationItem', { [notification.variant]: true, Disapear: disapear })">
+    {{ notification.msg }}
   </div>
 </template>
 
@@ -10,19 +10,16 @@ import NotificationStore from './NotificationStore';
 export default {
   name: 'NotificationItem',
   props: {
-    variant: { type: String, default: 'success' },
-    index: { type: Number, default: 0 },
+    notification: { type: Object, required: true },
   },
   data() {
-    return {
-      disapear: false,
-    };
+    return { disapear: false };
   },
   mounted() {
     window.setTimeout(() => {
       this.disapear = true;
       window.setTimeout(() => {
-        NotificationStore.removeNotification(this.index);
+        NotificationStore.removeNotification(this.notification);
       }, 500);
     }, 3000);
   },

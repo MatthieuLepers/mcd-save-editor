@@ -1,6 +1,9 @@
 import Vue from 'vue';
 
 class ModalStore {
+  /**
+   * @constructor
+   */
   constructor() {
     this.storedObjList = {};
   }

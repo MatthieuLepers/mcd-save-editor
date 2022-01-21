@@ -1,4 +1,4 @@
-@import '../../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .AppNavigation {
   display: flex;
@@ -18,7 +18,7 @@
     width: 48px;
     height: 48px;
 
-    &.active::before {
+    &--Active::before {
       content: '';
       position: absolute;
       top: 0;
@@ -39,10 +39,6 @@
 
       img {
         width: 32px;
-      }
-
-      i {
-        @include font-size(24);
       }
     }
   }

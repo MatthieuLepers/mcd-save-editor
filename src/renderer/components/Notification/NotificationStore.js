@@ -4,43 +4,50 @@ class NotificationStore {
    */
   constructor() {
     this.storage = [];
-    this.timers = [];
   }
 
   /**
    * @param {String} variant - [danger, warning, success]
    * @param {String} msg
+   * @return {Object}
    */
   pushNotification(variant, msg) {
-    this.storage.push({ variant, msg });
+    const notification = { variant, msg };
+    this.storage.push(notification);
+    return notification;
   }
 
   /**
    * @param {Number} index
+   * @return {Object}
    */
-  removeNotification(index) {
-    this.storage.splice(index, 1);
+  removeNotification(notification) {
+    const [removed] = this.storage.splice(this.storage.indexOf(notification), 1);
+    return removed;
   }
 
   /**
    * @param {String} msg
+   * @return {Object}
    */
   success(msg) {
-    this.pushNotification('success', msg);
+    return this.pushNotification('success', msg);
   }
 
   /**
    * @param {String} msg
+   * @return {Object}
    */
   warning(msg) {
-    this.pushNotification('warning', msg);
+    return this.pushNotification('warning', msg);
   }
 
   /**
    * @param {String} msg
+   * @return {Object}
    */
   error(msg) {
-    this.pushNotification('danger', msg);
+    return this.pushNotification('danger', msg);
   }
 }
 

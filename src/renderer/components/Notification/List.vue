@@ -1,8 +1,6 @@
 <template>
   <div class="NotificationList">
-    <NotificationItem v-for="(obj, i) in store.storage" :key="i" :variant="obj.variant">
-      {{ obj.msg }}
-    </NotificationItem>
+    <NotificationItem v-for="(obj, i) in store.storage" :key="i" :notification="obj" />
   </div>
 </template>
 

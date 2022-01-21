@@ -1,11 +1,11 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .MCDItem {
   cursor: pointer;
   position: relative;
   height: fit-content;
 
-  &Empty {
+  &--Empty {
     cursor: auto;
 
     &::after {
@@ -23,12 +23,15 @@
     }
   }
 
-  &.selected {
+  &--Selected {
     position: relative;
     z-index: 1;
 
-    &.DragHolded {
-      &:before, &:after {content: none;}
+    &.MCDItem--DragHolded {
+      &:before,
+      &:after {
+        content: none;
+      }
     }
 
     &::before {
@@ -54,7 +57,7 @@
     }
   }
 
-  &.gilded {
+  &--Gilded {
     .MCDItemTileInnerBoxBody {
       background: url('../../../../static/img/UI/GildedBackground.png');
       background-size: cover;

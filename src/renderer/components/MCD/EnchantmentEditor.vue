@@ -27,6 +27,10 @@
       </div>
       <div class="MCDEnchantmentEditorRight">
         <img :src="GlobalStore.selectedEnchant.enchantData.image" :alt="GlobalStore.selectedEnchant.enchantIdentifier" />
+        <div class="MCDEnchantmentEditorCost" v-if="!GlobalStore.selectedEnchant.$netherite && GlobalStore.selectedEnchant.level < 3">
+          <span>Enchant Cost</span>
+          <p><img src="static/img/UI/EnchantmentPoint.png" alt="Enchantment point" /> {{ GlobalStore.selectedEnchant.getInvestmentCostForLevel(GlobalStore.selectedEnchant.level + 1) }}</p>
+        </div>
       </div>
     </div>
   </div>

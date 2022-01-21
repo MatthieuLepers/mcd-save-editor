@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .MCDAncientMob {
   border: 1px solid #4D4847;
@@ -48,13 +48,14 @@
     }
   }
 
-  &--selected {
+  &--Selected {
     filter: none;
     opacity: 1;
     border: none;
     position: relative;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       display: block;

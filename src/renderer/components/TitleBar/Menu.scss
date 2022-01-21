@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .TitleBar {
   &Menu {
@@ -10,6 +10,8 @@
     align-items: center;
     -webkit-app-region: no-drag;
 
-    &Ctn {height: 100%;}
+    &Ctn {
+      height: 100%;
+    }
   }
 }

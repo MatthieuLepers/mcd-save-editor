@@ -1,7 +1,8 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .MCDInventory {
   flex-direction: column;
+  height: 100%;
 
   &Filters {
     display: flex;
@@ -26,7 +27,7 @@
       white-space: nowrap;
     }
 
-    &.selected {
+    &--Selected {
       opacity: 1;
 
       span {display: block;}

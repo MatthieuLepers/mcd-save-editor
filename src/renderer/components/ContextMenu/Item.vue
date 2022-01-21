@@ -1,5 +1,5 @@
 <template>
-  <button :class="`ContextMenuItem ${disabled ? 'disabled' : ''}`" v-show="visible" @click="handleOnClicked">
+  <button :class="GenerateModifiers('ContextMenuItem', { Disabled: disabled })" v-show="visible" @click="handleOnClicked">
     <div class="ContextMenuItemIcon">
       <i :class="`icon-${icon}`" v-if="icon"></i>
     </div>
@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     handleOnClicked() {
-      this.$emit('click');
+      if (!this.disabled) {
+        this.$emit('click');
+      }
     },
   },
 };

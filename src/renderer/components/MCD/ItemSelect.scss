@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .modal .MCDItemSelect.focus .MCDItemSelectOuter {
   z-index: 11;
@@ -6,13 +6,16 @@
 
 .MCDItemSelect {
   position: relative;
+  z-index: 9;
 
-  &:hover, &.focus {
+  &:hover,
+  &--Focus {
     .MCDItemSelectOuter {
       padding: 3px 5px;
       cursor: pointer;
 
-      &::after, &::before {
+      &::after,
+      &::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -36,7 +39,7 @@
     }
   }
 
-  &.noFilters .MCDItemSelectInner .MCDItemSelectInputSearch {
+  &--NoFilters .MCDItemSelectInner .MCDItemSelectInputSearch {
     margin-top: 10px;
   }
 
@@ -58,7 +61,8 @@
     background: color(primary);
     min-width: 300px;
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -98,7 +102,8 @@
     margin: 2px 0;
     padding: 5px;
 
-    &:hover, &.selected {
+    &:hover,
+    &--Selected {
       background-color: lighten(color(primary), 11.76);
     }
 
@@ -151,7 +156,7 @@
     padding: 5px 0;
     opacity: .5;
 
-    &.selected, &:hover {opacity: 1;}
+    &--Selected, &:hover {opacity: 1;}
   }
 
   &InputSearch {

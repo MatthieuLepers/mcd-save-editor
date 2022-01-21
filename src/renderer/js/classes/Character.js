@@ -26,14 +26,14 @@ export default class Character {
   }
 
   /**
-   * @return {tring}
+   * @return {String}
    */
   get id() {
     return this.$filePath.replace('.dat', '').split('/').pop();
   }
 
   /**
-   * @return {tring}
+   * @return {String}
    */
   get profilId() {
     return this.$filePath.replace('.dat', '').split('/').shift();

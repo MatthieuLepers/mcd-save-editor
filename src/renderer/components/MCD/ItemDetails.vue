@@ -34,8 +34,8 @@
         <div class="MCDItemDetailsActions">
           <MCDImportButton v-if="!GlobalStore.selectedCharacter.inventory.isFull()" />
           <MCDExportButton :item="item" />
-          <MCDCloneButton :item="item" />
-          <MCDDeleteButton :item="item" />
+          <MCDCloneButton :item="item" v-if="enableClone" />
+          <MCDDeleteButton :item="item" v-if="enableDelete" />
         </div>
       </div>
     </div>
@@ -65,6 +65,8 @@ export default {
   components: { MCDRarityLabel, MCDGildedLabel, MCDGildedEnchant, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDCloneButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
   props: {
     item: { type: Item, required: true },
+    enableClone: { type: Boolean, default: true },
+    enableDelete: { type: Boolean, default: true },
   },
   data() {
     return { GlobalStore };

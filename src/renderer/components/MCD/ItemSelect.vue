@@ -1,5 +1,5 @@
 <template>
-  <div class="MCDItemSelect" :class="{focus: open, noFilters: value.isEquipped()}">
+  <div :class="GenerateModifiers('MCDItemSelect', { Focus: open, NoFilters: value.isEquipped() })">
     <div class="MCDItemSelectOuter" @click="handleClickToggle" @mouseover="refreshTutorialPolygonList" @mouseout="refreshTutorialPolygonList">
       {{ value.toString() }}
     </div>
@@ -7,8 +7,7 @@
       <div class="MCDItemSelectFiltersContainer">
         <div v-if="!value.isEquipped()" class="MCDItemSelectFilters">
           <button
-            class="MCDItemSelectFilter"
-            :class="{selected: filter === name}"
+            :class="GenerateModifiers('MCDItemSelectFilter', { Selected: filter === name })"
             :title="$t(`MCD.Inventory.filters.${name.toLowerCase()}`)"
             @click.stop="setFilter(name)"
             v-for="({ name, icon }, i) in filtersList"
@@ -114,6 +113,7 @@ export default {
       this.filter = filter;
     },
     selectItem(itemData) {
+      document.body.classList.remove('modal'); // Force update before re-render component
       this.value.convertTo(itemData);
       if (itemData.type === ItemTypeEnum.ARTEFACT || (itemData.type !== ItemTypeEnum.ARTEFACT && itemData.rarity.length === 1)) {
         TutorialStore.setFullfilled('OpenSelector', null, null, true);
@@ -134,8 +134,8 @@ export default {
     },
   },
   watch: {
-    open() {
-      document.body.classList.toggle('modal');
+    open(val) {
+      document.body.classList[val ? 'add' : 'remove']('modal');
     },
   },
   mounted() {

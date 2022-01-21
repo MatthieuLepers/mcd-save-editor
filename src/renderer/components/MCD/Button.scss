@@ -1,4 +1,4 @@
-@import '../../assets/scss/utilities.scss';
+@import '@/assets/scss/utilities.scss';
 
 .MCDButton {
   position: relative;
@@ -15,7 +15,8 @@
     height: 28px;
   }
 
-  &::before, &::after {
+  &::before,
+  &::after {
     @include transition(border-color .2s ease);
     content: '';
     position: absolute;
@@ -51,8 +52,10 @@
     }
 
     &:not([disabled]) {
-      &:hover, &:focus {
-        &::after, &::before {
+      &:hover,
+      &:focus {
+        &::after,
+        &::before {
           border-color: color(f);
         }
       }
@@ -73,8 +76,10 @@
     }
 
     &:not([disabled]) {
-      &:hover, &:focus {
-        &::after, &::before {
+      &:hover,
+      &:focus {
+        &::after,
+        &::before {
           border-color: color(0);
         }
       }

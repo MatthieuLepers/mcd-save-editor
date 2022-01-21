@@ -1,6 +1,6 @@
 <template>
-  <div :class="`ModalBackDrop${open ? ' is-open' : '' }`">
-    <div :id="name" :class="`Modal size-${size}`">
+  <div :class="GenerateModifiers('ModalBackDrop', { Open: open })">
+    <div :id="name" :class="GenerateModifiers('Modal', { [size]: true })">
       <div class="ModalTitle">
         <slot name="header">{{ title }}</slot>
       </div>
@@ -9,15 +9,15 @@
       </div>
       <div class="ModalActions">
         <slot name="footer" :accept="accept" :refuse="refuse" :close="hide">
-          <button class="btn btn-refuse" v-if="cancelOnly || okCancel" @click="refuse">
+          <button :class="GenerateModifiers('ModalButton', { Refuse: true })" v-if="cancelOnly || okCancel" @click="refuse">
             {{ cancelLabel }}
           </button>
-          <button class="btn btn-accept" v-if="okOnly || okCancel" @click="accept">
+          <button :class="GenerateModifiers('ModalButton', { Accept: true })" v-if="okOnly || okCancel" @click="accept">
             {{ okLabel }}
           </button>
         </slot>
       </div>
-      <button class="ModalCloseBtn" v-if="closable" @click="hide"></button>
+      <button :class="GenerateModifiers('ModalButton', { Close: true })" v-if="closable" @click="hide"></button>
     </div>
   </div>
 </template>

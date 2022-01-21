@@ -1,6 +1,6 @@
 {
   "name": "mcd-save-editor",
-  "version": "1.5.0",
+  "version": "1.4.0",
   "description": "An electron-vue project",
   "author": "Matthieu LEPERS",
   "scripts": {
