@@ -80,7 +80,7 @@
   "build": {
     "asar": true,
     "productName": "MCD Save Editor",
-    "appId": "com.example.yourapp",
+    "appId": "lepers.matthieu.mcd-save-editor",
     "directories": {
       "output": "build"
     },
