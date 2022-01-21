@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/ScuttlingTorment.png',
   rewards: ['ObsidianClaymore', 'VoidBow', 'TeleportationRobes'],
   i18n: {
-    'fr-FR': '???',
+    'fr-FR': 'Tourment insinuant',
     'en-EN': 'Scuttling Torment',
   },
 };

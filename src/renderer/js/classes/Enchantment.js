@@ -10,12 +10,12 @@ export default class Enchantment {
   /**
    * @constructor
    * @param {Object} data
-   * @param {Boolean} itemIsGilded
+   * @param {Boolean} isGilded
    */
-  constructor(data, itemIsGilded = false) {
+  constructor(data, isGilded = false) {
     this.$data = data;
     this.$netherite = false;
-    this.itemIsGilded = itemIsGilded;
+    this.isGilded = isGilded;
 
     Object.keys(this.$data).forEach((key) => {
       Object.defineProperty(this, key, {
@@ -48,7 +48,7 @@ export default class Enchantment {
   get enchantmentPointsInvested() {
     if (this.$netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.itemIsGilded;
+    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.isGilded;
 
     return [...Array(this.level).keys()]
       .map((t) => t + 1 + offset)
@@ -72,7 +72,7 @@ export default class Enchantment {
   getInvestmentCostForLevel(level) {
     if (this.$netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.itemIsGilded;
+    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + this.isGilded;
 
     return [...Array(3).keys()]
       .map((t) => t + 1 + offset)[level - 1]

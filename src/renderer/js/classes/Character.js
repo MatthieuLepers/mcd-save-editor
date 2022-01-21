@@ -6,7 +6,6 @@ import CharacterBackup from './CharacterBackup';
 import GlobalStore from '../stores/GlobalStore';
 import EncryptionService from '../services/EncryptionService';
 import CharacterUtils from '../utils/CharacterUtils';
-import TowerData from './tower/TowerData';
 
 /**
  * @author Matthieu LEPERS
@@ -24,7 +23,6 @@ export default class Character {
     this.$filePath = filePath;
     this.currencies = new Currencies(!this.$corrupted.length ? this.$data.currency : []);
     this.inventory = new Inventory(!this.$corrupted.length ? this.$data.items : []);
-    this.towerData = this.$data.missionStatesMap.thetower ? new TowerData(this.$data.missionStatesMap.thetower) : null;
   }
 
   /**
@@ -35,7 +33,7 @@ export default class Character {
   }
 
   /**
-   * @return {tring}
+   * @return {String}
    */
   get profilId() {
     return this.$filePath.replace('.dat', '').split('/').shift();

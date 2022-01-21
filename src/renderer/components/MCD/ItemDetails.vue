@@ -32,7 +32,7 @@
       <div class="MCDItemImage">
         <img :src="item.itemData.image" :alt="$t(`MCD.Game.Items.${item.$data.type}`)" />
         <div class="MCDItemDetailsActions">
-          <MCDImportButton v-if="item.isTower || !GlobalStore.selectedCharacter.inventory.isFull()" />
+          <MCDImportButton v-if="!GlobalStore.selectedCharacter.inventory.isFull()" />
           <MCDExportButton :item="item" />
           <MCDCloneButton :item="item" v-if="enableClone" />
           <MCDDeleteButton :item="item" v-if="enableDelete" />

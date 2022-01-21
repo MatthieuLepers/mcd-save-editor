@@ -113,6 +113,7 @@ export default {
       this.filter = filter;
     },
     selectItem(itemData) {
+      document.body.classList.remove('modal'); // Force update before re-render component
       this.value.convertTo(itemData);
       if (itemData.type === ItemTypeEnum.ARTEFACT || (itemData.type !== ItemTypeEnum.ARTEFACT && itemData.rarity.length === 1)) {
         TutorialStore.setFullfilled('OpenSelector', null, null, true);
@@ -133,8 +134,8 @@ export default {
     },
   },
   watch: {
-    open() {
-      document.body.classList.toggle('modal');
+    open(val) {
+      document.body.classList[val ? 'add' : 'remove']('modal');
     },
   },
   mounted() {

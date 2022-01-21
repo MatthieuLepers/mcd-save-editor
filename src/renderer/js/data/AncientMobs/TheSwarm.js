@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/TheSwarm.png',
   rewards: ['ShulkerArmor', 'ShadowCrossbow', 'Backstabber'],
   i18n: {
-    'fr-FR': '???',
+    'fr-FR': 'L\'essaim',
     'en-EN': 'The Swarm',
   },
 };

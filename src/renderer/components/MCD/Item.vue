@@ -71,19 +71,19 @@ export default {
       }
     },
     handleDragStart() {
-      if (!this.noDragEvent && !this.item.isTower) {
+      if (!this.noDragEvent) {
         this.isHolded = true;
         DragDropStore.setDragFrom(this.item);
       }
     },
     handleDragEnd() {
-      if (!this.noDragEvent && !this.item.isTower) {
+      if (!this.noDragEvent) {
         this.isHolded = false;
         TutorialStore.setFullfilled('DragNDrop', false);
       }
     },
     handleDragOver(e) {
-      if (!this.noDragEvent && !this.item.isTower) {
+      if (!this.noDragEvent) {
         DragDropStore.setDragTo(this.item);
 
         const itemsAreDifferent = DragDropStore.from !== DragDropStore.to;
@@ -99,7 +99,7 @@ export default {
       }
     },
     handleDrop() {
-      if (!this.noDragEvent && !this.item.isTower) {
+      if (!this.noDragEvent) {
         DragDropStore.handleDrop(GlobalStore.selectedCharacter);
         GlobalStore.selectedItem = DragDropStore.from;
         GlobalStore.key += 1;

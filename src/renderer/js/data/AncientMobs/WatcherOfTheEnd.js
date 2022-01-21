@@ -4,7 +4,7 @@ export default {
   image: 'static/img/AncientMobs/WatcherOfTheEnd.png',
   rewards: ['BardsGarb', 'ShadowCrossbow', 'VoidTouchedBlades'],
   i18n: {
-    'fr-FR': '???',
+    'fr-FR': 'Veilleur de l\'Ender',
     'en-EN': 'Watcher of The End',
   },
 };

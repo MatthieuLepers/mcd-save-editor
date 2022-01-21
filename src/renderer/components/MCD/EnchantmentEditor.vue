@@ -27,6 +27,10 @@
       </div>
       <div class="MCDEnchantmentEditorRight">
         <img :src="GlobalStore.selectedEnchant.enchantData.image" :alt="GlobalStore.selectedEnchant.enchantIdentifier" />
+        <div class="MCDEnchantmentEditorCost" v-if="!GlobalStore.selectedEnchant.$netherite && GlobalStore.selectedEnchant.level < 3">
+          <span>Enchant Cost</span>
+          <p><img src="static/img/UI/EnchantmentPoint.png" alt="Enchantment point" /> {{ GlobalStore.selectedEnchant.getInvestmentCostForLevel(GlobalStore.selectedEnchant.level + 1) }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -43,9 +47,6 @@ import MCDEnchantSelect from './EnchantSelect';
 export default {
   name: 'MCDEnchantmentEditor',
   components: { MCDButton, MCDEnchantSelect },
-  props: {
-    towerMode: { type: Boolean, default: false },
-  },
   data() {
     return { GlobalStore };
   },
@@ -53,7 +54,7 @@ export default {
     setLevel(e, level) {
       if (e.target.checked) {
         const cost = GlobalStore.selectedEnchant.getInvestmentCostForLevel(level);
-        if ((this.towerMode && GlobalStore.selectedCharacter.towerData.towerInfo.enchantmentPoints >= cost) || GlobalStore.selectedCharacter.enchantmentPoints >= cost) {
+        if (GlobalStore.selectedCharacter.enchantmentPoints >= cost) {
           GlobalStore.selectedEnchant.level = level;
         } else {
           NotificationStore.error(this.$t('MCD.EnchantmentEditor.costError', { cost, pluralize: cost >= 1 ? 's' : '' }));
