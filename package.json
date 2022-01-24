@@ -3,6 +3,12 @@
   "version": "1.4.0",
   "description": "An electron-vue project",
   "author": "Matthieu LEPERS",
+  "homepage": "https://github.com/MatthieuLepers/mcd-save-editor#readme",
+  "license": "GNU GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthieuLepers/mcd-save-editor.git"
+  },
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
     "test:unit": "vue-cli-service test:unit",
@@ -115,11 +121,5 @@
     "linux": {
       "icon": "build/icons"
     }
-  },
-  "homepage": "https://github.com/MatthieuLepers/mcd-save-editor#readme",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MatthieuLepers/mcd-save-editor.git"
   }
 }

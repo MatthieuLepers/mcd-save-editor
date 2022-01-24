@@ -1,7 +1,7 @@
 # MCD Save Editor
 
 [![GitHub release](https://img.shields.io/badge/Version-1.4.0-blue)](https://github.com/MatthieuLepers/mcd-save-editor/releases/latest)
-[![GitHub release](https://img.shields.io/badge/Game%20version-1.12.1.0-blue)](#) [![GitHub release](https://img.shields.io/badge/License-ISC-blue)](https://www.isc.org/licenses/)
+[![GitHub release](https://img.shields.io/badge/Game%20version-1.12.1.0-blue)](#) [![GitHub release](https://img.shields.io/badge/License-GNU%20GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 A Minecraft Dungeons Save Editor for Windows users.
 
