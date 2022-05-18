@@ -23,7 +23,7 @@
 
 <script>
 import { remote } from 'electron';
-import GlobalStore from '@/js/stores/GlobalStore';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
 import TitleBarMenu from './Menu';
 
 export default {

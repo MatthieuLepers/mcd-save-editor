@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Item from '@/js/classes/Item';
+import Item from '@/assets/js/classes/Item';
 
 export default {
   name: 'MCDGildedLabel',

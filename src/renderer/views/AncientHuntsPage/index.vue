@@ -34,14 +34,14 @@
 </template>
 
 <script>
-import AncientMob from '@/js/classes/AncientMob';
-import Character from '@/js/classes/Character';
-import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
-import RuneList from '@/js/classes/RuneList';
-import GlobalStore from '@/js/stores/GlobalStore';
-import AncientHuntsStore from '@/js/stores/AncientHuntsStore';
-import { Items } from '@/js/data/Content';
-import AncientMobsData from '@/js/data/AncientMobs';
+import AncientMob from '@/assets/js/classes/AncientMob';
+import Character from '@/assets/js/classes/Character';
+import ItemTypeEnum from '@/assets/js/classes/enums/ItemTypeEnum';
+import RuneList from '@/assets/js/classes/RuneList';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import AncientHuntsStore from '@/assets/js/stores/AncientHuntsStore';
+import { Items } from '@/assets/js/data/Content';
+import AncientMobsData from '@/assets/js/data/AncientMobs';
 import MCDAncientMob from '@/components/MCD/AncientMob';
 import MCDItem from '@/components/MCD/Item';
 import MCDItemEmpty from '@/components/MCD/ItemEmpty';

@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import Item from '@/js/classes/Item';
-import { ArmorProperties } from '@/js/data/Content';
-import DLCsData from '@/js/data/DLCs';
+import Item from '@/assets/js/classes/Item';
+import { ArmorProperties } from '@/assets/js/data/Content';
+import DLCsData from '@/assets/js/data/DLCs';
 
 export default {
   name: 'MCDArmorPropertySelect',

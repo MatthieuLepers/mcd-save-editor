@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import ItemTypeEnum from '@/assets/js/classes/enums/ItemTypeEnum';
 
 import MCDItem from './Item';
 import MCDItemEmpty from './ItemEmpty';

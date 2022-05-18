@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Item from '@/js/classes/Item';
-import RarityEnum from '@/js/classes/enums/RarityEnum';
-import TutorialStore from '@/js/tutorial/Store';
+import Item from '@/assets/js/classes/Item';
+import RarityEnum from '@/assets/js/classes/enums/RarityEnum';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 export default {
   name: 'MCDRarityLabel',

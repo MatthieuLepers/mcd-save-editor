@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Character from '@/js/classes/Character';
+import Character from '@/assets/js/classes/Character';
 import Modal from '@/components/Modal/index';
 import ModalStore from '@/components/Modal/Store';
 import NotificationStore from '@/components/Notification/NotificationStore';

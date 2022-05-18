@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import AppSettings from '@/js/AppSettings';
-import GlobalStore from '@/js/stores/GlobalStore';
-import TutorialStore from '@/js/tutorial/Store';
+import AppSettings from '@/assets/js/AppSettings';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 import Modal from '@/components/Modal/index';
 import ModalStore from '@/components/Modal/Store';

@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import AppSettings from '@/js/AppSettings';
-import TutorialStore from '@/js/tutorial/Store';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import AppSettings from '@/assets/js/AppSettings';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 import AppNavigation from '@/components/App/Navigation/index';
 import TitleBar from '@/components/TitleBar/index';

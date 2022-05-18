@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AppSettings from '@/js/AppSettings';
+import AppSettings from '@/assets/js/AppSettings';
 
 export default {
   name: 'TutorialPoly',

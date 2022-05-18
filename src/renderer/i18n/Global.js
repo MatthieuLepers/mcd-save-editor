@@ -1,5 +1,5 @@
-import AncientMobsData from '../js/data/AncientMobs';
-import { ArmorProperties, Enchants, Items } from '../js/data/Content';
+import AncientMobsData from '../assets/js/data/AncientMobs';
+import { ArmorProperties, Enchants, Items } from '../assets/js/data/Content';
 import TutorialsData from './Tutorial/index';
 
 export default {

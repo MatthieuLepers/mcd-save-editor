@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Item from '@/js/classes/Item';
-import Enchantment from '@/js/classes/Enchantment';
+import Item from '@/assets/js/classes/Item';
+import Enchantment from '@/assets/js/classes/Enchantment';
 
 import MCDItemEnchantmentChoice from './ItemEnchantmentChoice';
 

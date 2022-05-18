@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import CharacterUtils from '@/js/utils/CharacterUtils';
-import GlobalStore from '@/js/stores/GlobalStore';
+import CharacterUtils from '@/assets/js/utils/CharacterUtils';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
 
 export default {
   name: 'MCDLevelBadge',

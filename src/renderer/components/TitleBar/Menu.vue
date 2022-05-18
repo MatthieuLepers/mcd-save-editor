@@ -25,8 +25,8 @@
 <script>
 import { remote } from 'electron';
 
-import Settings from '@/js/AppSettings';
-import GlobalStore from '@/js/stores/GlobalStore';
+import Settings from '@/assets/js/AppSettings';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
 
 import ContextMenu from '@/components/ContextMenu/index';
 import ContextMenuItem from '@/components/ContextMenu/Item';

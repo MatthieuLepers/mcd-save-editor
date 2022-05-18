@@ -36,10 +36,10 @@
 <script>
 import os from 'os';
 
-import GlobalStore from '@/js/stores/GlobalStore';
-import Item from '@/js/classes/Item';
-import ItemValidator from '@/js/validators/ItemValidator';
-import OpenFileDialog from '@/js/electron/OpenFileDialog';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import Item from '@/assets/js/classes/Item';
+import ItemValidator from '@/assets/js/validators/ItemValidator';
+import OpenFileDialog from '@/assets/js/electron/OpenFileDialog';
 
 import MCDButton from './Button';
 import MCDItem from './Item';

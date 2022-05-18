@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import FilteredInventoryStore from '@/js/stores/FilteredInventoryStore';
-import Item from '@/js/classes/Item';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import FilteredInventoryStore from '@/assets/js/stores/FilteredInventoryStore';
+import Item from '@/assets/js/classes/Item';
 
 import MCDButton from './Button';
 

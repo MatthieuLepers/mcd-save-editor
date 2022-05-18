@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import Character from '@/js/classes/Character';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import Character from '@/assets/js/classes/Character';
 
 import MCDCharacter from '@/components/MCD/Character';
 import MCDCurrency from '@/components/MCD/Currency';

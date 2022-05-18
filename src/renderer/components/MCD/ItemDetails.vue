@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import TutorialStore from '@/js/tutorial/Store';
-import Item from '@/js/classes/Item';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
+import Item from '@/assets/js/classes/Item';
 
 import MCDItemSelect from './ItemSelect';
 import MCDArmorPropertySelect from './ArmorPropertySelect';

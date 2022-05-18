@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import Filters from '@/js/constants/Filters';
-import FilteredInventoryStore from '@/js/stores/FilteredInventoryStore';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import Filters from '@/assets/js/constants/Filters';
+import FilteredInventoryStore from '@/assets/js/stores/FilteredInventoryStore';
 
 import MCDItem from './Item';
 

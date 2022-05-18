@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import TutorialStore from '@/js/tutorial/Store';
-import Enchantment from '@/js/classes/Enchantment';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
+import Enchantment from '@/assets/js/classes/Enchantment';
 
 export default {
   name: 'MCDGildedEnchant',

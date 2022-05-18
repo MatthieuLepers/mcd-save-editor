@@ -7,8 +7,8 @@
 <script>
 import os from 'os';
 
-import Item from '@/js/classes/Item';
-import SaveFileDialog from '@/js/electron/SaveFileDialog';
+import Item from '@/assets/js/classes/Item';
+import SaveFileDialog from '@/assets/js/electron/SaveFileDialog';
 
 import MCDButton from './Button';
 

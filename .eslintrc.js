@@ -27,7 +27,7 @@ module.exports = {
     },
   },
   rules: {
-    'global-require': 0,
+    'global-require': 'off',
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
@@ -35,27 +35,24 @@ module.exports = {
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': 0,
-    'import/no-extraneous-dependencies': 0,
-    'import/newline-after-import': 0,
-    'no-shadow': 0,
-    'no-multi-assign': 0,
+    'no-param-reassign': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/newline-after-import': 'off',
+    'no-shadow': 'off',
+    'no-multi-assign': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'linebreak-style': ['error', 'windows'],
-    'max-len': [
-      'error',
-      {
-        code: 2000,
-        tabWidth: 2,
-      },
-    ],
-    'semi-style': 0,
-    'function-paren-newline': 0,
-    'class-methods-use-this': 0,
-    'object-curly-newline': 0,
-    'vue/custom-event-name-casing': 0,
-    'vue/no-mutating-props': 0,
-    'import/no-cycle': 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'linebreak-style': ['error', 'unix'],
+    'max-len': ['error', {
+      code: 1024,
+      tabWidth: 2,
+    }],
+    'semi-style': 'off',
+    'function-paren-newline': 'off',
+    'class-methods-use-this': 'off',
+    'object-curly-newline': 'off',
+    'vue/custom-event-name-casing': 'off',
+    'vue/no-mutating-props': 'off',
+    'import/no-cycle': 'off',
   },
 };

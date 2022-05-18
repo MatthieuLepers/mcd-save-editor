@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import TutorialStore from '@/js/tutorial/Store';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
 import NotificationStore from '@/components/Notification/NotificationStore';
 
 import MCDButton from './Button';

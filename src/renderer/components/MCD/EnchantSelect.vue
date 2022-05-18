@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import { Enchants } from '@/js/data/Content';
-import DLCsData from '@/js/data/DLCs';
-import TutorialStore from '@/js/tutorial/Store';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import { Enchants } from '@/assets/js/data/Content';
+import DLCsData from '@/assets/js/data/DLCs';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 export default {
   name: 'MCDEnchantSelect',

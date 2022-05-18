@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import AncientMob from '@/js/classes/AncientMob';
-import AncientHuntsStore from '@/js/stores/AncientHuntsStore';
+import AncientMob from '@/assets/js/classes/AncientMob';
+import AncientHuntsStore from '@/assets/js/stores/AncientHuntsStore';
 import RuneList from '@/components/MCD/RuneList';
 
 export default {

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import RuneList from '@/js/classes/RuneList';
+import RuneList from '@/assets/js/classes/RuneList';
 
 export default {
   name: 'MCDRuneList',

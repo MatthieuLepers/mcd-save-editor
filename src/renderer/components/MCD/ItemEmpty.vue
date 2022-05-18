@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import DragDropStore from '@/js/stores/DragDropStore';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import DragDropStore from '@/assets/js/stores/DragDropStore';
 
 import MCDItemTile from './ItemTile';
 

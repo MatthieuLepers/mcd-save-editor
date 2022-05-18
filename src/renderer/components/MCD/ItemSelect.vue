@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import TutorialStore from '@/js/tutorial/Store';
-import PolygonEnum from '@/js/tutorial//PolygonEnum';
-import ItemTypeEnum from '@/js/classes/enums/ItemTypeEnum';
-import { Items } from '@/js/data/Content';
-import DLCsData from '@/js/data/DLCs';
-import EventsData from '@/js/data/Events';
+import TutorialStore from '@/assets/js/tutorial/Store';
+import PolygonEnum from '@/assets/js/tutorial//PolygonEnum';
+import ItemTypeEnum from '@/assets/js/classes/enums/ItemTypeEnum';
+import { Items } from '@/assets/js/data/Content';
+import DLCsData from '@/assets/js/data/DLCs';
+import EventsData from '@/assets/js/data/Events';
 
 const FILTERS = [
   { name: 'all', icon: 'all' },

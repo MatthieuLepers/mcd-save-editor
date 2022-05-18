@@ -2,7 +2,7 @@ import { execFile } from 'child_process';
 import fs from 'fs';
 import Constants from '../Constants';
 import Module from './Module';
-import CharacterUtils from '../../renderer/js/utils/CharacterUtils';
+import CharacterUtils from '../../renderer/assets/js/utils/CharacterUtils';
 
 const DTOOLS_PATH = process.env.NODE_ENV === 'development'
   ? `${process.cwd()}/static/dtools.exe`
@@ -15,9 +15,9 @@ const DTOOLS_PATH = process.env.NODE_ENV === 'development'
  */
 function $makeFileBackup(file) {
   try {
-    const ext = file.substr(file.lastIndexOf('.') + 1);
+    const ext = file.substring(file.lastIndexOf('.') + 1);
     const filePath = file.replace(`.${ext}`, '');
-    const fileName = file.substr(file.lastIndexOf('/') + 1).replace(`.${ext}`, '');
+    const fileName = file.substring(file.lastIndexOf('/') + 1).replace(`.${ext}`, '');
     const fileContent = fs.readFileSync(file);
     const date = new Date().toISOString().replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2}).*/, '$1-$2-$3-$4h$5');
     if (!fs.existsSync(filePath)) {

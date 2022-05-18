@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import I18N from '../i18n/index';
-import AppSettings from '../js/AppSettings';
+import AppSettings from '../assets/js/AppSettings';
 
 Vue.use(VueI18n);
 

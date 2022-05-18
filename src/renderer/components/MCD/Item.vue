@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import Item from '@/js/classes/Item';
-import GlobalStore from '@/js/stores/GlobalStore';
-import DragDropStore from '@/js/stores/DragDropStore';
-import TutorialStore from '@/js/tutorial/Store';
+import Item from '@/assets/js/classes/Item';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import DragDropStore from '@/assets/js/stores/DragDropStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 import MCDItemTile from './ItemTile';
 import MCDRuneList from './RuneList';

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Character from '@/js/classes/Character';
+import Character from '@/assets/js/classes/Character';
 
 export default {
   name: 'MCDCharacter',

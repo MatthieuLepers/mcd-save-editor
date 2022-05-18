@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import GlobalStore from '@/js/stores/GlobalStore';
-import TutorialStore from '@/js/tutorial/Store';
+import GlobalStore from '@/assets/js/stores/GlobalStore';
+import TutorialStore from '@/assets/js/tutorial/Store';
 
 export default {
   name: 'MCDItemEnchantmentChoice',

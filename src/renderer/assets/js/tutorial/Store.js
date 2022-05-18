@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import TutorialStepList from '@/js/tutorial/StepList';
+import TutorialStepList from '@/assets/js/tutorial/StepList';
 import AppSettings from '../AppSettings';
 
 /**

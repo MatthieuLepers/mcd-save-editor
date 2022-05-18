@@ -24,7 +24,7 @@ export default class AbstractValidator {
       if (!key.startsWith('!')) {
         return acc && this.$keys.indexOf(key) >= 0;
       }
-      return acc && this.$keys.indexOf(key.substr(1)) < 0;
+      return acc && this.$keys.indexOf(key.substring(1)) < 0;
     }, true);
   }
 
