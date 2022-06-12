@@ -46,18 +46,23 @@ export default class CharacterUtils {
   static isDataCorrupted(data) {
     return !data.items.reduce((acc, item) => {
       const itemValidator = new ItemValidator(item);
-      return acc && itemValidator.isValid() && itemValidator.seemsValid();
+      return acc && (itemValidator.isValid() || itemValidator.seemsValid());
     }, true);
   }
 
   /**
    * @param {Object} data
-   * @return {Object[]]}
+   * @return {Object[]}
    */
   static getDataCorrupted(data) {
-    return data.items.filter((item) => {
+    const corruptedItems = [];
+    data.items.forEach((item) => {
       const itemValidator = new ItemValidator(item);
-      return !itemValidator.isValid() && !itemValidator.seemsValid();
+      if (!itemValidator.isValid() || !itemValidator.seemsValid()) {
+        corruptedItems.push({ item, messages: itemValidator.$corruptionData });
+      }
     });
+
+    return corruptedItems;
   }
 }

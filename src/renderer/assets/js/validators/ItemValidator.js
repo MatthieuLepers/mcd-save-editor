@@ -11,11 +11,11 @@ import EquipmentSlotEnum from '../classes/enums/EquipmentSlotEnum';
  * @return {Boolean}
  */
 function $validateKeys() {
-  return this.$keys.length >= 4
-    && this.$keys.length <= 8
-    && (this.hasKeys('equipmentSlot', '!inventoryIndex') || this.hasKeys('!equipmentSlot', 'inventoryIndex'))
-    && this.hasKeys('power', 'rarity', 'type', 'upgraded')
-  ;
+  return this.keysValidator(
+    ['power', 'rarity', 'type', 'upgraded'],
+    ['armorproperties', 'enchantments', 'netheriteEnchant', 'gifted', 'markedNew'],
+    ['equipmentSlot', 'inventoryIndex'],
+  );
 }
 
 /**
@@ -24,7 +24,7 @@ function $validateKeys() {
 function $validateArmorProperties() {
   return this.hasKeys('armorproperties')
     && Array.isArray(this.data.armorproperties)
-    && new ArmorPropertyListValidator(this.data.armorproperties, this.data.type).isValid()
+    && new ArmorPropertyListValidator(this.data.armorproperties, this.data.type, this.$corruptionData).isValid()
   ;
 }
 
@@ -34,7 +34,7 @@ function $validateArmorProperties() {
 function $validateEnchantments() {
   return this.hasKeys('enchantments')
     && Array.isArray(this.data.enchantments)
-    && new EnchantmentListValidator(this.data.enchantments).isValid()
+    && new EnchantmentListValidator(this.data.enchantments, this.$corruptionData).isValid()
   ;
 }
 
@@ -69,10 +69,11 @@ function $validateInventoryIndex() {
  * @return {Boolean}
  */
 function $validateNetheriteEnchant() {
-  return this.hasKeys('netheriteEnchant')
-    ? typeof this.data.netheriteEnchant === 'object' && new EnchantmentValidator(this.data.netheriteEnchant).isValid()
-    : true
-  ;
+  if (this.hasKeys('netheriteEnchant') && typeof this.data.netheriteEnchant === 'object') {
+    const enchantementValidator = new EnchantmentValidator(this.data.netheriteEnchant, this.$corruptionData);
+    return enchantementValidator.isValid();
+  }
+  return true;
 }
 
 /**
@@ -132,6 +133,13 @@ function $validateUpgraded() {
  * @version 1.0.0
  */
 export default class ItemValidator extends AbstractValidator {
+  /**
+   * @return {String}
+   */
+  get identifier() {
+    return this.data.type || 'Unknown item';
+  }
+
   /**
    * @inheritdoc
    */

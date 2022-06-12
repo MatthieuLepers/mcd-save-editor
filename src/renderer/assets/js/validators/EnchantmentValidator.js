@@ -5,9 +5,7 @@ import { Enchants } from '../data/Content';
  * @return {Boolean}
  */
 function $validateKeys() {
-  return this.$keys.length === 3
-    && this.hasKeys('id', 'level', 'investedPoints')
-  ;
+  return this.keysValidator(['id', 'level', 'investedPoints']);
 }
 
 /**
@@ -33,6 +31,13 @@ function $validateLevel() {
  * @version 1.0.0
  */
 export default class EnchantmentValidator extends AbstractValidator {
+  /**
+   * @return {String}
+   */
+  get identifier() {
+    return this.data.id || 'Unknown enchantment';
+  }
+
   /**
    * @inheritdoc
    */

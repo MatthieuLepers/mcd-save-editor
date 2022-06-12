@@ -7,9 +7,7 @@ import RarityEnum from '../classes/enums/RarityEnum';
  * @return {Boolean}
  */
 function $validateKeys() {
-  return this.$keys.length === 2
-    && this.hasKeys('id', 'rarity')
-  ;
+  return this.keysValidator(['id', 'rarity']);
 }
 
 /**
@@ -35,6 +33,13 @@ function $validateRarity() {
  * @version 1.0.0
  */
 export default class EnchantmentValidator extends AbstractValidator {
+  /**
+   * @return {String}
+   */
+  get identifier() {
+    return this.data.id || 'Unknown armor property';
+  }
+
   /**
    * @inheritdoc
    */

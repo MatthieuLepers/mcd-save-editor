@@ -5,7 +5,7 @@ import EnchantmentValidator from './EnchantmentValidator';
  */
 function $validateList() {
   return this.list.length === 9
-    && this.list.reduce((acc, enchData) => acc && new EnchantmentValidator(enchData).isValid(), true)
+    && this.list.reduce((acc, enchData) => acc && new EnchantmentValidator(enchData, this.$corruptionData).isValid(), true)
   ;
 }
 
@@ -35,14 +35,16 @@ function $validateChunkUniqueEnchantmentLevelNonZero() {
 export default class EnchantmentListValidator {
   /**
    * @param {Array} list
+   * @param {String[]} corruptionData
    */
-  constructor(list) {
+  constructor(list, corruptionData = []) {
     this.list = list;
     this.chunks = this.list.reduce((acc, val, i) => {
       const ch = Math.floor(i / 3);
       acc[ch] = [].concat((acc[ch] || []), val);
       return acc;
     }, []);
+    this.$corruptionData = corruptionData;
   }
 
   /**

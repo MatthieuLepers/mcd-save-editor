@@ -6,7 +6,7 @@ import { Items } from '../data/Content';
  */
 function $validateList() {
   return this.list
-    .reduce((acc, propertyData) => acc && new ArmorPropertyValidator(propertyData).isValid(), true)
+    .reduce((acc, propertyData) => acc && new ArmorPropertyValidator(propertyData, this.$corruptionData).isValid(), true)
   ;
 }
 
@@ -46,11 +46,14 @@ function $validateEachProperties() {
 export default class ArmorPropertyListValidator {
   /**
    * @param {Array} list
+   * @param {String} itemId
+   * @param {String[]} corruptionData
    */
-  constructor(list, itemId) {
+  constructor(list, itemId, corruptionData = []) {
     this.list = list;
     this.itemId = itemId;
     this.itemData = Items[this.itemId];
+    this.$corruptionData = corruptionData;
   }
 
   /**

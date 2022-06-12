@@ -79,7 +79,7 @@ export default {
       title: 'Oups !',
       contentBackupAvailable: [
         'Les données de ce personnage sont corrompues, la dernière backup valide date du {date}.',
-        'Voulez-vous la réstaurée ?',
+        'Voulez-vous la réstaurer ?',
       ],
       contentNoBackupAvailable: [
         'Les données de ce personnage sont corrompues mais il n\'y a aucune backup disponible.',
