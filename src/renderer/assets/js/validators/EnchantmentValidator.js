@@ -5,8 +5,8 @@ import { Enchants } from '../data/Content';
  * @return {Boolean}
  */
 function $validateKeys() {
-  return this.$keys.length === 2
-    && this.hasKeys('id', 'level')
+  return this.$keys.length === 3
+    && this.hasKeys('id', 'level', 'investedPoints')
   ;
 }
 

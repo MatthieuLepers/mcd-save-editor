@@ -11,6 +11,7 @@
         v-for="(item, i) in FilteredInventoryStore.inventory"
         :key="i"
         :item="item"
+        :disableEquipControl="disableEquipControl"
       />
     </div>
   </div>
@@ -26,6 +27,9 @@ import MCDItem from './Item';
 export default {
   name: 'MCDInventory',
   components: { MCDItem },
+  props: {
+    disableEquipControl: { type: Boolean, default: false },
+  },
   data() {
     return {
       GlobalStore,

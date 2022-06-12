@@ -42,6 +42,7 @@ export default {
     item: { type: Item, required: true },
     showRuneList: { type: Boolean, default: false },
     noDragEvent: { type: Boolean, default: false },
+    disableEquipControl: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -60,7 +61,7 @@ export default {
       }
       TutorialStore.setFullfilled('SelectItem', true);
 
-      if (e.which === 2 || e.button === 4) {
+      if (!this.disableEquipControl && (e.which === 2 || e.button === 4)) {
         e.preventDefault();
         if (this.item.isEquipped()) {
           TutorialStore.setFullfilled('UnequipItem', true);

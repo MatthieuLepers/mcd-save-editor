@@ -3,8 +3,8 @@ $data: (
   'p': 'padding',
 );
 $start: 0;
-$end: 50;
-$step: 5;
+$end: 64;
+$step: 8;
 
 @each $type, $attr in $data {
   @each $bpName, $bpWidth in $breakpoints {

@@ -28,6 +28,7 @@ export default {
     noProfilFound: 'Aucun profil trouvé.',
     Navigation: {
       inventory: 'Inventaire',
+      storageChest: 'Coffre de stockage',
       ancientHunts: 'Chasses anciennes',
     },
   },

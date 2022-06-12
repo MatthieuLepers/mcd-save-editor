@@ -1,21 +1,18 @@
-import Item from './Item';
+import AbstractItemStorage from './AbstractItemStorage';
 import ItemTypeEnum from './enums/ItemTypeEnum';
 import GlobalStore from '../stores/GlobalStore';
-
-const MAX_INVENTORY_SIZE = 180;
 
 /**
  * @author Matthieu LEPERS
  * @version 1.0.0
  */
-export default class Inventory {
+export default class Inventory extends AbstractItemStorage {
   /**
    * @constructor
    * @param {Object[]} data
    */
   constructor(data) {
-    this.$data = data;
-    this.items = this.$data.map((itemData) => new Item(itemData));
+    super(180, data);
   }
 
   /**
@@ -55,48 +52,6 @@ export default class Inventory {
    */
   get inventory() {
     return this.items.filter((item) => !item.isEquipped());
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  isFull() {
-    return this.inventory.length === MAX_INVENTORY_SIZE;
-  }
-
-  /**
-   * @return {Number}
-   */
-  getAvailableSlotCount() {
-    return MAX_INVENTORY_SIZE - this.inventory.length;
-  }
-
-  /**
-   * @param {Item} item
-   */
-  addItem(item) {
-    if (item.$data.equipmentSlot) {
-      delete item.$data.equipmentSlot;
-    }
-    item.$data.inventoryIndex = 0;
-    item.$data.markedNew = true;
-
-    const indexOfFirstInventoryItem = this.items.findIndex((item) => item.$data.inventoryIndex === 0);
-    this.$data.splice(indexOfFirstInventoryItem, 0, item.$data);
-    this.items.splice(indexOfFirstInventoryItem, 0, item);
-
-    this.checkIntegrity();
-    [GlobalStore.selectedItem] = this.inventory;
-  }
-
-  /**
-   * @param {Item} item
-   */
-  removeItem(item) {
-    this.$data.splice(this.$data.indexOf(item.$data), 1);
-    this.items.splice(this.items.indexOf(item), 1);
-
-    this.checkIntegrity();
   }
 
   checkIntegrity() {

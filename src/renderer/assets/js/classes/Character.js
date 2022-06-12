@@ -1,6 +1,7 @@
 import { ipcRenderer } from 'electron';
 import Currencies from './Currencies';
 import Inventory from './Inventory';
+import StorageChest from './StorageChest';
 import CharacterBackup from './CharacterBackup';
 
 import GlobalStore from '../stores/GlobalStore';
@@ -23,6 +24,7 @@ export default class Character {
     this.$filePath = filePath;
     this.currencies = new Currencies(!this.$corrupted.length ? this.$data.currency : []);
     this.inventory = new Inventory(!this.$corrupted.length ? this.$data.items : []);
+    this.storageChest = new StorageChest(!this.$corrupted.length ? this.$data.storageChestItems : []);
   }
 
   /**
@@ -83,9 +85,10 @@ export default class Character {
 
   async reload() {
     this.$data = await EncryptionService.decrypt(this.$filePath, true);
-    this.$corrupted = [];
-    this.currencies = new Currencies(this.$data.currency);
-    this.inventory = new Inventory(this.$data.items);
+    this.$corrupted = CharacterUtils.getDataCorrupted(this.$data);
+    this.currencies = new Currencies(!this.$corrupted.length ? this.$data.currency : []);
+    this.inventory = new Inventory(!this.$corrupted.length ? this.$data.items : []);
+    this.storageChest = new StorageChest(!this.$corrupted.length ? this.$data.storageChestItems : []);
     GlobalStore.selectedCharacter = this;
   }
 
