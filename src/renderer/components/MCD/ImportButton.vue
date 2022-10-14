@@ -70,9 +70,9 @@ export default {
       if (fileContentRaw) {
         try {
           const fileData = JSON.parse(fileContentRaw);
-          const itemValidator = new ItemValidator(fileData);
+          const validator = new ItemValidator(fileData);
 
-          if (itemValidator.isValid()) {
+          if (validator.isValid()) {
             this.importedItem = new Item(fileData);
             ModalStore.showModal('ImportConfirmModal');
           } else {

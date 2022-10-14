@@ -1,177 +1,30 @@
-import AbstractValidator from './AbstractValidator';
-import ArmorPropertyListValidator from './ArmorPropertyListValidator';
-import EnchantmentListValidator from './EnchantmentListValidator';
-import EnchantmentValidator from './EnchantmentValidator';
+import {
+  validateBySchema,
+  validateItemType,
+  validateEnchantmentChunks,
+  validateArmorProperties,
+} from './ValidationFunctions';
+import ItemSchema from '../../../../../static/json/schemas/item.schema.json';
 
-import { Items } from '../data/Content';
-import RarityEnum from '../classes/enums/RarityEnum';
-import EquipmentSlotEnum from '../classes/enums/EquipmentSlotEnum';
-
-/**
- * @return {Boolean}
- */
-function $validateKeys() {
-  return this.keysValidator(
-    ['power', 'rarity', 'type', 'upgraded'],
-    ['armorproperties', 'enchantments', 'netheriteEnchant', 'gifted', 'markedNew'],
-    ['equipmentSlot', 'inventoryIndex'],
-  );
-}
-
-/**
- * @return {Boolean}
- */
-function $validateArmorProperties() {
-  return this.hasKeys('armorproperties')
-    && Array.isArray(this.data.armorproperties)
-    && new ArmorPropertyListValidator(this.data.armorproperties, this.data.type, this.$corruptionData).isValid()
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateEnchantments() {
-  return this.hasKeys('enchantments')
-    && Array.isArray(this.data.enchantments)
-    && new EnchantmentListValidator(this.data.enchantments, this.$corruptionData).isValid()
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateGifted() {
-  return (this.hasKeys('gifted') && this.data.gifted) || !this.hasKeys('gifted');
-}
-
-/**
- * @return {Boolean}
- */
-function $validateEquipmentSlot() {
-  return this.hasKeys('equipmentSlot')
-    ? typeof this.data.equipmentSlot === 'string' && EquipmentSlotEnum.list.indexOf(this.data.equipmentSlot) >= 0
-    : true
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateInventoryIndex() {
-  return this.hasKeys('inventoryIndex')
-    ? typeof this.data.inventoryIndex === 'number' && this.data.inventoryIndex >= 0
-    : true
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateNetheriteEnchant() {
-  if (this.hasKeys('netheriteEnchant') && typeof this.data.netheriteEnchant === 'object') {
-    const enchantementValidator = new EnchantmentValidator(this.data.netheriteEnchant, this.$corruptionData);
-    return enchantementValidator.isValid();
-  }
-  return true;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateMarkedNew() {
-  return this.hasKeys('markedNew')
-    ? (typeof this.data.markedNew === 'boolean' && this.data.markedNew)
-    : true
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validatePower() {
-  return typeof this.data.power === 'number'
-    && this.data.power > 0
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateRarity() {
-  return typeof this.data.rarity === 'string'
-    && RarityEnum.list.indexOf(this.data.rarity) >= 0
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateType() {
-  return typeof this.data.type === 'string'
-    && !!Items[this.data.type]
-    && (
-      (Items[this.data.type].type === 'Armor' && $validateArmorProperties.call(this) && $validateEnchantments.call(this))
-      || (Items[this.data.type].type === 'Melee' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
-      || (Items[this.data.type].type === 'Ranged' && this.hasKeys('!armorproperties') && $validateEnchantments.call(this))
-      || (Items[this.data.type].type === 'Artefact' && this.hasKeys('!enchantments', '!netheriteEnchant', '!armorproperties'))
-    )
-  ;
-}
-
-/**
- * @return {Boolean}
- */
-function $validateUpgraded() {
-  return typeof this.data.upgraded === 'boolean'
-    && !this.data.upgraded
-  ;
-}
-
-/**
- * @author Matthieu LEPERS
- * @version 1.0.0
- */
-export default class ItemValidator extends AbstractValidator {
+export default class ItemValidator {
   /**
-   * @return {String}
+   * @constructor
+   * @param {Object} data
    */
-  get identifier() {
-    return this.data.type || 'Unknown item';
-  }
+  constructor(data) {
+    this.data = data;
+    this.errors = [];
 
-  /**
-   * @inheritdoc
-   */
-  isValid() {
-    return super.isValid()
-      && $validateKeys.call(this)
-      && $validateGifted.call(this)
-      && $validateEquipmentSlot.call(this)
-      && $validateInventoryIndex.call(this)
-      && $validateNetheriteEnchant.call(this)
-      && $validateMarkedNew.call(this)
-      && $validatePower.call(this)
-      && $validateRarity.call(this)
-      && $validateType.call(this)
-      && $validateUpgraded.call(this)
-    ;
+    validateBySchema.call(this, ItemSchema, this.data);
+    validateItemType.call(this, this.data);
+    validateEnchantmentChunks.call(this, this.data);
+    validateArmorProperties.call(this, this.data);
   }
 
   /**
    * @return {Boolean}
    */
-  seemsValid() {
-    return super.isValid()
-      && $validateKeys.call(this)
-      && $validateGifted.call(this)
-      && $validateEquipmentSlot.call(this)
-      && $validateInventoryIndex.call(this)
-      && $validateNetheriteEnchant.call(this)
-      && $validateMarkedNew.call(this)
-      && $validatePower.call(this)
-      && $validateRarity.call(this)
-      && $validateUpgraded.call(this)
-    ;
+  isValid() {
+    return !this.errors.length;
   }
 }

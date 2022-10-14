@@ -15,6 +15,7 @@ class GlobalStore {
     this.$oldSelectedItem = null;
     this.$selectedItem = null;
     this.$selectedEnchant = null;
+    this.selectedEnchantChunkIndex = null;
     this.key = 0;
   }
 
@@ -97,6 +98,23 @@ class GlobalStore {
    */
   enableTutorialOnRoute(route) {
     return route.name === 'Home';
+  }
+
+  /**
+   * @return {String[]}
+   */
+  getUnallowedEnchantForChunk() {
+    if (!this.selectedEnchant) {
+      return [];
+    }
+    const enchantIndex = this.selectedItem.chunkedEnchantments[this.selectedEnchantChunkIndex]
+      .findIndex((ench) => JSON.stringify(ench.$data) === JSON.stringify(this.selectedEnchant.$data))
+    ;
+    return this.selectedItem.chunkedEnchantments[this.selectedEnchantChunkIndex]
+      .filter((ench, i) => i !== enchantIndex)
+      .map((ench) => ench.id)
+      .filter((enchId) => enchId !== 'Unset')
+    ;
   }
 }
 

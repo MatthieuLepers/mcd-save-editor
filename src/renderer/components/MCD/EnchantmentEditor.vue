@@ -2,7 +2,7 @@
   <div class="MCDEnchantmentEditor" v-show="!!GlobalStore.selectedEnchant && !!GlobalStore.selectedEnchant.enchantIdentifier">
     <div class="MCDEnchantmentEditorContainer" v-if="!!GlobalStore.selectedEnchant && !!GlobalStore.selectedEnchant.enchantIdentifier">
       <h2>
-        <MCDEnchantSelect v-model="GlobalStore.selectedEnchant" />
+        <MCDEnchantSelect v-model="GlobalStore.selectedEnchant" :unallowedEnchants="GlobalStore.getUnallowedEnchantForChunk()" />
         <MCDButton icon="close" @click="closeEditor" variant="dark" />
       </h2>
       <div class="MCDEnchantmentEditorLeft">

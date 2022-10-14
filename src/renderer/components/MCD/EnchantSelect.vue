@@ -34,6 +34,7 @@ export default {
   name: 'MCDEnchantSelect',
   props: {
     value: { type: Object, required: true },
+    unallowedEnchants: { type: Array, default: () => [] },
   },
   data() {
     return {
@@ -50,8 +51,8 @@ export default {
       const checkWeaponType = (data) => (GlobalStore.selectedItem.weaponType && data.weaponType ? GlobalStore.selectedItem.weaponType === data.weaponType : true);
 
       return Object.values(Enchants)
-        .filter((data) => !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data) && checkWeaponType(data))
-        .sort((a, b) => !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))) || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))
+        .filter((data) => !this.unallowedEnchants.includes(data.name) && !data.disabled && data.name !== this.value.id && this.$t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data) && checkWeaponType(data))
+        .sort((a, b) => (a.name === 'Unset' ? -1 : 1) || !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))) || this.$t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(this.$t(`MCD.Game.Enchants.${b.name}.name`)))
       ;
     },
   },

@@ -61,6 +61,114 @@ export default {
       Enchants: GlobalI18N.Enchants('fr-FR'),
       Items: GlobalI18N.Items('fr-FR'),
     },
+    DataCorruption: {
+      oneOf: 'Une propriété obligatoire est manquante parmis celles-ci : "equimentSlot", "inventoryIndex", "power", "rarity", "type" ou "upgraded"',
+      equipmentSlot: {
+        type: 'La propriété "equipmentSlot" doit être du type string',
+        required: 'Propriété obligatoire "equipmentSlot" manquante',
+        enum: 'L\'emplacement d\'equipement "{value}" est inconnu',
+      },
+      inventoryIndex: {
+        type: 'La propriété "inventoryIndex" doit être du type number',
+        required: 'Propriété obligatoire "inventoryIndex" manquante',
+        minimum: 'La valeur de "inventoryIndex" ne doit pas être plus petite que 0',
+        maximum: 'La valeur de "inventoryIndex" ne doit pas être plus grande que 179',
+      },
+      power: {
+        type: 'La propriété "power" doit être du type number',
+        required: 'Propriété obligatoire "power" manquante',
+        minimum: 'La valeur de "power" ne doit pas être plus petite que 1',
+      },
+      rarity: {
+        type: 'La propriété "rarity" doit être du type string',
+        required: 'Propriété obligatoire "rarity" manquante',
+        enum: 'La rareté "{value}" est inconnue',
+      },
+      type: {
+        type: 'La propriété "type" doit être du type string',
+        required: 'Propriété obligatoire "type" manquante',
+        enum: 'L\'id d\'objet "{value}" est inconnu',
+      },
+      upgraded: {
+        type: 'La propriété "upgraded" doit être du type boolean',
+        required: 'Propriété obligatoire "upgraded" manquante',
+        const: 'La valeur de "upgraded" doit être "false"',
+      },
+      gifted: {
+        type: 'La propriété "gifted" doit être du type boolean',
+        const: 'La valeur de "gifted" doit être "true"',
+      },
+      markedNew: {
+        type: 'La propriété "markedNew" doit être du type boolean',
+        const: 'La valeur de "markedNew" doit être "true"',
+      },
+      armorproperties: {
+        id: {
+          type: 'La propriété "id" doit être du type string',
+          required: 'Propriété obligatoire "id" manquante',
+          enum: 'L\'id de la propriété d\'armure "{value}" est inconnu',
+        },
+        rarity: {
+          type: 'La propriété "rarity" doit être du type string',
+          required: 'Propriété obligatoire "rarity" manquante',
+          enum: 'La rareté "{value}" est inconnue',
+        },
+        type: 'La propriété "armorproperties" doit être du type array',
+        required: 'Propriété obligatoire "armorproperties" manquante pour les objets de type "{itemType}"',
+        forbbiden: 'La propriété "armorproperties" est interdite pour les objets de type "{itemType}"',
+        minItems: 'Le tableau "armorproperties" doit contenir au minimum 1 propriété d\'armure',
+        maxItems: 'Le tableau "armorproperties" doit contenir au maximum 4 propriétés d\'armure',
+        uniqueItems: 'Le tableau "armorproperties" ne doit pas contenir de doublons',
+        uniqueItemsId: 'Le tableau "armorproperties" ne doit pas contenir plusieurs fois la propriété d\'armure "{0}"',
+      },
+      netheriteEnchant: {
+        id: {
+          type: 'La propriété "id" doit être du type string',
+          required: 'Propriété obligatoire "id" manquante',
+          enum: 'L\'id d\'enchantement "{value}" est inconnu',
+        },
+        investedPoints: {
+          type: 'La propriété "investedPoints" doit être du type number',
+          required: 'Propriété obligatoire "investedPoints" manquante',
+          const: 'La valeur de "investedPoints" doit être "0"',
+        },
+        level: {
+          type: 'La propriété "level" doit être du type number',
+          required: 'Propriété obligatoire "level" manquante',
+          minimum: 'La valeur de "level" ne doit pas être plus petite que 0',
+          maximum: 'La valeur de "level" ne doit pas être plus grande que 3',
+        },
+        type: 'La propriété "netheriteEnchant" doit être du type object',
+        forbbiden: 'La propriété "netheriteEnchant" est interdite pour les objets de type "{itemType}"',
+      },
+      enchantments: {
+        id: {
+          type: 'La propriété "id" doit être du type string',
+          required: 'Propriété obligatoire "id" manquante',
+          enum: 'L\'id d\'enchantement "{value}" est inconnu',
+        },
+        investedPoints: {
+          type: 'La propriété "investedPoints" doit être du type number',
+          required: 'Propriété obligatoire "investedPoints" manquante',
+          const: 'La valeur de "investedPoints" doit être "0"',
+        },
+        level: {
+          type: 'La propriété "level" doit être du type number',
+          required: 'Propriété obligatoire "level" manquante',
+          minimum: 'La valeur de "level" ne doit pas être plus petite que 0',
+          maximum: 'La valeur de "level" ne doit pas être plus grande que 3',
+        },
+        chunks: {
+          levelConsistency: 'Le groupe d\'enchantement n°{0} ne doit pas contenir plus d\'un enchantement dans le niveau est supérieur à 0',
+          uniqueChunkEnchant: 'Le groupe d\'enchantement n°{0} ne doit pas contenir plusieurs fois l\'enchantement "{1}"',
+        },
+        type: 'La propriété "enchantments" doit être du type array',
+        required: 'Propriété obligatoire "enchantments" pour les objets de type "{itemType}"',
+        forbbiden: 'La propriété "enchantments" est interdite pour les objets de type "{itemType}"',
+        minItems: 'Le tableau "enchantments" doit contenir au minimum 9 enchantements',
+        maxItems: 'Le tableau "enchantments" doit contenir au maximum 9 enchantements',
+      },
+    },
     AncientHunts: {
       title: 'Chasses anciennes',
       invocationRunes: 'L\'invocation requiert :',

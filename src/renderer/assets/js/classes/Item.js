@@ -211,6 +211,27 @@ export default class Item {
   /**
    * @return {Enchantment[]}
    */
+  get chunkedEnchantments() {
+    const normalize = (enchantments) => {
+      if (enchantments.length === 9) {
+        return enchantments;
+      }
+      return [...enchantments, ...[...Array((9 - enchantments.length) + 1).keys()]
+        .map(() => Enchantment.UNSET)
+        .reduce((acc, val) => [...acc, val]),
+      ];
+    };
+
+    return normalize(this.enchantments).reduce((acc, val, i) => {
+      const ch = Math.floor(i / 3);
+      acc[ch] = [].concat((acc[ch] || []), val);
+      return acc;
+    }, []);
+  }
+
+  /**
+   * @return {Enchantment[]}
+   */
   get enchantments() {
     return (this.$data.enchantments || [])
       .map((enchantmentData) => new Enchantment(enchantmentData, this.isGilded()))

@@ -2,7 +2,7 @@ import { execFile } from 'child_process';
 import fs from 'fs';
 import Constants from '../Constants';
 import Module from './Module';
-import CharacterUtils from '../../renderer/assets/js/utils/CharacterUtils';
+import InventoryValidator from './validation/InventoryValidator';
 
 const DTOOLS_PATH = process.env.NODE_ENV === 'development'
   ? `${process.cwd()}/static/dtools.exe`
@@ -55,7 +55,8 @@ function $execFileAsync(file, options = []) {
  */
 async function $handleEncryptFile(e, data, file, overwrite = true) {
   const decryptedFilePath = `${Constants.SAVE_PATH}/${file.replace('.dat', '.json')}`;
-  if (CharacterUtils.isDataCorrupted(data)) {
+  const validator = new InventoryValidator(data);
+  if (!validator.isValid()) {
     return false;
   }
   fs.writeFileSync(decryptedFilePath, JSON.stringify(data, null, 2));
@@ -79,7 +80,7 @@ async function $handleDecryptFile(e, file, force) {
   if (!fs.existsSync(decryptedFilePath) || force) {
     const success = await $execFileAsync(DTOOLS_PATH, [filePath]);
     const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
-    const corrupted = CharacterUtils.isDataCorrupted(fileContent);
+    const corrupted = new InventoryValidator(fileContent).isValid();
     if (success && ((!corrupted && $makeFileBackup(decryptedFilePath)) || corrupted)) {
       return fileContent;
     }

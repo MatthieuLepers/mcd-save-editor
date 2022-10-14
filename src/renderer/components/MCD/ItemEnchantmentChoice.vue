@@ -32,6 +32,7 @@ export default {
   name: 'MCDItemEnchantmentChoice',
   props: {
     choices: { type: Array, default: () => [] },
+    chunkIndex: { type: Number, required: true },
   },
   methods: {
     hasChosen() {
@@ -48,6 +49,7 @@ export default {
     },
     handleSelectEnchant(ench) {
       GlobalStore.selectedEnchant = ench;
+      GlobalStore.selectedEnchantChunkIndex = this.chunkIndex;
       if (!this.isChosen(ench)) {
         TutorialStore.setFullfilled('ChooseEnchantmentToEdit', true);
       } else {

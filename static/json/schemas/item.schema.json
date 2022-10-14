@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/item.schema.json",
+  "title": "Item",
+  "description": "An inventory item",
+  "type": "object",
+  "properties": {
+    "equipmentSlot": {
+      "type": "string",
+      "enum": ["MeleeGear", "ArmorGear", "RangedGear", "HotbarSlot1", "HotbarSlot2", "HotbarSlot3"],
+      "message": {
+        "type": "equipmentSlot property must be of string type",
+        "required": "Missing required inventoryIndex or equipmentSlot key",
+        "enum": "Unrecognized slot type"
+      }
+    },
+    "inventoryIndex": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 179,
+      "message": {
+        "type": "inventoryIndex property must be of number type",
+        "required": "Missing required inventoryIndex or equipmentSlot key",
+        "minimum": "inventoryIndex cannot be lower than 0",
+        "maximum": "inventoryIndex cannot be higher than 179"
+      }
+    },
+    "power": {
+      "type": "number",
+      "minimum": 1,
+      "message": {
+        "type": "power property must be of number type",
+        "minimum": "power cannot be lower than 1"
+      }
+    },
+    "rarity": {
+      "type": "string",
+      "enum": ["Unique", "Rare", "Common"],
+      "message": {
+        "type": "rarity property must be of string type",
+        "enum": "Unrocognized rarity type"
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": ["ArchersStrappings", "ArchersStrappings_Unique1", "AssassinArmor", "AssassinArmor_Unique1", "BattleRobe", "BattleRobe_Unique1", "BeenestArmor", "BeenestArmor_Unique1", "ChampionsArmor", "ChampionsArmor_Unique1", "CowardsArmor", "CowardsArmor_Unique1", "DarkArmor", "DarkArmor_Unique1", "EvocationRobe", "EvocationRobe_Unique1", "EvocationRobe_Unique2", "FullPlateArmor", "FullPlateArmor_Unique1", "FullPlateArmor_Spooky2", "GhostArmor", "GhostArmor_Unique1", "GrimArmor", "GrimArmor_Unique1", "GrimArmor_Spooky2", "MercenaryArmor", "MercenaryArmor_Unique1", "MercenaryArmor_Spooky1", "MysteryArmor", "PhantomArmor", "PhantomArmor_Unique1", "ReinforcedMail", "ReinforcedMail_Unique1", "ScaleMail", "ScaleMail_Unique1", "SoulRobe", "SoulRobe_Unique1", "SpelunkersArmor", "SpelunkersArmor_Unique1", "SpelunkersArmor_Year1", "WolfArmor", "WolfArmor_Unique1", "WolfArmor_Unique2", "WolfArmor_Winter1", "OcelotArmor", "OcelotArmor_Unique1", "SnowArmor", "SnowArmor_Unique1", "ClimbingGear", "ClimbingGear_Unique1", "ClimbingGear_Unique2", "EmeraldArmor", "EmeraldArmor_Unique1", "EmeraldArmor_Unique2", "PiglinArmor", "PiglinArmor_Unique1", "SproutArmor", "SproutArmor_Unique1", "SquidArmor", "SquidArmor_Unique1", "TurtleArmor", "TurtleArmor_Unique1", "BardsGarb", "BardsGarb_Unique1", "EndRobes", "EndRobes_Unique1", "ShulkerArmor", "ShulkerArmor_Unique1", "BeeNest", "BootsOfSwiftness", "CorruptedBeacon", "CorruptedBeacon_Spooky1", "DeathCapMushroom", "FireworksArrowItem", "FishingRod", "FlamingQuiver", "GhostCloak", "GolemKit", "GongOfWeakening", "Harvester", "IronHideAmulet", "LightFeather", "LightningRod", "LoveMedallion", "RainbowGrass", "ShockPowder", "SoulHealer", "SoulLantern", "TastyBone", "TormentQuiver", "TotemOfRegeneration", "TotemOfShielding", "TotemOfSoulProtection", "WindHorn", "WonderfulWheat", "CorruptedSeeds", "IceWand", "ChargedRedstoneMines", "EnchantersTome", "SatchelOfTheElements", "UpdraftTome", "MobMasher", "NetherWartSporeGrenade", "SpinWheel", "ThunderingQuiver", "GuardianEye", "HeavyHarpoonQuiver", "SatchelOfNeed", "SatchelOfNourishment", "LostEvocation", "ShadowSplinter", "TomeOfDuplication", "VoidQuiver", "Axe", "Axe_Unique1", "Axe_Unique2", "Battlestaff", "Battlestaff_Unique1", "Battlestaff_Unique2", "Claymore", "Claymore_Unique1", "Claymore_Unique2", "Claymore_Unique3", "Claymore_Winter1", "Cutlass", "Cutlass_Unique1", "Cutlass_Unique2", "Cutlass_Year1", "Daggers", "Daggers_Unique1", "Daggers_Unique2", "Daggers_Unique3", "DoubleAxe", "DoubleAxe_Unique1", "DoubleAxe_Unique2", "Gauntlets", "Gauntlets_Unique1", "Gauntlets_Unique2", "Gauntlets_Unique3", "Glaive", "Glaive_Unique1", "Glaive_Unique2", "Glaive_Spooky2", "Hammer", "Hammer_Unique1", "Hammer_Unique2", "Katana", "Katana_Unique1", "Katana_Unique2", "Mace", "Mace_Unique1", "Mace_Unique2", "Pickaxe", "Pickaxe_Unique1", "Rapier", "Rapier_Unique1", "Rapier_Unique2", "Sickles", "Sickles_Unique1", "Sickles_Unique2", "SoulKnife", "SoulKnife_Unique1", "SoulKnife_Unique2", "SoulScythe", "SoulScythe_Unique1", "SoulScythe_Unique2", "SoulScythe_Spooky2", "Spear", "Spear_Unique1", "Spear_Unique2", "Sword", "Sword_Unique1", "Sword_Unique2", "Sword_Spooky1", "Whip", "Whip_Unique1", "TempestKnife", "TempestKnife_Unique1", "TempestKnife_Unique2", "Boneclub", "Boneclub_Unique1", "Chainsword", "Chainsword_Unique1", "Anchor", "Anchor_Unique1", "CoralBlade", "CoralBlade_Unique1", "Backstabber", "Backstabber_Unique1", "ObsidianClaymore", "ObsidianClaymore_Unique1", "VoidTouchedBlades", "VoidTouchedBlades_Unique1", "Bow", "Bow_Unique1", "Bow_Unique2", "Bow_Spooky1", "BurstCrossbow", "BurstCrossbow_Unique1", "BurstCrossbow_Unique2", "Crossbow", "Crossbow_Unique1", "Crossbow_Unique2", "DualCrossbows", "DualCrossbows_Unique1", "DualCrossbows_Unique2", "ExplodingCrossbow", "ExplodingCrossbow_Unique1", "ExplodingCrossbow_Unique2", "HeavyCrossbow", "HeavyCrossbow_Unique1", "HeavyCrossbow_Unique2", "HuntingBow", "HuntingBow_Unique1", "HuntingBow_Unique2", "HuntingBow_Unique3", "Longbow", "Longbow_Unique1", "Longbow_Unique2", "Powerbow", "Powerbow_Unique1", "Powerbow_Unique2", "PowerBow_Spooky2", "RapidCrossbow", "RapidCrossbow_Unique1", "RapidCrossbow_Unique2", "ScatterCrossbow", "ScatterCrossbow_Unique1", "ScatterCrossbow_Unique2", "Shortbow", "Shortbow_Unique1", "Shortbow_Unique2", "Shortbow_Unique3", "SoulBow", "SoulBow_Unique1", "SoulBow_Unique2", "SoulBow_Winter1", "SoulCrossbow", "SoulCrossbow_Unique1", "SoulCrossbow_Unique2", "Trickbow", "Trickbow_Unique1", "Trickbow_Unique2", "Trickbow_Year1", "SlowBow", "SlowBow_Unique1", "SlowBow_Spooky2", "WindBow", "WindBow_Unique1", "WindBow_Unique2", "CogCrossbow", "CogCrossbow_Unique1", "TwistingVineBow", "TwistingVineBow_Unique1", "BubbleBow", "BubbleBow_Unique1", "HarpoonCrossbow", "HarpoonCrossbow_Unique1", "ShadowCrossbow", "ShadowCrossbow_Unique1", "VoidBow", "VoidBow_Unique1"],
+      "message": {
+        "type": "type property must be of string type",
+        "enum": "Unrocognized type"
+      }
+    },
+    "upgraded": {
+      "type": "boolean",
+      "const": false,
+      "message": {
+        "type": "upgraded property must be of boolean type",
+        "const": "upgraded can only set to false"
+      }
+    },
+    "gifted": {
+      "type": "boolean",
+      "const": true,
+      "message": {
+        "type": "gifted property must be of boolean type",
+        "const": "gifted can only set to true"
+      }
+    },
+    "markedNew": {
+      "type": "boolean",
+      "const": true,
+      "message": {
+        "type": "markedNew property must be of boolean type",
+        "const": "markedNew can only set to true"
+      }
+    },
+    "armorproperties": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/armorproperty"
+      },
+      "message": {
+        "type": "armorproperties property must be of array type",
+        "minItems": "armorproperties cannot have lower than 1 item",
+        "maxItems": "armorproperties cannot have higher than 4 items",
+        "uniqueItems": "armorproperties cannot have duplicate items"
+      }
+    },
+    "netheriteEnchant": {
+      "$ref": "#/$defs/enchantment"
+    },
+    "enchantments": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "$ref": "#/$defs/enchantment"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "required": ["equipmentSlot", "power", "rarity", "type", "upgraded"],
+      "not": {
+        "anyOf": [
+          { "required": ["inventoryIndex"] }
+        ]
+      }
+    },
+    {
+      "required": ["inventoryIndex", "power", "rarity", "type", "upgraded"],
+      "not": {
+        "anyOf": [
+          { "required": ["equipmentSlot"] }
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "armorproperty": {
+      "type": "object",
+      "required": ["id", "rarity"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["AllyDamageBoost", "AreaHeal", "Beekeeper", "DodgeCooldownIncrease", "DodgeGhostForm", "DodgeSpeedIncrease", "Heavyweight", "IncreasedArrowBundleSize", "IncreasedMobTargeting", "ItemCooldownDecrease", "ItemCooldownReset", "ItemDamageBoost", "LifeStealAura", "MeleeAttackSpeedBoost", "MeleeDamageBoost", "MissChance", "MoveSpeedAura", "MoveSpeedReduction", "PetBat", "PotionCooldownDecrease", "RangedDamageBoost", "SlowResistance", "SoulGatheringBoost", "SuperbDamageAbsorption", "TeleportChance", "Unknown", "DodgeInvulnerability", "EmeraldShield", "DodgeRoot", "HealingAura", "SquidRollLimited", "SquidRollQuick", "InstantTransmission", "Resonant"],
+          "message": {
+            "type": "id property must be of string type",
+            "required": "Missing required property id",
+            "enum": "Unrecognized armorproperty id"
+          }
+        },
+        "rarity": {
+          "type": "string",
+          "enum": ["Unique", "Common", "Rare"],
+          "message": {
+            "type": "rarity property must be of string type",
+            "required": "Missing required property rarity",
+            "enum": "Unrecognized armorproperty rarity"
+          }
+        }
+      }
+    },
+    "enchantment": {
+      "type": "object",
+      "required": ["id", "investedPoints", "level"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["Accelerating", "Acrobat", "AnimaConduitMelee", "BagOfSouls", "BonusShot", "Burning", "BurstBowstring", "BusyBee", "Celerity", "ChainReaction", "Chains", "Chilling", "Committed", "Cowardice", "CriticalHit", "Deflecting", "DynamoMelee", "DynamoRanged", "Echo", "Electrified", "EnigmaResonatorMelee", "EnigmaResonatorRanged", "Exploding", "Explorer", "FinalShout", "FireAspect", "FireTrail", "FoodReserves", "Freezing", "Frenzied", "FuseShot", "Gravity", "GravityMelee", "GravityPulse", "Growing", "HealthSynergy", "Infinity", "Leeching", "Looting", "MultiShot", "Piercing", "PoisonedMelee", "PoisonedRanged", "PotionFortification", "Power", "Prospector", "Protection", "Punch", "RadianceMelee", "RadianceRanged", "Rampaging", "RapidFire", "Recycler", "Ricochet", "Sharpness", "Shockwave", "Smiting", "Snowing", "SoulSiphon", "SpeedSynergy", "SpiritSpeed", "Stunning", "Supercharge", "SurpriseGift", "Swiftfooted", "Swirling", "TempoTheft", "Thorns", "Thundering", "TumbleBee", "Unchanting", "Unset", "Weakening", "WildRage", "BaneOfIllagers", "DeathBarter", "EmeraldDivination", "MultiDodge", "ResurrectionSurge", "RollCharge", "ArtifactCharge", "BeastBoss", "BeastBurst", "BeastSurge", "CooldownShot", "DamageSynergy", "FireFocus", "LightningFocus", "PainCycle", "PoisonFocus", "Reckless", "ShockWeb", "SoulFocus", "Flee", "GuardingStrike", "LuckOfTheSea", "MultiCharge", "PotionThirstMelee", "PotionThirstRanged", "Backstabber", "DippingPoison", "LevitationShot", "ShadowFeast", "ShadowFlash", "VoidTouchedMelee", "VoidTouchedRanged"],
+          "message": {
+            "type": "id property must be of string type",
+            "required": "Missing required property id",
+            "enum": "Unrecognized enchantment id"
+          }
+        },
+        "investedPoints": {
+          "type": "number",
+          "const": 0,
+          "message": {
+            "type": "investedPoints property must be of number type",
+            "required": "Missing required property investedPoints",
+            "enum": "investedPoints must be 0"
+          }
+        },
+        "level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3,
+          "message": {
+            "type": "level property must be of number type",
+            "minimum": "level cannot be lower than 0",
+            "maximum": "leve lcannot be higher then 3"
+          }
+        }
+      }
+    }
+  }
+}

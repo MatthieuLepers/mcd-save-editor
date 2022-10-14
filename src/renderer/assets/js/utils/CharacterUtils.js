@@ -1,4 +1,4 @@
-import ItemValidator from '../validators/ItemValidator';
+import InventoryValidator from '../validators/InventoryValidator';
 
 /**
  * @author Matthieu LEPERS
@@ -44,25 +44,16 @@ export default class CharacterUtils {
    * @return {Boolean}
    */
   static isDataCorrupted(data) {
-    return !data.items.reduce((acc, item) => {
-      const itemValidator = new ItemValidator(item);
-      return acc && (itemValidator.isValid() || itemValidator.seemsValid());
-    }, true);
+    const validator = new InventoryValidator(data);
+    return validator.isValid();
   }
 
   /**
    * @param {Object} data
-   * @return {Object[]}
+   * @return {ValidationError[]}
    */
   static getDataCorrupted(data) {
-    const corruptedItems = [];
-    data.items.forEach((item) => {
-      const itemValidator = new ItemValidator(item);
-      if (!itemValidator.isValid() || !itemValidator.seemsValid()) {
-        corruptedItems.push({ item, messages: itemValidator.$corruptionData });
-      }
-    });
-
-    return corruptedItems;
+    const validator = new InventoryValidator(data);
+    return validator.errors;
   }
 }

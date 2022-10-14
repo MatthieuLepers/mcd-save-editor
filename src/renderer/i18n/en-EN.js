@@ -61,6 +61,114 @@ export default {
       Enchants: GlobalI18N.Enchants('en-EN'),
       Items: GlobalI18N.Items('en-EN'),
     },
+    DataCorruption: {
+      oneOf: 'Missing mandatory property : "equimentSlot", "inventoryIndex", "power", "rarity", "type" or "upgraded"',
+      equipmentSlot: {
+        type: 'Property "equipmentSlot" must be a string',
+        required: 'Missing mandatory property "equipmentSlot"',
+        enum: 'Unknown slot "{value}"',
+      },
+      inventoryIndex: {
+        type: 'Property "inventoryIndex" must be a number',
+        required: 'Missing mandatory property "inventoryIndex"',
+        minimum: '"inventoryIndex"\'s value cannot be lower than 0',
+        maximum: '"inventoryIndex"\'s value cannot be higher than 179',
+      },
+      power: {
+        type: 'Property "power" must be a number',
+        required: 'Missing mandatory property "power"',
+        minimum: '"power"\'s value cannot be lower than 1',
+      },
+      rarity: {
+        type: 'Property "rarity" must be a string',
+        required: 'Missing mandatory property "rarity"',
+        enum: 'Unknown rarity "{value}"',
+      },
+      type: {
+        type: 'Property "type" must be a string',
+        required: 'Missing mandatory property "type"',
+        enum: 'Unknown item type "{value}"',
+      },
+      upgraded: {
+        type: 'Property "upgraded" must be a boolean',
+        required: 'Missing mandatory property "upgraded"',
+        const: '"upgraded"\'s value must be "false"',
+      },
+      gifted: {
+        type: 'Property "gifted" must be a boolean',
+        const: '"gifted"\'s value must be "true"',
+      },
+      markedNew: {
+        type: 'Property "markedNew" must be a boolean',
+        const: '"markedNew"\'s value must be "true"',
+      },
+      armorproperties: {
+        id: {
+          type: 'Property "id" must be a string',
+          required: 'Missing mandatory property "id"',
+          enum: 'Unknown armor property id {value}',
+        },
+        rarity: {
+          type: 'Property "rarity" must be a string',
+          required: 'Missing mandatory property "rarity"',
+          enum: 'Unknown rartiy {value}',
+        },
+        type: 'Property "armorproperties" must be an array',
+        required: 'Missing mandatory property "armorproperties" for "{itemType}" typed items',
+        forbbiden: 'Property "armorproperties" is forbbiden for "{itemType}" typed items',
+        minItems: 'Table "armorproperties" cannot contains lower than 1 armor property',
+        maxItems: 'Table "armorproperties" cannot contains higher than 4 armor properties',
+        uniqueItems: 'Table "armorproperties" cannot contains duplicate items',
+        uniqueItemsId: 'Table "armorproperties" cannot contains duplicate armor property id "{0}"',
+      },
+      netheriteEnchant: {
+        id: {
+          type: 'Property "id" must be a string',
+          required: 'Missing mandatory property "id"',
+          enum: 'Unknown enchantment id {value}',
+        },
+        investedPoints: {
+          type: 'Property "investedPoints" must be a number',
+          required: 'Missing mandatory property "investedPoints"',
+          const: '"investedPoints"\'s value must be "0"',
+        },
+        level: {
+          type: 'Property "level" must be a number',
+          required: 'Missing mandatory property "level"',
+          minimum: '"level"\'s value cannot be lower than 0',
+          maximum: '"level"\'s value cannot be higher than 3',
+        },
+        type: 'Property "netheriteEnchant" must be an object',
+        forbbiden: 'Property "netheriteEnchant" is forbbiden for "{itemType}" typed items',
+      },
+      enchantments: {
+        id: {
+          type: 'Property "id" must be a string',
+          required: 'Missing mandatory property "id"',
+          enum: 'Unknown enchantment id {value}',
+        },
+        investedPoints: {
+          type: 'Property "investedPoints" must be a number',
+          required: 'Missing mandatory property "investedPoints"',
+          const: '"investedPoints"\'s value must be "0"',
+        },
+        level: {
+          type: 'Property "level" must be a number',
+          required: 'Missing mandatory property "level"',
+          minimum: '"level"\'s value cannot be lower than 0',
+          maximum: '"level"\'s value cannot be higher than 3',
+        },
+        chunks: {
+          levelConsistency: 'Enchantment chunk n°{0} cannot have more than 1 leveled enchantment',
+          uniqueChunkEnchant: 'Enchantment chunk n°{0} cannot contains duplicate enchantment id "{1}"',
+        },
+        type: 'Property "enchantments" must be an array',
+        required: 'Missing mandatory property "enchantments" for "{itemType}" typed items',
+        forbbiden: 'Property "enchantments" is forbbiden for "{itemType}" typed items',
+        minItems: 'Table "enchantments" cannot contains lower than 1 enchantment',
+        maxItems: 'Table "enchantments" cannot contains higher than 4 enchantments',
+      },
+    },
     AncientHunts: {
       title: 'Ancient Hunts',
       invocationRunes: 'Invocation requires:',
