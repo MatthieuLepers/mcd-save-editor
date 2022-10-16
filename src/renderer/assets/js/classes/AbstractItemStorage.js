@@ -75,6 +75,13 @@ export default class AbstractItemStorage {
     this.checkIntegrity();
   }
 
+  /**
+   * @param {Item} item
+   */
+  contains(item) {
+    return this.items.includes(item);
+  }
+
   checkIntegrity() {
     throw new Error(`You must implement abstract method 'checkIntegrity' in class '${this.constructor.name}'`);
   }

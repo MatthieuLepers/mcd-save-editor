@@ -12,8 +12,19 @@
         <div class="TierContainer" v-if="GlobalStore.selectedEnchant.enchantIdentifier !== 'Unset'">
           <h3>{{ $t('MCD.EnchantmentEditor.upgradeTiers') }}</h3>
           <ul>
-            <li v-for="(level, index) in $t(`MCD.Game.Enchants.${GlobalStore.selectedEnchant.enchantIdentifier}.level`)" :key="`${GlobalStore.selectedEnchant.enchantIdentifier}lvl${index}`" :class="{checked: GlobalStore.selectedEnchant.level >= index + 1}">
-              <input :disabled="GlobalStore.selectedEnchant.level < index" :checked="GlobalStore.selectedEnchant.level >= index + 1" :id="`${GlobalStore.selectedEnchant.enchantIdentifier}Level${index}_${_uid}`" type="checkbox" :name="`levelGroup${_uid}`" @click.stop="setLevel($event, index + 1)" />
+            <li
+              v-for="(level, index) in $t(`MCD.Game.Enchants.${GlobalStore.selectedEnchant.enchantIdentifier}.level`)"
+              :key="`${GlobalStore.selectedEnchant.enchantIdentifier}lvl${index}`"
+              :class="{checked: GlobalStore.selectedEnchant.level >= index + 1}"
+            >
+              <input
+                :disabled="GlobalStore.selectedEnchant.level < index"
+                :checked="GlobalStore.selectedEnchant.level >= index + 1"
+                :id="`${GlobalStore.selectedEnchant.enchantIdentifier}Level${index}_${_uid}`"
+                type="checkbox"
+                :name="`levelGroup${_uid}`"
+                @click.stop="setLevel($event, index + 1)"
+              />
               <label :for="`${GlobalStore.selectedEnchant.enchantIdentifier}Level${index}_${_uid}`">
                 <i v-if="GlobalStore.selectedEnchant.level >= index + 1" class="icon-checked"></i>
                 <span v-else class="tier">

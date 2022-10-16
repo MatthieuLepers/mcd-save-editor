@@ -1,37 +1,13 @@
 @import '@/assets/scss/utilities.scss';
 
-.MCDInventory {
+.MCDStorageChest {
   flex-direction: column;
   height: 100%;
 
-  &Filters {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px calc((100% - 282px) / 2) 15px;
-  }
-
-  &Filter {
-    position: relative;
-    opacity: .5;
-
-    i {
-      @include font-size(18);
-    }
-
-    span {
-      display: none;
-      position: absolute;
-      bottom: calc(100% + 5px);
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
-    &--Selected {
-      opacity: 1;
-
-      span {display: block;}
-    }
+  &Title {
+    height: 44px;
+    padding: 0 0 0 calc((100% - 288px) / 2);
+    margin-left: 3px;
   }
 
   &Items {

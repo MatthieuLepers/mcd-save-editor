@@ -66,7 +66,9 @@ export default class Character {
    * @return {Number}
    */
   get enchantmentPointsInvested() {
-    return this.inventory.items.reduce((acc, item) => acc + item.enchantmentPointsInvested, 0);
+    return [...this.inventory.items, ...this.storageChest.items]
+      .reduce((acc, item) => acc + item.enchantmentPointsInvested, 0)
+    ;
   }
 
   /**

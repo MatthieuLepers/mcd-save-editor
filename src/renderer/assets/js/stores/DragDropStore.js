@@ -38,8 +38,6 @@ class DragDropStore {
    * @param {MCDCharacter} character
    */
   handleDrop(character) {
-    const fromIndex = character.inventory.items.indexOf(this.from);
-    const toIndex = character.inventory.items.indexOf(this.to);
     const fromIsEquipped = this.from.isEquipped();
     const toIsEquipped = this.to.isEquipped();
     const methodName = `drop${fromIsEquipped ? 'Equipped' : 'Inventory'}To${toIsEquipped ? 'Equipped' : 'Inventory'}`;
@@ -47,10 +45,14 @@ class DragDropStore {
     // Swaping data
     this[methodName]();
 
+    const storageType = this.from.isStored() && this.to.isStored() ? 'storageChest' : 'inventory';
+    const fromIndex = character[storageType].items.indexOf(this.from);
+    const toIndex = character[storageType].items.indexOf(this.to);
+
     // Swaping items in inventory array
-    character.inventory.items[toIndex] = this.from;
+    character[storageType].items[toIndex] = this.from;
     character.$data.items[toIndex] = this.from.$data;
-    character.inventory.items[fromIndex] = this.to;
+    character[storageType].items[fromIndex] = this.to;
     character.$data.items[fromIndex] = this.to.$data;
   }
 
@@ -86,6 +88,18 @@ class DragDropStore {
     const oldFromSlot = this.from.$data.equipmentSlot;
     this.from.$data.equipmentSlot = this.to.$data.equipmentSlot;
     this.to.$data.equipmentSlot = oldFromSlot;
+  }
+
+  dropToInventory(character) {
+    // 'from' is from storage chest
+    character.inventory.addItem(this.from);
+    character.storageChest.removeItem(this.from);
+  }
+
+  dropToStorageChest(character) {
+    // 'from' is from inventory
+    character.storageChest.addItem(this.from);
+    character.inventory.removeItem(this.from);
   }
 }
 

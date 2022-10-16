@@ -1,16 +1,14 @@
 <template>
   <section class="StorageChestPage">
     <MCDCharacter :character="character" :key="GlobalStore.key">
-      <template v-slot:header>
-        <div class="col-xs-4-gap pt-xs-16">
-          {{ $t('App.Navigation.storageChest') }}
-        </div>
-      </template>
       <template v-slot:Column1>
-        [WIP]
+        <MCDStorageChest />
       </template>
       <template v-slot:Column2>
-        <MCDInventory :disableEquipControl="true" />
+        <MCDInventory
+          :disableEquipControl="true"
+          :noDragEvent="false"
+        />
       </template>
       <template v-slot:Column3>
         <MCDItemDetails v-if="!!GlobalStore.selectedItem" :item="GlobalStore.selectedItem" />
@@ -28,10 +26,11 @@ import MCDCharacter from '@/components/MCD/Character';
 import MCDInventory from '@/components/MCD/Inventory';
 import MCDItemDetails from '@/components/MCD/ItemDetails';
 import MCDEnchantmentEditor from '@/components/MCD/EnchantmentEditor';
+import MCDStorageChest from '@/components/MCD/StorageChest';
 
 export default {
   name: 'StorageChestPage',
-  components: { MCDCharacter, MCDInventory, MCDItemDetails, MCDEnchantmentEditor },
+  components: { MCDCharacter, MCDInventory, MCDItemDetails, MCDEnchantmentEditor, MCDStorageChest },
   props: {
     character: { type: Character, required: true },
   },

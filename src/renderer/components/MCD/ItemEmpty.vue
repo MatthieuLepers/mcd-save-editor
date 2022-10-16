@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="GenerateModifiers('MCDItem', { Empty: true })"
+    :class="GenerateModifiers('MCDItem', { Empty: true, CrossIcon: cross })"
     @dragover.stop="handleDragOver"
     @drop.stop="handleDrop"
   >
@@ -23,21 +23,27 @@ export default {
   props: {
     itemType: { type: String, default: null },
     hotbarSlot: { type: Number, default: null },
+    noDragEvent: { type: Boolean, default: false },
+    cross: { type: Boolean, default: false },
   },
   methods: {
     handleDragOver(e) {
-      DragDropStore.setDragTo({ type: this.itemType, slot: this.hotbarSlot });
+      if (!this.noDragEvent) {
+        DragDropStore.setDragTo({ type: this.itemType, slot: this.hotbarSlot });
 
-      if (DragDropStore.from && DragDropStore.from.itemData.type === this.itemType) {
-        e.preventDefault();
+        if (DragDropStore.from && DragDropStore.from.itemData.type === this.itemType) {
+          e.preventDefault();
+        }
       }
     },
     handleDrop() {
-      DragDropStore.handleDropToEmpty();
+      if (!this.noDragEvent) {
+        DragDropStore.handleDropToEmpty();
 
-      GlobalStore.selectedItem = DragDropStore.from;
-      GlobalStore.selectedCharacter.inventory.checkIntegrity();
-      GlobalStore.key += 1;
+        GlobalStore.selectedItem = DragDropStore.from;
+        GlobalStore.selectedCharacter.inventory.checkIntegrity();
+        GlobalStore.key += 1;
+      }
     },
   },
 };

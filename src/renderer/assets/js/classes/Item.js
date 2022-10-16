@@ -85,6 +85,10 @@ export default class Item {
     return this.isGear() || this.isHotbar();
   }
 
+  isStored() {
+    return GlobalStore.selectedCharacter.storageChest.contains(this);
+  }
+
   /**
    * @return {String}
    */
