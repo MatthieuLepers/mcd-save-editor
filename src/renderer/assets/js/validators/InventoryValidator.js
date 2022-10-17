@@ -2,6 +2,7 @@ import {
   validateBySchema,
   validateItemType,
   validateEnchantmentChunks,
+  validateNetheriteEnchant,
   validateArmorProperties,
 } from './ValidationFunctions';
 import ItemSchema from '../../../../../static/json/schemas/item.schema.json';
@@ -19,6 +20,7 @@ export default class InventoryValidator {
       validateBySchema.call(this, ItemSchema, item);
       validateItemType.call(this, item);
       validateEnchantmentChunks.call(this, item);
+      validateNetheriteEnchant.call(this, item);
       validateArmorProperties.call(this, item);
     });
   }

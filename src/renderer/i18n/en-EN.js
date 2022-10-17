@@ -126,6 +126,7 @@ export default {
           type: 'Property "id" must be a string',
           required: 'Missing mandatory property "id"',
           enum: 'Unknown enchantment id {value}',
+          unique: 'Enchantment id "{0}" already leveled in "enchantments" table',
         },
         investedPoints: {
           type: 'Property "investedPoints" must be a number',
@@ -167,6 +168,7 @@ export default {
         forbbiden: 'Property "enchantments" is forbbiden for "{itemType}" typed items',
         minItems: 'Table "enchantments" cannot contains lower than 1 enchantment',
         maxItems: 'Table "enchantments" cannot contains higher than 4 enchantments',
+        noLeveledUnset: '"Unset" enchant level must be 0',
       },
     },
     AncientHunts: {

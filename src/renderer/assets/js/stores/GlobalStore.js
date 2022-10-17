@@ -35,6 +35,7 @@ class GlobalStore {
     this.$oldSelectedItem = null;
     [this.$selectedItem] = this.$selectedCharacter.inventory.inventory;
     this.$selectedEnchant = null;
+    this.selectedEnchantChunkIndex = null;
   }
 
   /**
@@ -52,6 +53,7 @@ class GlobalStore {
     this.$oldSelectedItem = null;
     [this.$selectedItem] = this.$selectedCharacter.inventory.inventory;
     this.$selectedEnchant = null;
+    this.selectedEnchantChunkIndex = null;
   }
 
   /**
@@ -68,6 +70,7 @@ class GlobalStore {
     this.$oldSelectedItem = this.$selectedItem;
     this.$selectedItem = item;
     this.$selectedEnchant = null;
+    this.selectedEnchantChunkIndex = null;
   }
 
   /**
@@ -81,7 +84,7 @@ class GlobalStore {
    * @param {Enchantment} enchant
    */
   set selectedEnchant(enchant) {
-    if (this.selectedEnchant.$isNetherite) {
+    if (this.selectedEnchant.$netherite) {
       if (this.selectedEnchant.id !== 'Unset' && this.selectedEnchant.level > 0) {
         this.selectedItem.netheriteEnchant = this.selectedEnchant;
       } else {
@@ -90,6 +93,7 @@ class GlobalStore {
       this.selectedItem.$key += 1;
     }
     this.$selectedEnchant = enchant;
+    this.selectedEnchantChunkIndex = null;
   }
 
   /**
@@ -106,6 +110,13 @@ class GlobalStore {
   getUnallowedEnchantForChunk() {
     if (!this.selectedEnchant) {
       return [];
+    }
+    if (this.selectedEnchant.$netherite) {
+      return this.selectedItem.chunkedEnchantments
+        .reduce((acc, chunk) => [...acc, chunk.find((ench) => ench.level > 0)], [])
+        .filter((ench) => !!ench && ench.id !== 'Unset')
+        .map((ench) => ench.id)
+      ;
     }
     const enchantIndex = this.selectedItem.chunkedEnchantments[this.selectedEnchantChunkIndex]
       .findIndex((ench) => JSON.stringify(ench.$data) === JSON.stringify(this.selectedEnchant.$data))

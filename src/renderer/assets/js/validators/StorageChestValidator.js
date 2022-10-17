@@ -5,19 +5,19 @@ import {
   validateNetheriteEnchant,
   validateArmorProperties,
 } from './ValidationFunctions';
-import ItemSchema from '../../../../static/json/schemas/item.schema.json';
+import StoredItemSchema from '../../../../../static/json/schemas/storedItem.schema.json';
 
-export default class InventoryValidator {
+export default class StorageChestValidator {
   /**
    * @constructor
    * @param {Object} data
    */
   constructor(data) {
     this.data = data;
-    this.corrupted = false;
+    this.errors = [];
 
-    this.data.items.forEach((item) => {
-      validateBySchema.call(this, ItemSchema, item);
+    this.data.storageChestItems.forEach((item) => {
+      validateBySchema.call(this, StoredItemSchema, item);
       validateItemType.call(this, item);
       validateEnchantmentChunks.call(this, item);
       validateNetheriteEnchant.call(this, item);
@@ -29,6 +29,6 @@ export default class InventoryValidator {
    * @return {Boolean}
    */
   isValid() {
-    return !this.corrupted;
+    return !this.errors.length;
   }
 }

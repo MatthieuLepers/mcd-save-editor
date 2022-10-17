@@ -99,6 +99,13 @@ function $getEnchantmentChunks(item) {
  */
 export const validateEnchantmentChunks = function validateEnchantmentChunks(item) {
   if (item.enchantments) {
+    const enchantInvested = item.enchantments
+      .filter((ench) => ench.level > 0)
+      .map((ench) => ench.id)
+    ;
+    if (enchantInvested.includes('Unset')) {
+      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.noLeveledUnset'), item.enchantments, null, ['enchantments'], 'noLeveledUnset', 'enchantments'));
+    }
     $getEnchantmentChunks(item).forEach((chunk, i) => {
       const enchantedItemInChunk = chunk.filter((ench) => ench.level > 0).length;
       if (enchantedItemInChunk > 1) {
@@ -112,6 +119,22 @@ export const validateEnchantmentChunks = function validateEnchantmentChunks(item
         this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.chunks.uniqueChunkEnchant', [i + 1, ...nonUniqueEnchantInChunk]), item.enchantments, null, ['enchantments', 'chunks', i], 'uniqueChunkEnchant', 'enchantments'));
       }
     });
+  }
+};
+
+/**
+ * @param {Object} item
+ */
+export const validateNetheriteEnchant = function validateNetheriteEnchant(item) {
+  if (this.netheriteEnchant) {
+    const enchantInvested = item.enchantments
+      .filter((ench) => ench.level > 0)
+      .map((ench) => ench.id)
+    ;
+    const nonUniqueNetheriteEnchant = enchantInvested.includes(item.netheriteEnchant.id);
+    if (nonUniqueNetheriteEnchant) {
+      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.netheriteEnchant.id.unique', [nonUniqueNetheriteEnchant]), item.enchantments, null, ['netheriteEnchant', 'id'], 'unique', 'netheriteEnchant'));
+    }
   }
 };
 

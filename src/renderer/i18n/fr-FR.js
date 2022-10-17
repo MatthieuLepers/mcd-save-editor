@@ -126,6 +126,7 @@ export default {
           type: 'La propriété "id" doit être du type string',
           required: 'Propriété obligatoire "id" manquante',
           enum: 'L\'id d\'enchantement "{value}" est inconnu',
+          unique: 'L\'id d\'enchantement "{0}" à déjà été nivelé dans le tableau "enchantements"',
         },
         investedPoints: {
           type: 'La propriété "investedPoints" doit être du type number',
@@ -167,6 +168,7 @@ export default {
         forbbiden: 'La propriété "enchantments" est interdite pour les objets de type "{itemType}"',
         minItems: 'Le tableau "enchantments" doit contenir au minimum 9 enchantements',
         maxItems: 'Le tableau "enchantments" doit contenir au maximum 9 enchantements',
+        noLeveledUnset: 'L\'enchantment "Unset" doit avoir un niveau égal à 0',
       },
     },
     AncientHunts: {

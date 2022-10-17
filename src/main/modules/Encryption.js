@@ -3,6 +3,7 @@ import fs from 'fs';
 import Constants from '../Constants';
 import Module from './Module';
 import InventoryValidator from './validation/InventoryValidator';
+import StorageChestValidator from './validation/StorageChestValidator';
 
 const DTOOLS_PATH = process.env.NODE_ENV === 'development'
   ? `${process.cwd()}/static/dtools.exe`
@@ -55,8 +56,9 @@ function $execFileAsync(file, options = []) {
  */
 async function $handleEncryptFile(e, data, file, overwrite = true) {
   const decryptedFilePath = `${Constants.SAVE_PATH}/${file.replace('.dat', '.json')}`;
-  const validator = new InventoryValidator(data);
-  if (!validator.isValid()) {
+  const inventoryValidator = new InventoryValidator(data);
+  const storageChestValidator = new StorageChestValidator(data);
+  if (!inventoryValidator.isValid() || !storageChestValidator.isValid()) {
     return false;
   }
   fs.writeFileSync(decryptedFilePath, JSON.stringify(data, null, 2));
@@ -80,7 +82,9 @@ async function $handleDecryptFile(e, file, force) {
   if (!fs.existsSync(decryptedFilePath) || force) {
     const success = await $execFileAsync(DTOOLS_PATH, [filePath]);
     const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
-    const corrupted = new InventoryValidator(fileContent).isValid();
+    const inventoryValidator = new InventoryValidator(fileContent);
+    const storageChestValidator = new StorageChestValidator(fileContent);
+    const corrupted = !inventoryValidator.isValid() && !storageChestValidator.isValid();
     if (success && ((!corrupted && $makeFileBackup(decryptedFilePath)) || corrupted)) {
       return fileContent;
     }

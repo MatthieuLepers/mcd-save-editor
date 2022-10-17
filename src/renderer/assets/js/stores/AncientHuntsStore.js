@@ -33,7 +33,7 @@ function $createRandomEnchantmentByType(type) {
 function $createItem(itemData, index) {
   const itemObj = {
     inventoryIndex: index,
-    power: 15,
+    power: 1,
     rarity: itemData.rarity[0],
     type: itemData.name,
     upgraded: false,
