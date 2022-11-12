@@ -196,7 +196,10 @@ export default {
         'You can try to reload the current tab.',
       ],
       okLabel: 'Restore',
+      showReport: 'View error report',
       dateFormat: 'dS F Y - Hhi',
+      restoreSuccess: 'Restore complete!',
+      restoreError: 'Restore failed.',
     },
     LevelBadge: {
       level: 'Level',

@@ -41,7 +41,7 @@ export default {
     },
   },
   SoulBow_Winter1: {
-    event: 'Chills and Thrills',
+    events: ['Chills and Thrills', 'Festival Of Frost'],
     name: 'SoulBow_Winter1',
     type: 'Ranged',
     rarity: ['Unique'],

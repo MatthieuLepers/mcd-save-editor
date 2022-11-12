@@ -30,4 +30,21 @@ export default {
       'en-EN': 'Ghost kindler',
     },
   },
+  GhostArmor_Spooky2: {
+    events: ['Spooky Fall 22'],
+    name: 'GhostArmor_Spooky2',
+    type: 'Armor',
+    rarity: ['Unique'],
+    image: 'static/img/Items/Armors/CloakedSkull.png',
+    ancientHuntRunes: ['c', 'i', 'p'],
+    activeEnchants: ['FireTrail'],
+    armorproperties: [
+      'DodgeGhostForm',
+      'MissChance',
+    ],
+    i18n: {
+      'fr-FR': 'Crâne masqué',
+      'en-EN': 'Cloaked skull',
+    },
+  },
 };

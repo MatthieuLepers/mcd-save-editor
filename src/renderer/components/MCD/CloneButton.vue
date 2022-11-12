@@ -19,11 +19,16 @@ export default {
   },
   methods: {
     cloneItem() {
-      GlobalStore.selectedCharacter.inventory.addItem(this.item.clone());
-      if (FilteredInventoryStore.inventory.length) {
-        [GlobalStore.selectedItem] = FilteredInventoryStore.inventory;
+      if (this.item.isStored()) {
+        GlobalStore.selectedCharacter.storageChest.addItem(this.item.clone());
+        [GlobalStore.selectedItem] = GlobalStore.selectedCharacter.storageChest.items;
       } else {
-        [GlobalStore.selectedItem] = GlobalStore.selectedCharacter.inventory.gears;
+        GlobalStore.selectedCharacter.inventory.addItem(this.item.clone());
+        if (FilteredInventoryStore.inventory.length) {
+          [GlobalStore.selectedItem] = FilteredInventoryStore.inventory;
+        } else {
+          [GlobalStore.selectedItem] = GlobalStore.selectedCharacter.inventory.gears;
+        }
       }
     },
   },

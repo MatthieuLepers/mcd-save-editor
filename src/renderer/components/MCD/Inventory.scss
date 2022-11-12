@@ -31,7 +31,9 @@
     &--Selected {
       opacity: 1;
 
-      span {display: block;}
+      span {
+        display: block;
+      }
     }
   }
 

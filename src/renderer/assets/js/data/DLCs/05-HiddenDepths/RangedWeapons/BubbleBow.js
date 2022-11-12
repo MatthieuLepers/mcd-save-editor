@@ -25,4 +25,18 @@ export default {
       'en-EN': 'Bubble burster',
     },
   },
+  BubbleBow_Spooky2: {
+    events: ['Spooky Fall 22'],
+    name: 'BubbleBow_Spooky2',
+    type: 'Ranged',
+    rarity: ['Unique'],
+    image: 'static/img/Items/RangedWeapons/GloopyBow.png',
+    activeEnchants: ['Ricochet'],
+    ancientHuntRunes: ['r', 's'],
+    stats: { power: 3.02, speed: 3.41, area: 6.57 },
+    i18n: {
+      'fr-FR': 'Arc visqueux',
+      'en-EN': 'Gloopy bow',
+    },
+  },
 };

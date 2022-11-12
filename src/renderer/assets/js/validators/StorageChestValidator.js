@@ -5,16 +5,16 @@ import {
   validateNetheriteEnchant,
   validateArmorProperties,
 } from './ValidationFunctions';
+import AbstractValidator from './AbstractValidator';
 import StoredItemSchema from '../../../../../static/json/schemas/storedItem.schema.json';
 
-export default class StorageChestValidator {
+export default class StorageChestValidator extends AbstractValidator {
   /**
    * @constructor
    * @param {Object} data
    */
   constructor(data) {
-    this.data = data;
-    this.errors = [];
+    super(data);
 
     this.data.storageChestItems.forEach((item) => {
       validateBySchema.call(this, StoredItemSchema, item);
@@ -23,12 +23,5 @@ export default class StorageChestValidator {
       validateNetheriteEnchant.call(this, item);
       validateArmorProperties.call(this, item);
     });
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  isValid() {
-    return !this.errors.length;
   }
 }

@@ -36,4 +36,17 @@ export default {
       'en-EN': 'Fortune spear',
     },
   },
+  Spear_spooky2: {
+    events: ['Spooky Fall 22'],
+    name: 'Spear_spooky2',
+    type: 'Melee',
+    rarity: ['Unique'],
+    image: 'static/img/Items/MeleeWeapons/SpineChillSpear.png',
+    ancientHuntRunes: ['s'],
+    stats: { power: 5.67, speed: 2.03, area: 8.52 },
+    i18n: {
+      'fr-FR': 'Lance d\'effroi',
+      'en-EN': 'Spine-chill spear',
+    },
+  },
 };

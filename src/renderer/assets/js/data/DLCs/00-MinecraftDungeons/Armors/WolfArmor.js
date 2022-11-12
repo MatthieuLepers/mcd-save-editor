@@ -47,7 +47,7 @@ export default {
     },
   },
   WolfArmor_Winter1: {
-    event: 'Chills and Thrills',
+    events: ['Chills and Thrills', 'Fetival Of Frost'],
     name: 'WolfArmor_Winter1',
     type: 'Armor',
     rarity: ['Unique'],

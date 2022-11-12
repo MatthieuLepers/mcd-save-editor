@@ -38,7 +38,7 @@ export default {
     },
   },
   Bow_Spooky1: {
-    event: 'Spooky Fall',
+    events: ['Spooky Fall'],
     name: 'Bow_Spooky1',
     type: 'Ranged',
     rarity: ['Unique'],

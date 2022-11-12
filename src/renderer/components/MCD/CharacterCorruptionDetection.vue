@@ -5,8 +5,6 @@
       :title="$t('MCD.CharacterCorruptionDetection.title')"
       :closable="false"
       :autoCloseOnConfirm="false"
-      :okOnly="true"
-      :okLabel="$t('MCD.CharacterCorruptionDetection.okLabel')"
       @confirm="handleConfirm"
     >
       <div v-if="availableBackup">
@@ -19,6 +17,16 @@
           {{ line }}
         </p>
       </div>
+      <template v-slot:footer="{ accept }">
+        <router-link custom :to="{ name: 'CorruptedData' }" v-slot="{ navigate }">
+          <button :class="GenerateModifiers('ModalButton', { Refuse: true })" @click="navigate">
+            {{ $t('MCD.CharacterCorruptionDetection.showReport') }}
+          </button>
+        </router-link>
+        <button :class="GenerateModifiers('ModalButton', { Accept: true })" @click="accept">
+          {{ $t('MCD.CharacterCorruptionDetection.okLabel') }}
+        </button>
+      </template>
     </Modal>
   </div>
 </template>
@@ -48,10 +56,10 @@ export default {
           return this.character.reload();
         })
         .then(() => {
-          NotificationStore.success('Restauration terminée !');
+          NotificationStore.success(this.$t('MCD.CharacterCorruptionDetection.restoreSuccess'));
         })
         .catch(() => {
-          NotificationStore.error('Échec de la restauration.');
+          NotificationStore.error(this.$t('MCD.CharacterCorruptionDetection.restoreError'));
         })
         .finally(() => {
           ModalStore.hideModal(`corruptedDataModal${this.character.id}`);

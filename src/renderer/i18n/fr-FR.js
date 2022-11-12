@@ -196,7 +196,10 @@ export default {
         'Vous pouvez essayer de recharger l\'onglet.',
       ],
       okLabel: 'Restaurer',
+      showReport: 'Voir le rapport d\'erreur',
       dateFormat: 'dS F Y - Hhi',
+      restoreSuccess: 'Restauration terminée !',
+      restoreError: 'Échec de la restauration.',
     },
     LevelBadge: {
       level: 'Niveau',

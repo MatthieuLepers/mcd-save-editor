@@ -29,7 +29,7 @@ export default class Enchantment {
    * @return {Enchantment}
    */
   static get UNSET() {
-    return new Enchantment({ id: 'Unset', level: 0 });
+    return new Enchantment({ id: 'Unset', investedPoints: 0, level: 0 });
   }
 
   /**

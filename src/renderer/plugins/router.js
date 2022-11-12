@@ -12,6 +12,6 @@ export default new Router({
     { path: '/', name: 'Home', component: HomePage },
     { path: '/storage-chest', name: 'StorageChest', component: StorageChestPage },
     { path: '/ancient-hunts', name: 'AncientHunts', component: AncientHuntsPage },
-    { path: '/corrupted-data', name: 'CorruptedDate', component: CorruptedDataPage },
+    { path: '/corrupted-data', name: 'CorruptedData', component: CorruptedDataPage },
   ],
 });

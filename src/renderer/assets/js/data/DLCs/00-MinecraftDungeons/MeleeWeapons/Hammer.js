@@ -37,4 +37,18 @@ export default {
       'en-EN': 'Hammer of gravity',
     },
   },
+  SkeletonHammer: {
+    events: ['Spooky Fall 22'],
+    name: 'SkeletonHammer',
+    type: 'Melee',
+    rarity: ['Unique'],
+    image: 'static/img/Items/MeleeWeapons/BoneheadHammer.png',
+    ancientHuntRunes: ['t', 'a'],
+    stats: { power: 8.69, speed: 1, area: 7.76 },
+    activeEnchants: ['GravityMelee'],
+    i18n: {
+      'fr-FR': 'Marteau à tête d\'os',
+      'en-EN': 'Bonehead hammer',
+    },
+  },
 };

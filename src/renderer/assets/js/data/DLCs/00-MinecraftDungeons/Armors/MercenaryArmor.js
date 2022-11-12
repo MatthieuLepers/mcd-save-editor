@@ -31,7 +31,7 @@ export default {
     },
   },
   MercenaryArmor_Spooky1: {
-    event: 'Spooky Fall',
+    events: ['Spooky Fall'],
     name: 'MercenaryArmor_Spooky1',
     type: 'Armor',
     rarity: ['Unique'],

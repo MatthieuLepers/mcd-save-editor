@@ -101,6 +101,7 @@
       height: 42px;
       border-radius: 6px;
       background-color: rgba(color(cancel), .5);
+      padding: 0 8px;
 
       &:not(:last-of-type) {
         margin-right: 15px;

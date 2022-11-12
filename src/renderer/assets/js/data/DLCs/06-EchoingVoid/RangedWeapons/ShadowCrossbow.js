@@ -26,4 +26,18 @@ export default {
       'en-EN': 'Veiled crossbow',
     },
   },
+  BatCrossbow: {
+    events: ['Spooky Fall 22'],
+    name: 'BatCrossbow',
+    type: 'Ranged',
+    rarity: ['Unique'],
+    image: 'static/img/Items/RangedWeapons/ShriekingCrossbow.png',
+    ancientHuntRunes: ['r', 's'],
+    stats: { power: 4.76, speed: 1.47, ammo: 4.1 },
+    activeEnchants: ['ShadowShot'],
+    i18n: {
+      'fr-FR': 'Arbalète hurlante',
+      'en-EN': 'Shrieking crossbow',
+    },
+  },
 };

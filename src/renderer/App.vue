@@ -20,10 +20,21 @@
             >
               <input v-model="character.$data.name"/>
             </Modal>
-            <button :title="$t('App.tabs.reload.label')" class="CharacterAction CharacterActionReload" :class="{loading: loadingTabs.indexOf(character.id) >= 0}" @click="reload(character)">
+            <button
+              class="CharacterAction CharacterActionReload"
+              :class="{loading: loadingTabs.includes(character.id)}"
+              :title="$t('App.tabs.reload.label')"
+              :disabled="loadingTabs.includes(character.id)"
+              @click="reload(character)"
+            >
               <i class="icon-reload"></i>
             </button>
-            <button :title="$t('App.tabs.save.label')" class="CharacterAction CharacterActionSave" @click="save(character)">
+            <button
+              class="CharacterAction CharacterActionSave"
+              :title="$t('App.tabs.save.label')"
+              :disabled="savingTabs.includes(character.id)"
+              @click="save(character)"
+            >
               <i class="icon-save"></i>
             </button>
           </div>
@@ -62,7 +73,9 @@ import Modal from '@/components/Modal/index';
 import ModalStore from '@/components/Modal/Store';
 
 /*
- * Data from https://minecraft.fandom.com/fr/wiki/Minecraft_Dungeons & https://dungeoncollector.co.uk/
+ * Data from :
+ * - https://minecraft.fandom.com/fr/wiki/Minecraft_Dungeons
+ * - https://dungeoncollector.co.uk/
  */
 export default {
   name: 'MCDSaveEditor',
@@ -74,6 +87,7 @@ export default {
       mcdVersion: '1.15.1.0',
       TutorialStore,
       loadingTabs: [],
+      savingTabs: [],
       GlobalStore,
       ModalStore,
       notifier: NotificationStore,
@@ -84,17 +98,19 @@ export default {
       this.loadingTabs.push(character.id);
       character.reload()
         .then(() => {
-          this.loadingTabs.splice(this.loadingTabs.indexOf(character.id), 1);
           this.notifier.success(this.$t('App.tabs.reload.success'));
         })
         .catch(() => {
-          this.loadingTabs.splice(this.loadingTabs.indexOf(character.id), 1);
           this.notifier.error(this.$t('App.tabs.reload.error'));
+        })
+        .finally(() => {
+          this.loadingTabs.splice(this.loadingTabs.indexOf(character.id), 1);
         })
       ;
     },
     save(character) {
       if (!character.$corrupted.length) {
+        this.savingTabs.push(character.id);
         character.save()
           .then((success) => {
             if (success) {
@@ -105,6 +121,9 @@ export default {
           })
           .catch(() => {
             this.notifier.error(this.$t('App.tabs.save.error'));
+          })
+          .finally(() => {
+            this.savingTabs.splice(this.savingTabs.indexOf(character.id), 1);
           })
         ;
       } else {

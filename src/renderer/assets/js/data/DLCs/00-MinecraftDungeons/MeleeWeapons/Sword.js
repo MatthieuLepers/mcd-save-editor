@@ -37,7 +37,7 @@ export default {
     },
   },
   Sword_Spooky1: {
-    event: 'Spooky Fall',
+    events: ['Spooky Fall'],
     name: 'Sword_Spooky1',
     type: 'Melee',
     rarity: ['Unique'],

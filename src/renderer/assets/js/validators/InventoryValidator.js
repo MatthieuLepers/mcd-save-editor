@@ -5,16 +5,16 @@ import {
   validateNetheriteEnchant,
   validateArmorProperties,
 } from './ValidationFunctions';
+import AbstractValidator from './AbstractValidator';
 import ItemSchema from '../../../../../static/json/schemas/item.schema.json';
 
-export default class InventoryValidator {
+export default class InventoryValidator extends AbstractValidator {
   /**
    * @constructor
    * @param {Object} data
    */
   constructor(data) {
-    this.data = data;
-    this.errors = [];
+    super(data);
 
     this.data.items.forEach((item) => {
       validateBySchema.call(this, ItemSchema, item);
@@ -23,12 +23,5 @@ export default class InventoryValidator {
       validateNetheriteEnchant.call(this, item);
       validateArmorProperties.call(this, item);
     });
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  isValid() {
-    return !this.errors.length;
   }
 }

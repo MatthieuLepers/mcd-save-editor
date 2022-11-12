@@ -40,7 +40,7 @@ export default {
     },
   },
   SoulScythe_Spooky2: {
-    event: 'Spookier Fall',
+    events: ['Spookier Fall'],
     name: 'SoulScythe_Spooky2',
     type: 'Melee',
     rarity: ['Unique'],

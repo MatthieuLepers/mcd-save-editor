@@ -32,7 +32,15 @@
               </span>
             </span>
             <span v-if="itemData.dlc" :class="`${itemData.dlc.replace(/ /, '')}`">{{ itemData.dlc }} DLC</span>
-            <span v-if="itemData.event" :class="`${itemData.event.replace(/ /, '')}`">{{ itemData.event }} Event</span>
+            <ul class="MCDItemSelectChoiceEvents" v-if="itemData.events">
+              <li
+                v-for="(event, i) in itemData.events"
+                :key="i"
+                :class="`${event.replace(/ /, '')}`"
+              >
+                {{ event }} Event
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -91,8 +99,8 @@ export default {
       if (this.filter === 'Event') {
         return Object
           .values(Items)
-          .filter((itemData) => itemData.event && baseFilterFn(itemData))
-          .sort((a, b) => EventsData[a.event].startedAt.getTime() - EventsData[b.event].startedAt.getTime())
+          .filter((itemData) => itemData.events && baseFilterFn(itemData))
+          .sort((a, b) => EventsData[a.events[0]].startedAt.getTime() - EventsData[b.events[0]].startedAt.getTime())
         ;
       }
       if (this.filter === 'DLC') {

@@ -38,7 +38,7 @@ export default {
     },
   },
   Trickbow_Year1: {
-    event: 'Anniversary',
+    events: ['First Year Anniversary', 'Second Year Anniversary'],
     name: 'Trickbow_Year1',
     type: 'Ranged',
     rarity: ['Unique'],

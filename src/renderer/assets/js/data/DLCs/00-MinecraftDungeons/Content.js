@@ -40,6 +40,7 @@ import GhostArmor from './Armors/GhostArmor';
 import GrimArmor from './Armors/GrimArmor';
 import MercenaryArmor from './Armors/MercenaryArmor';
 import MysteryArmor from './Armors/MysteryArmor';
+import NatureArmor from './Armors/NatureArmor';
 import PhantomArmor from './Armors/PhantomArmor';
 import ReinforcedMail from './Armors/ReinforcedMail';
 import ScaleMail from './Armors/ScaleMail';
@@ -67,6 +68,7 @@ import RainbowGrass from './Artefacts/RainbowGrass';
 import ShockPowder from './Artefacts/ShockPowder';
 import SoulHealer from './Artefacts/SoulHealer';
 import SoulLantern from './Artefacts/SoulLantern';
+import SoulTotemOfCasting from './Artefacts/SoulTotemOfCasting';
 import TastyBone from './Artefacts/TastyBone';
 import TormentQuiver from './Artefacts/TormentQuiver';
 import TotemOfRegeneration from './Artefacts/TotemOfRegeneration';
@@ -232,6 +234,7 @@ export default {
     ...GrimArmor,
     ...MercenaryArmor,
     ...MysteryArmor,
+    ...NatureArmor,
     ...PhantomArmor,
     ...ReinforcedMail,
     ...ScaleMail,
@@ -259,6 +262,7 @@ export default {
     ...ShockPowder,
     ...SoulHealer,
     ...SoulLantern,
+    ...SoulTotemOfCasting,
     ...TastyBone,
     ...TormentQuiver,
     ...TotemOfRegeneration,

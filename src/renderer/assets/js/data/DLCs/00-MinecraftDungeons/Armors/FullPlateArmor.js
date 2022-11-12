@@ -33,7 +33,7 @@ export default {
     },
   },
   FullPlateArmor_Spooky2: {
-    event: 'Spookier Fall',
+    events: ['Spookier Fall'],
     name: 'FullPlateArmor_Spooky2',
     type: 'Armor',
     rarity: ['Unique'],

@@ -12,7 +12,7 @@ export default {
     },
   },
   CorruptedBeacon_Spooky1: {
-    event: 'Spooky Fall',
+    events: ['Spooky Fall'],
     name: 'CorruptedBeacon_Spooky1',
     type: 'Artefact',
     rarity: ['Unique'],

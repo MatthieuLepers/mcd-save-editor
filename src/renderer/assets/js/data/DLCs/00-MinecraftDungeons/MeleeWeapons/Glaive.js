@@ -37,7 +37,7 @@ export default {
     },
   },
   Glaive_Spooky2: {
-    event: 'Spookier Fall',
+    events: ['Spookier Fall'],
     name: 'Glaive_Spooky2',
     type: 'Melee',
     rarity: ['Unique'],

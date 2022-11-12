@@ -36,7 +36,7 @@ export default {
     },
   },
   Cutlass_Year1: {
-    event: 'Anniversary',
+    events: ['First Year Anniversary', 'Second Year Anniversary'],
     name: 'Cutlass_Year1',
     type: 'Melee',
     rarity: ['Unique'],

@@ -49,7 +49,7 @@ export default {
     },
   },
   Claymore_Winter1: {
-    event: 'Chills and Thrills',
+    events: ['Chills and Thrills', 'Fetival Of Frost'],
     name: 'Claymore_Winter1',
     type: 'Melee',
     rarity: ['Unique'],

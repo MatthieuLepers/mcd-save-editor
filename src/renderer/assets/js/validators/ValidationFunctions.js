@@ -46,7 +46,10 @@ export const validateBySchema = function validateBySchema(schema, item) {
         itemType: Items[item.type]?.type?.toLowerCase(),
         value: $get(item, error.property.replace('instance.', '')),
       });
-      this.errors.push(error);
+      this.addErrorReport({
+        item,
+        error,
+      });
     });
   }
 };
@@ -57,26 +60,47 @@ export const validateBySchema = function validateBySchema(schema, item) {
 export const validateItemType = function validateItemType(item) {
   if (Items[item.type]) {
     if (Items[item.type].type === 'Armor' && !item.armorproperties) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'required', ''));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'required', ''),
+      });
     }
     if (Items[item.type].type === 'Armor' && !item.enchantments) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'required', ''));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'required', ''),
+      });
     }
     if ((Items[item.type].type === 'Melee' || Items[item.type].type === 'Ranged') && item.armorproperties) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'forbbiden', ''));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'forbbiden', ''),
+      });
     }
     if ((Items[item.type].type === 'Melee' || Items[item.type].type === 'Ranged') && !item.enchantments) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'required', ''));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'required', ''),
+      });
     }
     if (Items[item.type].type === 'Artefact') {
       if (item.armorproperties) {
-        this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'forbbiden', ''));
+        this.addErrorReport({
+          item,
+          error: new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['armorproperties'], 'forbbiden', ''),
+        });
       }
       if (item.enchantments) {
-        this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'forbbiden', ''));
+        this.addErrorReport({
+          item,
+          error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['enchantments'], 'forbbiden', ''),
+        });
       }
       if (item.netheriteEnchant) {
-        this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.netheriteEnchant.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['netheriteEnchant'], 'forbbiden', ''));
+        this.addErrorReport({
+          item,
+          error: new ValidationError(i18n.t('MCD.DataCorruption.netheriteEnchant.forbbiden', { itemType: Items[item.type].type.toLowerCase() }), item, null, ['netheriteEnchant'], 'forbbiden', ''),
+        });
       }
     }
   }
@@ -104,19 +128,28 @@ export const validateEnchantmentChunks = function validateEnchantmentChunks(item
       .map((ench) => ench.id)
     ;
     if (enchantInvested.includes('Unset')) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.noLeveledUnset'), item.enchantments, null, ['enchantments'], 'noLeveledUnset', 'enchantments'));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.noLeveledUnset'), item.enchantments, null, ['enchantments'], 'noLeveledUnset', 'enchantments'),
+      });
     }
     $getEnchantmentChunks(item).forEach((chunk, i) => {
       const enchantedItemInChunk = chunk.filter((ench) => ench.level > 0).length;
       if (enchantedItemInChunk > 1) {
-        this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.chunks.levelConsistency', [i + 1]), item.enchantments, null, ['enchantments', 'chunks', i], 'levelConsistency', 'enchantments'));
+        this.addErrorReport({
+          item,
+          error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.chunks.levelConsistency', [i + 1]), item.enchantments, null, ['enchantments', 'chunks', i], 'levelConsistency', 'enchantments'),
+        });
       }
       const nonUniqueEnchantInChunk = chunk
         .map((ench) => ench.id)
         .filter((id, i, arr) => arr.indexOf(id) !== i && id !== 'Unset')
       ;
       if (nonUniqueEnchantInChunk.length) {
-        this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.enchantments.chunks.uniqueChunkEnchant', [i + 1, ...nonUniqueEnchantInChunk]), item.enchantments, null, ['enchantments', 'chunks', i], 'uniqueChunkEnchant', 'enchantments'));
+        this.addErrorReport({
+          item,
+          error: new ValidationError(i18n.t('MCD.DataCorruption.enchantments.chunks.uniqueChunkEnchant', [i + 1, ...nonUniqueEnchantInChunk]), item.enchantments, null, ['enchantments', 'chunks', i], 'uniqueChunkEnchant', 'enchantments'),
+        });
       }
     });
   }
@@ -133,7 +166,10 @@ export const validateNetheriteEnchant = function validateNetheriteEnchant(item) 
     ;
     const nonUniqueNetheriteEnchant = enchantInvested.includes(item.netheriteEnchant.id);
     if (nonUniqueNetheriteEnchant) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.netheriteEnchant.id.unique', [nonUniqueNetheriteEnchant]), item.enchantments, null, ['netheriteEnchant', 'id'], 'unique', 'netheriteEnchant'));
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.netheriteEnchant.id.unique', [nonUniqueNetheriteEnchant]), item.enchantments, null, ['netheriteEnchant', 'id'], 'unique', 'netheriteEnchant'),
+      });
     }
   }
 };
@@ -148,7 +184,10 @@ export const validateArmorProperties = function validateArmorProperties(item) {
       .filter((id, i, arr) => arr.indexOf(id) !== i)
     ;
     if (nonUniqueArmorProperties.length) {
-      this.errors.push(new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.uniqueItemsId'), nonUniqueArmorProperties), item.armorproperties, null, ['armorproperties'], 'uniqueItemsId', 'armorproperties');
+      this.addErrorReport({
+        item,
+        error: new ValidationError(i18n.t('MCD.DataCorruption.armorproperties.uniqueItemsId'), nonUniqueArmorProperties, item.armorproperties, null, ['armorproperties'], 'uniqueItemsId', 'armorproperties'),
+      });
     }
   }
 };

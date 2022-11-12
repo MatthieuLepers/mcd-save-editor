@@ -15,6 +15,7 @@
       </template>
       <MCDEnchantmentEditor />
     </MCDCharacter>
+    <MCDCharacterCorruptionDetection v-if="character.$corrupted.length" :character="character" />
   </section>
 </template>
 
@@ -27,10 +28,11 @@ import MCDInventory from '@/components/MCD/Inventory';
 import MCDItemDetails from '@/components/MCD/ItemDetails';
 import MCDEnchantmentEditor from '@/components/MCD/EnchantmentEditor';
 import MCDStorageChest from '@/components/MCD/StorageChest';
+import MCDCharacterCorruptionDetection from '@/components/MCD/CharacterCorruptionDetection';
 
 export default {
   name: 'StorageChestPage',
-  components: { MCDCharacter, MCDInventory, MCDItemDetails, MCDEnchantmentEditor, MCDStorageChest },
+  components: { MCDCharacter, MCDInventory, MCDItemDetails, MCDEnchantmentEditor, MCDStorageChest, MCDCharacterCorruptionDetection },
   props: {
     character: { type: Character, required: true },
   },

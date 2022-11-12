@@ -26,7 +26,7 @@ export default {
     },
   },
   SlowBow_Spooky2: {
-    event: 'Spookier Fall',
+    events: ['Spookier Fall'],
     name: 'SlowBow_Spooky2',
     type: 'Ranged',
     rarity: ['Unique'],

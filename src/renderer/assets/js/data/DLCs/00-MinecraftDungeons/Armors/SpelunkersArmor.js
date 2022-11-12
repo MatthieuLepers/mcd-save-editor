@@ -31,7 +31,7 @@ export default {
     },
   },
   SpelunkersArmor_Year1: {
-    event: 'Anniversary',
+    events: ['First Year Anniversary'],
     name: 'SpelunkersArmor_Year1',
     type: 'Armor',
     rarity: ['Unique'],

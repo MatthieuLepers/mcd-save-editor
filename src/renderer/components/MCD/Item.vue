@@ -18,7 +18,7 @@
       :rarity="item.$data.rarity"
       :item="item.itemData.image || null"
       :isNew="item.$data.markedNew"
-      :isEvent="!!item.itemData.event && !showRuneList"
+      :isEvent="!!item.itemData.events && !showRuneList"
       @dragstart.stop="handleDragStart"
       @dragend.stop="handleDragEnd"
     />

@@ -33,7 +33,7 @@ export default {
     },
   },
   GrimArmor_Spooky2: {
-    event: 'Spookier Fall',
+    events: ['Spookier Fall'],
     name: 'GrimArmor_Spooky2',
     type: 'Armor',
     rarity: ['Unique'],
