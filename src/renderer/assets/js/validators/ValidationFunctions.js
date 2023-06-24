@@ -1,6 +1,6 @@
 import { Validator, ValidationError } from 'jsonschema';
-import { Items } from '../data/Content';
 import i18n from '@/plugins/i18n';
+import { Items } from '../data/Content';
 
 /**
  * @param {Object} obj

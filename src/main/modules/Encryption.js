@@ -59,6 +59,9 @@ async function $handleEncryptFile(e, data, file, overwrite = true) {
   const inventoryValidator = new InventoryValidator(data);
   const storageChestValidator = new StorageChestValidator(data);
   if (!inventoryValidator.isValid() || !storageChestValidator.isValid()) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(inventoryValidator.errors, storageChestValidator.errors);
+    }
     return false;
   }
   fs.writeFileSync(decryptedFilePath, JSON.stringify(data, null, 2));
