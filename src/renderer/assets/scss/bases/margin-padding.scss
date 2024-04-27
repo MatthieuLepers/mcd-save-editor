@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $data: (
   'm': 'margin',
   'p': 'padding',
@@ -8,7 +10,7 @@ $step: 8;
 
 @each $type, $attr in $data {
   @each $bpName, $bpWidth in $breakpoints {
-    @for $i from $start through ($end / $step) {
+    @for $i from $start through math.div($end, $step) {
       $value: $i * $step;
 
       @include media-breakpoint-up($bpName) {

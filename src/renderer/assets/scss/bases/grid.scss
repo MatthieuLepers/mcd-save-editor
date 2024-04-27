@@ -1,3 +1,4 @@
+@use 'sass:math';
 // Credits to : http://codepen.io/absolutholz/post/flex-box-grid-with-sass-mixins
 // for this awesome port of Kristopher Joseph's
 // awesome http://flexboxgrid.com/
@@ -14,10 +15,10 @@ $viewport-layouts: ();
 $columns: 12;
 
 $gutter-width: 20px;
-$half-gutter-width: $gutter-width / 2;
+$half-gutter-width: math.div($gutter-width, 2);
 
 $gap-width: 20px;
-$half-gap-width: $gap-width / 2;
+$half-gap-width: math.div($gap-width, 2);
 
 @mixin grid-row ($reverse: false) {
   @include grid-row-direction($reverse);
@@ -89,7 +90,7 @@ $half-gap-width: $gap-width / 2;
     max-width: 100%;
 
   } @else {
-    $span-percentage: $columns-to-span / $total-columns-in-row;
+    $span-percentage: math.div($columns-to-span, $total-columns-in-row);
 
     flex-basis: $span-percentage * 100%;
     max-width: $span-percentage * 100%;
@@ -97,11 +98,11 @@ $half-gap-width: $gap-width / 2;
 }
 
 @mixin grid-column-offset ($columns-to-offset, $total-columns-in-row: $columns) {
-  margin-left: ($columns-to-offset / $total-columns-in-row) * 100%;
+  margin-left: math.div($columns-to-offset, $total-columns-in-row) * 100%;
 }
 
 @mixin grid-column-pull ($columns-to-offset, $total-columns-in-row: $columns) {
-  margin-right: ($columns-to-offset / $total-columns-in-row) * 100%;
+  margin-right: math.div($columns-to-offset, $total-columns-in-row) * 100%;
 }
 
 @mixin grid-column-order ($position) {
@@ -176,7 +177,7 @@ $half-gap-width: $gap-width / 2;
 
         &-gap {
           @include grid-column;
-          $spanPercentage: $i / $columns;
+          $spanPercentage: math.div($i, $columns);
           $w:$spanPercentage * 100%;
           flex-grow: 0;
           flex-shrink: 0;
@@ -188,7 +189,7 @@ $half-gap-width: $gap-width / 2;
         }
         &-gap-left {
           @include grid-column;
-          $spanPercentage: $i / $columns;
+          $spanPercentage: math.div($i, $columns);
           $w:$spanPercentage * 100%;
           flex-grow: 0;
           flex-shrink: 0;
@@ -199,7 +200,7 @@ $half-gap-width: $gap-width / 2;
         }
         &-gap-right {
           @include grid-column;
-          $spanPercentage: $i / $columns;
+          $spanPercentage: math.div($i, $columns);
           $w:$spanPercentage * 100%;
           flex-grow: 0;
           flex-shrink: 0;

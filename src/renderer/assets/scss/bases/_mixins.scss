@@ -1,17 +1,19 @@
+@use 'sass:math';
+
 @mixin placeholder {
-  &.placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &:-ms-input-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
+  #{if(&, '&.placeholder','.placeholder')} { @content; }
+  #{if(&, '&:-moz-placeholder',':-moz-placeholder')} { @content; }
+  #{if(&, '&::-moz-placeholder','::-moz-placeholder')} { @content; }
+  #{if(&, '&:-ms-input-placeholder',':-ms-input-placeholder')} { @content; }
+  #{if(&, '&::-webkit-input-placeholder','::-webkit-input-placeholder')} { @content; }
 }
 
 @mixin font-size($size, $base: 16)  {
-  font-size: ($size / $base) * 1rem;
+  font-size: math.div($size, $base) * 1rem;
 }
 
 @function rem($size) {
-  $remSize: $size / 16px;
+  $remSize: math.div($size, 16px);
   //Default font size on html element is 100%, equivalent to 16px;
   @return #{$remSize}rem;
 }
