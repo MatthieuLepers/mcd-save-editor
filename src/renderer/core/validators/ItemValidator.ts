@@ -11,4 +11,8 @@ export default class ItemValidator extends AbstractValidator<IItem> {
     this.validateEnchantmentChunks(this.data);
     this.validateArmorProperties(this.data);
   }
+
+  get items(): Array<IItem> {
+    return [this.data];
+  }
 }

@@ -169,7 +169,6 @@ export default class PolygonEnum {
 
   static ENCHANTMENT_SELECTOR(): Polygon {
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect')!;
-    console.log(enchantSelectOuter);
     const { x, y, width, height } = enchantSelectOuter.getBoundingClientRect();
     return [
       [x, (y - 3) + OFFSET_Y],
