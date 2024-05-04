@@ -5,7 +5,10 @@
       @over="state.activeSubMenu = 'selectProfil'"
       @out="state.activeSubMenu = null"
     >
-      <ContextMenu :visible="state.activeSubMenu === 'selectProfil'" position="top right">
+      <ContextMenu
+        :visible="state.activeSubMenu === 'selectProfil'"
+        anchor="top right"
+      >
         <ContextMenuItem
           v-for="(profil, i) in globalStore.state.profilList"
           :key="i"
