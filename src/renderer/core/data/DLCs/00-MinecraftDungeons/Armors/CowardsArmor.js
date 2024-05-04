@@ -3,7 +3,7 @@ export default {
     name: 'CowardsArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/Coward\'sArmor.png',
+    image: 'img/Items/Armors/Coward\'sArmor.png',
     ancientHuntRunes: ['r'],
     armorproperties: [
       'ItemCooldownDecrease',
@@ -19,7 +19,7 @@ export default {
     name: 'CowardsArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/CuriousArmor.png',
+    image: 'img/Items/Armors/CuriousArmor.png',
     ancientHuntRunes: [],
     armorproperties: [
       'TeleportChance',

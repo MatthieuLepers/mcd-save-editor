@@ -2,7 +2,7 @@ export default {
   name: 'DynamoRanged',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/DynamoRanged.png',
+  image: 'img/Enchants/DynamoRanged.png',
   i18n: {
     'fr-FR': {
       name: 'Dynamo',

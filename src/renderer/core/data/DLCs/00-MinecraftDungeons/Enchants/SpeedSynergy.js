@@ -2,7 +2,7 @@ export default {
   name: 'SpeedSynergy',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/SpeedSynergy.png',
+  image: 'img/Enchants/SpeedSynergy.png',
   i18n: {
     'fr-FR': {
       name: 'Synergie de vitesse',

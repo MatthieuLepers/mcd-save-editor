@@ -3,7 +3,7 @@ export default {
   name: 'CooldownShot',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/CooldownShot.png',
+  image: 'img/Enchants/CooldownShot.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

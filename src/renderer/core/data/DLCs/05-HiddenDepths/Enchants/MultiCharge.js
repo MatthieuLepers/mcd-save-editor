@@ -3,7 +3,7 @@ export default {
   name: 'MultiCharge',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/MultiCharge.png',
+  image: 'img/Enchants/MultiCharge.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

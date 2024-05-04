@@ -4,7 +4,7 @@ export default {
     name: 'TwistingVineBow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/TwistingVineBow.png',
+    image: 'img/Items/RangedWeapons/TwistingVineBow.png',
     ancientHuntRunes: ['r'],
     stats: { power: 4.18, speed: 3.41, ammo: 1 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'TwistingVineBow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/WeepingVineBow.png',
+    image: 'img/Items/RangedWeapons/WeepingVineBow.png',
     ancientHuntRunes: ['c', 'r'],
     stats: { power: 4.18, speed: 3.41, ammo: 1 },
     activeEnchants: ['RollCharge'],

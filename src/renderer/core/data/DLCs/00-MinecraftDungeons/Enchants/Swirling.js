@@ -2,7 +2,7 @@ export default {
   name: 'Swirling',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Swirling.png',
+  image: 'img/Enchants/Swirling.png',
   i18n: {
     'fr-FR': {
       name: 'Tourbillonement',

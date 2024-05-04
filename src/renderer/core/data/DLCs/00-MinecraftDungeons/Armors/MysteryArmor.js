@@ -3,7 +3,7 @@ export default {
     name: 'MysteryArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/MysteryArmor.png',
+    image: 'img/Items/Armors/MysteryArmor.png',
     ancientHuntRunes: ['p', 'a'],
     armorproperties: [
       'SoulGatheringBoost',

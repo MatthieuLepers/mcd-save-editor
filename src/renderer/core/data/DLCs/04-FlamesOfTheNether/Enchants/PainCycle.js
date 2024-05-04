@@ -3,7 +3,7 @@ export default {
   name: 'PainCycle',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/PainCycle.png',
+  image: 'img/Enchants/PainCycle.png',
   i18n: {
     'fr-FR': {
       name: 'Douleur récurrente',

@@ -26,7 +26,7 @@
           >
             <img
               class="MCDItemArmorPropertiesRarity"
-              :src="`/assets/img/UI/${armorProperty.rarity.toLowerCase()}.png`"
+              :src="image(`img/UI/${armorProperty.rarity.toLowerCase()}.png`)"
               :alt="armorProperty.rarity"
             />
             <span v-if="props.item.data.type !== 'MysteryArmor'">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="MCDItemImage">
-        <img :src="props.item.itemData.image" :alt="t(`MCD.Game.Items.${props.item.data.type}`)" />
+        <img :src="image(props.item.itemData.image)" :alt="t(`MCD.Game.Items.${props.item.data.type}`)" />
         <div class="MCDItemDetailsActions">
           <MCDImportButton v-if="!globalStore.state.selectedCharacter.inventory.isFull()" />
           <MCDExportButton :item="props.item" />
@@ -75,6 +75,7 @@ import MCDDeleteButton from '@renderer/components/MCD/DeleteButton.vue';
 import Item from '@renderer/core/classes/Item';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDItemDetails' });
 

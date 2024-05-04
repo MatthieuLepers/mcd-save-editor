@@ -2,7 +2,7 @@ export default {
   name: 'Echo',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Echo.png',
+  image: 'img/Enchants/Echo.png',
   i18n: {
     'fr-FR': {
       name: 'Écho',

@@ -2,7 +2,7 @@ export default {
   name: 'Unchanting',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Unchanting.png',
+  image: 'img/Enchants/Unchanting.png',
   i18n: {
     'fr-FR': {
       name: 'Peu enchantant',

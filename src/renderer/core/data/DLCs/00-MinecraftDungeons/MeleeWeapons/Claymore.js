@@ -3,7 +3,7 @@ export default {
     name: 'Claymore',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Claymore.png',
+    image: 'img/Items/MeleeWeapons/Claymore.png',
     ancientHuntRunes: ['t'],
     stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Claymore_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Heartstealer.png',
+    image: 'img/Items/MeleeWeapons/Heartstealer.png',
     ancientHuntRunes: ['i', 't'],
     stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
@@ -27,7 +27,7 @@ export default {
     name: 'Claymore_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Broadsword.png',
+    image: 'img/Items/MeleeWeapons/Broadsword.png',
     ancientHuntRunes: ['i', 't'],
     stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {
@@ -39,7 +39,7 @@ export default {
     name: 'Claymore_Unique3',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/GreatAxeblade.png',
+    image: 'img/Items/MeleeWeapons/GreatAxeblade.png',
     ancientHuntRunes: ['c', 't'],
     stats: { power: 9.96, speed: 1, area: 6 },
     activeEnchants: ['DynamoMelee'],
@@ -53,7 +53,7 @@ export default {
     name: 'Claymore_Winter1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/FrostSlayer.png',
+    image: 'img/Items/MeleeWeapons/FrostSlayer.png',
     ancientHuntRunes: ['i', 't'],
     stats: { power: 9.96, speed: 1, area: 6 },
     i18n: {

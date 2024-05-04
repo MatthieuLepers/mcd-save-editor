@@ -2,7 +2,7 @@ export default {
   name: 'RapidFire',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/RapidFire.png',
+  image: 'img/Enchants/RapidFire.png',
   i18n: {
     'fr-FR': {
       name: 'Feu rapide',

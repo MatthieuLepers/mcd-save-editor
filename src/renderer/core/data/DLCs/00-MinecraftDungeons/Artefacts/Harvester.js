@@ -3,7 +3,7 @@ export default {
     name: 'Harvester',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/Harvester.png',
+    image: 'img/Items/Artefacts/Harvester.png',
     ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {

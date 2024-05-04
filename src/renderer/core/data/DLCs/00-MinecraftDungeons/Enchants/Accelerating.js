@@ -2,7 +2,7 @@ export default {
   name: 'Accelerating',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Accelerating.png',
+  image: 'img/Enchants/Accelerating.png',
   i18n: {
     'fr-FR': {
       name: 'Accélération',

@@ -3,7 +3,7 @@ export default {
   name: 'LightningFocus',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/LightningFocus.png',
+  image: 'img/Enchants/LightningFocus.png',
   i18n: {
     'fr-FR': {
       name: 'Concentration d\'éclairs',

@@ -2,7 +2,7 @@ export default {
   name: 'Ricochet',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Ricochet.png',
+  image: 'img/Enchants/Ricochet.png',
   i18n: {
     'fr-FR': {
       name: 'Ricochet',

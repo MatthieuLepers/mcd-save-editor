@@ -4,7 +4,7 @@ export default {
     name: 'BardsGarb',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/Entertainer\'sGarb.png',
+    image: 'img/Items/Armors/Entertainer\'sGarb.png',
     ancientHuntRunes: ['i'],
     armorproperties: [
       'AreaHeal',
@@ -20,7 +20,7 @@ export default {
     name: 'BardsGarb_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/TheTroubadour.png',
+    image: 'img/Items/Armors/TheTroubadour.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'AreaHeal',

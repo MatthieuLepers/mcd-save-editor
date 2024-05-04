@@ -2,7 +2,7 @@ export default {
   name: 'Stunning',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Stunning.png',
+  image: 'img/Enchants/Stunning.png',
   i18n: {
     'fr-FR': {
       name: 'Étourdi',

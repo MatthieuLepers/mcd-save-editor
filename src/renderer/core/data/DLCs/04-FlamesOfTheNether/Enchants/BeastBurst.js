@@ -3,7 +3,7 @@ export default {
   name: 'BeastBurst',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BeastBurst.png',
+  image: 'img/Enchants/BeastBurst.png',
   i18n: {
     'fr-FR': {
       name: 'Explosion bestiale',

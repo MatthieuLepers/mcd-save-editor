@@ -2,7 +2,7 @@ export default {
   name: 'FinalShout',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/FinalShout.png',
+  image: 'img/Enchants/FinalShout.png',
   i18n: {
     'fr-FR': {
       name: 'Cri ultime',

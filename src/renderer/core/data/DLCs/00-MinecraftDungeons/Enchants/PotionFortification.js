@@ -2,7 +2,7 @@ export default {
   name: 'PotionFortification',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/PotionBarrier.png',
+  image: 'img/Enchants/PotionBarrier.png',
   i18n: {
     'fr-FR': {
       name: 'Barrière de potion',

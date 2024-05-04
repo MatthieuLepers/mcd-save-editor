@@ -2,7 +2,7 @@ export default {
   name: 'Chilling',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Chilling.png',
+  image: 'img/Enchants/Chilling.png',
   i18n: {
     'fr-FR': {
       name: 'Glacial',

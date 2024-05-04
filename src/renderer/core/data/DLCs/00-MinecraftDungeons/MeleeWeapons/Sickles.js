@@ -3,7 +3,7 @@ export default {
     name: 'Sickles',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Sickles.png',
+    image: 'img/Items/MeleeWeapons/Sickles.png',
     ancientHuntRunes: ['i'],
     stats: { power: 2.98, speed: 5.2, area: 1.67 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Sickles_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Nightmare\'sBite.png',
+    image: 'img/Items/MeleeWeapons/Nightmare\'sBite.png',
     ancientHuntRunes: ['i'],
     stats: { power: 2.98, speed: 5.2, area: 1.67 },
     activeEnchants: ['PoisonedMelee'],
@@ -28,7 +28,7 @@ export default {
     name: 'Sickles_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/TheLastLaugh.png',
+    image: 'img/Items/MeleeWeapons/TheLastLaugh.png',
     ancientHuntRunes: ['i', 'a'],
     stats: { power: 2.98, speed: 5.2, area: 1.67 },
     i18n: {

@@ -2,7 +2,7 @@ export default {
   name: 'MultiShot',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/MultiShot.png',
+  image: 'img/Enchants/MultiShot.png',
   i18n: {
     'fr-FR': {
       name: 'Tir multiple',

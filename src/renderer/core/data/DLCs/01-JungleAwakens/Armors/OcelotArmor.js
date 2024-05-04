@@ -4,7 +4,7 @@ export default {
     name: 'OcelotArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/OcelotArmor.png',
+    image: 'img/Items/Armors/OcelotArmor.png',
     ancientHuntRunes: ['c'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -20,7 +20,7 @@ export default {
     name: 'OcelotArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/ShadowWalker.png',
+    image: 'img/Items/Armors/ShadowWalker.png',
     ancientHuntRunes: ['c', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',

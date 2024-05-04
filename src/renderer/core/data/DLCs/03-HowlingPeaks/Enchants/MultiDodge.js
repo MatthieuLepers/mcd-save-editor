@@ -3,7 +3,7 @@ export default {
   name: 'MultiDodge',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/MultiRoll.png',
+  image: 'img/Enchants/MultiRoll.png',
   i18n: {
     'fr-FR': {
       name: 'Roulade multiple',

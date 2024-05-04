@@ -3,7 +3,7 @@ export default {
   name: 'LuckOfTheSea',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/LuckOfTheSea.png',
+  image: 'img/Enchants/LuckOfTheSea.png',
   i18n: {
     'fr-FR': {
       name: 'Chance de la mer',

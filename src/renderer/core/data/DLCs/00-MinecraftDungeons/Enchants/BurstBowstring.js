@@ -2,7 +2,7 @@ export default {
   name: 'BurstBowstring',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BurstBowstring.png',
+  image: 'img/Enchants/BurstBowstring.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

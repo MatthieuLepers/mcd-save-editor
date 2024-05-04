@@ -4,7 +4,7 @@ export default {
     name: 'EnchantersTome',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/Enchanter\'sTome.png',
+    image: 'img/Items/Artefacts/Enchanter\'sTome.png',
     ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Tome d\'enchanteurs',

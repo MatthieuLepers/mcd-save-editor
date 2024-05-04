@@ -3,7 +3,7 @@ export default {
     name: 'ShockPowder',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/ShockPowder.png',
+    image: 'img/Items/Artefacts/ShockPowder.png',
     ancientHuntRunes: ['s', 't'],
     i18n: {
       'fr-FR': 'Poudre de choc',

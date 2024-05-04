@@ -3,7 +3,7 @@ export default {
   name: 'DippingPoison',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/DippingPoison.png',
+  image: 'img/Enchants/DippingPoison.png',
   i18n: {
     'fr-FR': {
       name: 'Imprégné de poison',

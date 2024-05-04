@@ -3,7 +3,7 @@ export default {
     name: 'FireworksArrowItem',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/FireworksArrow.png',
+    image: 'img/Items/Artefacts/FireworksArrow.png',
     ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Flèche pyrotechnique',

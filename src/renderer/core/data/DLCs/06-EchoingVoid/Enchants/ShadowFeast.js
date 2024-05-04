@@ -3,7 +3,7 @@ export default {
   name: 'ShadowFeast',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/ShadowFeast.png',
+  image: 'img/Enchants/ShadowFeast.png',
   i18n: {
     'fr-FR': {
       name: 'Afflux d\'ombre',

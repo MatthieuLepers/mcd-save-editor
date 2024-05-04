@@ -4,7 +4,7 @@ export default {
     name: 'SatchelOfNourishment',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/SatchelOfSnacks.png',
+    image: 'img/Items/Artefacts/SatchelOfSnacks.png',
     ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Sacoche d\'en-cas',

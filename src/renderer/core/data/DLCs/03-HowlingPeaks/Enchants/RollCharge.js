@@ -3,7 +3,7 @@ export default {
   name: 'RollCharge',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/RollCharge.png',
+  image: 'img/Enchants/RollCharge.png',
   i18n: {
     'fr-FR': {
       name: 'Chargement par roulade',

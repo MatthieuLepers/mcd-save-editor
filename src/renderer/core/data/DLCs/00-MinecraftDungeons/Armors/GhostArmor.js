@@ -3,7 +3,7 @@ export default {
     name: 'GhostArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/GhostlyArmor.png',
+    image: 'img/Items/Armors/GhostlyArmor.png',
     ancientHuntRunes: ['c', 'p'],
     armorproperties: [
       'DodgeGhostForm',
@@ -18,7 +18,7 @@ export default {
     name: 'GhostArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/GhostKindlerArmor.png',
+    image: 'img/Items/Armors/GhostKindlerArmor.png',
     ancientHuntRunes: ['c', 'i', 'p'],
     activeEnchants: ['FireTrail'],
     armorproperties: [
@@ -35,7 +35,7 @@ export default {
     name: 'GhostArmor_Spooky2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/CloakedSkull.png',
+    image: 'img/Items/Armors/CloakedSkull.png',
     ancientHuntRunes: ['c', 'i', 'p'],
     activeEnchants: ['FireTrail'],
     armorproperties: [

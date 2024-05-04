@@ -2,7 +2,7 @@ export default {
   name: 'Snowing',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Snowball.png',
+  image: 'img/Enchants/Snowball.png',
   i18n: {
     'fr-FR': {
       name: 'Boule de neige',

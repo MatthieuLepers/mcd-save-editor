@@ -3,7 +3,7 @@ export default {
     name: 'GhostCloak',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/GhostCloak.png',
+    image: 'img/Items/Artefacts/GhostCloak.png',
     ancientHuntRunes: ['c', 't'],
     i18n: {
       'fr-FR': 'Cape fantomatique',

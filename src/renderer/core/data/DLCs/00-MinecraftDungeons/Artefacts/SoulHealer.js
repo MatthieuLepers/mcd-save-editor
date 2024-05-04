@@ -3,7 +3,7 @@ export default {
     name: 'SoulHealer',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/SoulHealer.png',
+    image: 'img/Items/Artefacts/SoulHealer.png',
     ancientHuntRunes: ['o', 's'],
     soulgathering: true,
     i18n: {

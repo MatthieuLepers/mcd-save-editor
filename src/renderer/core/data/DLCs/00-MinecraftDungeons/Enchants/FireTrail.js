@@ -2,7 +2,7 @@ export default {
   name: 'FireTrail',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/FireTrail.png',
+  image: 'img/Enchants/FireTrail.png',
   i18n: {
     'fr-FR': {
       name: 'Traînée de feu',

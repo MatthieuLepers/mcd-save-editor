@@ -3,7 +3,7 @@ export default {
     name: 'TormentQuiver',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/TormentQuiver.png',
+    image: 'img/Items/Artefacts/TormentQuiver.png',
     ancientHuntRunes: ['o', 'r'],
     soulgathering: true,
     i18n: {

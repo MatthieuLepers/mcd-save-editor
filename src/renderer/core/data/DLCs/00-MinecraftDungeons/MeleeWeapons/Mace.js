@@ -3,7 +3,7 @@ export default {
     name: 'Mace',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Mace.png',
+    image: 'img/Items/MeleeWeapons/Mace.png',
     ancientHuntRunes: ['i'],
     stats: { power: 6.68, speed: 2.03, area: 3.17 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Mace_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Sun\'sGrace.png',
+    image: 'img/Items/MeleeWeapons/Sun\'sGrace.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 6.68, speed: 2.03, area: 3.17 },
     i18n: {
@@ -27,7 +27,7 @@ export default {
     name: 'Mace_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Flail.png',
+    image: 'img/Items/MeleeWeapons/Flail.png',
     ancientHuntRunes: ['i', 'a'],
     stats: { power: 6.68, speed: 2.03, area: 3.17 },
     i18n: {

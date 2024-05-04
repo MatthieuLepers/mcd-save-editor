@@ -3,7 +3,7 @@ export default {
     name: 'Axe',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Axe.png',
+    image: 'img/Items/MeleeWeapons/Axe.png',
     ancientHuntRunes: ['i'],
     stats: { power: 6.29, speed: 1.91, area: 3.75 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Axe_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/FireBrand.png',
+    image: 'img/Items/MeleeWeapons/FireBrand.png',
     ancientHuntRunes: ['i', 'a'],
     stats: { power: 6.29, speed: 1.91, area: 3.75 },
     i18n: {
@@ -27,7 +27,7 @@ export default {
     name: 'Axe_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/HighlandAxe.png',
+    image: 'img/Items/MeleeWeapons/HighlandAxe.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 6.29, speed: 1.91, area: 3.75 },
     activeEnchants: ['Stunning'],

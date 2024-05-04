@@ -1,6 +1,7 @@
 // import { autoUpdater } from 'electron-updater';
 import { OpenDialogOptions, dialog, type SaveDialogOptions } from 'electron';
 import fs from 'fs';
+import { exec } from 'child_process';
 
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting } from '@/main/database/models';
@@ -21,6 +22,11 @@ class AppModule {
   @IpcHandle
   static async sendDataToWindow(windowName: string, channel: string, ...args: any[]): Promise<void> {
     WindowStore.sendData(windowName, channel, ...args);
+  }
+
+  @IpcHandle
+  static async openGithubLink(githubLink: string): Promise<void> {
+    exec(`start ${githubLink}`);
   }
 
   @IpcOn

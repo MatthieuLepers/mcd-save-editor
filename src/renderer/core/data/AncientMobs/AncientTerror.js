@@ -1,7 +1,7 @@
 export default {
   name: 'AncientTerror',
   neededRunes: ['u', 'o', 's', 'a'],
-  image: '/assets/img/AncientMobs/AncientTerror.png',
+  image: 'img/AncientMobs/AncientTerror.png',
   rewards: ['ExplodingCrossbow', 'MysteryArmor', 'ChampionsArmor'],
   i18n: {
     'fr-FR': 'Terreur Antique',

@@ -3,7 +3,7 @@ export default {
   name: 'VoidTouchedMelee',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/VoidStrikeMelee.png',
+  image: 'img/Enchants/VoidStrikeMelee.png',
   i18n: {
     'fr-FR': {
       name: 'Frappe du vide',

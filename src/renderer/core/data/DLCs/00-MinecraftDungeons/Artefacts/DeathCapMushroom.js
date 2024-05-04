@@ -3,7 +3,7 @@ export default {
     name: 'DeathCapMushroom',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/DeathCapMushroom.png',
+    image: 'img/Items/Artefacts/DeathCapMushroom.png',
     ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Calice de la mort',

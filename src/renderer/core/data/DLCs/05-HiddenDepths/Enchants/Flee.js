@@ -3,7 +3,7 @@ export default {
   name: 'Flee',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Rush.png',
+  image: 'img/Enchants/Rush.png',
   i18n: {
     'fr-FR': {
       name: 'Hâte',

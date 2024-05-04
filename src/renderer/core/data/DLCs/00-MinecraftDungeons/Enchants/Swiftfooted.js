@@ -2,7 +2,7 @@ export default {
   name: 'Swiftfooted',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Swiftfooted.png',
+  image: 'img/Enchants/Swiftfooted.png',
   i18n: {
     'fr-FR': {
       name: 'Agile des pieds',

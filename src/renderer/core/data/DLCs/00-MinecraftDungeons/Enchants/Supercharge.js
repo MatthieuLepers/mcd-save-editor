@@ -2,7 +2,7 @@ export default {
   name: 'Supercharge',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Supercharge.png',
+  image: 'img/Enchants/Supercharge.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

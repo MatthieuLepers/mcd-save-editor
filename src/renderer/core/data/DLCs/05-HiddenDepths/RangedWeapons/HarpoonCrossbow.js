@@ -4,7 +4,7 @@ export default {
     name: 'HarpoonCrossbow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/HarpoonCrossbow.png',
+    image: 'img/Items/RangedWeapons/HarpoonCrossbow.png',
     ancientHuntRunes: ['r'],
     stats: { power: 7.64, speed: 3.41, area: 4.1 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'HarpoonCrossbow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/NauticalCrossbow.png',
+    image: 'img/Items/RangedWeapons/NauticalCrossbow.png',
     ancientHuntRunes: ['r'],
     stats: { power: 7.64, speed: 3.41, area: 4.1 },
     i18n: {

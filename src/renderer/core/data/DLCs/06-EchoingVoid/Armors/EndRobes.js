@@ -4,7 +4,7 @@ export default {
     name: 'EndRobes',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/TeleportationRobes.png',
+    image: 'img/Items/Armors/TeleportationRobes.png',
     ancientHuntRunes: ['a', 'o'],
     armorproperties: [
       'InstantTransmission',
@@ -20,7 +20,7 @@ export default {
     name: 'EndRobes_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/UnstableRobes.png',
+    image: 'img/Items/Armors/UnstableRobes.png',
     ancientHuntRunes: ['a', 'o', 'c'],
     armorproperties: [
       'InstantTransmission',

@@ -12,7 +12,7 @@
     />
     <img
       class="MCDAncientMobImage"
-      :src="props.ancientMob.image"
+      :src="image(props.ancientMob.image)"
       :alt="props.ancientMob.name"
       :title="t(`MCD.Game.AncientMobs.${props.ancientMob.name}`)"
     />
@@ -29,6 +29,7 @@ import { computed, ref, getCurrentInstance } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import RuneList from '@renderer/components/MCD/RuneList.vue';
+import { image } from '@renderer/core/utils';
 
 import AncientMob from '@renderer/core/classes/AncientMob';
 import { ancientHuntsStore } from '@renderer/core/stores/AncientHuntsStore';

@@ -3,7 +3,7 @@ export default {
     name: 'SoulRobe',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/SoulRobe.png',
+    image: 'img/Items/Armors/SoulRobe.png',
     ancientHuntRunes: ['o'],
     soulgathering: true,
     armorproperties: [
@@ -19,7 +19,7 @@ export default {
     name: 'SoulRobe_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/SouldancerRobe.png',
+    image: 'img/Items/Armors/SouldancerRobe.png',
     ancientHuntRunes: ['o', 't'],
     soulgathering: true,
     armorproperties: [

@@ -4,7 +4,7 @@ export default {
     name: 'ObsidianClaymore',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/ObsidianClaymore.png',
+    image: 'img/Items/MeleeWeapons/ObsidianClaymore.png',
     ancientHuntRunes: ['t'],
     stats: { power: 14, speed: 1, area: 9.24 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'ObsidianClaymore_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/TheStarlessNight.png',
+    image: 'img/Items/MeleeWeapons/TheStarlessNight.png',
     ancientHuntRunes: ['t', 'i'],
     stats: { power: 14, speed: 1, area: 9.24 },
     activeEnchants: ['SharedPain'],

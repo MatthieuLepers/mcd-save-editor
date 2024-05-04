@@ -4,7 +4,7 @@ export default {
     name: 'SlowBow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/SlowBow.png',
+    image: 'img/Items/RangedWeapons/SlowBow.png',
     ancientHuntRunes: ['s'],
     stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'SlowBow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/Winter\'sTouch.png',
+    image: 'img/Items/RangedWeapons/Winter\'sTouch.png',
     ancientHuntRunes: ['s', 'r'],
     stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     i18n: {
@@ -30,7 +30,7 @@ export default {
     name: 'SlowBow_Spooky2',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/WebBow.png',
+    image: 'img/Items/RangedWeapons/WebBow.png',
     ancientHuntRunes: ['s', 'r'],
     stats: { power: 4.18, speed: 3.41, ammo: 6.57 },
     i18n: {

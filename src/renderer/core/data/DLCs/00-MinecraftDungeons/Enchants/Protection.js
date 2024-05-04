@@ -2,7 +2,7 @@ export default {
   name: 'Protection',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Protection.png',
+  image: 'img/Enchants/Protection.png',
   i18n: {
     'fr-FR': {
       name: 'Protection',

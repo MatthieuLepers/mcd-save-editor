@@ -4,7 +4,7 @@ export default {
     name: 'ShulkerArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/ShulkerArmor.png',
+    image: 'img/Items/Armors/ShulkerArmor.png',
     ancientHuntRunes: ['t', 'i'],
     activeEnchants: ['Deflect', 'SwarmProtection'],
     armorproperties: [
@@ -20,7 +20,7 @@ export default {
     name: 'ShulkerArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/SturdyShulkerArmor.png',
+    image: 'img/Items/Armors/SturdyShulkerArmor.png',
     ancientHuntRunes: ['s', 't', 'i'],
     activeEnchants: ['Deflect', 'SwarmProtection'],
     armorproperties: [

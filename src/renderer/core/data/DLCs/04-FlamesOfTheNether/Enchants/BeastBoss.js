@@ -3,7 +3,7 @@ export default {
   name: 'BeastBoss',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BeastBoss.png',
+  image: 'img/Enchants/BeastBoss.png',
   i18n: {
     'fr-FR': {
       name: 'Boss bestiale',

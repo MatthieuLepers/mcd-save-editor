@@ -2,7 +2,7 @@ export default {
   name: 'FuseShot',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/FuseShot.png',
+  image: 'img/Enchants/FuseShot.png',
   i18n: {
     'fr-FR': {
       name: 'Tir avec détonateur',

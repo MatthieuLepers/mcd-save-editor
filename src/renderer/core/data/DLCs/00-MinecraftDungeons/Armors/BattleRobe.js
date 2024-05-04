@@ -3,7 +3,7 @@ export default {
     name: 'BattleRobe',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/BattleRobe.png',
+    image: 'img/Items/Armors/BattleRobe.png',
     ancientHuntRunes: ['i', 'a'],
     armorproperties: [
       'ItemCooldownDecrease',
@@ -18,7 +18,7 @@ export default {
     name: 'BattleRobe_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/SplendidRobe.png',
+    image: 'img/Items/Armors/SplendidRobe.png',
     ancientHuntRunes: ['r', 'i', 'a'],
     armorproperties: [
       'ItemDamageBoost',

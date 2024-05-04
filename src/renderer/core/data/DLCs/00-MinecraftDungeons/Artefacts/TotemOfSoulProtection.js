@@ -4,7 +4,7 @@ export default {
     name: 'TotemOfSoulProtection',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/TotemOfSoulProtection.png',
+    image: 'img/Items/Artefacts/TotemOfSoulProtection.png',
     ancientHuntRunes: [],
     i18n: {
       'fr-FR': 'Totem de protection de l\'âme',

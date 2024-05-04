@@ -4,7 +4,7 @@ export default {
     name: 'CogCrossbow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/CogCrossbow.png',
+    image: 'img/Items/RangedWeapons/CogCrossbow.png',
     ancientHuntRunes: ['r'],
     stats: { power: 12.27, speed: 12.15, ammo: 2.86 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'CogCrossbow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/PrideOfThePiglins.png',
+    image: 'img/Items/RangedWeapons/PrideOfThePiglins.png',
     ancientHuntRunes: ['r', 'i'],
     stats: { power: 12.27, speed: 12.15, ammo: 2.86 },
     activeEnchants: ['Piercing'],

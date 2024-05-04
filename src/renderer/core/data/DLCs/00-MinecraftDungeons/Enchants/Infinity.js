@@ -2,7 +2,7 @@ export default {
   name: 'Infinity',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Infinity.png',
+  image: 'img/Enchants/Infinity.png',
   i18n: {
     'fr-FR': {
       name: 'Infinité',

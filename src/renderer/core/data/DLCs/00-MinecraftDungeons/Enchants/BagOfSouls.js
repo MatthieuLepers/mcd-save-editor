@@ -2,7 +2,7 @@ export default {
   name: 'BagOfSouls',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BagOfSouls.png',
+  image: 'img/Enchants/BagOfSouls.png',
   i18n: {
     'fr-FR': {
       name: 'Sac d\'âmes',

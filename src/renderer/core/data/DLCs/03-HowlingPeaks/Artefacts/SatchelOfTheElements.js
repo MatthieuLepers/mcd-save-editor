@@ -4,7 +4,7 @@ export default {
     name: 'SatchelOfTheElements',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/SatchelOfTheElements.png',
+    image: 'img/Items/Artefacts/SatchelOfTheElements.png',
     ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Sacoche des éléments',

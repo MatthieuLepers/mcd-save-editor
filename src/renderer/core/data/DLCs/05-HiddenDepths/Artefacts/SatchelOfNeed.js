@@ -4,7 +4,7 @@ export default {
     name: 'SatchelOfNeed',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/SatchelOfElixirs.png',
+    image: 'img/Items/Artefacts/SatchelOfElixirs.png',
     ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Sacoche d\'élixirs',

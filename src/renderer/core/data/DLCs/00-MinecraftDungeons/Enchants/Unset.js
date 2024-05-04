@@ -2,7 +2,7 @@ export default {
   name: 'Unset',
   type: ['Armor', 'Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Unset.png',
+  image: 'img/Enchants/Unset.png',
   i18n: {
     'fr-FR': {
       name: 'Non défini',

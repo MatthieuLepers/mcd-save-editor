@@ -2,7 +2,7 @@ export default {
   name: 'BonusShot',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BonusShot.png',
+  image: 'img/Enchants/BonusShot.png',
   i18n: {
     'fr-FR': {
       name: 'Tir bonus',

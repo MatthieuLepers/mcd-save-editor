@@ -2,7 +2,7 @@
   <div :class="`MCDRuneList MCDRuneList--${props.list.length % 2 === 0 ? 'pair' : 'ipair'}`" v-if="props.list.length">
     <div class="MCDRuneListContainer" v-if="!props.compress">
       <img
-        :src="`/assets/img/runes/${rune}.png`"
+        :src="image(`img/runes/${rune}.png`)"
         :alt="`Rune ${rune.toUpperCase()}`"
         :title="`Rune ${rune.toUpperCase()}`"
         v-for="(rune, i) in list.list"
@@ -14,7 +14,7 @@
         <img
           v-for="n in value"
           :key="n"
-          :src="`/assets/img/runes/${rune}.png`"
+          :src="image(`img/runes/${rune}.png`)"
           :alt="`Rune ${rune.toUpperCase()}`"
           :title="`Rune ${rune.toUpperCase()}`"
           :class="`MCDRuneListItemImage MCDRuneListItemImage--${n}`"
@@ -27,6 +27,7 @@
 
 <script setup>
 import RuneList from '@renderer/core/classes/RuneList';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDRuneList' });
 

@@ -4,7 +4,7 @@ export default {
     name: 'HeavyHarpoonQuiver',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/HarpoonQuiver.png',
+    image: 'img/Items/Artefacts/HarpoonQuiver.png',
     ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Carquois de harpons',

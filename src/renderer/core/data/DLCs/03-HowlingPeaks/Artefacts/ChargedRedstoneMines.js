@@ -4,7 +4,7 @@ export default {
     name: 'ChargedRedstoneMines',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/ScatterMines.png',
+    image: 'img/Items/Artefacts/ScatterMines.png',
     ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Mines éparpillées',

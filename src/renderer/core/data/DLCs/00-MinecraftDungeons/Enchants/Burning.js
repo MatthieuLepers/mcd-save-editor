@@ -2,7 +2,7 @@ export default {
   name: 'Burning',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Burning.png',
+  image: 'img/Enchants/Burning.png',
   i18n: {
     'fr-FR': {
       name: 'Combustion',

@@ -3,7 +3,7 @@ export default {
     name: 'BeenestArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/BeeNest.png',
+    image: 'img/Items/Armors/BeeNest.png',
     ancientHuntRunes: ['u', 'p', 't'],
     armorproperties: [
       'AreaHeal',
@@ -18,7 +18,7 @@ export default {
     name: 'BeenestArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/BeeHiveArmor.png',
+    image: 'img/Items/Armors/BeeHiveArmor.png',
     ancientHuntRunes: ['u', 'p'],
     armorproperties: [
       'SuperbDamageAbsorption',

@@ -4,7 +4,7 @@ export default {
     name: 'Anchor',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Anchor.png',
+    image: 'img/Items/MeleeWeapons/Anchor.png',
     ancientHuntRunes: ['i'],
     stats: { power: 14, speed: 1, area: 14 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'Anchor_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/EncrustedAnchor.png',
+    image: 'img/Items/MeleeWeapons/EncrustedAnchor.png',
     ancientHuntRunes: ['i'],
     stats: { power: 14, speed: 1, area: 14 },
     i18n: {

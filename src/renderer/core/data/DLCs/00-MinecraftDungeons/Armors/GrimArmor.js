@@ -3,7 +3,7 @@ export default {
     name: 'GrimArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/GrimArmor.png',
+    image: 'img/Items/Armors/GrimArmor.png',
     ancientHuntRunes: ['o', 's'],
     soulgathering: true,
     armorproperties: [
@@ -19,7 +19,7 @@ export default {
     name: 'GrimArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/WitherArmor.png',
+    image: 'img/Items/Armors/WitherArmor.png',
     ancientHuntRunes: ['o', 's', 't'],
     soulgathering: true,
     armorproperties: [
@@ -37,7 +37,7 @@ export default {
     name: 'GrimArmor_Spooky2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/TheGourdianArmour.png',
+    image: 'img/Items/Armors/TheGourdianArmour.png',
     ancientHuntRunes: ['t', 'o', 's'],
     soulgathering: true,
     armorproperties: [

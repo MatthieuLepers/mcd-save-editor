@@ -2,7 +2,7 @@ export default {
   name: 'WildRage',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/WildRage.png',
+  image: 'img/Enchants/WildRage.png',
   i18n: {
     'fr-FR': {
       name: 'Rage intense',

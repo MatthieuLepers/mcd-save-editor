@@ -2,7 +2,7 @@ export default {
   name: 'Piercing',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Piercing.png',
+  image: 'img/Enchants/Piercing.png',
   i18n: {
     'fr-FR': {
       name: 'Perçant',

@@ -2,7 +2,7 @@ export default {
   name: 'Punch',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Punch.png',
+  image: 'img/Enchants/Punch.png',
   i18n: {
     'fr-FR': {
       name: 'Repoussoir',

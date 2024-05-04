@@ -3,7 +3,7 @@ export default {
   name: 'SoulFocus',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/SoulFocus.png',
+  image: 'img/Enchants/SoulFocus.png',
   i18n: {
     'fr-FR': {
       name: 'Concentration d\'âmes',

@@ -3,7 +3,7 @@ export default {
     name: 'PhantomArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/PhantomArmor.png',
+    image: 'img/Items/Armors/PhantomArmor.png',
     ancientHuntRunes: ['o', 'r'],
     soulgathering: true,
     armorproperties: [
@@ -19,7 +19,7 @@ export default {
     name: 'PhantomArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/FrostBite.png',
+    image: 'img/Items/Armors/FrostBite.png',
     ancientHuntRunes: ['o', 's', 'r'],
     activeEnchants: ['Snowing'],
     soulgathering: true,

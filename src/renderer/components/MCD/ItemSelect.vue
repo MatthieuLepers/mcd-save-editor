@@ -35,7 +35,7 @@
         >
           <img
             class="MCDItemSelectChoiceImage"
-            :src="itemData.image"
+            :src="image(itemData.image)"
             :alt="t(`MCD.Game.Items.${itemData.name}`)"
           />
           <div class="MCDItemSelectChoiceName">
@@ -87,6 +87,7 @@ import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
 import { Items } from '@renderer/core/data/Content';
 import DLCsData from '@renderer/core/data/DLCs';
 import EventsData from '@renderer/core/data/Events';
+import { image } from '@renderer/core/utils';
 
 const FILTERS = [
   { name: 'all', icon: 'all' },

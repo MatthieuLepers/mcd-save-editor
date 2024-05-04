@@ -2,7 +2,7 @@ export default {
   name: 'Freezing',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Freezing.png',
+  image: 'img/Enchants/Freezing.png',
   i18n: {
     'fr-FR': {
       name: 'Gel',

@@ -2,7 +2,7 @@ export default {
   name: 'Power',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Power.png',
+  image: 'img/Enchants/Power.png',
   i18n: {
     'fr-FR': {
       name: 'Puissance',

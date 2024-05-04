@@ -4,7 +4,7 @@ export default {
     name: 'SproutArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/SproutArmor.png',
+    image: 'img/Items/Armors/SproutArmor.png',
     ancientHuntRunes: ['c'],
     armorproperties: [
       'AreaHeal',
@@ -20,7 +20,7 @@ export default {
     name: 'SproutArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/LivingVinesArmor.png',
+    image: 'img/Items/Armors/LivingVinesArmor.png',
     ancientHuntRunes: ['c'],
     activeEnchants: ['Acrobat'],
     armorproperties: [

@@ -3,7 +3,7 @@ export default {
     name: 'IronHideAmulet',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/IronHideAmulet.png',
+    image: 'img/Items/Artefacts/IronHideAmulet.png',
     ancientHuntRunes: ['t'],
     i18n: {
       'fr-FR': 'Amulette en peau de fer',

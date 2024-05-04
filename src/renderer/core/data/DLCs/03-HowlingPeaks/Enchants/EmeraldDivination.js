@@ -3,7 +3,7 @@ export default {
   name: 'EmeraldDivination',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/EmeraldDivination.png',
+  image: 'img/Enchants/EmeraldDivination.png',
   i18n: {
     'fr-FR': {
       name: 'Explorateur chanceux',

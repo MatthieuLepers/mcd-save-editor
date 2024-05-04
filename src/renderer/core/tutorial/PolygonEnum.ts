@@ -73,33 +73,33 @@ export default class PolygonEnum {
 
   static get SELECTED_ENCHANTMENT(): Polygon {
     return [
-      [735 + OFFSET_X, 467 + OFFSET_Y],
-      [746.5 + OFFSET_X, 476.5 + OFFSET_Y],
-      [751.7 + OFFSET_X, 470.7 + OFFSET_Y],
-      [766 + OFFSET_X, 485.4 + OFFSET_Y],
-      [762.3 + OFFSET_X, 491.4 + OFFSET_Y],
-      [771 + OFFSET_X, 502 + OFFSET_Y],
-      [735 + OFFSET_X, 539 + OFFSET_Y],
-      [698 + OFFSET_X, 502 + OFFSET_Y],
-      [735 + OFFSET_X, 467 + OFFSET_Y],
+      [733 + OFFSET_X, 459 + OFFSET_Y],
+      [744.5 + OFFSET_X, 468.5 + OFFSET_Y],
+      [749.7 + OFFSET_X, 462.7 + OFFSET_Y],
+      [764 + OFFSET_X, 477.4 + OFFSET_Y],
+      [760.3 + OFFSET_X, 483.4 + OFFSET_Y],
+      [769 + OFFSET_X, 496 + OFFSET_Y],
+      [733 + OFFSET_X, 531 + OFFSET_Y],
+      [696 + OFFSET_X, 496 + OFFSET_Y],
+      [733 + OFFSET_X, 459 + OFFSET_Y],
     ];
   }
 
   static get ENCHANTMENT_SLOT1(): Polygon {
     return [
-      [710 + OFFSET_X, 482 + OFFSET_Y],
-      [731 + OFFSET_X, 503 + OFFSET_Y],
-      [710 + OFFSET_X, 524 + OFFSET_Y],
-      [690 + OFFSET_X, 502 + OFFSET_Y],
+      [709 + OFFSET_X, 473 + OFFSET_Y],
+      [730 + OFFSET_X, 494 + OFFSET_Y],
+      [709 + OFFSET_X, 515 + OFFSET_Y],
+      [689 + OFFSET_X, 494 + OFFSET_Y],
     ];
   }
 
   static get ENCHANTMENT_SLOT2(): Polygon {
     return [
-      [729 + OFFSET_X, 511 + OFFSET_Y],
-      [750 + OFFSET_X, 531 + OFFSET_Y],
-      [729 + OFFSET_X, 552 + OFFSET_Y],
-      [708 + OFFSET_X, 531 + OFFSET_Y],
+      [735 + OFFSET_X, 499 + OFFSET_Y],
+      [756 + OFFSET_X, 519 + OFFSET_Y],
+      [735 + OFFSET_X, 540 + OFFSET_Y],
+      [714 + OFFSET_X, 519 + OFFSET_Y],
     ];
   }
 
@@ -169,6 +169,7 @@ export default class PolygonEnum {
 
   static ENCHANTMENT_SELECTOR(): Polygon {
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect')!;
+    console.log(enchantSelectOuter);
     const { x, y, width, height } = enchantSelectOuter.getBoundingClientRect();
     return [
       [x, (y - 3) + OFFSET_Y],

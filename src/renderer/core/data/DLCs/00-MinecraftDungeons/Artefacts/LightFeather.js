@@ -3,7 +3,7 @@ export default {
     name: 'LightFeather',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/LightFeather.png',
+    image: 'img/Items/Artefacts/LightFeather.png',
     ancientHuntRunes: ['c'],
     i18n: {
       'fr-FR': 'Plume légère',

@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: electron-app
+appId: vite.electron.mcd-save-editor
+productName: mcd-save-editor
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - public/**
 win:
-  executableName: electron-app
+  executableName: mcd-save-editor
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}

@@ -3,7 +3,7 @@ export default {
     name: 'Pickaxe',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Pickaxe.png',
+    image: 'img/Items/MeleeWeapons/Pickaxe.png',
     ancientHuntRunes: ['i'],
     stats: { power: 11.34, speed: 1.44, area: 2.39 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Pickaxe_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/DiamondPickaxe.png',
+    image: 'img/Items/MeleeWeapons/DiamondPickaxe.png',
     ancientHuntRunes: ['i', 'a'],
     stats: { power: 11.34, speed: 1.44, area: 2.39 },
     i18n: {

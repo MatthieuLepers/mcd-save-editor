@@ -3,7 +3,7 @@ export default {
   name: 'BeastSurge',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BeastSurge.png',
+  image: 'img/Enchants/BeastSurge.png',
   i18n: {
     'fr-FR': {
       name: 'Poussée bestiale',

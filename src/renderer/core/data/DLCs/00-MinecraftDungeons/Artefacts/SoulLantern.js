@@ -3,7 +3,7 @@ export default {
     name: 'SoulLantern',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/SoulLantern.png',
+    image: 'img/Items/Artefacts/SoulLantern.png',
     ancientHuntRunes: ['u', 'o'],
     soulgathering: true,
     i18n: {

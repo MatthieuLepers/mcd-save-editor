@@ -167,8 +167,8 @@
       background-size: cover;
     }
 
-    &.Common::before {background-image: url('../../../../assets/img/UI/SelectedEnchant_Common.png');}
+    &.Common::before {background-image: url('/img/UI/SelectedEnchant_Common.png');}
 
-    &.Powerful::before {background-image: url('../../../../assets/img/UI/SelectedEnchant_Powerful.png');}
+    &.Powerful::before {background-image: url('/img/UI/SelectedEnchant_Powerful.png');}
   }
 }

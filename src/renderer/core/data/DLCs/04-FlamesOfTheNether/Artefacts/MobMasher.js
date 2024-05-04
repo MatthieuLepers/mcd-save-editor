@@ -4,7 +4,7 @@ export default {
     name: 'MobMasher',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/Powershaker.png',
+    image: 'img/Items/Artefacts/Powershaker.png',
     ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Incarnation de puissance',

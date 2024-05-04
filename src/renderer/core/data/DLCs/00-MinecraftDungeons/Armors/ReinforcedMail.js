@@ -3,7 +3,7 @@ export default {
     name: 'ReinforcedMail',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/ReinforcedMail.png',
+    image: 'img/Items/Armors/ReinforcedMail.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -19,7 +19,7 @@ export default {
     name: 'ReinforcedMail_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/StalwartArmor.png',
+    image: 'img/Items/Armors/StalwartArmor.png',
     ancientHuntRunes: ['t', 'a'],
     activeEnchants: ['PotionFortification'],
     armorproperties: [

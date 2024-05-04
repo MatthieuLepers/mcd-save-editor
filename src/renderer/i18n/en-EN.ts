@@ -42,6 +42,9 @@ export default {
         'fr-FR': 'French',
         'en-EN': 'English',
       },
+      aboutMenu: {
+        label: 'About',
+      },
     },
   },
   Updater: {

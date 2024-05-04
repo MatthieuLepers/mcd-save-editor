@@ -4,7 +4,7 @@ export default {
     name: 'Chainsword',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/BrokenSawblade.png',
+    image: 'img/Items/MeleeWeapons/BrokenSawblade.png',
     ancientHuntRunes: ['u', 't'],
     stats: { power: 3.82, speed: 8.26, area: 1.43 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'Chainsword_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/MechanizedSawblade.png',
+    image: 'img/Items/MeleeWeapons/MechanizedSawblade.png',
     ancientHuntRunes: ['c', 't'],
     stats: { power: 3.82, speed: 8.26, area: 1.43 },
     i18n: {

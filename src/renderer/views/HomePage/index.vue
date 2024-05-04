@@ -4,17 +4,17 @@
       <template v-slot:header>
         <MCDCurrency
           v-model="props.character.currencies.Emerald"
-          image="/assets/img/UI/Emerald.png"
+          image="img/UI/Emerald.png"
           imageAlt="Emerald"
         />
         <MCDCurrency
           v-model="props.character.currencies.Gold"
-          image="/assets/img/UI/Gold.png"
+          image="img/UI/Gold.png"
           imageAlt="Gold"
         />
         <MCDCurrency
           :modelValue="props.character.enchantmentPoints"
-          image="/assets/img/UI/EnchantmentPoint.png"
+          image="img/UI/EnchantmentPoint.png"
           imageAlt="EnchantmentPoint"
           readonly
         />

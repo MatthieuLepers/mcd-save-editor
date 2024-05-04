@@ -4,7 +4,7 @@ export default {
     name: 'SpinWheel',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/Spinblade.png',
+    image: 'img/Items/Artefacts/Spinblade.png',
     ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Lame rotative',

@@ -2,7 +2,7 @@ export default {
   name: 'ChainReaction',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/ChainReaction.png',
+  image: 'img/Enchants/ChainReaction.png',
   i18n: {
     'fr-FR': {
       name: 'Réaction en chaîne',

@@ -11,12 +11,14 @@
       <div class="MCDItemTileInnerBoxSegment Bottom"></div>
       <div class="MCDItemTileInnerBoxBody"></div>
     </div>
-    <img :src="'/assets/img/UI/SeasonalTrial.png'" v-if="props.isEvent" class="MCDItemTileEvent" />
-    <img :src="props.item" v-if="props.item" class="MCDItemTileImage" />
+    <img :src="image('img/UI/SeasonalTrial.png')" v-if="props.isEvent" class="MCDItemTileEvent" />
+    <img :src="image(props.item)" v-if="props.item" class="MCDItemTileImage" />
   </div>
 </template>
 
 <script setup>
+import { image } from '@renderer/core/utils';
+
 defineOptions({ name: 'MCDItemTile' });
 
 const emit = defineEmits(['dragstart', 'dragend']);

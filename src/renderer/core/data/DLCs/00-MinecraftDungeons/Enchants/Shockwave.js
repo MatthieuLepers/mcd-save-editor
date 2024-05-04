@@ -2,7 +2,7 @@ export default {
   name: 'Shockwave',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Shockwave.png',
+  image: 'img/Enchants/Shockwave.png',
   i18n: {
     'fr-FR': {
       name: 'Onde de choc',

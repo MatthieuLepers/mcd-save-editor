@@ -3,7 +3,7 @@ export default {
     name: 'AssassinArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/ThiefArmor.png',
+    image: 'img/Items/Armors/ThiefArmor.png',
     ancientHuntRunes: ['i'],
     armorproperties: [
       { id: 'MeleeAttackSpeedBoost', rarity: 'Common' },
@@ -17,7 +17,7 @@ export default {
     name: 'AssassinArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/SpiderArmor.png',
+    image: 'img/Items/Armors/SpiderArmor.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
       { id: 'LifeStealAura', rarity: 'Common' },

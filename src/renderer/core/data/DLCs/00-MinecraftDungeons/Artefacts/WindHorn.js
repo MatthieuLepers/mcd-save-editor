@@ -3,7 +3,7 @@ export default {
     name: 'WindHorn',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/WindHorn.png',
+    image: 'img/Items/Artefacts/WindHorn.png',
     ancientHuntRunes: ['u', 's'],
     i18n: {
       'fr-FR': 'Corne de vent',

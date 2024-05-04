@@ -2,7 +2,7 @@ export default {
   name: 'Recycler',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Recycler.png',
+  image: 'img/Enchants/Recycler.png',
   i18n: {
     'fr-FR': {
       name: 'Recycleur',

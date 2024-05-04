@@ -2,7 +2,7 @@ export default {
   name: 'GravityMelee',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Gravity.png',
+  image: 'img/Enchants/Gravity.png',
   i18n: {
     'fr-FR': {
       name: 'Gravité',

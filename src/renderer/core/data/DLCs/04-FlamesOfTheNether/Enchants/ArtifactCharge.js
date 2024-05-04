@@ -3,7 +3,7 @@ export default {
   name: 'ArtifactCharge',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/ArtifactCharge.png',
+  image: 'img/Enchants/ArtifactCharge.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

@@ -3,7 +3,7 @@ export default {
   name: 'GuardingStrike',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/GuardingStrike.png',
+  image: 'img/Enchants/GuardingStrike.png',
   i18n: {
     'fr-FR': {
       name: 'Frappe défensive',

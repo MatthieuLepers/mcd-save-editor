@@ -2,7 +2,7 @@ export default {
   name: 'Acrobat',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Acrobat.png',
+  image: 'img/Enchants/Acrobat.png',
   i18n: {
     'fr-FR': {
       name: 'Accrobate',

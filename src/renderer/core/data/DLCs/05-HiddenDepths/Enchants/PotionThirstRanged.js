@@ -3,7 +3,7 @@ export default {
   name: 'PotionThirstRanged',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/RefreshmentRanged.png',
+  image: 'img/Enchants/RefreshmentRanged.png',
   i18n: {
     'fr-FR': {
       name: 'Ravitaillement',

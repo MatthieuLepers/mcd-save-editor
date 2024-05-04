@@ -3,7 +3,7 @@ export default {
     name: 'Spear',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Spear.png',
+    image: 'img/Items/MeleeWeapons/Spear.png',
     ancientHuntRunes: ['s'],
     stats: { power: 5.67, speed: 2.03, area: 8.52 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Spear_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/WhisperingSpear.png',
+    image: 'img/Items/MeleeWeapons/WhisperingSpear.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 5.67, speed: 2.03, area: 8.52 },
     activeEnchants: ['Echo'],
@@ -28,7 +28,7 @@ export default {
     name: 'Spear_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/FortuneSpear.png',
+    image: 'img/Items/MeleeWeapons/FortuneSpear.png',
     ancientHuntRunes: ['s'],
     stats: { power: 5.67, speed: 2.03, area: 8.52 },
     i18n: {
@@ -41,7 +41,7 @@ export default {
     name: 'Spear_spooky2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/SpineChillSpear.png',
+    image: 'img/Items/MeleeWeapons/SpineChillSpear.png',
     ancientHuntRunes: ['s'],
     stats: { power: 5.67, speed: 2.03, area: 8.52 },
     i18n: {

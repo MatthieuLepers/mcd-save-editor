@@ -4,7 +4,7 @@ export default {
     name: 'NetherWartSporeGrenade',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/BlastFungus.png',
+    image: 'img/Items/Artefacts/BlastFungus.png',
     ancientHuntRunes: ['i'],
     i18n: {
       'fr-FR': 'Champignon explosif',

@@ -2,7 +2,7 @@ export default {
   name: 'AnimaConduitMelee',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/AnimaConduit.png',
+  image: 'img/Enchants/AnimaConduit.png',
   soulgathering: true,
   i18n: {
     'fr-FR': {

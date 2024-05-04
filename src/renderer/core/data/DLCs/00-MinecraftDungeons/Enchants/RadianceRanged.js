@@ -2,7 +2,7 @@ export default {
   name: 'RadianceRanged',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/RadianceRanged.png',
+  image: 'img/Enchants/RadianceRanged.png',
   i18n: {
     'fr-FR': {
       name: 'Tir flamboyant',

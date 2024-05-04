@@ -3,7 +3,7 @@ export default {
     name: 'CorruptedBeacon',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/CorruptedBeacon.png',
+    image: 'img/Items/Artefacts/CorruptedBeacon.png',
     ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {
@@ -16,7 +16,7 @@ export default {
     name: 'CorruptedBeacon_Spooky1',
     type: 'Artefact',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Artefacts/CorruptedPumpkin.png',
+    image: 'img/Items/Artefacts/CorruptedPumpkin.png',
     ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {

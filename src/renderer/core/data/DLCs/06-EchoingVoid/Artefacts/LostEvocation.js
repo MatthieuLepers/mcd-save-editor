@@ -4,7 +4,7 @@ export default {
     name: 'LostEvocation',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/VexingChant.png',
+    image: 'img/Items/Artefacts/VexingChant.png',
     ancientHuntRunes: ['u'],
     soulgathering: true,
     i18n: {

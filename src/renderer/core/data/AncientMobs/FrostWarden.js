@@ -1,7 +1,7 @@
 export default {
   name: 'FrostWarden',
   neededRunes: ['u', 's', 'r'],
-  image: '/assets/img/AncientMobs/FrostWarden.png',
+  image: 'img/AncientMobs/FrostWarden.png',
   rewards: ['SnowArmor', 'SlowBow'],
   i18n: {
     'fr-FR': 'Gardien de Givre',

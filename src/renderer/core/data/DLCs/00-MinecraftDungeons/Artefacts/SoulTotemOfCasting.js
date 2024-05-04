@@ -3,7 +3,7 @@ export default {
     name: 'SoulTotemOfCasting',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/TotemOfCasting.png',
+    image: 'img/Items/Artefacts/TotemOfCasting.png',
     ancientHuntRunes: ['o'],
     soulgathering: true,
     i18n: {

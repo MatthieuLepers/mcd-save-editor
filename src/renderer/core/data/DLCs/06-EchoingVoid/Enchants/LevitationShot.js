@@ -3,7 +3,7 @@ export default {
   name: 'LevitationShot',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/LevitationShot.png',
+  image: 'img/Enchants/LevitationShot.png',
   i18n: {
     'fr-FR': {
       name: 'Tir de lévitation',

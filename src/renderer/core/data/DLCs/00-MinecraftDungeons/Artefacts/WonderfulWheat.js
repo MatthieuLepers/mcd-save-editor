@@ -3,7 +3,7 @@ export default {
     name: 'WonderfulWheat',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/WonderfulWheat.png',
+    image: 'img/Items/Artefacts/WonderfulWheat.png',
     ancientHuntRunes: ['u'],
     i18n: {
       'fr-FR': 'Blé merveilleux',

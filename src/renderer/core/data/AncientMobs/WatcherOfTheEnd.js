@@ -1,7 +1,7 @@
 export default {
   name: 'WatcherOfTheEnd',
   neededRunes: ['t', 'a', 'c'],
-  image: '/assets/img/AncientMobs/WatcherOfTheEnd.png',
+  image: 'img/AncientMobs/WatcherOfTheEnd.png',
   rewards: ['BardsGarb', 'ShadowCrossbow', 'VoidTouchedBlades'],
   i18n: {
     'fr-FR': 'Veilleur de l\'Ender',

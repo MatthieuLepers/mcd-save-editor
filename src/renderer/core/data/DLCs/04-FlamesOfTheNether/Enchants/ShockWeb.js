@@ -3,7 +3,7 @@ export default {
   name: 'ShockWeb',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/ShockWeb.png',
+  image: 'img/Enchants/ShockWeb.png',
   weaponType: 'Bow',
   i18n: {
     'fr-FR': {

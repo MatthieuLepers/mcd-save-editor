@@ -2,7 +2,7 @@ export default {
   name: 'TempoTheft',
   type: ['Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/TempoTheft.png',
+  image: 'img/Enchants/TempoTheft.png',
   i18n: {
     'fr-FR': {
       name: 'Vol de vitesse',

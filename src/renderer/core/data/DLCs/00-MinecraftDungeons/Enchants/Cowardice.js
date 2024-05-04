@@ -2,7 +2,7 @@ export default {
   name: 'Cowardice',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Cowardice.png',
+  image: 'img/Enchants/Cowardice.png',
   i18n: {
     'fr-FR': {
       name: 'Couardise',

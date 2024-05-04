@@ -3,7 +3,7 @@ export default {
   name: 'PotionThirstMelee',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/RefreshmentMelee.png',
+  image: 'img/Enchants/RefreshmentMelee.png',
   i18n: {
     'fr-FR': {
       name: 'Ravitaillement',

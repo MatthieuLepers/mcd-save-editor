@@ -2,7 +2,7 @@ export default {
   name: 'Chains',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Chains.png',
+  image: 'img/Enchants/Chains.png',
   i18n: {
     'fr-FR': {
       name: 'Chaînes',

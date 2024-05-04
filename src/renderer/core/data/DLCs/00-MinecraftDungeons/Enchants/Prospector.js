@@ -2,7 +2,7 @@ export default {
   name: 'Prospector',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Prospector.png',
+  image: 'img/Enchants/Prospector.png',
   i18n: {
     'fr-FR': {
       name: 'Prospecteur',

@@ -2,7 +2,7 @@ export default {
   name: 'Thorns',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Thorns.png',
+  image: 'img/Enchants/Thorns.png',
   i18n: {
     'fr-FR': {
       name: 'Épines',

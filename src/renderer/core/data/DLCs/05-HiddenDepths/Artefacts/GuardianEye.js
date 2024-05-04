@@ -4,7 +4,7 @@ export default {
     name: 'GuardianEye',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/GuardianEye.png',
+    image: 'img/Items/Artefacts/GuardianEye.png',
     ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Œil du guardien',

@@ -3,7 +3,7 @@ export default {
     name: 'ScaleMail',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/ScaleMail.png',
+    image: 'img/Items/Armors/ScaleMail.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -18,7 +18,7 @@ export default {
     name: 'ScaleMail_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/HighlandArmor.png',
+    image: 'img/Items/Armors/HighlandArmor.png',
     ancientHuntRunes: ['c', 'i', 't'],
     activeEnchants: ['Swiftfooted'],
     armorproperties: [

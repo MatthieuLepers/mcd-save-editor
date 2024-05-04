@@ -4,7 +4,7 @@ export default {
     name: 'UpdraftTome',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/UpdraftTome.png',
+    image: 'img/Items/Artefacts/UpdraftTome.png',
     ancientHuntRunes: ['a'],
     i18n: {
       'fr-FR': 'Tome des courants ascendants',

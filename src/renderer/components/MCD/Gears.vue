@@ -10,7 +10,7 @@
       />
     </div>
 
-    <img class="MCDGearsSkin" :src="`/assets/img/CharactersSkins/${globalStore.state.selectedCharacter.data.skin}.png`" :alt="globalStore.state.selectedCharacter.data.skin" />
+    <img class="MCDGearsSkin" :src="image(`img/CharactersSkins/${globalStore.state.selectedCharacter.data.skin}.png`)" :alt="globalStore.state.selectedCharacter.data.skin" />
     <MCDLevelBadge />
 
     <div class="MCDArtefacts">
@@ -33,6 +33,7 @@ import MCDLevelBadge from '@renderer/components/MCD/LevelBadge.vue';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDGears' });
 

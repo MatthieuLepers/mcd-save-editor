@@ -46,10 +46,10 @@
         </div>
       </div>
       <div class="MCDEnchantmentEditorRight">
-        <img :src="globalStore.state.selectedEnchant.enchantData.image" :alt="globalStore.state.selectedEnchant.enchantIdentifier" />
+        <img :src="image(globalStore.state.selectedEnchant.enchantData.image)" :alt="globalStore.state.selectedEnchant.enchantIdentifier" />
         <div class="MCDEnchantmentEditorCost" v-if="!globalStore.state.selectedEnchant.netherite && globalStore.state.selectedEnchant.level < 3">
           <span>Enchant Cost</span>
-          <p><img :src="'/assets/img/UI/EnchantmentPoint.png'" alt="Enchantment point" /> {{ globalStore.state.selectedEnchant.getInvestmentCostForLevel(globalStore.state.selectedEnchant.level + 1) }}</p>
+          <p><img :src="image('img/UI/EnchantmentPoint.png')" alt="Enchantment point" /> {{ globalStore.state.selectedEnchant.getInvestmentCostForLevel(globalStore.state.selectedEnchant.level + 1) }}</p>
         </div>
       </div>
     </div>
@@ -66,6 +66,7 @@ import MCDEnchantSelect from '@renderer/components/MCD/EnchantSelect.vue';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDEnchantmentEditor' });
 

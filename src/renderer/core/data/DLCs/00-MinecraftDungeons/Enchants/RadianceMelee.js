@@ -2,7 +2,7 @@ export default {
   name: 'RadianceMelee',
   type: ['Melee'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/RadianceMelee.png',
+  image: 'img/Enchants/RadianceMelee.png',
   i18n: {
     'fr-FR': {
       name: 'Flamboyance',

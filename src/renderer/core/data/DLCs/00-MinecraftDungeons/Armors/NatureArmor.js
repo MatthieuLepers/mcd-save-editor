@@ -3,7 +3,7 @@ export default {
     name: 'NatureArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/RootRot.png',
+    image: 'img/Items/Armors/RootRot.png',
     ancientHuntRunes: ['s'],
     armorproperties: [
       'ItemCooldownReset',
@@ -18,7 +18,7 @@ export default {
     name: 'NatureArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/BlackSpot.png',
+    image: 'img/Items/Armors/BlackSpot.png',
     ancientHuntRunes: ['s'],
     armorproperties: [
       'ItemCooldownReset',

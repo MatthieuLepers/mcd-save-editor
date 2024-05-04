@@ -2,7 +2,7 @@ export default {
   name: 'Committed',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Committed.png',
+  image: 'img/Enchants/Committed.png',
   i18n: {
     'fr-FR': {
       name: 'Impliqué',

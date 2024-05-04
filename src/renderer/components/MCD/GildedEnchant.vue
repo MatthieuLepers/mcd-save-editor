@@ -1,7 +1,7 @@
 <template>
   <div class="MCDGildedEnchant" @click="actions.handleAddNetheriteEnchant">
     <div class="MCDGildedEnchantImage">
-      <img :src="state.ench.enchantData.image" :alt="t(`MCD.Game.Enchants.${state.ench.id}.name`)" />
+      <img :src="image(state.ench.enchantData.image)" :alt="t(`MCD.Game.Enchants.${state.ench.id}.name`)" />
       <span>{{ State.tier }}</span>
     </div>
     <span class="MCDGildedEnchantName">{{ t(`MCD.Game.Enchants.${state.ench.id}.name`) }}</span>
@@ -15,6 +15,7 @@ import { useI18n } from 'vue-i18n';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 import Enchantment from '@renderer/core/classes/Enchantment';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDGildedEnchant' });
 
@@ -35,9 +36,9 @@ const State = computed(() => ({
 
 const actions = {
   handleAddNetheriteEnchant() {
-    tutorialStore.actions.setFullfilled('ClickNetheriteEnchantmentSlot', true);
-    globalStore.setters.setEnchant(props.modelValue);
     emit('input', props.modelValue);
+    globalStore.setters.setEnchant(props.modelValue);
+    tutorialStore.actions.setFullfilled('ClickNetheriteEnchantmentSlot', true);
   },
 };
 

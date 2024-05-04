@@ -3,7 +3,7 @@ export default {
   name: 'DeathBarter',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/DeathBarter.png',
+  image: 'img/Enchants/DeathBarter.png',
   i18n: {
     'fr-FR': {
       name: 'Troc mortel',

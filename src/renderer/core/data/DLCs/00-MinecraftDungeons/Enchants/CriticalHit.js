@@ -2,7 +2,7 @@ export default {
   name: 'CriticalHit',
   type: ['Melee', 'Ranged'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/CriticalHit.png',
+  image: 'img/Enchants/CriticalHit.png',
   i18n: {
     'fr-FR': {
       name: 'Coup critique',

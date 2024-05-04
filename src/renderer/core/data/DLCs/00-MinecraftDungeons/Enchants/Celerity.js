@@ -2,7 +2,7 @@ export default {
   name: 'Celerity',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Celerity.png',
+  image: 'img/Enchants/Celerity.png',
   i18n: {
     'fr-FR': {
       name: 'Recharge',

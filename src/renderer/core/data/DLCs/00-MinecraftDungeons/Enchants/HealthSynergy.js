@@ -2,7 +2,7 @@ export default {
   name: 'HealthSynergy',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/HealthSynergy.png',
+  image: 'img/Enchants/HealthSynergy.png',
   i18n: {
     'fr-FR': {
       name: 'Synergie de santé',

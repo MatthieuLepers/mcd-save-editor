@@ -2,7 +2,7 @@ export default {
   disabled: true,
   name: 'Unknown',
   tier: 'Common',
-  image: '/assets/img/Enchants/Unknown.png',
+  image: 'img/Enchants/Unknown.png',
   i18n: {
     'fr-FR': {
       name: 'Inconnu',

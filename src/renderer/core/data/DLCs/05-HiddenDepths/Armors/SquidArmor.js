@@ -4,7 +4,7 @@ export default {
     name: 'SquidArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/SquidArmor.png',
+    image: 'img/Items/Armors/SquidArmor.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'MoveSpeedAura',
@@ -20,7 +20,7 @@ export default {
     name: 'SquidArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/GlowSquidArmor.png',
+    image: 'img/Items/Armors/GlowSquidArmor.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'DodgeInvulnerability',

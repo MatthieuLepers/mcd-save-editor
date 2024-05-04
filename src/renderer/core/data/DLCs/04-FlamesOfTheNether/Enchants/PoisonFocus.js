@@ -3,7 +3,7 @@ export default {
   name: 'PoisonFocus',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/PoisonFocus.png',
+  image: 'img/Enchants/PoisonFocus.png',
   i18n: {
     'fr-FR': {
       name: 'Concentration de poison',

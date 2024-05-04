@@ -2,7 +2,7 @@ export default {
   name: 'Growing',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Growing.png',
+  image: 'img/Enchants/Growing.png',
   i18n: {
     'fr-FR': {
       name: 'Agrandissement',

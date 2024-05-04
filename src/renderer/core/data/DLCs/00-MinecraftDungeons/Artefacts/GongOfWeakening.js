@@ -3,7 +3,7 @@ export default {
     name: 'GongOfWeakening',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/GongOfWeakening.png',
+    image: 'img/Items/Artefacts/GongOfWeakening.png',
     ancientHuntRunes: ['s'],
     i18n: {
       'fr-FR': 'Gong d\'affaiblissement',

@@ -2,7 +2,7 @@ export default {
   name: 'GravityPulse',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/GravityPulse.png',
+  image: 'img/Enchants/GravityPulse.png',
   i18n: {
     'fr-FR': {
       name: 'Pulsion gravitationnelle',

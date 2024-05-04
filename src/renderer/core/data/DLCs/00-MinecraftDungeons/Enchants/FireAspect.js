@@ -2,7 +2,7 @@ export default {
   name: 'FireAspect',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/FireAspect.png',
+  image: 'img/Enchants/FireAspect.png',
   i18n: {
     'fr-FR': {
       name: 'Aura de feu',

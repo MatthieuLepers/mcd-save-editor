@@ -2,7 +2,7 @@ export default {
   name: 'Deflecting',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Deflect.png',
+  image: 'img/Enchants/Deflect.png',
   i18n: {
     'fr-FR': {
       name: 'Déviation',

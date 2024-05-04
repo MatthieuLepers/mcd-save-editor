@@ -20,6 +20,9 @@
         <template #toolsMenu="{ visible, close }">
           <AppTitleBarToolsMenu :visible="visible" @close="close" />
         </template>
+        <template v-slot:aboutMenu="{ visible, close }">
+          <AppTitleBarAboutMenu :visible="visible" @close="close" />
+        </template>
       </TitleBarMenu>
     </template>
   </TitleBar>
@@ -33,6 +36,7 @@ import TitleBarMenu from '@renderer/components/Materials/TitleBar/Menu.vue';
 import AppTitleBarFileMenu from '@renderer/components/App/TitleBar/FileMenu.vue';
 import AppTitleBarLangMenu from '@renderer/components/App/TitleBar/LangMenu.vue';
 import AppTitleBarToolsMenu from '@renderer/components/App/TitleBar/ToolsMenu.vue';
+import AppTitleBarAboutMenu from '@renderer/components/App/TitleBar/AboutMenu.vue';
 
 defineOptions({ name: 'AppTitleBar' });
 
@@ -45,6 +49,6 @@ const props = defineProps({
 });
 
 const State = computed(() => ({
-  menuList: ['fileMenu', 'langMenu'],
+  menuList: ['fileMenu', 'langMenu', 'aboutMenu'],
 }));
 </script>

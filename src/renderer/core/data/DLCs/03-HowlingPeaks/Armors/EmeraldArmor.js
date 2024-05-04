@@ -4,7 +4,7 @@ export default {
     name: 'EmeraldArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/EmeraldGear.png',
+    image: 'img/Items/Armors/EmeraldGear.png',
     ancientHuntRunes: ['a'],
     activeEnchants: ['EmeraldDivination'],
     armorproperties: [
@@ -20,7 +20,7 @@ export default {
     name: 'EmeraldArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/OpulentArmor.png',
+    image: 'img/Items/Armors/OpulentArmor.png',
     ancientHuntRunes: ['t', 'a'],
     activeEnchants: ['EmeraldDivination'],
     armorproperties: [
@@ -36,7 +36,7 @@ export default {
     name: 'EmeraldArmor_Unique2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/GildedGlory.png',
+    image: 'img/Items/Armors/GildedGlory.png',
     ancientHuntRunes: ['i', 'a'],
     activeEnchants: ['DeathBarter', 'EmeraldDivination'],
     armorproperties: [

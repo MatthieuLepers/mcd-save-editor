@@ -3,7 +3,7 @@ export default {
     name: 'FullPlateArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/PlateArmor.png',
+    image: 'img/Items/Armors/PlateArmor.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -19,7 +19,7 @@ export default {
     name: 'FullPlateArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/FullMetalArmor.png',
+    image: 'img/Items/Armors/FullMetalArmor.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -37,7 +37,7 @@ export default {
     name: 'FullPlateArmor_Spooky2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/CauldronArmor.png',
+    image: 'img/Items/Armors/CauldronArmor.png',
     ancientHuntRunes: ['i', 't'],
     armorproperties: [
       'MeleeDamageBoost',

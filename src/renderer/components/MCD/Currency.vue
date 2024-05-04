@@ -1,6 +1,6 @@
 <template>
   <div class="MCDCurrency">
-    <img :src="props.image" :alt="props.imageAlt" class="MCDCurrencyImage" />
+    <img :src="utils.image(props.image)" :alt="props.imageAlt" class="MCDCurrencyImage" />
     <input
       v-if="!props.readonly"
       class="MCDCurrencyField"
@@ -13,6 +13,8 @@
 </template>
 
 <script setup>
+import * as utils from '@renderer/core/utils';
+
 defineOptions({ name: 'MCDCurrency' });
 
 const emit = defineEmits(['update:modelValue']);

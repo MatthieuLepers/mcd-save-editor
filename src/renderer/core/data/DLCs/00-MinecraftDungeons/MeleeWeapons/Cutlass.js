@@ -3,7 +3,7 @@ export default {
     name: 'Cutlass',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Cutlass.png',
+    image: 'img/Items/MeleeWeapons/Cutlass.png',
     ancientHuntRunes: ['i'],
     stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Cutlass_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/NamelessBlade.png',
+    image: 'img/Items/MeleeWeapons/NamelessBlade.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
@@ -27,7 +27,7 @@ export default {
     name: 'Cutlass_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/DancersSword.png',
+    image: 'img/Items/MeleeWeapons/DancersSword.png',
     ancientHuntRunes: ['c', 'i'],
     stats: { power: 4.26, speed: 3.49, area: 4.58 },
     i18n: {
@@ -40,7 +40,7 @@ export default {
     name: 'Cutlass_Year1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Sparkler.png',
+    image: 'img/Items/MeleeWeapons/Sparkler.png',
     ancientHuntRunes: ['c', 'i'],
     stats: { power: 4.26, speed: 3.49, area: 4.58 },
     activeEnchants: ['Rampaging'],

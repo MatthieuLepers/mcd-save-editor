@@ -2,7 +2,7 @@ export default {
   name: 'Rampaging',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Rampaging.png',
+  image: 'img/Enchants/Rampaging.png',
   i18n: {
     'fr-FR': {
       name: 'Fureur',

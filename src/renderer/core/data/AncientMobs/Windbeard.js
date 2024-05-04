@@ -1,7 +1,7 @@
 export default {
   name: 'Windbeard',
   neededRunes: ['u', 'a', 'a'],
-  image: '/assets/img/AncientMobs/Windbeard.png',
+  image: 'img/AncientMobs/Windbeard.png',
   rewards: ['TempestKnife', 'WindBow', 'ClimbingGear', 'EmeraldArmor'],
   i18n: {
     'fr-FR': 'Barbe-Vent',

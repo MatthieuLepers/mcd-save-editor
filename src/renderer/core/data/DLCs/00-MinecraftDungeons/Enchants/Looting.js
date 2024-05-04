@@ -2,7 +2,7 @@ export default {
   name: 'Looting',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Looting.png',
+  image: 'img/Enchants/Looting.png',
   i18n: {
     'fr-FR': {
       name: 'Butin',

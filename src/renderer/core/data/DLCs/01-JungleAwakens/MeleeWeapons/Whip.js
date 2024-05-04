@@ -4,7 +4,7 @@ export default {
     name: 'Whip',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Whip.png',
+    image: 'img/Items/MeleeWeapons/Whip.png',
     ancientHuntRunes: ['s'],
     stats: { power: 8.69, speed: 1.1, area: 1 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'Whip_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/VineWhip.png',
+    image: 'img/Items/MeleeWeapons/VineWhip.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 8.69, speed: 1.1, area: 1 },
     i18n: {

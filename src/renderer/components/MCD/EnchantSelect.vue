@@ -19,7 +19,7 @@
         >
           <img
             class="MCDEnchantSelectChoiceImage"
-            :src="ench.image"
+            :src="image(ench.image)"
             :alt="t(`MCD.Game.Enchants.${ench.name}.name`)"
           />
           <div class="MCDEnchantSelectChoiceName">
@@ -46,6 +46,7 @@ import { Enchants } from '@renderer/core/data/Content';
 import DLCsData from '@renderer/core/data/DLCs';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
+import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDEnchantSelect' });
 

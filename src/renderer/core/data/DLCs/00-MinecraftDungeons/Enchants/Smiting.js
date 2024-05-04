@@ -2,7 +2,7 @@ export default {
   name: 'Smiting',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Smiting.png',
+  image: 'img/Enchants/Smiting.png',
   i18n: {
     'fr-FR': {
       name: 'Frappe',

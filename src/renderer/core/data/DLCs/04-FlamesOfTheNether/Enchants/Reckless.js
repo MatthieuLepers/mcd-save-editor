@@ -3,7 +3,7 @@ export default {
   name: 'Reckless',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/Reckless.png',
+  image: 'img/Enchants/Reckless.png',
   i18n: {
     'fr-FR': {
       name: 'Téméraire',

@@ -2,7 +2,7 @@ export default {
   name: 'Electrified',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Electrified.png',
+  image: 'img/Enchants/Electrified.png',
   i18n: {
     'fr-FR': {
       name: 'Électrifié',

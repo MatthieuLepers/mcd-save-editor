@@ -1,7 +1,7 @@
 export default {
   name: 'ScuttlingTorment',
   neededRunes: ['a', 'a', 'i', 'c'],
-  image: '/assets/img/AncientMobs/ScuttlingTorment.png',
+  image: 'img/AncientMobs/ScuttlingTorment.png',
   rewards: ['ObsidianClaymore', 'VoidBow', 'TeleportationRobes'],
   i18n: {
     'fr-FR': 'Tourment insinuant',

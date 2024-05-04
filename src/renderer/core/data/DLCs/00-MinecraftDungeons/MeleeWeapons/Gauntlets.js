@@ -3,7 +3,7 @@ export default {
     name: 'Gauntlets',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Gauntlets.png',
+    image: 'img/Items/MeleeWeapons/Gauntlets.png',
     ancientHuntRunes: ['i'],
     stats: { power: 2.19, speed: 6.55, area: 1.73 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Gauntlets_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/SoulFists.png',
+    image: 'img/Items/MeleeWeapons/SoulFists.png',
     ancientHuntRunes: ['s', 'i'],
     stats: { power: 2.19, speed: 6.55, area: 1.73 },
     activeEnchants: ['EnigmaResonatorMelee'],
@@ -29,7 +29,7 @@ export default {
     name: 'Gauntlets_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Maulers.png',
+    image: 'img/Items/MeleeWeapons/Maulers.png',
     ancientHuntRunes: ['c', 'i'],
     stats: { power: 2.19, speed: 6.55, area: 1.73 },
     i18n: {
@@ -41,7 +41,7 @@ export default {
     name: 'Gauntlets_Unique3',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/FightersBindings.png',
+    image: 'img/Items/MeleeWeapons/FightersBindings.png',
     ancientHuntRunes: ['c', 'i'],
     stats: { power: 2.04, speed: 14, area: 1.47 },
     i18n: {

@@ -4,7 +4,7 @@ export default {
     name: 'VoidQuiver',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/VoidQuiver.png',
+    image: 'img/Items/Artefacts/VoidQuiver.png',
     ancientHuntRunes: ['r'],
     i18n: {
       'fr-FR': 'Carquois du vide',

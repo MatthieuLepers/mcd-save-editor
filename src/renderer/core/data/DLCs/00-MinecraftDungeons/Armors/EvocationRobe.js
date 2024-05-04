@@ -3,7 +3,7 @@ export default {
     name: 'EvocationRobe',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/EvocationRobe.png',
+    image: 'img/Items/Armors/EvocationRobe.png',
     ancientHuntRunes: ['s', 'a'],
     armorproperties: [
       'ItemCooldownDecrease',
@@ -18,7 +18,7 @@ export default {
     name: 'EvocationRobe_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/EmberRobe.png',
+    image: 'img/Items/Armors/EmberRobe.png',
     ancientHuntRunes: ['s', 'i', 'a'],
     activeEnchants: ['Burning'],
     armorproperties: [
@@ -34,7 +34,7 @@ export default {
     name: 'EvocationRobe_Unique2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/VerdantRobe.png',
+    image: 'img/Items/Armors/VerdantRobe.png',
     ancientHuntRunes: ['o', 's', 'a'],
     activeEnchants: ['BagOfSouls'],
     armorproperties: [

@@ -2,7 +2,7 @@ export default {
   name: 'EnigmaResonatorRanged',
   type: ['Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/EnigmaResonator.png',
+  image: 'img/Enchants/EnigmaResonator.png',
   soulgathering: true,
   i18n: {
     'fr-FR': {

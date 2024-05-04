@@ -3,7 +3,7 @@ export default {
     name: 'ArchersStrappings',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/Hunter\'sArmor.png',
+    image: 'img/Items/Armors/Hunter\'sArmor.png',
     ancientHuntRunes: ['r'],
     armorproperties: [
       'IncreasedArrowBundleSize',
@@ -18,7 +18,7 @@ export default {
     name: 'ArchersStrappings_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/Archer\'sArmor.png',
+    image: 'img/Items/Armors/Archer\'sArmor.png',
     ancientHuntRunes: ['c', 'r'],
     armorproperties: [
       'MoveSpeedAura',

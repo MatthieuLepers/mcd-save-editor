@@ -2,7 +2,7 @@ export default {
   name: 'Explorer',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Explorer.png',
+  image: 'img/Enchants/Explorer.png',
   i18n: {
     'fr-FR': {
       name: 'Explorateur',

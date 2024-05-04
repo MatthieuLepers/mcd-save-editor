@@ -2,7 +2,7 @@ export default {
   name: 'SpiritSpeed',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/SoulSpeed.png',
+  image: 'img/Enchants/SoulSpeed.png',
   i18n: {
     'fr-FR': {
       name: 'Agilité des âmes',

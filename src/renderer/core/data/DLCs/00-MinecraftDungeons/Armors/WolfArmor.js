@@ -3,7 +3,7 @@ export default {
     name: 'WolfArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/WolfArmor.png',
+    image: 'img/Items/Armors/WolfArmor.png',
     ancientHuntRunes: ['u', 's'],
     armorproperties: [
       'AllyDamageBoost',
@@ -18,7 +18,7 @@ export default {
     name: 'WolfArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/FoxArmor.png',
+    image: 'img/Items/Armors/FoxArmor.png',
     ancientHuntRunes: ['u', 's', 't'],
     armorproperties: [
       'MissChance',
@@ -34,7 +34,7 @@ export default {
     name: 'WolfArmor_Unique2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/NightWolfArmor.png',
+    image: 'img/Items/Armors/NightWolfArmor.png',
     ancientHuntRunes: ['u', 'c', 's'],
     activeEnchants: ['Acrobat'],
     armorproperties: [
@@ -51,7 +51,7 @@ export default {
     name: 'WolfArmor_Winter1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/ArcticFoxArmor.png',
+    image: 'img/Items/Armors/ArcticFoxArmor.png',
     ancientHuntRunes: ['u', 'o', 't'],
     armorproperties: [
       'MissChance',

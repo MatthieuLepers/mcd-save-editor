@@ -3,7 +3,7 @@ export default {
     name: 'Katana',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Katana.png',
+    image: 'img/Items/MeleeWeapons/Katana.png',
     ancientHuntRunes: ['i'],
     stats: { power: 8.24, speed: 1.52, area: 6.51 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'Katana_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/Master\'sKatana.png',
+    image: 'img/Items/MeleeWeapons/Master\'sKatana.png',
     ancientHuntRunes: ['i'],
     stats: { power: 8.24, speed: 1.52, area: 6.51 },
     activeEnchants: ['CriticalHit'],
@@ -28,7 +28,7 @@ export default {
     name: 'Katana_Unique2',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/DarkKatana.png',
+    image: 'img/Items/MeleeWeapons/DarkKatana.png',
     ancientHuntRunes: ['i', 'a'],
     stats: { power: 8.24, speed: 1.52, area: 6.51 },
     i18n: {

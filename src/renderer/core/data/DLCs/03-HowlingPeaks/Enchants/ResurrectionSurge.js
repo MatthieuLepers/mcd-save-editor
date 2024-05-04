@@ -3,7 +3,7 @@ export default {
   name: 'ResurrectionSurge',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/ResurrectionSurge.png',
+  image: 'img/Enchants/ResurrectionSurge.png',
   i18n: {
     'fr-FR': {
       name: 'Boost de vie',

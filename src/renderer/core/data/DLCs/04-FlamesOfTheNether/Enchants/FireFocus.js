@@ -3,7 +3,7 @@ export default {
   name: 'FireFocus',
   type: ['Armor'],
   tier: 'Powerful',
-  image: '/assets/img/Enchants/FireFocus.png',
+  image: 'img/Enchants/FireFocus.png',
   i18n: {
     'fr-FR': {
       name: 'Concentration des flammes',

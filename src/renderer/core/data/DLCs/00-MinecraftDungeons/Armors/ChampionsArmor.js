@@ -3,7 +3,7 @@ export default {
     name: 'ChampionsArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/Champion\'sArmor.png',
+    image: 'img/Items/Armors/Champion\'sArmor.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -19,7 +19,7 @@ export default {
     name: 'ChampionsArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/Hero\'sArmor.png',
+    image: 'img/Items/Armors/Hero\'sArmor.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',

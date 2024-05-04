@@ -25,7 +25,7 @@ function mergeDlcContent(contentType) {
 const Unknown = {
   disabled: true,
   name: 'Unknown',
-  image: '/assets/img/Items/Unknown.png',
+  image: 'img/Items/Unknown.png',
   i18n: {
     'fr-FR': 'Inconnu',
     'en-EN': 'Unknown',

@@ -2,7 +2,7 @@ export default {
   name: 'Leeching',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Leeching.png',
+  image: 'img/Enchants/Leeching.png',
   i18n: {
     'fr-FR': {
       name: 'Vampirisme',

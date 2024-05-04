@@ -2,7 +2,7 @@ export default {
   name: 'TumbleBee',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/TumbleBee.png',
+  image: 'img/Enchants/TumbleBee.png',
   i18n: {
     'fr-FR': {
       name: 'Essaim d\'abeilles',

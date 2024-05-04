@@ -2,7 +2,7 @@ export default {
   name: 'Sharpness',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Sharpness.png',
+  image: 'img/Enchants/Sharpness.png',
   i18n: {
     'fr-FR': {
       name: 'Tranchant',

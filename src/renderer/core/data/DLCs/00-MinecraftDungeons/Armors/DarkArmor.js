@@ -3,7 +3,7 @@ export default {
     name: 'DarkArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/DarkArmor.png',
+    image: 'img/Items/Armors/DarkArmor.png',
     ancientHuntRunes: ['o', 't'],
     soulgathering: true,
     armorproperties: [
@@ -19,7 +19,7 @@ export default {
     name: 'DarkArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/Titan\'sShroud.png',
+    image: 'img/Items/Armors/Titan\'sShroud.png',
     ancientHuntRunes: ['o', 's', 't'],
     soulgathering: true,
     armorproperties: [

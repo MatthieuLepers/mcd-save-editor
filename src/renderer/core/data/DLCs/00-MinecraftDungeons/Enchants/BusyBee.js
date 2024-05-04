@@ -2,7 +2,7 @@ export default {
   name: 'BusyBee',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/BusyBee.png',
+  image: 'img/Enchants/BusyBee.png',
   i18n: {
     'fr-FR': {
       name: 'Abeille dynamique',

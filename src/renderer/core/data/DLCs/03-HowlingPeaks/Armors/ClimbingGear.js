@@ -4,7 +4,7 @@ export default {
     name: 'ClimbingGear',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/ClimbingGear.png',
+    image: 'img/Items/Armors/ClimbingGear.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'ItemCooldownDecrease',
@@ -20,7 +20,7 @@ export default {
     name: 'ClimbingGear_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/RuggedClimbingGear.png',
+    image: 'img/Items/Armors/RuggedClimbingGear.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'SlowResistance',
@@ -37,7 +37,7 @@ export default {
     name: 'ClimbingGear_Unique2',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/GoatGear.png',
+    image: 'img/Items/Armors/GoatGear.png',
     ancientHuntRunes: ['c', 't'],
     activeEnchants: ['MultiDodge'],
     armorproperties: [

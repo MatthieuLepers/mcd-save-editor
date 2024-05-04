@@ -31,7 +31,7 @@ app.commandLine.appendSwitch('disable-gpu');
 app
   .whenReady()
   .then(async () => {
-    electronApp.setAppUserModelId('com.electron');
+    electronApp.setAppUserModelId('vite.electron.mcd-save-editor');
 
     const AppModule = await import('@/main/modules/App');
     AppModule.default();

@@ -2,7 +2,7 @@ export default {
   name: 'SurpriseGift',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/SurpriseGift.png',
+  image: 'img/Enchants/SurpriseGift.png',
   i18n: {
     'fr-FR': {
       name: 'Cadeau surprise',

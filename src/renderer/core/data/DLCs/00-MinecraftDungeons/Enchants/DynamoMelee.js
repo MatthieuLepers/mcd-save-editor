@@ -2,7 +2,7 @@ export default {
   name: 'DynamoMelee',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/DynamoMelee.png',
+  image: 'img/Enchants/DynamoMelee.png',
   i18n: {
     'fr-FR': {
       name: 'Dynamo',

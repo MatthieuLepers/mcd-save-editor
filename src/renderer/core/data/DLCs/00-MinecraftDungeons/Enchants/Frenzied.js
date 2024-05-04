@@ -2,7 +2,7 @@ export default {
   name: 'Frenzied',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Frenzied.png',
+  image: 'img/Enchants/Frenzied.png',
   i18n: {
     'fr-FR': {
       name: 'Frénésie',

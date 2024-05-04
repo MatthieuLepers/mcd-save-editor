@@ -4,7 +4,7 @@ export default {
     name: 'Boneclub',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/Boneclub.png',
+    image: 'img/Items/MeleeWeapons/Boneclub.png',
     ancientHuntRunes: ['i'],
     stats: { power: 13.32, speed: 1, area: 8.55 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'Boneclub_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/BoneCudgel.png',
+    image: 'img/Items/MeleeWeapons/BoneCudgel.png',
     ancientHuntRunes: ['i'],
     stats: { power: 13.32, speed: 1, area: 8.55 },
     activeEnchants: ['BaneOfIllagers'],

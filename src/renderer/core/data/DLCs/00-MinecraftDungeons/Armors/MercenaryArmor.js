@@ -3,7 +3,7 @@ export default {
     name: 'MercenaryArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/MercenaryArmor.png',
+    image: 'img/Items/Armors/MercenaryArmor.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -18,7 +18,7 @@ export default {
     name: 'MercenaryArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/RenegadeArmor.png',
+    image: 'img/Items/Armors/RenegadeArmor.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'MeleeAttackSpeedBoost',
@@ -35,7 +35,7 @@ export default {
     name: 'MercenaryArmor_Spooky1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/HungryHorror.png',
+    image: 'img/Items/Armors/HungryHorror.png',
     ancientHuntRunes: ['c', 's', 't'],
     armorproperties: [
       'MeleeAttackSpeedBoost',

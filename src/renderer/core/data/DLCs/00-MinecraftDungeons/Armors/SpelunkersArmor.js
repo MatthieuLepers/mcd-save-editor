@@ -3,7 +3,7 @@ export default {
     name: 'SpelunkersArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/Spelunker\'sArmor.png',
+    image: 'img/Items/Armors/Spelunker\'sArmor.png',
     ancientHuntRunes: ['u'],
     armorproperties: [
       'AllyDamageBoost',
@@ -18,7 +18,7 @@ export default {
     name: 'SpelunkersArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/CaveCrawler.png',
+    image: 'img/Items/Armors/CaveCrawler.png',
     ancientHuntRunes: ['u', 'i'],
     armorproperties: [
       'ItemDamageBoost',
@@ -35,7 +35,7 @@ export default {
     name: 'SpelunkersArmor_Year1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/SweetTooth.png',
+    image: 'img/Items/Armors/SweetTooth.png',
     ancientHuntRunes: ['u', 'i'],
     armorproperties: [
       'ItemDamageBoost',

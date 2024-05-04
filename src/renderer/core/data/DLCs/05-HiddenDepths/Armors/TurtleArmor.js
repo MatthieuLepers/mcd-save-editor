@@ -4,7 +4,7 @@ export default {
     name: 'TurtleArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/TurtleArmor.png',
+    image: 'img/Items/Armors/TurtleArmor.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'SuperbDamageAbsorption',
@@ -20,7 +20,7 @@ export default {
     name: 'TurtleArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/NimbleTurtleArmor.png',
+    image: 'img/Items/Armors/NimbleTurtleArmor.png',
     ancientHuntRunes: ['t'],
     armorproperties: [
       'SuperbDamageAbsorption',

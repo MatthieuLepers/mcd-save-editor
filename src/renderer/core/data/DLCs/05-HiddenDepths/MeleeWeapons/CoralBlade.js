@@ -4,7 +4,7 @@ export default {
     name: 'CoralBlade',
     type: 'Melee',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/MeleeWeapons/CoralBlade.png',
+    image: 'img/Items/MeleeWeapons/CoralBlade.png',
     ancientHuntRunes: ['i'],
     stats: { power: 1.86, speed: 4.54, area: 2.39 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'CoralBlade_Unique1',
     type: 'Melee',
     rarity: ['Unique'],
-    image: '/assets/img/Items/MeleeWeapons/SpongeStriker.png',
+    image: 'img/Items/MeleeWeapons/SpongeStriker.png',
     ancientHuntRunes: ['i'],
     stats: { power: 2.57, speed: 3.48, area: 4.32 },
     i18n: {

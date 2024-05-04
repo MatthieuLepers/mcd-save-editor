@@ -17,7 +17,7 @@
     left: 0;
     display: flex;
     flex-wrap: wrap;
-    background-image: url('../../../../assets/img/UI/parchment.png');
+    background-image: url('/img/UI/parchment.png');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -46,6 +46,7 @@
     
     h3 {
       @include font-family('open-sans', 700);
+      margin-bottom: 8px;
     }
 
     ul {
@@ -54,6 +55,8 @@
       padding: 0;
 
       li {
+        margin: 4px 0;
+
         input[type="checkbox"] {
           display: none;
 
@@ -63,6 +66,10 @@
             align-items: center;
             cursor: pointer;
             color: rgba(color(grey999), .5);
+          }
+
+          &:checked+label {
+            padding: 1px 0 1px 5px;
           }
         }
 

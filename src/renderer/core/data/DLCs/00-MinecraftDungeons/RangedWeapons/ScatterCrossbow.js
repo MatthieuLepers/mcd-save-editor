@@ -3,7 +3,7 @@ export default {
     name: 'ScatterCrossbow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/ScatterCrossbow.png',
+    image: 'img/Items/RangedWeapons/ScatterCrossbow.png',
     ancientHuntRunes: ['t'],
     stats: { power: 4.18, speed: 7.82, ammo: 4.1 },
     i18n: {
@@ -15,7 +15,7 @@ export default {
     name: 'ScatterCrossbow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/HarpCrossbow.png',
+    image: 'img/Items/RangedWeapons/HarpCrossbow.png',
     ancientHuntRunes: ['i', 't'],
     stats: { power: 3.95, speed: 14, ammo: 4.1 },
     i18n: {
@@ -27,7 +27,7 @@ export default {
     name: 'ScatterCrossbow_Unique2',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/LightningHarpCrossbow.png',
+    image: 'img/Items/RangedWeapons/LightningHarpCrossbow.png',
     ancientHuntRunes: ['i', 't'],
     stats: { power: 4.18, speed: 7.82, ammo: 4.1 },
     activeEnchants: ['Ricochet'],

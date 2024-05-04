@@ -4,7 +4,7 @@ export default {
     name: 'SnowArmor',
     type: 'Armor',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Armors/SnowArmor.png',
+    image: 'img/Items/Armors/SnowArmor.png',
     ancientHuntRunes: ['t'],
     activeEnchants: ['Chilling'],
     armorproperties: [
@@ -21,7 +21,7 @@ export default {
     name: 'SnowArmor_Unique1',
     type: 'Armor',
     rarity: ['Unique'],
-    image: '/assets/img/Items/Armors/FrostArmor.png',
+    image: 'img/Items/Armors/FrostArmor.png',
     ancientHuntRunes: ['s', 't'],
     armorproperties: [
       'SuperbDamageAbsorption',

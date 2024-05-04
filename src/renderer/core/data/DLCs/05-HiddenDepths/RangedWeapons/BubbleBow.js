@@ -4,7 +4,7 @@ export default {
     name: 'BubbleBow',
     type: 'Ranged',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/RangedWeapons/BubbleBow.png',
+    image: 'img/Items/RangedWeapons/BubbleBow.png',
     ancientHuntRunes: ['r'],
     stats: { power: 3.02, speed: 3.41, area: 6.57 },
     i18n: {
@@ -17,7 +17,7 @@ export default {
     name: 'BubbleBow_Unique1',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/BubbleBurster.png',
+    image: 'img/Items/RangedWeapons/BubbleBurster.png',
     ancientHuntRunes: ['r'],
     stats: { power: 3.02, speed: 3.41, area: 6.57 },
     i18n: {
@@ -30,7 +30,7 @@ export default {
     name: 'BubbleBow_Spooky2',
     type: 'Ranged',
     rarity: ['Unique'],
-    image: '/assets/img/Items/RangedWeapons/GloopyBow.png',
+    image: 'img/Items/RangedWeapons/GloopyBow.png',
     activeEnchants: ['Ricochet'],
     ancientHuntRunes: ['r', 's'],
     stats: { power: 3.02, speed: 3.41, area: 6.57 },

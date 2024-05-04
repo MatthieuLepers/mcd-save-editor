@@ -2,7 +2,7 @@ export default {
   name: 'Thundering',
   type: ['Melee'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Thundering.png',
+  image: 'img/Enchants/Thundering.png',
   i18n: {
     'fr-FR': {
       name: 'Tonnerre',

@@ -2,7 +2,7 @@ export default {
   name: 'Weakening',
   type: ['Melee', 'Ranged'],
   tier: 'Common',
-  image: '/assets/img/Enchants/Weakening.png',
+  image: 'img/Enchants/Weakening.png',
   i18n: {
     'fr-FR': {
       name: 'Affaiblissement',

@@ -2,7 +2,7 @@ export default {
   name: 'FoodReserves',
   type: ['Armor'],
   tier: 'Common',
-  image: '/assets/img/Enchants/FoodReserves.png',
+  image: 'img/Enchants/FoodReserves.png',
   i18n: {
     'fr-FR': {
       name: 'Réserves de nouriture',

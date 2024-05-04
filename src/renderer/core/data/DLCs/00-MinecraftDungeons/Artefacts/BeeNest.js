@@ -3,7 +3,7 @@ export default {
     name: 'BeeNest',
     type: 'Artefact',
     rarity: ['Common', 'Rare'],
-    image: '/assets/img/Items/Artefacts/BuzzyNest.png',
+    image: 'img/Items/Artefacts/BuzzyNest.png',
     ancientHuntRunes: ['u'],
     i18n: {
       'fr-FR': 'Nid bourdonnant',
