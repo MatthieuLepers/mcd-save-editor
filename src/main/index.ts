@@ -9,8 +9,8 @@ import { APP_PLATEFORM } from '@/main/utils/Constants';
 
 function createWindow() {
   const mainWindow = new ElectronWindow('main', {
-    width: 700,
-    height: 450,
+    width: 1048,
+    height: 584,
     resizable: false,
     frame: false,
     webPreferences: {
@@ -35,6 +35,12 @@ app
 
     const AppModule = await import('@/main/modules/App');
     AppModule.default();
+    const CharacterModule = await import('@/main/modules/Character');
+    CharacterModule.default();
+    const EncryptionModule = await import('@/main/modules/Encryption');
+    EncryptionModule.default();
+    const ProfilModule = await import('@/main/modules/Profil');
+    ProfilModule.default();
 
     createWindow();
 

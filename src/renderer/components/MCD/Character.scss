@@ -1,0 +1,34 @@
+@import '~styles/utilities.scss';
+
+.MCDCharacter {
+  overflow: auto;
+  width: 100%;
+  height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  grid-template-rows: 60px 1fr;
+  position: relative;
+
+  &Header {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    display: flex;
+  }
+
+  &Column {
+    width: 100%;
+    grid-row: 2;
+
+    &--Fst {
+      grid-column: 1;
+    }
+    
+    &--Snd {
+      grid-column: 2;
+    }
+    
+    &--Trd {
+      grid-column: 3;
+    }
+  }
+}

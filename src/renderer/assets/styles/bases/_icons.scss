@@ -10,6 +10,18 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: 'icon';
+  src: url('~fonts/icon/icon.eot?ws6lg2');
+  src: url('~fonts/icon/icon.eot?ws6lg2#iefix') format('embedded-opentype'),
+       url('~fonts/icon/icon.ttf?ws6lg2') format('truetype'),
+       url('~fonts/icon/icon.woff?ws6lg2') format('woff'),
+       url('~fonts/icon/icon.svg?ws6lg2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 $icons: (
   minimize     : ('icomoon', '\e900'),
   maximize     : ('icomoon', '\e901'),
@@ -41,6 +53,17 @@ $icons: (
   attachment   : ('icomoon', '\e91b'),
   url          : ('icomoon', '\e91c'),
   data-restore : ('icomoon', '\e91d'),
+  melee        : ('icon'   , '\e900'),
+  armor        : ('icon'   , '\e901'),
+  ranged       : ('icon'   , '\e902'),
+  artefact     : ('icon'   , '\e903'),
+  soulgathering: ('icon'   , '\e904'),
+  enchanted    : ('icon'   , '\e905'),
+  all          : ('icon'   , '\e906'),
+  helm         : ('icon'   , '\e907'),
+  cosmetic     : ('icon'   , '\e908'),
+  checked      : ('icon'   , '\e909'),
+  dlc          : ('icon'   , '\e90a'),
 );
 
 @mixin icon($iconName) {

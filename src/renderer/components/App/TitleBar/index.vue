@@ -1,8 +1,13 @@
 <template>
   <TitleBar
     :name="props.name"
+    :appTitle="props.appTitle"
     :maximizable="false"
-    :showHelp="false"
+    :showHelp="props.showHelp"
+    @help="emit('help')"
+    @minimize="emit('minimize')"
+    @maximize="emit('maximize')"
+    @close="emit('close')"
   >
     <template v-slot:menu="{ windowName }">
       <TitleBarMenu :menuList="State.menuList">
@@ -31,8 +36,12 @@ import AppTitleBarToolsMenu from '@renderer/components/App/TitleBar/ToolsMenu.vu
 
 defineOptions({ name: 'AppTitleBar' });
 
+const emit = defineEmits(['help', 'minimize', 'maximize', 'close']);
+
 const props = defineProps({
   name: { type: String, required: true },
+  appTitle: { type: String, default: null },
+  showHelp: { type: Boolean, default: false },
 });
 
 const State = computed(() => ({

@@ -1,0 +1,139 @@
+@import '~styles/utilities.scss';
+
+.Tutorial {
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  pointer-events: none;
+
+  .m-modal__backdrop {
+    background: none;
+    pointer-events: none;
+  }
+
+  .m-modal {
+    pointer-events: all;
+
+    &__body p {
+      @include set-font-scale(s);
+    }
+  }
+
+  .TutorialDragAndDropModal .m-modal,
+  .TutorialEquipUnequipModal .m-modal {
+    position: absolute;
+    right: 25px;
+  }
+
+  .TutorialEditItemTypeModal .m-modal {
+    position: absolute;
+    left: 25px;
+  }
+
+  .TutorialEditEnchantmentModal .m-modal,
+  .TutorialEditEnchantment2Modal .m-modal {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+
+    .m-modal__header {
+      @include set-font-scale(l);
+    }
+  }
+
+  .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .TutorialRemoveNetheriteEnchantmentModal .m-modal {
+    position: absolute;
+    right: 25px;
+
+    .m-modal__header {
+      @include set-font-scale(l);
+    }
+  }
+
+  .TutorialAddNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .m-modal,
+  .TutorialRemoveNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .m-modal {
+    position: absolute;
+    right: auto;
+    left: 25px;
+  }
+
+  .Finished .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .ClickNetheriteEnchantmentSlot .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .Finished .TutorialRemoveNetheriteEnchantmentModal .m-modal,
+  .ClickNetheriteEnchantmentSlot .TutorialRemoveNetheriteEnchantmentModal .m-modal {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .TutorialTutorialDisabledModal .m-modal__header {
+    @include set-font-scale(l);
+  }
+
+  &StepObjectives {
+    @include set-font-scale(xs);
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li:not(:last-of-type) {
+      margin-bottom: 4px;
+    }
+
+    &Bubble {
+      position: relative;
+      padding: 5px;
+      border: 1px solid color(grey000);
+      border-radius: 6px;
+      margin: 10px 0;
+      background-color: rgba(color(grey000), .2);
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: calc(100% + 1px);
+        left: 3px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent color(grey000) transparent;
+      }
+    }
+
+    .icon-check {
+      color: color(success300);
+      margin: 0 4px 0 3px;
+    }
+
+    .icon-close {
+      color: color(danger300);
+      margin: 0 4px 0 3px;
+    }
+
+    .icon-neutral {
+      display: inline-flex;
+      width: 12px;
+      height: 16px;
+      position: relative;
+      margin: 0 4px 0 3px;
+
+      &::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border: 2px solid color(grey000);
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 4px);
+        left: calc(50% - 6px);
+      }
+    }
+  }
+}

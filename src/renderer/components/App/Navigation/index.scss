@@ -1,0 +1,45 @@
+@import '~styles/utilities.scss';
+
+.AppNavigation {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: color(grey800);
+  color: color(grey000);
+  position: relative;
+
+  &Item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+
+    &--Active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 2px;
+      height: 100%;
+      background-color: color(grey000);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+
+      img {
+        width: 32px;
+      }
+    }
+  }
+}

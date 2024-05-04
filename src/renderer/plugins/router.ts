@@ -1,9 +1,15 @@
 import { createWebHashHistory, createRouter } from 'vue-router';
 
-import MainView from '@renderer/views/Main/index.vue';
+import HomePage from '@renderer/views/HomePage/index.vue';
+import StorageChestPage from '@renderer/views/StorageChestPage/index.vue';
+import AncientHuntsPage from '@renderer/views/AncientHuntsPage/index.vue';
+import CorruptedDataPage from '@renderer/views/CorruptedDataPage/index.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: MainView },
+  { path: '/', name: 'Home', component: HomePage },
+  { path: '/storage-chest', name: 'StorageChest', component: StorageChestPage },
+  { path: '/ancient-hunts', name: 'AncientHunts', component: AncientHuntsPage },
+  { path: '/corrupted-data', name: 'CorruptedData', component: CorruptedDataPage },
 ];
 
 const router = createRouter({

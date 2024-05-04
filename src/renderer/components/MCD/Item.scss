@@ -1,0 +1,176 @@
+@import '~styles/utilities.scss';
+
+.MCDItem {
+  cursor: pointer;
+  position: relative;
+  height: fit-content;
+
+  &--Empty {
+    cursor: auto;
+    overflow: hidden;
+
+    &::after {
+      content: "+";
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      font-size: 40px;
+      line-height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &--CrossIcon::after {
+    @include font-family('Open Sans', 100);
+    transform: rotate(45deg);
+    font-size: 60px;
+    line-height: 60px;
+    color: color(grey500);
+  }
+
+  &--Selected {
+    position: relative;
+    z-index: 1;
+
+    &.MCDItem--DragHolded {
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      background-color: color(grey000);
+      width: calc(100% + 6px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -3px;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      background-color: color(grey000);
+      width: 100%;
+      height: calc(100% + 6px);
+      position: absolute;
+      top: -3px;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &--Gilded {
+    .MCDItemTileInnerBoxBody {
+      background: url('../../../../assets/img/UI/GildedBackground.png');
+      background-size: cover;
+    }
+
+    img {
+      filter: drop-shadow(4px 8px 0px rgba(color(grey999), .5));
+    }
+
+    .MCDItemLevel {
+      background-color: rgba(color(grey999), .5);
+    }
+
+    .MCDItemEnchanted {
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: rgba(color(grey999), .5);
+        width: calc(100% + 6px);
+        height: calc(100% + 3px);
+        left: -4px;
+        top: -2px;
+        z-index: -1;
+      }
+
+      & + .MCDItemTile .MCDItemTileInnerBox::after {
+        background: radial-gradient(circle at 50%, rgba(#D372F4, .8), transparent 80%);
+      }
+    }
+
+    .MCDItemSoulGathering::after {
+      content: '';
+      position: absolute;
+      background-color: rgba(color(grey999), .5);
+      width: calc(100% + 4px);
+      height: calc(100% + 6px);
+      z-index: -1;
+      right: -2px;
+      top: -4px;
+    }
+  }
+
+  &SoulGathering {
+    @include set-font-scale(s);
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    z-index: 5;
+  }
+
+  &Level {
+    @include font-family('opensans', 700);
+    @include set-font-scale(s);
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    z-index: 5;
+    padding: 0 3px;
+
+    i {
+      @include set-font-scale(xxs);
+      color: darken(color(grey000), 25);
+    }
+  }
+
+  &Enchanted {
+    @include font-family('open-sans', 700);
+    @include set-font-scale(s);
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    z-index: 5;
+    text-shadow: 1px 1px 5px color(grey999);
+    color: color(grey000);
+
+    i {
+      @include set-font-scale(s);
+      color: #D372F4;
+    }
+
+    &+.MCDItemTile .MCDItemTileInnerBox::after {
+      content: '';
+      background: radial-gradient(circle at 50%, rgba(#D372F4, .4), transparent 60%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .MCDRuneList {
+    &Container {
+      position: absolute;
+      left: -1px;
+      bottom: -1px;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+    }
+
+    &--ipair .MCDRuneListContainer img:first-child {
+      margin-right: 18px;
+    }
+  }
+}

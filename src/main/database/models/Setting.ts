@@ -41,6 +41,7 @@ export class Setting extends Model {
 
   static async createDefault(): Promise<void> {
     const DEFAULT_SETTINGS = {
+      firstStart: true,
       locale: 'en-EN',
       cipherKey: crypto.randomBytes(16).toString('hex'),
       cipherIv: crypto.randomBytes(8).toString('hex'),

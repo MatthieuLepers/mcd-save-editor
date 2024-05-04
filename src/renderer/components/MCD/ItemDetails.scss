@@ -1,0 +1,94 @@
+@import '~styles/utilities.scss';
+
+.MCDItemDetails {
+  padding-left: 20px;
+  padding-bottom: 160px;
+  position: relative;
+  height: 100%;
+
+  &Infos {
+    width: 100%;
+    min-height: 140px;
+    position: relative;
+  }
+
+  &Actions {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .MCDItemTitle {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    .MCDItemSelect {
+      margin-top: 20px;
+    }
+
+    &Power {
+      cursor: ns-resize;
+    }
+
+    &Container {
+      display: inline-flex;
+      align-items: center;
+
+      &Row {
+        display: inline-flex;
+        align-items: flex-start;
+        margin-right: 10px;
+
+        span {
+          @include font-family('open-sans', 700);
+          @include set-font-scale(l);
+          line-height: rem(18px);
+          text-shadow: 3px 2px 0 rgba(color(grey999), .5);
+        }
+  
+        i {
+          @include set-font-scale(xs);
+          margin-left: 5px;
+          color: #999999;
+        }
+      }
+    }
+  }
+
+  .MCDItemImage {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    position: absolute;
+    top: -24px;
+    right: 0;
+  }
+
+  .MCDItemArmorProperties {
+    @include set-font-scale(xs);
+    padding: 0;
+    margin: 12px 0 0 0;
+    list-style: none;
+
+    &Item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &Rarity {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+
+      &+* {
+        width: calc(100% - 20px);
+      }
+    }
+  }
+}

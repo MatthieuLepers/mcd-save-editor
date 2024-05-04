@@ -1,4 +1,6 @@
 // import { autoUpdater } from 'electron-updater';
+import { OpenDialogOptions, dialog, type SaveDialogOptions } from 'electron';
+import fs from 'fs';
 
 import { IpcHandle, IpcOn, GlobalShortcut } from '@/main/decorators';
 import { Setting } from '@/main/database/models';
@@ -55,6 +57,26 @@ class AppModule {
     if (win) {
       win.close();
     }
+  }
+
+  @IpcHandle
+  static async exportItem(dialogOptions: Partial<SaveDialogOptions>, itemJson: string) {
+    const mainWindow = WindowStore.get('main')!;
+    const { canceled, filePath } = await dialog.showSaveDialog(mainWindow, dialogOptions);
+
+    if (canceled || !filePath?.length) return;
+
+    fs.writeFileSync(filePath, itemJson);
+  }
+
+  @IpcHandle
+  static async importItem(dialogOptions: Partial<OpenDialogOptions>): Promise<string | null> {
+    const mainWindow = WindowStore.get('main')!;
+    const { canceled, filePaths } = await dialog.showOpenDialog(mainWindow, dialogOptions);
+
+    if (canceled || !filePaths.length || !fs.existsSync(filePaths[0])) return null;
+
+    return `${fs.readFileSync(filePaths[0])}`;
   }
 }
 

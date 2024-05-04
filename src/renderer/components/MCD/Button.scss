@@ -1,0 +1,105 @@
+@import '~styles/utilities.scss';
+
+.MCDButton {
+  position: relative;
+  margin: 6px;
+  padding: 0 6px;
+
+  &--sm {
+    min-width: 36px;
+    height: 36px;
+  }
+
+  &--xs {
+    min-width: 28px;
+    height: 28px;
+  }
+
+  &::before,
+  &::after {
+    @include transition(border-color .2s ease);
+    content: '';
+    position: absolute;
+    display: block;
+    pointer-events: none;
+  }
+
+  &::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -3px;
+  }
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    top: -3px;
+    left: 0;
+  }
+
+  &--light {
+    color: color(grey000);
+
+    &::before {
+      border-left: 3px solid rgba(color(grey000), .4);
+      border-right: 3px solid rgba(color(grey000), .4);
+    }
+
+    &::after {
+      border-top: 3px solid rgba(color(grey000), .4);
+      border-bottom: 3px solid rgba(color(grey000), .4);
+    }
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus {
+        &::after,
+        &::before {
+          border-color: color(grey000);
+        }
+      }
+    }
+  }
+
+  &--dark {
+    color: color(grey999);
+
+    &::before {
+      border-left: 3px solid rgba(color(grey999), .4);
+      border-right: 3px solid rgba(color(grey999), .4);
+    }
+
+    &::after {
+      border-top: 3px solid rgba(color(grey999), .4);
+      border-bottom: 3px solid rgba(color(grey999), .4);
+    }
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus {
+        &::after,
+        &::before {
+          border-color: color(grey999);
+        }
+      }
+    }
+  }
+
+  &--success {
+    @include font-family('open-sans', 700);
+    color: color(grey000);
+    padding: 0 20px;
+    background-color: rgba(color(success300), .5);
+
+    &::before {
+      border-left: 3px solid color(grey000);
+      border-right: 3px solid color(grey000);
+    }
+
+    &::after {
+      border-top: 3px solid color(grey000);
+      border-bottom: 3px solid color(grey000);
+    }
+  }
+}

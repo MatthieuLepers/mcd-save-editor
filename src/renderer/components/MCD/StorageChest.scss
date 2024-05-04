@@ -1,0 +1,41 @@
+@import '~styles/utilities.scss';
+
+.MCDStorageChest {
+  flex-direction: column;
+  height: 100%;
+  filter: opacity(1);
+
+  &Title {
+    height: 44px;
+    padding: 0 0 0 calc((100% - 288px) / 2);
+    margin-left: 3px;
+  }
+
+  &Items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 3px calc((100% - 288px) / 2);
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    position: relative;
+
+    &--Over {
+      &::before {
+        content: '';
+        position: fixed;
+        top: 43px;
+        left: 20px;
+        width: calc(100% - 44px);
+        height: calc(100% - 49px);
+        border: 2px solid color(grey000);
+        border-radius: 3px;
+        background-color: rgba(color(grey000), .3);
+        z-index: 99;
+      }
+    }
+  }
+
+  .MCDItem {
+    margin: 3px;
+  }
+}

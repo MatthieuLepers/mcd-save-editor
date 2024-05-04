@@ -6,9 +6,6 @@ export const HOME_DIR = os.homedir();
 
 export const IS_DEV = process.env.NODE_ENV === 'development';
 
-export const BASE_PATH = `${HOME_DIR}/Documents`;
+export const SAVE_PATH = `${HOME_DIR}/Saved Games/Mojang Studios/Dungeons`;
 
-export const DATABASE_FILE = IS_DEV
-  ? './database.sqlite3'
-  : `${BASE_PATH}/database.sqlite3`
-;
+export const DATABASE_FILE = './database.sqlite3';
