@@ -1,6 +1,6 @@
 import AbstractValidator from '@renderer/core/validators/AbstractValidator';
 import type { IItem } from '@renderer/core/classes/Item';
-import ItemSchema from '../../../../public/json/schemas/item.schema.json';
+import ItemSchema from '@renderer/public/json/schemas/item.schema.json';
 
 export default class ItemValidator extends AbstractValidator<IItem> {
   constructor(data: IItem) {

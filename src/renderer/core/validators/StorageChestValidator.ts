@@ -1,6 +1,6 @@
 import AbstractValidator from '@renderer/core/validators/AbstractValidator';
 import type { ICharacter } from '@renderer/core/classes/Character';
-import StoredItemSchema from '../../../../public/json/schemas/storedItem.schema.json';
+import StoredItemSchema from '@renderer/public/json/schemas/storedItem.schema.json';
 
 export default class StorageChestValidator extends AbstractValidator<ICharacter> {
   constructor(data: ICharacter) {

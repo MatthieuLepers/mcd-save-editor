@@ -1,5 +1,5 @@
 import AbstractValidator from '@/main/classes/validation/AbstractValidator';
-import ItemSchema from '../../../../public/json/schemas/item.schema.json';
+import ItemSchema from '@renderer/public/json/schemas/item.schema.json';
 
 export default class InventoryValidator extends AbstractValidator {
   public corrupted: boolean = false;

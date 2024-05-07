@@ -1,6 +1,6 @@
 import AbstractValidator from '@renderer/core/validators/AbstractValidator';
 import type { ICharacter } from '@renderer/core/classes/Character';
-import ItemSchema from '../../../../public/json/schemas/item.schema.json';
+import ItemSchema from '@renderer/public/json/schemas/item.schema.json';
 
 export default class InventoryValidator extends AbstractValidator<ICharacter> {
   constructor(data: ICharacter) {

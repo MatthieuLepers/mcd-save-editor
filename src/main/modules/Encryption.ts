@@ -1,12 +1,13 @@
 import { execFile } from 'child_process';
 import fs from 'fs';
+import path from 'path';
 
 import { IpcHandle } from '@/main/decorators';
 import { SAVE_PATH } from '@/main/utils/Constants';
 import InventoryValidator from '@/main/classes/validation/InventoryValidator';
 import StorageChestValidator from '@/main/classes/validation/StorageChestValidator';
 
-const DTOOLS_PATH = `${process.cwd()}/public/dtools.exe`;
+const DTOOLS_PATH = path.resolve(__dirname, '../../public/dtools.exe');
 
 class EncryptionModule {
   static makeFileBackup(file: string): boolean {
