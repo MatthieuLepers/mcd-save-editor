@@ -7,24 +7,32 @@
       @accept="actions.handleConfirm"
     >
       <div v-if="state.availableBackup">
-        <p v-for="(line, i) in t('MCD.CharacterCorruptionDetection.contentBackupAvailable')" :key="i">
+        <p v-for="(line, i) in tm('MCD.CharacterCorruptionDetection.contentBackupAvailable')" :key="i">
           {{ line.replace('{date}', state.availableBackup.formatedDate) }}
         </p>
       </div>
       <div v-else>
-        <p v-for="(line, i) in t('MCD.CharacterCorruptionDetection.contentNoBackupAvailable')" :key="i">
+        <p v-for="(line, i) in tm('MCD.CharacterCorruptionDetection.contentNoBackupAvailable')" :key="i">
           {{ line }}
         </p>
       </div>
       <template v-slot:footer="{ accept }">
         <router-link custom :to="{ name: 'CorruptedData' }" v-slot="{ navigate }">
-          <button :class="GenerateModifiers('m-modal__btn', { refuse: true })" @click="navigate">
+          <MaterialButton
+            :class="GenerateModifiers('m-modal__btn', { refuse: true })"
+            :modifiers="{ danger: true }"
+            @click="navigate"
+          >
             {{ t('MCD.CharacterCorruptionDetection.showReport') }}
-          </button>
+          </MaterialButton>
         </router-link>
-        <button :class="GenerateModifiers('m-modal__btn', { accept: true })" @click="accept">
+        <MaterialButton
+          :class="GenerateModifiers('m-modal__btn', { accept: true })"
+          :modifiers="{ secondary: true }"
+          @click="accept"
+        >
           {{ t('MCD.CharacterCorruptionDetection.okLabel') }}
-        </button>
+        </MaterialButton>
       </template>
     </Modal>
   </div>
@@ -34,6 +42,7 @@
 import { reactive, onBeforeMount, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 import Modal from '@renderer/components/Materials/Modal/index.vue';
 
 import Character from '@renderer/core/classes/Character';
@@ -42,7 +51,7 @@ import { notificationStore } from '@renderer/components/Materials/Notification/S
 
 defineOptions({ name: 'MCDCharacterCorruptionDetection' });
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
 const props = defineProps({
   character: { type: Character, required: true },

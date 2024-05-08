@@ -1,16 +1,16 @@
 import type Item from '@renderer/core/classes/Item';
+import type { ErrorObject } from 'ajv';
+import get from 'lodash.get';
 
 export default class ValidationErrorReport {
   constructor(
-    public type: String,
     public item: Item,
-    public error: Object,
+    public error: ErrorObject,
   ) {}
 
-  getLine() {
+  getLine(): number {
     const inst = JSON.stringify(this.item, null, 2).split('\n');
-    const instance = JSON.stringify(this.error, null, 2).split('\n');
-    console.log(this.error, inst.findIndex((line) => line.includes(instance[0])));
-    return '';
+    const value = get(this.item, this.error.dataPath.replace('.', ''));
+    return inst.findIndex((line) => line.includes(value));
   }
 }

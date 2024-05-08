@@ -114,12 +114,12 @@ export default {
         id: {
           type: 'Property "id" must be a string',
           required: 'Missing mandatory property "id"',
-          enum: 'Unknown armor property id {value}',
+          enum: 'Unknown armor property id "{value}"',
         },
         rarity: {
           type: 'Property "rarity" must be a string',
           required: 'Missing mandatory property "rarity"',
-          enum: 'Unknown rartiy {value}',
+          enum: 'Unknown rartiy "{value}"',
         },
         type: 'Property "armorproperties" must be an array',
         required: 'Missing mandatory property "armorproperties" for "{itemType}" typed items',
@@ -154,7 +154,7 @@ export default {
         id: {
           type: 'Property "id" must be a string',
           required: 'Missing mandatory property "id"',
-          enum: 'Unknown enchantment id {value}',
+          enum: 'Unknown enchantment id "{value}"',
         },
         investedPoints: {
           type: 'Property "investedPoints" must be a number',
