@@ -61,7 +61,7 @@ const actions = {
     globalStore.setters.setProfil(profil);
   },
   getProfilIcon(profil) {
-    return (globalStore.state.selectedProfil === profil ? 'check' : '');
+    return (globalStore.state.selectedProfil === profil ? 'icon-check' : '');
   },
 };
 </script>

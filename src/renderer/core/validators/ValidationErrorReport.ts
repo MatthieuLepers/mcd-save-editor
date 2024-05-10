@@ -1,14 +1,13 @@
 import type { ErrorObject } from 'ajv';
 import get from 'lodash.get';
 
-import i18n from '@renderer/plugins/i18n';
-
 import type { IItem } from '@renderer/core/classes/Item';
 import Fixup from '@renderer/core/classes/Fixup';
 
 export default class ValidationErrorReport {
   constructor(
     public item: IItem,
+    public itemIndex: number,
     public error: ErrorObject,
   ) {}
 
@@ -46,6 +45,6 @@ export default class ValidationErrorReport {
   }
 
   getFixup() {
-    return new Fixup(this.item, this.error).getFixup();
+    return new Fixup(this).getFixup();
   }
 }

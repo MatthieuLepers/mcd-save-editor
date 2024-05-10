@@ -1,11 +1,11 @@
 import Ajv from 'ajv';
-import i18n from '@renderer/plugins/i18n';
 import get from 'lodash.get';
 
+import i18n from '@renderer/plugins/i18n';
 import { Items } from '@renderer/core/data/Content';
 import ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import type { IItem } from '@renderer/core/classes/Item';
-import { IEnchantment } from '../classes/Enchantment';
+import type { IEnchantment } from '@renderer/core/classes/Enchantment';
 
 function $getEnchantmentChunks(item: IItem): Array<Array<IEnchantment>> {
   return (item.enchantments ?? []).reduce((acc, val, i) => {
@@ -21,8 +21,10 @@ export default abstract class AbstractValidator<T> {
   constructor(public data: T) {
   }
 
+  abstract get items(): Array<IItem>;
+
   addErrorReport({ item, error }) {
-    this.errors.push(new ValidationErrorReport(item, error));
+    this.errors.push(new ValidationErrorReport(item, this.items.indexOf(item), error));
   }
 
   isValid(): boolean {
@@ -42,10 +44,10 @@ export default abstract class AbstractValidator<T> {
           // @ts-ignore
           const { missingProperty } = error.params;
           if (missingProperty) {
-            error.message = i18n.global.t(`MCD.DataCorruption.${errorCategory}.${missingProperty}.${error.keyword}`);
+            error.message = i18n.global.t(`MCD.DataCorruption${errorCategory.length ? `.${errorCategory}` : ''}.${missingProperty}.${error.keyword}`);
             error.dataPath += `.${missingProperty}`;
           } else {
-            error.message = i18n.global.t(`MCD.DataCorruption.${errorCategory}.${error.keyword}`, { value });
+            error.message = i18n.global.t(`MCD.DataCorruption${errorCategory.length ? `.${errorCategory}` : ''}.${error.keyword}`, { value });
           }
           error.dataPath = error.dataPath.substring(1);
 

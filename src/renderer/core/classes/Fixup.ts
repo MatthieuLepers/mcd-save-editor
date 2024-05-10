@@ -1,8 +1,11 @@
 import type { ErrorObject } from 'ajv';
 
+import i18n from '@renderer/plugins/i18n';
 import Enchantment from '@renderer/core/classes/Enchantment';
 import type { IItem } from '@renderer/core/classes/Item';
 import { Items } from '@renderer/core/data/Content';
+import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
 
 export interface FixupAction {
   label: string;
@@ -10,10 +13,16 @@ export interface FixupAction {
 }
 
 export default class Fixup {
-  constructor(
-    public item: IItem,
-    public error: ErrorObject,
-  ) {}
+  constructor(public validationErrorReport: ValidationErrorReport) {
+  }
+
+  get item(): IItem {
+    return this.validationErrorReport.item;
+  }
+
+  get error(): ErrorObject {
+    return this.validationErrorReport.error;
+  }
 
   get index(): number {
     return parseInt(this.error.dataPath.replace(/.*\[([0-9])\].*/, '$1'), 10);
@@ -31,6 +40,13 @@ export default class Fixup {
     return `getFixup${dataPathCamelCase}${keywordCamelCase}`;
   }
 
+  deleteItem() {
+    if (globalStore.state.selectedCharacter) {
+      globalStore.state.selectedCharacter.data.items.splice(this.validationErrorReport.itemIndex, 1);
+      globalStore.state.selectedCharacter.softReload();
+    }
+  }
+
   getFixup(): Array<FixupAction> {
     if (typeof this[this.methodName] === 'function') {
       return this[this.methodName]();
@@ -41,13 +57,13 @@ export default class Fixup {
   getFixupGiftedType(): Array<FixupAction> {
     return [
       {
-        label: 'Remove "gifted" attribute',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.giftedType1'),
         apply: () => {
           delete this.item.gifted;
         },
       },
       {
-        label: 'Set "gifted" to "true"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.giftedType2'),
         apply: () => {
           this.item.gifted = true;
         },
@@ -62,13 +78,13 @@ export default class Fixup {
   getFixupMarkedNewType(): Array<FixupAction> {
     return [
       {
-        label: 'Remove "markedNew" attribute',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.markedNewType1'),
         apply: () => {
           delete this.item.markedNew;
         },
       },
       {
-        label: 'Set "markedNew" to "true"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.markedNewType2'),
         apply: () => {
           this.item.markedNew = true;
         },
@@ -80,10 +96,52 @@ export default class Fixup {
     return this.getFixupMarkedNewType();
   }
 
+  getFixupEquipmentSlotRequired(): Array<FixupAction> {
+    return this.getFixupInventoryIndexMinimum();
+  }
+
+  getFixupInventoryIndexRequired(): Array<FixupAction> {
+    return this.getFixupInventoryIndexMinimum();
+  }
+
+  getFixupInventoryIndexMinimum(): Array<FixupAction> {
+    return [
+      {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.inventoryIndexMinimum'),
+        apply: () => {
+          this.item.inventoryIndex = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupInventoryIndexMaximum(): Array<FixupAction> {
+    return [
+      {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.inventoryIndexMaximum'),
+        apply: () => {
+          this.item.inventoryIndex = 179;
+        },
+      },
+      {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.deleteItem'),
+        apply: () => {
+          this.deleteItem();
+        },
+      },
+      {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.createIssueOnGithub'),
+        apply: () => {
+          api.invoke('openGithubLink', 'https://github.com/MatthieuLepers/mcd-save-editor/issues');
+        },
+      },
+    ];
+  }
+
   getFixupEnchantmentsRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add 9 missing enchants',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsRequired'),
         apply: () => {
           this.item.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.data);
         },
@@ -95,7 +153,7 @@ export default class Fixup {
     const missing = 9 - this.item.enchantments!.length;
     return [
       {
-        label: `Add ${missing} missing enchants`,
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsMinItems', [missing]),
         apply: () => {
           this.item.enchantments!.push(...[...Array(missing).keys()].map(() => Enchantment.UNSET.data));
         },
@@ -107,7 +165,7 @@ export default class Fixup {
     const excess = this.item.enchantments!.length - 9;
     return [
       {
-        label: `Remove the ${excess} last enchants`,
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsMinItems', [excess]),
         apply: () => {
           this.item.enchantments!.splice(9, excess);
         },
@@ -118,7 +176,7 @@ export default class Fixup {
   getFixupEnchantmentsIdRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add "id" and set it to "Unset"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsIdRequired'),
         apply: () => {
           this.item.enchantments![this.index].id = 'Unset';
           this.item.enchantments![this.index].investedPoints = 0;
@@ -131,7 +189,7 @@ export default class Fixup {
   getFixupEnchantmentsInvestedPointsRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add "investedPoints" and set it to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsInvestedPointsRequired'),
         apply: () => {
           this.item.enchantments![this.index].investedPoints = 0;
         },
@@ -142,7 +200,7 @@ export default class Fixup {
   getFixupEnchantmentsLevelRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add "level" and set it to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsLevelRequired'),
         apply: () => {
           this.item.enchantments![this.index].level = 0;
         },
@@ -153,7 +211,7 @@ export default class Fixup {
   getFixupEnchantmentsIdEnum(): Array<FixupAction> {
     return [
       {
-        label: 'Set "id" to "Unset"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsIdEnum'),
         apply: () => {
           this.item.enchantments![this.index].id = 'Unset';
           this.item.enchantments![this.index].investedPoints = 0;
@@ -166,7 +224,7 @@ export default class Fixup {
   getFixupEnchantmentsInvestedPointsConst(): Array<FixupAction> {
     return [
       {
-        label: 'Set "investedPoints" to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsInvestedPointsConst'),
         apply: () => {
           this.item.enchantments![this.index].investedPoints = 0;
         },
@@ -177,7 +235,7 @@ export default class Fixup {
   getFixupEnchantmentsLevelMinimum(): Array<FixupAction> {
     return [
       {
-        label: 'Set "level" to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsLevelMinimum'),
         apply: () => {
           this.item.enchantments![this.index].level = 0;
         },
@@ -187,14 +245,9 @@ export default class Fixup {
 
   getFixupEnchantmentsLevelMaximum(): Array<FixupAction> {
     return [
+      ...this.getFixupEnchantmentsLevelMinimum(),
       {
-        label: 'Set "level" to "0"',
-        apply: () => {
-          this.item.enchantments![this.index].level = 0;
-        },
-      },
-      {
-        label: 'Set "level" to "3"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsLevelMaximum'),
         apply: () => {
           this.item.enchantments![this.index].level = 3;
         },
@@ -205,7 +258,7 @@ export default class Fixup {
   getFixupEnchantmentsChunksLevelConsistency(): Array<FixupAction> {
     return [
       {
-        label: 'Set all levels to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsChunksLevelConsistency'),
         apply: () => {
           this.item.enchantments![this.index * 3].level = 0;
           this.item.enchantments![this.index * 3 + 1].level = 0;
@@ -218,7 +271,7 @@ export default class Fixup {
   getFixupEnchantmentsChunksUniqueChunkEnchant(): Array<FixupAction> {
     return [
       {
-        label: 'Set duplicate to "Unset',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsChunksUniqueChunkEnchant'),
         apply: () => {
           const chunk = this.item.enchantments!.slice(this.index, this.index + 3);
           const lookup = Object.groupBy(chunk, (e) => e.id);
@@ -239,7 +292,7 @@ export default class Fixup {
   getFixupEnchantmentsForbbiden(): Array<FixupAction> {
     return [
       {
-        label: 'Remove "enchantments" attribute',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsForbbiden'),
         apply: () => {
           delete this.item.enchantments;
         },
@@ -250,7 +303,7 @@ export default class Fixup {
   getFixupEquipmentSlotType(): Array<FixupAction> {
     return [
       {
-        label: 'Unequip item',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.equipmentSlotType'),
         apply: () => {
           delete this.item.equipmentSlot;
           this.item.inventoryIndex = 0;
@@ -266,7 +319,7 @@ export default class Fixup {
   getFixupNetheriteEnchantType(): Array<FixupAction> {
     return [
       {
-        label: 'Remove gilded enchant',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantType'),
         apply: () => {
           delete this.item.netheriteEnchant;
         },
@@ -280,14 +333,9 @@ export default class Fixup {
 
   getFixupNetheriteEnchantInvestedPointsRequired(): Array<FixupAction> {
     return [
+      ...this.getFixupNetheriteEnchantType(),
       {
-        label: 'Remove gilded enchant',
-        apply: () => {
-          delete this.item.netheriteEnchant;
-        },
-      },
-      {
-        label: 'Add "investedPoints" and set it to "0"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantInvestedPointsRequired'),
         apply: () => {
           this.item.netheriteEnchant!.investedPoints = 0;
         },
@@ -297,26 +345,21 @@ export default class Fixup {
 
   getFixupNetheriteEnchantLevelRequired(): Array<FixupAction> {
     return [
+      ...this.getFixupNetheriteEnchantType(),
       {
-        label: 'Remove gilded enchant',
-        apply: () => {
-          delete this.item.netheriteEnchant;
-        },
-      },
-      {
-        label: 'Add "level" and set it to 1',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired1'),
         apply: () => {
           this.item.netheriteEnchant!.level = 1;
         },
       },
       {
-        label: 'Add "level" and set it to 2',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired2'),
         apply: () => {
           this.item.netheriteEnchant!.level = 2;
         },
       },
       {
-        label: 'Add "level" and set it to 3',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired3'),
         apply: () => {
           this.item.netheriteEnchant!.level = 3;
         },
@@ -335,7 +378,7 @@ export default class Fixup {
   getFixupPowerRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add "power" and set it to "1"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.powerRequired'),
         apply: () => {
           this.item.power = 1;
         },
@@ -353,17 +396,21 @@ export default class Fixup {
 
     if (itemData) {
       result.push({
-        label: `Add "rarity" and set it to "${itemData.rarity[0]}"`,
+        label: i18n.global.t('MCD.DataCorruption.Fixup.rarityRequired', [itemData.rarity[0]]),
         apply: () => {
           [this.item.rarity] = itemData.rarity;
         },
       });
     } else {
       result.push({
-        label: 'Delete item',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.deleteItem'),
         apply: () => {
-          // @ts-ignore
-          delete this.item;
+          this.deleteItem();
+        },
+      }, {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.createIssueOnGithub'),
+        apply: () => {
+          api.invoke('openGithubLink', 'https://github.com/MatthieuLepers/mcd-save-editor/issues');
         },
       });
     }
@@ -378,10 +425,15 @@ export default class Fixup {
   getFixupTypeRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Remove item',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.deleteItem'),
         apply: () => {
-          // @ts-ignore
-          delete this.item;
+          this.deleteItem();
+        },
+      },
+      {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.createIssueOnGithub'),
+        apply: () => {
+          api.invoke('openGithubLink', 'https://github.com/MatthieuLepers/mcd-save-editor/issues');
         },
       },
     ];
@@ -394,7 +446,7 @@ export default class Fixup {
   getFixupUpgradedRequired(): Array<FixupAction> {
     return [
       {
-        label: 'Add "upgraded" and set it to "false"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.upgradedRequired'),
         apply: () => {
           this.item.upgraded = false;
         },
@@ -405,7 +457,7 @@ export default class Fixup {
   getFixupUpgradedType(): Array<FixupAction> {
     return [
       {
-        label: 'Set "upgraded" to "false"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.upgradedType'),
         apply: () => {
           this.item.upgraded = false;
         },
@@ -420,7 +472,7 @@ export default class Fixup {
   getFixupArmorpropertiesMinItems(): Array<FixupAction> {
     const itemData = Items[this.item.type];
     const result: Array<FixupAction> = [{
-      label: 'Remove "armorproperties" attribute',
+      label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems1'),
       apply: () => {
         delete this.item.armorproperties;
       },
@@ -428,17 +480,21 @@ export default class Fixup {
 
     if (itemData) {
       result.push({
-        label: 'Reset "armorproperties" to this initial value',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
           this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
         },
       });
     } else {
       result.push({
-        label: 'Remove item',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.deleteItem'),
         apply: () => {
-          // @ts-ignore
-          delete this.item;
+          this.deleteItem();
+        },
+      }, {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.createIssueOnGithub'),
+        apply: () => {
+          api.invoke('openGithubLink', 'https://github.com/MatthieuLepers/mcd-save-editor/issues');
         },
       });
     }
@@ -452,17 +508,21 @@ export default class Fixup {
 
     if (itemData) {
       result.push({
-        label: 'Reset "armorproperties" to this initial value',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
           this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
         },
       });
     } else {
       result.push({
-        label: 'Remove item',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.deleteItem'),
         apply: () => {
-          // @ts-ignore
-          delete this.item;
+          this.deleteItem();
+        },
+      }, {
+        label: i18n.global.t('MCD.DataCorruption.Fixup.createIssueOnGithub'),
+        apply: () => {
+          api.invoke('openGithubLink', 'https://github.com/MatthieuLepers/mcd-save-editor/issues');
         },
       });
     }
@@ -473,7 +533,7 @@ export default class Fixup {
   getFixupArmorpropertiesForbbiden(): Array<FixupAction> {
     return [
       {
-        label: 'Remove "armorproperties" attribute',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems1'),
         apply: () => {
           delete this.item.armorproperties;
         },
@@ -508,7 +568,7 @@ export default class Fixup {
   getFixupArmorpropertiesRarityEnum(): Array<FixupAction> {
     return [
       {
-        label: 'Set "rarity" to "Common"',
+        label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesRarityEnum'),
         apply: () => {
           this.item.armorproperties![this.index].rarity = 'Common';
         },

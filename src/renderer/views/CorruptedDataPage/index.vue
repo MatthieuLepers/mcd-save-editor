@@ -18,7 +18,7 @@
           at line {{ State.currentError.getLine() }}
         </p>
 
-        <h2>Pick a solution to apply</h2>
+        <h2>{{ t('MCD.DataCorruption.Fixup.title') }}</h2>
         <ol class="CorruptedDataPageFixupList">
           <li
             v-for="(action, i) in State.currentError.getFixup()"
@@ -55,7 +55,12 @@
 </template>
 
 <script setup>
-import { reactive, computed, onBeforeMount } from 'vue';
+import {
+  reactive,
+  computed,
+  watch,
+  onBeforeMount,
+} from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { Codemirror } from 'vue-codemirror';
@@ -65,6 +70,7 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 
 defineOptions({ name: 'CorruptedDataPage' });
 
@@ -89,13 +95,20 @@ const State = computed(() => {
 const actions = {
   reset() {
     state.currentErrorIndex = 0;
-    state.currentErrorSourceCode = JSON.stringify(State.value.currentError.item, null, 2);
+    if (State.value.currentError) {
+      state.currentErrorSourceCode = JSON.stringify(State.value.currentError.item, null, 2);
+    }
     globalStore.state.selectedCharacter.softReload();
     if (!State.value.currentError) {
       router.push({ name: 'Home' });
+      notificationStore.actions.success(t('MCD.DataCorruption.Fixup.success'));
     }
   },
 };
+
+watch(() => state.currentErrorIndex, () => {
+  state.currentErrorSourceCode = JSON.stringify(State.value.currentError.item, null, 2);
+});
 
 onBeforeMount(() => {
   state.currentErrorSourceCode = JSON.stringify(State.value.currentError.item, null, 2);

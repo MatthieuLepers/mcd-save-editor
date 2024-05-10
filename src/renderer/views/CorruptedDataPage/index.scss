@@ -38,6 +38,10 @@
     max-height: calc(100% - 208px);
     height: 100%;
     overflow-y: auto;
+
+    li:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
   }
 
   &Actions {
