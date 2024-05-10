@@ -4,38 +4,48 @@
   overflow: auto;
   height: calc(100vh - 88px);
 
-  &List {
+  &ErrorContainer {
     display: flex;
     overflow: hidden;
     height: calc(100% - 33px);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
 
-    &Item {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+    h2 {
+      @include set-font-scale(m);
+      flex: 0 0 100%;
+    }
+  }
 
-      h2 {
-        @include set-font-scale(m);
-        flex: 0 0 100%;
-      }
+  &Infos {
+    height: 100%;
+    flex: 0 0 calc(50% - 8px);
 
-      textarea {
-        flex: 0 0 calc(50% - 8px);
-        height: calc(100% - 45px);
-        @include set-font-scale(m);
-        background-color: color(grey800);
-        color: color(grey000);
-      }
+    &>p {
+      margin: 0 0 16px 0;
+      background-color: color(grey800);
+      padding: 8px;
+    }
 
-      &Infos {
-        height: 100%;
-        flex: 0 0 calc(50% - 8px);
-      }
+    &>h2 {
+      @include set-font-scale(l);
+      font-weight: 600;
+    }
+  }
+
+  &FixupList {
+    max-height: calc(100% - 208px);
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &Actions {
+    display: flex;
+    gap: 8px;
+
+    .m-button {
+      flex: 0 0 calc(50% - 4px);
     }
   }
 }

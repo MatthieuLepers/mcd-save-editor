@@ -70,6 +70,12 @@ export default {
       Items: GlobalI18N.Items('en-EN'),
     },
     DataCorruption: {
+      Page: {
+        title: 'Data corruption error report',
+        errorCount: 'Error {0}/{1}',
+        prevButtonLabel: 'Previous error',
+        nextButtonLabel: 'Next error',
+      },
       oneOf: 'Missing mandatory property : "equimentSlot", "inventoryIndex", "power", "rarity", "type" or "upgraded"',
       equipmentSlot: {
         type: 'Property "equipmentSlot" must be a string',
@@ -79,13 +85,13 @@ export default {
       inventoryIndex: {
         type: 'Property "inventoryIndex" must be a number',
         required: 'Missing mandatory property "inventoryIndex"',
-        minimum: '"inventoryIndex"\'s value cannot be lower than 0',
-        maximum: '"inventoryIndex"\'s value cannot be higher than 179',
+        minimum: '"inventoryIndex" value cannot be lower than 0',
+        maximum: '"inventoryIndex" value cannot be higher than 179',
       },
       power: {
         type: 'Property "power" must be a number',
         required: 'Missing mandatory property "power"',
-        minimum: '"power"\'s value cannot be lower than 1',
+        minimum: '"power" value cannot be lower than 1',
       },
       rarity: {
         type: 'Property "rarity" must be a string',
@@ -100,15 +106,15 @@ export default {
       upgraded: {
         type: 'Property "upgraded" must be a boolean',
         required: 'Missing mandatory property "upgraded"',
-        const: '"upgraded"\'s value must be "false"',
+        const: '"upgraded" value must be "false"',
       },
       gifted: {
         type: 'Property "gifted" must be a boolean',
-        const: '"gifted"\'s value must be "true"',
+        const: '"gifted" value must be "true"',
       },
       markedNew: {
         type: 'Property "markedNew" must be a boolean',
-        const: '"markedNew"\'s value must be "true"',
+        const: '"markedNew" value must be "true"',
       },
       armorproperties: {
         id: {
@@ -139,13 +145,13 @@ export default {
         investedPoints: {
           type: 'Property "investedPoints" must be a number',
           required: 'Missing mandatory property "investedPoints"',
-          const: '"investedPoints"\'s value must be "0"',
+          const: '"investedPoints" value must be "0"',
         },
         level: {
           type: 'Property "level" must be a number',
           required: 'Missing mandatory property "level"',
-          minimum: '"level"\'s value cannot be lower than 0',
-          maximum: '"level"\'s value cannot be higher than 3',
+          minimum: '"level" value cannot be lower than 0',
+          maximum: '"level" value cannot be higher than 3',
         },
         type: 'Property "netheriteEnchant" must be an object',
         forbbiden: 'Property "netheriteEnchant" is forbbiden for "{itemType}" typed items',
@@ -159,13 +165,13 @@ export default {
         investedPoints: {
           type: 'Property "investedPoints" must be a number',
           required: 'Missing mandatory property "investedPoints"',
-          const: '"investedPoints"\'s value must be "0"',
+          const: '"investedPoints" value must be "0"',
         },
         level: {
           type: 'Property "level" must be a number',
           required: 'Missing mandatory property "level"',
-          minimum: '"level"\'s value cannot be lower than 0',
-          maximum: '"level"\'s value cannot be higher than 3',
+          minimum: '"level" value cannot be lower than 0',
+          maximum: '"level" value cannot be higher than 3',
         },
         chunks: {
           levelConsistency: 'Enchantment chunk n°{0} cannot have more than 1 leveled enchantment',
@@ -174,8 +180,8 @@ export default {
         type: 'Property "enchantments" must be an array',
         required: 'Missing mandatory property "enchantments" for "{itemType}" typed items',
         forbbiden: 'Property "enchantments" is forbbiden for "{itemType}" typed items',
-        minItems: 'Table "enchantments" cannot contains lower than 1 enchantment',
-        maxItems: 'Table "enchantments" cannot contains higher than 4 enchantments',
+        minItems: 'Table "enchantments" cannot contains lower than 9 enchantments',
+        maxItems: 'Table "enchantments" cannot contains higher than 9 enchantments',
         noLeveledUnset: '"Unset" enchant level must be 0',
       },
     },

@@ -1,0 +1,518 @@
+import type { ErrorObject } from 'ajv';
+
+import Enchantment from '@renderer/core/classes/Enchantment';
+import type { IItem } from '@renderer/core/classes/Item';
+import { Items } from '@renderer/core/data/Content';
+
+export interface FixupAction {
+  label: string;
+  apply: () => void;
+}
+
+export default class Fixup {
+  constructor(
+    public item: IItem,
+    public error: ErrorObject,
+  ) {}
+
+  get index(): number {
+    return parseInt(this.error.dataPath.replace(/.*\[([0-9])\].*/, '$1'), 10);
+  }
+
+  get methodName(): string {
+    const dataPathCamelCase = this.error.dataPath
+      .replace(/(.*)\[[0-9]\](.*)/, '$1$2')
+      .split('.')
+      .map((part) => `${part.substring(0, 1).toUpperCase()}${part.substring(1)}`)
+      .join('')
+    ;
+    const keywordCamelCase = `${this.error.keyword.substring(0, 1).toUpperCase()}${this.error.keyword.substring(1)}`;
+
+    return `getFixup${dataPathCamelCase}${keywordCamelCase}`;
+  }
+
+  getFixup(): Array<FixupAction> {
+    if (typeof this[this.methodName] === 'function') {
+      return this[this.methodName]();
+    }
+    throw new Error(`Fixup method "${this.methodName}" is not implemented`);
+  }
+
+  getFixupGiftedType(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove "gifted" attribute',
+        apply: () => {
+          delete this.item.gifted;
+        },
+      },
+      {
+        label: 'Set "gifted" to "true"',
+        apply: () => {
+          this.item.gifted = true;
+        },
+      },
+    ];
+  }
+
+  getFixupGiftedConst(): Array<FixupAction> {
+    return this.getFixupGiftedType();
+  }
+
+  getFixupMarkedNewType(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove "markedNew" attribute',
+        apply: () => {
+          delete this.item.markedNew;
+        },
+      },
+      {
+        label: 'Set "markedNew" to "true"',
+        apply: () => {
+          this.item.markedNew = true;
+        },
+      },
+    ];
+  }
+
+  getFixupMarkedNewConst(): Array<FixupAction> {
+    return this.getFixupMarkedNewType();
+  }
+
+  getFixupEnchantmentsRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add 9 missing enchants',
+        apply: () => {
+          this.item.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.data);
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsMinItems(): Array<FixupAction> {
+    const missing = 9 - this.item.enchantments!.length;
+    return [
+      {
+        label: `Add ${missing} missing enchants`,
+        apply: () => {
+          this.item.enchantments!.push(...[...Array(missing).keys()].map(() => Enchantment.UNSET.data));
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsMaxItems(): Array<FixupAction> {
+    const excess = this.item.enchantments!.length - 9;
+    return [
+      {
+        label: `Remove the ${excess} last enchants`,
+        apply: () => {
+          this.item.enchantments!.splice(9, excess);
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsIdRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add "id" and set it to "Unset"',
+        apply: () => {
+          this.item.enchantments![this.index].id = 'Unset';
+          this.item.enchantments![this.index].investedPoints = 0;
+          this.item.enchantments![this.index].level = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsInvestedPointsRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add "investedPoints" and set it to "0"',
+        apply: () => {
+          this.item.enchantments![this.index].investedPoints = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsLevelRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add "level" and set it to "0"',
+        apply: () => {
+          this.item.enchantments![this.index].level = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsIdEnum(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "id" to "Unset"',
+        apply: () => {
+          this.item.enchantments![this.index].id = 'Unset';
+          this.item.enchantments![this.index].investedPoints = 0;
+          this.item.enchantments![this.index].level = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsInvestedPointsConst(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "investedPoints" to "0"',
+        apply: () => {
+          this.item.enchantments![this.index].investedPoints = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsLevelMinimum(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "level" to "0"',
+        apply: () => {
+          this.item.enchantments![this.index].level = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsLevelMaximum(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "level" to "0"',
+        apply: () => {
+          this.item.enchantments![this.index].level = 0;
+        },
+      },
+      {
+        label: 'Set "level" to "3"',
+        apply: () => {
+          this.item.enchantments![this.index].level = 3;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsChunksLevelConsistency(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set all levels to "0"',
+        apply: () => {
+          this.item.enchantments![this.index * 3].level = 0;
+          this.item.enchantments![this.index * 3 + 1].level = 0;
+          this.item.enchantments![this.index * 3 + 2].level = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsChunksUniqueChunkEnchant(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set duplicate to "Unset',
+        apply: () => {
+          const chunk = this.item.enchantments!.slice(this.index, this.index + 3);
+          const lookup = Object.groupBy(chunk, (e) => e.id);
+          chunk
+            .filter((e) => lookup[e.id]!.length > 1)
+            .slice(1)
+            .forEach((ench) => {
+              ench.id = 'Unset';
+              ench.investedPoints = 0;
+              ench.level = 0;
+            })
+          ;
+        },
+      },
+    ];
+  }
+
+  getFixupEnchantmentsForbbiden(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove "enchantments" attribute',
+        apply: () => {
+          delete this.item.enchantments;
+        },
+      },
+    ];
+  }
+
+  getFixupEquipmentSlotType(): Array<FixupAction> {
+    return [
+      {
+        label: 'Unequip item',
+        apply: () => {
+          delete this.item.equipmentSlot;
+          this.item.inventoryIndex = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupEquipmentSlotEnum(): Array<FixupAction> {
+    return this.getFixupEquipmentSlotType();
+  }
+
+  getFixupNetheriteEnchantType(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove gilded enchant',
+        apply: () => {
+          delete this.item.netheriteEnchant;
+        },
+      },
+    ];
+  }
+
+  getFixupNetheriteEnchantIdRequired(): Array<FixupAction> {
+    return this.getFixupNetheriteEnchantType();
+  }
+
+  getFixupNetheriteEnchantInvestedPointsRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove gilded enchant',
+        apply: () => {
+          delete this.item.netheriteEnchant;
+        },
+      },
+      {
+        label: 'Add "investedPoints" and set it to "0"',
+        apply: () => {
+          this.item.netheriteEnchant!.investedPoints = 0;
+        },
+      },
+    ];
+  }
+
+  getFixupNetheriteEnchantLevelRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove gilded enchant',
+        apply: () => {
+          delete this.item.netheriteEnchant;
+        },
+      },
+      {
+        label: 'Add "level" and set it to 1',
+        apply: () => {
+          this.item.netheriteEnchant!.level = 1;
+        },
+      },
+      {
+        label: 'Add "level" and set it to 2',
+        apply: () => {
+          this.item.netheriteEnchant!.level = 2;
+        },
+      },
+      {
+        label: 'Add "level" and set it to 3',
+        apply: () => {
+          this.item.netheriteEnchant!.level = 3;
+        },
+      },
+    ];
+  }
+
+  getFixupNetheriteEnchantLevelMinimum(): Array<FixupAction> {
+    return this.getFixupNetheriteEnchantLevelRequired();
+  }
+
+  getFixupNetheriteEnchantLevelMaximum(): Array<FixupAction> {
+    return this.getFixupNetheriteEnchantLevelRequired();
+  }
+
+  getFixupPowerRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add "power" and set it to "1"',
+        apply: () => {
+          this.item.power = 1;
+        },
+      },
+    ];
+  }
+
+  getFixupPowerType(): Array<FixupAction> {
+    return this.getFixupPowerRequired();
+  }
+
+  getFixupRarityRequired(): Array<FixupAction> {
+    const itemData = Items[this.item.type];
+    const result: Array<FixupAction> = [];
+
+    if (itemData) {
+      result.push({
+        label: `Add "rarity" and set it to "${itemData.rarity[0]}"`,
+        apply: () => {
+          [this.item.rarity] = itemData.rarity;
+        },
+      });
+    } else {
+      result.push({
+        label: 'Delete item',
+        apply: () => {
+          // @ts-ignore
+          delete this.item;
+        },
+      });
+    }
+
+    return result;
+  }
+
+  getFixupRarityEnum(): Array<FixupAction> {
+    return this.getFixupRarityRequired();
+  }
+
+  getFixupTypeRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove item',
+        apply: () => {
+          // @ts-ignore
+          delete this.item;
+        },
+      },
+    ];
+  }
+
+  getFixupTypeEnum(): Array<FixupAction> {
+    return this.getFixupTypeRequired();
+  }
+
+  getFixupUpgradedRequired(): Array<FixupAction> {
+    return [
+      {
+        label: 'Add "upgraded" and set it to "false"',
+        apply: () => {
+          this.item.upgraded = false;
+        },
+      },
+    ];
+  }
+
+  getFixupUpgradedType(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "upgraded" to "false"',
+        apply: () => {
+          this.item.upgraded = false;
+        },
+      },
+    ];
+  }
+
+  getFixupUpgradedConst(): Array<FixupAction> {
+    return this.getFixupUpgradedType();
+  }
+
+  getFixupArmorpropertiesMinItems(): Array<FixupAction> {
+    const itemData = Items[this.item.type];
+    const result: Array<FixupAction> = [{
+      label: 'Remove "armorproperties" attribute',
+      apply: () => {
+        delete this.item.armorproperties;
+      },
+    }];
+
+    if (itemData) {
+      result.push({
+        label: 'Reset "armorproperties" to this initial value',
+        apply: () => {
+          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+        },
+      });
+    } else {
+      result.push({
+        label: 'Remove item',
+        apply: () => {
+          // @ts-ignore
+          delete this.item;
+        },
+      });
+    }
+
+    return result;
+  }
+
+  getFixupArmorpropertiesMaxItems(): Array<FixupAction> {
+    const itemData = Items[this.item.type];
+    const result: Array<FixupAction> = [];
+
+    if (itemData) {
+      result.push({
+        label: 'Reset "armorproperties" to this initial value',
+        apply: () => {
+          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+        },
+      });
+    } else {
+      result.push({
+        label: 'Remove item',
+        apply: () => {
+          // @ts-ignore
+          delete this.item;
+        },
+      });
+    }
+
+    return result;
+  }
+
+  getFixupArmorpropertiesForbbiden(): Array<FixupAction> {
+    return [
+      {
+        label: 'Remove "armorproperties" attribute',
+        apply: () => {
+          delete this.item.armorproperties;
+        },
+      },
+    ];
+  }
+
+  getFixupArmorpropertiesIdRequired(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesIdType(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesIdEnum(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesRarityRequired(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesRarityType(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesUniqueItems(): Array<FixupAction> {
+    return this.getFixupArmorpropertiesMaxItems();
+  }
+
+  getFixupArmorpropertiesRarityEnum(): Array<FixupAction> {
+    return [
+      {
+        label: 'Set "rarity" to "Common"',
+        apply: () => {
+          this.item.armorproperties![this.index].rarity = 'Common';
+        },
+      },
+    ];
+  }
+}

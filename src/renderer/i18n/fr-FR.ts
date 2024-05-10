@@ -70,6 +70,12 @@ export default {
       Items: GlobalI18N.Items('fr-FR'),
     },
     DataCorruption: {
+      Page: {
+        title: 'Rapport d\'erreur de données corrompues',
+        errorCount: 'Erreur {0}/{1}',
+        prevButtonLabel: 'Erreur précédente',
+        nextButtonLabel: 'Erreur suivante',
+      },
       oneOf: 'Une propriété obligatoire est manquante parmis celles-ci : "equimentSlot", "inventoryIndex", "power", "rarity", "type" ou "upgraded"',
       equipmentSlot: {
         type: 'La propriété "equipmentSlot" doit être du type string',

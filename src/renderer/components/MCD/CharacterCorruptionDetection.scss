@@ -14,10 +14,10 @@
     margin: 16px 0;
   }
 
-  .ModalBackDrop .Modal {
-    max-width: 450px;
+  .m-modal__backdrop .m-modal {
+    max-width: 500px;
 
-    &Content {
+    &__body {
       padding-bottom: 0;
 
       p {

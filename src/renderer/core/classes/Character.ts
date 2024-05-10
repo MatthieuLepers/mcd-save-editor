@@ -36,9 +36,9 @@ export default class Character {
     public filePath: string,
   ) {
     this.corrupted = CharacterUtils.getDataCorrupted(this.data);
-    this.currencies = new Currencies(!this.corrupted.length ? this.data.currency : []);
-    this.inventory = new Inventory(!this.corrupted.length ? this.data.items : []);
-    this.storageChest = new StorageChest(!this.corrupted.length ? this.data.storageChestItems : []);
+    this.currencies = new Currencies(this.data.currency);
+    this.inventory = new Inventory(this.data.items);
+    this.storageChest = new StorageChest(this.data.storageChestItems);
   }
 
   get id(): string {
@@ -78,9 +78,11 @@ export default class Character {
   async reload() {
     this.data = await EncryptionService.decrypt(this.filePath, true);
     this.corrupted = CharacterUtils.getDataCorrupted(this.data);
-    this.currencies = new Currencies(!this.corrupted.length ? this.data.currency : []);
-    this.inventory = new Inventory(!this.corrupted.length ? this.data.items : []);
-    this.storageChest = new StorageChest(!this.corrupted.length ? this.data.storageChestItems : []);
+    globalStore.setters.setCharacter(this);
+  }
+
+  softReload() {
+    this.corrupted = CharacterUtils.getDataCorrupted(this.data);
     globalStore.setters.setCharacter(this);
   }
 

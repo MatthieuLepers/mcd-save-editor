@@ -87,7 +87,7 @@
       }
     },
     "netheriteEnchant": {
-      "$ref": "#/$defs/enchantment"
+      "$ref": "#/$defs/gildedEnchantment"
     },
     "enchantments": {
       "type": "array",
@@ -98,22 +98,15 @@
       }
     }
   },
+  "required": ["power", "rarity", "type", "upgraded"],
   "oneOf": [
     {
-      "required": ["equipmentSlot", "power", "rarity", "type", "upgraded"],
-      "not": {
-        "anyOf": [
-          { "required": ["inventoryIndex"] }
-        ]
-      }
+      "required": ["equipmentSlot"],
+      "not": { "required": ["inventoryIndex"] }
     },
     {
-      "required": ["inventoryIndex", "power", "rarity", "type", "upgraded"],
-      "not": {
-        "anyOf": [
-          { "required": ["equipmentSlot"] }
-        ]
-      }
+      "required": ["inventoryIndex"],
+      "not": { "required": ["equipmentSlot"] }
     }
   ],
   "$defs": {
@@ -137,6 +130,40 @@
             "type": "rarity property must be of string type",
             "required": "Missing required property rarity",
             "enum": "Unrecognized armorproperty rarity"
+          }
+        }
+      }
+    },
+    "gildedEnchantment": {
+      "type": "object",
+      "required": ["id", "investedPoints", "level"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["Accelerating", "Acrobat", "AnimaConduitMelee", "BagOfSouls", "BonusShot", "Burning", "BurstBowstring", "BusyBee", "Celerity", "ChainReaction", "Chains", "Chilling", "Committed", "Cowardice", "CriticalHit", "Deflecting", "DynamoMelee", "DynamoRanged", "Echo", "Electrified", "EnigmaResonatorMelee", "EnigmaResonatorRanged", "Exploding", "Explorer", "FinalShout", "FireAspect", "FireTrail", "FoodReserves", "Freezing", "Frenzied", "FuseShot", "Gravity", "GravityMelee", "GravityPulse", "Growing", "HealthSynergy", "Infinity", "Leeching", "Looting", "MultiShot", "Piercing", "PoisonedMelee", "PoisonedRanged", "PotionFortification", "Power", "Prospector", "Protection", "Punch", "RadianceMelee", "RadianceRanged", "Rampaging", "RapidFire", "Recycler", "Ricochet", "Sharpness", "Shockwave", "Smiting", "Snowing", "SoulSiphon", "SpeedSynergy", "SpiritSpeed", "Stunning", "Supercharge", "SurpriseGift", "Swiftfooted", "Swirling", "TempoTheft", "Thorns", "Thundering", "TumbleBee", "Unchanting", "Unset", "Weakening", "WildRage", "BaneOfIllagers", "DeathBarter", "EmeraldDivination", "MultiDodge", "ResurrectionSurge", "RollCharge", "ArtifactCharge", "BeastBoss", "BeastBurst", "BeastSurge", "CooldownShot", "DamageSynergy", "FireFocus", "LightningFocus", "PainCycle", "PoisonFocus", "Reckless", "ShockWeb", "SoulFocus", "Flee", "GuardingStrike", "LuckOfTheSea", "MultiCharge", "PotionThirstMelee", "PotionThirstRanged", "Backstabber", "DippingPoison", "LevitationShot", "ShadowFeast", "ShadowFlash", "VoidTouchedMelee", "VoidTouchedRanged"],
+          "message": {
+            "type": "id property must be of string type",
+            "required": "Missing required property id",
+            "enum": "Unrecognized enchantment id"
+          }
+        },
+        "investedPoints": {
+          "type": "number",
+          "const": 0,
+          "message": {
+            "type": "investedPoints property must be of number type",
+            "required": "Missing required property investedPoints",
+            "enum": "investedPoints must be 0"
+          }
+        },
+        "level": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 3,
+          "message": {
+            "type": "level property must be of number type",
+            "minimum": "level cannot be lower than 1",
+            "maximum": "leve lcannot be higher then 3"
           }
         }
       }

@@ -30,17 +30,28 @@ export default abstract class AbstractValidator<T> {
   }
 
   protected validateBySchema(schema: Object, item: IItem) {
-    const ajv = new Ajv();
+    const ajv = new Ajv({ allErrors: true });
     const validate = ajv.compile(schema);
     const valid = validate(item);
     if (!valid) {
-      (validate.errors ?? []).forEach((error) => {
-        const value = get(item, validate.errors![0].dataPath.replace('.', ''));
-        const errorCategory = error.dataPath.replaceAll(/\[[0-9]+\]/g, '').substring(1);
-        error.message = i18n.global.t(`MCD.DataCorruption.${errorCategory}.${error.keyword}`, { value });
+      (validate.errors ?? [])
+        .filter((error) => !['oneOf', 'not'].includes(error.keyword))
+        .forEach((error) => {
+          const value = get(item, error.dataPath.replace('.', ''));
+          const errorCategory = error.dataPath.replaceAll(/\[[0-9]+\]/g, '').substring(1);
+          // @ts-ignore
+          const { missingProperty } = error.params;
+          if (missingProperty) {
+            error.message = i18n.global.t(`MCD.DataCorruption.${errorCategory}.${missingProperty}.${error.keyword}`);
+            error.dataPath += `.${missingProperty}`;
+          } else {
+            error.message = i18n.global.t(`MCD.DataCorruption.${errorCategory}.${error.keyword}`, { value });
+          }
+          error.dataPath = error.dataPath.substring(1);
 
-        this.addErrorReport({ item, error });
-      });
+          this.addErrorReport({ item, error });
+        })
+      ;
     }
   }
 
@@ -50,7 +61,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.armorproperties',
+            dataPath: 'armorproperties',
             keyword: 'required',
             message: i18n.global.t('MCD.DataCorruption.armorproperties.required', { itemType: Items[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/required',
@@ -61,7 +72,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.enchantments',
+            dataPath: 'enchantments',
             keyword: 'required',
             message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/enchantments/required',
@@ -72,7 +83,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.armorproperties',
+            dataPath: 'armorproperties',
             keyword: 'forbbiden',
             message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/forbbiden',
@@ -83,7 +94,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.enchantments',
+            dataPath: 'enchantments',
             keyword: 'required',
             message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/required',
@@ -95,7 +106,7 @@ export default abstract class AbstractValidator<T> {
           this.addErrorReport({
             item,
             error: {
-              dataPath: '.armorproperties',
+              dataPath: 'armorproperties',
               keyword: 'forbbiden',
               message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/armorproperties/forbbiden',
@@ -106,7 +117,7 @@ export default abstract class AbstractValidator<T> {
           this.addErrorReport({
             item,
             error: {
-              dataPath: '.enchantments',
+              dataPath: 'enchantments',
               keyword: 'forbbiden',
               message: i18n.global.t('MCD.DataCorruption.enchantments.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/enchantments/forbbiden',
@@ -117,7 +128,7 @@ export default abstract class AbstractValidator<T> {
           this.addErrorReport({
             item,
             error: {
-              dataPath: '.netheriteEnchant',
+              dataPath: 'netheriteEnchant',
               keyword: 'forbbiden',
               message: i18n.global.t('MCD.DataCorruption.netheriteEnchant.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/netheriteEnchant/forbbiden',
@@ -138,7 +149,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.enchantments',
+            dataPath: 'enchantments',
             keyword: 'noLeveledUnset',
             message: i18n.global.t('MCD.DataCorruption.enchantments.noLeveledUnset'),
             schemaPath: '#/$defs/item/properties/enchantments/noLeveledUnset',
@@ -151,7 +162,7 @@ export default abstract class AbstractValidator<T> {
           this.addErrorReport({
             item,
             error: {
-              dataPath: `.enchantments.chunks[${i}]`,
+              dataPath: `enchantments.chunks[${i}]`,
               keyword: 'levelConsistency',
               message: i18n.global.t('MCD.DataCorruption.enchantments.chunks.levelConsistency', [i + 1]),
               schemaPath: '#/$defs/item/properties/enchantments/chunks/levelConsistency',
@@ -166,7 +177,7 @@ export default abstract class AbstractValidator<T> {
           this.addErrorReport({
             item,
             error: {
-              dataPath: `.enchantments.chunks[${i}]`,
+              dataPath: `enchantments.chunks[${i}]`,
               keyword: 'uniqueChunkEnchant',
               message: i18n.global.t('MCD.DataCorruption.enchantments.chunks.uniqueChunkEnchant', [i + 1, ...nonUniqueEnchantInChunk]),
               schemaPath: '#/$defs/item/properties/enchantments/chunks/uniqueChunkEnchant',
@@ -188,7 +199,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.netheriteEnchant.id',
+            dataPath: 'netheriteEnchant.id',
             keyword: 'unique',
             message: i18n.global.t('MCD.DataCorruption.netheriteEnchant.id.unique', [nonUniqueNetheriteEnchant]),
             schemaPath: '#/$defs/item/properties/netheriteEnchant/id/unique',
@@ -208,7 +219,7 @@ export default abstract class AbstractValidator<T> {
         this.addErrorReport({
           item,
           error: {
-            dataPath: '.armorproperties',
+            dataPath: 'armorproperties',
             keyword: 'uniqueItemsId',
             message: i18n.global.t('MCD.DataCorruption.armorproperties.uniqueItemsId', nonUniqueArmorProperties),
             schemaPath: '#/$defs/item/properties/armorproperties/uniqueItemsId',
