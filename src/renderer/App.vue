@@ -121,7 +121,7 @@ const { locale, t } = useI18n();
 const state = reactive({
   showTutorial: false,
   ready: false,
-  mcdVersion: '1.15.1.0',
+  mcdVersion: '1.17.0.0',
   loadingTabs: [],
   savingTabs: [],
   currentTab: null,

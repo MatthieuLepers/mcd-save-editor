@@ -39,6 +39,11 @@
 
     .CharacterAction {
       margin-left: 8px;
+      opacity: .8;
+
+      &.loading {
+        animation: rotate360 1s linear infinite;
+      }
     }
   }
 

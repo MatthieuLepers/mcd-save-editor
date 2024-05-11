@@ -1,9 +1,9 @@
 import type { ErrorObject } from 'ajv';
 
 import i18n from '@renderer/plugins/i18n';
-import Enchantment from '@renderer/core/classes/Enchantment';
+import Enchantment, { IEnchantment } from '@renderer/core/classes/Enchantment';
 import type { IItem } from '@renderer/core/classes/Item';
-import { Items } from '@renderer/core/data/Content';
+import { Enchants, Items } from '@renderer/core/data/Content';
 import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 
@@ -45,6 +45,16 @@ export default class Fixup {
       globalStore.state.selectedCharacter.data.items.splice(this.validationErrorReport.itemIndex, 1);
       globalStore.state.selectedCharacter.softReload();
     }
+  }
+
+  getInvestedPoints(enchant: IEnchantment): number {
+    const enchantData = Enchants[enchant.id];
+    let investedPointResult = 0;
+    if (enchantData) {
+      investedPointResult = enchant.level * 3 + (enchantData.tier === 'Powerful' ? 3 : 0);
+    }
+
+    return investedPointResult;
   }
 
   getFixup(): Array<FixupAction> {
@@ -221,15 +231,20 @@ export default class Fixup {
     ];
   }
 
-  getFixupEnchantmentsInvestedPointsConst(): Array<FixupAction> {
+  getFixupEnchantmentsInvestedPointsMinimum(): Array<FixupAction> {
+    const investedPointsResult = this.getInvestedPoints(this.item.enchantments![this.index]);
     return [
       {
-        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsInvestedPointsConst'),
+        label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsInvestedPointsMinimum', [investedPointsResult]),
         apply: () => {
-          this.item.enchantments![this.index].investedPoints = 0;
+          this.item.enchantments![this.index].investedPoints = investedPointsResult;
         },
       },
     ];
+  }
+
+  getFixupEnchantmentsInvestedPointsMaximum(): Array<FixupAction> {
+    return this.getFixupEnchantmentsInvestedPointsMinimum();
   }
 
   getFixupEnchantmentsLevelMinimum(): Array<FixupAction> {
@@ -238,6 +253,7 @@ export default class Fixup {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsLevelMinimum'),
         apply: () => {
           this.item.enchantments![this.index].level = 0;
+          this.item.enchantments![this.index].investedPoints = 0;
         },
       },
     ];
@@ -250,6 +266,7 @@ export default class Fixup {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsLevelMaximum'),
         apply: () => {
           this.item.enchantments![this.index].level = 3;
+          this.item.enchantments![this.index].investedPoints = this.getInvestedPoints(this.item.enchantments![this.index]);
         },
       },
     ];
@@ -261,8 +278,11 @@ export default class Fixup {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsChunksLevelConsistency'),
         apply: () => {
           this.item.enchantments![this.index * 3].level = 0;
+          this.item.enchantments![this.index * 3].investedPoints = 0;
           this.item.enchantments![this.index * 3 + 1].level = 0;
+          this.item.enchantments![this.index * 3 + 1].investedPoints = 0;
           this.item.enchantments![this.index * 3 + 2].level = 0;
+          this.item.enchantments![this.index * 3 + 2].investedPoints = 0;
         },
       },
     ];
@@ -332,12 +352,13 @@ export default class Fixup {
   }
 
   getFixupNetheriteEnchantInvestedPointsRequired(): Array<FixupAction> {
+    const investedPointResult = this.getInvestedPoints(this.item.netheriteEnchant!);
     return [
       ...this.getFixupNetheriteEnchantType(),
       {
-        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantInvestedPointsRequired'),
+        label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantInvestedPointsRequired', [investedPointResult]),
         apply: () => {
-          this.item.netheriteEnchant!.investedPoints = 0;
+          this.item.netheriteEnchant!.investedPoints = investedPointResult;
         },
       },
     ];
@@ -350,18 +371,21 @@ export default class Fixup {
         label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired1'),
         apply: () => {
           this.item.netheriteEnchant!.level = 1;
+          this.item.netheriteEnchant!.investedPoints = this.getInvestedPoints(this.item.netheriteEnchant!);
         },
       },
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired2'),
         apply: () => {
           this.item.netheriteEnchant!.level = 2;
+          this.item.netheriteEnchant!.investedPoints = this.getInvestedPoints(this.item.netheriteEnchant!);
         },
       },
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.netheriteEnchantLevelRequired3'),
         apply: () => {
           this.item.netheriteEnchant!.level = 3;
+          this.item.netheriteEnchant!.investedPoints = this.getInvestedPoints(this.item.netheriteEnchant!);
         },
       },
     ];

@@ -149,11 +149,13 @@
         },
         "investedPoints": {
           "type": "number",
-          "const": 0,
+          "minimum": 0,
+          "maximum": 12,
           "message": {
             "type": "investedPoints property must be of number type",
             "required": "Missing required property investedPoints",
-            "enum": "investedPoints must be 0"
+            "minimum": "investedPoints cannot be lower than 0",
+            "maximum": "investedPoints cannot be higher than 12"
           }
         },
         "level": {
@@ -183,11 +185,13 @@
         },
         "investedPoints": {
           "type": "number",
-          "const": 0,
+          "minimum": 0,
+          "maximum": 12,
           "message": {
             "type": "investedPoints property must be of number type",
             "required": "Missing required property investedPoints",
-            "enum": "investedPoints must be 0"
+            "minimum": "investedPoints cannot be lower than 0",
+            "maximum": "investedPoints cannot be higher than 12"
           }
         },
         "level": {
