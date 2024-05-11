@@ -1,31 +1,45 @@
 <template>
   <div class="MCDDeleteButton">
-    <MCDButton class="MCDButtonDelete" icon="delete" :title="$t('MCD.DeleteButton.label')" size="xs" @click="removeItem" />
+    <MCDButton
+      class="MCDButtonDelete"
+      icon="delete"
+      :title="t('MCD.DeleteButton.label')"
+      size="xs"
+      @click="actions.removeItem"
+    />
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import FilteredInventoryStore from '@/assets/js/stores/FilteredInventoryStore';
-import Item from '@/assets/js/classes/Item';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-import MCDButton from './Button';
+import MCDButton from '@renderer/components/MCD/Button.vue';
 
-export default {
-  name: 'MCDDeleteButton',
-  components: { MCDButton },
-  props: {
-    item: { type: Item, required: true },
-  },
-  methods: {
-    removeItem() {
-      GlobalStore.selectedCharacter.inventory.removeItem(this.item);
-      if (FilteredInventoryStore.inventory.length) {
-        [GlobalStore.selectedItem] = FilteredInventoryStore.inventory;
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { filteredInventoryStore } from '@renderer/core/stores/FilteredInventoryStore';
+import Item from '@renderer/core/classes/Item';
+
+defineOptions({ name: 'MCDDeleteButton' });
+
+const { t } = useI18n();
+
+const props = defineProps({
+  item: { type: Item, required: true },
+});
+
+const actions = {
+  removeItem() {
+    if (props.item.isStored()) {
+      globalStore.state.selectedCharacter.storageChest.removeItem(props.item);
+      globalStore.setters.setItem(globalStore.state.selectedCharacter.storageChest.items[0]);
+    } else {
+      globalStore.state.selectedCharacter.inventory.removeItem(props.item);
+      if (filteredInventoryStore.inventory.value.length) {
+        globalStore.setters.setItem(filteredInventoryStore.inventory.value[0]);
       } else {
-        [GlobalStore.selectedItem] = GlobalStore.selectedCharacter.inventory.gears;
+        globalStore.setters.setItem(globalStore.selectedCharacter.inventory.gears[0]);
       }
-    },
+    }
   },
 };
 </script>

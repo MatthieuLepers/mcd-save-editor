@@ -1,0 +1,30 @@
+@import '~styles/utilities.scss';
+
+.m-form-droparea {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+
+  &__button {
+    @include transition(border-color 200ms ease);
+    width: 100%;
+    height: 100%;
+    border: 2px dashed color(grey800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--hover {
+      opacity: 1 !important;
+    }
+
+    &:focus,
+    &:hover {
+      border: 2px dashed color(secondary300);
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}

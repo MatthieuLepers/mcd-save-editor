@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDEnchantmentEditor {
   position: absolute;
@@ -7,7 +7,7 @@
   width: 66.66666%;
   height: 100%;
   z-index: 5;
-  background: linear-gradient(90deg, rgba(color(0), .5) 0%, rgba(color(0), .5) 80%,  transparent 100%);
+  background: linear-gradient(90deg, rgba(color(grey999), .5) 0%, rgba(color(grey999), .5) 80%,  transparent 100%);
 
   &Container {
     width: 100%;
@@ -17,12 +17,12 @@
     left: 0;
     display: flex;
     flex-wrap: wrap;
-    background-image: url('../../../../static/img/UI/parchment.png');
+    background-image: url('/img/UI/parchment.png');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     padding: 70px 110px;
-    color: color(0);
+    color: color(grey999);
 
     h2 {
       width: 100%;
@@ -38,7 +38,7 @@
   }
 
   &Left {
-    @include font-size(14);
+    @include set-font-scale(s);
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,7 @@
     
     h3 {
       @include font-family('open-sans', 700);
+      margin-bottom: 8px;
     }
 
     ul {
@@ -54,6 +55,8 @@
       padding: 0;
 
       li {
+        margin: 4px 0;
+
         input[type="checkbox"] {
           display: none;
 
@@ -62,7 +65,11 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            color: rgba(color(0), .5);
+            color: rgba(color(grey999), .5);
+          }
+
+          &:checked+label {
+            padding: 1px 0 1px 5px;
           }
         }
 
@@ -85,12 +92,12 @@
           .tier::before {background-color: #428D4F;}
 
           input[type="checkbox"]+label {
-            color: color(0);
+            color: color(grey999);
           }
         }
 
         &.checked input[type="checkbox"]+label {
-          color: color(0);
+          color: color(grey999);
         }
       }
     }
@@ -100,7 +107,7 @@
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
-      color: color(f);
+      color: color(grey000);
       width: 24px;
       height: 24px;
       margin-right: 10px;
@@ -112,7 +119,7 @@
         width: 20px;
         height: 20px;
         background-color: #948270;
-        border: 2px solid color(f);
+        border: 2px solid color(grey000);
         transform: rotate(45deg);
         transform: rotate(45deg);
         display: block;
@@ -124,7 +131,7 @@
 
       span {
         @include font-family('open-sans', 700, true);
-        @include font-size(13);
+        @include set-font-scale(s);
         position: relative;
         z-index: 1;
         letter-spacing: 1px;
@@ -132,7 +139,7 @@
     }
 
     .icon-checked {
-      @include font-size(24);
+      @include set-font-scale(xl);
       margin-right: 10px;
     }
   }
@@ -169,14 +176,14 @@
     }
 
     span {
-      @include font-size(12);
+      @include set-font-scale(xs);
       text-align: center;
       display: block;
       margin-bottom: 4px;
     }
 
     p {
-      @include font-size(20);
+      @include set-font-scale(l);
       line-height: 28px;
       display: flex;
       justify-content: center;

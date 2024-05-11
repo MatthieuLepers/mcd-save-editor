@@ -1,0 +1,11 @@
+@import '~styles/utilities.scss';
+
+.m-form-file-selector {
+  &__input {
+    display: none;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+@import '~styles/utilities.scss';
+
+.m-contextmenu-item--separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: color(grey500);
+  margin: rem(4px) 0;
+}

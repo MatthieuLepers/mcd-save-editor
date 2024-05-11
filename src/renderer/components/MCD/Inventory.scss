@@ -1,8 +1,9 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDInventory {
   flex-direction: column;
   height: 100%;
+  filter: opacity(1);
 
   &Filters {
     display: flex;
@@ -15,7 +16,7 @@
     opacity: .5;
 
     i {
-      @include font-size(18);
+      @include set-font-scale(l);
     }
 
     span {
@@ -30,16 +31,34 @@
     &--Selected {
       opacity: 1;
 
-      span {display: block;}
+      span {
+        display: block;
+      }
     }
   }
 
   &Items {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0 0 calc((100% - 288px) / 2);
-    max-height: calc(100vh - 176px);
+    padding: 0 0 3px calc((100% - 288px) / 2);
+    max-height: calc(100vh - 200px);
     overflow-y: auto;
+    position: relative;
+
+    &--Over {
+      &::before {
+        content: '';
+        position: fixed;
+        top: 43px;
+        left: 20px;
+        width: calc(100% - 44px);
+        height: calc(100% - 49px);
+        border: 2px solid color(grey000);
+        border-radius: 3px;
+        background-color: rgba(color(grey000), .3);
+        z-index: 99;
+      }
+    }
   }
 
   .MCDItem {

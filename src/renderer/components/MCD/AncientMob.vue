@@ -1,39 +1,59 @@
 <template>
-  <label :for="`ancientMob${_uid}`" :class="GenerateModifiers('MCDAncientMob', { Selected: isSelected})">
-    <input type="checkbox" :id="`ancientMob${_uid}`" :checked="isSelected" :value="ancientMob.name" @click="handleSelectMob" />
-    <img class="MCDAncientMobImage" :src="ancientMob.image" :alt="ancientMob.name" :title="$t(`MCD.Game.AncientMobs.${ancientMob.name}`)" />
+  <label
+    :for="`ancientMob${$uid}`"
+    :class="GenerateModifiers('MCDAncientMob', { Selected: State.isSelected})"
+  >
+    <input
+      type="checkbox"
+      :id="`ancientMob${$uid}`"
+      :checked="State.isSelected"
+      :value="props.ancientMob.name"
+      @click="actions.handleSelectMob"
+    />
+    <img
+      class="MCDAncientMobImage"
+      :src="image(props.ancientMob.image)"
+      :alt="props.ancientMob.name"
+      :title="t(`MCD.Game.AncientMobs.${props.ancientMob.name}`)"
+    />
 
     <div class="MCDAncientMobInfos">
-      <h4>{{ $t(`MCD.Game.AncientMobs.${ancientMob.name}`) }}</h4>
-      <RuneList :list="ancientMob.runeList" />
+      <h4>{{ t(`MCD.Game.AncientMobs.${props.ancientMob.name}`) }}</h4>
+      <RuneList :list="props.ancientMob.runeList" />
     </div>
   </label>
 </template>
 
-<script>
-import AncientMob from '@/assets/js/classes/AncientMob';
-import AncientHuntsStore from '@/assets/js/stores/AncientHuntsStore';
-import RuneList from '@/components/MCD/RuneList';
+<script setup>
+import { computed, ref, getCurrentInstance } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'MCDAncientMob',
-  components: { RuneList },
-  props: {
-    ancientMob: { type: AncientMob, required: true },
-  },
-  computed: {
-    isSelected() {
-      return AncientHuntsStore.isMobPicked(this.ancientMob);
-    },
-  },
-  methods: {
-    handleSelectMob() {
-      if (!this.isSelected) {
-        AncientHuntsStore.addMob(this.ancientMob);
-      } else {
-        AncientHuntsStore.removeMob(this.ancientMob);
-      }
-    },
+import RuneList from '@renderer/components/MCD/RuneList.vue';
+import { image } from '@renderer/core/utils';
+
+import AncientMob from '@renderer/core/classes/AncientMob';
+import { ancientHuntsStore } from '@renderer/core/stores/AncientHuntsStore';
+
+defineOptions({ name: 'MCDAncientMob' });
+
+const $uid = ref(getCurrentInstance().uid);
+const { t } = useI18n();
+
+const props = defineProps({
+  ancientMob: { type: AncientMob, required: true },
+});
+
+const State = computed(() => ({
+  isSelected: ancientHuntsStore.actions.isMobPicked(props.ancientMob),
+}));
+
+const actions = {
+  handleSelectMob() {
+    if (!State.value.isSelected) {
+      ancientHuntsStore.actions.addMob(props.ancientMob);
+    } else {
+      ancientHuntsStore.actions.removeMob(props.ancientMob);
+    }
   },
 };
 </script>

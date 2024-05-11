@@ -1,0 +1,119 @@
+@import '~styles/utilities.scss';
+
+.m-form-toggle {
+  position: relative;
+
+  &--default {
+    &.m-form-toggle--left {
+      &.m-form-toggle {
+        @include make-accessibility-shadow {
+          width: 40px;
+          height: 24px;
+        };
+      }
+
+      input {
+        left: 8px;
+      }
+
+      .m-form-toggle__label {
+        padding-left: rem(48px);
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          left: 4px;
+        }
+      }
+    }
+
+    &.m-form-toggle--right {
+      &.m-form-toggle {
+        @include make-accessibility-shadow {
+          width: 40px;
+          height: 24px;
+          right: 0;
+          left: auto;
+        };
+      }
+
+      input {
+        right: 8px;
+      }
+
+      .m-form-toggle__label {
+        padding-right: rem(48px);
+
+        &::before {
+          right: 0;
+        }
+
+        &::after {
+          right: 28px;
+        }
+      }
+    }
+
+    &.m-form-toggle--disabled {
+      .m-form-toggle__label {
+        &::before {
+          background-color: color(grey500);
+        }
+      }
+    }
+
+    input {
+      position: absolute;
+      z-index: 0;
+      top: 2px;
+
+      &:checked+.m-form-toggle__label {
+        &::before {
+          background-color: color(secondary200);
+        }
+
+        &::after {
+          transform: translateX(16px);
+        }
+      }
+    }
+
+    .m-form-toggle__label {
+      @include set-font-scale('xs');
+      color: color(grey000);
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      min-height: 24px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        cursor: pointer;
+      }
+
+      &::before {
+        @include transition(background-color .2s ease);
+        width: 40px;
+        height: 24px;
+        border-radius: 16px;
+        background-color: color(grey800);
+        top: 0;
+      }
+
+      &::after {
+        @include transition(transform .2s ease);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: color(grey000);
+        top: 4px;
+      }
+    }
+  }
+}

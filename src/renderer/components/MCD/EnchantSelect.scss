@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDEnchantSelect {
   position: relative;
@@ -19,15 +19,15 @@
       }
 
       &::before {
-        border-left: 3px solid color(primary);
-        border-right: 3px solid color(primary);
+        border-left: 3px solid color(grey900);
+        border-right: 3px solid color(grey900);
         top: 0;
         left: -3px;
       }
   
       &::after {
-        border-top: 3px solid color(primary);
-        border-bottom: 3px solid color(primary);
+        border-top: 3px solid color(grey900);
+        border-bottom: 3px solid color(grey900);
         top: -3px;
         left: 0;
       }
@@ -36,7 +36,7 @@
 
   &Outer {
     @include font-family('open-sans', 900);
-    @include font-size(18);
+    @include set-font-scale(l);
     text-transform: uppercase;
     word-break: break-word;
     position: relative;
@@ -48,7 +48,7 @@
     top: calc(100% + 9px);
     left: 0;
     z-index: 9;
-    background: color(f);
+    background: color(grey000);
     min-width: 300px;
 
     &::after,
@@ -61,15 +61,15 @@
     }
 
     &::before {
-      border-left: 3px solid color(primary);
-      border-right: 3px solid color(primary);
+      border-left: 3px solid color(grey900);
+      border-right: 3px solid color(grey900);
       top: 0;
       left: -3px;
     }
 
     &::after {
-      border-top: 3px solid color(primary);
-      border-bottom: 3px solid color(primary);
+      border-top: 3px solid color(grey900);
+      border-bottom: 3px solid color(grey900);
       top: -3px;
       left: 0;
     }
@@ -94,7 +94,7 @@
 
     &:hover,
     &--Selected {
-      background-color: rgba(color(primary), .1);
+      background-color: rgba(color(grey900), .1);
     }
 
     &:first-of-type {margin-top: 0;}
@@ -107,7 +107,7 @@
     }
 
     &Name {
-      @include font-size(14);
+      @include set-font-scale(s);
       display: flex;
       flex-direction: column;
       width: calc(100% - 40px);
@@ -116,7 +116,7 @@
       strong {white-space: nowrap;}
 
       span {
-        @include font-size(12);
+        @include set-font-scale(xs);
         opacity: .5;
       }
     }
@@ -128,21 +128,21 @@
 
     input {
       @include font-family('open-sans');
-      @include font-size(14);
+      @include set-font-scale(s);
       width: calc(100% - 20px);
       margin: 0 10px;
-      background-color: color(f);
+      background-color: color(grey000);
       padding: 3px 20px 3px 5px;
-      color: color(primary);
-      border: 1px solid lighten(color(primary), 8.76)
+      color: color(grey900);
+      border: 1px solid lighten(color(grey900), 8.76)
     }
 
     i {
-      @include font-size(12);
+      @include set-font-scale(xs);
       position: absolute;
       top: calc(50% - 2px);
       right: 20px;
-      color: color(primary);
+      color: color(grey900);
       pointer-events: none;
     }
   }

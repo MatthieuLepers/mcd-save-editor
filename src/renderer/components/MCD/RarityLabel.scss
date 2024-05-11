@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDRarityLabel {
   @include font-family('opensans', 700);
@@ -8,8 +8,8 @@
   height: 24px;
   padding: 0 10px;
   text-transform: uppercase;
-  box-shadow: 3px 2px 0 rgba(color(0), .5);
-  color: color(0);
+  box-shadow: 3px 2px 0 rgba(color(grey999), .5);
+  color: color(grey999);
   user-select: none;
   -webkit-user-select: none;
 

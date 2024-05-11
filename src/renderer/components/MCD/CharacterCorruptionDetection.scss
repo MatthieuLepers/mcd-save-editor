@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDCharacterCorruptionDetection {
   overflow: auto;
@@ -7,17 +7,17 @@
   padding: 0 8px;
 
   h1 {
-    @include font-size(18);
+    @include set-font-scale(l);
     @include font-family('open-sans', 700);
     text-transform: uppercase;
-    text-shadow: 3px 2px 0 rgba(color(0), .5);
+    text-shadow: 3px 2px 0 rgba(color(grey999), .5);
     margin: 16px 0;
   }
 
-  .ModalBackDrop .Modal {
-    max-width: 450px;
+  .m-modal__backdrop .m-modal {
+    max-width: 500px;
 
-    &Content {
+    &__body {
       padding-bottom: 0;
 
       p {

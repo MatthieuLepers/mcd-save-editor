@@ -1,0 +1,63 @@
+@import '~styles/utilities.scss';
+
+.m-contextmenu-item {
+  @include set-font-scale('xs');
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: rem(4px) rem(24px);
+  width: 100%;
+
+  &:not(&--separator) {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: color(grey700);
+    }
+  }
+
+  &--separator {
+    background-color: rgba(color(grey000), .1);
+    width: calc(100% - 24px);
+    height: 1px;
+    padding: 0;
+    margin: rem(4px) rem(12px);
+  }
+
+  &--arrowRight {
+    &::after,
+    &::before {
+      content: '';
+      width: 8px;
+      height: 2px;
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 15px;
+      background-color: invert(color(grey900));
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      transform-origin: calc(100% - 1px) 50%;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      transform-origin: calc(100% - 1px) 50%;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(12px);
+  }
+}

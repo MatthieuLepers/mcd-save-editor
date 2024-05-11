@@ -1,10 +1,12 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDImportButton {
   display: inline-block;
 }
 
 #ImportConfirmModal {
+  max-width: 45%;
+
   .ImportedItemDetails {
     display: flex;
     justify-content: center;
@@ -19,7 +21,7 @@
     height: fit-content;
   }
 
-  .ModalContent p {
+  .m-modal__body p {
     margin: 0 0 0 16px;
     max-width: 307px;
 

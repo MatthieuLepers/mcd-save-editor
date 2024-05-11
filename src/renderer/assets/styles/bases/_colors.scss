@@ -1,0 +1,23 @@
+$colors: (
+  grey000      : #fff,
+  grey100      : #ebebeb,
+  grey200      : #c4c4c4,
+  grey500      : #8c868a,
+  grey600      : #6d6d6d,
+  grey700      : #464646,
+  grey800      : #2b2b2b,
+  grey900      : #111,
+  grey999      : #000,
+  secondary100 : #094771,
+  success300   : #22d397,
+  warning100   : #f0f042,
+  warning300   : #d6914e,
+  danger300    : #f63232,
+  rare300      : #1EC27F,
+  unique100    : #F4AA15,
+  unique300    : #FA7B00,
+);
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}

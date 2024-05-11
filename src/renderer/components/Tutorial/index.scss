@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .Tutorial {
   position: fixed;
@@ -9,62 +9,62 @@
   height: calc(100% - 30px);
   pointer-events: none;
 
-  .ModalBackDrop {
+  .m-modal__backdrop {
     background: none;
     pointer-events: none;
   }
 
-  .Modal {
+  .m-modal {
     pointer-events: all;
 
-    &Content p {
-      @include font-size(14);
+    &__body p {
+      @include set-font-scale(s);
     }
   }
 
-  .TutorialDragAndDropModal .Modal,
-  .TutorialEquipUnequipModal .Modal {
+  .TutorialDragAndDropModal .m-modal,
+  .TutorialEquipUnequipModal .m-modal {
     position: absolute;
     right: 25px;
   }
 
-  .TutorialEditItemTypeModal .Modal {
+  .TutorialEditItemTypeModal .m-modal {
     position: absolute;
     left: 25px;
   }
 
-  .TutorialEditEnchantmentModal .Modal,
-  .TutorialEditEnchantment2Modal .Modal {
+  .TutorialEditEnchantmentModal .m-modal,
+  .TutorialEditEnchantment2Modal .m-modal {
     position: absolute;
     right: 25px;
     top: 10px;
 
-    .ModalTitle {
-      @include font-size(20);
+    .m-modal__header {
+      @include set-font-scale(l);
     }
   }
 
-  .TutorialAddNetheriteEnchantmentModal .Modal,
-  .TutorialRemoveNetheriteEnchantmentModal .Modal {
+  .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .TutorialRemoveNetheriteEnchantmentModal .m-modal {
     position: absolute;
     right: 25px;
-    
-    .ModalTitle {
-      @include font-size(20);
+
+    .m-modal__header {
+      @include set-font-scale(l);
     }
   }
 
-  .TutorialAddNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .Modal,
-  .TutorialRemoveNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .Modal {
+  .TutorialAddNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .m-modal,
+  .TutorialRemoveNetheriteEnchantmentModal.ClickNetheriteEnchantmentSlot .m-modal {
     position: absolute;
     right: auto;
     left: 25px;
   }
 
-  .Finished .TutorialAddNetheriteEnchantmentModal .Modal,
-  .ClickNetheriteEnchantmentSlot .TutorialAddNetheriteEnchantmentModal .Modal,
-  .Finished .TutorialRemoveNetheriteEnchantmentModal .Modal,
-  .ClickNetheriteEnchantmentSlot .TutorialRemoveNetheriteEnchantmentModal .Modal {
+  .Finished .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .ClickNetheriteEnchantmentSlot .TutorialAddNetheriteEnchantmentModal .m-modal,
+  .Finished .TutorialRemoveNetheriteEnchantmentModal .m-modal,
+  .ClickNetheriteEnchantmentSlot .TutorialRemoveNetheriteEnchantmentModal .m-modal {
     position: relative;
     top: auto;
     left: auto;
@@ -72,12 +72,12 @@
     bottom: auto;
   }
 
-  .TutorialTutorialDisabledModal .ModalTitle {
-    @include font-size(20);
+  .TutorialTutorialDisabledModal .m-modal__header {
+    @include set-font-scale(l);
   }
 
   &StepObjectives {
-    @include font-size(12);
+    @include set-font-scale(xs);
     margin: 16px 0 0;
     padding: 0;
     list-style: none;
@@ -89,10 +89,10 @@
     &Bubble {
       position: relative;
       padding: 5px;
-      border: 1px solid color(f);
+      border: 1px solid color(grey000);
       border-radius: 6px;
       margin: 10px 0;
-      background-color: rgba(color(f), .2);
+      background-color: rgba(color(grey000), .2);
 
       &::before {
         content: '';
@@ -103,17 +103,17 @@
         height: 0;
         border-style: solid;
         border-width: 0 6px 6px 6px;
-        border-color: transparent transparent color(f) transparent;
+        border-color: transparent transparent color(grey000) transparent;
       }
     }
 
     .icon-check {
-      color: color(success);
+      color: color(success300);
       margin: 0 4px 0 3px;
     }
 
     .icon-close {
-      color: color(danger);
+      color: color(danger300);
       margin: 0 4px 0 3px;
     }
 
@@ -128,7 +128,7 @@
         content: '';
         width: 10px;
         height: 10px;
-        border: 2px solid color(f);
+        border: 2px solid color(grey000);
         border-radius: 50%;
         position: absolute;
         top: calc(50% - 4px);

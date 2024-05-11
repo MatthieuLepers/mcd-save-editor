@@ -1,0 +1,70 @@
+@import '~styles/utilities.scss';
+
+.m-object-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid color(grey800);
+  border-radius: rem(8px);
+  overflow: hidden;
+
+  &__title {
+    @include set-font-scale('s');
+    background-color: color(grey800);
+    padding: rem(8px) rem(42px) rem(8px) rem(8px);
+    border-radius: 0 0 rem(8px) rem(8px);
+    position: relative;
+    height: 42px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    padding: rem(4px);
+    margin: 0;
+    list-style: none;
+    background-color: color(grey900);
+    display: flex;
+    flex-direction: column;
+    gap: rem(4px);
+
+    &-item {
+      padding: rem(4px);
+      position: relative;
+
+      &--removable {
+        padding-right: rem(42px);
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid color(grey800);
+      }
+    }
+  }
+
+  &__button {
+    color: color(grey000);
+    width: 32px;
+    height: 32px;
+
+    &--add {
+      @include make-accessibility-shadow {
+        border-radius: rem(8px);
+      };
+      position: absolute;
+      top: calc(50% - 16px);
+      right: 4px;
+      background-color: color(secondary200);
+      border-radius: rem(8px);
+    }
+
+    &--remove {
+      @include make-accessibility-shadow;
+      position: absolute;
+      bottom: rem(4px);
+      right: rem(4px);
+      background-color: color(danger300);
+      border-radius: 50%;
+    }
+  }
+}

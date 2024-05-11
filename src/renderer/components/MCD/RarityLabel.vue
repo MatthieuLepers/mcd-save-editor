@@ -1,33 +1,34 @@
 <template>
   <div
-    :class="`MCDRarityLabel ${item.$data.rarity.toLowerCase()} ${!item.isUnique() ? 'pointer' : ''}`"
-    :title="`${!item.isUnique() ? $t('MCD.RarityLabel.clickToToggle') : ''}`"
-    @click="handleChangeRarity"
+    :class="`MCDRarityLabel ${props.item.data.rarity.toLowerCase()} ${!props.item.isUnique() ? 'pointer' : ''}`"
+    :title="`${!props.item.isUnique() ? t('MCD.RarityLabel.clickToToggle') : ''}`"
+    @click="actions.handleChangeRarity"
   >
-    {{ $t(`MCD.RarityLabel.${item.$data.rarity.toLowerCase()}`) }}
+    {{ t(`MCD.RarityLabel.${props.item.data.rarity.toLowerCase()}`) }}
   </div>
 </template>
 
-<script>
-import Item from '@/assets/js/classes/Item';
-import RarityEnum from '@/assets/js/classes/enums/RarityEnum';
-import TutorialStore from '@/assets/js/tutorial/Store';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'MCDRarityLabel',
-  props: {
-    item: { type: Item, required: true },
-  },
-  data() {
-    return { RarityEnum };
-  },
-  methods: {
-    handleChangeRarity() {
-      if (!this.item.isUnique()) {
-        this.item.$data.rarity = this.item.isCommon() ? RarityEnum.RARE : RarityEnum.COMMON;
-        TutorialStore.setFullfilled('ChangeRarity', true);
-      }
-    },
+import Item from '@renderer/core/classes/Item';
+import { RarityEnum } from '@renderer/core/classes/enums/RarityEnum';
+import { tutorialStore } from '@renderer/core/tutorial/Store';
+
+defineOptions({ name: 'MCDRarityLabel' });
+
+const { t } = useI18n();
+
+const props = defineProps({
+  item: { type: Item, required: true },
+});
+
+const actions = {
+  handleChangeRarity() {
+    if (!props.item.isUnique()) {
+      props.item.data.rarity = props.item.isCommon() ? RarityEnum.RARE : RarityEnum.COMMON;
+      tutorialStore.actions.setFullfilled('ChangeRarity', true);
+    }
   },
 };
 </script>

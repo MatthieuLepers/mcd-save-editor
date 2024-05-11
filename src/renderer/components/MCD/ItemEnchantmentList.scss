@@ -1,9 +1,9 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDItemEnchantmentList {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0;
+  padding: 10px 0 20px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -11,7 +11,7 @@
 
   &Title {
     @include font-family('open-sans', 700);
-    @include font-size(18);
+    @include set-font-scale(l);
     text-align: center;
     width: 100%;
   }

@@ -1,111 +1,111 @@
 <template>
   <div
     :key="item.$key"
-    :class="GenerateModifiers('MCDItem', { Selected: item === GlobalStore.selectedItem, DragHolded: isHolded, Gilded: item.isGilded(), [item.$data.rarity]: true })"
-    @mousedown="selectItem"
-    @dragover.stop="handleDragOver"
-    @drop.stop="handleDrop"
+    :class="GenerateModifiers('MCDItem', { Selected: props.item === globalStore.state.selectedItem, DragHolded: state.isHolded, Gilded: props.item.isGilded(), [props.item.data.rarity]: true })"
+    @mousedown="actions.selectItem"
+    @dragover.stop="actions.handleDragOver"
+    @drop.stop="actions.handleDrop"
   >
     <div class="MCDItemLevel">
-      <i :class="`icon-${item.itemType.toLowerCase()}`"></i>
-      {{ item.powerLevel }}
+      <i :class="`icon-${props.item.itemType.toLowerCase()}`"></i>
+      {{ props.item.powerLevel }}
     </div>
-    <i class="MCDItemSoulGathering icon-soulgathering" v-if="item.itemData.soulgathering"></i>
-    <div class="MCDItemEnchanted" v-if="item.isEnchanted()">
-      <i class="icon-enchanted"></i> {{ item.enchantmentPointsInvested }}
+    <i class="MCDItemSoulGathering icon-soulgathering" v-if="props.item.itemData.soulgathering"></i>
+    <div class="MCDItemEnchanted" v-if="props.item.isEnchanted()">
+      <i class="icon-enchanted"></i> {{ props.item.enchantmentPointsInvested }}
     </div>
     <MCDItemTile
-      :rarity="item.$data.rarity"
-      :item="item.itemData.image || null"
-      :isNew="item.$data.markedNew"
-      :isEvent="!!item.itemData.event && !showRuneList"
-      @dragstart.stop="handleDragStart"
-      @dragend.stop="handleDragEnd"
+      :rarity="props.item.data.rarity"
+      :item="props.item.itemData.image || null"
+      :isNew="props.item.data.markedNew"
+      :isEvent="!!props.item.itemData.events && !props.showRuneList"
+      @dragstart.stop="actions.handleDragStart"
+      @dragend.stop="actions.handleDragEnd"
     />
-    <MCDRuneList :list="item.runeList" v-if="showRuneList" />
+    <MCDRuneList :list="props.item.runeList" v-if="props.showRuneList" />
   </div>
 </template>
 
-<script>
-import Item from '@/assets/js/classes/Item';
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import DragDropStore from '@/assets/js/stores/DragDropStore';
-import TutorialStore from '@/assets/js/tutorial/Store';
+<script setup>
+import { reactive } from 'vue';
 
-import MCDItemTile from './ItemTile';
-import MCDRuneList from './RuneList';
+import MCDItemTile from '@renderer/components/MCD/ItemTile.vue';
+import MCDRuneList from '@renderer/components/MCD/RuneList.vue';
 
-export default {
-  name: 'MCDItem',
-  components: { MCDItemTile, MCDRuneList },
-  props: {
-    item: { type: Item, required: true },
-    showRuneList: { type: Boolean, default: false },
-    noDragEvent: { type: Boolean, default: false },
-  },
-  data() {
-    return {
-      GlobalStore,
-      isHolded: false,
-    };
-  },
-  methods: {
-    selectItem(e) {
-      if (this.showRuneList) {
-        return;
+import Item from '@renderer/core/classes/Item';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { dragDropStore } from '@renderer/core/stores/DragDropStore';
+import { tutorialStore } from '@renderer/core/tutorial/Store';
+
+defineOptions({ name: 'MCDItem' });
+
+const props = defineProps({
+  item: { type: Item, required: true },
+  showRuneList: { type: Boolean, default: false },
+  noDragEvent: { type: Boolean, default: false },
+  disableEquipControl: { type: Boolean, default: false },
+});
+
+const state = reactive({
+  isHolded: false,
+});
+
+const actions = {
+  selectItem(e) {
+    if (props.showRuneList) {
+      return;
+    }
+    globalStore.setters.setItem(props.item);
+    if (props.item.data.markedNew) {
+      delete props.item.data.markedNew;
+    }
+    tutorialStore.actions.setFullfilled('SelectItem', true);
+
+    if (!props.disableEquipControl && (e.which === 2 || e.button === 4)) {
+      e.preventDefault();
+      if (props.item.isEquipped()) {
+        tutorialStore.actions.setFullfilled('UnequipItem', true);
+      } else {
+        tutorialStore.actions.setFullfilled('EquipItem', true);
       }
-      GlobalStore.selectedItem = this.item;
-      if (this.item.$data.markedNew) {
-        delete this.item.$data.markedNew;
-      }
-      TutorialStore.setFullfilled('SelectItem', true);
+      props.item[props.item.isEquipped() ? 'unequip' : 'equip']();
+    }
+  },
+  handleDragStart() {
+    if (!props.noDragEvent) {
+      state.isHolded = true;
+      dragDropStore.actions.setDragFrom(props.item);
+    }
+  },
+  handleDragEnd() {
+    if (!props.noDragEvent) {
+      state.isHolded = false;
+      tutorialStore.actions.setFullfilled('DragNDrop', false);
+    }
+  },
+  handleDragOver(e) {
+    if (!props.noDragEvent) {
+      dragDropStore.actions.setDragTo(props.item);
 
-      if (e.which === 2 || e.button === 4) {
+      const itemsAreDifferent = dragDropStore.state.from !== dragDropStore.state.to;
+      const oneItemIsEquipped = dragDropStore.state.from.isEquipped() || dragDropStore.state.to.isEquipped();
+      const itemsAreSameType = dragDropStore.state.from.itemData.type === dragDropStore.state.to.itemData.type;
+
+      if (itemsAreDifferent && ((oneItemIsEquipped && itemsAreSameType) || !oneItemIsEquipped)) {
         e.preventDefault();
-        if (this.item.isEquipped()) {
-          TutorialStore.setFullfilled('UnequipItem', true);
-        } else {
-          TutorialStore.setFullfilled('EquipItem', true);
-        }
-        this.item[this.item.isEquipped() ? 'unequip' : 'equip']();
+        tutorialStore.actions.setFullfilled('DragNDrop', true, 'ValidDrop');
+      } else {
+        tutorialStore.actions.setFullfilled('DragNDrop', false, 'InvalidDrop');
       }
-    },
-    handleDragStart() {
-      if (!this.noDragEvent) {
-        this.isHolded = true;
-        DragDropStore.setDragFrom(this.item);
-      }
-    },
-    handleDragEnd() {
-      if (!this.noDragEvent) {
-        this.isHolded = false;
-        TutorialStore.setFullfilled('DragNDrop', false);
-      }
-    },
-    handleDragOver(e) {
-      if (!this.noDragEvent) {
-        DragDropStore.setDragTo(this.item);
-
-        const itemsAreDifferent = DragDropStore.from !== DragDropStore.to;
-        const oneItemIsEquipped = DragDropStore.from.isEquipped() || DragDropStore.to.isEquipped();
-        const itemsAreSameType = DragDropStore.from.itemData.type === DragDropStore.to.itemData.type;
-
-        if (itemsAreDifferent && ((oneItemIsEquipped && itemsAreSameType) || !oneItemIsEquipped)) {
-          e.preventDefault();
-          TutorialStore.setFullfilled('DragNDrop', true, 'ValidDrop');
-        } else {
-          TutorialStore.setFullfilled('DragNDrop', false, 'InvalidDrop');
-        }
-      }
-    },
-    handleDrop() {
-      if (!this.noDragEvent) {
-        DragDropStore.handleDrop(GlobalStore.selectedCharacter);
-        GlobalStore.selectedItem = DragDropStore.from;
-        GlobalStore.key += 1;
-        TutorialStore.setFullfilled('DragNDrop', true);
-      }
-    },
+    }
+  },
+  handleDrop() {
+    if (!props.noDragEvent) {
+      dragDropStore.actions.handleDrop(globalStore.state.selectedCharacter);
+      globalStore.setters.setItem(dragDropStore.state.from);
+      globalStore.state.key += 1;
+      tutorialStore.actions.setFullfilled('DragNDrop', true);
+    }
   },
 };
 </script>

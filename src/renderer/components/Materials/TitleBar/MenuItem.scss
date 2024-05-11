@@ -1,0 +1,19 @@
+@import '~styles/utilities.scss';
+
+.m-title-bar__menu-item {
+  height: 100%;
+  position: relative;
+
+  &__button {
+    @include set-font-scale('s');
+    cursor: pointer;
+    padding: 0 rem(12px);
+    height: 100%;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: rgba(color(grey000), .1);
+    }
+  }
+}

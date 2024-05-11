@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .AppNavigation {
   display: flex;
@@ -6,8 +6,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: lighten(color(primary), 11.76);
-  color: invert(color(primary));
+  background-color: color(grey800);
+  color: color(grey000);
   position: relative;
 
   &Item {
@@ -26,7 +26,7 @@
       display: block;
       width: 2px;
       height: 100%;
-      background-color: color(f);
+      background-color: color(grey000);
     }
 
     a {

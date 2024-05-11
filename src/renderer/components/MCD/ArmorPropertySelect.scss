@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .modal .MCDArmorPropertySelect.focus .MCDArmorPropertySelectOuter {
   z-index: 11;
@@ -23,15 +23,15 @@
       }
 
       &::before {
-        border-left: 3px solid color(f);
-        border-right: 3px solid color(f);
+        border-left: 3px solid color(grey000);
+        border-right: 3px solid color(grey000);
         top: 0;
         left: -3px;
       }
   
       &::after {
-        border-top: 3px solid color(f);
-        border-bottom: 3px solid color(f);
+        border-top: 3px solid color(grey000);
+        border-bottom: 3px solid color(grey000);
         top: -3px;
         left: 0;
       }
@@ -39,7 +39,7 @@
   }
 
   &Outer {
-    @include font-size(12);
+    @include set-font-scale(xs);
     word-break: break-word;
     position: relative;
     z-index: 8;
@@ -50,7 +50,7 @@
     top: calc(100% + 9px);
     left: 0;
     z-index: 9;
-    background: color(primary);
+    background: color(grey900);
     width: 284px;
 
     &::after,
@@ -63,15 +63,15 @@
     }
 
     &::before {
-      border-left: 3px solid color(f);
-      border-right: 3px solid color(f);
+      border-left: 3px solid color(grey000);
+      border-right: 3px solid color(grey000);
       top: 0;
       left: -3px;
     }
 
     &::after {
-      border-top: 3px solid color(f);
-      border-bottom: 3px solid color(f);
+      border-top: 3px solid color(grey000);
+      border-bottom: 3px solid color(grey000);
       top: -3px;
       left: 0;
     }
@@ -95,7 +95,7 @@
 
     &:hover,
     &--Selected {
-      background-color: lighten(color(primary), 11.76);
+      background-color: lighten(color(grey900), 11.76);
     }
 
     &:first-of-type {margin-top: 0;}
@@ -108,7 +108,7 @@
     }
 
     &Name {
-      @include font-size(12);
+      @include set-font-scale(xs);
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -117,7 +117,7 @@
       strong {font-weight: 400;}
 
       span {
-        @include font-size(12);
+        @include set-font-scale(xs);
         opacity: .5;
       }
     }
@@ -128,22 +128,22 @@
     margin: 10px 0 5px;
 
     input {
-      @include font-size(14);
+      @include set-font-scale(s);
       @include font-family('open-sans');
       width: calc(100% - 20px);
       margin: 0 10px;
-      background-color: lighten(color(primary), 11.76);
+      background-color: lighten(color(grey900), 11.76);
       padding: 3px 20px 3px 5px;
-      color: color(f);
-      border: 1px solid lighten(color(primary), 8.76)
+      color: color(grey000);
+      border: 1px solid lighten(color(grey900), 8.76)
     }
 
     i {
-      @include font-size(12);
+      @include set-font-scale(xs);
       position: absolute;
       top: calc(50% - 7px);
       right: 20px;
-      color: color(f);
+      color: color(grey000);
       pointer-events: none;
     }
   }

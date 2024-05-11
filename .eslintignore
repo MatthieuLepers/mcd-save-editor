@@ -1,0 +1,7 @@
+node_modules
+dist
+out
+.gitignore
+.eslintrc.js
+eletron.vite.config.ts
+**/*.d.ts

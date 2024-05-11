@@ -1,52 +1,63 @@
 <template>
   <section>
-    <MCDCharacter :character="character" :key="GlobalStore.key">
+    <MCDCharacter :character="props.character" :key="globalStore.state.key">
       <template v-slot:header>
-        <MCDCurrency v-model="character.currencies.Emerald" image="static/img/UI/Emerald.png" imageAlt="Emerald" />
-        <MCDCurrency v-model="character.currencies.Gold" image="static/img/UI/Gold.png" imageAlt="Gold" />
-        <MCDCurrency :value="character.enchantmentPoints" image="static/img/UI/EnchantmentPoint.png" imageAlt="EnchantmentPoint" readonly />
+        <MCDCurrency
+          v-model="props.character.currencies.Emerald"
+          image="img/UI/Emerald.png"
+          imageAlt="Emerald"
+        />
+        <MCDCurrency
+          v-model="props.character.currencies.Gold"
+          image="img/UI/Gold.png"
+          imageAlt="Gold"
+        />
+        <MCDCurrency
+          :modelValue="props.character.enchantmentPoints"
+          image="img/UI/EnchantmentPoint.png"
+          imageAlt="EnchantmentPoint"
+          readonly
+        />
       </template>
       <template v-slot:Column1>
         <MCDGears
-          :gears="GlobalStore.selectedCharacter.inventory.gears"
-          :hotbar="GlobalStore.selectedCharacter.inventory.hotbar"
+          :gears="globalStore.state.selectedCharacter.inventory.gears"
+          :hotbar="globalStore.state.selectedCharacter.inventory.hotbar"
         />
       </template>
       <template v-slot:Column2>
         <MCDInventory />
       </template>
       <template v-slot:Column3>
-        <MCDItemDetails v-if="!!GlobalStore.selectedItem" :item="GlobalStore.selectedItem" />
+        <MCDItemDetails v-if="!!globalStore.state.selectedItem" :item="globalStore.state.selectedItem" />
       </template>
       <MCDEnchantmentEditor />
     </MCDCharacter>
-    <MCDCharacterCorruptionDetection v-if="character.$corrupted.length" :character="character" />
+    <MCDCharacterCorruptionDetection v-if="props.character.corrupted.length" :character="props.character" />
   </section>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import Character from '@/assets/js/classes/Character';
+<script setup>
+import { onMounted } from 'vue';
 
-import MCDCharacter from '@/components/MCD/Character';
-import MCDCurrency from '@/components/MCD/Currency';
-import MCDCharacterCorruptionDetection from '@/components/MCD/CharacterCorruptionDetection';
-import MCDGears from '@/components/MCD/Gears';
-import MCDInventory from '@/components/MCD/Inventory';
-import MCDItemDetails from '@/components/MCD/ItemDetails';
-import MCDEnchantmentEditor from '@/components/MCD/EnchantmentEditor';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import Character from '@renderer/core/classes/Character';
 
-export default {
-  name: 'HomePage',
-  components: { MCDCharacter, MCDCurrency, MCDCharacterCorruptionDetection, MCDGears, MCDInventory, MCDEnchantmentEditor, MCDItemDetails },
-  props: {
-    character: { type: Character, required: true },
-  },
-  data() {
-    return { GlobalStore };
-  },
-  mounted() {
-    [GlobalStore.selectedItem] = this.character.inventory.inventory;
-  },
-};
+import MCDCharacter from '@renderer/components/MCD/Character.vue';
+import MCDCurrency from '@renderer/components/MCD/Currency.vue';
+import MCDCharacterCorruptionDetection from '@renderer/components/MCD/CharacterCorruptionDetection.vue';
+import MCDGears from '@renderer/components/MCD/Gears.vue';
+import MCDInventory from '@renderer/components/MCD/Inventory.vue';
+import MCDItemDetails from '@renderer/components/MCD/ItemDetails.vue';
+import MCDEnchantmentEditor from '@renderer/components/MCD/EnchantmentEditor.vue';
+
+defineOptions({ name: 'HomePage' });
+
+const props = defineProps({
+  character: { type: Character, required: true },
+});
+
+onMounted(() => {
+  globalStore.setters.setItem(props.character.inventory.inventory[0]);
+});
 </script>

@@ -1,8 +1,8 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDAncientMob {
   border: 1px solid #4D4847;
-  background-color: color(primary);
+  background-color: color(grey900);
   width: calc(50% - 8px);
   cursor: pointer;
   display: flex;
@@ -31,9 +31,9 @@
 
     h4 {
       @include font-family('open-sans', 700);
-      @include font-size(12);
+      @include set-font-scale(xs);
       text-transform: uppercase;
-      text-shadow: 3px 2px 0 rgba(color(0), .5);
+      text-shadow: 3px 2px 0 rgba(color(grey999), .5);
       margin-bottom: 4px;
     }
 
@@ -68,8 +68,8 @@
       height: 100%;
       top: 0;
       left: -2px;
-      border-left: 2px solid color(f);
-      border-right: 2px solid color(f);
+      border-left: 2px solid color(grey000);
+      border-right: 2px solid color(grey000);
     }
 
     &::after {
@@ -77,8 +77,8 @@
       height: 100%;
       top: -2px;
       left: 0;
-      border-top: 2px solid color(f);
-      border-bottom: 2px solid color(f);
+      border-top: 2px solid color(grey000);
+      border-bottom: 2px solid color(grey000);
     }
   }
 }

@@ -1,18 +1,21 @@
 <template>
-  <div class="MCDGildedLabel" v-show="item.isGilded()">
-    {{ $t('MCD.GildedLabel') }}
+  <div class="MCDGildedLabel" v-show="props.item.isGilded()">
+    {{ t('MCD.GildedLabel') }}
   </div>
 </template>
 
-<script>
-import Item from '@/assets/js/classes/Item';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'MCDGildedLabel',
-  props: {
-    item: { type: Item, required: true },
-  },
-};
+import Item from '@renderer/core/classes/Item';
+
+const { t } = useI18n();
+
+defineOptions({ name: 'MCDGildedLabel' });
+
+const props = defineProps({
+  item: { type: Item, required: true },
+});
 </script>
 
 <style lang="scss" src="./GildedLabel.scss">

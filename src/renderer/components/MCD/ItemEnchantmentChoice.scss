@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDItemEnchantmentChoice {
   position: relative;
@@ -73,7 +73,7 @@
 
     &Info {
       @include font-family('open-sans', 700);
-      @include font-size(12);
+      @include set-font-scale(xs);
       width: 100%;
       padding-top: 80px;
 
@@ -102,7 +102,7 @@
 
     &Tier {
       @include font-family('open-sans', 700, true);
-      @include font-size(11);
+      @include set-font-scale(xxs);
       position: absolute;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -167,8 +167,8 @@
       background-size: cover;
     }
 
-    &.Common::before {background-image: url('../../../../static/img/UI/SelectedEnchant_Common.png');}
+    &.Common::before {background-image: url('/img/UI/SelectedEnchant_Common.png');}
 
-    &.Powerful::before {background-image: url('../../../../static/img/UI/SelectedEnchant_Powerful.png');}
+    &.Powerful::before {background-image: url('/img/UI/SelectedEnchant_Powerful.png');}
   }
 }

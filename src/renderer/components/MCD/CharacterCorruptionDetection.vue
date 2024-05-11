@@ -1,71 +1,93 @@
 <template>
   <div class="MCDCharacterCorruptionDetection">
     <Modal
-      :name="`corruptedDataModal${character.id}`"
-      :title="$t('MCD.CharacterCorruptionDetection.title')"
-      :closable="false"
-      :autoCloseOnConfirm="false"
-      :okOnly="true"
-      :okLabel="$t('MCD.CharacterCorruptionDetection.okLabel')"
-      @confirm="handleConfirm"
+      :name="`corruptedDataModal${props.character.id}`"
+      :title="t('MCD.CharacterCorruptionDetection.title')"
+      :showClose="false"
+      @accept="actions.handleConfirm"
     >
-      <div v-if="availableBackup">
-        <p v-for="(line, i) in $t('MCD.CharacterCorruptionDetection.contentBackupAvailable')" :key="i">
-          {{ line.replace('{date}', availableBackup.formatedDate) }}
+      <div v-if="state.availableBackup">
+        <p v-for="(line, i) in tm('MCD.CharacterCorruptionDetection.contentBackupAvailable')" :key="i">
+          {{ line.replace('{date}', state.availableBackup.formatedDate) }}
         </p>
       </div>
       <div v-else>
-        <p v-for="(line, i) in $t('MCD.CharacterCorruptionDetection.contentNoBackupAvailable')" :key="i">
+        <p v-for="(line, i) in tm('MCD.CharacterCorruptionDetection.contentNoBackupAvailable')" :key="i">
           {{ line }}
         </p>
       </div>
+      <template v-slot:footer="{ accept }">
+        <router-link custom :to="{ name: 'CorruptedData' }" v-slot="{ navigate }">
+          <MaterialButton
+            :class="GenerateModifiers('m-modal__btn', { refuse: true })"
+            :modifiers="{ danger: true }"
+            @click="navigate"
+          >
+            {{ t('MCD.CharacterCorruptionDetection.showReport') }}
+          </MaterialButton>
+        </router-link>
+        <MaterialButton
+          :class="GenerateModifiers('m-modal__btn', { accept: true })"
+          :modifiers="{ secondary: true }"
+          @click="accept"
+        >
+          {{ t('MCD.CharacterCorruptionDetection.okLabel') }}
+        </MaterialButton>
+      </template>
     </Modal>
   </div>
 </template>
 
-<script>
-import Character from '@/assets/js/classes/Character';
-import Modal from '@/components/Modal/index';
-import ModalStore from '@/components/Modal/Store';
-import NotificationStore from '@/components/Notification/NotificationStore';
+<script setup>
+import { reactive, onBeforeMount, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-export default {
-  name: 'MCDCharacterCorruptionDetection',
-  components: { Modal },
-  props: {
-    character: { type: Character, required: true },
-  },
-  data() {
-    return {
-      availableBackup: null,
-    };
-  },
-  methods: {
-    handleConfirm() {
-      this.availableBackup.restore()
-        .then((success) => {
-          if (!success) throw new Error();
-          return this.character.reload();
-        })
-        .then(() => {
-          NotificationStore.success('Restauration terminée !');
-        })
-        .catch(() => {
-          NotificationStore.error('Échec de la restauration.');
-        })
-        .finally(() => {
-          ModalStore.hideModal(`corruptedDataModal${this.character.id}`);
-        })
-      ;
-    },
-  },
-  created() {
-    [this.availableBackup] = this.character.getAvailableBackup();
-  },
-  mounted() {
-    ModalStore.showModal(`corruptedDataModal${this.character.id}`);
+import MaterialButton from '@renderer/components/Materials/Button/index.vue';
+import Modal from '@renderer/components/Materials/Modal/index.vue';
+
+import Character from '@renderer/core/classes/Character';
+import { modalStore } from '@renderer/components/Materials/Modal/Store';
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
+
+defineOptions({ name: 'MCDCharacterCorruptionDetection' });
+
+const { t, tm } = useI18n();
+
+const props = defineProps({
+  character: { type: Character, required: true },
+});
+
+const state = reactive({
+  availableBackup: null,
+});
+
+const actions = {
+  handleConfirm() {
+    state.availableBackup.restore()
+      .then((success) => {
+        if (!success) throw new Error();
+        return props.character.reload();
+      })
+      .then(() => {
+        notificationStore.actions.success(t('MCD.CharacterCorruptionDetection.restoreSuccess'));
+      })
+      .catch(() => {
+        notificationStore.actions.error(t('MCD.CharacterCorruptionDetection.restoreError'));
+      })
+      .finally(() => {
+        modalStore.actions.hide(`corruptedDataModal${props.character.id}`);
+      })
+    ;
   },
 };
+
+onBeforeMount(() => {
+  [state.availableBackup] = props.character.getAvailableBackup();
+});
+
+onMounted(() => {
+  modalStore.actions.show(`corruptedDataModal${props.character.id}`);
+});
 </script>
 
 <style lang="scss" src="./CharacterCorruptionDetection.scss">

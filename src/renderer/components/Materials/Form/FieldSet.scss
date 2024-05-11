@@ -1,0 +1,30 @@
+@import '~styles/utilities.scss';
+
+.m-form-fieldset {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 rem(8px);
+  border: none;
+
+  &__legend {
+    @include set-font-scale('s');
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: color(grey800);
+    padding: rem(8px);
+    margin: 0;
+    min-height: 28px;
+    border-radius: rem(8px) rem(8px) 0 0;
+  }
+
+  &__content {
+    width: 100%;
+    border: 1px solid color(grey800);
+    border-top: none;
+    border-radius: 0 0 rem(8px) rem(8px);
+    padding: rem(8px);
+  }
+}

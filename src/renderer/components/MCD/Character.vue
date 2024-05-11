@@ -1,6 +1,6 @@
 <template>
   <div class="MCDCharacter">
-    <header class="MCDCharacterHeader col-xs-12">
+    <header class="MCDCharacterHeader">
       <slot name="header" />
     </header>
 
@@ -20,15 +20,8 @@
   </div>
 </template>
 
-<script>
-import Character from '@/assets/js/classes/Character';
-
-export default {
-  name: 'MCDCharacter',
-  props: {
-    character: { type: Character, required: true },
-  },
-};
+<script setup>
+defineOptions({ name: 'MCDCharacter' });
 </script>
 
 <style lang="scss" src="./Character.scss">

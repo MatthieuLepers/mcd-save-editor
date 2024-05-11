@@ -1,31 +1,45 @@
 <template>
   <div class="MCDCloneButton">
-    <MCDButton class="MCDButtonClone" icon="duplicate" :title="$t('MCD.CloneButton.label')" size="xs" @click="cloneItem" />
+    <MCDButton
+      class="MCDButtonClone"
+      icon="duplicate"
+      :title="t('MCD.CloneButton.label')"
+      size="xs"
+      @click="actions.cloneItem"
+    />
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import FilteredInventoryStore from '@/assets/js/stores/FilteredInventoryStore';
-import Item from '@/assets/js/classes/Item';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-import MCDButton from './Button';
+import MCDButton from '@renderer/components/MCD/Button.vue';
 
-export default {
-  name: 'MCDCloneButton',
-  components: { MCDButton },
-  props: {
-    item: { type: Item, required: true },
-  },
-  methods: {
-    cloneItem() {
-      GlobalStore.selectedCharacter.inventory.addItem(this.item.clone());
-      if (FilteredInventoryStore.inventory.length) {
-        [GlobalStore.selectedItem] = FilteredInventoryStore.inventory;
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { filteredInventoryStore } from '@renderer/core/stores/FilteredInventoryStore';
+import Item from '@renderer/core/classes/Item';
+
+defineOptions({ name: 'MCDCloneButton' });
+
+const { t } = useI18n();
+
+const props = defineProps({
+  item: { type: Item, required: true },
+});
+
+const actions = {
+  cloneItem() {
+    if (props.item.isStored()) {
+      globalStore.state.selectedCharacter.storageChest.addItem(props.item.clone());
+      globalStore.setters.setItem(globalStore.state.selectedCharacter.storageChest.items[0]);
+    } else {
+      globalStore.state.selectedCharacter.inventory.addItem(props.item.clone());
+      if (filteredInventoryStore.inventory.value.length) {
+        globalStore.setters.setItem(filteredInventoryStore.inventory.value[0]);
       } else {
-        [GlobalStore.selectedItem] = GlobalStore.selectedCharacter.inventory.gears;
+        globalStore.setters.setItem(globalStore.state.selectedCharacter.inventory.gears[0]);
       }
-    },
+    }
   },
 };
 </script>

@@ -1,0 +1,82 @@
+@import '~styles/utilities.scss';
+
+@keyframes rotateInf {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m-tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  &__navigation {
+    display: block;
+    overflow: hidden;
+    flex: none;
+    max-width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: 3;
+    padding: rem(8px) rem(8px) 0 rem(8px);
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      height: 42px;
+      border-bottom: 1px solid color(grey800);
+
+      &__item {
+        opacity: .5;
+        height: 100%;
+        position: relative;
+
+        &--current {
+          opacity: 1;
+        }
+
+        &--loading {
+          animation: rotateInf 1s linear infinite;
+        }
+      }
+
+      &__add {
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        background-color: color(grey800);
+        margin: rem(6.5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: rem(12px);
+      }
+    }
+
+    &-button {
+      @include set-font-scale('s');
+      min-width: 120px;
+      height: 100%;
+      padding: 0 rem(10px);
+      display: flex;
+      align-items: center;
+      position: relative;
+      text-transform: capitalize;
+      background: linear-gradient(45deg, color(grey800) 0%, color(grey800) 92%, transparent 92%, transparent 100%); 
+    }
+  }
+
+  &__container {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: rem(8px);
+  }
+}

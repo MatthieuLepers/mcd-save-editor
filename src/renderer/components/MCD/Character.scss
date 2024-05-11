@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDCharacter {
   overflow: auto;
@@ -12,6 +12,7 @@
   &Header {
     grid-column: 1 / span 3;
     grid-row: 1;
+    display: flex;
   }
 
   &Column {

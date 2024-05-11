@@ -1,0 +1,155 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: color(grey900);
+  color: color(grey200);
+  outline: none;
+}
+
+html,
+body,
+header,
+main,
+footer,
+aside,
+section,
+article,
+nav,
+menu,
+picture {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* IMG */
+img,
+picture {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: auto;
+}
+
+picture {
+  width: 100%;
+}
+
+/* BUTTONS & INPUTS */
+button,
+.button,
+.pointer,
+a,
+input[type="submit"],
+select {
+  cursor: pointer;
+}
+
+button {
+  padding: 0;
+  font-size: inherit;
+  border: none;
+  color: inherit;
+}
+
+button,
+.btn {
+  border-radius: none;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+  cursor: text;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+select,
+textarea {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  -ms-appearance: textfield;
+  appearance: textfield;
+  border: none;
+  font-size: inherit;
+}
+
+@include placeholder {
+	color: inherit;
+	opacity: 1;
+}
+
+/* TEXT ELEMENTS */
+.hover {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+img,
+button,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.modal:before {
+  content: '';
+  opacity: .8;
+  background-color: color(grey999);
+  width: 100vw;
+  height: calc(100vh - 30px);
+  position: fixed;
+  top: 30px;
+  left: 0;
+  z-index: 9;
+  cursor: pointer;
+}

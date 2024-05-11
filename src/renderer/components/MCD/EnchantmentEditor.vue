@@ -1,23 +1,43 @@
 <template>
-  <div class="MCDEnchantmentEditor" v-show="!!GlobalStore.selectedEnchant && !!GlobalStore.selectedEnchant.enchantIdentifier">
-    <div class="MCDEnchantmentEditorContainer" v-if="!!GlobalStore.selectedEnchant && !!GlobalStore.selectedEnchant.enchantIdentifier">
+  <div
+    v-show="!!globalStore.state.selectedEnchant && !!globalStore.state.selectedEnchant.enchantIdentifier"
+    class="MCDEnchantmentEditor"
+  >
+    <div
+      v-if="!!globalStore.state.selectedEnchant && !!globalStore.state.selectedEnchant.enchantIdentifier"
+      class="MCDEnchantmentEditorContainer"
+    >
       <h2>
-        <MCDEnchantSelect v-model="GlobalStore.selectedEnchant" />
-        <MCDButton icon="close" @click="closeEditor" variant="dark" />
+        <MCDEnchantSelect
+          v-model="globalStore.state.selectedEnchant"
+          :unallowedEnchants="globalStore.actions.getUnallowedEnchantForChunk()"
+        />
+        <MCDButton icon="close" @click="actions.closeEditor" variant="dark" />
       </h2>
       <div class="MCDEnchantmentEditorLeft">
         <p>
-          {{ $t(`MCD.Game.Enchants.${GlobalStore.selectedEnchant.enchantIdentifier}.desc`) }}
+          {{ t(`MCD.Game.Enchants.${globalStore.state.selectedEnchant.enchantIdentifier}.desc`) }}
         </p>
-        <div class="TierContainer" v-if="GlobalStore.selectedEnchant.enchantIdentifier !== 'Unset'">
-          <h3>{{ $t('MCD.EnchantmentEditor.upgradeTiers') }}</h3>
+        <div class="TierContainer" v-if="globalStore.state.selectedEnchant.enchantIdentifier !== 'Unset'">
+          <h3>{{ t('MCD.EnchantmentEditor.upgradeTiers') }}</h3>
           <ul>
-            <li v-for="(level, index) in $t(`MCD.Game.Enchants.${GlobalStore.selectedEnchant.enchantIdentifier}.level`)" :key="`${GlobalStore.selectedEnchant.enchantIdentifier}lvl${index}`" :class="{checked: GlobalStore.selectedEnchant.level >= index + 1}">
-              <input :disabled="GlobalStore.selectedEnchant.level < index" :checked="GlobalStore.selectedEnchant.level >= index + 1" :id="`${GlobalStore.selectedEnchant.enchantIdentifier}Level${index}_${_uid}`" type="checkbox" :name="`levelGroup${_uid}`" @click.stop="setLevel($event, index + 1)" />
-              <label :for="`${GlobalStore.selectedEnchant.enchantIdentifier}Level${index}_${_uid}`">
-                <i v-if="GlobalStore.selectedEnchant.level >= index + 1" class="icon-checked"></i>
+            <li
+              v-for="(level, index) in tm(`MCD.Game.Enchants.${globalStore.state.selectedEnchant.enchantIdentifier}.level`)"
+              :key="`${globalStore.state.selectedEnchant.enchantIdentifier}lvl${index}`"
+              :class="{ checked: globalStore.state.selectedEnchant.level >= index + 1 }"
+            >
+              <input
+                :disabled="globalStore.state.selectedEnchant.level < index"
+                :checked="globalStore.state.selectedEnchant.level >= index + 1"
+                :id="`${globalStore.state.selectedEnchant.enchantIdentifier}Level${index}_${$uid}`"
+                type="checkbox"
+                :name="`levelGroup${$uid}`"
+                @click.stop="actions.setLevel($event, index + 1)"
+              />
+              <label :for="`${globalStore.state.selectedEnchant.enchantIdentifier}Level${index}_${$uid}`">
+                <i v-if="globalStore.state.selectedEnchant.level >= index + 1" class="icon-checked"></i>
                 <span v-else class="tier">
-                  <span>{{ getUpgradeTier(index + 1) }}</span>
+                  <span>{{ actions.getUpgradeTier(index + 1) }}</span>
                 </span>
                 {{ level }}
               </label>
@@ -26,56 +46,58 @@
         </div>
       </div>
       <div class="MCDEnchantmentEditorRight">
-        <img :src="GlobalStore.selectedEnchant.enchantData.image" :alt="GlobalStore.selectedEnchant.enchantIdentifier" />
-        <div class="MCDEnchantmentEditorCost" v-if="!GlobalStore.selectedEnchant.$netherite && GlobalStore.selectedEnchant.level < 3">
+        <img :src="image(globalStore.state.selectedEnchant.enchantData.image)" :alt="globalStore.state.selectedEnchant.enchantIdentifier" />
+        <div class="MCDEnchantmentEditorCost" v-if="!globalStore.state.selectedEnchant.netherite && globalStore.state.selectedEnchant.level < 3">
           <span>Enchant Cost</span>
-          <p><img src="static/img/UI/EnchantmentPoint.png" alt="Enchantment point" /> {{ GlobalStore.selectedEnchant.getInvestmentCostForLevel(GlobalStore.selectedEnchant.level + 1) }}</p>
+          <p><img :src="image('img/UI/EnchantmentPoint.png')" alt="Enchantment point" /> {{ globalStore.state.selectedEnchant.getInvestmentCostForLevel(globalStore.state.selectedEnchant.level + 1) }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import TutorialStore from '@/assets/js/tutorial/Store';
-import NotificationStore from '@/components/Notification/NotificationStore';
+<script setup>
+import { ref, getCurrentInstance } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-import MCDButton from './Button';
-import MCDEnchantSelect from './EnchantSelect';
+import MCDButton from '@renderer/components/MCD/Button.vue';
+import MCDEnchantSelect from '@renderer/components/MCD/EnchantSelect.vue';
 
-export default {
-  name: 'MCDEnchantmentEditor',
-  components: { MCDButton, MCDEnchantSelect },
-  data() {
-    return { GlobalStore };
-  },
-  methods: {
-    setLevel(e, level) {
-      if (e.target.checked) {
-        const cost = GlobalStore.selectedEnchant.getInvestmentCostForLevel(level);
-        if (GlobalStore.selectedCharacter.enchantmentPoints >= cost) {
-          GlobalStore.selectedEnchant.level = level;
-        } else {
-          NotificationStore.error(this.$t('MCD.EnchantmentEditor.costError', { cost, pluralize: cost >= 1 ? 's' : '' }));
-        }
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { tutorialStore } from '@renderer/core/tutorial/Store';
+import { notificationStore } from '@renderer/components/Materials/Notification/Store';
+import { image } from '@renderer/core/utils';
+
+defineOptions({ name: 'MCDEnchantmentEditor' });
+
+const $uid = ref(getCurrentInstance().uid);
+const { t, tm } = useI18n();
+
+const actions = {
+  setLevel(e, level) {
+    if (e.target.checked) {
+      const cost = globalStore.state.selectedEnchant.getInvestmentCostForLevel(level);
+      if (globalStore.state.selectedCharacter.enchantmentPoints >= cost) {
+        globalStore.state.selectedEnchant.level = level;
       } else {
-        GlobalStore.selectedEnchant.level = level - 1;
+        notificationStore.actions.error(t('MCD.EnchantmentEditor.costError', { cost, pluralize: cost >= 1 ? 's' : '' }));
       }
-      if (GlobalStore.selectedEnchant.level === 3) {
-        TutorialStore.setFullfilled('UpgradeEnchantment', true);
-      }
-      if (GlobalStore.selectedEnchant.level === 0) {
-        TutorialStore.setFullfilled('DowngradeEnchantment', true);
-      }
-    },
-    getUpgradeTier(level) {
-      return [...Array(level).keys()].reduce((acc) => `${acc}i`, '');
-    },
-    closeEditor() {
-      GlobalStore.selectedEnchant = null;
-      TutorialStore.setFullfilled('CloseEditor', true);
-    },
+    } else {
+      globalStore.state.selectedEnchant.level = level - 1;
+    }
+    if (globalStore.state.selectedEnchant.level === 3) {
+      tutorialStore.actions.setFullfilled('UpgradeEnchantment', true);
+    }
+    if (globalStore.state.selectedEnchant.level === 0) {
+      tutorialStore.actions.setFullfilled('DowngradeEnchantment', true);
+    }
+  },
+  getUpgradeTier(level) {
+    return [...Array(level).keys()].reduce((acc) => `${acc}i`, '');
+  },
+  closeEditor() {
+    globalStore.setters.setEnchant(null);
+    tutorialStore.actions.setFullfilled('CloseEditor', true);
   },
 };
 </script>

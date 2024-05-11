@@ -1,0 +1,55 @@
+@import '~styles/utilities.scss';
+
+.CorruptedDataPage {
+  overflow: auto;
+  height: calc(100vh - 88px);
+
+  &ErrorContainer {
+    display: flex;
+    overflow: hidden;
+    height: calc(100% - 33px);
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    h2 {
+      @include set-font-scale(m);
+      flex: 0 0 100%;
+    }
+  }
+
+  &Infos {
+    height: 100%;
+    flex: 0 0 calc(50% - 8px);
+
+    &>p {
+      margin: 0 0 16px 0;
+      background-color: color(grey800);
+      padding: 8px;
+    }
+
+    &>h2 {
+      @include set-font-scale(l);
+      font-weight: 600;
+    }
+  }
+
+  &FixupList {
+    max-height: calc(100% - 208px);
+    height: 100%;
+    overflow-y: auto;
+
+    li:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &Actions {
+    display: flex;
+    gap: 8px;
+
+    .m-button {
+      flex: 0 0 calc(50% - 4px);
+    }
+  }
+}

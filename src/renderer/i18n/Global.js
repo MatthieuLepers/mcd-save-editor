@@ -1,6 +1,6 @@
-import AncientMobsData from '../assets/js/data/AncientMobs';
-import { ArmorProperties, Enchants, Items } from '../assets/js/data/Content';
-import TutorialsData from './Tutorial/index';
+import AncientMobsData from '@renderer/core/data/AncientMobs';
+import { ArmorProperties, Enchants, Items } from '@renderer/core/data/Content';
+import TutorialsData from '@renderer/i18n/Tutorial/index';
 
 export default {
   AncientMobsData: (lang) => Object.entries(AncientMobsData).reduce((acc, [key, value]) => ({ ...acc, [key]: value.i18n[lang] }), {}),

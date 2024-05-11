@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDGears {
   position: relative;
@@ -11,6 +11,7 @@
   &Containers {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .MCDItem {
       &:nth-child(1),
@@ -74,5 +75,6 @@
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 }

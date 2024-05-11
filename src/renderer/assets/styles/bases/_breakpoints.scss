@@ -1,0 +1,16 @@
+$breakpoints: (
+  xs :  320px,
+  s  :  768px,
+  m  : 1024px,
+  l  : 1200px,
+  xl : 1600px,
+  xxl: 1921px
+);
+
+@mixin set-from-screen ($breakpoint) {
+  $max-width: map-get($breakpoints, $breakpoint);
+
+  @media screen and (max-width: #{$max-width - 1px}) {
+    @content;
+  }
+}

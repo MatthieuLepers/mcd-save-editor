@@ -1,10 +1,11 @@
-.DS_Store
-dist/electron/*
-dist/web/*
-build/*
-!build/icons
-node_modules/
-npm-debug.log
-npm-debug.log.*
-thumbs.db
-!.gitkeep
+# Logs
+logs
+*.log*
+
+node_modules
+dist
+out
+*.local
+*.sqlite
+*.sqlite3
+**/.DS_Store

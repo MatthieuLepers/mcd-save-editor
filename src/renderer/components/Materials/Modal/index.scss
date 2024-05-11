@@ -1,0 +1,138 @@
+@import '~styles/utilities.scss';
+
+.m-modal {
+  position: relative;
+  max-width: 80%;
+  max-height: calc(100vh - 50px);
+  width: 100%;
+  overflow-y: visible;
+  background-color: color(grey900);
+  border: 1px solid color(grey000);
+  color: color(grey999);
+
+  &--noFooter {
+    .m-modal__body {
+      max-height: calc(100vh - 120px);
+    }
+  }
+
+  &--paddingLess {
+    padding: 0;
+
+    .m-modal__footer {
+      padding: 0 rem(20px) rem(20px);
+    }
+
+    .m-modal__body:not(:empty),
+    .m-modal__footer:not(:empty) {
+      margin-top: 0;
+    }
+  }
+
+  &--centered {
+    .m-modal__body {
+      text-align: center;
+    }
+  }
+
+  &--rounded {
+    border-radius: 8px;
+  }
+
+  &--xs {
+    max-width: 300px;
+  }
+
+  &__btn {
+    &--close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 36px;
+      height: 36px;
+
+      &:focus {
+        background-color: color(grey800);
+        border-radius: 50%;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        width: 24px;
+        height: 3px;
+        border-radius: 2px;
+        transform-origin: 50% 50%;
+        position: absolute;
+        top: calc(50% - 1.5px);
+        left: calc(50% - 12px);
+        background-color: color(grey000);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: calc(100vh - 30px);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--visible {
+      background-color: rgba(color(grey800), .6);
+    }
+
+    &--open {
+      width: 100vw;
+      height: calc(100vh - 30px);
+      z-index: 998;
+    }
+  }
+
+  &__header {
+    @include set-font-scale("l");
+    font-weight: 600;
+    color: color(grey000);
+    padding: rem(24px) rem(24px) 0 rem(24px);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20px);
+    padding: 0 rem(24px) rem(24px) rem(24px);
+
+    &:not(:empty) {
+      margin-top: rem(16px);
+    }
+
+    .m-modal__btn {
+      flex: 1;
+    }
+  }
+
+  &__body {
+    max-height: calc(100vh - 198px);
+    overflow: auto;
+    padding: rem(12px) rem(24px);
+    color: color(grey000);
+
+    &:not(:empty) {
+      margin-top: rem(16px);
+    }
+  }
+}

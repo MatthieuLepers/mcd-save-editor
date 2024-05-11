@@ -1,44 +1,49 @@
 <template>
   <div
-    :class="GenerateModifiers('MCDItem', { Empty: true })"
-    @dragover.stop="handleDragOver"
-    @drop.stop="handleDrop"
+    :class="GenerateModifiers('MCDItem', { Empty: true, CrossIcon: props.cross })"
+    @dragover.stop="actions.handleDragOver"
+    @drop.stop="actions.handleDrop"
   >
-    <div class="MCDItemLevel" v-if="itemType">
-      <i :class="`icon-${itemType.toLowerCase()}`"></i>
+    <div class="MCDItemLevel" v-if="props.itemType">
+      <i :class="`icon-${props.itemType.toLowerCase()}`"></i>
     </div>
     <MCDItemTile />
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import DragDropStore from '@/assets/js/stores/DragDropStore';
+<script setup>
+import MCDItemTile from '@renderer/components/MCD/ItemTile.vue';
 
-import MCDItemTile from './ItemTile';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { dragDropStore } from '@renderer/core/stores/DragDropStore';
 
-export default {
-  name: 'MCDItemEmpty',
-  components: { MCDItemTile },
-  props: {
-    itemType: { type: String, default: null },
-    hotbarSlot: { type: Number, default: null },
-  },
-  methods: {
-    handleDragOver(e) {
-      DragDropStore.setDragTo({ type: this.itemType, slot: this.hotbarSlot });
+defineOptions({ name: 'MCDItemEmpty' });
 
-      if (DragDropStore.from && DragDropStore.from.itemData.type === this.itemType) {
+const props = defineProps({
+  itemType: { type: String, default: null },
+  hotbarSlot: { type: Number, default: null },
+  noDragEvent: { type: Boolean, default: false },
+  cross: { type: Boolean, default: false },
+});
+
+const actions = {
+  handleDragOver(e) {
+    if (!props.noDragEvent) {
+      dragDropStore.actions.setDragTo({ type: props.itemType, slot: props.hotbarSlot });
+
+      if (dragDropStore.state.from && dragDropStore.state.from.itemData.type === props.itemType) {
         e.preventDefault();
       }
-    },
-    handleDrop() {
-      DragDropStore.handleDropToEmpty();
+    }
+  },
+  handleDrop() {
+    if (!props.noDragEvent) {
+      dragDropStore.actions.handleDropToEmpty();
 
-      GlobalStore.selectedItem = DragDropStore.from;
-      GlobalStore.selectedCharacter.inventory.checkIntegrity();
-      GlobalStore.key += 1;
-    },
+      globalStore.setters.setItem(dragDropStore.state.from);
+      globalStore.state.selectedCharacter.inventory.checkIntegrity();
+      globalStore.state.key += 1;
+    }
   },
 };
 </script>

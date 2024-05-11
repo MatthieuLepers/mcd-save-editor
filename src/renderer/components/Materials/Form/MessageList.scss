@@ -1,0 +1,26 @@
+@import '~styles/utilities.scss';
+
+.m-form-message {
+  &-list {
+    padding: 0;
+    list-style: none;
+    margin: rem(4px) 0 0;
+  }
+
+  &-item {
+    @include set-font-scale('s');
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: rem(4px) rem(4px) 0;
+    color: color(grey000);
+
+    &--error {
+      color: color(danger300);
+    }
+  }
+
+  &__icon {
+    margin-right: rem(4px);
+  }
+}

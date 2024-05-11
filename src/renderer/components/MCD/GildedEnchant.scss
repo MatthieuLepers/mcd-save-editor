@@ -1,7 +1,7 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDGildedEnchant {
-  @include font-size(14);
+  @include set-font-scale(s);
   margin: 12px 0 0 0;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
 
     span {
       @include font-family('open-sans', 700, true);
-      @include font-size(10);
+      @include set-font-scale(xxs);
       color: gold;
       position: absolute;
       top: 2px;
@@ -31,7 +31,7 @@
       width: 10px;
       text-align: center;
       text-transform: uppercase;
-      text-shadow: 0 0 4px color(0);
+      text-shadow: 0 0 4px color(grey999);
     }
   }
 

@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .TutorialPoly {
   position: fixed;
@@ -8,7 +8,7 @@
   pointer-events: none;
 
   &BackDrop {
-    fill: color(0);
+    fill: color(grey999);
     opacity: .8;
     pointer-events: all;
   }

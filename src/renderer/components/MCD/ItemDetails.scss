@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDItemDetails {
   padding-left: 20px;
@@ -43,13 +43,13 @@
 
         span {
           @include font-family('open-sans', 700);
-          @include font-size(18);
+          @include set-font-scale(l);
           line-height: rem(18px);
-          text-shadow: 3px 2px 0 rgba(color(0), .5);
+          text-shadow: 3px 2px 0 rgba(color(grey999), .5);
         }
   
         i {
-          @include font-size(12);
+          @include set-font-scale(xs);
           margin-left: 5px;
           color: #999999;
         }
@@ -67,7 +67,7 @@
   }
 
   .MCDItemArmorProperties {
-    @include font-size(12);
+    @include set-font-scale(xs);
     padding: 0;
     margin: 12px 0 0 0;
     list-style: none;

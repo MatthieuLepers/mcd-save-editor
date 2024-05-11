@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDItem {
   cursor: pointer;
@@ -7,6 +7,7 @@
 
   &--Empty {
     cursor: auto;
+    overflow: hidden;
 
     &::after {
       content: "+";
@@ -18,9 +19,18 @@
       height: 100%;
       z-index: 1;
       font-size: 40px;
+      line-height: 40px;
       align-items: center;
       justify-content: center;
     }
+  }
+
+  &--CrossIcon::after {
+    @include font-family('Open Sans', 100);
+    transform: rotate(45deg);
+    font-size: 60px;
+    line-height: 60px;
+    color: color(grey500);
   }
 
   &--Selected {
@@ -36,7 +46,7 @@
 
     &::before {
       content: "";
-      background-color: color(f);
+      background-color: color(grey000);
       width: calc(100% + 6px);
       height: 100%;
       position: absolute;
@@ -47,7 +57,7 @@
 
     &::after {
       content: "";
-      background-color: color(f);
+      background-color: color(grey000);
       width: 100%;
       height: calc(100% + 6px);
       position: absolute;
@@ -59,23 +69,23 @@
 
   &--Gilded {
     .MCDItemTileInnerBoxBody {
-      background: url('../../../../static/img/UI/GildedBackground.png');
+      background: url('/img/UI/GildedBackground.png');
       background-size: cover;
     }
 
     img {
-      filter: drop-shadow(4px 8px 0px rgba(color(0), .5));
+      filter: drop-shadow(4px 8px 0px rgba(color(grey999), .5));
     }
 
     .MCDItemLevel {
-      background-color: rgba(color(0), .5);
+      background-color: rgba(color(grey999), .5);
     }
 
     .MCDItemEnchanted {
       &::before {
         content: '';
         position: absolute;
-        background-color: rgba(color(0), .5);
+        background-color: rgba(color(grey999), .5);
         width: calc(100% + 6px);
         height: calc(100% + 3px);
         left: -4px;
@@ -91,7 +101,7 @@
     .MCDItemSoulGathering::after {
       content: '';
       position: absolute;
-      background-color: rgba(color(0), .5);
+      background-color: rgba(color(grey999), .5);
       width: calc(100% + 4px);
       height: calc(100% + 6px);
       z-index: -1;
@@ -101,7 +111,7 @@
   }
 
   &SoulGathering {
-    @include font-size(14);
+    @include set-font-scale(s);
     position: absolute;
     top: 6px;
     right: 5px;
@@ -110,7 +120,7 @@
 
   &Level {
     @include font-family('opensans', 700);
-    @include font-size(14);
+    @include set-font-scale(s);
     position: absolute;
     bottom: 3px;
     right: 3px;
@@ -118,23 +128,23 @@
     padding: 0 3px;
 
     i {
-      @include font-size(10);
-      color: darken(color(f), 25);
+      @include set-font-scale(xxs);
+      color: darken(color(grey000), 25);
     }
   }
 
   &Enchanted {
     @include font-family('open-sans', 700);
-    @include font-size(14);
+    @include set-font-scale(s);
     position: absolute;
     top: 5px;
     left: 7px;
     z-index: 5;
-    text-shadow: 1px 1px 5px color(0);
-    color: color(f);
+    text-shadow: 1px 1px 5px color(grey999);
+    color: color(grey000);
 
     i {
-      @include font-size(14);
+      @include set-font-scale(s);
       color: #D372F4;
     }
 

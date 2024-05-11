@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDCurrency {
   display: flex;
@@ -18,11 +18,11 @@
     height: 32px;
     padding: 0 5px;
     background-color: transparent;
-    color: color(f);
+    color: color(grey000);
   }
 
   &Field {
-    border: 1px solid lighten(color(primary), 11.76);
+    border: 1px solid lighten(color(grey900), 11.76);
     width: 110px;
   }
 

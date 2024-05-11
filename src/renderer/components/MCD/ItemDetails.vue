@@ -1,90 +1,105 @@
 <template>
-  <div class="MCDItemDetails" v-if="!!item.$data.type" :key="item.$key">
+  <div class="MCDItemDetails" v-if="!!props.item.data.type" :key="props.item.$key">
     <div class="MCDItemDetailsInfos">
       <div class="MCDItemTitle">
         <div class="MCDItemTitleContainer">
           <div class="MCDItemTitleContainerRow">
             <span
               class="MCDItemTitlePower"
-              @mouseover="handleMouseOver"
-              @mouseout="handleMouseOut"
+              @mouseover="actions.handleMouseOver"
+              @mouseout="actions.handleMouseOut"
             >
-              {{ item.powerLevel }}
+              {{ props.item.powerLevel }}
             </span>
-            <i :class="`icon-${item.itemType.toLowerCase()}`"></i>
+            <i :class="`icon-${props.item.itemType.toLowerCase()}`"></i>
           </div>
-          <MCDRarityLabel :item="item" />
-          <MCDGildedLabel :item="item" />
+          <MCDRarityLabel :item="props.item" />
+          <MCDGildedLabel :item="props.item" />
         </div>
-        <MCDItemSelect v-model="item" />
+        <MCDItemSelect v-model="props.item" />
 
-        <ul class="MCDItemArmorProperties" v-if="item.isArmor()">
-          <li :class="`MCDItemArmorPropertiesItem ${armorProperty.rarity.toLowerCase()}`" v-for="(armorProperty, i) in item.armorproperties" :key="i">
-            <img class="MCDItemArmorPropertiesRarity" :src="`static/img/UI/${armorProperty.rarity.toLowerCase()}.png`" :alt="armorProperty.rarity" />
-            <span v-if="item.$data.type !== 'MysteryArmor'">{{ $t(`MCD.Game.ArmorProperties.${armorProperty.armorPropertyIdentifier}`) }}</span>
-            <MCDArmorPropertySelect :property="armorProperty" :item="item" v-else />
+        <ul class="MCDItemArmorProperties" v-if="props.item.isArmor()">
+          <li
+            :class="`MCDItemArmorPropertiesItem ${armorProperty.rarity.toLowerCase()}`"
+            v-for="(armorProperty, i) in props.item.armorproperties"
+            :key="i"
+          >
+            <img
+              class="MCDItemArmorPropertiesRarity"
+              :src="image(`img/UI/${armorProperty.rarity.toLowerCase()}.png`)"
+              :alt="armorProperty.rarity"
+            />
+            <span v-if="props.item.data.type !== 'MysteryArmor'">
+              {{ t(`MCD.Game.ArmorProperties.${armorProperty.armorPropertyIdentifier}`) }}
+            </span>
+            <MCDArmorPropertySelect :property="armorProperty" :item="props.item" v-else />
           </li>
         </ul>
 
-        <MCDGildedEnchant v-model="item.netheriteEnchant" v-if="item.itemType !== 'Artefact'" />
+        <MCDGildedEnchant v-model="props.item.netheriteEnchant" v-if="props.item.itemType !== 'Artefact'" />
       </div>
 
       <div class="MCDItemImage">
-        <img :src="item.itemData.image" :alt="$t(`MCD.Game.Items.${item.$data.type}`)" />
+        <img :src="image(props.item.itemData.image)" :alt="t(`MCD.Game.Items.${props.item.data.type}`)" />
         <div class="MCDItemDetailsActions">
-          <MCDImportButton v-if="!GlobalStore.selectedCharacter.inventory.isFull()" />
-          <MCDExportButton :item="item" />
-          <MCDCloneButton :item="item" v-if="enableClone" />
-          <MCDDeleteButton :item="item" v-if="enableDelete" />
+          <MCDImportButton v-if="!globalStore.state.selectedCharacter.inventory.isFull()" />
+          <MCDExportButton :item="props.item" />
+          <MCDCloneButton :item="props.item" v-if="props.enableClone" />
+          <MCDDeleteButton :item="props.item" v-if="props.enableDelete" />
         </div>
       </div>
     </div>
 
-    <MCDItemEnchantmentList v-if="item.itemType !== 'Artefact'" :item="item" @input="setEnchantments" />
+    <MCDItemEnchantmentList
+      v-if="props.item.itemType !== 'Artefact'"
+      :item="props.item"
+      @input="actions.setEnchantments"
+    />
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import TutorialStore from '@/assets/js/tutorial/Store';
-import Item from '@/assets/js/classes/Item';
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-import MCDItemSelect from './ItemSelect';
-import MCDArmorPropertySelect from './ArmorPropertySelect';
-import MCDRarityLabel from './RarityLabel';
-import MCDGildedLabel from './GildedLabel';
-import MCDGildedEnchant from './GildedEnchant';
-import MCDItemEnchantmentList from './ItemEnchantmentList';
-import MCDImportButton from './ImportButton';
-import MCDExportButton from './ExportButton';
-import MCDCloneButton from './CloneButton';
-import MCDDeleteButton from './DeleteButton';
+import MCDItemSelect from '@renderer/components/MCD/ItemSelect.vue';
+import MCDArmorPropertySelect from '@renderer/components/MCD/ArmorPropertySelect.vue';
+import MCDRarityLabel from '@renderer/components/MCD/RarityLabel.vue';
+import MCDGildedLabel from '@renderer/components/MCD/GildedLabel.vue';
+import MCDGildedEnchant from '@renderer/components/MCD/GildedEnchant.vue';
+import MCDItemEnchantmentList from '@renderer/components/MCD/ItemEnchantmentList.vue';
+import MCDImportButton from '@renderer/components/MCD/ImportButton.vue';
+import MCDExportButton from '@renderer/components/MCD/ExportButton.vue';
+import MCDCloneButton from '@renderer/components/MCD/CloneButton.vue';
+import MCDDeleteButton from '@renderer/components/MCD/DeleteButton.vue';
 
-export default {
-  name: 'MCDItemDetails',
-  components: { MCDRarityLabel, MCDGildedLabel, MCDGildedEnchant, MCDItemEnchantmentList, MCDImportButton, MCDExportButton, MCDCloneButton, MCDDeleteButton, MCDItemSelect, MCDArmorPropertySelect },
-  props: {
-    item: { type: Item, required: true },
-    enableClone: { type: Boolean, default: true },
-    enableDelete: { type: Boolean, default: true },
+import Item from '@renderer/core/classes/Item';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { tutorialStore } from '@renderer/core/tutorial/Store';
+import { image } from '@renderer/core/utils';
+
+defineOptions({ name: 'MCDItemDetails' });
+
+const { t } = useI18n();
+
+const props = defineProps({
+  item: { type: Item, required: true },
+  enableClone: { type: Boolean, default: true },
+  enableDelete: { type: Boolean, default: true },
+});
+
+const actions = {
+  setEnchantments(enchantments) {
+    props.item.data.enchantments = enchantments;
   },
-  data() {
-    return { GlobalStore };
+  handleMouseOver() {
+    window.onmousewheel = (e) => {
+      const direction = (e.deltaY > 0 ? -1 : 1);
+      props.item.data.power += direction / 10;
+      tutorialStore.actions.setFullfilled('ChangeLevel', true);
+    };
   },
-  methods: {
-    setEnchantments(enchantments) {
-      this.item.$data.enchantments = enchantments;
-    },
-    handleMouseOver() {
-      window.onmousewheel = (e) => {
-        const direction = (e.deltaY > 0 ? -1 : 1);
-        this.item.$data.power += direction / 10;
-        TutorialStore.setFullfilled('ChangeLevel', true);
-      };
-    },
-    handleMouseOut() {
-      window.onmousewheel = null;
-    },
+  handleMouseOut() {
+    window.onmousewheel = null;
   },
 };
 </script>

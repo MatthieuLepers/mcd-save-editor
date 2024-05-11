@@ -1,0 +1,43 @@
+@import '~styles/utilities.scss';
+
+.m-form-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(4px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__label {
+    @include set-font-scale('xs');
+    margin-bottom: rem(4px);
+    color: color(grey000);
+    display: block;
+  }
+
+  &__item {
+    @include set-font-scale('s');
+    color: color(grey000);
+    background-color: color(grey800);
+    padding: rem(8px) rem(4px) rem(8px) rem(8px);
+    height: 32px;
+    display: flex;
+    gap: rem(8px);
+    align-items: center;
+    position: relative;
+    border-radius: 16px;
+  }
+
+  &__remove {
+    @include make-accessibility-shadow;
+    @include set-font-scale('s');
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: color(danger300);
+    color: color(grey000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

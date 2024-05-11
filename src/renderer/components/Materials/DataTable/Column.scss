@@ -1,0 +1,25 @@
+@import '~styles/utilities.scss';
+
+.m-datatable-column {
+  flex: 1;
+  padding: rem(8px);
+  display: flex;
+  align-items: center;
+
+  &--inner {
+    padding: 0;
+
+    .m-datatable-column {
+      padding: rem(8px) rem(8px) rem(8px) 0;
+    }
+  }
+
+  &--noActionRow .m-datatable-column {
+    padding: rem(8px);
+  }
+
+  &--action {
+    flex: none;
+    min-width: 48px;
+  }
+}

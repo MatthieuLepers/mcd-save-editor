@@ -1,0 +1,58 @@
+@import '~styles/utilities.scss';
+
+.m-form-radio {
+  position: relative;
+
+  @include make-accessibility-shadow() {
+    width: 32px;
+    height: 32px;
+    top: calc(50% - 16px);
+    left: 0;
+  }
+
+  input {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 0;
+    z-index: -1;
+
+    &+label {
+      @include set-font-scale('xs');
+      padding-left: rem(40px);
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: color(grey000);
+
+      &::before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: calc(50% - 16px);
+        left: 0;
+        background-color: color(grey800);
+        border-radius: 16px;
+      }
+
+      &::after {
+        @include transition(opacity .2s ease-in-out);
+        content: '';
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: calc(50% - 6px);
+        left: 10px;
+        opacity: 0;
+        background-color: color(grey000);
+        border-radius: 50%;
+      }
+    }
+
+    &:checked+label::after {
+      opacity: 1;
+    }
+  }
+}
+

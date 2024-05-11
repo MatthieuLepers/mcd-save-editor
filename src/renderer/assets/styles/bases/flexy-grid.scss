@@ -1,0 +1,122 @@
+@use 'sass:math';
+
+@mixin grid-row-alignment-horizontal ($name, $spacing) {
+  &--#{$name} {
+    justify-content: $spacing;
+  }
+}
+
+@mixin grid-row-alignment-vertical ($name, $spacing) {
+  &--#{$name} {
+    align-items: $spacing;
+  }
+}
+
+@mixin make-spacial-width-column ($name, $viewportModifier) {
+  &--#{$name}#{$viewportModifier} {
+    @if $name == 'full' {
+      flex: 0 0 100%;
+      max-width: 100%;
+    } @else if $name == 'fill' {
+      flex: 1 1 0;
+    } @else if $name == 'initial' {
+      flex: 0 1 auto;
+    } @else {
+      flex: 1 0 auto;
+      max-width: none;
+    }
+  }
+}
+
+@mixin make-order-column ($name, $value, $viewportModifier) {
+  &--#{$name}#{$viewportModifier} {
+    order: $value;
+  }
+}
+
+@mixin make-sized-column ($size, $total, $viewportModifier) {
+  $value: $size * math.div(100%, $total);
+
+  &--#{$size}of#{$total}#{$viewportModifier} {
+    flex: 0 0 $value;
+    max-width: $value;
+  }
+
+  &--push-#{$size}of#{$total}#{$viewportModifier} {
+    margin-left: $value;
+  }
+}
+
+@mixin make-viewport ($key) {
+  @if ($key == 'xs') {
+    @content;
+  } @else {
+    @include set-from-screen($key) {
+      @content;
+    }
+  }
+}
+
+@mixin make-columns () {
+  &__col {
+    flex: 1 1 0;
+
+    @each $breakpoint, $value in $breakpoints {
+      @include make-viewport ($breakpoint) {
+        $viewportModifier: '';
+        @if $breakpoint != 'xs' {
+          $viewportModifier: \@from-#{$breakpoint};
+        }
+        @include make-sized-column(1, 2, $viewportModifier);
+        @include make-sized-column(1, 3, $viewportModifier);
+        @include make-sized-column(2, 3, $viewportModifier);
+        @include make-sized-column(1, 4, $viewportModifier);
+        @include make-sized-column(3, 4, $viewportModifier);
+        @include make-sized-column(1, 6, $viewportModifier);
+        @include make-sized-column(5, 6, $viewportModifier);
+        @include make-sized-column(1, 12, $viewportModifier);
+        @include make-sized-column(5, 12, $viewportModifier);
+        @include make-sized-column(7, 12, $viewportModifier);
+        @include make-sized-column(11, 12, $viewportModifier);
+        @include make-spacial-width-column('full', $viewportModifier);
+        @include make-spacial-width-column('fill', $viewportModifier);
+        @include make-spacial-width-column('initial', $viewportModifier);
+        @include make-spacial-width-column('grow', $viewportModifier);
+        @include make-order-column('first', -1, $viewportModifier);
+        @include make-order-column('last', 999, $viewportModifier);
+
+        &--push-reset#{$viewportModifier} {
+          margin-left: initial;
+        }
+      }
+    }
+  }
+}
+
+.flexy {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+
+  &--gutter {
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+  }
+
+  &--gutter > &__col {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  @include grid-row-alignment-horizontal('justify-around', space-arround);
+  @include grid-row-alignment-horizontal('justify-between', space-between);
+  @include grid-row-alignment-horizontal('justify-evenly', space-evenly);
+  @include grid-row-alignment-horizontal('justify-start', flex-start);
+  @include grid-row-alignment-horizontal('justify-center', center);
+  @include grid-row-alignment-horizontal('justify-end', flex-end);
+  @include grid-row-alignment-vertical('items-start', flex-start);
+  @include grid-row-alignment-vertical('items-center', center);
+  @include grid-row-alignment-vertical('items-end', flex-end);
+  @include grid-row-alignment-vertical('items-stretch', stretch);
+  @include make-columns();
+}

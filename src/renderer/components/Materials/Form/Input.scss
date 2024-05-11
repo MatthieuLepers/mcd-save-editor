@@ -1,0 +1,380 @@
+@import '~styles/utilities.scss';
+
+.m-form-input {
+  &--box {
+    &.m-form-input--adornment {
+      .m-form-input__container {
+        padding-right: rem(56px);
+      }
+    }
+
+    &.m-form-input--invalid:not(&.m-form-input--disabled) {
+      .m-form-input__label {
+        color: color(danger300);
+      }
+
+      .m-form-input__container {
+        border-bottom-color: color(danger300);
+      }
+    }
+
+    &.m-form-input--focus{
+      .m-form-input__label {
+        color: color(secondary200);
+      }
+
+      .m-form-input__container {
+        border-bottom-color: color(secondary200);
+      }
+    }
+
+    &.m-form-input--valid:not(&.m-form-input--disabled) {
+      .m-form-input__label {
+        color: color(success300);
+      }
+
+      .m-form-input__container {
+        border-bottom-color: color(success300);
+      }
+    }
+
+    &.m-form-input--empty:not(.m-form-input--focus) {
+      .m-form-input__label {
+        @include set-font-scale('s');
+        transform: translateY(26px);
+        padding: rem(12px) 0;
+        background-color: inherit;
+      }
+    }
+
+    &.m-form-input--required:not(&.m-form-input--disabled) {
+      .m-form-input__label::after {
+        content: '*';
+        @include set-font-scale('xs');
+        color: color(danger300);
+        margin-left: rem(4px);
+      }
+    }
+
+    &.m-form-input--disabled,
+    &.m-form-input--readonly {
+      .m-form-input__label,
+      .m-form-input__adornment {
+        color: color(grey500);
+      }
+
+      .m-form-input__container {
+        border-bottom-color: color(grey500);
+        background-color: color(grey700);
+      }
+    }
+
+    .m-form-input {
+      &__container {
+        @include transition(border-color .2s ease);
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        background-color: color(grey800);
+        padding: rem(8px) rem(12px);
+        border-bottom: 2px solid color(grey100);
+        border-radius: 2px 2px 0 0;
+        height: 56px;
+        overflow: hidden;
+      }
+
+      &__label {
+        @include set-font-scale('xs');
+        @include transition(all .2s ease);
+        color: color(grey000);
+        width: 100%;
+      }
+
+      &__adornment {
+        @include set-font-scale('m');
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 56px;
+        height: 56px;
+        color: color(grey000);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+  
+        &--clickable {
+          @include make-accessibility-background;
+        }
+      }
+    }
+
+    input {
+      @include set-font-scale('m');
+      padding: 0;
+      margin-top: 2px;
+      background-color: inherit;
+      box-shadow: none;
+      outline: none;
+      color: color(grey000);
+    }
+  }
+
+  &--inline {
+    position: relative;
+
+    .m-form-input__container {
+      flex-direction: row-reverse;
+      position: relative;
+      display: flex;
+      gap: rem(16px);
+    }
+
+    &.m-form-input {
+      @include make-accessibility-shadow {
+        height: 32px;
+        width: calc(50% + 1px);
+        right: 0;
+        left: auto;
+        top: 0px;
+        bottom: auto;
+      }
+    }
+
+    &.m-form-input--noLabel {
+      @include make-accessibility-shadow {
+        height: 32px;
+        top: 0;
+        bottom: auto;
+      }
+    }
+
+    &.m-form-input--focus input {
+      border-color: color(secondary200);
+
+      &+.m-form-input__label {
+        color: color(secondary200);
+      }
+    }
+
+    &.m-form-input--valid:not(&.m-form-input--disabled) input {
+      border-color: color(success300);
+
+      &+.m-form-input__label {
+        color: color(success300);
+      }
+    }
+
+    &.m-form-input--invalid:not(&.m-form-input--disabled) input {
+      border-color: color(danger300);
+
+      &+.m-form-input__label {
+        color: color(danger300);
+      }
+    }
+
+    &.m-form-input--focus input,
+    &.m-form-input:hover input,
+    &.m-form-input--focus input:focus,
+    &.m-form-input:hover input:focus {
+      box-shadow: 0 0 8px rgba(color(grey999), .5);
+    }
+
+    &.m-form-input--adornment input {
+      padding: 0 rem(40px) 0 rem(8px);
+    }
+
+    &.m-form-input--required .m-form-input__label::after {
+      content: '*';
+      color: color(danger300);
+      margin-left: rem(2px);
+    }
+
+    &.m-form-input--disabled input:disabled {
+      color: color(grey500);
+    }
+
+    input {
+      @include set-font-scale('xs');
+      background-color: color(grey800);
+      height: 32px;
+      width: 100%;
+      border-radius: 16px;
+      border: solid 1px color(grey800);
+      color: color(grey000);
+      padding: 0 rem(8px);
+      outline: none;
+      flex: 1;
+
+      @include placeholder {
+        color: color(grey000);
+        opacity: .5;
+      }
+    }
+
+    .m-form-input {
+      &__label {
+        @include set-font-scale('xs');
+        color: color(grey999);
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      &__adornment {
+        @include set-font-scale('xs');
+        @include make-accessibility-shadow();
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        background-color: color(grey700);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: color(grey000);
+
+        &--clickable {
+          cursor: pointer;
+        }
+
+        &:not(.m-form-input__adornment--clickable) {
+          pointer-events: none;
+        }
+
+        &:focus,
+        &:hover {
+          background-color: color(grey600);
+        }
+      }
+    }
+  }
+
+  &--default {
+    position: relative;
+
+    &.m-form-input {
+      @include make-accessibility-shadow {
+        height: 32px;
+        top: 20px;
+        bottom: auto;
+      }
+    }
+
+    &.m-form-input--noLabel {
+      @include make-accessibility-shadow {
+        height: 32px;
+        top: 0;
+        bottom: auto;
+      }
+    }
+
+    &.m-form-input--focus input {
+      border-color: color(secondary200);
+
+      &+.m-form-input__label {
+        color: color(secondary200);
+      }
+    }
+
+    &.m-form-input--valid:not(&.m-form-input--disabled) input {
+      border-color: color(success300);
+
+      &+.m-form-input__label {
+        color: color(success300);
+      }
+    }
+
+    &.m-form-input--invalid:not(&.m-form-input--disabled) input {
+      border-color: color(danger300);
+
+      &+.m-form-input__label {
+        color: color(danger300);
+      }
+    }
+
+    &.m-form-input--focus input,
+    &.m-form-input:hover input,
+    &.m-form-input--focus input:focus,
+    &.m-form-input:hover input:focus {
+      box-shadow: 0 0 8px rgba(color(grey999), .5);
+    }
+
+    &.m-form-input--adornment input {
+      padding: 0 rem(40px) 0 rem(8px);
+    }
+
+    &.m-form-input--required .m-form-input__label::after {
+      content: '*';
+      color: color(danger300);
+      margin-left: rem(2px);
+    }
+
+    &.m-form-input--disabled input:disabled {
+      color: color(grey500);
+    }
+
+    .m-form-input__container {
+      flex-direction: column-reverse;
+      display: flex;
+      position: relative;
+    }
+
+    input {
+      @include set-font-scale('xs');
+      background-color: color(grey800);
+      height: 32px;
+      width: 100%;
+      border-radius: 16px;
+      border: solid 1px color(grey800);
+      color: color(grey000);
+      padding: 0 rem(8px);
+      outline: none;
+
+      @include placeholder {
+        color: color(grey000);
+        opacity: .5;
+      }
+    }
+
+    .m-form-input {
+      &__label {
+        @include set-font-scale('xs');
+        margin-bottom: rem(4px);
+        color: color(grey000);
+      }
+
+      &__adornment {
+        @include set-font-scale('xs');
+        @include make-accessibility-shadow();
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        background-color: color(grey700);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: color(grey000);
+  
+        &--clickable {
+          cursor: pointer;
+        }
+  
+        &:not(.m-form-input__adornment--clickable) {
+          pointer-events: none;
+        }
+  
+        &:focus,
+        &:hover {
+          background-color: color(grey600);
+        }
+      }
+    }
+  }
+}

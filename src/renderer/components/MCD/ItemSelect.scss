@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .modal .MCDItemSelect.focus .MCDItemSelectOuter {
   z-index: 11;
@@ -24,15 +24,15 @@
       }
 
       &::before {
-        border-left: 3px solid color(f);
-        border-right: 3px solid color(f);
+        border-left: 3px solid color(grey000);
+        border-right: 3px solid color(grey000);
         top: 0;
         left: -3px;
       }
   
       &::after {
-        border-top: 3px solid color(f);
-        border-bottom: 3px solid color(f);
+        border-top: 3px solid color(grey000);
+        border-bottom: 3px solid color(grey000);
         top: -3px;
         left: 0;
       }
@@ -45,9 +45,9 @@
 
   &Outer {
     @include font-family('open-sans', 700);
-    @include font-size(18);
+    @include set-font-scale(l);
     text-transform: uppercase;
-    text-shadow: 3px 2px 0 rgba(color(0), 0.5);
+    text-shadow: 3px 2px 0 rgba(color(grey999), 0.5);
     word-break: break-word;
     position: relative;
     z-index: 8;
@@ -58,7 +58,7 @@
     top: calc(100% + 9px);
     left: 0;
     z-index: 9;
-    background: color(primary);
+    background: color(grey900);
     min-width: 300px;
 
     &::after,
@@ -71,15 +71,15 @@
     }
 
     &::before {
-      border-left: 3px solid color(f);
-      border-right: 3px solid color(f);
+      border-left: 3px solid color(grey000);
+      border-right: 3px solid color(grey000);
       top: 0;
       left: -3px;
     }
 
     &::after {
-      border-top: 3px solid color(f);
-      border-bottom: 3px solid color(f);
+      border-top: 3px solid color(grey000);
+      border-bottom: 3px solid color(grey000);
       top: -3px;
       left: 0;
     }
@@ -104,7 +104,7 @@
 
     &:hover,
     &--Selected {
-      background-color: lighten(color(primary), 11.76);
+      background-color: lighten(color(grey900), 11.76);
     }
 
     &:first-of-type {margin-top: 0;}
@@ -117,7 +117,7 @@
     }
 
     &Name {
-      @include font-size(14);
+      @include set-font-scale(s);
       display: flex;
       flex-direction: column;
       width: calc(100% - 40px);
@@ -126,22 +126,28 @@
       strong {white-space: nowrap;}
 
       span {
-        @include font-size(12);
+        @include set-font-scale(xs);
         display: inline-flex;
         flex-direction: row-reverse;
         justify-content: flex-end;
         opacity: .7;
 
-        &.common {color: color(light);}
-        &.rare {color: color(rare);}
-        &.unique {color: color(unique);}
+        &.common {color: color(grey500);}
+        &.rare {color: color(rare300);}
+        &.unique {color: color(unique100);}
 
         &>span:not(:last-of-type):after {
           content: ",";
-          color: color(light);
+          color: color(grey500);
           margin-right: 3px;
         }
       }
+    }
+
+    &Events {
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
   }
 
@@ -165,21 +171,21 @@
 
     input {
       @include font-family('open-sans');
-      @include font-size(14);
+      @include set-font-scale(s);
       width: calc(100% - 20px);
       margin: 0 10px;
-      background-color: lighten(color(primary), 11.76);
+      background-color: lighten(color(grey900), 11.76);
       padding: 3px 20px 3px 5px;
-      color: color(f);
-      border: 1px solid lighten(color(primary), 8.76)
+      color: color(grey000);
+      border: 1px solid lighten(color(grey900), 8.76)
     }
 
     i {
-      @include font-size(12);
+      @include set-font-scale(xs);
       position: absolute;
       top: calc(50% - 6px);
       right: 20px;
-      color: color(f);
+      color: color(grey000);
       pointer-events: none;
     }
   }

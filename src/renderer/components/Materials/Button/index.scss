@@ -1,0 +1,137 @@
+@import '~styles/utilities.scss';
+
+@mixin set-button-color($background, $text) {
+  background-color: $background;
+  color: $text;
+
+  .m-button__icon {
+    background-color: $text;
+    color: $background;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: lighten($background, 10%);
+
+    .m-button__icon {
+      background-color: $text;
+      color: $background;
+    }
+  }
+
+  &.m-button--iconed:focus .m-button__icon,
+  &.m-button--iconed:hover .m-button__icon {
+    color: lighten($background, 10%);
+  }
+
+  &.m-button--inverted {
+    background-color: $text;
+    color: $background;
+
+    .m-button__icon {
+      background-color: $background;
+      color: $text;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: lighten($text, 10%);
+
+      .m-button__icon {
+        background-color: $background;
+        color: $text;
+      }
+    }
+
+    &.m-button--iconed:focus .m-button__icon,
+    &.m-button--iconed:hover .m-button__icon {
+      color: lighten($text, 10%);
+    }
+  }
+}
+
+.m-button {
+  min-height: 32px;
+  border-radius: 16px;
+  padding: 0 rem(8px);
+  text-align: center;
+  background-color: color(grey800);
+  color: color(grey000);
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background-color: color(grey700);
+  }
+
+  &--squared {
+    border-radius: 0;
+  }
+
+  &--iconOnly {
+    padding: 0;
+    min-width: 32px;
+  }
+
+  &--iconed {
+    position: relative;
+  
+    .m-button__icon {
+      font-size: rem(12px);
+      position: absolute;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: color(grey700);
+      border-radius: 50%;
+    }
+
+    &:focus .m-button__icon,
+    &:hover .m-button__icon {
+      background-color: color(grey600);
+    }
+
+    &.m-button--iconed-left {
+      padding-left: rem(32px);
+  
+      .m-button__icon {
+        left: 4px;
+      }
+    }
+
+    &.m-button--iconed-right {
+      padding-right: rem(32px);
+
+      .m-button__icon {
+        right: 4px;
+      }
+    }
+  }
+
+  &--success:not(&--disabled) {
+    @include set-button-color(color(success300), color(grey000));
+  }
+
+  &--primary:not(&--disabled) {
+    @include set-button-color(color(grey900), color(grey000));
+  }
+
+  &--warning:not(&--disabled) {
+    @include set-button-color(color(warning300), color(grey000));
+  }
+
+  &--danger:not(&--disabled) {
+    @include set-button-color(color(danger300), color(grey000));
+  }
+
+  &--cancel:not(&--disabled) {
+    @include set-button-color(color(grey600), color(grey000));
+  }
+
+  &--disabled {
+    @include set-button-color(color(grey600), color(grey000));
+  }
+}

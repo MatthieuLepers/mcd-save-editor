@@ -1,0 +1,54 @@
+@import '~styles/utilities.scss';
+
+.m-title-bar {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  background-color: color(grey800);
+  color: invert(color(grey900));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+
+  &__app {
+    @include set-font-scale('s');
+    padding: 0 rem(8px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__button {
+    @include set-font-scale('xs');
+    -webkit-app-region: no-drag;
+    width: 42px;
+    height: 100%;
+    transition: background-color;
+    color: color(grey000);
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus {
+        outline: none;
+        background-color: rgba(color(grey000), .1);
+      }
+    }
+
+    &[disabled] {
+      opacity: .3;
+      cursor: auto;
+    }
+
+    &-ctn {
+      height: 100%;
+    }
+
+    &--close:not([disabled]) {
+      &:hover,
+      &:focus {
+        background-color: color(danger300);
+      }
+    }
+  }
+}

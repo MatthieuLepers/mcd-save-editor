@@ -1,4 +1,4 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDButton {
   position: relative;
@@ -39,16 +39,16 @@
   }
 
   &--light {
-    color: color(f);
+    color: color(grey000);
 
     &::before {
-      border-left: 3px solid rgba(color(f), .4);
-      border-right: 3px solid rgba(color(f), .4);
+      border-left: 3px solid rgba(color(grey000), .4);
+      border-right: 3px solid rgba(color(grey000), .4);
     }
 
     &::after {
-      border-top: 3px solid rgba(color(f), .4);
-      border-bottom: 3px solid rgba(color(f), .4);
+      border-top: 3px solid rgba(color(grey000), .4);
+      border-bottom: 3px solid rgba(color(grey000), .4);
     }
 
     &:not([disabled]) {
@@ -56,23 +56,23 @@
       &:focus {
         &::after,
         &::before {
-          border-color: color(f);
+          border-color: color(grey000);
         }
       }
     }
   }
 
   &--dark {
-    color: color(0);
+    color: color(grey999);
 
     &::before {
-      border-left: 3px solid rgba(color(0), .4);
-      border-right: 3px solid rgba(color(0), .4);
+      border-left: 3px solid rgba(color(grey999), .4);
+      border-right: 3px solid rgba(color(grey999), .4);
     }
 
     &::after {
-      border-top: 3px solid rgba(color(0), .4);
-      border-bottom: 3px solid rgba(color(0), .4);
+      border-top: 3px solid rgba(color(grey999), .4);
+      border-bottom: 3px solid rgba(color(grey999), .4);
     }
 
     &:not([disabled]) {
@@ -80,7 +80,7 @@
       &:focus {
         &::after,
         &::before {
-          border-color: color(0);
+          border-color: color(grey999);
         }
       }
     }
@@ -88,18 +88,18 @@
 
   &--success {
     @include font-family('open-sans', 700);
-    color: color(f);
+    color: color(grey000);
     padding: 0 20px;
-    background-color: rgba(color(success), .5);
+    background-color: rgba(color(success300), .5);
 
     &::before {
-      border-left: 3px solid color(f);
-      border-right: 3px solid color(f);
+      border-left: 3px solid color(grey000);
+      border-right: 3px solid color(grey000);
     }
 
     &::after {
-      border-top: 3px solid color(f);
-      border-bottom: 3px solid color(f);
+      border-top: 3px solid color(grey000);
+      border-bottom: 3px solid color(grey000);
     }
   }
 }

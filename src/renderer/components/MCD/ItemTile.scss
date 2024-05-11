@@ -1,10 +1,10 @@
-@import '@/assets/scss/utilities.scss';
+@import '~styles/utilities.scss';
 
 .MCDItemTile {
   width: 90px;
   height: 90px;
-  border: 2px solid color(border);
-  background-color: color(dark);
+  border: 2px solid color(grey500);
+  background-color: color(grey800);
   position: relative;
 
   &--New::before {
@@ -41,7 +41,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: color(dark);
+    background-color: color(grey800);
     z-index: 1;
 
     &Segment {
@@ -88,7 +88,7 @@
       content: '';
       width: calc(100% + 4px);
       height: calc(100% + 4px);
-      background: linear-gradient(-45deg, color(rare) 0%, color(border) 70%);
+      background: linear-gradient(-45deg, color(rare300) 0%, color(grey500) 70%);
       position: absolute;
       top: -2px;
       left: -2px;
@@ -97,14 +97,14 @@
 
     .MCDItemTileInnerBox {
       &Segment {
-        &.Top {background: linear-gradient(90deg, color(rare) 0%, color(dark) 60%);}
+        &.Top {background: linear-gradient(90deg, color(rare300) 0%, color(grey800) 60%);}
 
-        &.Left {background-color: color(rare);}
+        &.Left {background-color: color(rare300);}
 
-        &.Bottom {background: linear-gradient(90deg, color(rare) 0%, color(dark) 50%);}
+        &.Bottom {background: linear-gradient(90deg, color(rare300) 0%, color(grey800) 50%);}
       }
 
-      &Body {background: linear-gradient(135deg, color(rare) 0%, color(dark) 30%);}
+      &Body {background: linear-gradient(135deg, color(rare300) 0%, color(grey800) 30%);}
     }
   }
 
@@ -118,7 +118,7 @@
       content: '';
       width: calc(100% + 4px);
       height: calc(100% + 4px);
-      background: linear-gradient(-45deg, color(unique2) 0%, color(border) 70%);
+      background: linear-gradient(-45deg, color(unique300) 0%, color(grey500) 70%);
       position: absolute;
       top: -2px;
       left: -2px;
@@ -127,14 +127,14 @@
 
     .MCDItemTileInnerBox {
       &Segment {
-        &.Top {background: linear-gradient(90deg, color(unique) 0%, color(dark) 80%);}
+        &.Top {background: linear-gradient(90deg, color(unique100) 0%, color(grey800) 80%);}
 
-        &.Left {background-color: color(unique);}
+        &.Left {background-color: color(unique100);}
 
-        &.Bottom {background: linear-gradient(90deg, color(unique) 0%, color(dark) 50%);}
+        &.Bottom {background: linear-gradient(90deg, color(unique100) 0%, color(grey800) 50%);}
       }
 
-      &Body {background: linear-gradient(135deg, color(unique) 0%, color(dark) 40%);}
+      &Body {background: linear-gradient(135deg, color(unique100) 0%, color(grey800) 40%);}
     }
   }
 }

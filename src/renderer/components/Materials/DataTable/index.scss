@@ -1,0 +1,44 @@
+@import '~styles/utilities.scss';
+
+.m-datatable {
+  border: 1px solid color(grey800);
+  border-top: none;
+  width: 100%;
+  background: color(grey900);
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: color(grey800);
+
+    .m-datatable-row {
+      display: flex;
+      width: 100%;
+      border-bottom: 1px solid color(grey800);
+    }
+
+    .m-datatable-column {
+      @include font-family('Open Sans', 600);
+      @include set-font-scale('s');
+
+      &--action {
+        min-width: 48px;
+      }
+
+      .m-datatable-button--sort,
+      .m-datatable-button--sortAsc,
+      .m-datatable-button--sortDesc {
+        @include font-family('Open Sans', 600);
+        background: none;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}

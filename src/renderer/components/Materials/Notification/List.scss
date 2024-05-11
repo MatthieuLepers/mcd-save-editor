@@ -1,0 +1,89 @@
+@import '~styles/utilities.scss';
+
+@keyframes appear {
+  from {
+    bottom: -42px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.m-notification-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    @include font-family('Open Sans', 600);
+    animation: appear .3s forwards;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    opacity: 1;
+    bottom: 0;
+
+    &:not(:last-of-type) {
+      margin-bottom: 4px;
+    }
+
+    &::before {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    &--success {
+      background-color: color(success300);
+      color: color(grey000);
+
+      &::before {
+        @include icon('check');
+      }
+    }
+
+    &--warning {
+      background-color: color(warning300);
+      color: color(grey000);
+
+      &::before {
+        @include icon('warning');
+      }
+    }
+
+    &--error {
+      background-color: color(danger300);
+      color: color(grey000);
+
+      &::before {
+        @include icon('close');
+      }
+    }
+
+    &--info {
+      background-color: color(secondary200);
+      color: color(grey000);
+
+      &::before {
+        @include icon('info');
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      top: calc(50% - 16px);
+      right: 3px;
+    }
+  }
+}

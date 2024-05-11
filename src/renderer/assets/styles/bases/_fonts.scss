@@ -1,0 +1,109 @@
+@use 'sass:math';
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('~fonts/opensans/opensans-regular.eot');
+  src: url('~fonts/opensans/opensans-regular.eot?#iefix') format('embedded-opentype'),
+       url('~fonts/opensans/opensans-regular.woff2') format('woff2'),
+       url('~fonts/opensans/opensans-regular.woff') format('woff'),
+       url('~fonts/opensans/opensans-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('~fonts/opensans/opensans-italic.eot');
+  src: url('~fonts/opensans/opensans-italic.eot?#iefix') format('embedded-opentype'),
+       url('~fonts/opensans/opensans-italic.woff2') format('woff2'),
+       url('~fonts/opensans/opensans-italic.woff') format('woff'),
+       url('~fonts/opensans/opensans-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('~fonts/opensans/opensans-semibold.eot');
+  src: url('~fonts/opensans/opensans-semibold.eot?#iefix') format('embedded-opentype'),
+       url('~fonts/opensans/opensans-semibold.woff2') format('woff2'),
+       url('~fonts/opensans/opensans-semibold.woff') format('woff'),
+       url('~fonts/opensans/opensans-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('~fonts/opensans/opensans-bold.eot');
+  src: url('~fonts/opensans/opensans-bold.eot?#iefix') format('embedded-opentype'),
+       url('~fonts/opensans/opensans-bold.woff2') format('woff2'),
+       url('~fonts/opensans/opensans-bold.woff') format('woff'),
+       url('~fonts/opensans/opensans-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('~fonts/opensans/opensans-extrabold.eot');
+  src: url('~fonts/opensans/opensans-extrabold.eot?#iefix') format('embedded-opentype'),
+       url('~fonts/opensans/opensans-extrabold.woff2') format('woff2'),
+       url('~fonts/opensans/opensans-extrabold.woff') format('woff'),
+       url('~fonts/opensans/opensans-extrabold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@mixin font-family($font: 'Open Sans', $weight: 400, $serif: false, $italic: false) {
+  @if $serif {
+    font-family: #{$font}, serif;
+  } @else {
+    font-family: #{$font}, sans-serif;
+  }
+  font-weight: $weight;
+
+  @if $italic {
+    font-style: italic;
+  }
+}
+
+$font-sizes: (
+  xxs: 11px,
+  xs : 12px,
+  s  : 14px,
+  m  : 16px,
+  l  : 18px,
+  xl : 23px,
+  xxl: 28px,
+);
+
+$font-heights: (
+  xxs: 14px,
+  xs : 16px,
+  s  : 18px,
+  m  : 22px,
+  l  : 24px,
+  xl : 32px,
+  xxl: 36px,
+);
+
+@function rem($size, $base: 16px) {
+  $remSize: math.div($size, $base);
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin set-font-scale($size: 'm', $height: 'auto') {
+  font-size: rem(map-get($font-sizes, $size));
+  @if $height == 'auto' {
+    line-height: rem(map-get($font-heights, $size));
+  } @else {
+    line-height: rem(map-get($font-heights, $height));
+  }
+}

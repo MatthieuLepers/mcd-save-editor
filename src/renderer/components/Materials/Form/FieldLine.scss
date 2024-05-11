@@ -1,0 +1,34 @@
+@use 'sass:math';
+@import '~styles/utilities.scss';
+
+$field-line-gap: 8px;
+
+@mixin field-line-sized($size: 1) {
+  @if ($size > 1) {
+    &--#{$size} {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+
+      .m-form-field-container {
+        width: calc(#{math.div(100%, $size)} - #{math.div($field-line-gap * ($size - 1), $size)});
+      }
+    }
+  }
+}
+
+.m-form-field-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  &:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+
+  @for $i from 2 through 4 {
+    @include field-line-sized($i);
+  }
+}

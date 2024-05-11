@@ -1,22 +1,22 @@
 <template>
-  <div class="MCDGears" :key="GlobalStore.key">
-    <div class="MCDGearsContainers col-xs-12">
+  <div class="MCDGears" :key="globalStore.state.key">
+    <div class="MCDGearsContainers">
       <component
-        :is="!!item ? 'MCDItem' : 'MCDItemEmpty'"
-        v-for="(item, i) in gears"
+        :is="!!item ? MCDItem : MCDItemEmpty"
+        v-for="(item, i) in props.gears"
         :key="i"
         :item="item"
-        :itemType="ItemTypeEnum.list[i]"
+        :itemType="Object.values(ItemTypeEnum)[i]"
       />
     </div>
 
-    <img class="MCDGearsSkin" :src="`static/img/CharactersSkins/${GlobalStore.selectedCharacter.$data.skin}.png`" :alt="GlobalStore.selectedCharacter.$data.skin" />
+    <img class="MCDGearsSkin" :src="image(`img/CharactersSkins/${globalStore.state.selectedCharacter.data.skin}.png`)" :alt="globalStore.state.selectedCharacter.data.skin" />
     <MCDLevelBadge />
 
-    <div class="MCDArtefacts col-xs-12">
+    <div class="MCDArtefacts">
       <component
-        :is="!!item ? 'MCDItem' : 'MCDItemEmpty'"
-        v-for="(item, i) in hotbar"
+        :is="!!item ? MCDItem : MCDItemEmpty"
+        v-for="(item, i) in props.hotbar"
         :key="i"
         :item="item"
         itemType="Artefact"
@@ -26,28 +26,21 @@
   </div>
 </template>
 
-<script>
-import GlobalStore from '@/assets/js/stores/GlobalStore';
-import ItemTypeEnum from '@/assets/js/classes/enums/ItemTypeEnum';
+<script setup>
+import MCDItem from '@renderer/components/MCD/Item.vue';
+import MCDItemEmpty from '@renderer/components/MCD/ItemEmpty.vue';
+import MCDLevelBadge from '@renderer/components/MCD/LevelBadge.vue';
 
-import MCDItem from './Item';
-import MCDItemEmpty from './ItemEmpty';
-import MCDLevelBadge from './LevelBadge';
+import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
+import { image } from '@renderer/core/utils';
 
-export default {
-  name: 'MCDGears',
-  components: { MCDItem, MCDItemEmpty, MCDLevelBadge },
-  props: {
-    gears: { type: Array, required: true },
-    hotbar: { type: Array, required: true },
-  },
-  data() {
-    return {
-      GlobalStore,
-      ItemTypeEnum,
-    };
-  },
-};
+defineOptions({ name: 'MCDGears' });
+
+const props = defineProps({
+  gears: { type: Array, required: true },
+  hotbar: { type: Array, required: true },
+});
 </script>
 
 <style lang="scss" src="./Gears.scss">

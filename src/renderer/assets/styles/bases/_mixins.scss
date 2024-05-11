@@ -1,0 +1,80 @@
+@use 'sass:math';
+
+@mixin placeholder {
+  #{if(&, '&.placeholder','.placeholder')} { @content; }
+  #{if(&, '&:-moz-placeholder',':-moz-placeholder')} { @content; }
+  #{if(&, '&::-moz-placeholder','::-moz-placeholder')} { @content; }
+  #{if(&, '&:-ms-input-placeholder',':-ms-input-placeholder')} { @content; }
+  #{if(&, '&::-webkit-input-placeholder','::-webkit-input-placeholder')} { @content; }
+}
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+@mixin circle($radius) {
+  width: rem($radius);
+  height: rem($radius);
+  border-radius: 50%;
+}
+
+@mixin triangle-top($width, $height, $color) {
+  border-bottom: #{$height} solid $color;
+  border-left: #{math.div($width, 2)} solid transparent;
+  border-right: #{math.div($width, 2)} solid transparent;
+}
+
+@mixin triangle-bottom($width, $height, $color) {
+  border-top: #{$height} solid $color;
+  border-left: #{math.div($width, 2)} solid transparent;
+  border-right: #{math.div($width, 2)} solid transparent;
+}
+
+@mixin triangle-left($width, $height, $color) {
+  border-right: #{$height} solid $color;
+  border-top: #{math.div($width, 2)} solid transparent;
+  border-bottom: #{math.div($width, 2)} solid transparent;
+}
+
+@mixin triangle-right($width, $height, $color) {
+  border-left: #{$height} solid $color;
+  border-top: #{math.div($width, 2)} solid transparent;
+  border-bottom: #{math.div($width, 2)} solid transparent;
+}
+
+@mixin make-accessibility-shadow {
+  outline: none;
+
+  &::after {
+    @include transition(box-shadow .2s ease);
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 24px;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    @content;
+  }
+
+  &:focus::after,
+  &--focus::after {
+    box-shadow: 0 0 0 .125rem color(grey800), 0 0 0 .25rem color(secondary200);
+  }
+}
+
+@mixin make-accessibility-background($color: color(grey700)) {
+  @include transition(background-color .2s ease);
+  outline: none;
+
+  &:focus,
+  &--focus {
+    background-color: $color;
+  }
+}
