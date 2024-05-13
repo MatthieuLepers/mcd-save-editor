@@ -3,6 +3,7 @@ import Inventory from '@renderer/core/classes/Inventory';
 import StorageChest from '@renderer/core/classes/StorageChest';
 import CharacterBackup from '@renderer/core/classes/CharacterBackup';
 import type { IGameItem } from '@renderer/core/entities/item/i';
+import TowerData, { type ITowerData } from '@renderer/core/classes/tower/TowerData';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import EncryptionService from '@renderer/core/services/EncryptionService';
 import CharacterUtils from '@renderer/core/utils/CharacterUtils';
@@ -14,6 +15,11 @@ export interface ICharacter {
   name: string;
   playerId: string;
   storageChestItems: Array<IGameItem>;
+  missionStatesMap?: {
+    thetower?: {
+      missionStates: ITowerData;
+    };
+  };
   xp: number;
 }
 
@@ -25,6 +31,8 @@ export default class Character {
   public inventory: Inventory;
 
   public storageChest: StorageChest;
+
+  public towerData: TowerData | null;
 
   /**
    * @constructor
@@ -39,6 +47,7 @@ export default class Character {
     this.currencies = new Currencies(this.data.currency);
     this.inventory = new Inventory(this.corrupted.length ? [] : this.data.items);
     this.storageChest = new StorageChest(this.corrupted.length ? [] : this.data.storageChestItems);
+    this.towerData = this.data.missionStatesMap?.thetower ? new TowerData(this.data.missionStatesMap.thetower.missionStates[0]) : null;
   }
 
   get id(): string {

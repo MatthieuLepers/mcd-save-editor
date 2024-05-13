@@ -15,6 +15,14 @@
         <img :src="image('img/UI/AncientHunts.png')" alt="Ancient Hunts" :title="t('App.Navigation.ancientHunts')" />
       </router-link>
     </li>
+    <li
+      v-if="globalStore.state.selectedCharacter?.towerData"
+      :class="GenerateModifiers('AppNavigationItem', { Active: route.name === 'Tower' })"
+    >
+      <router-link :to="{ name: 'Tower' }">
+        <img :src="image('img/UI/Tower.png')" alt="Tower" :title="t('App.Navigation.tower')" />
+      </router-link>
+    </li>
   </ul>
 </template>
 
@@ -22,6 +30,7 @@
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 
+import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { image } from '@renderer/core/utils';
 
 const { t } = useI18n();
