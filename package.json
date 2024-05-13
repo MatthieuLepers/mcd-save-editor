@@ -1,7 +1,7 @@
 {
-  "name": "electron-vite-vue-typescript-boilerplate",
+  "name": "mcd-save-editor",
   "version": "1.5.0",
-  "description": "An Electron application with Vue and TypeScript",
+  "description": "An Minecraft: Dungeons save edietor made with Vue3 and TypeScript",
   "main": "./out/main/index.js",
   "author": "Matthieu LEPERS",
   "scripts": {
