@@ -2,6 +2,11 @@
   "name": "mcd-save-editor",
   "version": "1.5.0",
   "description": "An Minecraft: Dungeons save edietor made with Vue3 and TypeScript",
+  "homepage": "https://github.com/MatthieuLepers/mcd-save-editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthieuLepers/mcd-save-editor.git"
+  },
   "main": "./out/main/index.js",
   "author": "Matthieu LEPERS",
   "scripts": {
