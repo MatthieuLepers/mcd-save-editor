@@ -63,6 +63,13 @@ export default {
     },
   },
   MCD: {
+    Game: {
+      Tower: {
+        Challenges: GlobalI18N.TowerChallengesData('en-EN'),
+        Bosses: GlobalI18N.TowerBossesData('en-EN'),
+        Merchants: GlobalI18N.TowerMerchantsData('en-EN'),
+      },
+    },
     DataCorruption: {
       Page: {
         title: 'Data corruption error report',
@@ -311,6 +318,19 @@ export default {
     EnchantmentEditor: {
       upgradeTiers: 'Upgrade tiers',
       costError: 'You need {cost} enchantment point{pluralize} to do that.',
+    },
+    TowerConfiguration: {
+      title: 'Tower configuration',
+    },
+    TowerFloor: {
+      floor: 'Floor',
+      map: 'Map',
+      difficulty: 'Difficulty',
+      difficulties: {
+        easy: 'easy',
+        medium: 'medium',
+        hard: 'hard',
+      },
     },
   },
   Electron: {

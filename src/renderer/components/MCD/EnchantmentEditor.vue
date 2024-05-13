@@ -73,10 +73,15 @@ defineOptions({ name: 'MCDEnchantmentEditor' });
 const $uid = ref(getCurrentInstance().uid);
 const { t } = useI18n();
 
+const props = defineProps({
+  towerMode: { type: Boolean, default: false },
+});
+
 const actions = {
   setLevel(e, level) {
     if (e.target.checked) {
       const cost = globalStore.state.selectedEnchant.getInvestmentCostForLevel(level);
+      // (props.towerMode && globalStore.state.selectedCharacter.towerData.towerInfo.enchantmentPoints >= cost) || globalStore.state.selectedCharacter.enchantmentPoints >= cost
       if (globalStore.state.selectedCharacter.enchantmentPoints >= cost) {
         globalStore.state.selectedEnchant.level = level;
       } else {
