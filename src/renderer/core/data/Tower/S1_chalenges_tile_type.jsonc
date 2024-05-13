@@ -1,0 +1,80 @@
+[
+  [ "Empty"   , null                                   , "twr_floor_entrance" ],
+
+  [ "Merchant", null                                   , "twr_inhabitant_01"  ],
+  [ "Merchant", null                                   , "twr_inhabitant_02"  ],
+  [ "Merchant", null                                   , "twr_inhabitant_03"  ],
+
+  [ "Boss"    , "tower_boss_cauldron"                  , "twr_boss_01"        ],
+  [ "Boss"    , "tower_boss_event_mobs_boss_mix_fun1"  , "twr_boss_01"        ],
+  [ "Boss"    , "tower_boss_namelessone"               , "twr_boss_02"        ],
+  [ "Boss"    , "tower_boss_event_mobs_boss_mix_nether", "twr_boss_02"        ],
+  [ "Boss"    , "tower_boss_redstonemonstrosity"       , "twr_boss_03"        ],
+  [ "Boss"    , "tower_boss_redstonemonstrosity"       , "twr_boss_04"        ],
+  [ "Boss"    , "tower_boss_og_jungleabomination"      , "twr_floor_top"      ],
+  [ "Boss"    , "tower_boss_redstonemonstrosity"       , "twr_floor_top"      ],
+
+  [ "Combat"  , "twr_pp_arena_compact_easy"            , "twr_pp_floor_02"    ],
+  [ "Combat"  , "twr_pp_arena_scattered_easy"          , "twr_pp_floor_05"    ],
+
+  [ "Combat"  , "twr_dt_arena_compact_easy"            , "twr_dt_floor_02"    ],
+  [ "Combat"  , "twr_dt_arena_scattered_medium"        , "twr_dt_floor_03"    ],
+  [ "Combat"  , "twr_dt_arena_compact_medium"          , "twr_dt_floor_04"    ],
+  [ "Combat"  , "twr_dt_arena_compact_hard"            , "twr_dt_floor_04"    ],
+
+  [ "Combat"  , "twr_hh_arena_scattered_easy"          , "twr_hh_floor_02"    ],
+  [ "Combat"  , "twr_hh_arena_scattered_easy"          , "twr_hh_floor_03"    ],
+  [ "Combat"  , "twr_hh_arena_scattered_hard"          , "twr_hh_floor_03"    ],
+  [ "Combat"  , "twr_hh_arena_compact_medium"          , "twr_hh_floor_04"    ],
+  [ "Combat"  , "twr_hh_arena_scattered_medium"        , "twr_hh_floor_04"    ],
+  [ "Combat"  , "twr_hh_arena_compact_hard"            , "twr_hh_floor_05"    ],
+  [ "Combat"  , "twr_hh_arena_compact_easy"            , "twr_hh_floor_06"    ],
+
+  [ "Combat"  , "twr_ot_floor_01_arena_easy"           , "twr_ot_floor_01"    ],
+  [ "Combat"  , "twr_ot_floor_02_arena_easy"           , "twr_ot_floor_02"    ],
+  [ "Combat"  , "twr_ot_floor_03_arena_easy"           , "twr_ot_floor_03"    ],
+  [ "Combat"  , "twr_ot_floor_04_arena_easy"           , "twr_ot_floor_04"    ],
+  [ "Combat"  , "twr_ot_floor_05_arena_easy"           , "twr_ot_floor_05"    ],
+  [ "Combat"  , "twr_ot_floor_06_arena_easy"           , "twr_ot_floor_06"    ],
+
+  [ "Combat"  , "twr_crc_scattered_easy"               , "twr_crc_floor_01"   ],
+  [ "Combat"  , "twr_crc_scattered_easy"               , "twr_crc_floor_03"   ],
+  [ "Combat"  , "twr_crc_scattered_medium"             , "twr_crc_floor_03"   ],
+
+  [ "Combat"  , "twr_ls_arena_scattered_easy"          , "twr_ls_floor_01"    ],
+  [ "Combat"  , "twr_ls_arena_compact_medium"          , "twr_ls_floor_02"    ],
+  [ "Combat"  , "twr_ls_arena_scattered_hard"          , "twr_bd_floor_02"    ], // oui oui, bd
+  [ "Combat"  , "twr_ls_arena_scattered_medium"        , "twr_ls_floor_03"    ],
+  [ "Combat"  , "twr_ls_arena_compact_hard"            , "twr_ls_floor_04"    ],
+  [ "Combat"  , "twr_ls_arena_scattered_hard"          , "twr_ls_floor_05"    ],
+
+  [ "Combat"  , "twr_gs_arena_compact_medium"          , "twr_gs_floor_02"    ],
+  [ "Combat"  , "twr_gs_arena_scattered_medium"        , "twr_gs_floor_03"    ],
+  [ "Combat"  , "twr_gs_arena_compact_medium"          , "twr_gs_floor_04"    ],
+  [ "Combat"  , "twr_gs_arena_scattered_hard"          , "twr_gs_floor_05"    ],
+  [ "Combat"  , "twr_gs_arena_compact_hard"            , "twr_gs_floor_05"    ],
+
+  [ "Combat"  , "twr_ts_floor_01_arena_hard"           , "twr_ts_floor_01"    ],
+  [ "Combat"  , "twr_ts_floor_06_arena_hard"           , "twr_ts_floor_06", "ts_floor_06_endermites_endless_secondary_click_arena" ],
+
+  [ "Combat"  , "twr_bd_arena_scattered_hard"          , "twr_bd_floor_02"    ],
+  [ "Combat"  , "twr_bd_arena_scattered_medium"        , "twr_bd_floor_03"    ],
+  [ "Combat"  , "twr_bd_arena_compact_medium"          , "twr_bd_floor_05"    ],
+  [ "Combat"  , "twr_bd_arena_compact_medium"          , "twr_bd_floor_06"    ],
+
+  [ "Combat"  , "twr_ew_floor_01_arena_hard"           , "twr_ew_floor_01"    ],
+  [ "Combat"  , "twr_ew_floor_02_arena_hard"           , "twr_ew_floor_02"    ],
+  [ "Combat"  , "twr_ew_floor_03_arena_medium"         , "twr_ew_floor_03"    ],
+  [ "Combat"  , "twr_ew_floor_03_arena_hard"           , "twr_ew_floor_03"    ],
+
+  [ "Combat"  , "tower_base_challenge_easy"            , "twr_floor_sec1_01"  ],
+  [ "Combat"  , "tower_base_challenge_easy"            , "twr_floor_sec1_02"  ],
+  [ "Combat"  , "tower_base_challenge_hard"            , "twr_floor_sec1_02"  ],
+  [ "Combat"  , "tower_base_challenge_easy"            , "twr_floor_sec4_02"  ],
+  [ "Combat"  , "tower_base_challenge_medium"          , "twr_floor_sec2_01"  ],
+  [ "Combat"  , "tower_base_challenge_medium"          , "twr_floor_sec2_02"  ],
+  [ "Combat"  , "tower_base_challenge_medium"          , "twr_floor_sec3_01"  ],
+  [ "Combat"  , "tower_base_challenge_medium"          , "twr_floor_sec3_02"  ],
+  [ "Combat"  , "tower_base_challenge_hard"            , "twr_floor_sec3_02"  ],
+  [ "Combat"  , "tower_base_challenge_easy"            , "twr_floor_sec4_02"  ]
+]

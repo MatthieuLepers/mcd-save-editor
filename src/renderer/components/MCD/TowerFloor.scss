@@ -1,0 +1,15 @@
+@import "~styles/utilities.scss";
+
+.MCDTowerFloor {
+  border: 1px solid color(greyy800);
+  padding: 8px;
+  margin-bottom: 4px;
+
+  &--Done {
+    border-color: color(rare300);
+  }
+
+  &--Current {
+    border-color: color(secondary100);
+  }
+}

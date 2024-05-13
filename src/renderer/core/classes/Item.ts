@@ -82,8 +82,11 @@ export interface IItem {
 export default class Item {
   public $key: number;
 
-  constructor(public data: IItem) {
+  public isTower: boolean;
+
+  constructor(public data: IItem, isTower?: boolean) {
     this.$key = 0;
+    this.isTower = isTower ?? false;
 
     if (this.data.enchantments && this.data.enchantments.length < 9) {
       [...Array(9 - this.data.enchantments.length).keys()].forEach(() => {
@@ -119,11 +122,11 @@ export default class Item {
   }
 
   isGear(): boolean {
-    return !!this.data.equipmentSlot && this.data.equipmentSlot.indexOf('Gear') >= 0;
+    return (this.isTower && !this.isArtefact()) || (!!this.data.equipmentSlot && this.data.equipmentSlot.indexOf('Gear') >= 0);
   }
 
   isHotbar(): boolean {
-    return !!this.data.equipmentSlot && this.data.equipmentSlot.indexOf('Hotbar') >= 0;
+    return (this.isTower && this.isArtefact()) || (!!this.data.equipmentSlot && this.data.equipmentSlot.indexOf('Hotbar') >= 0);
   }
 
   isEquipped(): boolean {

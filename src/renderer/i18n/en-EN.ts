@@ -63,6 +63,11 @@ export default {
       ArmorProperties: GlobalI18N.ArmorProperties('en-EN'),
       Enchants: GlobalI18N.Enchants('en-EN'),
       Items: GlobalI18N.Items('en-EN'),
+      Tower: {
+        Challenges: GlobalI18N.TowerChallengesData('en-EN'),
+        Bosses: GlobalI18N.TowerBossesData('en-EN'),
+        Merchants: GlobalI18N.TowerMerchantsData('en-EN'),
+      },
     },
     DataCorruption: {
       Page: {
@@ -312,6 +317,19 @@ export default {
     EnchantmentEditor: {
       upgradeTiers: 'Upgrade tiers',
       costError: 'You need {cost} enchantment point{pluralize} to do that.',
+    },
+    TowerConfiguration: {
+      title: 'Tower configuration',
+    },
+    TowerFloor: {
+      floor: 'Floor',
+      map: 'Map',
+      difficulty: 'Difficulty',
+      difficulties: {
+        easy: 'easy',
+        medium: 'medium',
+        hard: 'hard',
+      },
     },
   },
   Electron: {
