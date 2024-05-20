@@ -1,6 +1,6 @@
 <template>
   <li :class="GenerateModifiers('MCDTowerFloor', { Current: props.index === props.current, Done: props.index < props.current })">
-    {{ t('MCD.TowerFloor.floor') }} {{ props.index }}/30 - {{ floor.type }}
+    {{ t('MCD.TowerFloor.floor') }} {{ props.index }}/{{ props.totalFloors }} - {{ floor.type }}
     <div>
       <span v-if="props.floor.challenge && props.floor.challenge.level">
         {{ t(`MCD.Game.Tower.Challenges.${props.floor.challenge.level}`) }}, {{ t(`MCD.TowerFloor.difficulties.${props.floor.challenge.difficulty}`) }}
@@ -32,6 +32,7 @@ const props = defineProps({
   index: { type: Number, required: true },
   current: { type: Number, required: true },
   floor: { type: TowerFloor, required: true },
+  totalFloors: { type: Number, default: 30 },
 });
 </script>
 
