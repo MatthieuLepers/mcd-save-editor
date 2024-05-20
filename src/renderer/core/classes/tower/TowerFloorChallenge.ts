@@ -1,4 +1,4 @@
-const LEVEL_REGEX = /^twr_([a-z]+)(?:_(floor_[0-9]+))?(?:_(arena))?(?:_(scattered|compact))?_(easy|medium|hard)(?:_mix)?$/;
+const LEVEL_REGEX = /^twr_([a-z0-9]+)(?:_(floor_[0-9]+))?(?:_(arena))?(?:_(scattered|compact))?_(easy|medium|hard).*$/;
 
 export interface ITowerFloorChallengeConfig {
   level?: string;
@@ -36,6 +36,7 @@ export default class TowerFloorChallenge {
       return { boss: this.data.replace('tower_boss_', '') };
     }
     if (this.data.startsWith('twr_')) {
+      console.log(this.data);
       const [, level, floorVariant, arena, modifier, difficulty] = this.data.match(LEVEL_REGEX)!;
       const conf: ITowerFloorChallengeConfig = { level, difficulty };
       if (floorVariant) conf.variant = floorVariant;
