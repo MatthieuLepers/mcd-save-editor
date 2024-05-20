@@ -10,6 +10,7 @@
         :index="i"
         :current="props.towerData.towerInfo.data.towerInfo.towerInfoCurrentFloor"
         :floor="floor"
+        :totalFloors="props.towerData.towerInfo.config.floors.length - 1"
         @edit="actions.handleEditFloor(floor, i)"
       />
     </ol>

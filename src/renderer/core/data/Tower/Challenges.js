@@ -83,11 +83,25 @@ export default {
       'en-EN': 'Frozen Fjord',
     },
   },
+  frf1: {
+    level: 'FrozenFjord',
+    i18n: {
+      'fr-FR': 'Fjord gelé',
+      'en-EN': 'Frozen Fjord',
+    },
+  },
   ts: {
     level: 'TheStronghold',
     i18n: {
       'fr-FR': 'La forteresse',
       'en-EN': 'The Stronghold',
+    },
+  },
+  lf: {
+    level: 'LoneFortress',
+    i18n: {
+      'fr-FR': 'Forteresse solitaire',
+      'en-EN': 'Lone Fortress',
     },
   },
 };
