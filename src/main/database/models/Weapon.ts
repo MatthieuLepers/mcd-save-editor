@@ -1,0 +1,64 @@
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  Default,
+  PrimaryKey,
+  HasMany,
+  AllowNull,
+  ForeignKey,
+} from 'sequelize-typescript';
+import { Dlc, Event, WeaponI18n } from '@/main/database/models';
+
+@Table({
+  modelName: 'weapons',
+  indexes: [
+    {
+      unique: true,
+      fields: ['id'],
+    },
+  ],
+})
+export class Weapon extends Model {
+  @PrimaryKey
+  @Column(DataType.STRING)
+  declare id: string;
+
+  @ForeignKey(() => Dlc)
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  declare dlcId: string;
+
+  @ForeignKey(() => Event)
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  declare eventId: string;
+
+  @AllowNull(false)
+  @Column(DataType.STRING)
+  declare type: string;
+
+  @AllowNull(false)
+  @Column(DataType.JSON)
+  declare rarity: Array<string>;
+
+  @AllowNull(false)
+  @Column(DataType.JSON)
+  declare ancientHuntRunes: Array<string>;
+
+  @AllowNull(false)
+  @Column(DataType.JSON)
+  declare stats: Record<string, number>;
+
+  @Default(false)
+  @Column(DataType.BOOLEAN)
+  declare soulgathering: boolean;
+
+  @Default([])
+  @Column(DataType.JSON)
+  declare activeEnchants: Array<string>;
+
+  @HasMany(() => WeaponI18n)
+  declare i18n: Array<WeaponI18n>;
+}
