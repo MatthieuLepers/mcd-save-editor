@@ -1,0 +1,241 @@
+[
+  {
+    "id": "AllyDamageBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Aura de boost des dégats des armes +20%"},
+      {"locale": "en-EN", "name": "+20% weapon damage boost aura"}
+    ]
+  },
+  {
+    "id": "AreaHeal",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Les potions de soin soignent les aliés à proximité"},
+      {"locale": "en-EN", "name": "Health potions heal nearby allies"}
+    ]
+  },
+  {
+    "id": "Beekeeper",
+    "i18n": [
+      {"locale": "fr-FR", "name": "30% possibilité d'invoquer une abeille si frappé max. : 3)"},
+      {"locale": "en-EN", "name": "30% chance to summon a bee when hit (max 3)"}
+    ]
+  },
+  {
+    "id": "DodgeCooldownIncrease",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Temps de rechargement du rouleau plus long 100%"},
+      {"locale": "en-EN", "name": "100% longer roll cooldown"}
+    ]
+  },
+  {
+    "id": "DodgeGhostForm",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Attribue brièvement la forme fantomatique lors de l'esquive"},
+      {"locale": "en-EN", "name": "Briefly gain Ghost Form when rolling"}
+    ]
+  },
+  {
+    "id": "DodgeSpeedIncrease",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Esquive plus rapide de 50%"},
+      {"locale": "en-EN", "name": "50% faster roll"}
+    ]
+  },
+  {
+    "id": "Heavyweight",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Résistance au renvoi"},
+      {"locale": "en-EN", "name": "Pushback resistance"}
+    ]
+  },
+  {
+    "id": "IncreasedArrowBundleSize",
+    "i18n": [
+      {"locale": "fr-FR", "name": "+10 flèches par paquet"},
+      {"locale": "en-EN", "name": "+10 arrows per bundle"}
+    ]
+  },
+  {
+    "id": "IncreasedMobTargeting",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Les créatures vous cible mieux"},
+      {"locale": "en-EN", "name": "Mobs target you more"}
+    ]
+  },
+  {
+    "id": "ItemCooldownDecrease",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Temps de recharge de l'artéfact -40%"},
+      {"locale": "en-EN", "name": "-40% artifact cooldown"}
+    ]
+  },
+  {
+    "id": "ItemCooldownReset",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Réinitialise le temps de recharge des artéfacts lors de l'utilisation d'une potion"},
+      {"locale": "en-EN", "name": "Reset artifacts cooldown on potion use"}
+    ]
+  },
+  {
+    "id": "ItemDamageBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dégats par l'artéfact +50%"},
+      {"locale": "en-EN", "name": "+50% artifact damage"}
+    ]
+  },
+  {
+    "id": "LifeStealAura",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Aura de vol de vie de 6%"},
+      {"locale": "en-EN", "name": "6% life steal aura"}
+    ]
+  },
+  {
+    "id": "MeleeAttackSpeedBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Vitesse d'attaque au corps-à-corps +25%"},
+      {"locale": "en-EN", "name": "+25% melee attack speed"}
+    ]
+  },
+  {
+    "id": "MeleeDamageBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dégat au corps-à-corps +30%"},
+      {"locale": "en-EN", "name": "+30% melee damage"}
+    ]
+  },
+  {
+    "id": "MissChance",
+    "i18n": [
+      {"locale": "fr-FR", "name": "30% chance d'annuler des coups"},
+      {"locale": "en-EN", "name": "30% chance to negate hits"}
+    ]
+  },
+  {
+    "id": "MoveSpeedAura",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Aura de vitesse de mouvement +15%"},
+      {"locale": "en-EN", "name": "+15% movespeed aura"}
+    ]
+  },
+  {
+    "id": "MoveSpeedReduction",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Vitesse de mouvement -10%"},
+      {"locale": "en-EN", "name": "-10% movespeed"}
+    ]
+  },
+  {
+    "id": "PetBat",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Vous donne une chauve-sourie"},
+      {"locale": "en-EN", "name": "Gives you a pet bat"}
+    ]
+  },
+  {
+    "id": "PotionCooldownDecrease",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Temps de recharge de la potion -40%"},
+      {"locale": "en-EN", "name": "-40% potion cooldown"}
+    ]
+  },
+  {
+    "id": "RangedDamageBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dégats à distance +30%"},
+      {"locale": "en-EN", "name": "+30% ranged damage"}
+    ]
+  },
+  {
+    "id": "SlowResistance",
+    "i18n": [
+      {"locale": "fr-FR", "name": "50% résistance au gel"},
+      {"locale": "en-EN", "name": "50% freezing resistance"}
+    ]
+  },
+  {
+    "id": "SoulGatheringBoost",
+    "i18n": [
+      {"locale": "fr-FR", "name": "+50% âmes rassemblées"},
+      {"locale": "en-EN", "name": "+50% souls gathered"}
+    ]
+  },
+  {
+    "id": "SuperbDamageAbsorption",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Réduction des dégats de 35%"},
+      {"locale": "en-EN", "name": "35% damage reduction"}
+    ]
+  },
+  {
+    "id": "TeleportChance",
+    "i18n": [
+      {"locale": "fr-FR", "name": "5% chance de téléportation lors d'un coup"},
+      {"locale": "en-EN", "name": "5% chance to teleport away when hit"}
+    ]
+  },
+  {
+    "id":"DodgeInvulnerability",
+    "dlcId": "Jungle Awakens",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Invulnérabilité temporaire lors de l'esquive"},
+      {"locale": "en-EN", "name": "Brief invunerability when rolling"}
+    ]
+  },
+  {
+    "id":"EmeraldShield",
+    "dlcId": "Howling Peaks",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Invulnérabilité en récupérent des émeraudes"},
+      {"locale": "en-EN", "name": "Invulnerability when emerald collection"}
+    ]
+  },
+  {
+    "id":"DodgeRoot",
+    "dlcId": "Flames of the Nether",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Piège et empoisonne les créatures à proximité lors d'une roulade"},
+      {"locale": "en-EN", "name": "Traps en poisons nearby mobs when rolling"}
+    ]
+  },
+  {
+    "id":"HealingAura",
+    "dlcId": "Hidden Depths",
+    "i18n": [
+      {"locale": "fr-FR", "name": "25% de soins"},
+      {"locale": "en-EN", "name": "25% healing boost"}
+    ]
+  },
+  {
+    "id":"SquidRollLimited",
+    "dlcId": "Hidden Depths",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Libère un nuage d'encre lors d'une roulade"},
+      {"locale": "en-EN", "name": "Release an ink cloud when rolling"}
+    ]
+  },
+  {
+    "id":"SquidRollQuick",
+    "dlcId": "Hidden Depths",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Libère un nuage d'encre lors d'une roulade"},
+      {"locale": "en-EN", "name": "Release an ink cloud when rolling"}
+    ]
+  },
+  {
+    "id":"InstantTransmission",
+    "dlcId": "Echoing Void",
+    "i18n": [
+      {"locale": "fr-FR", "name": "Effectuez une roulade pour vous téléporter"},
+      {"locale": "en-EN", "name": "Roll to teleport"}
+    ]
+  },
+  {
+    "id":"Resonant",
+    "dlcId": "Echoing Void",
+    "i18n": [
+      {"locale": "fr-FR", "name": "+30% de durée d'effet de statut positif"},
+      {"locale": "en-EN", "name": "+30% positive status effect duration"}
+    ]
+  }
+]

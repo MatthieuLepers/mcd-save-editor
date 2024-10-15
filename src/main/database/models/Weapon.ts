@@ -9,7 +9,7 @@ import {
   AllowNull,
   ForeignKey,
 } from 'sequelize-typescript';
-import { Dlc, Event, WeaponI18n } from '@/main/database/models';
+import { Dlc, WeaponI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'weapons',
@@ -30,10 +30,9 @@ export class Weapon extends Model {
   @Column(DataType.STRING)
   declare dlcId: string;
 
-  @ForeignKey(() => Event)
   @AllowNull(true)
-  @Column(DataType.STRING)
-  declare eventId: string;
+  @Column(DataType.JSON)
+  declare events: Array<string>;
 
   @AllowNull(false)
   @Column(DataType.STRING)

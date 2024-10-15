@@ -1,6 +1,5 @@
 import { ipcRenderer, clipboard } from 'electron';
 
-import * as Account from '@/main/api/account';
 import * as Setting from '@/main/api/setting';
 import * as CipherUtils from '@/main/utils/CipherUtils';
 import { APP_PLATEFORM, HOME_DIR, IS_DEV } from '@/main/utils/Constants';
@@ -20,7 +19,6 @@ export default {
   },
   CipherUtils,
   Setting,
-  Account,
   homedir: HOME_DIR,
   plateform: APP_PLATEFORM,
   clipboard,

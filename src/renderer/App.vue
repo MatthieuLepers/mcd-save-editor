@@ -12,7 +12,7 @@
       :tabs="State.tabs"
       @allowMoveFn="() => false">
       <template
-        v-for="(character, i) in globalStore.state.selectedProfil.characters"
+        v-for="(character, i) in globalStore.state.selectedProfil?.characters ?? []"
         :key="`navspan${i}`"
         v-slot:[`${character.uuid}Nav`]
       >
@@ -56,7 +56,7 @@
         </div>
       </template>
       <template
-        v-for="(character, i) in globalStore.state.selectedProfil.characters"
+        v-for="(character, i) in globalStore.state.selectedProfil?.characters ?? []"
         v-slot:[character.uuid]
         :key="`character${i}`"
       >

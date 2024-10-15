@@ -38,10 +38,6 @@ export class Enchant extends Model {
   @Column(DataType.STRING)
   declare tier: string;
 
-  @AllowNull(false)
-  @Column(DataType.JSON)
-  declare rarity: Array<string>;
-
   @HasMany(() => EnchantI18n)
   declare i18n: Array<EnchantI18n>;
 }

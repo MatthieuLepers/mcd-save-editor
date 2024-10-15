@@ -30,6 +30,10 @@ export class Armor extends Model {
   @Column(DataType.STRING)
   declare dlcId: string;
 
+  @AllowNull(true)
+  @Column(DataType.JSON)
+  declare events: Array<string>;
+
   @Default('Armor')
   @Column(DataType.STRING)
   declare type: string;
