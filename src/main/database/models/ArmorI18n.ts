@@ -13,6 +13,7 @@ import { Armor } from '@/main/database/models';
 
 @Table({
   modelName: 'armorI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,

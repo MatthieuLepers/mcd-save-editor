@@ -11,6 +11,7 @@ import { AncientMobI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'ancientMobs',
+  timestamps: false,
   indexes: [
     {
       unique: true,
@@ -25,7 +26,7 @@ export class AncientMob extends Model {
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare neededRunes: Array<string>;
+  declare neededRunes: Array<'a' | 'c' | 'i' | 'o' | 'p' | 'r' | 's' | 't' | 'u'>;
 
   @AllowNull(false)
   @Column(DataType.JSON)

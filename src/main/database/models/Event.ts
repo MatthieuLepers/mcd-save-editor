@@ -9,6 +9,7 @@ import {
 
 @Table({
   modelName: 'events',
+  timestamps: false,
   indexes: [
     {
       unique: true,

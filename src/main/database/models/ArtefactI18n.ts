@@ -13,6 +13,7 @@ import { Artefact } from '@/main/database/models';
 
 @Table({
   modelName: 'artefactI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,

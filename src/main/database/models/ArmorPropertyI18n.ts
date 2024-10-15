@@ -13,6 +13,7 @@ import { ArmorProperty } from '@/main/database/models';
 
 @Table({
   modelName: 'armorPropertyI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,

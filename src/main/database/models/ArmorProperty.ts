@@ -12,6 +12,7 @@ import { Dlc, ArmorPropertyI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'armorProperties',
+  timestamps: false,
   indexes: [
     {
       unique: true,

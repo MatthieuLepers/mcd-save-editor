@@ -13,6 +13,7 @@ import { Dlc, EnchantI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'enchants',
+  timestamps: false,
   indexes: [
     {
       unique: true,
@@ -32,11 +33,11 @@ export class Enchant extends Model {
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare type: Array<string>;
+  declare type: Array<'Armor' | 'Melee' | 'Ranged'>;
 
   @Default('Common')
   @Column(DataType.STRING)
-  declare tier: string;
+  declare tier: 'Common' | 'Powerful';
 
   @HasMany(() => EnchantI18n)
   declare i18n: Array<EnchantI18n>;

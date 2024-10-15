@@ -13,6 +13,7 @@ import { AncientMob } from '@/main/database/models';
 
 @Table({
   modelName: 'ancientMobI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,

@@ -13,6 +13,7 @@ import { Dlc, WeaponI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'weapons',
+  timestamps: false,
   indexes: [
     {
       unique: true,
@@ -36,15 +37,15 @@ export class Weapon extends Model {
 
   @AllowNull(false)
   @Column(DataType.STRING)
-  declare type: string;
+  declare type: 'Melee' | 'Ranged';
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare rarity: Array<string>;
+  declare rarity: Array<'Common' | 'Rare' | 'Unique'>;
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare ancientHuntRunes: Array<string>;
+  declare ancientHuntRunes: Array<'a' | 'c' | 'i' | 'o' | 'p' | 'r' | 's' | 't' | 'u'>;
 
   @AllowNull(false)
   @Column(DataType.JSON)

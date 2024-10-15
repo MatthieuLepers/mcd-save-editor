@@ -13,6 +13,7 @@ import { Weapon } from '@/main/database/models';
 
 @Table({
   modelName: 'weaponI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,

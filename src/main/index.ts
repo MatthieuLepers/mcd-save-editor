@@ -4,6 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 
 import { sequelize } from '@/main/database';
 import { Setting } from '@/main/database/models';
+// import { populate } from '@/main/database/populate';
 import ElectronWindow from '@/main/classes/ElectronWindow';
 import { APP_PLATEFORM } from '@/main/utils/Constants';
 
@@ -45,6 +46,7 @@ app
     createWindow();
 
     await sequelize.sync();
+    // await populate();
     await Setting.createDefault();
 
     if (is.dev) {

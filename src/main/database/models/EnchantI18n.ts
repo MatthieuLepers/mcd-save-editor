@@ -13,6 +13,7 @@ import { Enchant } from '@/main/database/models';
 
 @Table({
   modelName: 'enchantI18n',
+  timestamps: false,
   indexes: [
     {
       unique: true,
@@ -37,7 +38,7 @@ export class EnchantI18n extends Model {
   declare desc: string;
 
   @Column(DataType.JSON)
-  declare level: Array<string>;
+  declare level: [string, string, string];
 
   @ForeignKey(() => Enchant)
   @Column(DataType.STRING)

@@ -13,6 +13,7 @@ import { Dlc, ArtefactI18n } from '@/main/database/models';
 
 @Table({
   modelName: 'artefacts',
+  timestamps: false,
   indexes: [
     {
       unique: true,
@@ -40,11 +41,11 @@ export class Artefact extends Model {
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare rarity: Array<string>;
+  declare rarity: Array<'Common' | 'Rare' | 'Unique'>;
 
   @AllowNull(false)
   @Column(DataType.JSON)
-  declare ancientHuntRunes: Array<string>;
+  declare ancientHuntRunes: Array<'a' | 'c' | 'i' | 'o' | 'p' | 'r' | 's' | 't' | 'u'>;
 
   @Default(false)
   @Column(DataType.BOOLEAN)

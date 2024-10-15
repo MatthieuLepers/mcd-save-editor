@@ -9,6 +9,7 @@ import {
 
 @Table({
   modelName: 'dlcs',
+  timestamps: false,
   indexes: [
     {
       unique: true,
