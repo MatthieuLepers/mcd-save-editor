@@ -37,7 +37,7 @@ export class Armor extends Model {
 
   @Default('Armor')
   @Column(DataType.STRING)
-  declare type: string;
+  declare type: 'Armor';
 
   @AllowNull(false)
   @Column(DataType.JSON)

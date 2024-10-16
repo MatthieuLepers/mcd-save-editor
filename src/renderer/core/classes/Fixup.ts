@@ -3,9 +3,10 @@ import type { ErrorObject } from 'ajv';
 import i18n from '@renderer/plugins/i18n';
 import Enchantment, { IEnchantment } from '@renderer/core/classes/Enchantment';
 import type { IItem } from '@renderer/core/classes/Item';
-import { Enchants, Items } from '@renderer/core/data/Content';
 import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import { itemsStore } from '@renderer/core/entities/item/store';
 
 export interface FixupAction {
   label: string;
@@ -48,7 +49,7 @@ export default class Fixup {
   }
 
   getInvestedPoints(enchant: IEnchantment): number {
-    const enchantData = Enchants[enchant.id];
+    const enchantData = enchantsStore.state.enchants[enchant.id];
     let investedPointResult = 0;
     if (enchantData) {
       investedPointResult = enchant.level * 3 + (enchantData.tier === 'Powerful' ? 3 : 0);
@@ -415,7 +416,7 @@ export default class Fixup {
   }
 
   getFixupRarityRequired(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.items.value[this.item.type];
     const result: Array<FixupAction> = [];
 
     if (itemData) {
@@ -494,7 +495,7 @@ export default class Fixup {
   }
 
   getFixupArmorpropertiesMinItems(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.state.armors[this.item.type];
     const result: Array<FixupAction> = [{
       label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems1'),
       apply: () => {
@@ -527,7 +528,7 @@ export default class Fixup {
   }
 
   getFixupArmorpropertiesMaxItems(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.state.armors[this.item.type];
     const result: Array<FixupAction> = [];
 
     if (itemData) {

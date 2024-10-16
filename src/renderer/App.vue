@@ -113,6 +113,11 @@ import { notificationStore } from '@renderer/components/Materials/Notification/S
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { settingsStore } from '@renderer/core/entities/setting/store';
 import Shortcut from '@renderer/core/Shortcut';
+import { dlcsStore } from '@renderer/core/entities/dlc/store';
+import { eventsStore } from '@renderer/core/entities/event/store';
+import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import { itemsStore } from '@renderer/core/entities/item/store';
 import { api } from '@renderer/core/api';
 
 const route = useRoute();
@@ -232,6 +237,11 @@ watch(() => state.currentTab, (newTab) => {
 onBeforeMount(() => {
   api.on('database-ready', async () => {
     await settingsStore.actions.load();
+    await dlcsStore.actions.load();
+    await eventsStore.actions.load();
+    await armorPropertiesStore.actions.load();
+    await enchantsStore.actions.load();
+    await itemsStore.actions.load();
 
     await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
     locale.value = settingsStore.actions.getString('locale', 'en-EN');

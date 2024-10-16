@@ -2,6 +2,7 @@ import AbstractI18nEntity from '@renderer/core/entities/AbstractI18nEntity';
 import type { IArtefact } from '@renderer/core/entities/artefact/i';
 import Dlc from '@renderer/core/entities/dlc';
 import { dlcsStore } from '@renderer/core/entities/dlc/store';
+import GameItem from '@renderer/core/classes/Item';
 
 export default class Artefact extends AbstractI18nEntity<IArtefact> {
   declare id: string;
@@ -30,5 +31,15 @@ export default class Artefact extends AbstractI18nEntity<IArtefact> {
       });
     }
     return dlcsStore.state.dlcs[this.dlcId];
+  }
+
+  toGameData(inventoryIndex: number): GameItem {
+    return new GameItem({
+      inventoryIndex,
+      power: 1,
+      rarity: this.rarity[0],
+      type: this.id,
+      upgraded: false,
+    });
   }
 }

@@ -20,12 +20,14 @@
           <img
             class="MCDEnchantSelectChoiceImage"
             :src="image(ench.image)"
-            :alt="t(`MCD.Game.Enchants.${ench.name}.name`)"
+            :alt="ench.getI18n('name')"
           />
           <div class="MCDEnchantSelectChoiceName">
-            <strong>{{ t(`MCD.Game.Enchants.${ench.name}.name`) }}</strong>
+            <strong>{{ ench.getI18n('name') }}</strong>
             <span>{{ t(`MCD.ItemEnchantmentChoice.tiers.${ench.tier.toLowerCase()}`) }}</span>
-            <span v-if="ench.dlc" :class="`${ench.dlc.replace(/ /, '')}`">{{ ench.dlc }} DLC</span>
+            <span v-if="ench.dlcId" :class="`${ench.dlc.id.replace(/ /, '')}`">
+              {{ ench.dlc.id }} DLC
+            </span>
           </div>
         </div>
       </div>
@@ -42,11 +44,10 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import { Enchants } from '@renderer/core/data/Content';
-import DLCsData from '@renderer/core/data/DLCs';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 import { image } from '@renderer/core/utils';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
 
 defineOptions({ name: 'MCDEnchantSelect' });
 
@@ -67,22 +68,31 @@ const State = computed(() => ({
   filteredList: (() => {
     const { type, soulgathering, activeEnchants } = globalStore.state.selectedItem.itemData;
     const checkSoulgathering = (data) => (data.soulgathering ? data.soulgathering === soulgathering : true);
-    const checkActiveEnchants = (data) => (activeEnchants ? activeEnchants.indexOf(data.name) < 0 : true);
+    const checkActiveEnchants = (data) => (activeEnchants ? activeEnchants.indexOf(data.id) < 0 : true);
     const checkWeaponType = (data) => (globalStore.state.selectedItem.weaponType && data.weaponType ? globalStore.state.selectedItem.weaponType === data.weaponType : true);
 
-    return Object.values(Enchants)
-      .filter((data) => !props.unallowedEnchants.includes(data.name) && !data.disabled && data.name !== props.modelValue.id && t(`MCD.Game.Enchants.${data.name}.name`).toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0 && data.type.indexOf(type) >= 0 && checkSoulgathering(data) && checkActiveEnchants(data) && checkWeaponType(data))
-      .sort((a, b) => (a.name === 'Unset' ? -1 : 1) || !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(t(`MCD.Game.Enchants.${b.name}.name`)))) || t(`MCD.Game.Enchants.${a.name}.name`).localeCompare(t(`MCD.Game.Enchants.${b.name}.name`)))
+    return Object
+      .values(enchantsStore.state.enchants)
+      .filter((data) => !props.unallowedEnchants.includes(data.id)
+        && data.id !== props.modelValue.id
+        && data.getI18n('name').toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0
+        && data.type.indexOf(type) >= 0
+        && checkSoulgathering(data)
+        && checkActiveEnchants(data)
+        && checkWeaponType(data))
+      .sort((a, b) => (a.id === 'Unset' ? -1 : 1)
+        || a.dlc.releasedAt.getTime() - b.dlc.releasedAt.getTime()
+        || a.getI18n('name').localeCompare(b.getI18n('name')))
     ;
   })(),
 }));
 
 const actions = {
   selectEnchant(ench) {
-    props.modelValue.id = ench.name;
+    props.modelValue.id = ench.id;
     tutorialStore.actions.setFullfilled('ChooseNewEnchantment', true);
     globalStore.state.selectedItem.$key += 1;
-    if (ench.name === 'Unset') {
+    if (ench.id === 'Unset') {
       props.modelValue.level = 0;
       tutorialStore.actions.setFullfilled('ChooseUnsetEnchantment', true);
     } else {

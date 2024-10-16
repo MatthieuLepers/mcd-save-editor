@@ -4,66 +4,8 @@ import ArmorProperty, { type IArmorProperty } from '@renderer/core/classes/Armor
 import RuneList from '@renderer/core/classes/RuneList';
 import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
 import { RarityEnum } from '@renderer/core/classes/enums/RarityEnum';
-import { Items } from '@renderer/core/data/Content';
+import { itemsStore } from '@renderer/core/entities/item/store';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
-
-export interface IItemArmorData {
-  disabled?: boolean;
-  name: string;
-  type: 'Armor';
-  rarity: Array<string>;
-  image: string;
-  ancientHuntRunes: Array<string>;
-  soulgathering?: boolean;
-  armorproperties: Array<string>;
-  i18n: Record<string, string>;
-}
-
-export interface IItemArtefactData {
-  disabled?: boolean;
-  name: string;
-  type: 'Artefact';
-  rarity: Array<string>;
-  image: string;
-  ancientHuntRunes: Array<string>;
-  i18n: Record<string, string>;
-}
-
-export interface IItemMeleeData {
-  disabled?: boolean;
-  name: string;
-  type: 'Melee';
-  rarity: Array<string>;
-  image: string;
-  ancientHuntRunes: Array<string>;
-  stats: {
-    power: number;
-    speed: number;
-    area: number;
-  };
-  activeEnchants?: Array<string>;
-  soulgathering?: boolean;
-  i18n: Record<string, string>;
-}
-
-export interface IItemRangedData {
-  disabled?: boolean;
-  name: string;
-  type: 'Ranged';
-  rarity: Array<string>;
-  image: string;
-  ancientHuntRunes: Array<string>;
-  stats: {
-    power: number;
-    speed: number;
-    ammo: number;
-  };
-  activeEnchants?: Array<string>;
-  soulgathering?: boolean;
-  i18n: Record<string, string>;
-}
-
-export type IItemData = IItemArmorData | IItemArtefactData | IItemMeleeData | IItemRangedData;
 
 export interface IItem {
   markedNew?: boolean;
@@ -92,11 +34,11 @@ export default class Item {
     }
   }
 
-  get itemData(): IItemData {
-    if (!Items[this.data.type]) {
-      return Items.Unknown;
+  get itemData() {
+    if (!itemsStore.items.value[this.data.type]) {
+      return itemsStore.items.value.Unknown;
     }
-    return Items[this.data.type];
+    return itemsStore.items.value[this.data.type];
   }
 
   get itemType(): string {
@@ -250,11 +192,11 @@ export default class Item {
     return new RuneList(this.itemData.ancientHuntRunes);
   }
 
-  convertTo(itemData: IItemData) {
+  convertTo(itemData) {
     const { type } = this.itemData;
     const itemType = itemData.type;
 
-    this.data.type = itemData.name;
+    this.data.type = itemData.id;
     [this.data.rarity] = itemData.rarity;
     this.data.upgraded = false;
 
@@ -272,7 +214,7 @@ export default class Item {
       delete this.data.armorproperties;
     }
     if (itemType === ItemTypeEnum.ARMOR) {
-      if (itemData.name === 'MysteryArmor') {
+      if (itemData.id === 'MysteryArmor') {
         const possibleProperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: RarityEnum.COMMON }));
         possibleProperties.sort(() => 0.5 - Math.random());
         this.data.armorproperties = possibleProperties.slice(0, 3);

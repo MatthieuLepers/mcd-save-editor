@@ -1,14 +1,9 @@
-import { ArmorProperties } from '@renderer/core/data/Content';
+import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
+import type EntityArmorProperty from '../entities/armorProperty';
 
 export interface IArmorProperty {
   id: string;
   rarity: string;
-}
-
-export interface IArmorPropertyData {
-  disabled?: boolean;
-  name: string;
-  i18n: Record<string, string>;
 }
 
 export default class ArmorPromerty {
@@ -25,15 +20,15 @@ export default class ArmorPromerty {
     });
   }
 
-  get armorPropertyData(): IArmorPropertyData {
-    if (!ArmorProperties[this.id]) {
-      return ArmorProperties.Unknown;
+  get armorPropertyData(): EntityArmorProperty {
+    if (!armorPropertiesStore.state.properties[this.id]) {
+      return armorPropertiesStore.state.properties.Unknown;
     }
-    return ArmorProperties[this.id];
+    return armorPropertiesStore.state.properties[this.id];
   }
 
   get armorPropertyIdentifier(): string {
-    if (this.armorPropertyData.name !== 'Unknown') {
+    if (this.armorPropertyData.id !== 'Unknown') {
       return this.id;
     }
     return 'Unknown';

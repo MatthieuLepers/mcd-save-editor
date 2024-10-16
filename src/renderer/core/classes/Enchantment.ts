@@ -1,6 +1,6 @@
-import i18n from '@renderer/plugins/i18n';
 import { EnchantmentTierEnum } from '@renderer/core/classes/enums/EnchantmentTierEnum';
-import { Enchants } from '@renderer/core/data/Content';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import type EntityEnchant from '@renderer/core/entities/enchant';
 
 export interface IEnchantment {
   id: string;
@@ -47,11 +47,11 @@ export default class Enchantment {
     return new Enchantment({ id: 'Unset', investedPoints: 0, level: 0 });
   }
 
-  get enchantData(): IEnchantmentData {
-    if (!Enchants[this.id]) {
-      return Enchants.Unknown;
+  get enchantData(): EntityEnchant {
+    if (!enchantsStore.state.enchants[this.id]) {
+      return enchantsStore.state.enchants.Unknown;
     }
-    return Enchants[this.id];
+    return enchantsStore.state.enchants[this.id];
   }
 
   get enchantmentPointsInvested(): number {
@@ -87,6 +87,6 @@ export default class Enchantment {
   }
 
   toString(): string {
-    return i18n.global.t(`MCD.Game.Enchants.${this.enchantIdentifier}.name`);
+    return this.enchantData.getI18n('name');
   }
 }

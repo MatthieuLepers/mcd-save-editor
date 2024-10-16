@@ -37,7 +37,7 @@ export class Artefact extends Model {
 
   @Default('Artefact')
   @Column(DataType.STRING)
-  declare type: string;
+  declare type: 'Artefact';
 
   @AllowNull(false)
   @Column(DataType.JSON)

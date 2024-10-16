@@ -1,12 +1,5 @@
 [
   {
-    "id": "Unknown",
-    "i18n": [
-      {"locale": "fr-FR", "name": "Inconnu"},
-      {"locale": "en-EN", "name": "Unknown"}
-    ]
-  },
-  {
     "id": "Axe",
     "type": "Melee",
     "rarity": ["Common", "Rare"],

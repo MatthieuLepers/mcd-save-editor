@@ -17,12 +17,9 @@
           :key="i" @click="actions.selectProperty(property)"
         >
           <div class="MCDArmorPropertySelectChoiceName">
-            <strong>{{ t(`MCD.Game.ArmorProperties.${property.name}`) }}</strong>
-            <span
-              v-if="property.dlc"
-              :class="`${property.dlc.replace(/ /, '')}`"
-            >
-              {{ property.dlc }} DLC
+            <strong>{{ property.getI18n('name') }}</strong>
+            <span v-if="property.dlcId" :class="`${property.dlc.id.replace(/ /, '')}`">
+              {{ property.dlc.id }} DLC
             </span>
           </div>
         </div>
@@ -42,8 +39,7 @@ import {
 import { useI18n } from 'vue-i18n';
 
 import Item from '@renderer/core/classes/Item';
-import { ArmorProperties } from '@renderer/core/data/Content';
-import DLCsData from '@renderer/core/data/DLCs';
+import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
 
 defineOptions({ name: 'MCDArmorPropertySelect' });
 
@@ -63,16 +59,20 @@ const state = reactive({
 const State = computed(() => ({
   filteredList: (() => {
     const itemProperties = props.item.data.armorproperties.map((property) => property.id);
-    const list = Object.values(ArmorProperties).filter((data) => !data.disabled && itemProperties.indexOf(data.name) < 0 && data.name !== props.property.id && t(`MCD.Game.ArmorProperties.${data.name}`).toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0);
-    list.sort((a, b) => !!a.dlc - !!b.dlc || (!!a.dlc && !!b.dlc && (DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime() || t(`MCD.Game.ArmorProperties.${a.name}`).localeCompare(t(`MCD.Game.ArmorProperties.${b.name}`)))) || t(`MCD.Game.ArmorProperties.${a.name}`).localeCompare(t(`MCD.Game.ArmorProperties.${b.name}`)));
-
-    return list;
+    return Object
+      .values(armorPropertiesStore.state.properties)
+      .filter((data) => itemProperties.indexOf(data.id) < 0
+        && data.id !== props.property.id
+        && data.getI18n('name').toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0)
+      .sort((a, b) => a.dlc.releasedAt.getTime() - b.dlc.releasedAt.getTime()
+        || a.getI18n('name').localeCompare(b.getI18n('name')))
+    ;
   })(),
 }));
 
 const actions = {
   selectProperty(property) {
-    props.property.id = property.name;
+    props.property.id = property.id;
     state.open = false;
   },
 };

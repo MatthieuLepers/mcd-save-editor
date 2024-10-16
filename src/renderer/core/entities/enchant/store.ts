@@ -1,5 +1,8 @@
 import { reactive } from 'vue';
+
 import Enchant from '@renderer/core/entities/enchant';
+import GameEnchant from '@renderer/core/classes/Enchantment';
+import { shuffleArray } from '@renderer/core/utils';
 
 interface IState {
   enchants: Record<string, Enchant>;
@@ -17,6 +20,16 @@ const useEnchantsStore = () => {
         ...acc,
         [obj.id]: new Enchant(obj),
       }), {});
+    },
+    createRandomGameEnchantOfType(type: 'Armor' | 'Melee' | 'Ranged'): GameEnchant {
+      const [enchant] = shuffleArray(Object
+        .values(state.enchants)
+        .filter((data) => data.type.includes(type)));
+      return new GameEnchant({
+        id: enchant.id,
+        investedPoints: 0,
+        level: 0,
+      });
     },
   };
 

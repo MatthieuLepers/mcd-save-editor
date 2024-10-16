@@ -5,7 +5,7 @@ interface IState {
   properties: Record<string, ArmorProperty>;
 }
 
-const useAncientMobsStore = () => {
+const useArmorPropertiesStore = () => {
   const state = reactive<IState>({
     properties: {},
   });
@@ -26,4 +26,4 @@ const useAncientMobsStore = () => {
   };
 };
 
-export const ancientMobsStore = useAncientMobsStore();
+export const armorPropertiesStore = useArmorPropertiesStore();

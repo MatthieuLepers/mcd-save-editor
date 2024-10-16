@@ -1,7 +1,7 @@
 import { reactive } from 'vue';
 
 import type Item from '@renderer/core/classes/Item';
-import Character from '../classes/Character';
+import Character from '@renderer/core/classes/Character';
 
 interface StoreData {
   to: Item | null;
