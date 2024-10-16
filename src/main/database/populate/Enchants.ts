@@ -4,7 +4,7 @@ import JSONEnchants from '@/main/public/Enchants.json';
 
 export const populate = async () => {
   await serial(JSONEnchants
-    .map((data) => () => Enchant.create({ ...data }, {
+    .map((data) => () => Enchant.create(data, {
       include: [EnchantI18n],
     }).catch(console.log)))
   ;

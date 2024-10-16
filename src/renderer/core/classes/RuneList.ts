@@ -5,7 +5,10 @@ export default class RuneList {
 
   constructor(runeList?: Array<string>) {
     this.list = runeList ?? [];
-    this.compressed = this.list.reduce((acc, val) => ({ ...acc, [val]: (acc[val] || 0) + 1 }), {});
+    this.compressed = this.list.reduce((acc, val) => ({
+      ...acc,
+      [val]: (acc[val] ?? 0) + 1,
+    }), {});
   }
 
   countContains(runeList: RuneList): number {

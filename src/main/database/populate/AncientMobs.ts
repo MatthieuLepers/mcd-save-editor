@@ -4,7 +4,7 @@ import JSONAncientMobs from '@/main/public/AncientMobs.json';
 
 export const populate = async () => {
   await serial(JSONAncientMobs
-    .map((data) => () => AncientMob.create({ ...data }, {
+    .map((data) => () => AncientMob.create(data, {
       include: [AncientMobI18n],
     }).catch(console.log)))
   ;

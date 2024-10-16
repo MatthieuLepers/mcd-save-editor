@@ -4,8 +4,6 @@ import JSONDlcs from '@/main/public/Dlcs.json';
 
 export const populate = async () => {
   await serial(JSONDlcs
-    .map((data) => () => Dlc.create({
-      ...data,
-    }).catch(console.log)))
+    .map((data) => () => Dlc.create(data).catch(console.log)))
   ;
 };

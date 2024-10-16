@@ -19,14 +19,14 @@ import { useI18n } from 'vue-i18n';
 
 import MCDItemEnchantmentChoice from '@renderer/components/MCD/ItemEnchantmentChoice.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 
 defineOptions({ name: 'MCDItemEnchantmentList' });
 
 const { t } = useI18n();
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem },
 });
 </script>
 

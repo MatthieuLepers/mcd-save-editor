@@ -1,6 +1,6 @@
 import AbstractValidator from '@renderer/core/validators/AbstractValidator';
 import type { ICharacter } from '@renderer/core/classes/Character';
-import type { IItem } from '@renderer/core/classes/Item';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import ItemSchema from '@renderer/public/json/schemas/item.schema.json';
 
 export default class InventoryValidator extends AbstractValidator<ICharacter> {
@@ -16,7 +16,7 @@ export default class InventoryValidator extends AbstractValidator<ICharacter> {
     });
   }
 
-  get items(): Array<IItem> {
+  get items(): Array<IGameItem> {
     return this.data.items;
   }
 }

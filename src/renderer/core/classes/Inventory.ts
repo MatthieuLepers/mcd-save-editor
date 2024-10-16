@@ -1,20 +1,20 @@
 import AbstractItemStorage from '@renderer/core/classes/AbstractItemStorage';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
-import type Item from '@renderer/core/classes/Item';
-import type { IItem } from '@renderer/core/classes/Item';
+import { Type } from '@renderer/core/entities/item/enums';
+import type GameItem from '@renderer/core/entities/item/game';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 
 export default class Inventory extends AbstractItemStorage {
-  constructor(data: Array<IItem>) {
+  constructor(data: Array<IGameItem>) {
     super(180, data);
   }
 
-  get gears(): Array<Item> {
+  get gears(): Array<GameItem> {
     const gears = this.items.filter((item) => item.isGear());
     if (gears.length < 3) {
-      const [meleeGear] = gears.filter((item) => item.gearType === ItemTypeEnum.MELEE);
-      const [armorGear] = gears.filter((item) => item.gearType === ItemTypeEnum.ARMOR);
-      const [rangedGear] = gears.filter((item) => item.gearType === ItemTypeEnum.RANGED);
+      const [meleeGear] = gears.filter((item) => item.gearType === Type.MELEE);
+      const [armorGear] = gears.filter((item) => item.gearType === Type.ARMOR);
+      const [rangedGear] = gears.filter((item) => item.gearType === Type.RANGED);
 
       return [meleeGear, armorGear, rangedGear];
     }
@@ -22,7 +22,7 @@ export default class Inventory extends AbstractItemStorage {
     return gears;
   }
 
-  get hotbar(): Array<Item> {
+  get hotbar(): Array<GameItem> {
     const hotbar = this.items.filter((item) => item.isHotbar());
     if (hotbar.length < 3) {
       const [fstSlot] = hotbar.filter((item) => item.hotbarSlot === 1);
@@ -35,14 +35,14 @@ export default class Inventory extends AbstractItemStorage {
     return hotbar;
   }
 
-  get inventory(): Array<Item> {
+  get inventory(): Array<GameItem> {
     return this.items.filter((item) => !item.isEquipped());
   }
 
   checkIntegrity() {
-    const [meleeItem] = this.gears.filter((item) => item && item.gearType === ItemTypeEnum.MELEE);
-    const [armorItem] = this.gears.filter((item) => item && item.gearType === ItemTypeEnum.ARMOR);
-    const [rangedItem] = this.gears.filter((item) => item && item.gearType === ItemTypeEnum.RANGED);
+    const [meleeItem] = this.gears.filter((item) => item && item.gearType === Type.MELEE);
+    const [armorItem] = this.gears.filter((item) => item && item.gearType === Type.ARMOR);
+    const [rangedItem] = this.gears.filter((item) => item && item.gearType === Type.RANGED);
     const [artifact1] = this.hotbar.filter((item) => item && item.hotbarSlot === 1);
     const [artifact2] = this.hotbar.filter((item) => item && item.hotbarSlot === 2);
     const [artifact3] = this.hotbar.filter((item) => item && item.hotbarSlot === 3);

@@ -4,7 +4,7 @@ import JSONArtefacts from '@/main/public/Artefacts.json';
 
 export const populate = async () => {
   await serial(JSONArtefacts
-    .map((data) => () => Artefact.create({ ...data }, {
+    .map((data) => () => Artefact.create(data, {
       include: [ArtefactI18n],
     }).catch(console.log)))
   ;

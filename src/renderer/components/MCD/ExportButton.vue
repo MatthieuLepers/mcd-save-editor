@@ -15,14 +15,14 @@ import { useI18n } from 'vue-i18n';
 
 import MCDButton from '@renderer/components/MCD/Button.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 
 defineOptions({ name: 'MCDExportButton' });
 
 const { t } = useI18n();
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem, required: true },
 });
 
 const actions = {
@@ -30,7 +30,7 @@ const actions = {
     const dialogOptions = {
       title: t('Electron.dialogs.saveFile.title'),
       buttonLabel: t('Electron.dialogs.saveFile.button'),
-      defaultPath: `${api.homedir}/Desktop/${t(`MCD.Game.Items.${props.item.data.type}`)}.json`,
+      defaultPath: `${api.homedir}/Desktop/${props.item.itemData.getI18n('name')}.json`,
       filters: [
         {
           name: t('Electron.dialogs.filters.json'),

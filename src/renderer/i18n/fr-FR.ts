@@ -63,12 +63,6 @@ export default {
     },
   },
   MCD: {
-    Game: {
-      AncientMobs: GlobalI18N.AncientMobsData('fr-FR'),
-      ArmorProperties: GlobalI18N.ArmorProperties('fr-FR'),
-      Enchants: GlobalI18N.Enchants('fr-FR'),
-      Items: GlobalI18N.Items('fr-FR'),
-    },
     DataCorruption: {
       Page: {
         title: 'Rapport d\'erreur de données corrompues',

@@ -32,7 +32,7 @@ import { reactive } from 'vue';
 import MCDItemTile from '@renderer/components/MCD/ItemTile.vue';
 import MCDRuneList from '@renderer/components/MCD/RuneList.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { dragDropStore } from '@renderer/core/stores/DragDropStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
@@ -40,7 +40,7 @@ import { tutorialStore } from '@renderer/core/tutorial/Store';
 defineOptions({ name: 'MCDItem' });
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem },
   showRuneList: { type: Boolean, default: false },
   noDragEvent: { type: Boolean, default: false },
   disableEquipControl: { type: Boolean, default: false },

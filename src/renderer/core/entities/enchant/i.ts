@@ -1,3 +1,5 @@
+import type { Tier, Type } from '@renderer/core/entities/enchant/enums';
+
 export interface IEnchantI18n {
   locale: string;
   name: string;
@@ -8,7 +10,13 @@ export interface IEnchantI18n {
 export interface IEnchant {
   id: string;
   dlcId: string | null;
-  type: Array<'Armor' | 'Melee' | 'Ranged'>;
-  tier: 'Common' | 'Powerful';
+  type: Array<`${Type}`>;
+  tier: `${Tier}`;
   i18n: Array<IEnchantI18n>;
+}
+
+export interface IGameEnchant {
+  id: string;
+  investedPoints: number;
+  level: number;
 }

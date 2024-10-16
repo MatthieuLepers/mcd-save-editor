@@ -4,7 +4,7 @@ import JSONWeapons from '@/main/public/Weapons.json';
 
 export const populate = async () => {
   await serial(JSONWeapons
-    .map((data) => () => Weapon.create({ ...data }, {
+    .map((data) => () => Weapon.create(data, {
       include: [WeaponI18n],
     }).catch(console.log)))
   ;

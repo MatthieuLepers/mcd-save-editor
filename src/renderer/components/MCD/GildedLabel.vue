@@ -7,14 +7,14 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 
 const { t } = useI18n();
 
 defineOptions({ name: 'MCDGildedLabel' });
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem },
 });
 </script>
 

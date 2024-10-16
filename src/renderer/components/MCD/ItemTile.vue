@@ -12,7 +12,7 @@
       <div class="MCDItemTileInnerBoxBody"></div>
     </div>
     <img :src="image('img/UI/SeasonalTrial.png')" v-if="props.isEvent" class="MCDItemTileEvent" />
-    <img :src="image(props.item)" v-if="props.item" class="MCDItemTileImage" />
+    <img :src="props.item" v-if="props.item" class="MCDItemTileImage" />
   </div>
 </template>
 

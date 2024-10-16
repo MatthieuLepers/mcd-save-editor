@@ -4,8 +4,10 @@ import type ArmorProperty from '@renderer/core/entities/armorProperty';
 import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
 import Dlc from '@renderer/core/entities/dlc';
 import { dlcsStore } from '@renderer/core/entities/dlc/store';
-import GameItem, { type IItem } from '@renderer/core/classes/Item';
-import { shuffleArray } from '@renderer/core/utils';
+import GameItem from '@renderer/core/entities/item/game';
+import type { IGameItem } from '@renderer/core/entities/item/i';
+import type { Rarity, Rune, Type } from '@renderer/core/entities/item/enums';
+import { image, shuffleArray } from '@renderer/core/utils';
 
 export default class Armor extends AbstractI18nEntity<IArmor> {
   declare id: string;
@@ -14,11 +16,11 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
 
   declare events: Array<string>;
 
-  declare type: 'Armor';
+  declare type: Type.ARMOR;
 
-  declare rarity: Array<string>;
+  declare rarity: Array<`${Rarity}`>;
 
-  declare ancientHuntRunes: Array<string>;
+  declare ancientHuntRunes: Array<`${Rune}`>;
 
   declare soulgathering: boolean;
 
@@ -27,12 +29,6 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
   }
 
   get dlc(): Dlc {
-    if (!this.dlcId) {
-      return new Dlc({
-        id: 'Minecrat Dungeons',
-        releasedAt: new Date('2020-05-26'),
-      });
-    }
     return dlcsStore.state.dlcs[this.dlcId];
   }
 
@@ -42,8 +38,12 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
     ;
   }
 
+  get image(): string {
+    return image(`img/Items/Armors/${this.id}.png`);
+  }
+
   toGameData(inventoryIndex: number): GameItem {
-    const obj: IItem = {
+    const obj: IGameItem = {
       inventoryIndex,
       power: 1,
       rarity: this.rarity[0],
@@ -57,6 +57,7 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
         .map((armorProperty) => armorProperty.toGameData().data)
       ;
     } else {
+      console.log(this.data.armorproperties, this.armorproperties);
       obj.armorproperties = this.armorproperties
         .map((armorProperty) => armorProperty.toGameData().data)
       ;

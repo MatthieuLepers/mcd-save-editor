@@ -1,7 +1,7 @@
 <template>
   <div :class="GenerateModifiers('MCDEnchantSelect', { Focus: state.open })" ref="root">
     <div class="MCDEnchantSelectOuter" @click="actions.handleClickToggle">
-      {{ props.modelValue.toString() }}
+      {{ modelValue.toString() }}
     </div>
     <div class="MCDEnchantSelectInner" v-show="state.open">
       <div class="MCDEnchantSelectFiltersContainer">
@@ -13,20 +13,20 @@
       <div class="MCDEnchantSelectChoiceList">
         <div
           class="MCDEnchantSelectChoice"
-          v-for="(ench, i) in State.filteredList"
+          v-for="(enchantData, i) in State.filteredList"
           :key="i"
-          @click="actions.selectEnchant(ench)"
+          @click="actions.selectEnchant(enchantData)"
         >
           <img
             class="MCDEnchantSelectChoiceImage"
-            :src="image(ench.image)"
-            :alt="ench.getI18n('name')"
+            :src="enchantData.image"
+            :alt="enchantData.getI18n('name')"
           />
           <div class="MCDEnchantSelectChoiceName">
-            <strong>{{ ench.getI18n('name') }}</strong>
-            <span>{{ t(`MCD.ItemEnchantmentChoice.tiers.${ench.tier.toLowerCase()}`) }}</span>
-            <span v-if="ench.dlcId" :class="`${ench.dlc.id.replace(/ /, '')}`">
-              {{ ench.dlc.id }} DLC
+            <strong>{{ enchantData.getI18n('name') }}</strong>
+            <span>{{ t(`MCD.ItemEnchantmentChoice.tiers.${enchantData.tier.toLowerCase()}`) }}</span>
+            <span v-if="enchantData.dlcId" :class="`${enchantData.dlc.id.replace(/ /, '')}`">
+              {{ enchantData.dlc.id }} DLC
             </span>
           </div>
         </div>
@@ -44,18 +44,19 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import GameEnchant from '@renderer/core/entities/enchant/game';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
-import { image } from '@renderer/core/utils';
-import { enchantsStore } from '@renderer/core/entities/enchant/store';
 
 defineOptions({ name: 'MCDEnchantSelect' });
 
 const root = ref(null);
 const { t } = useI18n();
 
+const modelValue = defineModel({ type: GameEnchant });
+
 const props = defineProps({
-  modelValue: { type: Object, required: true },
   unallowedEnchants: { type: Array, default: () => [] },
 });
 
@@ -74,7 +75,7 @@ const State = computed(() => ({
     return Object
       .values(enchantsStore.state.enchants)
       .filter((data) => !props.unallowedEnchants.includes(data.id)
-        && data.id !== props.modelValue.id
+        && data.id !== modelValue.value.id
         && data.getI18n('name').toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0
         && data.type.indexOf(type) >= 0
         && checkSoulgathering(data)
@@ -89,11 +90,11 @@ const State = computed(() => ({
 
 const actions = {
   selectEnchant(ench) {
-    props.modelValue.id = ench.id;
+    modelValue.value.id = ench.id;
     tutorialStore.actions.setFullfilled('ChooseNewEnchantment', true);
     globalStore.state.selectedItem.$key += 1;
     if (ench.id === 'Unset') {
-      props.modelValue.level = 0;
+      modelValue.value.level = 0;
       tutorialStore.actions.setFullfilled('ChooseUnsetEnchantment', true);
     } else {
       tutorialStore.actions.setFullfilled('ChooseUnsetEnchantment', false, 'InvalidSelection');

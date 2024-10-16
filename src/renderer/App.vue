@@ -118,6 +118,7 @@ import { eventsStore } from '@renderer/core/entities/event/store';
 import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
 import { enchantsStore } from '@renderer/core/entities/enchant/store';
 import { itemsStore } from '@renderer/core/entities/item/store';
+import { ancientMobsStore } from '@renderer/core/entities/ancientMob/store';
 import { api } from '@renderer/core/api';
 
 const route = useRoute();
@@ -236,6 +237,7 @@ watch(() => state.currentTab, (newTab) => {
 
 onBeforeMount(() => {
   api.on('database-ready', async () => {
+<<<<<<< HEAD
     await settingsStore.actions.load();
     await dlcsStore.actions.load();
     await eventsStore.actions.load();
@@ -245,11 +247,23 @@ onBeforeMount(() => {
 
     await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
     locale.value = settingsStore.actions.getString('locale', 'en-EN');
+=======
+    await api.invoke('localeChange', settingsStore.actions.getString('locale'));
+    locale.value = settingsStore.actions.getString('locale');
+>>>>>>> d3bd1eb (:sparkles: migration to new data system)
   });
   if (api.isWeb) api.send('database-ready');
 });
 
-onMounted(() => {
+onMounted(async () => {
+  await settingsStore.actions.load();
+  await ancientMobsStore.actions.load();
+  await dlcsStore.actions.load();
+  await eventsStore.actions.load();
+  await armorPropertiesStore.actions.load();
+  await enchantsStore.actions.load();
+  await itemsStore.actions.load();
+
   if (globalStore.state.profilList.length) {
     Promise
       .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))

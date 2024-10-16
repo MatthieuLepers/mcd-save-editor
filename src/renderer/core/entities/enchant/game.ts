@@ -1,28 +1,10 @@
-import { EnchantmentTierEnum } from '@renderer/core/classes/enums/EnchantmentTierEnum';
+import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import { Tier } from '@renderer/core/entities/enchant/enums';
 import type EntityEnchant from '@renderer/core/entities/enchant';
+import type { IGameEnchant } from '@renderer/core/entities/enchant/i';
 
-export interface IEnchantment {
-  id: string;
-  investedPoints: number;
-  level: number;
-}
-
-export interface IEnchantmentData {
-  disabled?: boolean;
-  name: string;
-  type: Array<string>;
-  tier: string;
-  image: string;
-  soulgathering?: boolean;
-  i18n: Record<string, {
-    name: string;
-    desc: string;
-    level: Array<string>;
-  }>;
-}
-
-export default class Enchantment {
+export default class GameEnchant extends AbstractEntity<IGameEnchant> {
   declare id: string;
 
   declare investedPoints: number;
@@ -32,19 +14,18 @@ export default class Enchantment {
   public netherite: boolean = false;
 
   constructor(
-    public data: IEnchantment,
+    data: IGameEnchant,
     public isGilded?: boolean,
   ) {
-    Object.keys(this.data).forEach((key) => {
-      Object.defineProperty(this, key, {
-        get: () => this.data[key],
-        set: (value) => { this.data[key] = value; },
-      });
-    });
+    super(data, []);
   }
 
-  static get UNSET(): Enchantment {
-    return new Enchantment({ id: 'Unset', investedPoints: 0, level: 0 });
+  static get UNSET(): GameEnchant {
+    return new GameEnchant({
+      id: 'Unset',
+      investedPoints: 0,
+      level: 0,
+    });
   }
 
   get enchantData(): EntityEnchant {
@@ -57,7 +38,7 @@ export default class Enchantment {
   get enchantmentPointsInvested(): number {
     if (this.netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + (this.isGilded ? 1 : 0);
+    const offset = (tier === Tier.COMMON ? 0 : 1) + (this.isGilded ? 1 : 0);
 
     return [...Array(this.level).keys()]
       .map((t) => t + 1 + offset)
@@ -75,7 +56,7 @@ export default class Enchantment {
   getInvestmentCostForLevel(level: number): number {
     if (this.netherite) return 0;
     const { tier } = this.enchantData;
-    const offset = (tier === EnchantmentTierEnum.COMMON ? 0 : 1) + (this.isGilded ? 1 : 0);
+    const offset = (tier === Tier.COMMON ? 0 : 1) + (this.isGilded ? 1 : 0);
 
     return [...Array(3).keys()]
       .map((t) => t + 1 + offset)[level - 1]

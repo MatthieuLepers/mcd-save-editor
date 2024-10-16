@@ -15,10 +15,10 @@ const useEventsStore = () => {
       const objList = await api.Event.findAll();
       state.events = objList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new Event({
-          ...obj,
-          startedAt: new Date(obj.startedAt),
-          endedAt: new Date(obj.endedAt),
+        [obj.dataValues.id]: new Event({
+          ...obj.dataValues,
+          startedAt: new Date(obj.dataValues.startedAt),
+          endedAt: new Date(obj.dataValues.endedAt),
         }),
       }), {});
     },

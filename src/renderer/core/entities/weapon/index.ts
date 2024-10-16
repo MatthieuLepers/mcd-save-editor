@@ -3,20 +3,22 @@ import type { IWeapon } from '@renderer/core/entities/weapon/i';
 import Dlc from '@renderer/core/entities/dlc';
 import { dlcsStore } from '@renderer/core/entities/dlc/store';
 import { enchantsStore } from '@renderer/core/entities/enchant/store';
-import GameItem from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
+import type { Rarity, Rune, Type } from '@renderer/core/entities/item/enums';
+import { image } from '@renderer/core/utils';
 
 export default class Weapon extends AbstractI18nEntity<IWeapon> {
   declare id: string;
 
-  declare dlcId: string;
+  declare dlcId: string | null;
 
   declare events: Array<string>;
 
-  declare type: 'Melee' | 'Ranged';
+  declare type: Exclude<Type, 'Armor' | 'Artefact'>;
 
-  declare rarity: Array<'Common' | 'Rare' | 'Unique'>;
+  declare rarity: Array<`${Rarity}`>;
 
-  declare ancientHuntRunes: Array<'a' | 'c' | 'i' | 'o' | 'p' | 'r' | 's' | 't' | 'u'>;
+  declare ancientHuntRunes: Array<`${Rune}`>;
 
   declare stats: Record<string, number>;
 
@@ -29,13 +31,11 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   }
 
   get dlc(): Dlc {
-    if (!this.dlcId) {
-      return new Dlc({
-        id: 'Minecrat Dungeons',
-        releasedAt: new Date('2020-05-26'),
-      });
-    }
     return dlcsStore.state.dlcs[this.dlcId];
+  }
+
+  get image(): string {
+    return image(`img/Items/${this.type}Weapons/${this.id}.png`);
   }
 
   toGameData(inventoryIndex: number): GameItem {

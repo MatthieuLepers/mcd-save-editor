@@ -1,35 +1,20 @@
-import i18n from '@renderer/plugins/i18n';
-import Enchantment, { type IEnchantment } from '@renderer/core/classes/Enchantment';
-import ArmorProperty, { type IArmorProperty } from '@renderer/core/classes/ArmorProperty';
-import RuneList from '@renderer/core/classes/RuneList';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
-import { RarityEnum } from '@renderer/core/classes/enums/RarityEnum';
+import AbstractEntity from '@renderer/core/entities/AbstractEntity';
+import GameEnchant from '@renderer/core/entities/enchant/game';
+import GameArmorProperty from '@renderer/core/entities/armorProperty/game';
 import { itemsStore } from '@renderer/core/entities/item/store';
+import { Type, Rarity } from '@renderer/core/entities/item/enums';
+import type { TItem, IGameItem } from '@renderer/core/entities/item/i';
+import RuneList from '@renderer/core/classes/RuneList';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 
-export interface IItem {
-  markedNew?: boolean;
-  gifted?: boolean;
-  armorproperties?: Array<IArmorProperty>;
-  enchantments?: Array<IEnchantment>;
-  equipmentSlot?: string;
-  inventoryIndex?: number;
-  netheriteEnchant?: IEnchantment;
-  power: number;
-  rarity: string;
-  type: string;
-  upgraded: boolean;
-}
+export default class GameItem extends AbstractEntity<IGameItem> {
+  public $key: number = 0;
 
-export default class Item {
-  public $key: number;
-
-  constructor(public data: IItem) {
-    this.$key = 0;
-
+  constructor(data: IGameItem) {
+    super(data, ['enchantments', 'netheriteEnchant', 'armorproperties']);
     if (this.data.enchantments && this.data.enchantments.length < 9) {
       [...Array(9 - this.data.enchantments.length).keys()].forEach(() => {
-        this.data.enchantments?.push(Enchantment.UNSET.data);
+        this.data.enchantments?.push(GameEnchant.UNSET.data);
       });
     }
   }
@@ -45,12 +30,12 @@ export default class Item {
     if (this.itemData.type) {
       return this.itemData.type;
     } if (this.data.armorproperties) {
-      return ItemTypeEnum.ARMOR;
+      return Type.ARMOR;
     } if (this.data.enchantments) {
       const [[type]] = this.enchantments.filter((ench) => ench.enchantData.type && ench.enchantData.type.length === 1).map((ench) => ench.enchantData.type);
       return type;
     }
-    return ItemTypeEnum.ARTEFACT;
+    return Type.ARTEFACT;
   }
 
   get itemIdentifier(): string {
@@ -77,7 +62,10 @@ export default class Item {
   }
 
   get weaponType(): 'Crossbow' | 'Bow' {
-    return this.data.type.toLowerCase().indexOf('crossbow') >= 0 ? 'Crossbow' : 'Bow';
+    return this.data.type.toLowerCase().indexOf('crossbow') >= 0
+      ? 'Crossbow'
+      : 'Bow'
+    ;
   }
 
   isEnchanted(): boolean {
@@ -85,42 +73,45 @@ export default class Item {
   }
 
   isCommon(): boolean {
-    return this.data.rarity === RarityEnum.COMMON;
+    return this.data.rarity === Rarity.COMMON;
   }
 
   isRare(): boolean {
-    return this.data.rarity === RarityEnum.RARE;
+    return this.data.rarity === Rarity.RARE;
   }
 
   isUnique(): boolean {
-    return this.data.rarity === RarityEnum.UNIQUE;
+    return this.data.rarity === Rarity.UNIQUE;
   }
 
   isGilded(): boolean {
-    return !!this.data.netheriteEnchant && this.data.netheriteEnchant.id !== 'Unset' && this.data.netheriteEnchant.level > 0;
+    return !!this.data.netheriteEnchant
+      && this.data.netheriteEnchant.id !== 'Unset'
+      && this.data.netheriteEnchant.level > 0
+    ;
   }
 
   isMelee(): boolean {
-    return this.itemData.type === ItemTypeEnum.MELEE;
+    return this.itemData.type === Type.MELEE;
   }
 
   isArmor(): boolean {
-    return this.itemData.type === ItemTypeEnum.ARMOR;
+    return this.itemData.type === Type.ARMOR;
   }
 
   isRanged(): boolean {
-    return this.itemData.type === ItemTypeEnum.RANGED;
+    return this.itemData.type === Type.RANGED;
   }
 
   isArtefact(): boolean {
-    return this.itemData.type === ItemTypeEnum.ARTEFACT;
+    return this.itemData.type === Type.ARTEFACT;
   }
 
-  get gearType(): string {
+  get gearType(): `${Type}` {
     return this.itemData.type;
   }
 
-  set gearType(type: string) {
+  set gearType(type: `${Type}`) {
     this.data.equipmentSlot = `${type}Gear`;
   }
 
@@ -144,47 +135,47 @@ export default class Item {
 
   get enchantmentPointsInvested(): number {
     return this.enchantments
-      .reduce((acc: number, enchantment: Enchantment) => acc + enchantment.enchantmentPointsInvested, 0)
+      .reduce((acc: number, enchantment: GameEnchant) => acc + enchantment.enchantmentPointsInvested, 0)
     ;
   }
 
-  get chunkedEnchantments(): Array<Array<Enchantment>> {
-    const normalize = (enchantments: Array<Enchantment>) => {
+  get chunkedEnchantments(): Array<Array<GameEnchant>> {
+    const normalize = (enchantments: Array<GameEnchant>) => {
       if (enchantments.length === 9) {
         return enchantments;
       }
       return [...enchantments, ...[...Array((9 - enchantments.length) + 1).keys()]
-        .map(() => Enchantment.UNSET)
-        .reduce((acc, val) => [...acc, val], [] as Array<Enchantment>),
+        .map(() => GameEnchant.UNSET)
+        .reduce((acc, val) => [...acc, val], [] as Array<GameEnchant>),
       ];
     };
 
     return normalize(this.enchantments).reduce((acc, val, i) => {
       const ch = Math.floor(i / 3);
-      acc[ch] = ([] as Array<Enchantment>).concat(acc[ch] ?? [], val);
+      acc[ch] = ([] as Array<GameEnchant>).concat(acc[ch] ?? [], val);
       return acc;
-    }, [] as Array<Array<Enchantment>>);
+    }, [] as Array<Array<GameEnchant>>);
   }
 
-  get enchantments(): Array<Enchantment> {
+  get enchantments(): Array<GameEnchant> {
     return (this.data.enchantments ?? [])
-      .map((enchantmentData) => new Enchantment(enchantmentData, this.isGilded()))
+      .map((enchantmentData) => new GameEnchant(enchantmentData, this.isGilded()))
     ;
   }
 
-  get netheriteEnchant(): Enchantment {
-    const enchant = this.isGilded() ? new Enchantment(this.data.netheriteEnchant!) : Enchantment.UNSET;
+  get netheriteEnchant(): GameEnchant {
+    const enchant = this.isGilded() ? new GameEnchant(this.data.netheriteEnchant!) : GameEnchant.UNSET;
     enchant.setNetherite(true);
     return enchant;
   }
 
-  set netheriteEnchant(enchant: Enchantment) {
+  set netheriteEnchant(enchant: GameEnchant) {
     this.data.netheriteEnchant = enchant.data;
   }
 
-  get armorproperties(): Array<ArmorProperty> {
+  get armorproperties(): Array<GameArmorProperty> {
     return (this.data.armorproperties ?? [])
-      .map((armorPropertyData) => new ArmorProperty(armorPropertyData))
+      .map((armorPropertyData) => new GameArmorProperty(armorPropertyData))
     ;
   }
 
@@ -192,7 +183,7 @@ export default class Item {
     return new RuneList(this.itemData.ancientHuntRunes);
   }
 
-  convertTo(itemData) {
+  convertTo(itemData: TItem) {
     const { type } = this.itemData;
     const itemType = itemData.type;
 
@@ -200,45 +191,45 @@ export default class Item {
     [this.data.rarity] = itemData.rarity;
     this.data.upgraded = false;
 
-    if (itemType === ItemTypeEnum.ARTEFACT && this.data.enchantments) {
+    if (itemType === Type.ARTEFACT && this.data.enchantments) {
       delete this.data.enchantments;
     }
     if (this.data.netheriteEnchant) {
       delete this.data.netheriteEnchant;
       this.$key += 1;
     }
-    if (itemType !== ItemTypeEnum.ARTEFACT) {
-      this.data.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.data);
+    if (itemType !== Type.ARTEFACT) {
+      this.data.enchantments = [...Array(9).keys()].map(() => GameEnchant.UNSET.data);
     }
-    if (itemType !== ItemTypeEnum.ARMOR && type !== ItemTypeEnum.ARMOR) {
+    if (itemType !== Type.ARMOR && type !== Type.ARMOR) {
       delete this.data.armorproperties;
     }
-    if (itemType === ItemTypeEnum.ARMOR) {
+    if (itemType === Type.ARMOR) {
       if (itemData.id === 'MysteryArmor') {
-        const possibleProperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: RarityEnum.COMMON }));
+        const possibleProperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: Rarity.COMMON }));
         possibleProperties.sort(() => 0.5 - Math.random());
         this.data.armorproperties = possibleProperties.slice(0, 3);
       } else {
-        this.data.armorproperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: RarityEnum.COMMON }));
+        this.data.armorproperties = itemData.armorproperties.map((prop) => ({ id: prop, rarity: Rarity.COMMON }));
       }
     }
   }
 
   equip() {
     const { type } = this.itemData;
-    let equipedItem: Item | null = null;
+    let equipedItem: GameItem | null = null;
 
     delete this.data.inventoryIndex;
-    if (type !== ItemTypeEnum.ARTEFACT) {
-      [equipedItem] = globalStore.state.selectedCharacter!.inventory.gears.filter((item: Item) => item && item.gearType === type);
+    if (type !== Type.ARTEFACT) {
+      [equipedItem] = globalStore.state.selectedCharacter!.inventory.gears.filter((item: GameItem) => item && item.gearType === type);
       this.gearType = type;
     } else {
-      const equipedSlots = globalStore.state.selectedCharacter!.inventory.hotbar.map((item: Item) => (item ? item.hotbarSlot : null));
+      const equipedSlots = globalStore.state.selectedCharacter!.inventory.hotbar.map((item: GameItem) => (item ? item.hotbarSlot : null));
       const [emptySlot] = [1, 2, 3].filter((slot) => equipedSlots.indexOf(slot) < 0);
       const oldSelectedItemValid = globalStore.state.oldSelectedItem && globalStore.state.oldSelectedItem.isArtefact();
       const slot = emptySlot || (oldSelectedItemValid && globalStore.state.oldSelectedItem!.hotbarSlot) || 1;
 
-      [equipedItem] = globalStore.state.selectedCharacter!.inventory.hotbar.filter((item: Item) => item && item.hotbarSlot === slot);
+      [equipedItem] = globalStore.state.selectedCharacter!.inventory.hotbar.filter((item: GameItem) => item && item.hotbarSlot === slot);
       this.hotbarSlot = slot;
     }
     if (equipedItem) {
@@ -256,10 +247,10 @@ export default class Item {
   }
 
   toString(): string {
-    return i18n.global.t(`MCD.Game.Items.${this.itemIdentifier}`);
+    return this.itemData.getI18n('name');
   }
 
-  clone(): Item {
-    return new Item(JSON.parse(JSON.stringify(this.data)));
+  clone(): GameItem {
+    return new GameItem(JSON.parse(JSON.stringify(this.data)));
   }
 }

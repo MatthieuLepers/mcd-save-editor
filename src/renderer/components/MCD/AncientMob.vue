@@ -1,24 +1,24 @@
 <template>
   <label
     :for="`ancientMob${$uid}`"
-    :class="GenerateModifiers('MCDAncientMob', { Selected: State.isSelected})"
+    :class="GenerateModifiers('MCDAncientMob', { Selected: State.isSelected })"
   >
     <input
       type="checkbox"
       :id="`ancientMob${$uid}`"
       :checked="State.isSelected"
-      :value="props.ancientMob.name"
+      :value="props.ancientMob.id"
       @click="actions.handleSelectMob"
     />
     <img
       class="MCDAncientMobImage"
-      :src="image(props.ancientMob.image)"
-      :alt="props.ancientMob.name"
-      :title="t(`MCD.Game.AncientMobs.${props.ancientMob.name}`)"
+      :src="props.ancientMob.image"
+      :alt="props.ancientMob.id"
+      :title="props.ancientMob.getI18n('name')"
     />
 
     <div class="MCDAncientMobInfos">
-      <h4>{{ t(`MCD.Game.AncientMobs.${props.ancientMob.name}`) }}</h4>
+      <h4>{{ props.ancientMob.getI18n('name') }}</h4>
       <RuneList :list="props.ancientMob.runeList" />
     </div>
   </label>
@@ -26,18 +26,15 @@
 
 <script setup>
 import { computed, ref, getCurrentInstance } from 'vue';
-import { useI18n } from 'vue-i18n';
 
 import RuneList from '@renderer/components/MCD/RuneList.vue';
-import { image } from '@renderer/core/utils';
 
-import AncientMob from '@renderer/core/classes/AncientMob';
+import AncientMob from '@renderer/core/entities/ancientMob';
 import { ancientHuntsStore } from '@renderer/core/stores/AncientHuntsStore';
 
 defineOptions({ name: 'MCDAncientMob' });
 
 const $uid = ref(getCurrentInstance().uid);
-const { t } = useI18n();
 
 const props = defineProps({
   ancientMob: { type: AncientMob, required: true },

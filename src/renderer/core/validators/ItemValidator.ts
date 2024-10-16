@@ -1,9 +1,9 @@
 import AbstractValidator from '@renderer/core/validators/AbstractValidator';
-import type { IItem } from '@renderer/core/classes/Item';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import ItemSchema from '@renderer/public/json/schemas/item.schema.json';
 
-export default class ItemValidator extends AbstractValidator<IItem> {
-  constructor(data: IItem) {
+export default class ItemValidator extends AbstractValidator<IGameItem> {
+  constructor(data: IGameItem) {
     super(data);
 
     this.validateBySchema(ItemSchema, this.data);
@@ -12,7 +12,7 @@ export default class ItemValidator extends AbstractValidator<IItem> {
     this.validateArmorProperties(this.data);
   }
 
-  get items(): Array<IItem> {
+  get items(): Array<IGameItem> {
     return [this.data];
   }
 }

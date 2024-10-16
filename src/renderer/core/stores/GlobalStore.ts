@@ -3,16 +3,16 @@ import type { RouteLocation } from 'vue-router';
 
 import Profil from '@renderer/core/classes/Profil';
 import type Character from '@renderer/core/classes/Character';
-import type Item from '@renderer/core/classes/Item';
-import type Enchantment from '@renderer/core/classes/Enchantment';
+import type GameItem from '@renderer/core/entities/item/game';
+import type GameEnchant from '@renderer/core/entities/enchant/game';
 
 interface StoreData {
   profilList: Array<Profil>;
   selectedProfil: Profil | null;
   selectedCharacter: Character | null;
-  oldSelectedItem: Item | null;
-  selectedItem: Item | null;
-  selectedEnchant: Enchantment | null;
+  oldSelectedItem: GameItem | null;
+  selectedItem: GameItem | null;
+  selectedEnchant: GameEnchant | null;
   selectedEnchantChunkIndex: number | null;
   key: number;
 }
@@ -71,13 +71,13 @@ const useGlobalStore = () => {
       state.selectedEnchant = null;
       state.selectedEnchantChunkIndex = null;
     },
-    setItem(item: Item) {
+    setItem(item: GameItem) {
       state.oldSelectedItem = state.selectedItem;
       state.selectedItem = item;
       state.selectedEnchant = null;
       state.selectedEnchantChunkIndex = null;
     },
-    setEnchant(enchant: Enchantment) {
+    setEnchant(enchant: GameEnchant) {
       if (state.selectedEnchant?.netherite) {
         if (state.selectedEnchant!.id !== 'Unset' && state.selectedEnchant!.level > 0) {
           state.selectedItem!.netheriteEnchant = state.selectedEnchant!;

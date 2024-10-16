@@ -1,7 +1,7 @@
 <template>
   <div :class="GenerateModifiers('MCDArmorPropertySelect', { Focus: state.open })" ref="root">
     <div class="MCDArmorPropertySelectOuter" @click="state.open = !state.open">
-      {{ t(`MCD.Game.ArmorProperties.${props.property.armorPropertyIdentifier}`) }}
+      {{ props.property.armorPropertyData.getI18n('name') }}
     </div>
     <div class="MCDArmorPropertySelectInner" v-show="state.open">
       <div class="MCDArmorPropertySelectFiltersContainer">
@@ -38,7 +38,7 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
 
 defineOptions({ name: 'MCDArmorPropertySelect' });
@@ -48,7 +48,7 @@ const root = ref(null);
 
 const props = defineProps({
   property: { type: Object, required: true },
-  item: { type: Item, required: true },
+  item: { type: GameItem, required: true },
 });
 
 const state = reactive({

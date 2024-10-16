@@ -36,7 +36,7 @@
           v-for="(item, i) in state.foundOffers"
           :key="i"
           :item="item"
-          :itemType="Object.values(ItemTypeEnum)[i]"
+          :itemType="Object.values(Type)[i]"
           :showRuneList="true"
           :noDragEvent="true"
         />
@@ -62,11 +62,11 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
+import { Type } from '@renderer/core/entities/item/enums';
 import RuneList from '@renderer/core/classes/RuneList';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { ancientHuntsStore } from '@renderer/core/stores/AncientHuntsStore';
-import { ancientMobsStore } from '@/renderer/core/entities/ancientMob/store';
+import { ancientMobsStore } from '@renderer/core/entities/ancientMob/store';
 
 import MCDAncientMob from '@renderer/components/MCD/AncientMob.vue';
 import MCDItem from '@renderer/components/MCD/Item.vue';

@@ -15,9 +15,9 @@ const useDlcsStore = () => {
       const objList = await api.Dlc.findAll();
       state.dlcs = objList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new Dlc({
-          ...obj,
-          releasedAt: new Date(obj.releasedAt),
+        [obj.dataValues.id]: new Dlc({
+          ...obj.dataValues,
+          releasedAt: new Date(obj.dataValues.releasedAt),
         }),
       }), {});
     },

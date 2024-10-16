@@ -1,33 +1,28 @@
 <template>
   <div class="MCDGildedEnchant" @click="actions.handleAddNetheriteEnchant">
     <div class="MCDGildedEnchantImage">
-      <img :src="image(state.ench.enchantData.image)" :alt="t(`MCD.Game.Enchants.${state.ench.id}.name`)" />
+      <img :src="state.ench.enchantData.image" :alt="state.ench.enchantData.getI18n('name')" />
       <span>{{ State.tier }}</span>
     </div>
-    <span class="MCDGildedEnchantName">{{ t(`MCD.Game.Enchants.${state.ench.id}.name`) }}</span>
+    <span class="MCDGildedEnchantName">
+      {{ state.ench.enchantData.getI18n('name') }}
+    </span>
   </div>
 </template>
 
 <script setup>
 import { reactive, computed, watch } from 'vue';
-import { useI18n } from 'vue-i18n';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
-import Enchantment from '@renderer/core/classes/Enchantment';
-import { image } from '@renderer/core/utils';
+import GameEnchant from '@renderer/core/entities/enchant/game';
 
 defineOptions({ name: 'MCDGildedEnchant' });
 
-const emit = defineEmits(['update:modelValue']);
-const { t } = useI18n();
-
-const props = defineProps({
-  modelValue: { type: Enchantment, required: true },
-});
+const modelValue = defineModel({ type: GameEnchant });
 
 const state = reactive({
-  ench: props.modelValue,
+  ench: modelValue.value,
 });
 
 const State = computed(() => ({
@@ -36,13 +31,12 @@ const State = computed(() => ({
 
 const actions = {
   handleAddNetheriteEnchant() {
-    emit('input', props.modelValue);
-    globalStore.setters.setEnchant(props.modelValue);
+    globalStore.setters.setEnchant(modelValue.value);
     tutorialStore.actions.setFullfilled('ClickNetheriteEnchantmentSlot', true);
   },
 };
 
-watch(() => props.modelValue, (newModelValue) => {
+watch(() => modelValue.value, (newModelValue) => {
   state.ench = newModelValue;
 });
 </script>

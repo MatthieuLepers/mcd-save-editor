@@ -2,7 +2,7 @@ import Currencies, { ICurrency } from '@renderer/core/classes/Currencies';
 import Inventory from '@renderer/core/classes/Inventory';
 import StorageChest from '@renderer/core/classes/StorageChest';
 import CharacterBackup from '@renderer/core/classes/CharacterBackup';
-import type { IItem } from '@renderer/core/classes/Item';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import EncryptionService from '@renderer/core/services/EncryptionService';
 import CharacterUtils from '@renderer/core/utils/CharacterUtils';
@@ -10,10 +10,10 @@ import ValidationErrorReport from '@renderer/core/validators/ValidationErrorRepo
 
 export interface ICharacter {
   currency: Array<ICurrency>;
-  items: Array<IItem>;
+  items: Array<IGameItem>;
   name: string;
   playerId: string;
-  storageChestItems: Array<IItem>;
+  storageChestItems: Array<IGameItem>;
   xp: number;
 }
 

@@ -1,12 +1,14 @@
 import type { ErrorObject } from 'ajv';
 
 import i18n from '@renderer/plugins/i18n';
-import Enchantment, { IEnchantment } from '@renderer/core/classes/Enchantment';
-import type { IItem } from '@renderer/core/classes/Item';
+import GameEnchant from '@renderer/core/entities/enchant/game';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import type { IGameEnchant } from '@renderer/core/entities/enchant/i';
+import { Rarity } from '@renderer/core/entities/item/enums';
+import { itemsStore } from '@renderer/core/entities/item/store';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
-import { enchantsStore } from '@renderer/core/entities/enchant/store';
-import { itemsStore } from '@renderer/core/entities/item/store';
 
 export interface FixupAction {
   label: string;
@@ -17,7 +19,7 @@ export default class Fixup {
   constructor(public validationErrorReport: ValidationErrorReport) {
   }
 
-  get item(): IItem {
+  get item(): IGameItem {
     return this.validationErrorReport.item;
   }
 
@@ -48,7 +50,7 @@ export default class Fixup {
     }
   }
 
-  getInvestedPoints(enchant: IEnchantment): number {
+  getInvestedPoints(enchant: IGameEnchant): number {
     const enchantData = enchantsStore.state.enchants[enchant.id];
     let investedPointResult = 0;
     if (enchantData) {
@@ -154,7 +156,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsRequired'),
         apply: () => {
-          this.item.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.data);
+          this.item.enchantments = [...Array(9).keys()].map(() => GameEnchant.UNSET.data);
         },
       },
     ];
@@ -166,7 +168,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsMinItems', [missing]),
         apply: () => {
-          this.item.enchantments!.push(...[...Array(missing).keys()].map(() => Enchantment.UNSET.data));
+          this.item.enchantments!.push(...[...Array(missing).keys()].map(() => GameEnchant.UNSET.data));
         },
       },
     ];
@@ -507,7 +509,7 @@ export default class Fixup {
       result.push({
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
-          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+          this.item.armorproperties = itemData.armorproperties.map((prop) => prop.toGameData());
         },
       });
     } else {
@@ -535,7 +537,7 @@ export default class Fixup {
       result.push({
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
-          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+          this.item.armorproperties = itemData.armorproperties.map((prop) => prop.toGameData());
         },
       });
     } else {
@@ -595,7 +597,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesRarityEnum'),
         apply: () => {
-          this.item.armorproperties![this.index].rarity = 'Common';
+          this.item.armorproperties![this.index].rarity = Rarity.COMMON;
         },
       },
     ];

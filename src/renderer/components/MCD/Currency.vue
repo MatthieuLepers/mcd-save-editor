@@ -5,10 +5,10 @@
       v-if="!props.readonly"
       class="MCDCurrencyField"
       type="number"
-      :value="props.modelValue"
-      @input="emit('update:modelValue', parseInt($event.target.value, 10))"
+      :value="modelValue"
+      @input="modelValue = parseInt($event.target.value, 10)"
     />
-    <span v-else class="MCDCurrencySpan">{{ props.modelValue }}</span>
+    <span v-else class="MCDCurrencySpan">{{ modelValue }}</span>
   </div>
 </template>
 
@@ -17,10 +17,9 @@ import * as utils from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDCurrency' });
 
-const emit = defineEmits(['update:modelValue']);
+const modelValue = defineModel({ type: Number });
 
 const props = defineProps({
-  modelValue: { type: Number, required: true },
   image: { type: String, required: true },
   imageAlt: { type: String, default: '' },
   readonly: { type: Boolean, default: false },

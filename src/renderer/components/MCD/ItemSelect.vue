@@ -1,5 +1,8 @@
 <template>
-  <div :class="GenerateModifiers('MCDItemSelect', { Focus: state.open, NoFilters: modelValue.isEquipped() })" ref="root">
+  <div :class="GenerateModifiers('MCDItemSelect', {
+    Focus: state.open,
+    NoFilters: modelValue.isEquipped(),
+  })" ref="root">
     <div
       class="MCDItemSelectOuter"
       @click="actions.handleClickToggle"
@@ -35,7 +38,7 @@
         >
           <img
             class="MCDItemSelectChoiceImage"
-            :src="image(itemData.image)"
+            :src="itemData.image"
             :alt="itemData.getI18n('name')"
           />
           <div class="MCDItemSelectChoiceName">
@@ -52,13 +55,13 @@
             <span v-if="itemData.dlcId" :class="`${itemData.dlc.id.replace(/ /, '')}`">
               {{ itemData.dlc.id }} DLC
             </span>
-            <ul class="MCDItemSelectChoiceEvents" v-if="!!itemData.events.length">
+            <ul class="MCDItemSelectChoiceEvents" v-if="!!(itemData.events?.length ?? 0)">
               <li
                 v-for="(event, i) in itemData.events"
                 :key="i"
-                :class="`${event.id.replace(/ /, '')}`"
+                :class="`${event.replace(/ /, '')}`"
               >
-                {{ event.id }} Event
+                {{ event }} Event
               </li>
             </ul>
           </div>
@@ -78,9 +81,8 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import PolygonEnum from '@renderer/core/tutorial//PolygonEnum';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
-import { image } from '@renderer/core/utils';
+import PolygonEnum from '@renderer/core/tutorial/PolygonEnum';
+import { Type } from '@renderer/core/entities/item/enums';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 import { itemsStore } from '@renderer/core/entities/item/store';
 
@@ -155,7 +157,7 @@ const actions = {
   selectItem(itemData) {
     document.body.classList.remove('modal'); // Force update before re-render component
     modelValue.value.convertTo(itemData);
-    if (itemData.type === ItemTypeEnum.ARTEFACT || (itemData.type !== ItemTypeEnum.ARTEFACT && itemData.rarity.length === 1)) {
+    if (itemData.type === Type.ARTEFACT || (itemData.type !== Type.ARTEFACT && itemData.rarity.length === 1)) {
       tutorialStore.actions.setFullfilled('OpenSelector', null, null, true);
       tutorialStore.actions.setFullfilled('ChooseNewItem', false, 'InvalidItem');
     } else {

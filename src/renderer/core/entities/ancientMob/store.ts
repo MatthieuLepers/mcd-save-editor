@@ -15,7 +15,7 @@ const useAncientMobsStore = () => {
       const objList = await api.AncientMob.findAll();
       state.mobs = objList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new AncientMob(obj),
+        [obj.dataValues.id]: new AncientMob(obj.dataValues),
       }), {});
     },
   };

@@ -1,11 +1,11 @@
 import { computed, reactive } from 'vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
+import { itemsStore } from '@renderer/core/entities/item/store';
+import { Type } from '@renderer/core/entities/item/enums';
 import RuneList from '@renderer/core/classes/RuneList';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
 import type AncientMob from '@renderer/core/entities/ancientMob';
 import { shuffleArray } from '@renderer/core/utils';
-import { itemsStore } from '../entities/item/store';
 
 const useAncientHuntsStore = () => {
   const state = reactive({
@@ -25,27 +25,27 @@ const useAncientHuntsStore = () => {
     isMobPicked(mob: AncientMob): boolean {
       return !!state.ancientMobList.filter((m) => m.id === mob.id).length;
     },
-    getBestStartingItemList(runes: RuneList): Array<Item> {
+    getBestStartingItemList(runes: RuneList): Array<GameItem> {
       return shuffleArray(Object
         .values(itemsStore.itemsButArtefacts.value)
         .map((itemData, i) => itemData.toGameData(i))
-        .sort((a: Item, b: Item) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
-        .filter((item: Item, _i, array: Array<Item>) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)));
+        .sort((a: GameItem, b: GameItem) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
+        .filter((item: GameItem, _i, array: Array<GameItem>) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)));
     },
-    getNextItemListExcludingTypes(runes: RuneList, excludeTypes: Array<string>): Array<Item> {
+    getNextItemListExcludingTypes(runes: RuneList, excludeTypes: Array<string>): Array<GameItem> {
       return shuffleArray(Object
         .values(itemsStore.items.value)
         .filter((data) => !(excludeTypes ?? []).includes(data.type))
         .map((itemData, i) => itemData.toGameData(i))
-        .sort((a: Item, b: Item) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
-        .filter((item: Item, _i, array: Array<Item>) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)));
+        .sort((a: GameItem, b: GameItem) => runes.countContains(b.runeList) - runes.countContains(a.runeList))
+        .filter((item: GameItem, _i, array: Array<GameItem>) => runes.countContains(item.runeList) >= runes.countContains(array[0].runeList)));
     },
     findOffers() {
-      const orderResult = (list: Array<Item | null>) => {
-        const [meleeItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.MELEE);
-        const [rangedItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.RANGED);
-        const [armorItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.ARMOR);
-        const [artefactItem] = list.filter((item) => item && item.itemType === ItemTypeEnum.ARTEFACT);
+      const orderResult = (list: Array<GameItem | null>) => {
+        const [meleeItem] = list.filter((item) => item && item.itemType === Type.MELEE);
+        const [rangedItem] = list.filter((item) => item && item.itemType === Type.RANGED);
+        const [armorItem] = list.filter((item) => item && item.itemType === Type.ARMOR);
+        const [artefactItem] = list.filter((item) => item && item.itemType === Type.ARTEFACT);
         return [meleeItem, rangedItem, armorItem, artefactItem];
       };
       const runes = runeList.value;
@@ -55,10 +55,10 @@ const useAncientHuntsStore = () => {
       }
 
       const validStartingItems = this.getBestStartingItemList(runes);
-      let firstItem: Item | null = validStartingItems.shift() ?? null;
-      let secondItem: Item | null = null;
-      let thirdItem: Item | null = null;
-      let fourthItem: Item | null = null;
+      let firstItem: GameItem | null = validStartingItems.shift() ?? null;
+      let secondItem: GameItem | null = null;
+      let thirdItem: GameItem | null = null;
+      let fourthItem: GameItem | null = null;
 
       while (firstItem) {
         const firstItemRunes = runes.sub(firstItem.runeList);

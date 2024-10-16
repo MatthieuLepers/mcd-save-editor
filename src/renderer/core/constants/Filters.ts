@@ -1,4 +1,4 @@
-import type Item from '@renderer/core/classes/Item';
+import type Item from '@renderer/core/entities/item/game';
 
 export default {
   ALL: {

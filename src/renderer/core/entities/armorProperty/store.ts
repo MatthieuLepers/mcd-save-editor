@@ -15,7 +15,7 @@ const useArmorPropertiesStore = () => {
       const objList = await api.ArmorProperty.findAll();
       state.properties = objList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new ArmorProperty(obj),
+        [obj.dataValues.id]: new ArmorProperty(obj.dataValues),
       }), {});
     },
   };

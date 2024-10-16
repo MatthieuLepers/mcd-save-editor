@@ -32,19 +32,19 @@ const useItemsStore = () => {
       const armorList = await api.Armor.findAll();
       state.armors = armorList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new Armor(obj),
+        [obj.dataValues.id]: new Armor(obj.dataValues),
       }), {});
 
       const artefactList = await api.Artefact.findAll();
       state.artefacts = artefactList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new Artefact(obj),
+        [obj.dataValues.id]: new Artefact(obj.dataValues),
       }), {});
 
       const weaponList = await api.Weapon.findAll();
       state.weapons = weaponList.reduce((acc, obj) => ({
         ...acc,
-        [obj.id]: new Weapon(obj),
+        [obj.dataValues.id]: new Weapon(obj.dataValues),
       }), {});
     },
   };

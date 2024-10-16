@@ -4,7 +4,6 @@ import JSONEvents from '@/main/public/Events.json';
 
 export const populate = async () => {
   await serial(JSONEvents
-    .map((data) => () => Event.create({
-      ...data,
-    }).catch(console.log)));
+    .map((data) => () => Event.create(data).catch(console.log)))
+  ;
 };
