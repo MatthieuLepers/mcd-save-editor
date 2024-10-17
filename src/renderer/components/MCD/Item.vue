@@ -1,7 +1,12 @@
 <template>
   <div
     :key="item.$key"
-    :class="GenerateModifiers('MCDItem', { Selected: props.item === globalStore.state.selectedItem, DragHolded: state.isHolded, Gilded: props.item.isGilded(), [props.item.data.rarity]: true })"
+    :class="GenerateModifiers('MCDItem', {
+      Selected: props.item === globalStore.state.selectedItem,
+      DragHolded: state.isHolded,
+      Gilded: props.item.isGilded(),
+      [props.item.data.rarity]: true,
+    })"
     @mousedown="actions.selectItem"
     @dragover.stop="actions.handleDragOver"
     @drop.stop="actions.handleDrop"
@@ -18,7 +23,7 @@
       :rarity="props.item.data.rarity"
       :item="props.item.itemData.image || null"
       :isNew="props.item.data.markedNew"
-      :isEvent="!!props.item.itemData.events && !props.showRuneList"
+      :isEvent="!!props.item.itemData.events.length && !props.showRuneList"
       @dragstart.stop="actions.handleDragStart"
       @dragend.stop="actions.handleDragEnd"
     />

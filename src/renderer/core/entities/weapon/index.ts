@@ -5,14 +5,14 @@ import { dlcsStore } from '@renderer/core/entities/dlc/store';
 import { enchantsStore } from '@renderer/core/entities/enchant/store';
 import GameItem from '@renderer/core/entities/item/game';
 import type { Rarity, Rune, Type } from '@renderer/core/entities/item/enums';
+import type Event from '@renderer/core/entities/event';
+import { eventsStore } from '@renderer/core/entities/event/store';
 import { image } from '@renderer/core/utils';
 
 export default class Weapon extends AbstractI18nEntity<IWeapon> {
   declare id: string;
 
   declare dlcId: string | null;
-
-  declare events: Array<string>;
 
   declare type: Exclude<Type, 'Armor' | 'Artefact'>;
 
@@ -27,11 +27,17 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   declare activeEnchants: Array<string>;
 
   constructor(data: IWeapon) {
-    super(data, []);
+    super(data, ['events']);
   }
 
   get dlc(): Dlc {
     return dlcsStore.state.dlcs[this.dlcId];
+  }
+
+  get events(): Array<Event> {
+    return (this.data.events ?? [])
+      .map((eventId) => eventsStore.state.events[eventId])
+    ;
   }
 
   get image(): string {

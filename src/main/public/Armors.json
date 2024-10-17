@@ -546,7 +546,7 @@
   },
   {
     "id": "WolfArmor_Winter1",
-    "events": ["Chills and Thrills", "Fetival Of Frost"],
+    "events": ["Chills and Thrills", "Festival of Frost"],
     "type": "Armor",
     "rarity": ["Unique"],
     "armorproperties": ["MissChance", "AllyDamageBoost", "AreaHeal"],

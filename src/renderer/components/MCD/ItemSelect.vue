@@ -52,16 +52,16 @@
                 {{ t(`MCD.RarityLabel.${rarity.toLowerCase()}`) }}
               </span>
             </span>
-            <span v-if="itemData.dlcId" :class="`${itemData.dlc.id.replace(/ /, '')}`">
+            <span v-if="itemData.dlcId" :class="`${itemData.dlc.id.replace(/ /g, '')}`">
               {{ itemData.dlc.id }} DLC
             </span>
-            <ul class="MCDItemSelectChoiceEvents" v-if="!!(itemData.events?.length ?? 0)">
+            <ul class="MCDItemSelectChoiceEvents" v-if="!!itemData.events.length">
               <li
                 v-for="(event, i) in itemData.events"
                 :key="i"
-                :class="`${event.replace(/ /, '')}`"
+                :class="`${event.id.replace(/ /g, '')}`"
               >
-                {{ event }} Event
+                {{ event.id }} Event
               </li>
             </ul>
           </div>

@@ -155,7 +155,7 @@
   },
   {
     "id": "Claymore_Winter1",
-    "events": ["Chills and Thrills", "Fetival Of Frost"],
+    "events": ["Chills and Thrills", "Festival of Frost"],
     "type": "Melee",
     "rarity": ["Unique"],
     "ancientHuntRunes": ["i", "t"],
@@ -1968,7 +1968,7 @@
   },
   {
     "id": "SoulBow_Winter1",
-    "events": ["Chills and Thrills", "Festival Of Frost"],
+    "events": ["Chills and Thrills", "Festival of Frost"],
     "type": "Ranged",
     "rarity": ["Unique"],
     "activeEnchants": ["TempoTheft"],

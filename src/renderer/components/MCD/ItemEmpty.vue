@@ -29,7 +29,7 @@ const props = defineProps({
 const actions = {
   handleDragOver(e) {
     if (!props.noDragEvent) {
-      dragDropStore.actions.setDragTo({ type: props.itemType, slot: props.hotbarSlot });
+      dragDropStore.actions.setDragTo({ type: props.itemType, hotbarSlot: props.hotbarSlot });
 
       if (dragDropStore.state.from && dragDropStore.state.from.itemData.type === props.itemType) {
         e.preventDefault();

@@ -6,6 +6,4 @@ node_modules
 dist
 out
 *.local
-*.sqlite
-*.sqlite3
 **/.DS_Store
