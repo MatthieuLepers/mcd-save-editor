@@ -31,7 +31,7 @@ export default class Weapon extends AbstractI18nEntity<IWeapon> {
   }
 
   get dlc(): Dlc {
-    return dlcsStore.state.dlcs[this.dlcId];
+    return dlcsStore.state.dlcs[this.dlcId!];
   }
 
   get events(): Array<Event> {

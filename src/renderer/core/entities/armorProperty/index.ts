@@ -14,7 +14,7 @@ export default class ArmorProperty extends AbstractI18nEntity<IArmorProperty> {
   }
 
   get dlc(): Dlc {
-    return dlcsStore.state.dlcs[this.dlcId];
+    return dlcsStore.state.dlcs[this.dlcId!];
   }
 
   toGameData(): GameArmorPromerty {

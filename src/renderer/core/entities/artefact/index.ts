@@ -26,7 +26,7 @@ export default class Artefact extends AbstractI18nEntity<IArtefact> {
   }
 
   get dlc(): Dlc {
-    return dlcsStore.state.dlcs[this.dlcId];
+    return dlcsStore.state.dlcs[this.dlcId!];
   }
 
   get events(): Array<Event> {

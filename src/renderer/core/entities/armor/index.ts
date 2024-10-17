@@ -29,7 +29,7 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
   }
 
   get dlc(): Dlc {
-    return dlcsStore.state.dlcs[this.dlcId];
+    return dlcsStore.state.dlcs[this.dlcId!];
   }
 
   get events(): Array<Event> {

@@ -19,7 +19,7 @@ export default class Enchant extends AbstractI18nEntity<IEnchant> {
   }
 
   get dlc(): Dlc {
-    return dlcsStore.state.dlcs[this.dlcId];
+    return dlcsStore.state.dlcs[this.dlcId!];
   }
 
   get image(): string {
