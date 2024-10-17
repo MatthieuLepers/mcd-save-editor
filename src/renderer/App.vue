@@ -105,6 +105,7 @@ import MaterialAppTitleBar from '@renderer/components/App/TitleBar/index.vue';
 import MaterialTabs from '@renderer/components/Materials/Tabs/index.vue';
 import MaterialNotificationList from '@renderer/components/Materials/Notification/List.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
+import MaterialProgressBar from '@renderer/components/Materials/ProgressBar/index.vue';
 import AppNavigation from '@renderer/components/App/Navigation/index.vue';
 import Tutorial from '@renderer/components/Tutorial/index.vue';
 
