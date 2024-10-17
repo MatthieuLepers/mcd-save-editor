@@ -35,4 +35,8 @@ export default {
     'fr-FR': 'Illusioniste / Évocateur',
     'en-EN': 'Illusioner / Evoker',
   },
+  tempestgolem: {
+    'fr-FR': 'Goleme des tempêtes',
+    'en-EN': 'Tempest golem',
+  },
 };
