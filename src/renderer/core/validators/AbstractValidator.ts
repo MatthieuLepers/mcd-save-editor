@@ -6,14 +6,7 @@ import ValidationErrorReport from '@renderer/core/validators/ValidationErrorRepo
 import { itemsStore } from '@renderer/core/entities/item/store';
 import type { IGameItem } from '@renderer/core/entities/item/i';
 import type { IGameEnchant } from '@renderer/core/entities/enchant/i';
-
-function $getEnchantmentChunks(item: IGameItem): Array<Array<IGameEnchant>> {
-  return (item.enchantments ?? []).reduce((acc, val, i) => {
-    const ch = Math.floor(i / 3);
-    acc[ch] = ([] as Array<IGameEnchant>).concat((acc[ch] || []), val);
-    return acc;
-  }, [] as Array<Array<IGameEnchant>>);
-}
+import { chunkArray } from '@renderer/core/utils';
 
 export default abstract class AbstractValidator<T> {
   public errors: Array<ValidationErrorReport> = [];
@@ -158,7 +151,7 @@ export default abstract class AbstractValidator<T> {
           },
         });
       }
-      $getEnchantmentChunks(item).forEach((chunk, i) => {
+      chunkArray(item.enchantments ?? [], 3).forEach((chunk, i) => {
         const enchantedItemInChunk = chunk.filter((ench) => ench.level > 0).length;
         if (enchantedItemInChunk > 1) {
           this.addErrorReport({

@@ -90,7 +90,7 @@ const actions = {
   handleMouseOver() {
     window.onmousewheel = (e) => {
       const direction = (e.deltaY > 0 ? -1 : 1);
-      props.item.data.power += direction / 10;
+      props.item.data.power = Math.max(1, props.item.data.power + (direction / 10));
       tutorialStore.actions.setFullfilled('ChangeLevel', true);
     };
   },

@@ -6,6 +6,7 @@ import { Type, Rarity } from '@renderer/core/entities/item/enums';
 import type { TItem, IGameItem } from '@renderer/core/entities/item/i';
 import RuneList from '@renderer/core/classes/RuneList';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { chunkArray } from '@renderer/core/utils';
 
 export default class GameItem extends AbstractEntity<IGameItem> {
   public $key: number = 0;
@@ -150,11 +151,7 @@ export default class GameItem extends AbstractEntity<IGameItem> {
       ];
     };
 
-    return normalize(this.enchantments).reduce((acc, val, i) => {
-      const ch = Math.floor(i / 3);
-      acc[ch] = ([] as Array<GameEnchant>).concat(acc[ch] ?? [], val);
-      return acc;
-    }, [] as Array<Array<GameEnchant>>);
+    return chunkArray(normalize(this.enchantments), 3);
   }
 
   get enchantments(): Array<GameEnchant> {

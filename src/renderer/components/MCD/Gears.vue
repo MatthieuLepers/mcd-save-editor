@@ -19,7 +19,7 @@
         v-for="(item, i) in props.hotbar"
         :key="i"
         :item="item"
-        itemType="Artefact"
+        :itemType="Type.ARTEFACT"
         :hotbarSlot="i + 1"
       />
     </div>

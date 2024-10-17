@@ -25,8 +25,7 @@
     "id": "AssassinArmor",
     "type": "Armor",
     "rarity": ["Common", "Rare"],
-    "armorproperties": [{"id":"MeleeAttackSpeedBoost",
-    "rarity": "Common"}],
+    "armorproperties": ["MeleeAttackSpeedBoost"],
     "ancientHuntRunes": ["i"],
     "i18n": [
       {"locale": "fr-FR", "name": "Armure de voleur"},
@@ -37,9 +36,7 @@
     "id": "AssassinArmor_Unique1",
     "type": "Armor",
     "rarity": ["Unique"],
-    "armorproperties": [{"id":"LifeStealAura",
-    "rarity": "Common"},{"id":"MeleeAttackSpeedBoost",
-    "rarity": "Common"}],
+    "armorproperties": ["LifeStealAura", "MeleeAttackSpeedBoost"],
     "ancientHuntRunes": ["i", "t"],
     "i18n": [
       {"locale": "fr-FR", "name": "Armure d'araignée"},

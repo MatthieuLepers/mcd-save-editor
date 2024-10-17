@@ -19,7 +19,7 @@
         <span>
           {{ character.data.name || t('App.tabs.unamedCharacter') }}
         </span>
-        <div class="CharacterActionContainer" :key="`actionctn${i}`">
+        <div v-if="!globalStore.state.isDemo" class="CharacterActionContainer">
           <button
             :title="t('App.tabs.edit.label')"
             class="CharacterAction CharacterActionEditName"
@@ -275,6 +275,8 @@ onMounted(async () => {
     ;
   } else {
     state.ready = true;
+    globalStore.actions.loadDemoCharacter();
+    state.currentTab = globalStore.state.selectedCharacter.uuid;
   }
 });
 </script>

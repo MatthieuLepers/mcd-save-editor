@@ -57,7 +57,6 @@ export default class Armor extends AbstractI18nEntity<IArmor> {
         .map((armorProperty) => armorProperty.toGameData().data)
       ;
     } else {
-      console.log(this.data.armorproperties, this.armorproperties);
       obj.armorproperties = this.armorproperties
         .map((armorProperty) => armorProperty.toGameData().data)
       ;

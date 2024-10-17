@@ -5,7 +5,7 @@ import { SAVE_PATH } from '@/main/utils/Constants';
 
 class ProfilModule {
   @IpcOn
-  static fetchCharactersFiles(profilId): Array<string> {
+  static fetchCharactersFiles(profilId: string): Array<string> {
     const path = `${SAVE_PATH}/${profilId}/Characters`;
     if (fs.existsSync(path)) {
       return fs

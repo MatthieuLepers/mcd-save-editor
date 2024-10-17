@@ -2,9 +2,10 @@ import { reactive } from 'vue';
 import type { RouteLocation } from 'vue-router';
 
 import Profil from '@renderer/core/classes/Profil';
-import type Character from '@renderer/core/classes/Character';
+import Character from '@renderer/core/classes/Character';
 import type GameItem from '@renderer/core/entities/item/game';
 import type GameEnchant from '@renderer/core/entities/enchant/game';
+import DemoCharacter from '../../public/json/demo.json';
 
 interface StoreData {
   profilList: Array<Profil>;
@@ -15,6 +16,7 @@ interface StoreData {
   selectedEnchant: GameEnchant | null;
   selectedEnchantChunkIndex: number | null;
   key: number;
+  isDemo: boolean;
 }
 
 const useGlobalStore = () => {
@@ -27,33 +29,8 @@ const useGlobalStore = () => {
     selectedEnchant: null,
     selectedEnchantChunkIndex: null,
     key: 0,
+    isDemo: false,
   });
-
-  const actions = {
-    enableTutorialOnRoute(route: RouteLocation) {
-      return route.name === 'Home';
-    },
-    getUnallowedEnchantForChunk() {
-      if (!state.selectedEnchant) {
-        return [];
-      }
-      if (state.selectedEnchant.netherite) {
-        return state.selectedItem!.chunkedEnchantments
-          .reduce((acc, chunk) => [...acc, chunk.find((ench) => ench.level > 0)!], [])
-          .filter((ench) => !!ench && ench.id !== 'Unset')
-          .map((ench) => ench.id)
-        ;
-      }
-      const enchantIndex = state.selectedItem!.chunkedEnchantments[state.selectedEnchantChunkIndex!]
-        .findIndex((ench) => JSON.stringify(ench.data) === JSON.stringify(state.selectedEnchant!.data))
-      ;
-      return state.selectedItem!.chunkedEnchantments[state.selectedEnchantChunkIndex!]
-        .filter((_ench, i) => i !== enchantIndex)
-        .map((ench) => ench.id)
-        .filter((enchId) => enchId !== 'Unset')
-      ;
-    },
-  };
 
   const setters = {
     setProfil(profil: Profil) {
@@ -88,6 +65,40 @@ const useGlobalStore = () => {
       }
       state.selectedEnchant = enchant;
       state.selectedEnchantChunkIndex = null;
+    },
+  };
+
+  const actions = {
+    enableTutorialOnRoute(route: RouteLocation) {
+      return route.name === 'Home';
+    },
+    getUnallowedEnchantForChunk() {
+      if (!state.selectedEnchant) {
+        return [];
+      }
+      if (state.selectedEnchant.netherite) {
+        return state.selectedItem!.chunkedEnchantments
+          .reduce((acc, chunk) => [...acc, chunk.find((ench) => ench.level > 0)!], [])
+          .filter((ench) => !!ench && ench.id !== 'Unset')
+          .map((ench) => ench.id)
+        ;
+      }
+      const enchantIndex = state.selectedItem!.chunkedEnchantments[state.selectedEnchantChunkIndex!]
+        .findIndex((ench) => JSON.stringify(ench.data) === JSON.stringify(state.selectedEnchant!.data))
+      ;
+      return state.selectedItem!.chunkedEnchantments[state.selectedEnchantChunkIndex!]
+        .filter((_ench, i) => i !== enchantIndex)
+        .map((ench) => ench.id)
+        .filter((enchId) => enchId !== 'Unset')
+      ;
+    },
+    loadDemoCharacter() {
+      const demo = new Character(DemoCharacter, 'demo.json');
+      const profil = new Profil('0');
+      state.isDemo = true;
+      state.profilList = [profil];
+      profil.characters = [demo];
+      setters.setProfil(profil);
     },
   };
 

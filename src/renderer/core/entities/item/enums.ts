@@ -5,10 +5,10 @@ export enum Rarity {
 }
 
 export enum Type {
-  ARMOR = 'Armor',
-  ARTEFACT = 'Artefact',
   MELEE = 'Melee',
+  ARMOR = 'Armor',
   RANGED = 'Ranged',
+  ARTEFACT = 'Artefact',
 }
 
 export enum Rune {

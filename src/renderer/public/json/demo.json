@@ -1,0 +1,127 @@
+{
+  "currency": [
+    {
+      "count": 0,
+      "type": "Emerald"
+    },
+    {
+      "count": 0,
+      "type": "Gold"
+    }
+  ],
+  "items": [
+    {
+      "enchantments": [
+        {
+          "id": "Echo",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        }
+      ],
+      "equipmentSlot": "MeleeGear",
+      "power": 1,
+      "rarity": "Common",
+      "type": "Sword",
+      "upgraded": false
+    },
+    {
+      "enchantments": [
+        {
+          "id": "Ricochet",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        },
+        {
+          "id": "Unset",
+          "investedPoints": 0,
+          "level": 0
+        }
+      ],
+      "equipmentSlot": "RangedGear",
+      "power": 1,
+      "rarity": "Common",
+      "type": "Bow",
+      "upgraded": false
+    }
+  ],
+  "name": "Demo",
+  "playerId": "00000000-0000-0000-0000-000000000000",
+  "skin": "steve",
+  "storageChestItems": [],
+  "xp": 1
+}
