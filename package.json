@@ -22,7 +22,10 @@
     "build": "npm run typecheck && electron-vite build",
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "npm run build && electron-builder --mac --config",
-    "build:linux": "npm run build && electron-builder --linux --config"
+    "build:linux": "npm run build && electron-builder --linux --config",
+    "publish:win": "npm run build && electron-builder --win --config -p always",
+    "publish:mac": "npm run build && electron-builder --mac --config -p always",
+    "publish:linux": "npm run build && electron-builder --linux --config -p always"
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",
