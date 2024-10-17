@@ -1,7 +1,9 @@
 import { app, BrowserWindow } from 'electron';
 import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
+import { autoUpdater } from 'electron-updater';
 
+import WindowStore from '@/main/stores/WindowStore';
 import { sequelize } from '@/main/database';
 import { Setting } from '@/main/database/models';
 // import { populate } from '@/main/database/populate';
@@ -85,10 +87,6 @@ app.on('before-quit', () => {
   }
 });
 
-/*
-import { autoUpdater } from 'electron-updater';
-import WindowStore from '@/main/stores/WindowStore';
-
 autoUpdater.on('update-available', () => {
   WindowStore.broadcastData('update-available');
 });
@@ -100,4 +98,3 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', () => {
   WindowStore.broadcastData('update-downloaded');
 });
-*/
