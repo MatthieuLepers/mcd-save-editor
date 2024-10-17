@@ -1,0 +1,5052 @@
+{
+  "missionStates": [
+    {
+      "completedOnce": true,
+      "guid": "00060A1608DC8D646C48D0D1FB384475",
+      "livesLost": 0,
+      "missionDifficulty": {
+        "difficulty": "Difficulty_3",
+        "endlessStruggle": 0,
+        "mission": "thetower",
+        "threatLevel": "Threat_1"
+      },
+      "offeredEnchantmentPoints": 0,
+      "offeredItems": [],
+      "ownedDLCs": [],
+      "partsDiscovered": 0,
+      "seed": 0,
+      "towerInfo": {
+        "towerConfig": {
+          "floors": [
+            {
+              "rewards": [
+                "any",
+                "armor",
+                "any",
+                "ranged",
+                "any"
+              ],
+              "tile": "twr_floor_entrance",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_pp_arena_scattered_easy"
+              ],
+              "rewards": [
+                "any",
+                "melee",
+                "artefact",
+                "any",
+                "any"
+              ],
+              "tile": "twr_pp_floor_02",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_pp_arena_compact_easy"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "any",
+                "ranged"
+              ],
+              "tile": "twr_pp_floor_05",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_crc_compact_easy"
+              ],
+              "rewards": [
+                "armor",
+                "melee",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_crc_floor_06",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_crc_compact_easy"
+              ],
+              "rewards": [
+                "ranged",
+                "any",
+                "any",
+                "artefact",
+                "any"
+              ],
+              "tile": "twr_crc_floor_03",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ls_arena_scattered_easy"
+              ],
+              "rewards": [
+                "any",
+                "ranged",
+                "armor",
+                "any",
+                "any"
+              ],
+              "tile": "twr_ls_floor_05",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ls_arena_compact_easy"
+              ],
+              "rewards": [
+                "melee",
+                "any",
+                "any",
+                "any",
+                "armor"
+              ],
+              "tile": "twr_ls_floor_03",
+              "type": ""
+            },
+            {
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "any",
+                "armor"
+              ],
+              "tile": "twr_inhabitant_03",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_lf_arena_easy"
+              ],
+              "rewards": [
+                "any",
+                "artefact",
+                "any",
+                "any",
+                "ranged"
+              ],
+              "tile": "twr_lf_floor_04",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_lf_arena_easy"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "melee",
+                "any"
+              ],
+              "tile": "twr_lf_floor_01",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_frf_arena_scattered_easy_02"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "armor",
+                "ranged"
+              ],
+              "tile": "twr_frf_floor_10",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "tempestgolem"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "melee",
+                "ranged"
+              ],
+              "tile": "twr_boss_tempest",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_frf_arena_scattered_easy_03"
+              ],
+              "rewards": [
+                "any",
+                "artefact",
+                "any",
+                "ranged",
+                "any"
+              ],
+              "tile": "twr_frf_floor_08",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ts_floor_06_arena_medium"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "armor",
+                "any",
+                "any"
+              ],
+              "tile": "twr_ts_floor_06",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ts_floor_02_arena_medium"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "artefact",
+                "melee"
+              ],
+              "tile": "twr_ts_floor_02",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_frf_arena_compact_medium_02"
+              ],
+              "rewards": [
+                "ranged",
+                "armor",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_frf_floor_igloo_02",
+              "type": ""
+            },
+            {
+              "rewards": [
+                "any",
+                "melee",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_inhabitant_01",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "abyssal_arena_version_b_medium"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "melee",
+                "any",
+                "ranged"
+              ],
+              "tile": "twr_am_floor_07_puzzle",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "abyssal_arena_version_c_medium"
+              ],
+              "rewards": [
+                "armor",
+                "any",
+                "any",
+                "any",
+                "artefact"
+              ],
+              "tile": "twr_am_floor_03",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "tower_boss_cauldron"
+              ],
+              "rewards": [
+                "melee",
+                "any",
+                "any",
+                "any",
+                "artefact"
+              ],
+              "tile": "twr_boss_03",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_pp_arena_scattered_medium"
+              ],
+              "rewards": [
+                "any",
+                "ranged",
+                "armor",
+                "any",
+                "any"
+              ],
+              "tile": "twr_pp_floor_01",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_pp_arena_compact_hard"
+              ],
+              "rewards": [
+                "any",
+                "artefact",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_pp_floor_06",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ls_arena_compact_hard"
+              ],
+              "rewards": [
+                "melee",
+                "any",
+                "any",
+                "ranged",
+                "any"
+              ],
+              "tile": "twr_ls_floor_04",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_ls_arena_compact_hard"
+              ],
+              "rewards": [
+                "any",
+                "armor",
+                "artefact",
+                "any",
+                "any"
+              ],
+              "tile": "twr_ls_floor_01",
+              "type": ""
+            },
+            {
+              "rewards": [
+                "any",
+                "melee",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_inhabitant_02",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_hh_arena_compact_hard"
+              ],
+              "rewards": [
+                "ranged",
+                "any",
+                "any",
+                "any",
+                "melee"
+              ],
+              "tile": "twr_hh_floor_04",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "twr_hh_arena_scattered_hard"
+              ],
+              "rewards": [
+                "any",
+                "armor",
+                "any",
+                "any",
+                "melee"
+              ],
+              "tile": "twr_hh_floor_01",
+              "type": ""
+            },
+            {
+              "challenges": [
+                "tower_boss_wickedwraith"
+              ],
+              "rewards": [
+                "any",
+                "any",
+                "any",
+                "any",
+                "any"
+              ],
+              "tile": "twr_floor_top",
+              "type": ""
+            }
+          ],
+          "seed": 8751
+        },
+        "towerCurrentFloorWasCompleted": true,
+        "towerFinalRewards": [],
+        "towerFinished": false,
+        "towerId": "a7c68d90-263e-11ef-8c9f-7535aeebd781",
+        "towerInfo": {
+          "towerInfoBossesKilled": 0,
+          "towerInfoCurrentFloor": 1,
+          "towerInfoFloors": [
+            {
+              "towerFloorType": "Empty"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Merchant"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Boss"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Merchant"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Boss"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Merchant"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Combat"
+            },
+            {
+              "towerFloorType": "Boss"
+            }
+          ]
+        },
+        "towerMobGroupConfig": {
+          "mob-groups": [
+            {
+              "id": "twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "necromancer",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 3.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.6999999880790710,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.6999999880790710,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "necromancer",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.50,
+                  "type": "towerwraith",
+                  "weight": 3.0
+                },
+                {
+                  "type": "towerguard",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 1.0
+                },
+                {
+                  "type": "towerguard",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "crc-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.50,
+                  "type": "cavespider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "crc-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.50
+                },
+                {
+                  "type": "skeletonvanguard",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "wraith",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "crc-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "wraith",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "necromancer",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "zombie-horde",
+              "types": [
+                {
+                  "min": 6,
+                  "type": "zombie",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "only-horseman",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "ordinaryhorse",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ew-twr-mix-1-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.4000000059604645
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 0.6000000238418579
+                },
+                {
+                  "type": "endermite",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "ew-twr-mix-1-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.4000000059604645
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "endermite",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "ew-twr-mix-2-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "enchanter",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "ew-twr-mix-2-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "enchanter",
+                  "weight": 0.6000000238418579
+                },
+                {
+                  "type": "chillager",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "towerwraith",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "towerguard",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "endermen",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "type": "Enderman",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ew-ts-twr-endermites",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endermite",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ew_ts-twr-endermitesendless",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 15,
+                  "min": 5,
+                  "type": "endermite"
+                }
+              ]
+            },
+            {
+              "id": "ew-easy-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ew-medium-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 0.8000000119209290
+                }
+              ]
+            },
+            {
+              "id": "ew-hard-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 2.0
+                },
+                {
+                  "type": "snareling",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ts-twr-mix-1-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "ts-twr-mix-1-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "cavespider",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.50
+                },
+                {
+                  "type": "towerwraith",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "necromancer",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "ts-twr-mix-1-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "spider",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "creeper",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Silverfishsmart",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "towerwraith",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerguard",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "necromancer",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "ts-twr-silverfish",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "silverfish",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "silverfishsmart",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ts-twr-silverfishendless",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 15,
+                  "min": 5,
+                  "type": "silverfish"
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "windcaller",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "windcaller",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 2.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "windcaller",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.250,
+                  "type": "activesquallgolem",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix2-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 2.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.250,
+                  "type": "windcaller",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "ravager",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix2-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.250,
+                  "type": "windcaller",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.250,
+                  "type": "ravager",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "gs-twr-mix2-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.250,
+                  "type": "windcaller",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Enchanter",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.250,
+                  "type": "activesquallgolem",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.250,
+                  "type": "ravager",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "sanctum-arena-mix",
+              "pick-types": [
+                2,
+                4
+              ],
+              "types": [
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Windcaller",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.50
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Pillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Enchanter",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Chillager",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 10.0
+                }
+              ]
+            },
+            {
+              "id": "ls-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6000000238418579
+                }
+              ]
+            },
+            {
+              "id": "ls-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.250,
+                  "type": "chillager",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "ls-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "chillager",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "ice-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 3.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6000000238418579
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "chillager",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "bd-twr-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "piglinmelee",
+                  "weight": 1.50
+                },
+                {
+                  "type": "piglinranged",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "piglinfungusthrower",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeleton",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeletonranged",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "blaze",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "bd-twr-mix-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "piglinmelee",
+                  "weight": 1.50
+                },
+                {
+                  "type": "piglinranged",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.250,
+                  "type": "piglinfungusthrower",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeleton",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeletonranged",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "MagmaCubeSmall",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "blaze",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "bd-twr-mix-hard",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "piglinmelee",
+                  "weight": 2.50
+                },
+                {
+                  "type": "piglinranged",
+                  "weight": 2.50
+                },
+                {
+                  "max%": 0.50,
+                  "type": "piglinfungusthrower",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.50,
+                  "type": "witherskeleton",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.250,
+                  "type": "witherskeletonranged",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "MagmaCubeSmall",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "MagmaCubeMedium",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "blaze",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "bd-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeleton",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "witherskeletonranged",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "piglinmelee",
+                  "weight": 1.50
+                },
+                {
+                  "type": "piglinranged",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.250,
+                  "type": "piglinfungusthrower",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "MagmaCubeSmall",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "blaze",
+                  "weight": 0.1000000014901161
+                }
+              ]
+            },
+            {
+              "id": "bd-mix-medium",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "piglinmelee",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "witherskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "blaze",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "type": "piglinranged",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.250,
+                  "type": "piglinfungusthrower",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "hh-twr-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicatorchef",
+                  "weight": 0.50
+                },
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "wraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "hh-twr-mix-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicatorchef",
+                  "weight": 0.50
+                },
+                {
+                  "type": "pillager",
+                  "weight": 1.50
+                },
+                {
+                  "type": "spider",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "royalguard",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "type": "wraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "hh-twr-mix-hard",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicatorchef",
+                  "weight": 0.50
+                },
+                {
+                  "type": "pillager",
+                  "weight": 3.0
+                },
+                {
+                  "type": "spider",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.250,
+                  "type": "royalguard",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.250,
+                  "type": "wraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "arena-raiders",
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "only-royalguard",
+              "types": [
+                {
+                  "type": "royalguard",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "hh-default",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "min": 1,
+                  "type": "pillager",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "min": 0,
+                  "type": "enchanter",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.250,
+                  "min": 0,
+                  "type": "royalguard",
+                  "weight": 0.05999999865889549
+                }
+              ]
+            },
+            {
+              "id": "dt-twr-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "wraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "dt-twr-mix-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "husk",
+                  "weight": 1.0
+                },
+                {
+                  "type": "spider",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.250,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.250,
+                  "type": "necromancer",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.250,
+                  "type": "wraith",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerguard",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "dt-twr-mix-hard",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 3.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 3.0
+                },
+                {
+                  "type": "husk",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "skeletonvanguard",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "necromancer",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "wraith",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "nameless-guards",
+              "types": [
+                {
+                  "max": 5,
+                  "min": 5,
+                  "type": "skeletonvanguard"
+                }
+              ]
+            },
+            {
+              "id": "dt-default-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "spider",
+                  "weight": 2.0
+                },
+                {
+                  "type": "husk",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "wraith",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "pp-twr-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "geomancer",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "pp-twr-mix-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "geomancer",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "pp-twr-mix-hard",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 3.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 3.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "creeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "geomancer",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.50,
+                  "type": "enchanter",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "pp-mix",
+              "pick-types": [
+                4,
+                6
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "spider",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "geomancer",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "chickenjockey",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "ot-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "junglezombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "spider",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "ot-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "junglezombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "slimelarge",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "type": "spider",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "ot-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "leaper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "junglezombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 0.50
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "slimelarge",
+                  "weight": 0.50
+                },
+                {
+                  "type": "spider",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 0.3000000119209290
+                }
+              ]
+            },
+            {
+              "id": "jungle-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "leaper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "Whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "junglezombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "slimelarge",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "twr-golem-boss",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "redstonegolem"
+                }
+              ]
+            },
+            {
+              "id": "cauldronboss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "cauldronboss"
+                }
+              ]
+            },
+            {
+              "id": "namelessone-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "namelessking"
+                }
+              ]
+            },
+            {
+              "id": "redstonemonstrosity-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "redstonemonstrosity"
+                }
+              ]
+            },
+            {
+              "id": "mooshroommonstrosity-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "mooshroommonstrosity"
+                }
+              ]
+            },
+            {
+              "id": "og-jungleabomination-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "jungleabomination"
+                }
+              ]
+            },
+            {
+              "id": "wickedwraith-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "wickedwraith"
+                }
+              ]
+            },
+            {
+              "id": "frostwarden-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "geomancerancient"
+                }
+              ]
+            },
+            {
+              "id": "tempestgolem-boss-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "TempestGolem"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-illager-twr",
+              "types": [
+                {
+                  "max": 2,
+                  "min": 1,
+                  "type": "evoker"
+                },
+                {
+                  "max": 1,
+                  "min": 0,
+                  "type": "illusioner"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-illusioner-twr",
+              "types": [
+                {
+                  "max": 2,
+                  "min": 2,
+                  "type": "illusioner"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-nether-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "enderman"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "hoveringinferno"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-nether2-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "hoveringinferno"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "ghast"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-hoveringinferno-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "hoveringinferno"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-undead-twr",
+              "types": [
+                {
+                  "max": 2,
+                  "min": 2,
+                  "type": "drownednecromancer"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-end-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "enderman"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "endersent"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-end-twr-2",
+              "types": [
+                {
+                  "max": 2,
+                  "min": 2,
+                  "type": "endersent"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fireandwater-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "drownednecromancer"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "ghast"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-altfireandwater-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "drownednecromancer"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "hoveringinferno"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fun1-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "redstonegolem"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "illusioner"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fun2-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "redstonegolem"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "evoker"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fun3-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "enderman"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "illusioner"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fun4-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "drownednecromancer"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "endersent"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-fun5-twr",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "evoker"
+                },
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "endersent"
+                }
+              ]
+            },
+            {
+              "id": "event-mobs-boss-mix-wildcard-twr",
+              "types": [
+                {
+                  "max": 2,
+                  "min": 0,
+                  "type": "enderman",
+                  "weight": 1.0
+                },
+                {
+                  "max": 1,
+                  "min": 0,
+                  "type": "endersent",
+                  "weight": 1.0
+                },
+                {
+                  "max": 2,
+                  "min": 0,
+                  "type": "drownednecromancer",
+                  "weight": 1.0
+                },
+                {
+                  "max": 1,
+                  "min": 0,
+                  "type": "illusioner",
+                  "weight": 1.0
+                },
+                {
+                  "max": 1,
+                  "min": 0,
+                  "type": "evoker",
+                  "weight": 1.0
+                },
+                {
+                  "max": 2,
+                  "min": 0,
+                  "type": "ghast",
+                  "weight": 1.0
+                },
+                {
+                  "max": 2,
+                  "min": 0,
+                  "type": "redstonegolem",
+                  "weight": 1.0
+                },
+                {
+                  "max": 1,
+                  "min": 0,
+                  "type": "hoveringinferno",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "frf-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "cavespider",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "frf-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "cavespider",
+                  "weight": 1.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witherskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.250,
+                  "type": "chillager",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "frf-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.50
+                },
+                {
+                  "type": "witherskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "icycreeper",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.250,
+                  "type": "chillager",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "towerwraith",
+                  "weight": 0.250
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "necromancer",
+                  "weight": 0.250
+                }
+              ]
+            },
+            {
+              "id": "frf1-ice-arena",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "Stray",
+                  "weight": 7.0
+                },
+                {
+                  "type": "FrozenZombie",
+                  "weight": 7.0
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 5.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "frf1-cave-mobs",
+              "pick-types": [
+                3,
+                5
+              ],
+              "types": [
+                {
+                  "type": "FrozenZombie",
+                  "weight": 7.0
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 5.0
+                },
+                {
+                  "type": "SlimeLarge",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "cavespider",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "spider",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Stray",
+                  "weight": 7.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "winter-twr-mix-event",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "type": "drownednecromancer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "illusioner",
+                  "weight": 1.0
+                },
+                {
+                  "type": "evoker",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "lf-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Pillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "skeletonvanguard",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Skeleton",
+                  "weight": 3.0
+                },
+                {
+                  "type": "Zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "FrozenZombie",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "lf-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Pillager",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "skeletonvanguard",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 5.0
+                },
+                {
+                  "type": "Stray",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "lf-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Pillager",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "RoyalGuard",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "skeletonvanguard",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 5.0
+                },
+                {
+                  "type": "Stray",
+                  "weight": 7.0
+                },
+                {
+                  "type": "FrozenZombie",
+                  "weight": 7.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "ice-arena",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "Pillager",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "RoyalGuard",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "skeletonvanguard",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 5.0
+                },
+                {
+                  "type": "Stray",
+                  "weight": 3.0
+                },
+                {
+                  "type": "FrozenZombie",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "chillager",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Wraith",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Enchanter",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "library-mix",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 3.0
+                },
+                {
+                  "type": "SlimeSmall",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "spider",
+                  "weight": 3.0
+                },
+                {
+                  "type": "Stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Zombie",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "arena-enchanter-group",
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1500000059604645,
+                  "min": 0,
+                  "type": "enchanter",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "zombie-twr-mix",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "junglezombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "husk",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "zombifiedpiglin",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "zombifiedpiglinranged",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "zombifiedpiglinfungusthrower",
+                  "weight": 0.6000000238418579
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "chickenjockey",
+                  "weight": 0.6000000238418579
+                }
+              ]
+            },
+            {
+              "id": "skeleton-twr-mix",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witherskeleton",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "witherskeletonranged",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "skeletonvanguard",
+                  "weight": 0.6000000238418579
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "necromancer",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "skeleton-twr-mix-easy",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witherskeleton",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "witherskeletonranged",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "skeletonvanguard",
+                  "weight": 0.6000000238418579
+                }
+              ]
+            },
+            {
+              "id": "bug-twr-mix",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "spider",
+                  "weight": 1.0
+                },
+                {
+                  "type": "cavespider",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "silverfishsmart",
+                  "weight": 1.0
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "end-twr-mix",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.50,
+                  "type": "shulker",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "pig-twr-mix",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "piglinranged",
+                  "weight": 3.0
+                },
+                {
+                  "type": "piglinmelee",
+                  "weight": 5.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "hoglin",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "piglinfungusthrower",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "box-twr-mix",
+              "pick-types": [
+                3,
+                3
+              ],
+              "types": [
+                {
+                  "type": "slimelarge",
+                  "weight": 1.0
+                },
+                {
+                  "type": "magmacubemedium",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "magmacubelarge",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "illager-twr-mix",
+              "pick-types": [
+                2,
+                4
+              ],
+              "types": [
+                {
+                  "type": "mountaineer",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "vindicator",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "type": "enchanter",
+                  "weight": 0.6000000238418579
+                }
+              ]
+            },
+            {
+              "id": "caster-twr-mix",
+              "pick-types": [
+                1,
+                2
+              ],
+              "types": [
+                {
+                  "type": "necromancer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "enchanter",
+                  "weight": 1.0
+                },
+                {
+                  "type": "geomancer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witch",
+                  "weight": 1.0
+                },
+                {
+                  "type": "chillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "type": "wraith",
+                  "weight": 1.0
+                },
+                {
+                  "type": "towerwraith",
+                  "weight": 1.0
+                },
+                {
+                  "type": "windcaller",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "heavy-twr-mix",
+              "pick-types": [
+                1,
+                2
+              ],
+              "types": [
+                {
+                  "type": "leaper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "ravager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "activesquallgolem",
+                  "weight": 1.0
+                },
+                {
+                  "type": "towerguard",
+                  "weight": 1.0
+                },
+                {
+                  "type": "royalguard",
+                  "weight": 1.0
+                },
+                {
+                  "type": "hoglin",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "abyssal-twr-mix-easy",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Drowned",
+                  "weight": 2.0
+                },
+                {
+                  "type": "BabyDrowned",
+                  "weight": 1.0
+                },
+                {
+                  "type": "TridentDrowned",
+                  "weight": 0.50
+                },
+                {
+                  "type": "SunkenSkeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "WaveWhisperer",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "abyssal-twr-mix-med",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Drowned",
+                  "weight": 2.0
+                },
+                {
+                  "type": "BabyDrowned",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "TridentDrowned",
+                  "weight": 1.0
+                },
+                {
+                  "type": "SunkenSkeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Guardian",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "TropicalSlimeLarge",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "abyssal-twr-mix-hard",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Drowned",
+                  "weight": 2.0
+                },
+                {
+                  "type": "BabyDrowned",
+                  "weight": 0.50
+                },
+                {
+                  "type": "TridentDrowned",
+                  "weight": 1.50
+                },
+                {
+                  "type": "SunkenSkeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Guardian",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "TropicalSlimeLarge",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "WaveWhisperer",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "soggyswamp-twr-mix-easy",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "witch",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "soggyswamp-twr-mix-med",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "witch",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "slimelarge",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "soggyswamp-twr-mix-hard",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "vindicator",
+                  "weight": 1.50
+                },
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 0.50
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "witch",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "slimelarge",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "creeper",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "ff-mix",
+              "pick-types": [
+                4,
+                6
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "spider",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "geomancer",
+                  "weight": 0.1000000014901161
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "cavespider",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "cacti-twr-mix-easy",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicator",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "cacti-twr-mix-medium",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicator",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "geomancer",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "enchanter",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "cacti-twr-mix-hard",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.50,
+                  "type": "vindicator",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.50,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "geomancer",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "creeper",
+                  "weight": 0.4000000059604645
+                }
+              ]
+            },
+            {
+              "id": "cacti-twr-endless-mix",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 5,
+                  "min": 3,
+                  "type": "skeletonvanguard"
+                }
+              ]
+            },
+            {
+              "id": "cc-mix-easy",
+              "pick-types": [
+                3,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "husk",
+                  "weight": 0.2000000029802322
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicator",
+                  "weight": 0.4000000059604645
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "cc-mix-medium",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "cc-mix-hard",
+              "pick-types": [
+                3,
+                5
+              ],
+              "types": [
+                {
+                  "type": "zombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "husk",
+                  "weight": 0.8000000119209290
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "pillager",
+                  "weight": 0.6999999880790710
+                }
+              ]
+            },
+            {
+              "id": "windswept-twr-mix-easy",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 2.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Windcaller",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "windswept-twr-mix-medium",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "Windcaller",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Chillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "windswept-twr-mix-hard",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.50,
+                  "type": "Windcaller",
+                  "weight": 1.50
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "Enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Chillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "wp-ravager-twr-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "Mountaineer",
+                  "weight": 2.50
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 2.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "ravager",
+                  "weight": 0.4000000059604645
+                }
+              ]
+            },
+            {
+              "id": "windswept-no-windcaller-mix-easy",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 1.0
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 2.50
+                }
+              ]
+            },
+            {
+              "id": "windswept-no-windcaller-mix-medium",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.6999999880790710
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "Chillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "windswept-no-windcaller-mix-hard",
+              "pick-types": [
+                4,
+                5
+              ],
+              "types": [
+                {
+                  "type": "frozenzombie",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "icycreeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "skeleton",
+                  "weight": 2.0
+                },
+                {
+                  "type": "Vindicator",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Pillager",
+                  "weight": 0.50
+                },
+                {
+                  "type": "Mountaineer",
+                  "weight": 3.0
+                },
+                {
+                  "max%": 0.4000000059604645,
+                  "type": "Enchanter",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.3000000119209290,
+                  "type": "Chillager",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "windswept-twr-endless-mix",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 5,
+                  "min": 3,
+                  "type": "Mountaineer"
+                }
+              ]
+            },
+            {
+              "id": "twr-endermites",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 15,
+                  "min": 15,
+                  "type": "endermite"
+                }
+              ]
+            },
+            {
+              "id": "twr-watchers",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "max": 10,
+                  "min": 10,
+                  "type": "endling"
+                }
+              ]
+            },
+            {
+              "id": "bc-mix",
+              "pick-types": [
+                2,
+                3
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "blastling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "snareling",
+                  "weight": 0.50
+                },
+                {
+                  "type": "endermitesmart",
+                  "weight": 0.8000000119209290
+                }
+              ]
+            },
+            {
+              "id": "redstonecube",
+              "types": [
+                {
+                  "type": "redstonecube",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "magmacube",
+              "types": [
+                {
+                  "type": "magmacubelarge",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "guardian",
+              "types": [
+                {
+                  "type": "guardian",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "creepers-creepin",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "type": "creeper",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "creepers-creepin-2",
+              "pick-types": [
+                2,
+                2
+              ],
+              "types": [
+                {
+                  "type": "creeper",
+                  "weight": 1.0
+                },
+                {
+                  "type": "icycreeper",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "chickenjockeyjamboree",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "type": "chickenjockey",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "biomes-pick-n-mix",
+              "pick-types": [
+                8,
+                8
+              ],
+              "types": [
+                {
+                  "type": "endling",
+                  "weight": 1.0
+                },
+                {
+                  "type": "babyzombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "tridentdrowned",
+                  "weight": 1.0
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "mountaineer",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "husk",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "chillager",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "blaze",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "enchanters-only-mix",
+              "pick-types": [
+                1,
+                1
+              ],
+              "types": [
+                {
+                  "type": "enchanter",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "turning_up_the_heat",
+              "pick-types": [
+                3,
+                4
+              ],
+              "types": [
+                {
+                  "type": "blaze",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "wraith",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "magmacubelarge",
+                  "weight": 0.3000000119209290
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "towerwraith",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "poison",
+              "pick-types": [
+                6,
+                7
+              ],
+              "types": [
+                {
+                  "type": "junglezombie",
+                  "weight": 2.0
+                },
+                {
+                  "type": "mossyskeleton",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "whisperer",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "wavewhisperer",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "witch",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "witherskeleton",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "witherskeletonranged",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "piglinfungusthrower",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "zombifiedpiglinfungusthrower",
+                  "weight": 0.50
+                }
+              ]
+            },
+            {
+              "id": "quadrupeds_v1",
+              "pick-types": [
+                2,
+                2
+              ],
+              "types": [
+                {
+                  "type": "hoglin",
+                  "weight": 3.0
+                },
+                {
+                  "type": "mooshroom",
+                  "weight": 2.0
+                }
+              ]
+            },
+            {
+              "id": "quadrupeds_v2",
+              "pick-types": [
+                3,
+                3
+              ],
+              "types": [
+                {
+                  "type": "hoglin",
+                  "weight": 3.0
+                },
+                {
+                  "type": "mooshroom",
+                  "weight": 2.0
+                },
+                {
+                  "max%": 0.05000000074505806,
+                  "type": "ravager",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "brew_crew",
+              "pick-types": [
+                2,
+                2
+              ],
+              "types": [
+                {
+                  "type": "vindicatorchef",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witch",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "mushroom_based_dish",
+              "pick-types": [
+                2,
+                2
+              ],
+              "types": [
+                {
+                  "type": "vindicatorchef",
+                  "weight": 1.0
+                },
+                {
+                  "type": "piglinfungusthrower",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "first_range_of_options",
+              "pick-types": [
+                5,
+                6
+              ],
+              "types": [
+                {
+                  "type": "skeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "tridentdrowned",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "pillager",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "piglinranged",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "zombifiedpiglinranged",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "snareling",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "frozenzombie",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witherskeletonranged",
+                  "weight": 1.0
+                },
+                {
+                  "type": "witch",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "second_range_of_options",
+              "pick-types": [
+                5,
+                6
+              ],
+              "types": [
+                {
+                  "type": "mossyskeleton",
+                  "weight": 1.0
+                },
+                {
+                  "type": "stray",
+                  "weight": 1.0
+                },
+                {
+                  "type": "spider",
+                  "weight": 1.0
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "piglinfungusthrower",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "zombifiedpiglinfungusthrower",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "sunkenskeleton",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "blaze",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.2000000029802322,
+                  "type": "blastling",
+                  "weight": 0.50
+                },
+                {
+                  "max%": 0.1000000014901161,
+                  "type": "shulker",
+                  "weight": 0.2000000029802322
+                }
+              ]
+            },
+            {
+              "id": "knockback_o_clock",
+              "pick-types": [
+                2,
+                2
+              ],
+              "types": [
+                {
+                  "type": "skeletonvanguard",
+                  "weight": 1.0
+                },
+                {
+                  "type": "hoglin",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "evoker",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "evoker",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "skeletonhorseman",
+              "types": [
+                {
+                  "max": 4,
+                  "min": 1,
+                  "type": "skeletonhorseman",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "redstonegolem",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "redstonegolem",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "illusioner",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "illusioner",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "elderguardian",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "elderguardian",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "drownednecromancer",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "drownednecromancer",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "ghast",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "ghast",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "wildfire",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "hoveringinferno",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "enderman",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "enderman",
+                  "weight": 1.0
+                }
+              ]
+            },
+            {
+              "id": "endersent",
+              "types": [
+                {
+                  "max": 1,
+                  "min": 1,
+                  "type": "endersent",
+                  "weight": 1.0
+                }
+              ]
+            }
+          ]
+        },
+        "towerOfferedFloorRewards": {},
+        "towerPlayersData": [
+          {
+            "localSaveGUID": "427A74294AE7A4BA119E3BBE0866591B",
+            "playerArrowsAmmount": 50,
+            "playerEnchantmentPointsGranted": 1,
+            "playerId": 2535428391147106,
+            "playerIsTowerOwner": true,
+            "playerItems": [
+              {
+                "enchantments": [
+                  {
+                    "id": "Unset",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "DamageSynergy",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "Thundering",
+                    "investedPoints": 0,
+                    "level": 0
+                  }
+                ],
+                "gifted": false,
+                "modified": false,
+                "power": 7.988235473632813,
+                "rarity": "Common",
+                "timesmodified": 0,
+                "type": "Sword",
+                "upgraded": false
+              },
+              {
+                "armorproperties": [
+                  {
+                    "id": "SuperbDamageAbsorption",
+                    "rarity": "Common"
+                  },
+                  {
+                    "id": "AllyDamageBoost",
+                    "rarity": "Common"
+                  }
+                ],
+                "enchantments": [
+                  {
+                    "id": "Unset",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "Flee",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "ResurrectionSurge",
+                    "investedPoints": 0,
+                    "level": 0
+                  }
+                ],
+                "gifted": false,
+                "modified": false,
+                "power": 7.988235473632813,
+                "rarity": "Common",
+                "timesmodified": 0,
+                "type": "MercenaryArmor",
+                "upgraded": false
+              },
+              {
+                "enchantments": [
+                  {
+                    "id": "Unset",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "CooldownShot",
+                    "investedPoints": 0,
+                    "level": 0
+                  },
+                  {
+                    "id": "BurstBowstring",
+                    "investedPoints": 0,
+                    "level": 0
+                  }
+                ],
+                "gifted": false,
+                "modified": false,
+                "power": 7.988235473632813,
+                "rarity": "Common",
+                "timesmodified": 0,
+                "type": "Bow",
+                "upgraded": false
+              }
+            ],
+            "playerLastFloorIndex": 1,
+            "playerLocalId": -1,
+            "playerMerchantInteractions": []
+          }
+        ]
+      }
+    }
+  ]
+}
