@@ -6,7 +6,7 @@
         v-for="(item, i) in props.gears"
         :key="i"
         :item="item"
-        :itemType="Object.values(ItemTypeEnum)[i]"
+        :itemType="Object.values(Type)[i]"
       />
     </div>
 
@@ -19,7 +19,7 @@
         v-for="(item, i) in props.hotbar"
         :key="i"
         :item="item"
-        itemType="Artefact"
+        :itemType="Type.ARTEFACT"
         :hotbarSlot="i + 1"
       />
     </div>
@@ -32,7 +32,7 @@ import MCDItemEmpty from '@renderer/components/MCD/ItemEmpty.vue';
 import MCDLevelBadge from '@renderer/components/MCD/LevelBadge.vue';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
+import { Type } from '@renderer/core/entities/item/enums';
 import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDGears' });

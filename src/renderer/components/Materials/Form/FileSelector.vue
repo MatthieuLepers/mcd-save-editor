@@ -6,7 +6,7 @@
       ref="input"
       :multiple="props.multiple"
       :name="props.name"
-      @change="emit('update:modelValue', Array.from($event.target.files))"
+      @change="modelValue = Array.from($event.target.files)"
     />
     <MaterialButton
       class="m-form-file-selector__button"
@@ -26,12 +26,11 @@ import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 
 defineOptions({ name: 'FormFileSelector' });
 
-const emit = defineEmits(['update:modelValue']);
-
 const input = ref(null);
 
+const modelValue = defineModel({ type: [Array, String] });
+
 const props = defineProps({
-  modelValue: { type: [Array, String], required: true },
   multiple: { type: Boolean, default: false },
   disabled: { type: Boolean, default: false },
   label: { type: String, default: null },

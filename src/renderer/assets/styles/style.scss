@@ -47,6 +47,11 @@
     }
   }
 
+  &__progress {
+    flex: 1;
+    margin: 0 rem(32px) 0 rem(16px);
+  }
+
   ::-webkit-scrollbar {
     background: none;
     width: 8px;

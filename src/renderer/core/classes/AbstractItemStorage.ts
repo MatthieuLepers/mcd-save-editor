@@ -1,12 +1,15 @@
-import Item from '@renderer/core/classes/Item';
-import type { IItem } from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 
 export default abstract class AbstractItemStorage {
-  public items: Array<Item> = [];
+  public items: Array<GameItem> = [];
 
-  constructor(maxStorageSize: number, public data: Array<IItem>) {
-    this.items = this.data.map((itemData) => new Item(itemData));
+  constructor(
+    maxStorageSize: number,
+    public data: Array<IGameItem>,
+  ) {
+    this.items = this.data.map((itemData) => new GameItem(itemData));
 
     // @ts-ignore
     if (!this.constructor.MAX_STORAGE_SIZE) {
@@ -16,7 +19,7 @@ export default abstract class AbstractItemStorage {
     }
   }
 
-  get inventory(): Array<Item> {
+  get inventory(): Array<GameItem> {
     return this.items;
   }
 
@@ -30,7 +33,7 @@ export default abstract class AbstractItemStorage {
     return this.constructor.MAX_STORAGE_SIZE - this.inventory.length;
   }
 
-  addItem(item: Item) {
+  addItem(item: GameItem) {
     if (item.data.equipmentSlot) {
       delete item.data.equipmentSlot;
     }
@@ -45,14 +48,14 @@ export default abstract class AbstractItemStorage {
     globalStore.setters.setItem(this.inventory[0]);
   }
 
-  removeItem(item: Item) {
+  removeItem(item: GameItem) {
     this.data.splice(this.data.indexOf(item.data), 1);
     this.items.splice(this.items.indexOf(item), 1);
 
     this.checkIntegrity();
   }
 
-  contains(item: Item) {
+  contains(item: GameItem) {
     return this.items.includes(item);
   }
 

@@ -43,7 +43,7 @@ import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
 import MCDButton from '@renderer/components/MCD/Button.vue';
 import MCDItem from '@renderer/components/MCD/Item.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 import ItemValidator from '@renderer/core/validators/ItemValidator';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
@@ -79,7 +79,7 @@ const actions = {
         const validator = new ItemValidator(fileData);
 
         if (validator.isValid()) {
-          state.importedItem = new Item(fileData);
+          state.importedItem = new GameItem(fileData);
           modalStore.actions.show('ImportConfirmModal');
         } else {
           modalStore.actions.show('ImportErrorModal');

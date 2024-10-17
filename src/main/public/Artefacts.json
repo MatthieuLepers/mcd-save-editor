@@ -1,0 +1,490 @@
+[
+  {
+    "id": "BeeNest",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Nid bourdonnant"},
+      {"locale": "en-EN", "name": "Buzzy nest"}
+    ]
+  },
+  {
+    "id": "BootsOfSwiftness",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bottes de célérité"},
+      {"locale": "en-EN", "name": "Boots of swiftness"}
+    ]
+  },
+  {
+    "id": "CorruptedBeacon",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Balise corrompue"},
+      {"locale": "en-EN", "name": "Corrupted beacon"}
+    ]
+  },
+  {
+    "id": "CorruptedBeacon_Spooky1",
+    "events": ["Spooky Fall"],
+    "type": "Artefact",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Citrouille corrompue"},
+      {"locale": "en-EN", "name": "Corrupted pumpkin"}
+    ]
+  },
+  {
+    "id": "DeathCapMushroom",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Calice de la mort"},
+      {"locale": "en-EN", "name": "Death cap mushroom"}
+    ]
+  },
+  {
+    "id": "FireworksArrowItem",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Flèche pyrotechnique"},
+      {"locale": "en-EN", "name": "Fireworks arrow"}
+    ]
+  },
+  {
+    "id": "FishingRod",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Canne à pêche"},
+      {"locale": "en-EN", "name": "Fishing rod"}
+    ]
+  },
+  {
+    "id": "FlamingQuiver",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Carquois enflammé"},
+      {"locale": "en-EN", "name": "Flaming quiver"}
+    ]
+  },
+  {
+    "id": "GhostCloak",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["c", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Cape fantomatique"},
+      {"locale": "en-EN", "name": "Ghost cloak"}
+    ]
+  },
+  {
+    "id": "GolemKit",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Kit de golem"},
+      {"locale": "en-EN", "name": "Golem kit"}
+    ]
+  },
+  {
+    "id": "GongOfWeakening",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gong d'affaiblissement"},
+      {"locale": "en-EN", "name": "Gong of weakening"}
+    ]
+  },
+  {
+    "id": "Harvester",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Moissonneur"},
+      {"locale": "en-EN", "name": "Harvester"}
+    ]
+  },
+  {
+    "id": "IronHideAmulet",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Amulette en peau de fer"},
+      {"locale": "en-EN", "name": "Iron hide amulet"}
+    ]
+  },
+  {
+    "id": "LightFeather",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Plume légère"},
+      {"locale": "en-EN", "name": "Light feather"}
+    ]
+  },
+  {
+    "id": "LightningRod",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bâton de foudre"},
+      {"locale": "en-EN", "name": "Lightning rod"}
+    ]
+  },
+  {
+    "id": "LoveMedallion",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Médaillon d'amour"},
+      {"locale": "en-EN", "name": "Love medallion"}
+    ]
+  },
+  {
+    "id": "RainbowGrass",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Herbe enchantée"},
+      {"locale": "en-EN", "name": "Enchanted grass"}
+    ]
+  },
+  {
+    "id": "ShockPowder",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Poudre de choc"},
+      {"locale": "en-EN", "name": "Shock powder"}
+    ]
+  },
+  {
+    "id": "SoulHealer",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o", "s"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Guérisseur d'âmes"},
+      {"locale": "en-EN", "name": "Soul healers"}
+    ]
+  },
+  {
+    "id": "SoulLantern",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u", "o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lanterne des âmes"},
+      {"locale": "en-EN", "name": "Soul lantern"}
+    ]
+  },
+  {
+    "id": "SoulTotemOfCasting",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Totem d'incantation"},
+      {"locale": "en-EN", "name": "Totem of casting"}
+    ]
+  },
+  {
+    "id": "TastyBone",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Os appétissant"},
+      {"locale": "en-EN", "name": "Tasty bone"}
+    ]
+  },
+  {
+    "id": "TormentQuiver",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o", "r"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Carquois du tourment"},
+      {"locale": "en-EN", "name": "Torment quiver"}
+    ]
+  },
+  {
+    "id": "TotemOfRegeneration",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Totem de régénération"},
+      {"locale": "en-EN", "name": "Totem of regeneration"}
+    ]
+  },
+  {
+    "id": "TotemOfShielding",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Totem de blindage"},
+      {"locale": "en-EN", "name": "Totem of shielding"}
+    ]
+  },
+  {
+    "id": "TotemOfSoulProtection",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": [],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Totem de protection de l'âme"},
+      {"locale": "en-EN", "name": "Totem of soul protection"}
+    ]
+  },
+  {
+    "id": "WindHorn",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u", "s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Corne de vent"},
+      {"locale": "en-EN", "name": "Wind horn"}
+    ]
+  },
+  {
+    "id": "WonderfulWheat",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Blé merveilleux"},
+      {"locale": "en-EN", "name": "Wonderful wheat"}
+    ]
+  },
+  {
+    "id": "CorruptedSeeds",
+    "dlcId": "Jungle Awakens",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Graines corrompues"},
+      {"locale": "en-EN", "name": "Corrupted seeds"}
+    ]
+  },
+  {
+    "id": "IceWand",
+    "dlcId": "Creeping Winter",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Baguette de glace"},
+      {"locale": "en-EN", "name": "Ice wand"}
+    ]
+  },
+  {
+    "id": "ChargedRedstoneMines",
+    "dlcId": "Howling Peaks",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Mines éparpillées"},
+      {"locale": "en-EN", "name": "Scatter mines"}
+    ]
+  },
+  {
+    "id": "EnchantersTome",
+    "dlcId": "Howling Peaks",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tome d'enchanteurs"},
+      {"locale": "en-EN", "name": "Enchanter's Tome"}
+    ]
+  },
+  {
+    "id": "SatchelOfTheElements",
+    "dlcId": "Howling Peaks",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Sacoche des éléments"},
+      {"locale": "en-EN", "name": "Satchel of Elements"}
+    ]
+  },
+  {
+    "id": "UpdraftTome",
+    "dlcId": "Howling Peaks",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tome des courants ascendants"},
+      {"locale": "en-EN", "name": "Updraft tome"}
+    ]
+  },
+  {
+    "id": "MobMasher",
+    "dlcId": "Flames of the Nether",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Incarnation de puissance"},
+      {"locale": "en-EN", "name": "Powershaker"}
+    ]
+  },
+  {
+    "id": "NetherWartSporeGrenade",
+    "dlcId": "Flames of the Nether",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Champignon explosif"},
+      {"locale": "en-EN", "name": "Blast fungus"}
+    ]
+  },
+  {
+    "id": "SpinWheel",
+    "dlcId": "Flames of the Nether",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame rotative"},
+      {"locale": "en-EN", "name": "Spinblade"}
+    ]
+  },
+  {
+    "id": "ThunderingQuiver",
+    "dlcId": "Flames of the Nether",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Carquois foudroyant"},
+      {"locale": "en-EN", "name": "Thundering quiver"}
+    ]
+  },
+  {
+    "id": "GuardianEye",
+    "dlcId": "Hidden Depths",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Œil du guardien"},
+      {"locale": "en-EN", "name": "Guardian eye"}
+    ]
+  },
+  {
+    "id": "HeavyHarpoonQuiver",
+    "dlcId": "Hidden Depths",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Carquois de harpons"},
+      {"locale": "en-EN", "name": "Harpoon quiver"}
+    ]
+  },
+  {
+    "id": "SatchelOfNeed",
+    "dlcId": "Hidden Depths",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Sacoche d'élixirs"},
+      {"locale": "en-EN", "name": "Satchel of elixirs"}
+    ]
+  },
+  {
+    "id": "SatchelOfNourishment",
+    "dlcId": "Hidden Depths",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Sacoche d'en-cas"},
+      {"locale": "en-EN", "name": "Satchel of snacks"}
+    ]
+  },
+  {
+    "id": "LostEvocation",
+    "dlcId": "Echoing Void",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Chant des vexs"},
+      {"locale": "en-EN", "name": "Vexing chant"}
+    ]
+  },
+  {
+    "id": "ShadowSplinter",
+    "dlcId": "Echoing Void",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Changeombre"},
+      {"locale": "en-EN", "name": "Shadow shifter"}
+    ]
+  },
+  {
+    "id": "TomeOfDuplication",
+    "dlcId": "Echoing Void",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tome de duplication"},
+      {"locale": "en-EN", "name": "Tome of duplication"}
+    ]
+  },
+  {
+    "id": "VoidQuiver",
+    "dlcId": "Echoing Void",
+    "type": "Artefact",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Carquois du vide"},
+      {"locale": "en-EN", "name": "Void quiver"}
+    ]
+  }
+]

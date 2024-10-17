@@ -8,10 +8,10 @@
     <input
       type="checkbox"
       :id="props.id || `formToggle${$uid}`"
-      :checked="props.modelValue"
+      :checked="modelValue"
       :name="props.name"
       :disabled="props.disabled"
-      @input="emit('update:modelValue', $event.target.checked)"
+      @input="modelValue = $event.target.checked"
       @focus="actions.handleFocus('focus', true)"
       @blur="actions.handleFocus('blur', false)"
     />
@@ -26,11 +26,16 @@ import { reactive, getCurrentInstance } from 'vue';
 
 defineOptions({ name: 'FormToggle' });
 
-const emit = defineEmits(['update:modelValue', 'focus', 'blur']);
+const emit = defineEmits(['focus', 'blur']);
 const $uid = getCurrentInstance().uid;
 
+const modelValue = defineModel({ type: Boolean, default: false });
+
+/**
+ * slots:
+ * - default : label
+ */
 const props = defineProps({
-  modelValue: { type: Boolean, required: true },
   id: { type: String, default: null },
   name: { type: String, default: null },
   label: { type: String, required: true },

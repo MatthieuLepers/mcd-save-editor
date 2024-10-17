@@ -1,0 +1,234 @@
+[
+  {
+    "id": "AbominableWeaver",
+    "neededRunes": ["s", "t", "a"],
+    "rewards": ["DoubleAxe", "WolfArmor", "BattleRobe", "Trickbow"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tisserande Abominable"},
+      {"locale": "en-EN", "name": "Abominable Weaver"}
+    ]
+  },
+  {
+    "id": "AbyssalEye",
+    "neededRunes": ["c", "t", "i"],
+    "rewards": ["CoralBlade", "SquidArmor", "HarpoonCrossbow"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Œil abyssal"},
+      {"locale": "en-EN", "name": "Abyssal Eye"}
+    ]
+  },
+  {
+    "id": "AncientTerror",
+    "neededRunes": ["u", "o", "s", "a"],
+    "rewards": ["ExplodingCrossbow", "MysteryArmor", "ChampionsArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Terreur Antique"},
+      {"locale": "en-EN", "name": "Ancient Terror"}
+    ]
+  },
+  {
+    "id": "Barrage",
+    "neededRunes": ["o", "r", "r"],
+    "rewards": ["Bow", "SoulBow", "ArchersStrappings"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Barrage"},
+      {"locale": "en-EN", "name": "Barrage"}
+    ]
+  },
+  {
+    "id": "CursedPresence",
+    "neededRunes": ["c", "o", "i"],
+    "rewards": ["PhantomArmor", "SoulCrossbow", "Cutlass"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Présence Maudite"},
+      {"locale": "en-EN", "name": "Cursed Presence"}
+    ]
+  },
+  {
+    "id": "FirstEnchanter",
+    "neededRunes": ["o", "s", "s"],
+    "rewards": ["ScaleMail", "Claymore", "SoulScythe"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Premier Enchanteur"},
+      {"locale": "en-EN", "name": "First Enchanter"}
+    ]
+  },
+  {
+    "id": "FrostWarden",
+    "neededRunes": ["u", "s", "r"],
+    "rewards": ["SnowArmor", "SlowBow"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gardien de Givre"},
+      {"locale": "en-EN", "name": "Frost Warden"}
+    ]
+  },
+  {
+    "id": "GrimGuardian",
+    "neededRunes": ["i", "i", "a"],
+    "rewards": ["Sword", "GrimArmor", "DarkArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gardien Sinistre"},
+      {"locale": "en-EN", "name": "Grim Guardian"}
+    ]
+  },
+  {
+    "id": "HauntedCaller",
+    "neededRunes": ["r", "r", "a"],
+    "rewards": ["Longbow", "RapidCrossbow", "Sickles", "SpelunkersAmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Invocateur Hanté"},
+      {"locale": "en-EN", "name": "Haunted Caller"}
+    ]
+  },
+  {
+    "id": "OozingMenace",
+    "neededRunes": ["u", "c", "r"],
+    "rewards": ["Battlestaff", "Shortbow", "MercenaryArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Menace Suintante"},
+      {"locale": "en-EN", "name": "Oozing Menace"}
+    ]
+  },
+  {
+    "id": "PestilentConjurer",
+    "neededRunes": ["c", "r", "i"],
+    "rewards": ["Spear", "Glaive", "HeavyCrossbow", "ScatterCrossbow"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Conjurateur Pestilent"},
+      {"locale": "en-EN", "name": "Pestilant Conjurer"}
+    ]
+  },
+  {
+    "id": "ScuttlingTorment",
+    "neededRunes": ["a", "a", "i", "c"],
+    "rewards": ["ObsidianClaymore", "VoidBow", "TeleportationRobes"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tourment insinuant"},
+      {"locale": "en-EN", "name": "Scuttling Torment"}
+    ]
+  },
+  {
+    "id": "SolemnGiant",
+    "neededRunes": ["s", "r", "p", "t"],
+    "rewards": ["BurstCrossbow", "Rapier", "CowardsArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Géant Solennel"},
+      {"locale": "en-EN", "name": "Solemn Giant"}
+    ]
+  },
+  {
+    "id": "TheSeekingFlame",
+    "neededRunes": ["o", "o"],
+    "rewards": ["Axe", "SoulKnife", "EvocationRobe"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "La Flamme Chercheuse"},
+      {"locale": "en-EN", "name": "The Seeking Flame"}
+    ]
+  },
+  {
+    "id": "TheSwarm",
+    "neededRunes": ["c", "c", "r", "s"],
+    "rewards": ["ShulkerArmor", "ShadowCrossbow", "Backstabber"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "L'essaim"},
+      {"locale": "en-EN", "name": "The Swarm"}
+    ]
+  },
+  {
+    "id": "TheTinyScourge",
+    "neededRunes": ["c", "c", "o", "t"],
+    "rewards": ["Daggers", "SoulRobe", "AssassinArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Le Petit Fléau"},
+      {"locale": "en-EN", "name": "The Tiny Scourge"}
+    ]
+  },
+  {
+    "id": "TheTower",
+    "neededRunes": ["u", "u", "o", "p"],
+    "rewards": ["HauntingBow", "BeenestArmor", "Pickaxe"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "La Tour"},
+      {"locale": "en-EN", "name": "The Tower"}
+    ]
+  },
+  {
+    "id": "TheUnending",
+    "neededRunes": ["u", "u", "t"],
+    "rewards": ["TwistingVineBow", "Boneclub", "PiglinArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "L'Éternel"},
+      {"locale": "en-EN", "name": "The Unending"}
+    ]
+  },
+  {
+    "id": "ThunderingGrowth",
+    "neededRunes": ["u", "c", "c"],
+    "rewards": ["OcelotArmor", "Whip"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Croissance Foudroyante"},
+      {"locale": "en-EN", "name": "Thundering Growth"}
+    ]
+  },
+  {
+    "id": "UnbreakableOne",
+    "neededRunes": ["i", "t", "t"],
+    "rewards": ["Hammer", "Claymore", "Powerbow", "FullPlateArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "L'Incassable"},
+      {"locale": "en-EN", "name": "Unbreakable One"}
+    ]
+  },
+  {
+    "id": "Unknown",
+    "neededRunes": ["c", "i", "p", "a"],
+    "rewards": ["Katana", "GhostArmor", "DualCrossbows", "Gauntlets"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "?????"},
+      {"locale": "en-EN", "name": "?????"}
+    ]
+  },
+  {
+    "id": "UnstoppableTusk",
+    "neededRunes": ["r", "i", "a"],
+    "rewards": ["Chainsword", "CogCrossbow", "SproutArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Défense Imparable"},
+      {"locale": "en-EN", "name": "Unstoppable Tusk"}
+    ]
+  },
+  {
+    "id": "VengefulMariner",
+    "neededRunes": ["s", "s", "t"],
+    "rewards": ["Anchor", "TurtleArmor", "BubbleBow"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Marin vengeur"},
+      {"locale": "en-EN", "name": "Vengeful Mariner"}
+    ]
+  },
+  {
+    "id": "VigilantScoundrel",
+    "neededRunes": ["r", "i", "i", "t"],
+    "rewards": ["Crossbow", "Mace", "ReinforcedMail"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Vaurien Vigilant"},
+      {"locale": "en-EN", "name": "Vigilant Scoundrel"}
+    ]
+  },
+  {
+    "id": "WatcherOfTheEnd",
+    "neededRunes": ["t", "a", "c"],
+    "rewards": ["BardsGarb", "ShadowCrossbow", "VoidTouchedBlades"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Veilleur de l'Ender"},
+      {"locale": "en-EN", "name": "Watcher of The End"}
+    ]
+  },
+  {
+    "id": "Windbeard",
+    "neededRunes": ["u", "a", "a"],
+    "rewards": ["TempestKnife", "WindBow", "ClimbingGear", "EmeraldArmor"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Barbe-Vent"},
+      {"locale": "en-EN", "name": "Windbeard"}
+    ]}]

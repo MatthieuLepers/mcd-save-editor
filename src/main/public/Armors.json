@@ -1,0 +1,847 @@
+[
+  {
+    "id": "ArchersStrappings",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["IncreasedArrowBundleSize", "RangedDamageBoost"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de chasseur"},
+      {"locale": "en-EN", "name": "Hunter's armor"}
+    ]
+  },
+  {
+    "id": "ArchersStrappings_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MoveSpeedAura", "IncreasedArrowBundleSize", "RangedDamageBoost"],
+    "ancientHuntRunes": ["c", "r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure d'archer"},
+      {"locale": "en-EN", "name": "Archer's strappings"}
+    ]
+  },
+  {
+    "id": "AssassinArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["MeleeAttackSpeedBoost"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de voleur"},
+      {"locale": "en-EN", "name": "Thief armor"}
+    ]
+  },
+  {
+    "id": "AssassinArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["LifeStealAura", "MeleeAttackSpeedBoost"],
+    "ancientHuntRunes": ["i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure d'araignée"},
+      {"locale": "en-EN", "name": "Spider armor"}
+    ]
+  },
+  {
+    "id": "BattleRobe",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownDecrease", "MeleeDamageBoost"],
+    "ancientHuntRunes": ["i", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe de combat"},
+      {"locale": "en-EN", "name": "Battle robe"}
+    ]
+  },
+  {
+    "id": "BattleRobe_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemDamageBoost", "ItemCooldownDecrease", "MeleeDamageBoost"],
+    "ancientHuntRunes": ["r", "i", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe splendide"},
+      {"locale": "en-EN", "name": "Splendid robe"}
+    ]
+  },
+  {
+    "id": "BeenestArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["AreaHeal", "Beekeeper"],
+    "ancientHuntRunes": ["u", "p", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de nid d'abeille"},
+      {"locale": "en-EN", "name": "Beenest armor"}
+    ]
+  },
+  {
+    "id": "BeenestArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "Beekeeper", "AreaHeal"],
+    "ancientHuntRunes": ["u", "p"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de ruche"},
+      {"locale": "en-EN", "name": "Beehive armor"}
+    ]
+  },
+  {
+    "id": "ChampionsArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "IncreasedMobTargeting", "PotionCooldownDecrease"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du champion"},
+      {"locale": "en-EN", "name": "Champion's armor"}
+    ]
+  },
+  {
+    "id": "ChampionsArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "AreaHeal", "IncreasedMobTargeting", "PotionCooldownDecrease"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du héros"},
+      {"locale": "en-EN", "name": "Hero's armor"}
+    ]
+  },
+  {
+    "id": "CowardsArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownDecrease", "IncreasedArrowBundleSize"],
+    "ancientHuntRunes": ["r"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de garde"},
+      {"locale": "en-EN", "name": "Guard's armor"}
+    ]
+  },
+  {
+    "id": "CowardsArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["TeleportChance", "ItemCooldownDecrease", "IncreasedArrowBundleSize"],
+    "ancientHuntRunes": [],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure curieuse"},
+      {"locale": "en-EN", "name": "Curious armor"}
+    ]
+  },
+  {
+    "id": "DarkArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SoulGatheringBoost", "SuperbDamageAbsorption"],
+    "ancientHuntRunes": ["o", "t"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure noire"},
+      {"locale": "en-EN", "name": "Dark armor"}
+    ]
+  },
+  {
+    "id": "DarkArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SoulGatheringBoost", "SuperbDamageAbsorption", "AllyDamageBoost"],
+    "ancientHuntRunes": ["o", "s", "t"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Suaire du titan"},
+      {"locale": "en-EN", "name": "Titan's shroud"}
+    ]
+  },
+  {
+    "id": "EvocationRobe",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownDecrease", "MoveSpeedAura"],
+    "ancientHuntRunes": ["s", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe d'évocation"},
+      {"locale": "en-EN", "name": "Evocation robe"}
+    ]
+  },
+  {
+    "id": "EvocationRobe_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemCooldownDecrease", "MoveSpeedAura"],
+    "ancientHuntRunes": ["s", "i", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe d'Ember"},
+      {"locale": "en-EN", "name": "Enber robe"}
+    ]
+  },
+  {
+    "id": "EvocationRobe_Unique2",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemCooldownDecrease", "MoveSpeedAura"],
+    "ancientHuntRunes": ["o", "s", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe luxuriante"},
+      {"locale": "en-EN", "name": "Verdant robe"}
+    ]
+  },
+  {
+    "id": "FullPlateArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "MissChance", "DodgeCooldownIncrease"],
+    "ancientHuntRunes": ["i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure blindée"},
+      {"locale": "en-EN", "name": "Plate armor"}
+    ]
+  },
+  {
+    "id": "FullPlateArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "MissChance", "MeleeDamageBoost", "DodgeCooldownIncrease"],
+    "ancientHuntRunes": ["i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure tout en métal"},
+      {"locale": "en-EN", "name": "Full metal armor"}
+    ]
+  },
+  {
+    "id": "FullPlateArmor_Spooky2",
+    "events": ["Spookier Fall"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MeleeDamageBoost", "MissChance", "SuperbDamageAbsorption", "DodgeCooldownIncrease"],
+    "ancientHuntRunes": ["i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure chaudron"},
+      {"locale": "en-EN", "name": "Cauldron armor"}
+    ]
+  },
+  {
+    "id": "GhostArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["DodgeGhostForm", "MissChance"],
+    "ancientHuntRunes": ["c", "p"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure fantomatique"},
+      {"locale": "en-EN", "name": "Ghoslty armor"}
+    ]
+  },
+  {
+    "id": "GhostArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["DodgeGhostForm", "MissChance"],
+    "ancientHuntRunes": ["c", "i", "p"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fantôme incendiaire"},
+      {"locale": "en-EN", "name": "Ghost kindler"}
+    ]
+  },
+  {
+    "id": "GhostArmor_Spooky2",
+    "events": ["Spooky Fall 22"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["DodgeGhostForm", "MissChance"],
+    "ancientHuntRunes": ["c", "i", "p"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Crâne masqué"},
+      {"locale": "en-EN", "name": "Cloaked skull"}
+    ]
+  },
+  {
+    "id": "GrimArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SoulGatheringBoost", "LifeStealAura"],
+    "ancientHuntRunes": ["o", "s"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure sinistre"},
+      {"locale": "en-EN", "name": "Grim armor"}
+    ]
+  },
+  {
+    "id": "GrimArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SoulGatheringBoost", "SuperbDamageAbsorption", "LifeStealAura"],
+    "ancientHuntRunes": ["o", "s", "t"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de wither"},
+      {"locale": "en-EN", "name": "Wither armor"}
+    ]
+  },
+  {
+    "id": "GrimArmor_Spooky2",
+    "events": ["Spookier Fall"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SoulGatheringBoost", "SuperbDamageAbsorption", "LifeStealAura"],
+    "ancientHuntRunes": ["t", "o", "s"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "L'armure de gourdien"},
+      {"locale": "en-EN", "name": "The gourdian armor"}
+    ]
+  },
+  {
+    "id": "MercenaryArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "AllyDamageBoost"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de mercenaire"},
+      {"locale": "en-EN", "name": "Mercenary armor"}
+    ]
+  },
+  {
+    "id": "MercenaryArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MeleeAttackSpeedBoost", "SuperbDamageAbsorption", "AllyDamageBoost"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de rebelle"},
+      {"locale": "en-EN", "name": "Renegade armor"}
+    ]
+  },
+  {
+    "id": "MercenaryArmor_Spooky1",
+    "events": ["Spooky Fall"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MeleeAttackSpeedBoost", "SuperbDamageAbsorption", "AllyDamageBoost"],
+    "ancientHuntRunes": ["c", "s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Horreur affamée"},
+      {"locale": "en-EN", "name": "Hungry horror"}
+    ]
+  },
+  {
+    "id": "MysteryArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": [
+      "SoulGatheringBoost",
+      "SuperbDamageAbsorption",
+      "MissChance",
+      "TeleportChance",
+      "ItemDamageBoost",
+      "ItemCooldownDecrease",
+      "AllyDamageBoost",
+      "IncreasedArrowBundleSize",
+      "MeleeDamageBoost",
+      "RangedDamageBoost",
+      "LifeStealAura",
+      "MoveSpeedAura",
+      "PetBat",
+      "AreaHeal",
+      "MoveSpeedReduction",
+      "IncreasedMobTargeting",
+      "PotionCooldownDecrease",
+      "DodgeCooldownIncrease",
+      "DodgeSpeedIncrease",
+      "DodgeInvulnerability",
+      "SlowResistance",
+      "MeleeAttackSpeedBoost",
+      "Beekeeper",
+      "EmeraldShield"
+    ],
+    "ancientHuntRunes": ["p", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure mystérieuse"},
+      {"locale": "en-EN", "name": "Mystery armor"}
+    ]
+  },
+  {
+    "id": "NatureArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownReset", "AreaHeal"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de racines putréfiées"},
+      {"locale": "en-EN", "name": "Root rot armor"}
+    ]
+  },
+  {
+    "id": "NatureArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemCooldownReset", "AreaHeal"],
+    "ancientHuntRunes": ["s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de tâche noire"},
+      {"locale": "en-EN", "name": "Black spot armor"}
+    ]
+  },
+  {
+    "id": "PhantomArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SoulGatheringBoost", "RangedDamageBoost"],
+    "ancientHuntRunes": ["o", "r"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de phantom"},
+      {"locale": "en-EN", "name": "Phantom armor"}
+    ]
+  },
+  {
+    "id": "PhantomArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SoulGatheringBoost", "RangedDamageBoost"],
+    "ancientHuntRunes": ["o", "s", "r"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Morsure du froid"},
+      {"locale": "en-EN", "name": "Frost bite"}
+    ]
+  },
+  {
+    "id": "ReinforcedMail",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "MissChance", "DodgeCooldownIncrease"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Cotte de mailles renforcée"},
+      {"locale": "en-EN", "name": "Reinforced mail"}
+    ]
+  },
+  {
+    "id": "ReinforcedMail_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "MissChance", "DodgeCooldownIncrease"],
+    "ancientHuntRunes": ["t", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure fidèle"},
+      {"locale": "en-EN", "name": "Stalwart armor"}
+    ]
+  },
+  {
+    "id": "ScaleMail",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "MeleeDamageBoost"],
+    "ancientHuntRunes": ["i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure d'écailles"},
+      {"locale": "en-EN", "name": "Scale mail"}
+    ]
+  },
+  {
+    "id": "ScaleMail_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "MeleeDamageBoost"],
+    "ancientHuntRunes": ["c", "i", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure highlandaise"},
+      {"locale": "en-EN", "name": "Highland armor"}
+    ]
+  },
+  {
+    "id": "SoulRobe",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SoulGatheringBoost", "ItemDamageBoost"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe des âmes"},
+      {"locale": "en-EN", "name": "Soul robe"}
+    ]
+  },
+  {
+    "id": "SoulRobe_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SoulGatheringBoost", "MissChance", "ItemDamageBoost"],
+    "ancientHuntRunes": ["o", "t"],
+    "soulgathering": true,
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe de souldancer"},
+      {"locale": "en-EN", "name": "Souldancer robe"}
+    ]
+  },
+  {
+    "id": "SpelunkersArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["AllyDamageBoost", "PetBat"],
+    "ancientHuntRunes": ["u"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du spéléologue"},
+      {"locale": "en-EN", "name": "Spelunker armor"}
+    ]
+  },
+  {
+    "id": "SpelunkersArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemDamageBoost", "AllyDamageBoost", "PetBat"],
+    "ancientHuntRunes": ["u", "i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du rampeur"},
+      {"locale": "en-EN", "name": "Cave crawler"}
+    ]
+  },
+  {
+    "id": "SpelunkersArmor_Year1",
+    "events": ["First Year Anniversary"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemDamageBoost", "AllyDamageBoost", "PetBat"],
+    "ancientHuntRunes": ["u", "i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure gourmande"},
+      {"locale": "en-EN", "name": "Sweet tooth"}
+    ]
+  },
+  {
+    "id": "WolfArmor",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["AllyDamageBoost", "AreaHeal"],
+    "ancientHuntRunes": ["u", "s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du loup"},
+      {"locale": "en-EN", "name": "Wolf armor"}
+    ]
+  },
+  {
+    "id": "WolfArmor_Unique1",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MissChance", "AllyDamageBoost", "AreaHeal"],
+    "ancientHuntRunes": ["u", "s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du renard"},
+      {"locale": "en-EN", "name": "Fox armor"}
+    ]
+  },
+  {
+    "id": "WolfArmor_Unique2",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["AllyDamageBoost", "AreaHeal"],
+    "ancientHuntRunes": ["u", "c", "s"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de loup noir"},
+      {"locale": "en-EN", "name": "Black wolf armor"}
+    ]
+  },
+  {
+    "id": "WolfArmor_Winter1",
+    "events": ["Chills and Thrills", "Festival of Frost"],
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MissChance", "AllyDamageBoost", "AreaHeal"],
+    "ancientHuntRunes": ["u", "o", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure du renard arctique"},
+      {"locale": "en-EN", "name": "Arctic fox armor"}
+    ]
+  },
+  {
+    "id": "OcelotArmor",
+    "dlcId": "Jungle Awakens",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "DodgeSpeedIncrease"],
+    "ancientHuntRunes": ["c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure d'ocelot"},
+      {"locale": "en-EN", "name": "Ocelot armor"}
+    ]
+  },
+  {
+    "id": "OcelotArmor_Unique1",
+    "dlcId": "Jungle Awakens",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "DodgeSpeedIncrease", "DodgeInvulnerability"],
+    "ancientHuntRunes": ["c", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Marcheur de l'ombre"},
+      {"locale": "en-EN", "name": "Shadow walker"}
+    ]
+  },
+  {
+    "id": "SnowArmor",
+    "dlcId": "Creeping Winter",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "SlowResistance"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de neige"},
+      {"locale": "en-EN", "name": "Snow armor"}
+    ]
+  },
+  {
+    "id": "SnowArmor_Unique1",
+    "dlcId": "Creeping Winter",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "SlowResistance"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de givre"},
+      {"locale": "en-EN", "name": "Frost armor"}
+    ]
+  },
+  {
+    "id": "ClimbingGear",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownDecrease", "Heavyweight"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Équipement d'escalade"},
+      {"locale": "en-EN", "name": "Climbing gear"}
+    ]
+  },
+  {
+    "id": "ClimbingGear_Unique1",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SlowResistance", "ItemCooldownDecrease", "Heavyweight"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Équipement d'escalade robuste"},
+      {"locale": "en-EN", "name": "Rugged climbing gear"}
+    ]
+  },
+  {
+    "id": "ClimbingGear_Unique2",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemCooldownDecrease"],
+    "ancientHuntRunes": ["c", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Équipement de chèvre"},
+      {"locale": "en-EN", "name": "Goat gear"}
+    ]
+  },
+  {
+    "id": "EmeraldArmor",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["MeleeAttackSpeedBoost"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Équipement d'émeraude"},
+      {"locale": "en-EN", "name": "Emerald gear"}
+    ]
+  },
+  {
+    "id": "EmeraldArmor_Unique1",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MeleeAttackSpeedBoost"],
+    "ancientHuntRunes": ["t", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure opulente"},
+      {"locale": "en-EN", "name": "Opulent armor"}
+    ]
+  },
+  {
+    "id": "EmeraldArmor_Unique2",
+    "dlcId": "Howling Peaks",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["MeleeAttackSpeedBoost"],
+    "ancientHuntRunes": ["i", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gloire dorée"},
+      {"locale": "en-EN", "name": "Gilded Glory"}
+    ]
+  },
+  {
+    "id": "PiglinArmor",
+    "dlcId": "Flames of the Nether",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["ItemCooldownReset", "ItemDamageBoost"],
+    "ancientHuntRunes": ["a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de piglin"},
+      {"locale": "en-EN", "name": "Piglin armor"}
+    ]
+  },
+  {
+    "id": "PiglinArmor_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["ItemCooldownReset", "ItemDamageBoost"],
+    "ancientHuntRunes": ["s", "a"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de piglin en or"},
+      {"locale": "en-EN", "name": "Golden piglin armor"}
+    ]
+  },
+  {
+    "id": "SproutArmor",
+    "dlcId": "Flames of the Nether",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["AreaHeal", "DodgeRoot"],
+    "ancientHuntRunes": ["c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure végétale"},
+      {"locale": "en-EN", "name": "Sprout armor"}
+    ]
+  },
+  {
+    "id": "SproutArmor_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["DodgeSpeedIncrease", "AreaHeal", "DodgeRoot"],
+    "ancientHuntRunes": ["c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de liannes vivantes"},
+      {"locale": "en-EN", "name": "Living vines armor"}
+    ]
+  },
+  {
+    "id": "SquidArmor",
+    "dlcId": "Hidden Depths",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["MoveSpeedAura", "SquidRollLimited"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de pieuvre"},
+      {"locale": "en-EN", "name": "Squid armor"}
+    ]
+  },
+  {
+    "id": "SquidArmor_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["DodgeInvulnerability", "SquidRollQuick", "MoveSpeedAura"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de pieuvre luisante"},
+      {"locale": "en-EN", "name": "Glow squid armor"}
+    ]
+  },
+  {
+    "id": "TurtleArmor",
+    "dlcId": "Hidden Depths",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["SuperbDamageAbsorption", "HealingAura"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de tortue"},
+      {"locale": "en-EN", "name": "Turtle armor"}
+    ]
+  },
+  {
+    "id": "TurtleArmor_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["SuperbDamageAbsorption", "HealingAura"],
+    "ancientHuntRunes": ["t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de tortue agile"},
+      {"locale": "en-EN", "name": "Nimble turtle armor"}
+    ]
+  },
+  {
+    "id": "BardsGarb",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["AreaHeal", "Resonant"],
+    "ancientHuntRunes": ["i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Costume d'artiste"},
+      {"locale": "en-EN", "name": "Entertainer's garb"}
+    ]
+  },
+  {
+    "id": "BardsGarb_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["AreaHeal", "Resonant"],
+    "ancientHuntRunes": ["s", "t"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Le troubadour"},
+      {"locale": "en-EN", "name": "The troubadour"}
+    ]
+  },
+  {
+    "id": "EndRobes",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["InstantTransmission", "SoulGatheringBoost"],
+    "ancientHuntRunes": ["a", "o"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe de téléportation"},
+      {"locale": "en-EN", "name": "Teleportation robes"}
+    ]
+  },
+  {
+    "id": "EndRobes_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["InstantTransmission", "SoulGatheringBoost"],
+    "ancientHuntRunes": ["a", "o", "c"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Robe instable"},
+      {"locale": "en-EN", "name": "Unstable robes"}
+    ]
+  },
+  {
+    "id": "ShulkerArmor",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Common", "Rare"],
+    "armorproperties": ["IncreasedMobTargeting"],
+    "ancientHuntRunes": ["t", "i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de shulker"},
+      {"locale": "en-EN", "name": "Shulker armor"}
+    ]
+  },
+  {
+    "id": "ShulkerArmor_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Armor",
+    "rarity": ["Unique"],
+    "armorproperties": ["IncreasedMobTargeting"],
+    "ancientHuntRunes": ["s", "t", "i"],
+    "i18n": [
+      {"locale": "fr-FR", "name": "Armure de shulker robuste"},
+      {"locale": "en-EN", "name": "Sturdy shulker armor"}
+    ]
+  }
+]

@@ -1,11 +1,11 @@
 import { reactive } from 'vue';
 
-import type Item from '@renderer/core/classes/Item';
-import Character from '../classes/Character';
+import type GameItem from '@renderer/core/entities/item/game';
+import Character from '@renderer/core/classes/Character';
 
 interface StoreData {
-  to: Item | null;
-  from: Item | null;
+  to: GameItem | null;
+  from: GameItem | null;
 }
 
 const useDragDropStore = () => {
@@ -15,10 +15,10 @@ const useDragDropStore = () => {
   });
 
   const actions = {
-    setDragTo(target: Item) {
+    setDragTo(target: GameItem) {
       state.to = target;
     },
-    setDragFrom(target: Item) {
+    setDragFrom(target: GameItem) {
       state.from = target;
     },
     handleDropToEmpty() {

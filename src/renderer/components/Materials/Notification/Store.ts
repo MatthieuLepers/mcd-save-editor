@@ -8,6 +8,7 @@ export enum NotificationTypeEnum {
 }
 
 export interface INotification {
+  id?: string | number;
   type: NotificationTypeEnum;
   text: string;
   delay: number;

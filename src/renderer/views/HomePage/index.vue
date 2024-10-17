@@ -58,6 +58,6 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  globalStore.setters.setItem(props.character.inventory.inventory[0]);
+  globalStore.setters.setItem(props.character.inventory.inventory[0] ?? props.character.inventory.gears[0]);
 });
 </script>

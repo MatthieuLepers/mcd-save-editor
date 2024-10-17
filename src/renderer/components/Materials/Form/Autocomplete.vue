@@ -136,7 +136,7 @@
               focused: i === state.fakeIndex,
               removable: state.selectedOptions.includes(option.value) && props.allowRemoveSelected && !props.disabled,
             })"
-            :aria-label="props.allowRemoveSelected && !props.disabled ? `Retirer l'option ${option.label}` : null"
+            :aria-label="props.allowRemoveSelected && !props.disabled ? t('Materials.Form.Select.removeOption', [option.label]) : null"
             type="button"
             @click="actions.handleSelectOption(option.value)"
           >
@@ -159,7 +159,7 @@
             :search="state.searchText"
             :reset="actions.handleClickReset"
           >
-            Aucun résultat pour « {{ state.searchText }} »
+          {{ t('App.Materials.Form.Select.emptyResult', [state.searchText]) }}
           </slot>
         </span>
       </div>
@@ -179,7 +179,7 @@
             focused: i === state.fakeIndex,
             removable: state.selectedOptions.includes(option.value) && props.allowRemoveSelected && !props.disabled,
           })"
-          :aria-label="props.allowRemoveSelected && !props.disabled ? `Retirer l'option ${option.label}` : null"
+          :aria-label="props.allowRemoveSelected && !props.disabled ? t('Materials.Form.Select.removeOption', [option.label]) : null"
           type="button"
           @click="actions.handleSelectOption(option.value)"
         >
@@ -233,15 +233,23 @@ import { debounce } from '@renderer/core/utils';
 defineOptions({ name: 'FormAutocomplete' });
 
 const { t } = useI18n();
-const emit = defineEmits(['update:modelValue', 'keydown-enter', 'optionRemoved', 'optionAdded']);
+const emit = defineEmits(['keydown-enter', 'optionRemoved', 'optionAdded']);
 const $uid = getCurrentInstance().uid;
 
 const root = ref(null);
 const input = ref(null);
 const dropdown = ref(null);
 
+const modelValue = defineModel({ type: [Array, String, Number, Boolean] });
+
+/**
+ * slots:
+ * - selectedOption : Customize selected option
+ * - optgroup       : Customize optgroup
+ * - option         : Customize dropdown option
+ * - empty          : Customize empty result area
+ */
 const props = defineProps({
-  modelValue: { type: [Array, String, Number, Boolean] },
   id: { type: String, default: null },
   required: { type: Boolean, default: false },
   disabled: { type: Boolean, default: false },
@@ -259,7 +267,7 @@ const props = defineProps({
 
 const state = reactive({
   options: [],
-  selectedOptions: Array.isArray(props.modelValue) ? props.modelValue : [props.modelValue],
+  selectedOptions: Array.isArray(modelValue.value) ? modelValue.value : [modelValue.value],
   focused: false,
   open: false,
   isOverflowing: false,
@@ -283,7 +291,7 @@ const State = computed(() => {
   }), {});
   const isGroupable = !!state.options.length && state.options.every((option) => !!option.group);
   const selectedOptionList = state.options.filter((option) => state.selectedOptions.includes(option.value));
-  const isMultiple = Array.isArray(props.modelValue);
+  const isMultiple = Array.isArray(modelValue.value);
 
   return {
     filteredOptions,
@@ -337,7 +345,7 @@ const actions = {
     }
     state.open = false;
 
-    emit('update:modelValue', State.value.isMultiple ? state.selectedOptions : optionValue);
+    modelValue.value = State.value.isMultiple ? state.selectedOptions : optionValue;
   },
   handleFocus(focused, open) {
     if (!state.touched) {
@@ -360,7 +368,7 @@ const actions = {
   },
 };
 
-watch(() => props.modelValue, (newVal) => {
+watch(() => modelValue.value, (newVal) => {
   state.selectedOptions = Array.isArray(newVal) ? newVal : [newVal];
 });
 

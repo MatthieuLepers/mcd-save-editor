@@ -11,8 +11,8 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 
-import Item from '@renderer/core/classes/Item';
-import { RarityEnum } from '@renderer/core/classes/enums/RarityEnum';
+import Item from '@renderer/core/entities/item/game';
+import { Rarity } from '@renderer/core/entities/item/enums';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 
 defineOptions({ name: 'MCDRarityLabel' });
@@ -26,7 +26,7 @@ const props = defineProps({
 const actions = {
   handleChangeRarity() {
     if (!props.item.isUnique()) {
-      props.item.data.rarity = props.item.isCommon() ? RarityEnum.RARE : RarityEnum.COMMON;
+      props.item.data.rarity = props.item.isCommon() ? Rarity.RARE : Rarity.COMMON;
       tutorialStore.actions.setFullfilled('ChangeRarity', true);
     }
   },

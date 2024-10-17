@@ -1,3 +1,4 @@
+// import { autoUpdater } from 'electron-updater';
 import { OpenDialogOptions, dialog, type SaveDialogOptions } from 'electron';
 import fs from 'fs';
 import { exec } from 'child_process';
@@ -42,6 +43,11 @@ class AppModule {
       });
     });
   }
+
+  // @IpcOn
+  // static quitAndInstallUpdate() {
+  //   autoUpdater.quitAndInstall();
+  // }
 
   @GlobalShortcut('Alt+F4')
   static closeAppNonDarwin() {

@@ -21,13 +21,13 @@
         :required="props.required"
         :readonly="props.readonly"
         :disabled="props.disabled"
-        :value="props.modelValue"
+        :value="modelValue"
         :name="name"
         :autocomplete="autocomplete"
         :min="props.type === 'number' ? props.min : null"
         :max="props.type === 'number' && props.max ? props.max : null"
         :step="props.type === 'number' ? Math.abs(props.step) : null"
-        @input="emit('update:modelValue', actions.cast($event.target.value, typeof props.modelValue))"
+        @input="modelValue = actions.cast($event.target.value, typeof modelValue.value)"
         @click="emit('click')"
         @keydown="emit('keydown', $event)"
         @focus="actions.handleFocus('focus', true)"
@@ -74,11 +74,12 @@ import MaterialFormMessageList from '@renderer/components/Materials/Form/Message
 
 defineOptions({ name: 'FormInput' });
 
-const emit = defineEmits(['update:modelValue', 'click', 'keydown', 'icon', 'focus', 'blur']);
+const emit = defineEmits(['click', 'keydown', 'icon', 'focus', 'blur']);
 const $uid = ref(getCurrentInstance().uid);
 
+const modelValue = defineModel({ type: [String, Number] });
+
 const props = defineProps({
-  modelValue: { type: [String, Number] },
   id: { type: String, default: null },
   type: { type: String, default: 'text' },
   required: { type: Boolean, default: false },
@@ -112,7 +113,7 @@ const State = computed(() => ({
     || (props.type === 'password' && (state.passwordVisible ? 'icon-eye-slash' : 'icon-eye'))
     || props.iconData?.text
     || null,
-  isEmpty: typeof props.modelValue === 'string' && !props.modelValue.length && !props.placeholder?.length,
+  isEmpty: typeof modelValue.value === 'string' && !modelValue.value.length && !props.placeholder?.length,
 }));
 
 const actions = {
@@ -139,8 +140,8 @@ const actions = {
     if (props.type === 'number' && state.focused) {
       e.preventDefault();
       const offset = e.deltaY < 0 ? 1 : -1;
-      const max = Math.max(props.min, props.modelValue + offset);
-      emit('update:modelValue', actions.cast(Math.min(props.max || max, max), typeof props.modelValue));
+      const max = Math.max(props.min, modelValue.value + offset);
+      modelValue.value = actions.cast(Math.min(props.max || max, max), typeof modelValue.value);
     }
   },
 };

@@ -26,6 +26,10 @@ const { t } = useI18n();
 
 const root = ref(null);
 
+/**
+ * slots:
+ * - [menuName] : Display [menuName] content
+ */
 const props = defineProps({
   menuList: { type: Array, default: () => [] },
 });

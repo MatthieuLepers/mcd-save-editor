@@ -1,0 +1,93 @@
+@import '~styles/utilities.scss';
+
+.m-datatable-pagination {
+  list-style: none;
+  margin: 0;
+  padding: rem(16px) 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(8px);
+  border-top: 1px solid color(grey800);
+
+  button {
+    background-color: color(grey800);
+    color: color(grey000);
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: color(grey700);
+    }
+  }
+
+  &__item {
+    &--current button {
+      background-color: color(grey100);
+      color: color(grey900);
+
+      &:hover {
+        background-color: color(grey200);
+      }
+    }
+
+    &--edge {
+      width: 48px;
+      height: 48px;
+      position: relative;
+    }
+
+    &--prev button {
+      &::before {
+        content: '';
+        border-bottom: 2px solid color(grey100);
+        border-right: 2px solid color(grey100);
+        transform: rotate(135deg);
+        width: 12px;
+        height: 12px;
+        display: block;
+        transform-origin: 50% 50%;
+        position: absolute;
+        top: calc(50% - 6px);
+        left: calc(50% - 3px);
+      }
+    }
+
+    &--next button {
+      &::before {
+        content: '';
+        border-bottom: 2px solid color(grey100);
+        border-right: 2px solid color(grey100);
+        transform: rotate(-45deg);
+        width: 12px;
+        height: 12px;
+        display: block;
+        transform-origin:  50% 50%;
+        position: absolute;
+        top: calc(50% - 6px);
+        right: calc(50% - 3px);
+      }
+    }
+
+    &:not(.m-datatable-pagination__item--skipped)+&--skipped {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        content: '...';
+      }
+    }
+
+    &--skipped+&--skipped,
+    &--skipped button {
+      display: none;
+    }
+  }
+}

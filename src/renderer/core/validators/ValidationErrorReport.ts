@@ -1,12 +1,12 @@
 import type { ErrorObject } from 'ajv';
 import get from 'lodash.get';
 
-import type { IItem } from '@renderer/core/classes/Item';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import Fixup from '@renderer/core/classes/Fixup';
 
 export default class ValidationErrorReport {
   constructor(
-    public item: IItem,
+    public item: IGameItem,
     public itemIndex: number,
     public error: ErrorObject,
   ) {}

@@ -9,14 +9,14 @@
         :class="`MCDItemEnchant MCDItemEnchant-${i} ${ench.enchantData.tier}`"
         @click="actions.handleSelectEnchant(ench)"
       >
-        <img :src="image(ench.enchantData.image)" :alt="ench.enchantIdentifier" />
+        <img :src="ench.enchantData.image" :alt="ench.enchantIdentifier" />
       </button>
       <div v-if="ench.level > 0" class="MCDItemEnchantSlotTier">
         {{ actions.getTier(ench.level) }}
       </div>
-      <div class="MCDItemEnchantSlotInfo" v-if="actions.isChosen(ench)" :title="t(`MCD.Game.Enchants.${ench.enchantIdentifier}.name`)">
+      <div class="MCDItemEnchantSlotInfo" v-if="actions.isChosen(ench)" :title="ench.enchantData.getI18n('name')">
         <span class="EnchName">
-          {{ t(`MCD.Game.Enchants.${ench.enchantIdentifier}.name`) }}
+          {{ ench.enchantData.getI18n('name') }}
         </span>
         <span class="Tier">
           {{ t(`MCD.ItemEnchantmentChoice.tiers.${ench.enchantData.tier.toLowerCase()}`) }}
@@ -36,7 +36,6 @@ import { useI18n } from 'vue-i18n';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
-import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDItemEnchantmentChoice' });
 

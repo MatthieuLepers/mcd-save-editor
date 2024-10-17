@@ -22,11 +22,12 @@ import { reactive, computed, getCurrentInstance } from 'vue';
 
 defineOptions({ name: 'FormCheckbox' });
 
-const emit = defineEmits(['update:modelValue', 'click']);
+const emit = defineEmits(['click']);
 const $uid = getCurrentInstance().uid;
 
+const modelValue = defineModel({ type: [Array, String, Boolean, Number] });
+
 const props = defineProps({
-  modelValue: { type: [Array, String, Boolean, Number] },
   id: { type: String, default: null },
   value: { type: [String, Number, Boolean, null], required: true },
   name: { type: String, default: null },
@@ -43,11 +44,11 @@ const state = reactive({
 });
 
 const State = computed(() => {
-  const modelValue = Array.isArray(props.modelValue) ? props.modelValue : [props.modelValue];
-  const checked = modelValue.includes(props.value);
+  const model = Array.isArray(modelValue.value) ? modelValue.value : [modelValue.value];
+  const checked = model.includes(props.value);
 
   return {
-    modelValue,
+    modelValue: model,
     checked,
   };
 });
@@ -64,9 +65,9 @@ const actions = {
     const castedValue = actions.cast(value, typeof props.value);
 
     if (checked && !State.value.modelValue.includes(castedValue)) {
-      emit('update:modelValue', [...State.value.modelValue, castedValue]);
+      modelValue.value = [...State.value.modelValue, castedValue];
     } else if (!checked && State.value.modelValue.includes(castedValue)) {
-      emit('update:modelValue', State.value.modelValue.filter((v) => v !== props.value));
+      modelValue.value = State.value.modelValue.filter((v) => v !== props.value);
     }
     emit('click', e, { value: castedValue, checked });
   },

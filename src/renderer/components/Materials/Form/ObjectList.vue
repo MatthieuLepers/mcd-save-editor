@@ -5,7 +5,7 @@
       <button
         v-if="!props.max || (!!props.max && state.modelList.length < props.max)"
         type="button"
-        aria-label="Ajouter un model"
+        :aria-label="t('Materials.Form.ObjectList.addModel')"
         :class="GenerateModifiers('m-object-list__button', { add: true })"
         @click="actions.addModel"
       >+</button>
@@ -20,7 +20,7 @@
         <button
           v-if="state.modelList.length > props.min"
           type="button"
-          aria-label="Retirer ce model"
+          :aria-label="t('Materials.Form.ObjectList.removeModel')"
           :class="GenerateModifiers('m-object-list__button', { remove: true })"
           @click="actions.removeModel(item)"
         >-</button>
@@ -31,13 +31,15 @@
 
 <script setup>
 import { reactive, watch, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 defineOptions({ name: 'FormObjectList' });
 
-const emit = defineEmits(['update:modelValue']);
+const { t } = useI18n();
+
+const modelValue = defineModel({ type: Array, default: () => [] });
 
 const props = defineProps({
-  modelValue: { type: Array, default: () => [] },
   title: { type: String, required: true },
   model: { type: Object, required: true },
   min: { type: Number, default: 1 },
@@ -45,17 +47,17 @@ const props = defineProps({
 });
 
 const state = reactive({
-  modelList: props.modelValue,
+  modelList: modelValue.value,
 });
 
 const actions = {
   addModel() {
     state.modelList.push({ ...props.model });
-    emit('update:modelValue', state.modelList);
+    modelValue.value = state.modelList;
   },
   removeModel(model) {
     state.modelList = state.modelList.filter((m) => m !== model);
-    emit('update:modelValue', state.modelList);
+    modelValue.value = state.modelList;
   },
 };
 
@@ -68,7 +70,7 @@ const updateModelValue = () => {
   }
 };
 
-watch(() => props.modelValue, (newVal) => {
+watch(() => modelValue.value, (newVal) => {
   state.modelList = newVal;
 });
 

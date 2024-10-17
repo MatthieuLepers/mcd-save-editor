@@ -1,7 +1,5 @@
 <template>
-  <button
-    :class="GenerateModifiers('m-datatable-button', props.modifiers)"
-  >
+  <button :class="GenerateModifiers('m-datatable-button', props.modifiers)">
     <span
       v-if="props.icon"
       :class="['m-datatable-button__icon', props.icon]"
@@ -18,6 +16,10 @@
 <script setup>
 defineOptions({ name: 'DataTableButton' });
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   label: { type: String, default: null },
   icon: { type: String, default: null },

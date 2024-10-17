@@ -1,0 +1,3120 @@
+[
+  {
+    "id": "Accelerating",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Accélération",
+        "desc": "Augmente la vitesse d'attaque de chaque attaque consécutive. Se réinitialise une seconde après l'attaque.",
+        "level": [
+          "Augmente de 8% par tir",
+          "Augmente de 10% par tir",
+          "Augmente de 12% par tir"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Accelerate",
+        "desc": "Increases attack speed for each consecutive shot. Resets one second after the attack.",
+        "level": [
+          "8% increase per shot",
+          "10% increase per shot",
+          "12% increase per shot"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Acrobat",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Accrobate",
+        "desc": "Réduit le temps de recharge entre les utilisations de vos ésquives.",
+        "level": [
+          "Temps de recharge réduit de 15%",
+          "Temps de recharge réduit de 30%",
+          "Temps de recharge réduit de 45%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Accrobat",
+        "desc": "Reduces the cooldown time between your rolls.",
+        "level": [
+          "15% reduced cooldown",
+          "30% reduced cooldown",
+          "45% reduced cooldown"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "AnimaConduitMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Conduit de l'âme",
+        "desc": "Chaque âme absorbée vous octroie un peu de santé en plus.",
+        "level": [
+          "2% de santé gangée",
+          "4% de santé gangée",
+          "6% de santé gangée"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Anima conduit",
+        "desc": "Each soul you absorb grants a small amount of health.",
+        "level": [
+          "2% health gained",
+          "4% health gained",
+          "6% health gained"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BagOfSouls",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Sac d'âmes",
+        "desc": "Augmente le nombre maximum d'âmes pouvant être portées.",
+        "level": [
+          "33% d'âmes supplémentaires",
+          "67% d'âmes supplémentaires",
+          "100% d'âmes supplémentaires"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Bag of souls",
+        "desc": "Increases the maximum number of souls that can be carried.",
+        "level": [
+          "33% extra souls",
+          "67% extra souls",
+          "100% extra souls"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BonusShot",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir bonus",
+        "desc": "Le tir déclanche un second tir vers un ennemi proche. Ce second tir inflige moins de dégâts.",
+        "level": [
+          "10% de dégats par tir",
+          "17% de dégats par tir",
+          "24% de dégats par tir"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Bonus shot",
+        "desc": "Firing a shot also fires a second shot at a nearby enemy. The second shot has reduced damage.",
+        "level": [
+          "10% damage per shot",
+          "17% damage per shot",
+          "24% damage per shot"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Burning",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Combustion",
+        "desc": "Inflige des dégâts à tous les ennemies proches toutes les 0.5 secondes.",
+        "level": [
+          "{AMOUNT} dégâts",
+          "{AMOUNT} dégâts",
+          "{AMOUNT} dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Burning",
+        "desc": "Every 0.5 seconds damages all nearby enemies",
+        "level": [
+          "{AMOUNT} damages",
+          "{AMOUNT} damages",
+          "{AMOUNT} damages"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BurstBowstring",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Corde d'arc explosive",
+        "desc": "Tire sur les créatures à proximité lorsque vous effectuez une roulade, coûtant une flèche par roulade. Les projectiles infligent 40% des dégâts d'un tir chargé.",
+        "level": [
+          "1 cible",
+          "2 cibles",
+          "3 cibles"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Burst bowstring",
+        "desc": "Shoots nearby mobs when you roll, costing one arro per roll. Projectiles deal 40% of a charged shot's damage.",
+        "level": [
+          "1 target",
+          "2 targets",
+          "3 targets"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BusyBee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Abeille dynamique",
+        "desc": "Possibilité d'invoquer une abeille après avoir vaincu une créature : jusqu'à 3 abeilles se rangent à vos côtés.",
+        "level": [
+          "20% possibilité d'invoquer.",
+          "30% possibilité d'invoquer.",
+          "40% possibilité d'invoquer."
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Busy bee",
+        "desc": "Chance to summon a bee after defeating a mob, with up to 3 bees joining your side.",
+        "level": [
+          "20% chance to summon",
+          "30% chance to summon",
+          "40% chance to summon"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Celerity",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Recharge",
+        "desc": "Réduit le temps de recharge entre les utilisations de vos artéfacts.",
+        "level": [
+          "Temps de recharge réduit de -10%",
+          "Temps de recharge réduit de -19%",
+          "Temps de recharge réduit de -27%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Cool down",
+        "desc": "Reduces the cooldown time between uses of your artifacts.",
+        "level": [
+          "-10% reduced cooldown",
+          "-19% reduced cooldown",
+          "-27% reduced cooldown"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ChainReaction",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Réaction en chaîne",
+        "desc": "A une chance de tirer cinq flèches dans toutes les directions lors de l'impact.",
+        "level": [
+          "10% chance de se déclencher",
+          "20% chance de se déclencher",
+          "30% chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Chain reaction",
+        "desc": "Has a chance to fire five arrows in all directions on impact.",
+        "level": [
+          "10% chance to trigger",
+          "20% chance to trigger",
+          "30% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Chains",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Chaînes",
+        "desc": "A 30% de chance d'enchaîner un groupe de créatures et de les garder liées pendant une courte période.",
+        "level": [
+          "Durée de 1 seconde",
+          "Durée de 2 secondes",
+          "Durée de 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Chains",
+        "desc": "Has a 30% chance to chain a cluster of mobs together and keep them bound for a short time.",
+        "level": [
+          "1 second duration",
+          "2 seconds duration",
+          "3 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Chilling",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Glacial",
+        "desc": "Émet un souffle toutes les deux secondes, qui réduit les vitesses d'attaque et de déplacement des ennemies proches pendant une seconde.",
+        "level": [
+          "Vitesse réduite de -20%",
+          "Vitesse réduite de -40%",
+          "Vitesse réduite de -60%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Chilling",
+        "desc": "Emits a blast every two seconds that reduces the movement and attack speed of nearby enemies for one second.",
+        "level": [
+          "-20% reduced speed",
+          "-40% reduced speed",
+          "-60% reduced speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Committed",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Impliqué",
+        "desc": "Augmente les dégâts infligés contre les ennemies déjà blessés.",
+        "level": [
+          "0-50% dégats bonus",
+          "0-75% dégats bonus",
+          "0-100% dégats bonus"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Committed",
+        "desc": "Deal increased damage against already wounded enemies.",
+        "level": [
+          "0-50% bonus damage",
+          "0-75% bonus damage",
+          "0-100% bonus damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Cowardice",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Couardise",
+        "desc": "Quand votre barre de vie est complète, vos dégats à distance et de mêlée sont augmentés.",
+        "level": [
+          "Dégats augmentés de +20%",
+          "Dégats augmentés de +30%",
+          "Dégats augmentés de +40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Cowardice",
+        "desc": "While you are at full HP, you deal increased ranged and melee damage.",
+        "level": [
+          "+20% increased ranged and melee damage",
+          "+30% increased ranged and melee damage",
+          "+40% increased ranged and melee damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CriticalHit",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Coup critique",
+        "desc": "Vous donne une chance d'infliger des coups critiques infligeant triple dégats.",
+        "level": [
+          "10% de chance de se déclencher",
+          "15% de chance de se déclencher",
+          "20% de chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Critical hit",
+        "desc": "Gives you a chance to inflict critical hits dealing triple damage.",
+        "level": [
+          "10% chance to trigger",
+          "15% chance to trigger",
+          "20% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Deflecting",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Déviation",
+        "desc": "Donne une petite chance de dévier des projectiles.",
+        "level": [
+          "25% de chance de e déclancher",
+          "35% de chance de e déclancher",
+          "45% de chance de e déclancher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Deflecting",
+        "desc": "Grants a small chance to deflect incoming projectiles",
+        "level": [
+          "25% chance to trigger",
+          "35% chance to trigger",
+          "45% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DynamoMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Dynamo",
+        "desc": "Ajoute des dégâts à la prochaine attaque après avoir esquivé.",
+        "level": [
+          "{AMOUNT} de dégâts",
+          "{AMOUNT} de dégâts",
+          "{AMOUNT} de dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Dynamo",
+        "desc": "Adds damage to the next attack after rolling.",
+        "level": [
+          "{AMOUNT} damage",
+          "{AMOUNT} damage",
+          "{AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DynamoRanged",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Dynamo",
+        "desc": "Ajoute des dégats à la prochaine attaque après avoir esquivé.",
+        "level": [
+          "{AMOUNT} de dégâts",
+          "{AMOUNT} de dégâts",
+          "{AMOUNT} de dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Dynamo",
+        "desc": "Adds damage to the next attack after rolling.",
+        "level": [
+          "{AMOUNT} damage",
+          "{AMOUNT} damage",
+          "{AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Echo",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Écho",
+        "desc": "Certaines de vos attaques sont suivies rapidement par d'autres.",
+        "level": [
+          "Temps de recharge de 5 secondes",
+          "Temps de recharge de 4 secondes",
+          "Temps de recharge de 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Echo",
+        "desc": "Some of your attacks can be followed up by another attack in rapid succession.",
+        "level": [
+          "5 seconds cooldown",
+          "4 seconds cooldown",
+          "3 seconds cooldown"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Electrified",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Électrifié",
+        "desc": "Une roulade envoi un carreaux de foudre qui inflige des dégâts à trois ennemis à proximité.",
+        "level": [
+          "Inflige {AMOUNT} dégats",
+          "Inflige {AMOUNT} dégats",
+          "Inflige {AMOUNT} dégats"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Electrified",
+        "desc": "Rolling zaps three nearby enemies with lightning bolts, dealing damage.",
+        "level": [
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EnigmaResonatorMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Résonateur d'énigme",
+        "desc": "Donne une chance d'infliger triple dégâts sur la base du nombre d'âmes que vous possédez.",
+        "level": [
+          "0-15% de chance de se délencher",
+          "0-20% de chance de se délencher",
+          "0-25% de chance de se délencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Enigma resonator",
+        "desc": "Gives a chance to deal triple damage based on the number of souls you have.",
+        "level": [
+          "0-15% chance to trigger",
+          "0-20% chance to trigger",
+          "0-25% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EnigmaResonatorRanged",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Résonateur d'énigme",
+        "desc": "Donne une chance d'infliger triple dégats sur la base du nombre d'âmes que vous possédez.",
+        "level": [
+          "0-15% chance de déclancher",
+          "0-20% chance de déclancher",
+          "0-25% chance de déclancher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Enigma resonator",
+        "desc": "Give a chance to deal triple damage based on the number of souls you have.",
+        "level": [
+          "0-15% chance to trigger",
+          "0-20% chance to trigger",
+          "0-25% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Exploding",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Explosion",
+        "desc": "Les créatures explosent après avoir été vaincues.",
+        "level": [
+          "Inflige 20% de dégâts équivalent aux points de vie de l'ennemi.",
+          "Inflige 40% de dégâts équivalent aux points de vie de l'ennemi.",
+          "Inflige 60% de dégâts équivalent aux points de vie de l'ennemi."
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Exploding",
+        "desc": "Mobs explode after they are defeated.",
+        "level": [
+          "Deals 20% of enemy health as damage",
+          "Deals 40% of enemy health as damage",
+          "Deals 60% of enemy health as damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Explorer",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Explorateur",
+        "desc": "Chaque centaine de blocs explorée sur la carte permet de récupérer un peu de santé.",
+        "level": [
+          "0.3% de santé récupérée",
+          "0.7% de santé récupérée",
+          "1.0% de santé récupérée"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Explorer",
+        "desc": "For every one hundred blocks explored on the map, you ragain a small amount of health.",
+        "level": [
+          "0.3% health ragained",
+          "0.7% health ragained",
+          "1.0% health ragained"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FinalShout",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Cri ultime",
+        "desc": "Lorsque votre santé descend en dessous de 25%, tous vos artéfacts sont utilisés (sans tenir compte des temps de recharge).",
+        "level": [
+          "Utilisable toutes les 12 secondes",
+          "Utilisable toutes les 10 secondes",
+          "Utilisable toutes les 8 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Final shout",
+        "desc": "When your health drops below 25%, all your artifacts are used (ignoring cooldown periods).",
+        "level": [
+          "Up to every 12th second",
+          "Up to every 10th second",
+          "Up to every 8th second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FireAspect",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Aura de feu",
+        "desc": "Met le feu aux créatures pour trois secondes, ce qui inflige des dégâts au fil du temps.",
+        "level": [
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Fire aspect",
+        "desc": "Sets mobs on fire for three seconds, dealing damage over time.",
+        "level": [
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FireTrail",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Traînée de feu",
+        "desc": "La roulade crée une traînée de feu derrière vous, infligeant des dégâts aux créatures pendant quatre secondes.",
+        "level": [
+          "{AMOUNT} de dégâts de feu par seconde",
+          "{AMOUNT} de dégâts de feu par seconde",
+          "{AMOUNT} de dégâts de feu par seconde"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Fire trail",
+        "desc": "Rolling creates a trail of fire behind you, wich deals damage to mobs for four seconds.",
+        "level": [
+          "{AMOUNT} fire damage per second",
+          "{AMOUNT} fire damage per second",
+          "{AMOUNT} fire damage per second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FoodReserves",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Réserves de nouriture",
+        "desc": "Quad vous utilisez une potion de soin, vous créez également des aliments au hasard.",
+        "level": [
+          "1 aliment est créé",
+          "2 aliments sont créés",
+          "3 aliments sont créés"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Food reserves",
+        "desc": "Whenever you use a healing potion, you also create random food items.",
+        "level": [
+          "1 item crafted",
+          "2 items crafted",
+          "3 items crafted"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Freezing",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Gel",
+        "desc": "Ralentit les créatures après un coup pendant trois secondes.",
+        "level": [
+          "Vitesse réduite de -20%",
+          "Vitesse réduite de -30%",
+          "Vitesse réduite de -40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Freezing",
+        "desc": "Slows mobs after hit for three seconds.",
+        "level": [
+          "-20% reduced speed",
+          "-30% reduced speed",
+          "-40% reduced speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Frenzied",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Frénésie",
+        "desc": "Quand votre santé est inférieure à 50%, la vitesse d'ttaque est augmentée.",
+        "level": [
+          "Vitesse d'attaque au corps-à-corps et à distance augmente de +10%",
+          "Vitesse d'attaque au corps-à-corps et à distance augmente de +20%",
+          "Vitesse d'attaque au corps-à-corps et à distance augmente de +30%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Frenzied",
+        "desc": "While you are at less than half health, your attack speed is increased.",
+        "level": [
+          "+10% melee and ranged attack speed",
+          "+20% melee and ranged attack speed",
+          "+30% melee and ranged attack speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FuseShot",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir avec détonateur",
+        "desc": "Certains projectiles contiennent une charge explosive avec détonateur, qui explose une seconde après l'impact et inglige 100% de dégâts aux créatures à proximité.",
+        "level": [
+          "Tous les 5 tirs",
+          "Tous les 4 tirs",
+          "Tous les 3 tirs"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Fuse shot",
+        "desc": "Every few shots has a timed charge that explodes one second after impact, dealing 100% damage to nearby mobs.",
+        "level": [
+          "Every 5th shot",
+          "Every 4th shot",
+          "Every 3th shot"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Gravity",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Gravité",
+        "desc": "Cette effet attire les créatures proches vers le point d'impact de l'arme.",
+        "level": [
+          "Durée de 1.0 seconde",
+          "Durée de 1.5 secondes",
+          "Durée de 2.0 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Gravity",
+        "desc": "This effect pulls mobs in range toward's the weapon's impact point.",
+        "level": [
+          "1.0 second duration",
+          "1.5 seconds duration",
+          "2.0 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "GravityMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Gravité",
+        "desc": "Cet effet attire les créatures proches vers le points d'impact de l'arme.",
+        "level": [
+          "Durée de 1.0 seconde",
+          "Durée de 1.5 secondes",
+          "Durée de 2.0 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Gravity",
+        "desc": "This effect pulls mobs in range toward's the weapon's impact point.",
+        "level": [
+          "1.0 second duration",
+          "1.5 seconds duration",
+          "2.0 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "GravityPulse",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Pulsion gravitationnelle",
+        "desc": "Un souffle surviendra toutes les cinq secondes et attirera vers vous les ennemies proches.",
+        "level": [
+          "Portée de 100%",
+          "Portée de 150%",
+          "Portée de 200%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Gravity pulse",
+        "desc": "A blast occurs every five seconds that pulls nearby enemies towards you.",
+        "level": [
+          "100% range",
+          "150% range",
+          "200% range"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Growing",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Agrandissement",
+        "desc": "Le projectile grossit dans les airs, infligeant des dégâts supplémentaires aux cibles distantes.",
+        "level": [
+          "25% de dégâts max",
+          "50% de dégâts max",
+          "75% de dégâts max"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Growing",
+        "desc": "The fired shot grows in the air, dealing extra damage to distant targets.",
+        "level": [
+          "25% max damage",
+          "50% max damage",
+          "75% max damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HealthSynergy",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Synergie de santé",
+        "desc": "Vous récupérez un peu de santé en activant un artéffact.",
+        "level": [
+          "3% de santé récupérée",
+          "4% de santé récupérée",
+          "5% de santé récupérée"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Health synergy",
+        "desc": "When activating any artifact, you regain a small amount of health.",
+        "level": [
+          "3% health regained",
+          "4% health regained",
+          "5% health regained"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Infinity",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Infinité",
+        "desc": "Chance de récupérer immédiatement une flèche après le tir.",
+        "level": [
+          "16% chance de se déclencher",
+          "32% chance de se déclencher",
+          "48% chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Infinity",
+        "desc": "Chance to immediately replenish an arrow after shooting.",
+        "level": [
+          "16% chance to trigger",
+          "32% chance to trigger",
+          "48% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Leeching",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Vampirisme",
+        "desc": "Vaincre une créature vous soigne à raison d'une petite partie de la vie max de celle-ci.",
+        "level": [
+          "5% de la vie maximale de la créature",
+          "7% de la vie maximale de la créature",
+          "9% de la vie maximale de la créature"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Leeching",
+        "desc": "Defeating a mob heals you a small portion of the mob's max health.",
+        "level": [
+          "5% of mob max health",
+          "7% of mob max health",
+          "9% of mob max health"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Looting",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Butin",
+        "desc": "Augmente la chance que les créature laisse tomber des consommables.",
+        "level": [
+          "+100% d'augmentation de chance",
+          "+200% d'augmentation de chance",
+          "+300% d'augmentation de chance"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Looting",
+        "desc": "Increase the chance for mobs to drop consumables.",
+        "level": [
+          "+100% increased chance",
+          "+200% increased chance",
+          "+300% increased chance"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MultiShot",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir multiple",
+        "desc": "A une chance de tirer cinq flèches en une fois.",
+        "level": [
+          "20% chance de se déclencher",
+          "30% chance de se déclencher",
+          "40% chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Multishot",
+        "desc": "Grants the chance to fire five arrows at once.",
+        "level": [
+          "20% chance to trigger",
+          "30% chance to trigger",
+          "40% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Piercing",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Perçant",
+        "desc": "Les flèches tirées obtiennent parfois l'effet perçant, ce qui leur permet de traverser plusieurs créatures.",
+        "level": [
+          "Toutes les 3 flèches",
+          "Toutes les 2 flèches",
+          "Toutes les flèches"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Piercing",
+        "desc": "Fired arrows sometines gain the piercing effect, which allows to fly through multiple mobs.",
+        "level": [
+          "Every 3rd arrow",
+          "Every 2nd arrow",
+          "Every arrow"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PoisonedMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Nuage de poison",
+        "desc": "A une chance de 30% de déclencher un nuage de poison qui inflige des dégâts aux ennemis dans une zone pendant trois secondes.",
+        "level": [
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Poison cloud",
+        "desc": "Has a 30% chance to summon a poison cloud that deals damage to enemies in an area for three seconds.",
+        "level": [
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PoisonedRanged",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Nuage de poison",
+        "desc": "A une chance de 30% de déclencher un nuage de poison qui inflige des dégâts aux ennemies dans une zone pendant trois secondes.",
+        "level": [
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde",
+          "{AMOUNT} de dégâts par seconde"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Poison cloud",
+        "desc": "Has a 30% chance to summon a poison cloud that deals damage to enemies in an area for three seconds.",
+        "level": [
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second",
+          "{AMOUNT} damage per second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PotionFortification",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Barrière de potion",
+        "desc": "Quand vous utilisez une potion de soin, vous subissez -90% de dégâts pendant une courte période.",
+        "level": [
+          "Durée de 5 secondes",
+          "Durée de 7 secondes",
+          "Durée de 9 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Potion barrier",
+        "desc": "Whenever you use a healing potion, you take -90% damage for a short duration.",
+        "level": [
+          "5 seconds duration",
+          "7 seconds duration",
+          "9 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Power",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Puissance",
+        "desc": "Augmente la puissance de dégâts des flèches.",
+        "level": [
+          "+10% de dégats",
+          "+21% de dégats",
+          "+33% de dégats"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Power",
+        "desc": "Power boosts arrow damage.",
+        "level": [
+          "+10% damage",
+          "+21% damage",
+          "+33% damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Prospector",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Prospecteur",
+        "desc": "Trouvez plus d'émeraudes sur les ennemis tombés.",
+        "level": [
+          "+100% d'augmentation de chance",
+          "+200% d'augmentation de chance",
+          "+300% d'augmentation de chance"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Prospector",
+        "desc": "Find more emeralds on fallen enemies.",
+        "level": [
+          "+100% increase chance",
+          "+200% increase chance",
+          "+300% increase chance"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Protection",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Protection",
+        "desc": "Réduit les dégâts subis.",
+        "level": [
+          "-6% de dégâts reçus",
+          "-11% de dégâts reçus",
+          "-15% de dégâts reçus"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Protection",
+        "desc": "Reduces damage taken",
+        "level": [
+          "-6% damage taken",
+          "-11% damage taken",
+          "-15% damage taken"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Punch",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Repoussoir",
+        "desc": "Booste le renvoi de flèches.",
+        "level": [
+          "Renvoi de +200%",
+          "Renvoi de +300%",
+          "Renvoi de +400%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Punch",
+        "desc": "Boosts arrow pushback.",
+        "level": [
+          "+200% pushback",
+          "+300% pushback",
+          "+400% pushback"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "RadianceMelee",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Flamboyance",
+        "desc": "A une chance de 20% de créer une zone circulaire qui soigne les alliés qui s'y trouvent.",
+        "level": [
+          "{AMOUNT} de régénération de santé",
+          "{AMOUNT} de régénération de santé",
+          "{AMOUNT} de régénération de santé"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Radiance",
+        "desc": "Has a 20% chance to spawn a circular area that heals all allies within it.",
+        "level": [
+          "{AMOUNT} health healed",
+          "{AMOUNT} health healed",
+          "{AMOUNT} health healed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "RadianceRanged",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir flamboyant",
+        "desc": "A unechance de 50% de créer une zone circulaire qui soigne tous les alliés qui s'y trouvent.",
+        "level": [
+          "{AMOUNT} de régénération de santé",
+          "{AMOUNT} de régénération de santé",
+          "{AMOUNT} de régénération de santé"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Radiance",
+        "desc": "Has a 50% chance to spawn a circular area that heals all allies within it.",
+        "level": [
+          "{AMOUNT} health healed",
+          "{AMOUNT} health healed",
+          "{AMOUNT} health healed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Rampaging",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Fureur",
+        "desc": "Après avoir vaincu une créature, a une chance de 10% d'augmenter votre vitesse d'attaque de +50% pendant une courte durée.",
+        "level": [
+          "Durée de 5 secondes",
+          "Durée de 10 secondes",
+          "Durée de 15 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Rampaging",
+        "desc": "After defeating a mob, there is a 10% chance to increase your attack speed by +50% for a short time.",
+        "level": [
+          "5 seconds duration",
+          "10 seconds duration",
+          "15 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "RapidFire",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Feu rapide",
+        "desc": "Augmente votre vitesse d'attaque.",
+        "level": [
+          "Vitesse d'attaque augmentée de +10%",
+          "Vitesse d'attaque augmentée de +15%",
+          "Vitesse d'attaque augmentée de +20%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Rapid fire",
+        "desc": "Increases your attack speed.",
+        "level": [
+          "+10% attack speed",
+          "+15% attack speed",
+          "+20% attack speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Recycler",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Recycleur",
+        "desc": "Être touché par des projectiles infligeant des dégats créera parfois un petit carquois de flèches.",
+        "level": [
+          "Tous les 30 projectiles",
+          "Tous les 20 projectiles",
+          "Tous les 10 projectiles"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Recycler",
+        "desc": "Being hit by damage-inflicting projectiles will occasionally craft a small quiver of arrows.",
+        "level": [
+          "Every 30th projectile",
+          "Every 20th projectile",
+          "Every 10th projectile"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Ricochet",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Ricochet",
+        "desc": "Petite chance pour que les flèches rocochent contre les créatures.",
+        "level": [
+          "20% chance de se déclencher",
+          "40% chance de se déclencher",
+          "60% chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Ricochet",
+        "desc": "Small chance for arrows to ricochet off mobs.",
+        "level": [
+          "20% chance to trigger",
+          "40% chance to trigger",
+          "60% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Sharpness",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tranchant",
+        "desc": "Rend votre arme plus tranchante en lui faisant infliger plus de dégâts.",
+        "level": [
+          "Augmentation des dégâts de +10%",
+          "Augmentation des dégâts de +21%",
+          "Augmentation des dégâts de +33%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Sharpness",
+        "desc": "Makes your weapon sharper, causing it to deal more damage.",
+        "level": [
+          "+10% increased damage",
+          "+21% increased damage",
+          "+33% increased damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Shockwave",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Onde de choc",
+        "desc": "La dernière attaque d'un combo génère une onde de choc ingligeant des dégats aux ennemis.",
+        "level": [
+          "Inglige {AMOUNT} de dégâts",
+          "Inglige {AMOUNT} de dégâts",
+          "Inglige {AMOUNT} de dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Shockwave",
+        "desc": "The last attack in acombo launches a shockwave, damaging enemies.",
+        "level": [
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Smiting",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Frappe",
+        "desc": "Augmente les dégats conter les morts-vivants.",
+        "level": [
+          "Augmente les dégâts de 20%",
+          "Augmente les dégâts de 30%",
+          "Augmente les dégâts de 40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Smiting",
+        "desc": "Increase damage against the undead.",
+        "level": [
+          "+20% increased damage",
+          "+30% increased damage",
+          "+40% increased damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Snowing",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Boule de neige",
+        "desc": "Projette une boulle de neige vers un ennemie à proximité, l'étourdissant brièvement.",
+        "level": [
+          "Se déclenche toutes les 5 secondes",
+          "Se déclenche toutes les 3 secondes",
+          "Se déclenche toutes les seconde"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Snowball",
+        "desc": "Fires a snowball at a nearby enemy every few seconds, briefly stunning it.",
+        "level": [
+          "Triggers every 5 seconds",
+          "Triggers every 3 seconds",
+          "Triggers every second"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SoulSiphon",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Siphon d'âmes",
+        "desc": "Lorsque vous frappez un ennemi, vous donne 5% de chance de recevoir des âmes supplémentaires.",
+        "level": [
+          "2 âmes",
+          "4 âmes",
+          "6 âmes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Soul siphon",
+        "desc": "When you hit an enemy, gain a 5% chance to grant you a bunch of extra souls.",
+        "level": [
+          "2 souls",
+          "4 souls",
+          "6 souls"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SpeedSynergy",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Synergie de vitesse",
+        "desc": "Vous gagnez +20% en vitesse de mouvement pendant une courte période en activant un artéfact.",
+        "level": [
+          "Durée de 1 seconde",
+          "Durée de 2 secondes",
+          "Durée de 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Speed synergy",
+        "desc": "When activating any artifact, you gain +20% movement speed for a short time.",
+        "level": [
+          "1 second duration",
+          "2 seconds duration",
+          "3 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SpiritSpeed",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Agilité des âmes",
+        "desc": "Lorsque vous collectez une âme, vous gagnez un boost de 5% vitesse de mouvement d'empilement pendant une courte période.",
+        "level": [
+          "Durée de 3 secondes",
+          "Durée de 5 secondes",
+          "Durée de 7 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Soul speed",
+        "desc": "When you gather a soul, you gain a 5% stacking movement speed boost for a short time.",
+        "level": [
+          "3 seconds duration",
+          "5 seconds duration",
+          "7 seconds duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Stunning",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Étourdi",
+        "desc": "Chance d'étourdir temporairement les ennemis.",
+        "level": [
+          "5% de chance de se déclencher",
+          "10% de chance de se déclencher",
+          "15% de chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Stunning",
+        "desc": "Chance to temporarily stun enemies.",
+        "level": [
+          "5% chance to trigger",
+          "10% chance to trigger",
+          "15% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Supercharge",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Supercharge",
+        "desc": "Les tirs chargés font plus de dégâts et entraînent plus de recul.",
+        "level": [
+          "Augmentation des dégâts de +20%",
+          "Augmentation des dégâts de +30%",
+          "Augmentation des dégâts de +40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Supercharge",
+        "desc": "Charged shots deal more damage and have more pushback.",
+        "level": [
+          "+20% increased damage",
+          "+30% increased damage",
+          "+40% increased damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SurpriseGift",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Cadeau surprise",
+        "desc": "Quand vous utilisez une potion de soin, vous créez parfois des consommables au hasard.",
+        "level": [
+          "50% de chance de se déclencher",
+          "100% de chance de se déclencher",
+          "150% de chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Surprise gift",
+        "desc": "Whenever you use a healing potion, you sometimes create random consumables.",
+        "level": [
+          "50% chance to trigger",
+          "100% chance to trigger",
+          "150% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Swiftfooted",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Agile des pieds",
+        "desc": "Rouler vous fait bouger plus rapidement pendant trois secondes.",
+        "level": [
+          "Vitesse de mouvement augmentée de +30%",
+          "Vitesse de mouvement augmentée de +40%",
+          "Vitesse de mouvement augmentée de +50%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Swiftfooted",
+        "desc": "Rolling makes you move faster for three seconds.",
+        "level": [
+          "+30% movement speed",
+          "+40% movement speed",
+          "+50% movement speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Swirling",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tourbillonement",
+        "desc": "Lorsqu'elle frappe un ennemi, la dernière attaque d'un combo est un tourbillonement qui inflige des dégâts aux ennemis proches.",
+        "level": [
+          "Inglige {AMOUNT} dégâts",
+          "Inglige {AMOUNT} dégâts",
+          "Inglige {AMOUNT} dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Swirling",
+        "desc": "Hitting an enemy with the last attack in a combo performs a swirling attack, damaging nearby enemies.",
+        "level": [
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TempoTheft",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Vol de vitesse",
+        "desc": "Vole une petite portion de la vitesse de mouvement d'une créature pour vous l'accorder pendant quatre secondes.",
+        "level": [
+          "17% de vitesse de déplacement volée",
+          "33% de vitesse de déplacement volée",
+          "50% de vitesse de déplacement volée"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Tempo theft",
+        "desc": "Steals a small amount of a mob's movement speed and gives it to you for four seconds.",
+        "level": [
+          "17% stolen speed",
+          "33% stolen speed",
+          "50% stolen speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Thorns",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Épines",
+        "desc": "Vous infligez des dégats lorsque l'adversaire vous en inflige.",
+        "level": [
+          "100% de dégâts infligés",
+          "150% de dégâts infligés",
+          "200% de dégâts infligés"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Thorns",
+        "desc": "Whenever you take damage, you deal damage back to the attacker.",
+        "level": [
+          "100% damage returned",
+          "150% damage returned",
+          "200% damage returned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Thundering",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tonnerre",
+        "desc": "A une chance de 30% de déclencher un éclair qui inflige des dgâts aux ennemis à proximité.",
+        "level": [
+          "Inflige {AMOUNT} dégâts",
+          "Inflige {AMOUNT} dégâts",
+          "Inflige {AMOUNT} dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Thundering",
+        "desc": "Has a 30% chance to summon a lightning strike that damages nearby enemies.",
+        "level": [
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage",
+          "Deals {AMOUNT} damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TumbleBee",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Essaim d'abeilles",
+        "desc": "Possibilité d'invoquer une abeille lorsque vous esquivez : jusqu'à 3 abeilles se rangent à vos côtés.",
+        "level": [
+          "33% de possibilité d'invoquer",
+          "67% de possibilité d'invoquer",
+          "100% de possibilité d'invoquer"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Tumble bee",
+        "desc": "Chance to summon a bee when you roll, with up to 3 bees joining your side.",
+        "level": [
+          "33% chance to summon",
+          "67% chance to summon",
+          "100% chance to summon"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Unchanting",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Peu enchantant",
+        "desc": "Les projectiles infligent plus de dégats aux ennemies enchantés.",
+        "level": [
+          "+50 de dégâts",
+          "+75 de dégâts",
+          "+100 de dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Unchanting",
+        "desc": "Projectiles deal more damage to enchanted enemies.",
+        "level": [
+          "+50% bonus damage",
+          "+75% bonus damage",
+          "+100% bonus damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Unset",
+    "type": [
+      "Armor",
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Non défini",
+        "desc": "Vous pouvez changer cet enchantement en cliquant sur son nom ci-dessus.",
+        "level": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Unset",
+        "desc": "You can change this enchantment by clicking his name just above.",
+        "level": [
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Weakening",
+    "type": [
+      "Melee",
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Affaiblissement",
+        "desc": "Vos attaques réduisent les points d'attaque de tous les ennemis à proximité pendant cinq secondes.",
+        "level": [
+          "Dégâts des ennemis réduits de -20%",
+          "Dégâts des ennemis réduits de -30%",
+          "Dégâts des ennemis réduits de -40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Weakening",
+        "desc": "Your attacks decrease the attack damage of all nearby enemies for five seconds.",
+        "level": [
+          "-20% reduced damage",
+          "-30% reduced damage",
+          "-40% reduced damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "WildRage",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Rage intense",
+        "desc": "Frapper un ennemi est susceptible de le rendre enragé, ce qui peut le rendre hostile à tout le monde.",
+        "level": [
+          "20% chance de se déclencher",
+          "30% chance de se déclencher",
+          "40% chance de se déclencher"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Wild rage",
+        "desc": "Hitting an enemy has a chance to send it into a rage, making it hostile towards everyone.",
+        "level": [
+          "20% chance to trigger",
+          "30% chance to trigger",
+          "40% chance to trigger"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BaneOfIllagers",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Fléau des illageois",
+        "desc": "Les attaques infligent des dégâts supplémetaires aux illageois.",
+        "level": [
+          "Augmentation des dégâts de +20%",
+          "Augmentation des dégâts de +30%",
+          "Augmentation des dégâts de +40%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Illager's bane",
+        "desc": "Attacks deal extra damage to illagers.",
+        "level": [
+          "+20% increased damage",
+          "+30% increased damage",
+          "+40% increased damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DeathBarter",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Troc mortel",
+        "desc": "La première quantité définie d'émeraudes collectées est stockée, puis dépensée pour sauver le joueur de la mort.",
+        "level": [
+          "Coûte 150 émeraudes",
+          "Coûte 100 émeraudes",
+          "Coûte 50 émeraudes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Death barter",
+        "desc": "The first amount of emeralds collected are stored and then spent to save the player from death.",
+        "level": [
+          "Costs 150 emeralds",
+          "Costs 100 emeralds",
+          "Costs 50 emeralds"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EmeraldDivination",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Explorateur chanceux",
+        "desc": "Chance de faire apparaître des émeraudes pour chaque bloc exploré.",
+        "level": [
+          "1 émeraude émerge",
+          "2 émeraudes émergent",
+          "3 émeraudes émergent"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Lucky explorer",
+        "desc": "Chance to spawn emeralds with every block explored.",
+        "level": [
+          "1 emerald spawned",
+          "2 emeralds spawned",
+          "3 emeralds spawned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MultiDodge",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Roulade multiple",
+        "desc": "Accorde des roulades supplémentaires.",
+        "level": [
+          "Accorde 2 roulades",
+          "Accorde 3 roulades",
+          "Accorde 4 roulades"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Multi-roll",
+        "desc": "Grants extra rolls.",
+        "level": [
+          "Grants 2 rolls",
+          "Grants 3 rolls",
+          "Grants 4 rolls"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ResurrectionSurge",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Boost de vie",
+        "desc": "Chaque fois que vous erdez une vie, votre santé maximale augmente.",
+        "level": [
+          "11% de santé supplémentaire",
+          "22% de santé supplémentaire",
+          "33% de santé supplémentaire"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Life boost",
+        "desc": "Each time you expend a life, your maximum health increases.",
+        "level": [
+          "11% extra health",
+          "22% extra health",
+          "33% extra health"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "RollCharge",
+    "dlcId": "Howling Peaks",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Chargement par roulade",
+        "desc": "Lorsque vous effectuez une roulade, votre prochaine attaque à distance dans la fenêtre de temps sera entièrement chargée automatiquement.",
+        "level": [
+          "Tir chargé pour 1 seconde",
+          "Tir chargé pour 2 secondes",
+          "Tir chargé pour 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Roll charge",
+        "desc": "When you perform a roll, your next ranged attack within the timing window will automatically be fully charged.",
+        "level": [
+          "Charged shot for 1 second",
+          "Charged shot for 2 seconds",
+          "Charged shot for 3 seconds"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ArtifactCharge",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Charge d'artéfact",
+        "desc": "Chaque fois que vous utilisez un artéfact, vos prochaines attaques sont chargées.",
+        "level": [
+          "La prochaine attaque chargée",
+          "Les 2 prochaines attaques chargées",
+          "Les 3 prochaines attaques chargées"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Artifact charge",
+        "desc": "Whenever you use an artifact, your next few attacks become charged.",
+        "level": [
+          "Next attack charged",
+          "Next 2 attacks charged",
+          "Next 3 attacks charged"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BeastBoss",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Boss bestiale",
+        "desc": "Vos familiers infligent plus de dégâts.",
+        "level": [
+          "Les familiers infligent 20% de dégâts en plus",
+          "Les familiers infligent 30% de dégâts en plus",
+          "Les familiers infligent 40% de dégâts en plus"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Beast boss",
+        "desc": "Your pets deal more damages.",
+        "level": [
+          "Pets deal 20% more damages",
+          "Pets deal 30% more damages",
+          "Pets deal 40% more damages"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BeastBurst",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Explosion bestiale",
+        "desc": "Utiliser une potion de soin provoque une explosion à l'emplacement de vos familiers, infligeant des dégâts aux créatures autour d'eux.",
+        "level": [
+          "{AMOUNT} de dégâts d'explosion",
+          "{AMOUNT} de dégâts d'explosion",
+          "{AMOUNT} de dégâts d'explosion"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Beast burst",
+        "desc": "Using an healing potion causes an explosion at your pet's location, dealing damage to mobs around them.",
+        "level": [
+          "{AMOUNT} explosion damage",
+          "{AMOUNT} explosion damage",
+          "{AMOUNT} explosion damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BeastSurge",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Poussée bestiale",
+        "desc": "Utiliser une potion de soin augment l'attaque et la vitesse de mouvement de vos familiers pendant 10 secondes.",
+        "level": [
+          "Attaque et vitesse des familiers : +50%",
+          "Attaque et vitesse des familiers : +100%",
+          "Attaque et vitesse des familiers : +150%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Beast surge",
+        "desc": "Using your health potion boosts your pet's attack and move speed for 10 seconds.",
+        "level": [
+          "Pet's attack and speed +50%",
+          "Pet's attack and speed +100%",
+          "Pet's attack and speed +150%"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CooldownShot",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir de recharge",
+        "desc": "Lorsque vous attaquez avec un tir chargé, les temps de recharge des artéfacts sont diminués.",
+        "level": [
+          "Réduction du temps de recharge de 0.5 seconde",
+          "Réduction du temps de recharge de 1.0 seconde",
+          "Réduction du temps de recharge de 1.5 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Cooldown shot",
+        "desc": "When you attack with a charged shot, artifact cooldowns are decreased.",
+        "level": [
+          "0.5 second cooldown reduction",
+          "1.0 second cooldown reduction",
+          "1.5 seconds cooldown reduction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DamageSynergy",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Synergie d'artéfacts",
+        "desc": "Chaque fois que vous utilisez un artéfact, votre prochaine attaque inflige des dégâts supplémentaires.",
+        "level": [
+          "Inflige 40% de dégâts supplémentaires",
+          "Inflige 60% de dégâts supplémentaires",
+          "Inflige 80% de dégâts supplémentaires"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Artifact synergy",
+        "desc": "Whenever you use an artifact, your next attack deals bonus damage.",
+        "level": [
+          "Deals 40% extra damage",
+          "Deals 60% extra damage",
+          "Deals 80% extra damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "FireFocus",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Concentration des flammes",
+        "desc": "Les dégâts de feu que vous infligez sont augmentés.",
+        "level": [
+          "Augmentation des dégâts de feu de +25%",
+          "Augmentation des dégâts de feu de +50%",
+          "Augmentation des dégâts de feu de +75%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "FireFocus",
+        "desc": "The fire damage you deal is increased.",
+        "level": [
+          "+25% increased fire damage",
+          "+50% increased fire damage",
+          "+75% increased fire damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "LightningFocus",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Concentration d'éclairs",
+        "desc": "Les dégâts de foudre que vous infligez sont augmentés.",
+        "level": [
+          "Augmentation des dégâts de foudre de +25%",
+          "Augmentation des dégâts de foudre de +50%",
+          "Augmentation des dégâts de foudre de +75%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Lightning focus",
+        "desc": "The lightning damage you deal is increased.",
+        "level": [
+          "+25% increased lightning damage",
+          "+50% increased lightning damage",
+          "+75% increased lightning damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PainCycle",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Douleur récurrente",
+        "desc": "Attaquer draine votre vie pour vous ocroyer une pile de Douleur récurrente. Au bout de 5 piles, votre douleur est canalisée dans votre prochaine attaque.",
+        "level": [
+          "Les piles max infligent triple dégâts",
+          "Les piles max infligent quadruple dégâts",
+          "Les piles max infligent quintuple dégâts"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Pain Cycle",
+        "desc": "Attacking drains your life to grant you one stack of Pain Cycle. At 5 stacks, your pain is channeled into your next attack.",
+        "level": [
+          "Max stack does triple damage",
+          "Max stack does quadruple damage",
+          "Max stack does quintuple damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PoisonFocus",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Concentration de poison",
+        "desc": "Les dégâts de poison que vous infligez sont augmentés.",
+        "level": [
+          "Augmentation des dégâts de poison +25%",
+          "Augmentation des dégâts de poison +50%",
+          "Augmentation des dégâts de poison +75%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Poison focus",
+        "desc": "The poison daamge you deal is increased.",
+        "level": [
+          "+25% increased poison damage",
+          "+50% increased poison damage",
+          "+75% increased poison damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Reckless",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Téméraire",
+        "desc": "Votre santé est réduite de -60%, mais vos dégâts au corps à corps sont augmentés.",
+        "level": [
+          "Dégâts au corps à corps +40%",
+          "Dégâts au corps à corps +60%",
+          "Dégâts au corps à corps +80%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Reckless",
+        "desc": "Your health is reduced by -60%, but your melee damage is increased.",
+        "level": [
+          "Melee damage +40%",
+          "Melee damage +60%",
+          "Melee damage +80%"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ShockWeb",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Toile électrique",
+        "desc": "Des faisceaux électriques relient les dernières flèches chargées tirées, ce qui inflige des dégâts de foudre aux ennemis qui les touchent.",
+        "level": [
+          "Jusqu'à 1 faisceau",
+          "Jusqu'à 2 faisceaux",
+          "Jusqu'à 3 faisceaux"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Shock web",
+        "desc": "Beams of lightning connect the last few charged arrows fired, which deal lightning damage to ennemies who touch a beam.",
+        "level": [
+          "Up to 1 beam",
+          "Up to 2 beams",
+          "Up to 3 beams"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "SoulFocus",
+    "dlcId": "Flames of the Nether",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Concentration d'âmes",
+        "desc": "Augmente le nombre de dégâts d'âmes que vous infligez.",
+        "level": [
+          "Augmentation des dégâts d'âme de +10%",
+          "Augmentation des dégâts d'âme de +20%",
+          "Augmentation des dégâts d'âme de +30%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Soul focus",
+        "desc": "Increases the amount of soul damage you deal.",
+        "level": [
+          "+10% increased soul damage",
+          "+20% increased soul damage",
+          "+30% increased soul damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Flee",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Hâte",
+        "desc": " Augmente la vitesse de mouvement pendant une seconde après avoir subi des dégâts.",
+        "level": [
+          "Vitesse de mouvement +30%",
+          "Vitesse de mouvement +60%",
+          "Vitesse de mouvement +90%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Rush",
+        "desc": "Increase movement speed for one second after taking damage.",
+        "level": [
+          "+30% movement speed",
+          "+60% movement speed",
+          "+90% movement speed"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "GuardingStrike",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Frappe défensive",
+        "desc": "Lorsque vous terrassez une créature, vous obtenez un bouclier temporaire qui réduit les dégâts de 50%.",
+        "level": [
+          "Durée du bouclier de 2 secondes",
+          "Durée du bouclier de 3 secondes",
+          "Durée du bouclier de 4 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Guarding strike",
+        "desc": "When you defeat a mob, you are given a temporary shield that reduces damage by 50%.",
+        "level": [
+          "2 seconds shield duration",
+          "3 seconds shield duration",
+          "4 seconds shield duration"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "LuckOfTheSea",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Chance de la mer",
+        "desc": "Augmente votre chance, ce qui accroît la probabilité que vos butins rares deviennent uniques.",
+        "level": [
+          "10% d'augmentation de chance",
+          "20% d'augmentation de chance",
+          "30% d'augmentation de chance"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Luck of the sea",
+        "desc": "Increase your luck, which boosts the chance that rare drops become unique.",
+        "level": [
+          "10% luck increase",
+          "20% luck increase",
+          "30% luck increase"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MultiCharge",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Surcharge",
+        "desc": "Maintenez le bouton d'attaque à distance pour doubler, tripler ou quadrupler la charge de votre arc, augmente ainsi ses dégâts à chaque fois.",
+        "level": [
+          "Peut charger l'arme 2 fois",
+          "Peut charger l'arme 3 fois",
+          "Peut charger l'arme 4 fois"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Overcharge",
+        "desc": "Continue to hold ranged attack button to double, triple or quadruple charge your bow, increasing its damage each time.",
+        "level": [
+          "Can charge weapon 2 times",
+          "Can charge weapon 3 times",
+          "Can charge weapon 4 times"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PotionThirstMelee",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Ravitaillement",
+        "desc": "Vaincre une créature réduit le temps de recharge de votre potion de soins, elle sera disponible plus rapidement.",
+        "level": [
+          "Réduction du temps de recharge de 1 seconde",
+          "Réduction du temps de recharge de 2 secondes",
+          "Réduction du temps de recharge de 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Refreshment",
+        "desc": "Defeat a mob reduces your health potion's cooldown, allowing you to heal again more quickly.",
+        "level": [
+          "1 second cooldown reduction",
+          "2 seconds cooldown reduction",
+          "3 seconds cooldown reduction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "PotionThirstRanged",
+    "dlcId": "Hidden Depths",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Ravitaillement",
+        "desc": "Vaincre une créature réduit le temps de recharge de votre potion de soins, elle sera disponible plus rapidement.",
+        "level": [
+          "Réduction du temps de recharge de 1 seconde",
+          "Réduction du temps de recharge de 2 secondes",
+          "Réduction du temps de recharge de 3 secondes"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Refreshment",
+        "desc": "Defeat a mob reduces your health potion's cooldown, allowing you to heal again more quickly.",
+        "level": [
+          "1 second cooldown reduction",
+          "2 seconds cooldown reduction",
+          "3 seconds cooldown reduction"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Backstabber",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Embuscade",
+        "desc": "Attaquer les créatures qui ne vous ciblent pas activement augmente les dégâts infligés.",
+        "level": [
+          "Bonus de dégâts de 15%",
+          "Bonus de dégâts de 30%",
+          "Bonus de dégâts de 45%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Ambush",
+        "desc": "Attacks on mobs that are not actively targeting you deal increased damages.",
+        "level": [
+          "15% damages bonus",
+          "30% damages bonus",
+          "45% damages bonus"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "DippingPoison",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Imprégné de poison",
+        "desc": "Lorsque vous utilisez une potion de soins, vous recevez un carquois de flèches empoisonnées.",
+        "level": [
+          "4 flèches empoisonnées",
+          "6 flèches empoisonnées",
+          "8 flèches empoisonnées"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Dipping poison",
+        "desc": "When you use a health potion, you are given a quiver of poison arrows.",
+        "level": [
+          "4 poison arrows",
+          "6 poison arrows",
+          "8 poison arrows"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "LevitationShot",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Tir de lévitation",
+        "desc": "Après une roulade, votre prochaine attaque fera léviter brièvement la cible.",
+        "level": [
+          "100% dégâts de chute",
+          "200% dégâts de chute",
+          "300% dégâts de chute"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Levitation shot",
+        "desc": "After rolling, your next attack will cause the target to levitate briefly.",
+        "level": [
+          "100% fall damage",
+          "200% fall damage",
+          "300% fall damage"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ShadowFeast",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Afflux d'ombre",
+        "desc": "Les créature vaincues sous votre forme d'ombre vous octroient des âmes supplémentaires.",
+        "level": [
+          "6 âmes par créature",
+          "12 âmes par créature",
+          "16 âmes par créature"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Shadow surge",
+        "desc": "Mobs defeated while in shadow form grant extra souls.",
+        "level": [
+          "6 souls per mob",
+          "12 souls per mob",
+          "16 souls per mob"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ShadowFlash",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Armor"
+    ],
+    "tier": "Common",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Explosion d'ombre",
+        "desc": "Quitter votre form d'ombre déclenche une puissante explosion qui inflige des dégâts aux créatures proches.",
+        "level": [
+          "Rayon d'explosion de 2 blocs",
+          "Rayon d'explosion de 3 blocs",
+          "Rayon d'explosion de 4 blocs"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Shadow blast",
+        "desc": "Leaving shadow form triggers a powerful blast that damages nearby mobs.",
+        "level": [
+          "2 blocks blast radius",
+          "3 blocks blast radius",
+          "4 blocks blast radius"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VoidTouchedMelee",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Melee"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Frappe du vide",
+        "desc": "Attaquer une cible applique un multiplicateur de dégâts qui augmente progressivement jusqu'à un niveau max, puis est retiré.",
+        "level": [
+          "Multiplicateur de dégâts max de +200%",
+          "Multiplicateur de dégâts max de +400%",
+          "Multiplicateur de dégâts max de +600%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Void strike",
+        "desc": "Attacking a target applies a damage multiplier that rises steadily to a max level, then is removed.",
+        "level": [
+          "+200% max damage multiplier",
+          "+400% max damage multiplier",
+          "+600% max damage multiplier"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VoidTouchedRanged",
+    "dlcId": "Echoing Void",
+    "type": [
+      "Ranged"
+    ],
+    "tier": "Powerful",
+    "i18n": [
+      {
+        "locale": "fr-FR",
+        "name": "Frappe du vide",
+        "desc": "Attaquer une cible applique un multiplicateur de dégâts qui augmente progressivement jusqu'à un niveau max, puis est retiré.",
+        "level": [
+          "Multiplicateur de dégâts max de +100%",
+          "Multiplicateur de dégâts max de +200%",
+          "Multiplicateur de dégâts max de +300%"
+        ]
+      },
+      {
+        "locale": "en-EN",
+        "name": "Void strike",
+        "desc": "Attacking a target applies a damage multiplier that rises steadily to a max level, then is removed.",
+        "level": [
+          "+100% max damage multiplier",
+          "+200% max damage multiplier",
+          "+300% max damage multiplier"
+        ]
+      }
+    ]
+  }
+]

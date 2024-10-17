@@ -12,6 +12,10 @@
 <script setup>
 defineOptions({ name: 'FormFieldSet' });
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   legend: { type: String, required: true },
 });

@@ -17,6 +17,10 @@ defineOptions({ name: 'ContextSubMenu' });
 
 const emit = defineEmits(['over', 'out']);
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   disabled: { type: Boolean, default: false },
   visible: { type: Boolean, default: true },

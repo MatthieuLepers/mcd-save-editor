@@ -30,7 +30,7 @@
               :alt="armorProperty.rarity"
             />
             <span v-if="props.item.data.type !== 'MysteryArmor'">
-              {{ t(`MCD.Game.ArmorProperties.${armorProperty.armorPropertyIdentifier}`) }}
+              {{ armorProperty.armorPropertyData.getI18n('name') }}
             </span>
             <MCDArmorPropertySelect :property="armorProperty" :item="props.item" v-else />
           </li>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="MCDItemImage">
-        <img :src="image(props.item.itemData.image)" :alt="t(`MCD.Game.Items.${props.item.data.type}`)" />
+        <img :src="props.item.itemData.image" :alt="props.item.itemData.getI18n('name')" />
         <div class="MCDItemDetailsActions">
           <MCDImportButton v-if="!globalStore.state.selectedCharacter.inventory.isFull()" />
           <MCDExportButton :item="props.item" />
@@ -59,8 +59,6 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
-
 import MCDItemSelect from '@renderer/components/MCD/ItemSelect.vue';
 import MCDArmorPropertySelect from '@renderer/components/MCD/ArmorPropertySelect.vue';
 import MCDRarityLabel from '@renderer/components/MCD/RarityLabel.vue';
@@ -72,17 +70,15 @@ import MCDExportButton from '@renderer/components/MCD/ExportButton.vue';
 import MCDCloneButton from '@renderer/components/MCD/CloneButton.vue';
 import MCDDeleteButton from '@renderer/components/MCD/DeleteButton.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
 import { image } from '@renderer/core/utils';
 
 defineOptions({ name: 'MCDItemDetails' });
 
-const { t } = useI18n();
-
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem },
   enableClone: { type: Boolean, default: true },
   enableDelete: { type: Boolean, default: true },
 });
@@ -94,7 +90,7 @@ const actions = {
   handleMouseOver() {
     window.onmousewheel = (e) => {
       const direction = (e.deltaY > 0 ? -1 : 1);
-      props.item.data.power += direction / 10;
+      props.item.data.power = Math.max(1, props.item.data.power + (direction / 10));
       tutorialStore.actions.setFullfilled('ChangeLevel', true);
     };
   },

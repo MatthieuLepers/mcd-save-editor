@@ -47,6 +47,11 @@ export default {
       },
     },
   },
+  Updater: {
+    downloadingUpdate: 'Téléchargement de la mise à jour...',
+    readyToInstall: 'Mise à jour prête à être installée !',
+    quitAndInstall: 'Mettre à jour',
+  },
   Tutorial: {
     steps: {
       ...GlobalI18N.TutorialsData('fr-FR'),
@@ -58,12 +63,6 @@ export default {
     },
   },
   MCD: {
-    Game: {
-      AncientMobs: GlobalI18N.AncientMobsData('fr-FR'),
-      ArmorProperties: GlobalI18N.ArmorProperties('fr-FR'),
-      Enchants: GlobalI18N.Enchants('fr-FR'),
-      Items: GlobalI18N.Items('fr-FR'),
-    },
     DataCorruption: {
       Page: {
         title: 'Rapport d\'erreur de données corrompues',
@@ -343,7 +342,12 @@ export default {
     },
     Form: {
       Select: {
+        removeOption: 'Retirer l\'option {0}',
         emptyResult: 'Aucun résultat pour « {0} »',
+      },
+      ObjectList: {
+        addModel: 'Ajouter un model',
+        removeModel: 'Retirer ce model',
       },
     },
   },

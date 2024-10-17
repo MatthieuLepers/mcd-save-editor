@@ -6,7 +6,7 @@ import api from '@/main/api';
 contextBridge.exposeInMainWorld('api', api);
 
 sequelize.sync()
-  .then(() => {
+  .then(async () => {
     api.sendSync('databaseReady');
   })
   .catch(console.log)

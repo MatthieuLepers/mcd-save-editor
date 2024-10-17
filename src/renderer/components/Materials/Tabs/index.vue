@@ -13,15 +13,15 @@
         tag="ul"
         @change="actions.handleTabMoved"
       >
-        <template v-slot:item="{ element }">
+        <template #item="{ element }">
           <li
             :data-tab="element.label"
-            :class="GenerateModifiers('m-tabs__navigation-list__item', { current: element.$key === props.modelValue })"
+            :class="GenerateModifiers('m-tabs__navigation-list__item', { current: element.$key === modelValue })"
           >
             <button
               type="button"
               class="m-tabs__navigation-button"
-              @click="emit('update:modelValue', element.$key)"
+              @click="modelValue = element.$key"
             >
               <slot :name="`${element.$key}Nav`" :obj="element">
                 {{ element.label }}
@@ -29,7 +29,7 @@
             </button>
           </li>
         </template>
-        <template v-slot:footer>
+        <template #footer>
           <button
             v-if="props.allowAdd"
             type="button"
@@ -42,7 +42,7 @@
       </Draggable>
     </nav>
     <div class="m-tabs__container">
-      <slot :name="props.modelValue" :obj="State.currentTab" />
+      <slot :name="modelValue" :obj="State.currentTab" />
     </div>
   </div>
 </template>
@@ -53,12 +53,18 @@ import Draggable from 'vuedraggable';
 
 defineOptions({ name: 'Tabs' });
 
-const emit = defineEmits(['update:modelValue', 'orderChange', 'newTab']);
+const emit = defineEmits(['orderChange', 'newTab']);
 
 const tabsNav = ref(null);
 
+const modelValue = defineModel({ type: String });
+
+/**
+ * slots:
+ * - [tabName]Nav : Customize [tabName] navigation button
+ * - [tabName]    : [tabName] panel to display
+ */
 const props = defineProps({
-  modelValue: { type: String },
   tabs: { type: Object, default: () => ({}) },
   modifiers: { type: Object, default: () => ({}) },
   allowAdd: { type: Boolean, default: false },

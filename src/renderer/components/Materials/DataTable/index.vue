@@ -34,7 +34,7 @@
         itemKey="id"
         @change="actions.handleOrderChange"
       >
-        <template v-slot:item="{ element }">
+        <template #item="{ element }">
           <div>
             <DataTableBodyRow
               :columns="props.columns"
@@ -43,16 +43,16 @@
               :showSelectionRow="props.showSelectionRow"
               @selectLine="emit('selectLine', $event)"
             >
-              <template v-slot:actionColumnInner="{ obj, close }">
+              <template #actionColumnInner="{ obj, close }">
                 <slot name="actionColumnInner" :obj="obj" :close="close" />
               </template>
-              <template v-slot:actionColumn="{ obj }">
+              <template #actionColumn="{ obj }">
                 <slot name="actionColumn" :obj="obj" />
               </template>
               <template
                 v-for="(columnName, i) in Object.keys(props.columns)"
                 :key="i"
-                v-slot:[columnName]="{ obj, value, column }"
+                #[columnName]="{ obj, value, column }"
               >
                 <slot
                   :name="columnName"
@@ -63,7 +63,7 @@
                   {{ value }}
                 </slot>
               </template>
-              <template v-slot:secretArea="{ obj }">
+              <template #secretArea="{ obj }">
                 <slot name="secretArea" :obj="obj" />
               </template>
             </DataTableBodyRow>
@@ -76,7 +76,7 @@
       v-if="props.paginate && State.paginated.length > 1"
       class="m-datatable__footer"
     >
-      <!-- <DataTablePagination :data="paginated" :perPage="perPage" v-model="page" /> -->
+      <DataTablePagination :data="State.paginated" :perPage="perPage" v-model="page" />
     </div>
   </div>
 </template>
@@ -89,12 +89,22 @@ import DataTableRow from '@renderer/components/Materials/DataTable/Row.vue';
 import DataTableBodyRow from '@renderer/components/Materials/DataTable/BodyRow.vue';
 import DataTableColumn from '@renderer/components/Materials/DataTable/Column.vue';
 import DataTableButton from '@renderer/components/Materials/DataTable/Button.vue';
-// import DataTablePagination from '@renderer/components/Materials/DataTable/Pagination.vue';
+import DataTablePagination from '@renderer/components/Materials/DataTable/Pagination.vue';
 
 defineOptions({ name: 'DataTable' });
 
 const emit = defineEmits(['orderChange', 'selectLine']);
 
+const page = defineModel('page', { type: Number, default: 0 });
+
+/**
+ * slots:
+ * - actionColumnInner : Columns in actions row
+ * - actionColumn      : Buttons column in actions row
+ * - [column]          : column id
+ * - secretArea        : After row
+ * - lastRow           : After rows
+ */
 const props = defineProps({
   columns: { type: Object, default: () => ({}) },
   data: { type: Array, default: () => [] },
@@ -108,7 +118,6 @@ const props = defineProps({
 
 const state = reactive({
   perPage: props.perPage,
-  page: 1,
   sorting: {
     key: null,
     direction: '',
@@ -133,7 +142,7 @@ const State = computed(() => {
     return acc;
   }, []);
   const result = props.paginate
-    ? paginated[state.page - 1] || []
+    ? paginated[page.value - 1] || []
     : sorted
   ;
   const isGrabbable = result.every((obj) => obj.order !== undefined);

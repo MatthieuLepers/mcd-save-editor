@@ -6,8 +6,8 @@
       :value="props.value"
       :name="props.name"
       :disabled="props.disabled"
-      :checked="props.modelValue === props.value"
-      @click="emit('update:modelValue', props.value)"
+      :checked="modelValue === props.value"
+      @click="modelValue = props.value"
       @focus="state.focused = true"
       @blur="state.focused = false"
     />
@@ -22,11 +22,11 @@ import { reactive, getCurrentInstance } from 'vue';
 
 defineOptions({ name: 'FormRadio' });
 
-const emit = defineEmits(['update:modelValue']);
 const $uid = getCurrentInstance().uid;
 
+const modelValue = defineModel({ type: [String, Number, Boolean] });
+
 const props = defineProps({
-  modelValue: { type: [String, Number, Boolean] },
   id: { type: String, default: null },
   value: { type: [String, Number, Boolean, null], required: true },
   name: { type: String, default: null },

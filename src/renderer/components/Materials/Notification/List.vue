@@ -5,7 +5,9 @@
       :key="i"
       :class="GenerateModifiers('m-notification-list__item', { [notification.type]: true })"
     >
-      {{ notification.text }}
+      <slot :name="notification?.id ?? 'text'" :notification="notification">
+        {{ notification.text }}
+      </slot>
 
       <MaterialButton
         v-if="!!notification.action"

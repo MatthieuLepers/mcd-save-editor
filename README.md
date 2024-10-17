@@ -1,46 +1,70 @@
-# MCD Save Editor
+# electron-app
 
-[![GitHub release](https://img.shields.io/badge/Version-1.5.0-blue)](https://github.com/MatthieuLepers/mcd-save-editor/releases/latest)
-[![GitHub release](https://img.shields.io/badge/Game%20version-1.17.0.0-blue)](#) [![GitHub release](https://img.shields.io/badge/License-GNU%20GPLv3-blue)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+![electron version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/electron)
+![electron vite version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/electron-vite)
+![electron builder version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/electron-builder)
+![vite version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/vite)
+![vue version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/vue)
+![typescript version](https://img.shields.io/github/package-json/dependency-version/alex8088/electron-vite-boilerplate/dev/typescript)
 
-A Minecraft Dungeons Save Editor for Windows users.
+> An Electron application with Vue3 and TypesSript
 
----
+## Features
 
-## Installation
+- 💡 Optimize asset handling
+- 🚀 Fast HMR for renderer processes
+- 🔥 Hot reloading for main process and preload scripts
+- 🔌 Easy to debug
+- 🔒 Compile to v8 bytecode to protect source code
 
-Download and install [the latest release](https://github.com/MatthieuLepers/mcd-save-editor/releases/download/v1.5.0/MCD.Save.Editor.v1.5.0.exe).
+## Getting Started
 
-I included a how to use tutorial directly into the app, have a look to the "?" at top right.
+Read [documentation](https://electron-vite.org/) for more detail.
 
-I also include a way to fix corrupted data, the application will help you fix them.
+- [Configuring](https://electron-vite.org/config/)
+- [Development](https://electron-vite.org/guide/dev.html)
+- [Asset Handling](https://electron-vite.org/guide/assets.html)
+- [HMR](https://electron-vite.org/guide/hmr.html) & [Hot Reloading](https://electron-vite.org/guide/hot-reloading.html)
+- [Debugging](https://electron-vite.org/guide/debugging.html)
+- [Source code protection](https://electron-vite.org/guide/source-code-protection.html)
+- [Distribution](https://electron-vite.org/guide/distribution.html)
+- [Troubleshooting](https://electron-vite.org/guide/troubleshooting.html)
 
----
+You can also use the [create-electron](https://github.com/alex8088/quick-start/tree/master/packages/create-electron) tool to scaffold your project for other frameworks (e.g. `React`, `Svelte` or `Solid`).
 
-## Contributing
-**/!\ You should read this part before contributing /!\\**
+## Recommended IDE Setup
 
-### Installation
-Make sure you have node 16 installed. Then clone the repository, run `npm install` to install all node dependencies, then run `npm run dev` to start the application.
+- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
 
-The application loads automatically all Minecraft Dunegons saves located at `%homepath%\Saved Games\Mojang Studios\Dungeons`, if you don't have any, the app will notice you.
+## Project Setup
 
-### Pull requests
-Please apply the naming convention when you create a branch:
-- Create your branch from `develop`
-- For new feature, name your branch as `feature/{your-feature-name}`
-- For bug fix, name your branch as `fix/issue-{issue-number}` or `fix/{whatever-you-fixed}`
-- I'm using gitmoji for all commit, so please use it too when you commit anything
+### Install
 
-Use `develop` branch as target branch for your pull requests. To contribute properly, try to have as few commits as possible.
+```bash
+$ npm install
+```
 
-### Bug report
-To report any bug, make an issue using the "Bug issue template" and follow the template instructions.
+### Development
 
-### Features
-To make a feature or a request, make an issue using the "Feature issue template" and follow the template instructions.
+```bash
+$ npm run dev
+```
 
----
+### Build
 
-## Disclaimer
-This project is not affiliated with the game and or publishers. All rights reserved
+```bash
+# For windows
+$ npm run build:win
+
+# For macOS
+$ npm run build:mac
+
+# For Linux
+$ npm run build:linux
+```
+
+## Examples
+
+- [electron-vite-bytecode-example](https://github.com/alex8088/electron-vite-bytecode-example), source code protection
+- [electron-vite-decorator-example](https://github.com/alex8088/electron-vite-decorator-example), typescipt decorator
+- [electron-vite-worker-example](https://github.com/alex8088/electron-vite-worker-example), worker and fork

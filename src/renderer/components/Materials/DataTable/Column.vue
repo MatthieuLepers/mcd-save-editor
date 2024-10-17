@@ -7,6 +7,10 @@
 <script setup>
 defineOptions({ name: 'DataTableColumn' });
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   /**
    * Valid modifiers:

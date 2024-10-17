@@ -1,0 +1,2426 @@
+[
+  {
+    "id": "Axe",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 6.29,
+      "speed": 1.91,
+      "area": 3.75
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hache"},
+      {"locale": "en-EN", "name": "Axe"}
+    ]
+  },
+  {
+    "id": "Axe_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 6.29,
+      "speed": 1.91,
+      "area": 3.75
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tison"},
+      {"locale": "en-EN", "name": "Firebrand"}
+    ]
+  },
+  {
+    "id": "Axe_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Stunning"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 6.29,
+      "speed": 1.91,
+      "area": 3.75
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hache highlandaise"},
+      {"locale": "en-EN", "name": "Highland axe"}
+    ]
+  },
+  {
+    "id": "Battlestaff",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 6.47,
+      "speed": 2.95,
+      "area": 3.7
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bâton de combat"},
+      {"locale": "en-EN", "name": "Battlestaff"}
+    ]
+  },
+  {
+    "id": "Battlestaff_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Committed"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 6.49,
+      "speed": 2.63,
+      "area": 4.65
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bâton de croissance"},
+      {"locale": "en-EN", "name": "Growing staff"}
+    ]
+  },
+  {
+    "id": "Battlestaff_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Exploding"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 6.49,
+      "speed": 2.63,
+      "area": 3.68
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bâton de combat de la terreur"},
+      {"locale": "en-EN", "name": "Battlestaff of terror"}
+    ]
+  },
+  {
+    "id": "Claymore",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["t"],
+    "stats": {
+      "power": 9.96,
+      "speed": 1,
+      "area": 6
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Claymore"},
+      {"locale": "en-EN", "name": "Claymore"}
+    ]
+  },
+  {
+    "id": "Claymore_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 9.96,
+      "speed": 1,
+      "area": 6
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Voleur de cœur"},
+      {"locale": "en-EN", "name": "Heartstealer"}
+    ]
+  },
+  {
+    "id": "Claymore_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 9.96,
+      "speed": 1,
+      "area": 6
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Broadsword"},
+      {"locale": "en-EN", "name": "Broadsword"}
+    ]
+  },
+  {
+    "id": "Claymore_Unique3",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["DynamoMelee"],
+    "ancientHuntRunes": ["c", "t"],
+    "stats": {
+      "power": 9.96,
+      "speed": 1,
+      "area": 6
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hache majestueuse"},
+      {"locale": "en-EN", "name": "Great axeblade"}
+    ]
+  },
+  {
+    "id": "Claymore_Winter1",
+    "events": ["Chills and Thrills", "Festival of Frost"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 9.96,
+      "speed": 1,
+      "area": 6
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tranche-givre"},
+      {"locale": "en-EN", "name": "Frost slayer"}
+    ]
+  },
+  {
+    "id": "Cutlass",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.26,
+      "speed": 3.49,
+      "area": 4.58
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Coutelas"},
+      {"locale": "en-EN", "name": "Cutlass"}
+    ]
+  },
+  {
+    "id": "Cutlass_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 4.26,
+      "speed": 3.49,
+      "area": 4.58
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame sans nom"},
+      {"locale": "en-EN", "name": "Nameless blade"}
+    ]
+  },
+  {
+    "id": "Cutlass_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 4.26,
+      "speed": 3.49,
+      "area": 4.58
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Épée de danseur"},
+      {"locale": "en-EN", "name": "Dancer's sword"}
+    ]
+  },
+  {
+    "id": "Cutlass_Year1",
+    "events": ["First Year Anniversary", "Second Year Anniversary"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Rampaging"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 4.26,
+      "speed": 3.49,
+      "area": 4.58
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Étinceleur"},
+      {"locale": "en-EN", "name": "Sparkler"}
+    ]
+  },
+  {
+    "id": "Daggers",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.93,
+      "speed": 7.2,
+      "area": 1.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dagues"},
+      {"locale": "en-EN", "name": "Daggers"}
+    ]
+  },
+  {
+    "id": "Daggers_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Freezing"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 2.93,
+      "speed": 7.2,
+      "area": 1.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Mâchoires du froid"},
+      {"locale": "en-EN", "name": "Fangs of frost"}
+    ]
+  },
+  {
+    "id": "Daggers_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["EnigmaResonatorMelee"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 2.93,
+      "speed": 7.2,
+      "area": 1.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dagues lunaires"},
+      {"locale": "en-EN", "name": "Moon daggers"}
+    ]
+  },
+  {
+    "id": "Daggers_Unique3",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Swirling"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.93,
+      "speed": 7.2,
+      "area": 1.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dagues de cisaillement"},
+      {"locale": "en-EN", "name": "Sheer daggers"}
+    ]
+  },
+  {
+    "id": "DoubleAxe",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1.89,
+      "area": 12.93
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Labrys"},
+      {"locale": "en-EN", "name": "Double axe"}
+    ]
+  },
+  {
+    "id": "DoubleAxe_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Shockwave"],
+    "ancientHuntRunes": ["i", "t", "a"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1.89,
+      "area": 12.93
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Tourbillons"},
+      {"locale": "en-EN", "name": "Whirlwind"}
+    ]
+  },
+  {
+    "id": "DoubleAxe_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Exploding"],
+    "ancientHuntRunes": ["i", "t", "a"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1.89,
+      "area": 12.93
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hache maudite"},
+      {"locale": "en-EN", "name": "Cursed axe"}
+    ]
+  },
+  {
+    "id": "Gauntlets",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.19,
+      "speed": 6.55,
+      "area": 1.73
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gantelets"},
+      {"locale": "en-EN", "name": "Gauntlets"}
+    ]
+  },
+  {
+    "id": "Gauntlets_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["EnigmaResonatorMelee"],
+    "ancientHuntRunes": ["s", "i"],
+    "soulgathering": true,
+    "stats":{"power": 2.19,
+      "speed": 6.55,
+      "area": 1.73
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Poings de l'âme"},
+      {"locale": "en-EN", "name": "Soul fists"}
+    ]
+  },
+  {
+    "id": "Gauntlets_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 2.19,
+      "speed": 6.55,
+      "area": 1.73
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Boxeurs"},
+      {"locale": "en-EN", "name": "Maulers"}
+    ]
+  },
+  {
+    "id": "Gauntlets_Unique3",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 2.04,
+      "speed": 14,
+      "area": 1.47
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Bandages de combattant"},
+      {"locale": "en-EN", "name": "Fighter's bindings"}
+    ]
+  },
+  {
+    "id": "Glaive",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 7.1,
+      "speed": 1.46,
+      "area": 6.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hallebarde"},
+      {"locale": "en-EN", "name": "Glaive"}
+    ]
+  },
+  {
+    "id": "Glaive_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 7.1,
+      "speed": 1.46,
+      "area": 6.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fléau funéraire"},
+      {"locale": "en-EN", "name": "Grave bane"}
+    ]
+  },
+  {
+    "id": "Glaive_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["PoisonedMelee"],
+    "ancientHuntRunes": ["s", "a"],
+    "stats": {
+      "power": 7.1,
+      "speed": 1.46,
+      "area": 6.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hallebarde venimeuse"},
+      {"locale": "en-EN", "name": "Venom glaive"}
+    ]
+  },
+  {
+    "id": "Glaive_Spooky2",
+    "events": ["Spookier Fall"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Smiting"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 7.1,
+      "speed": 1.46,
+      "area": 6.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Balai ricaneur"},
+      {"locale": "en-EN", "name": "Crackling broom"}
+    ]
+  },
+  {
+    "id": "Hammer",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["t"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1,
+      "area": 7.76
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Grand marteau"},
+      {"locale": "en-EN", "name": "Great hammer"}
+    ]
+  },
+  {
+    "id": "Hammer_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Thundering"],
+    "ancientHuntRunes": ["t", "a"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1,
+      "area": 7.76
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faiseur de tempêtes"},
+      {"locale": "en-EN", "name": "Stormlander"}
+    ]
+  },
+  {
+    "id": "Hammer_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["GravityMelee"],
+    "ancientHuntRunes": ["t", "a"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1,
+      "area": 7.76
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Marteau de la gravité"},
+      {"locale": "en-EN", "name": "Hammer of gravity"}
+    ]
+  },
+  {
+    "id": "SkeletonHammer",
+    "events": ["Spooky Fall 22"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["GravityMelee"],
+    "ancientHuntRunes": ["t", "a"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1,
+      "area": 7.76
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Marteau à tête d'os"},
+      {"locale": "en-EN", "name": "Bonehead hammer"}
+    ]
+  },
+  {
+    "id": "Katana",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 8.24,
+      "speed": 1.52,
+      "area": 6.51
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Katana"},
+      {"locale": "en-EN", "name": "Katana"}
+    ]
+  },
+  {
+    "id": "Katana_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["CriticalHit"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 8.24,
+      "speed": 1.52,
+      "area": 6.51
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Katana du maître"},
+      {"locale": "en-EN", "name": "Master's katana"}
+    ]
+  },
+  {
+    "id": "Katana_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 8.24,
+      "speed": 1.52,
+      "area": 6.51
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Katana sombre"},
+      {"locale": "en-EN", "name": "Dark katana"}
+    ]
+  },
+  {
+    "id": "Mace",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 6.68,
+      "speed": 2.03,
+      "area": 3.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Masse"},
+      {"locale": "en-EN", "name": "Mace"}
+    ]
+  },
+  {
+    "id": "Mace_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 6.68,
+      "speed": 2.03,
+      "area": 3.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Grâce du soleil"},
+      {"locale": "en-EN", "name": "Sun's grace"}
+    ]
+  },
+  {
+    "id": "Mace_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 6.68,
+      "speed": 2.03,
+      "area": 3.17
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fléau"},
+      {"locale": "en-EN", "name": "Flail"}
+    ]
+  },
+  {
+    "id": "Pickaxe",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 11.34,
+      "speed": 1.44,
+      "area": 2.39
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Pioche"},
+      {"locale": "en-EN", "name": "Pickaxe"}
+    ]
+  },
+  {
+    "id": "Pickaxe_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 11.34,
+      "speed": 1.44,
+      "area": 2.39
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Pioche en diamant"},
+      {"locale": "en-EN", "name": "Diamond pickaxe"}
+    ]
+  },
+  {
+    "id": "Rapier",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i", "p"],
+    "stats": {
+      "power": 1,
+      "speed": 11.66,
+      "area": 5.66
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Rapière"},
+      {"locale": "en-EN", "name": "Rapier"}
+    ]
+  },
+  {
+    "id": "Rapier_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["BusyBee"],
+    "ancientHuntRunes": ["u", "i", "p"],
+    "stats": {
+      "power": 1,
+      "speed": 11.66,
+      "area": 5.66
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Dard d'abeille"},
+      {"locale": "en-EN", "name": "Bee stinger"}
+    ]
+  },
+  {
+    "id": "Rapier_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Freezing"],
+    "ancientHuntRunes": ["s", "i", "p"],
+    "stats": {
+      "power": 1.07,
+      "speed": 11.34,
+      "area": 5.66
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Feuille de congélation"},
+      {"locale": "en-EN", "name": "Freezing foil"}
+    ]
+  },
+  {
+    "id": "Sickles",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.98,
+      "speed": 5.2,
+      "area": 1.67
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faucilles"},
+      {"locale": "en-EN", "name": "Sickles"}
+    ]
+  },
+  {
+    "id": "Sickles_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["PoisonedMelee"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.98,
+      "speed": 5.2,
+      "area": 1.67
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Morsure du cauhcemar"},
+      {"locale": "en-EN", "name": "Nightmare's bite"}
+    ]
+  },
+  {
+    "id": "Sickles_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 2.98,
+      "speed": 5.2,
+      "area": 1.67
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Le dernier rire"},
+      {"locale": "en-EN", "name": "The last laungh"}
+    ]
+  },
+  {
+    "id": "SoulKnife",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "activeEnchants": ["SoulSiphon"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 12.23,
+      "speed": 1,
+      "area": 3.19
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Couteau des âmes"},
+      {"locale": "en-EN", "name": "Soul knife"}
+    ]
+  },
+  {
+    "id": "SoulKnife_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Committed"],
+    "ancientHuntRunes": ["o", "i"],
+    "soulgathering": true,
+    "stats":{"power": 12.23,
+      "speed": 1,
+      "area": 3.19
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Chercheur de vérité"},
+      {"locale": "en-EN", "name": "Truthseeker"}
+    ]
+  },
+  {
+    "id": "SoulKnife_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 12.23,
+      "speed": 1,
+      "area": 3.19
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Couteau éternel"},
+      {"locale": "en-EN", "name": "Eternal knife"}
+    ]
+  },
+  {
+    "id": "SoulScythe",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 6.92,
+      "speed": 1.65,
+      "area": 9.42
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faux des âmes"},
+      {"locale": "en-EN", "name": "Soul scythe"}
+    ]
+  },
+  {
+    "id": "SoulScythe_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["o", "a"],
+    "soulgathering": true,
+    "stats":{"power": 6.92,
+      "speed": 1.65,
+      "area": 9.42
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faux du geôlier"},
+      {"locale": "en-EN", "name": "Jailor's scythe"}
+    ]
+  },
+  {
+    "id": "SoulScythe_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Freezing"],
+    "ancientHuntRunes": ["o", "s"],
+    "soulgathering": true,
+    "stats":{"power": 6.92,
+      "speed": 1.65,
+      "area": 9.42
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faux du froid"},
+      {"locale": "en-EN", "name": "Frost scythe"}
+    ]
+  },
+  {
+    "id": "SoulScythe_Spooky2",
+    "events": ["Spookier Fall"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Freezing"],
+    "ancientHuntRunes": ["s", "o"],
+    "soulgathering": true,
+    "stats":{"power": 6.92,
+      "speed": 1.65,
+      "area": 9.42
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Faux en os"},
+      {"locale": "en-EN", "name": "Skull scythe"}
+    ]
+  },
+  {
+    "id": "Spear",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 5.67,
+      "speed": 2.03,
+      "area": 8.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lance"},
+      {"locale": "en-EN", "name": "Spear"}
+    ]
+  },
+  {
+    "id": "Spear_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Echo"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 5.67,
+      "speed": 2.03,
+      "area": 8.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lance chuchotante"},
+      {"locale": "en-EN", "name": "Whispering spear"}
+    ]
+  },
+  {
+    "id": "Spear_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 5.67,
+      "speed": 2.03,
+      "area": 8.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lance de chance"},
+      {"locale": "en-EN", "name": "Fortune spear"}
+    ]
+  },
+  {
+    "id": "Spear_spooky2",
+    "events": ["Spooky Fall 22"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 5.67,
+      "speed": 2.03,
+      "area": 8.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lance d'effroi"},
+      {"locale": "en-EN", "name": "Spine-chill spear"}
+    ]
+  },
+  {
+    "id": "Sword",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.99,
+      "speed": 3.16,
+      "area": 2.96
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Épée"},
+      {"locale": "en-EN", "name": "Sword"}
+    ]
+  },
+  {
+    "id": "Sword_Unique1",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.99,
+      "speed": 3.16,
+      "area": 2.96
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Épée en diamant"},
+      {"locale": "en-EN", "name": "Diamond sword"}
+    ]
+  },
+  {
+    "id": "Sword_Unique2",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["CriticalHit"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.99,
+      "speed": 3.16,
+      "area": 2.96
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Hawkbrand"},
+      {"locale": "en-EN", "name": "Hawkbrand"}
+    ]
+  },
+  {
+    "id": "Sword_Spooky1",
+    "events": ["Spooky Fall"],
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["CriticalHit"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.99,
+      "speed": 3.16,
+      "area": 2.96
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Épée sinistre"},
+      {"locale": "en-EN", "name": "Sinister sword"}
+    ]
+  },
+  {
+    "id": "Whip",
+    "dlcId": "Jungle Awakens",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1.1,
+      "area": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fouet"},
+      {"locale": "en-EN", "name": "Whip"}
+    ]
+  },
+  {
+    "id": "Whip_Unique1",
+    "dlcId": "Jungle Awakens",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 8.69,
+      "speed": 1.1,
+      "area": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fouet de liane"},
+      {"locale": "en-EN", "name": "Vine whip"}
+    ]
+  },
+  {
+    "id": "TempestKnife",
+    "dlcId": "Howling Peaks",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "activeEnchants": ["Rushdown"],
+    "ancientHuntRunes": ["c"],
+    "stats": {
+      "power": 4.62,
+      "speed": 4.22,
+      "area": 2.26
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Couteau de tempête"},
+      {"locale": "en-EN", "name": "Tempest Knife"}
+    ]
+  },
+  {
+    "id": "TempestKnife_Unique1",
+    "dlcId": "Howling Peaks",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Committed", "Rushdown"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 4.62,
+      "speed": 4.22,
+      "area": 1.55
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Couteau inébranlable de tempête"},
+      {"locale": "en-EN", "name": "Resolute Tempest Knife"}
+    ]
+  },
+  {
+    "id": "TempestKnife_Unique2",
+    "dlcId": "Howling Peaks",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Rushdown"],
+    "ancientHuntRunes": ["c", "s"],
+    "stats": {
+      "power": 4.62,
+      "speed": 4.22,
+      "area": 2.24
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Couteau glaçant des raffales"},
+      {"locale": "en-EN", "name": "Chill Gale Knife"}
+    ]
+  },
+  {
+    "id": "Boneclub",
+    "dlcId": "Flames of the Nether",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 13.32,
+      "speed": 1,
+      "area": 8.55
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Gourdin en os"},
+      {"locale": "en-EN", "name": "Boneclub"}
+    ]
+  },
+  {
+    "id": "Boneclub_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["BaneOfIllagers"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 13.32,
+      "speed": 1,
+      "area": 8.55
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Massue en os"},
+      {"locale": "en-EN", "name": "Bone cudgel"}
+    ]
+  },
+  {
+    "id": "Chainsword",
+    "dlcId": "Flames of the Nether",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u", "t"],
+    "stats": {
+      "power": 3.82,
+      "speed": 8.26,
+      "area": 1.43
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame de scie cassée"},
+      {"locale": "en-EN", "name": "Broken sawblade"}
+    ]
+  },
+  {
+    "id": "Chainsword_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["c", "t"],
+    "stats": {
+      "power": 3.82,
+      "speed": 8.26,
+      "area": 1.43
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame de scie mécanique"},
+      {"locale": "en-EN", "name": "Mechanized sawblade"}
+    ]
+  },
+  {
+    "id": "Anchor",
+    "dlcId": "Hidden Depths",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "area": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Ancre"},
+      {"locale": "en-EN", "name": "Anchor"}
+    ]
+  },
+  {
+    "id": "Anchor_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "area": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Ancre corrodée"},
+      {"locale": "en-EN", "name": "Encrusted anchor"}
+    ]
+  },
+  {
+    "id": "CoralBlade",
+    "dlcId": "Hidden Depths",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 1.86,
+      "speed": 4.54,
+      "area": 2.39
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame de corail"},
+      {"locale": "en-EN", "name": "Coral blade"}
+    ]
+  },
+  {
+    "id": "CoralBlade_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 2.57,
+      "speed": 3.48,
+      "area": 4.32
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lame-Éponge"},
+      {"locale": "en-EN", "name": "Sponge striker"}
+    ]
+  },
+  {
+    "id": "Backstabber",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "activeEnchants": ["Backstabber"],
+    "ancientHuntRunes": ["c"],
+    "stats": {
+      "power": 5.65,
+      "speed": 4.07,
+      "area": 1.66
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Traître"},
+      {"locale": "en-EN", "name": "Backstabber"}
+    ]
+  },
+  {
+    "id": "Backstabber_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Backstabber", "Echo"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 5.65,
+      "speed": 4.07,
+      "area": 1.66
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Preste-lame"},
+      {"locale": "en-EN", "name": "Swift striker"}
+    ]
+  },
+  {
+    "id": "ObsidianClaymore",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["t"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "area": 9.24
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Claymore d'obsidienne"},
+      {"locale": "en-EN", "name": "Obsidian claymore"}
+    ]
+  },
+  {
+    "id": "ObsidianClaymore_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["SharedPain"],
+    "ancientHuntRunes": ["t", "i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "area": 9.24
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "La nuit sans étoiles"},
+      {"locale": "en-EN", "name": "The starless night"}
+    ]
+  },
+  {
+    "id": "VoidTouchedBlades",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Common", "Rare"],
+    "activeEnchants": ["VoidTouchedMelee"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 5.71,
+      "speed": 3.11,
+      "area": 2.2
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lames touchées par le vide"},
+      {"locale": "en-EN", "name": "Void touched blades"}
+    ]
+  },
+  {
+    "id": "VoidTouchedBlades_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Melee",
+    "rarity": ["Unique"],
+    "activeEnchants": ["VoidTouchedMelee", "Leeching"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 5.71,
+      "speed": 3.11,
+      "area": 2.2
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Le début et la fin"},
+      {"locale": "en-EN", "name": "The beginning and the end"}
+    ]
+  },
+  {
+    "id": "Bow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc"},
+      {"locale": "en-EN", "name": "Bow"}
+    ]
+  },
+  {
+    "id": "Bow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Growing"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc d'os"},
+      {"locale": "en-EN", "name": "Bonebow"}
+    ]
+  },
+  {
+    "id": "Bow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["BonusShot"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc jumeaux"},
+      {"locale": "en-EN", "name": "Twin box"}
+    ]
+  },
+  {
+    "id": "Bow_Spooky1",
+    "events": ["Spooky Fall"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["BonusShot"],
+    "ancientHuntRunes": ["s", "i"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc hanté"},
+      {"locale": "en-EN", "name": "Haunted bow"}
+    ]
+  },
+  {
+    "id": "BurstCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r", "p"],
+    "stats": {
+      "power": 3.6,
+      "speed": 3.92,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète explosive"},
+      {"locale": "en-EN", "name": "Burst crossbow"}
+    ]
+  },
+  {
+    "id": "BurstCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["EnigmaResonatorRanged"],
+    "ancientHuntRunes": ["o", "r", "p"],
+    "stats": {
+      "power": 3.6,
+      "speed": 3.92,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète de chasseur d'âmes"},
+      {"locale": "en-EN", "name": "Soul hunter crossbow"}
+    ]
+  },
+  {
+    "id": "BurstCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["DynamoRanged"],
+    "ancientHuntRunes": ["c", "r", "p"],
+    "stats": {
+      "power": 3.6,
+      "speed": 3.92,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète corrompue"},
+      {"locale": "en-EN", "name": "Corrupted crossbow"}
+    ]
+  },
+  {
+    "id": "Crossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 7.07,
+      "speed": 1.95,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète"},
+      {"locale": "en-EN", "name": "Crossbow"}
+    ]
+  },
+  {
+    "id": "Crossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Piercing"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 7.07,
+      "speed": 1.95,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "La trancheuse"},
+      {"locale": "en-EN", "name": "The slicer"}
+    ]
+  },
+  {
+    "id": "Crossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RapidFire"],
+    "ancientHuntRunes": ["c", "r"],
+    "stats": {
+      "power": 7.07,
+      "speed": 1.95,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Chercheur d'azure"},
+      {"locale": "en-EN", "name": "Azure seeker"}
+    ]
+  },
+  {
+    "id": "DualCrossbows",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 3.86,
+      "speed": 3.65,
+      "ammo": 3.48
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Doubles arbalètes"},
+      {"locale": "en-EN", "name": "Dual crossbows"}
+    ]
+  },
+  {
+    "id": "DualCrossbows_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Unchanting"],
+    "ancientHuntRunes": ["r", "a"],
+    "stats": {
+      "power": 3.86,
+      "speed": 3.65,
+      "ammo": 3.48
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalètes ensorcelées"},
+      {"locale": "en-EN", "name": "Spellbound crossbows"}
+    ]
+  },
+  {
+    "id": "DualCrossbows_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Growing"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 3.86,
+      "speed": 3.65,
+      "ammo": 3.48
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Mini arbalètes"},
+      {"locale": "en-EN", "name": "Baby crossbows"}
+    ]
+  },
+  {
+    "id": "ExplodingCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 12.27,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète explosive"},
+      {"locale": "en-EN", "name": "Exploding crossbow"}
+    ]
+  },
+  {
+    "id": "ExplodingCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Gravity"],
+    "ancientHuntRunes": ["i", "a"],
+    "stats": {
+      "power": 12.27,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète qui implose"},
+      {"locale": "en-EN", "name": "Imploding crossbow"}
+    ]
+  },
+  {
+    "id": "ExplodingCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["ChainReaction"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 12.27,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Lanceur de carreaux enflammés"},
+      {"locale": "en-EN", "name": "Firebolt thrower"}
+    ]
+  },
+  {
+    "id": "HeavyCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète lourde"},
+      {"locale": "en-EN", "name": "Heavy crossbow"}
+    ]
+  },
+  {
+    "id": "HeavyCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Punch"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète de la mort"},
+      {"locale": "en-EN", "name": "Doom crossbow"}
+    ]
+  },
+  {
+    "id": "HeavyCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Ricochet"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 14,
+      "speed": 1,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète du tueur"},
+      {"locale": "en-EN", "name": "Slayer crossbow"}
+    ]
+  },
+  {
+    "id": "HuntingBow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["u"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de chasse"},
+      {"locale": "en-EN", "name": "Hunting bow"}
+    ]
+  },
+  {
+    "id": "HuntingBow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Infinity"],
+    "ancientHuntRunes": ["u", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Promesse du chasseur"},
+      {"locale": "en-EN", "name": "Hunter's promise"}
+    ]
+  },
+  {
+    "id": "HuntingBow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Power"],
+    "ancientHuntRunes": ["u", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc du maître"},
+      {"locale": "en-EN", "name": "Master's bow"}
+    ]
+  },
+  {
+    "id": "HuntingBow_Unique3",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["DynamoRanged"],
+    "ancientHuntRunes": ["u", "c"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc antique"},
+      {"locale": "en-EN", "name": "Ancient bow"}
+    ]
+  },
+  {
+    "id": "Longbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 5.33,
+      "speed": 3.41,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc long"},
+      {"locale": "en-EN", "name": "Longbow"}
+    ]
+  },
+  {
+    "id": "Longbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Supercharge"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 5.33,
+      "speed": 3.41,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de garde"},
+      {"locale": "en-EN", "name": "Guardian bow"}
+    ]
+  },
+  {
+    "id": "Longbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["FuseShot"],
+    "ancientHuntRunes": ["r", "a"],
+    "stats": {
+      "power": 5.33,
+      "speed": 3.41,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Serpent rouge"},
+      {"locale": "en-EN", "name": "Red snake"}
+    ]
+  },
+  {
+    "id": "Powerbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 9.96,
+      "speed": 3.41,
+      "ammo": 1.62
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de puissance"},
+      {"locale": "en-EN", "name": "Power bow"}
+    ]
+  },
+  {
+    "id": "Powerbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Power"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 9.96,
+      "speed": 3.41,
+      "ammo": 1.62
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de puissance d'élite"},
+      {"locale": "en-EN", "name": "Elite power bow"}
+    ]
+  },
+  {
+    "id": "Powerbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RadianceRanged"],
+    "ancientHuntRunes": ["s", "r", "i"],
+    "stats": {
+      "power": 9.96,
+      "speed": 3.41,
+      "ammo": 1.62
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Colibri"},
+      {"locale": "en-EN", "name": "Sabrewing"}
+    ]
+  },
+  {
+    "id": "PowerBow_Spooky2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Power"],
+    "ancientHuntRunes": ["s", "r", "i"],
+    "stats": {
+      "power": 9.96,
+      "speed": 3.41,
+      "ammo": 1.62
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc fantôme"},
+      {"locale": "en-EN", "name": "Phantom bow"}
+    ]
+  },
+  {
+    "id": "RapidCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 1,
+      "speed": 9.28,
+      "ammo": 11.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète rapide"},
+      {"locale": "en-EN", "name": "Rapid crossbow"}
+    ]
+  },
+  {
+    "id": "RapidCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["BonusShot"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 1,
+      "speed": 9.28,
+      "ammo": 11.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète papillon"},
+      {"locale": "en-EN", "name": "Butterfly crossbow"}
+    ]
+  },
+  {
+    "id": "RapidCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Accelerating"],
+    "ancientHuntRunes": ["c", "r"],
+    "stats": {
+      "power": 1,
+      "speed": 9.28,
+      "ammo": 11.52
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète automatique"},
+      {"locale": "en-EN", "name": "Auto crossbow"}
+    ]
+  },
+  {
+    "id": "ScatterCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["t"],
+    "stats": {
+      "power": 4.18,
+      "speed": 7.82,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète à dispersion"},
+      {"locale": "en-EN", "name": "Scatter crossbow"}
+    ]
+  },
+  {
+    "id": "ScatterCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 3.95,
+      "speed": 14,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Harpbalète"},
+      {"locale": "en-EN", "name": "Harp crossbow"}
+    ]
+  },
+  {
+    "id": "ScatterCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Ricochet"],
+    "ancientHuntRunes": ["i", "t"],
+    "stats": {
+      "power": 4.18,
+      "speed": 7.82,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Harpbalète de foudre"},
+      {"locale": "en-EN", "name": "Lightning harp crossbow"}
+    ]
+  },
+  {
+    "id": "Shortbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 2.73,
+      "speed": 8.26,
+      "ammo": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc court"},
+      {"locale": "en-EN", "name": "Shortbow"}
+    ]
+  },
+  {
+    "id": "Shortbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RapidFire"],
+    "ancientHuntRunes": ["c", "r"],
+    "stats": {
+      "power": 2.73,
+      "speed": 8.26,
+      "ammo": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc violet"},
+      {"locale": "en-EN", "name": "Purple storm"}
+    ]
+  },
+  {
+    "id": "Shortbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Accelerating"],
+    "ancientHuntRunes": ["c", "r"],
+    "stats": {
+      "power": 2.73,
+      "speed": 8.26,
+      "ammo": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Petit arc mécanique"},
+      {"locale": "en-EN", "name": "Mechanical shortbow"}
+    ]
+  },
+  {
+    "id": "Shortbow_Unique3",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RadianceRanged"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 2.73,
+      "speed": 8.26,
+      "ammo": 14
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de charme d'amour"},
+      {"locale": "en-EN", "name": "Love spell bow"}
+    ]
+  },
+  {
+    "id": "SoulBow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc des âmes"},
+      {"locale": "en-EN", "name": "Soul bow"}
+    ]
+  },
+  {
+    "id": "SoulBow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["TempoTheft"],
+    "ancientHuntRunes": ["c", "o"],
+    "soulgathering": true,
+    "stats":{"power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc nocturne"},
+      {"locale": "en-EN", "name": "Nocturnal bow"}
+    ]
+  },
+  {
+    "id": "SoulBow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Multishot"],
+    "ancientHuntRunes": ["o", "r"],
+    "soulgathering": true,
+    "stats":{"power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc des âmes perdues"},
+      {"locale": "en-EN", "name": "Bow of lost souls"}
+    ]
+  },
+  {
+    "id": "SoulBow_Winter1",
+    "events": ["Chills and Thrills", "Festival of Frost"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["TempoTheft"],
+    "ancientHuntRunes": ["o", "t"],
+    "soulgathering": true,
+    "stats":{"power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc frissonnant"},
+      {"locale": "en-EN", "name": "Shivering bow"}
+    ]
+  },
+  {
+    "id": "SoulCrossbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 5.33,
+      "speed": 1.95,
+      "ammo": 2.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arblète des âmes"},
+      {"locale": "en-EN", "name": "Soul crossbow"}
+    ]
+  },
+  {
+    "id": "SoulCrossbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["EnigmaResonatorRanged"],
+    "ancientHuntRunes": ["o"],
+    "soulgathering": true,
+    "stats":{"power": 5.33,
+      "speed": 1.95,
+      "ammo": 2.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète sauvage des âmes"},
+      {"locale": "en-EN", "name": "Feral soul crossbow"}
+    ]
+  },
+  {
+    "id": "SoulCrossbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Gravity"],
+    "ancientHuntRunes": ["o", "a"],
+    "soulgathering": true,
+    "stats":{"power": 5.33,
+      "speed": 1.95,
+      "ammo": 2.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Crystal de vide"},
+      {"locale": "en-EN", "name": "Voidcaller"}
+    ]
+  },
+  {
+    "id": "Trickbow",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 1.87,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc piège"},
+      {"locale": "en-EN", "name": "Trickbow"}
+    ]
+  },
+  {
+    "id": "Trickbow_Unique1",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["PoisonedRanged"],
+    "ancientHuntRunes": ["r", "a"],
+    "stats": {
+      "power": 1.87,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "La menace verte"},
+      {"locale": "en-EN", "name": "The green menace"}
+    ]
+  },
+  {
+    "id": "Trickbow_Unique2",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["WildRage"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 1.87,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "La crapule rose"},
+      {"locale": "en-EN", "name": "The pink scoundrel"}
+    ]
+  },
+  {
+    "id": "Trickbow_Year1",
+    "events": ["First Year Anniversary", "Second Year Anniversary"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["WildRage", "Ricochet"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 1.87,
+      "speed": 3.41,
+      "ammo": 5.33
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc en sucre"},
+      {"locale": "en-EN", "name": "Sugar Rush"}
+    ]
+  },
+  {
+    "id": "SlowBow",
+    "dlcId": "Creeping Winter",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["s"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc des neiges"},
+      {"locale": "en-EN", "name": "Snow bow"}
+    ]
+  },
+  {
+    "id": "SlowBow_Unique1",
+    "dlcId": "Creeping Winter",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Toucher de l'hiver"},
+      {"locale": "en-EN", "name": "Winter's touch"}
+    ]
+  },
+  {
+    "id": "SlowBow_Spooky2",
+    "events": ["Spookier Fall"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["s", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc en toile"},
+      {"locale": "en-EN", "name": "Web bow"}
+    ]
+  },
+  {
+    "id": "WindBow",
+    "dlcId": "Howling Peaks",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["i"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.95
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc soufflant"},
+      {"locale": "en-EN", "name": "Wind bow"}
+    ]
+  },
+  {
+    "id": "WindBow_Unique1",
+    "dlcId": "Howling Peaks",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Ricochet"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.95
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Écho de la vallée"},
+      {"locale": "en-EN", "name": "Echo of the Valley"}
+    ]
+  },
+  {
+    "id": "WindBow_Unique2",
+    "dlcId": "Howling Peaks",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RollCharge"],
+    "ancientHuntRunes": ["c", "i"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 5.95
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc explosif des rafales"},
+      {"locale": "en-EN", "name": "Burst gale bow"}
+    ]
+  },
+  {
+    "id": "CogCrossbow",
+    "dlcId": "Flames of the Nether",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 12.27,
+      "speed": 12.15,
+      "ammo": 2.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète mécanique"},
+      {"locale": "en-EN", "name": "Cog crossbow"}
+    ]
+  },
+  {
+    "id": "CogCrossbow_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Piercing"],
+    "ancientHuntRunes": ["r", "i"],
+    "stats": {
+      "power": 12.27,
+      "speed": 12.15,
+      "ammo": 2.86
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Fierté des piglins"},
+      {"locale": "en-EN", "name": "Pride of the piglins"}
+    ]
+  },
+  {
+    "id": "TwistingVineBow",
+    "dlcId": "Flames of the Nether",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc en lianes tortueuses"},
+      {"locale": "en-EN", "name": "Twisting vine bow"}
+    ]
+  },
+  {
+    "id": "TwistingVineBow_Unique1",
+    "dlcId": "Flames of the Nether",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["RollCharge"],
+    "ancientHuntRunes": ["c", "r"],
+    "stats": {
+      "power": 4.18,
+      "speed": 3.41,
+      "ammo": 1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc de lianes pleureuses"},
+      {"locale": "en-EN", "name": "Weeping vine bow"}
+    ]
+  },
+  {
+    "id": "BubbleBow",
+    "dlcId": "Hidden Depths",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 3.02,
+      "speed": 3.41,
+      "area": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc à bulles"},
+      {"locale": "en-EN", "name": "Bubble bow"}
+    ]
+  },
+  {
+    "id": "BubbleBow_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 3.02,
+      "speed": 3.41,
+      "area": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Éclat'bulles"},
+      {"locale": "en-EN", "name": "Bubble burster"}
+    ]
+  },
+  {
+    "id": "BubbleBow_Spooky2",
+    "events": ["Spooky Fall 22"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["Ricochet"],
+    "ancientHuntRunes": ["r", "s"],
+    "stats": {
+      "power": 3.02,
+      "speed": 3.41,
+      "area": 6.57
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc visqueux"},
+      {"locale": "en-EN", "name": "Gloopy bow"}
+    ]
+  },
+  {
+    "id": "HarpoonCrossbow",
+    "dlcId": "Hidden Depths",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 7.64,
+      "speed": 3.41,
+      "area": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète à harpons"},
+      {"locale": "en-EN", "name": "Harpoon crossbow"}
+    ]
+  },
+  {
+    "id": "HarpoonCrossbow_Unique1",
+    "dlcId": "Hidden Depths",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 7.64,
+      "speed": 3.41,
+      "area": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète nautique"},
+      {"locale": "en-EN", "name": "Nautical crossbow"}
+    ]
+  },
+  {
+    "id": "ShadowCrossbow",
+    "dlcId": "Echoing Void",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 4.76,
+      "speed": 1.95,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète de l'ombre"},
+      {"locale": "en-EN", "name": "Shadow crossbow"}
+    ]
+  },
+  {
+    "id": "ShadowCrossbow_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["ShadowShot"],
+    "ancientHuntRunes": ["r", "c"],
+    "stats": {
+      "power": 4.76,
+      "speed": 1.47,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète voilée"},
+      {"locale": "en-EN", "name": "Veiled crossbow"}
+    ]
+  },
+  {
+    "id": "BatCrossbow",
+    "events": ["Spooky Fall 22"],
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["ShadowShot"],
+    "ancientHuntRunes": ["r", "s"],
+    "stats": {
+      "power": 4.76,
+      "speed": 1.47,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arbalète hurlante"},
+      {"locale": "en-EN", "name": "Shrieking crossbow"}
+    ]
+  },
+  {
+    "id": "VoidBow",
+    "dlcId": "Echoing Void",
+    "type": "Ranged",
+    "rarity": ["Common", "Rare"],
+    "activeEnchants": ["VoidTouchedRanged"],
+    "ancientHuntRunes": ["r"],
+    "stats": {
+      "power": 5.1,
+      "speed": 2.63,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Arc du vide"},
+      {"locale": "en-EN", "name": "Void bow"}
+    ]
+  },
+  {
+    "id": "VoidBow_Unique1",
+    "dlcId": "Echoing Void",
+    "type": "Ranged",
+    "rarity": ["Unique"],
+    "activeEnchants": ["VoidTouchedRanged", "FuseShot"],
+    "ancientHuntRunes": ["r", "a"],
+    "stats": {
+      "power": 5.1,
+      "speed": 2.63,
+      "ammo": 4.1
+    },
+    "i18n": [
+      {"locale": "fr-FR", "name": "Appel du vide"},
+      {"locale": "en-EN", "name": "Call of the void"}
+    ]
+  }
+]

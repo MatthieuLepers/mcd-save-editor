@@ -18,6 +18,11 @@ import FormFieldContainer from '@renderer/components/Materials/Form/FieldContain
 
 defineOptions({ name: 'FormFieldLine' });
 
+/**
+ * slots:
+ * - default
+ * - field[i] : Customize field at index [i]
+ */
 const props = defineProps({
   size: { type: Number, default: 1 },
   modifiers: { type: Object, default: () => ({}) },

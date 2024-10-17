@@ -1,9 +1,12 @@
 import type { ErrorObject } from 'ajv';
 
 import i18n from '@renderer/plugins/i18n';
-import Enchantment, { IEnchantment } from '@renderer/core/classes/Enchantment';
-import type { IItem } from '@renderer/core/classes/Item';
-import { Enchants, Items } from '@renderer/core/data/Content';
+import GameEnchant from '@renderer/core/entities/enchant/game';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import type { IGameEnchant } from '@renderer/core/entities/enchant/i';
+import { Rarity } from '@renderer/core/entities/item/enums';
+import { itemsStore } from '@renderer/core/entities/item/store';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 
@@ -16,7 +19,7 @@ export default class Fixup {
   constructor(public validationErrorReport: ValidationErrorReport) {
   }
 
-  get item(): IItem {
+  get item(): IGameItem {
     return this.validationErrorReport.item;
   }
 
@@ -47,8 +50,8 @@ export default class Fixup {
     }
   }
 
-  getInvestedPoints(enchant: IEnchantment): number {
-    const enchantData = Enchants[enchant.id];
+  getInvestedPoints(enchant: IGameEnchant): number {
+    const enchantData = enchantsStore.state.enchants[enchant.id];
     let investedPointResult = 0;
     if (enchantData) {
       investedPointResult = enchant.level * 3 + (enchantData.tier === 'Powerful' ? 3 : 0);
@@ -153,7 +156,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsRequired'),
         apply: () => {
-          this.item.enchantments = [...Array(9).keys()].map(() => Enchantment.UNSET.data);
+          this.item.enchantments = [...Array(9).keys()].map(() => GameEnchant.UNSET.data);
         },
       },
     ];
@@ -165,7 +168,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.enchantmentsMinItems', [missing]),
         apply: () => {
-          this.item.enchantments!.push(...[...Array(missing).keys()].map(() => Enchantment.UNSET.data));
+          this.item.enchantments!.push(...[...Array(missing).keys()].map(() => GameEnchant.UNSET.data));
         },
       },
     ];
@@ -415,7 +418,7 @@ export default class Fixup {
   }
 
   getFixupRarityRequired(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.items.value[this.item.type];
     const result: Array<FixupAction> = [];
 
     if (itemData) {
@@ -494,7 +497,7 @@ export default class Fixup {
   }
 
   getFixupArmorpropertiesMinItems(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.state.armors[this.item.type];
     const result: Array<FixupAction> = [{
       label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems1'),
       apply: () => {
@@ -506,7 +509,7 @@ export default class Fixup {
       result.push({
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
-          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+          this.item.armorproperties = itemData.armorproperties.map((prop) => prop.toGameData());
         },
       });
     } else {
@@ -527,14 +530,14 @@ export default class Fixup {
   }
 
   getFixupArmorpropertiesMaxItems(): Array<FixupAction> {
-    const itemData = Items[this.item.type];
+    const itemData = itemsStore.state.armors[this.item.type];
     const result: Array<FixupAction> = [];
 
     if (itemData) {
       result.push({
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesMinItems2'),
         apply: () => {
-          this.item.armorproperties = itemData.armorproperties.map((id: string) => ({ id, rarity: 'Common' }));
+          this.item.armorproperties = itemData.armorproperties.map((prop) => prop.toGameData());
         },
       });
     } else {
@@ -594,7 +597,7 @@ export default class Fixup {
       {
         label: i18n.global.t('MCD.DataCorruption.Fixup.armorpropertiesRarityEnum'),
         apply: () => {
-          this.item.armorproperties![this.index].rarity = 'Common';
+          this.item.armorproperties![this.index].rarity = Rarity.COMMON;
         },
       },
     ];

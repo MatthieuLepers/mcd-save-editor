@@ -2,19 +2,21 @@ import { reactive } from 'vue';
 import type { RouteLocation } from 'vue-router';
 
 import Profil from '@renderer/core/classes/Profil';
-import type Character from '@renderer/core/classes/Character';
-import type Item from '@renderer/core/classes/Item';
-import type Enchantment from '@renderer/core/classes/Enchantment';
+import Character from '@renderer/core/classes/Character';
+import type GameItem from '@renderer/core/entities/item/game';
+import type GameEnchant from '@renderer/core/entities/enchant/game';
+import DemoCharacter from '../../public/json/demo.json';
 
 interface StoreData {
   profilList: Array<Profil>;
   selectedProfil: Profil | null;
   selectedCharacter: Character | null;
-  oldSelectedItem: Item | null;
-  selectedItem: Item | null;
-  selectedEnchant: Enchantment | null;
+  oldSelectedItem: GameItem | null;
+  selectedItem: GameItem | null;
+  selectedEnchant: GameEnchant | null;
   selectedEnchantChunkIndex: number | null;
   key: number;
+  isDemo: boolean;
 }
 
 const useGlobalStore = () => {
@@ -27,7 +29,44 @@ const useGlobalStore = () => {
     selectedEnchant: null,
     selectedEnchantChunkIndex: null,
     key: 0,
+    isDemo: false,
   });
+
+  const setters = {
+    setProfil(profil: Profil) {
+      state.selectedProfil = profil;
+      [state.selectedCharacter] = profil.characters;
+      state.oldSelectedItem = null;
+      [state.selectedItem] = state.selectedCharacter.inventory.inventory;
+      state.selectedEnchant = null;
+      state.selectedEnchantChunkIndex = null;
+    },
+    setCharacter(character: Character) {
+      state.selectedCharacter = character;
+      state.oldSelectedItem = null;
+      [state.selectedItem] = character.inventory.inventory;
+      state.selectedEnchant = null;
+      state.selectedEnchantChunkIndex = null;
+    },
+    setItem(item: GameItem) {
+      state.oldSelectedItem = state.selectedItem;
+      state.selectedItem = item;
+      state.selectedEnchant = null;
+      state.selectedEnchantChunkIndex = null;
+    },
+    setEnchant(enchant: GameEnchant) {
+      if (state.selectedEnchant?.netherite) {
+        if (state.selectedEnchant!.id !== 'Unset' && state.selectedEnchant!.level > 0) {
+          state.selectedItem!.netheriteEnchant = state.selectedEnchant!;
+        } else {
+          delete state.selectedItem!.data.netheriteEnchant;
+        }
+        state.selectedItem!.$key += 1;
+      }
+      state.selectedEnchant = enchant;
+      state.selectedEnchantChunkIndex = null;
+    },
+  };
 
   const actions = {
     enableTutorialOnRoute(route: RouteLocation) {
@@ -53,41 +92,13 @@ const useGlobalStore = () => {
         .filter((enchId) => enchId !== 'Unset')
       ;
     },
-  };
-
-  const setters = {
-    setProfil(profil: Profil) {
-      state.selectedProfil = profil;
-      [state.selectedCharacter] = profil.characters;
-      state.oldSelectedItem = null;
-      [state.selectedItem] = state.selectedCharacter.inventory.inventory;
-      state.selectedEnchant = null;
-      state.selectedEnchantChunkIndex = null;
-    },
-    setCharacter(character: Character) {
-      state.selectedCharacter = character;
-      state.oldSelectedItem = null;
-      [state.selectedItem] = character.inventory.inventory;
-      state.selectedEnchant = null;
-      state.selectedEnchantChunkIndex = null;
-    },
-    setItem(item: Item) {
-      state.oldSelectedItem = state.selectedItem;
-      state.selectedItem = item;
-      state.selectedEnchant = null;
-      state.selectedEnchantChunkIndex = null;
-    },
-    setEnchant(enchant: Enchantment) {
-      if (state.selectedEnchant?.netherite) {
-        if (state.selectedEnchant!.id !== 'Unset' && state.selectedEnchant!.level > 0) {
-          state.selectedItem!.netheriteEnchant = state.selectedEnchant!;
-        } else {
-          delete state.selectedItem!.data.netheriteEnchant;
-        }
-        state.selectedItem!.$key += 1;
-      }
-      state.selectedEnchant = enchant;
-      state.selectedEnchantChunkIndex = null;
+    loadDemoCharacter() {
+      const demo = new Character(DemoCharacter, 'demo.json');
+      const profil = new Profil('0');
+      state.isDemo = true;
+      state.profilList = [profil];
+      profil.characters = [demo];
+      setters.setProfil(profil);
     },
   };
 

@@ -1,2 +1,15 @@
-export { Account } from '@/main/database/models/Account';
+export { Dlc } from '@/main/database/models/Dlc';
+export { Event } from '@/main/database/models/Event';
+export { ArmorProperty } from '@/main/database/models/ArmorProperty';
+export { ArmorPropertyI18n } from '@/main/database/models/ArmorPropertyI18n';
+export { Armor } from '@/main/database/models/Armor';
+export { ArmorI18n } from '@/main/database/models/ArmorI18n';
+export { Artefact } from '@/main/database/models/Artefact';
+export { ArtefactI18n } from '@/main/database/models/ArtefactI18n';
+export { Enchant } from '@/main/database/models/Enchant';
+export { EnchantI18n } from '@/main/database/models/EnchantI18n';
+export { Weapon } from '@/main/database/models/Weapon';
+export { WeaponI18n } from '@/main/database/models/WeaponI18n';
+export { AncientMob } from '@/main/database/models/AncientMob';
+export { AncientMobI18n } from '@/main/database/models/AncientMobI18n';
 export { Setting } from '@/main/database/models/Setting';

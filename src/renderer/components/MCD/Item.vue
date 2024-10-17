@@ -1,7 +1,12 @@
 <template>
   <div
     :key="item.$key"
-    :class="GenerateModifiers('MCDItem', { Selected: props.item === globalStore.state.selectedItem, DragHolded: state.isHolded, Gilded: props.item.isGilded(), [props.item.data.rarity]: true })"
+    :class="GenerateModifiers('MCDItem', {
+      Selected: props.item === globalStore.state.selectedItem,
+      DragHolded: state.isHolded,
+      Gilded: props.item.isGilded(),
+      [props.item.data.rarity]: true,
+    })"
     @mousedown="actions.selectItem"
     @dragover.stop="actions.handleDragOver"
     @drop.stop="actions.handleDrop"
@@ -18,7 +23,7 @@
       :rarity="props.item.data.rarity"
       :item="props.item.itemData.image || null"
       :isNew="props.item.data.markedNew"
-      :isEvent="!!props.item.itemData.events && !props.showRuneList"
+      :isEvent="!!props.item.itemData.events.length && !props.showRuneList"
       @dragstart.stop="actions.handleDragStart"
       @dragend.stop="actions.handleDragEnd"
     />
@@ -32,7 +37,7 @@ import { reactive } from 'vue';
 import MCDItemTile from '@renderer/components/MCD/ItemTile.vue';
 import MCDRuneList from '@renderer/components/MCD/RuneList.vue';
 
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { dragDropStore } from '@renderer/core/stores/DragDropStore';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
@@ -40,7 +45,7 @@ import { tutorialStore } from '@renderer/core/tutorial/Store';
 defineOptions({ name: 'MCDItem' });
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem },
   showRuneList: { type: Boolean, default: false },
   noDragEvent: { type: Boolean, default: false },
   disableEquipControl: { type: Boolean, default: false },

@@ -12,6 +12,10 @@ import { reactive, watch } from 'vue';
 
 defineOptions({ name: 'ContextMenu' });
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   visible: { type: Boolean, default: false },
   anchor: { type: String, default: 'bottom left' },

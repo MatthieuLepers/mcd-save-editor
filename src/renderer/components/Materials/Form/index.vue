@@ -11,6 +11,11 @@ defineOptions({
 });
 
 const emit = defineEmits(['submit']);
+
+/**
+ * slots:
+ * - default
+ */
 </script>
 
 <style lang="scss" src="./index.scss">

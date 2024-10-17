@@ -427,7 +427,6 @@
 
         &__item {
           @include set-font-scale('xs');
-          @include make-accessibility-shadow();
           display: inline-flex;
           align-items: center;
           height: 24px;
@@ -437,6 +436,8 @@
           padding: 0 rem(8px);
           position: relative;
           margin: rem(1px);
+
+          @include make-accessibility-shadow;
 
           &:not(:last-of-type) {
             margin-right: rem(2px);

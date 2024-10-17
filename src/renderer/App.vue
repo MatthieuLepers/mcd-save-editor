@@ -12,14 +12,14 @@
       :tabs="State.tabs"
       @allowMoveFn="() => false">
       <template
-        v-for="(character, i) in globalStore.state.selectedProfil.characters"
+        v-for="(character, i) in globalStore.state.selectedProfil?.characters ?? []"
         :key="`navspan${i}`"
         v-slot:[`${character.uuid}Nav`]
       >
         <span>
           {{ character.data.name || t('App.tabs.unamedCharacter') }}
         </span>
-        <div class="CharacterActionContainer" :key="`actionctn${i}`">
+        <div v-if="!globalStore.state.isDemo" class="CharacterActionContainer">
           <button
             :title="t('App.tabs.edit.label')"
             class="CharacterAction CharacterActionEditName"
@@ -56,7 +56,7 @@
         </div>
       </template>
       <template
-        v-for="(character, i) in globalStore.state.selectedProfil.characters"
+        v-for="(character, i) in globalStore.state.selectedProfil?.characters ?? []"
         v-slot:[character.uuid]
         :key="`character${i}`"
       >
@@ -71,7 +71,15 @@
     {{ t('App.loadingProfils') }}
   </main>
 
-  <MaterialNotificationList />
+  <MaterialNotificationList>
+    <template #downloadupdate="{ notification }">
+      {{ notification.text }}
+      <MaterialProgressBar
+        class="app__progress-bar"
+        :percent="state.percent"
+      />
+    </template>
+  </MaterialNotificationList>
   <Tutorial v-if="state.ready" v-model="state.showTutorial" />
   <AppNavigation />
 </template>
@@ -93,7 +101,7 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 
-import MaterialAppTitleBar from '@renderer/components/AppTitleBar/index.vue';
+import MaterialAppTitleBar from '@renderer/components/App/TitleBar/index.vue';
 import MaterialTabs from '@renderer/components/Materials/Tabs/index.vue';
 import MaterialNotificationList from '@renderer/components/Materials/Notification/List.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
@@ -105,6 +113,12 @@ import { notificationStore } from '@renderer/components/Materials/Notification/S
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
 import { settingsStore } from '@renderer/core/entities/setting/store';
 import Shortcut from '@renderer/core/Shortcut';
+import { dlcsStore } from '@renderer/core/entities/dlc/store';
+import { eventsStore } from '@renderer/core/entities/event/store';
+import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/store';
+import { enchantsStore } from '@renderer/core/entities/enchant/store';
+import { itemsStore } from '@renderer/core/entities/item/store';
+import { ancientMobsStore } from '@renderer/core/entities/ancientMob/store';
 
 const route = useRoute();
 const { locale, t } = useI18n();
@@ -178,20 +192,64 @@ api.on('runShortcut', (shortcut) => {
   }
 });
 
+const updateAvailableNotification = {
+  id: 'downloadupdate',
+  type: 'info',
+  text: t('App.Updater.downloadingUpdate'),
+  delay: 0,
+  action: {
+    callback() {
+      notificationStore.actions.removeNotification(updateAvailableNotification);
+    },
+    icon: 'icon-close',
+  },
+};
+
+api.on('update-available', () => {
+  notificationStore.actions.pushRawNotification(updateAvailableNotification);
+});
+
+api.on('download-progress', (percent) => {
+  state.percent = percent / 100;
+});
+
+api.on('update-downloaded', () => {
+  const notification = {
+    type: 'success',
+    text: t('App.Updater.readyToInstall'),
+    delay: 0,
+    action: {
+      callback() {
+        api.sendSync('quitAndInstallUpdate');
+      },
+      label: t('App.Updater.quitAndInstall'),
+      icon: 'icon-export',
+    },
+  };
+  notificationStore.actions.removeNotification(updateAvailableNotification);
+  notificationStore.actions.pushRawNotification(notification);
+});
+
 watch(() => state.currentTab, (newTab) => {
   globalStore.setters.setCharacter(globalStore.state.selectedProfil.characters.find((ch) => ch.uuid === newTab));
 });
 
 onBeforeMount(() => {
   api.on('database-ready', async () => {
-    await settingsStore.actions.load();
-
     await api.invoke('localeChange', settingsStore.actions.getString('locale'));
     locale.value = settingsStore.actions.getString('locale');
   });
 });
 
-onMounted(() => {
+onMounted(async () => {
+  await settingsStore.actions.load();
+  await ancientMobsStore.actions.load();
+  await dlcsStore.actions.load();
+  await eventsStore.actions.load();
+  await armorPropertiesStore.actions.load();
+  await enchantsStore.actions.load();
+  await itemsStore.actions.load();
+
   if (globalStore.state.profilList.length) {
     Promise
       .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))
@@ -203,6 +261,8 @@ onMounted(() => {
     ;
   } else {
     state.ready = true;
+    globalStore.actions.loadDemoCharacter();
+    state.currentTab = globalStore.state.selectedCharacter.uuid;
   }
 });
 </script>

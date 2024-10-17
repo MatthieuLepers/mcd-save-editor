@@ -17,7 +17,7 @@
           />
         </DataTableColumn>
         <DataTableColumn :modifiers="{ inner: true }">
-          <slot name="actionColumnInner" :obj="props.obj" :close="state.open = false" />
+          <slot name="actionColumnInner" :obj="props.obj" :close="() => { state.open = false; }" />
         </DataTableColumn>
       </DataTableRow>
       <DataTableColumn
@@ -63,6 +63,13 @@ defineOptions({ name: 'DataTableBodyRow' });
 
 const emit = defineEmits(['contextmenu', 'selectLine']);
 
+/**
+ * slots:
+ * - actionColumnInner : Columns in actions row
+ * - actionColumn      : Buttons column in actions row
+ * - [column]          : column id
+ * - secretArea        : After row
+ */
 const props = defineProps({
   columns: { type: Object, default: () => ({}) },
   obj: { type: Object, default: () => ({}) },

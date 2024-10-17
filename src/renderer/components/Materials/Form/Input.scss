@@ -224,7 +224,6 @@
 
       &__adornment {
         @include set-font-scale('xs');
-        @include make-accessibility-shadow();
         position: absolute;
         bottom: 4px;
         right: 4px;
@@ -236,6 +235,8 @@
         justify-content: center;
         align-items: center;
         color: color(grey000);
+
+        @include make-accessibility-shadow();
 
         &--clickable {
           cursor: pointer;
@@ -349,7 +350,6 @@
 
       &__adornment {
         @include set-font-scale('xs');
-        @include make-accessibility-shadow();
         position: absolute;
         bottom: 4px;
         right: 4px;
@@ -361,15 +361,17 @@
         justify-content: center;
         align-items: center;
         color: color(grey000);
-  
+
+        @include make-accessibility-shadow();
+
         &--clickable {
           cursor: pointer;
         }
-  
+
         &:not(.m-form-input__adornment--clickable) {
           pointer-events: none;
         }
-  
+
         &:focus,
         &:hover {
           background-color: color(grey600);

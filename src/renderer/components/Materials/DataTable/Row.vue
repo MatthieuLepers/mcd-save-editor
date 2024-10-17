@@ -13,6 +13,10 @@ defineOptions({ name: 'DataTableRow' });
 
 const emit = defineEmits(['click', 'contextmenu']);
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   /**
    * Valid modifiers

@@ -22,6 +22,10 @@ defineOptions({ name: 'MButton' });
 
 const slots = useSlots();
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   type: { type: String, default: 'button' },
   disabled: { type: Boolean, default: false },

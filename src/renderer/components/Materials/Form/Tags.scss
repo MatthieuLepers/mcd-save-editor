@@ -29,7 +29,6 @@
   }
 
   &__remove {
-    @include make-accessibility-shadow;
     @include set-font-scale('s');
     width: 24px;
     height: 24px;
@@ -39,5 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include make-accessibility-shadow;
   }
 }

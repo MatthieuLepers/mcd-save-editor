@@ -1,16 +1,19 @@
 <template>
-  <div :class="GenerateModifiers('MCDItemSelect', { Focus: state.open, NoFilters: props.modelValue.isEquipped() })" ref="root">
+  <div :class="GenerateModifiers('MCDItemSelect', {
+    Focus: state.open,
+    NoFilters: modelValue.isEquipped(),
+  })" ref="root">
     <div
       class="MCDItemSelectOuter"
       @click="actions.handleClickToggle"
       @mouseover="actions.refreshTutorialPolygonList"
       @mouseout="actions.refreshTutorialPolygonList"
     >
-      {{ props.modelValue.toString() }}
+      {{ modelValue.toString() }}
     </div>
     <div class="MCDItemSelectInner" v-show="state.open">
       <div class="MCDItemSelectFiltersContainer">
-        <div v-if="!props.modelValue.isEquipped()" class="MCDItemSelectFilters">
+        <div v-if="!modelValue.isEquipped()" class="MCDItemSelectFilters">
           <button
             v-for="({ name, icon }, i) in state.filtersList"
             :key="i"
@@ -35,11 +38,11 @@
         >
           <img
             class="MCDItemSelectChoiceImage"
-            :src="image(itemData.image)"
-            :alt="t(`MCD.Game.Items.${itemData.name}`)"
+            :src="itemData.image"
+            :alt="itemData.getI18n('name')"
           />
           <div class="MCDItemSelectChoiceName">
-            <strong>{{ t(`MCD.Game.Items.${itemData.name}`) }}</strong>
+            <strong>{{ itemData.getI18n('name') }}</strong>
             <span>
               <span
                 v-for="(rarity, i) in itemData.rarity"
@@ -49,19 +52,16 @@
                 {{ t(`MCD.RarityLabel.${rarity.toLowerCase()}`) }}
               </span>
             </span>
-            <span
-              v-if="itemData.dlc"
-              :class="`${itemData.dlc.replace(/ /, '')}`"
-            >
-              {{ itemData.dlc }} DLC
+            <span v-if="itemData.dlcId" :class="`${itemData.dlc.id.replace(/ /g, '')}`">
+              {{ itemData.dlc.id }} DLC
             </span>
-            <ul class="MCDItemSelectChoiceEvents" v-if="itemData.events">
+            <ul class="MCDItemSelectChoiceEvents" v-if="!!itemData.events.length">
               <li
                 v-for="(event, i) in itemData.events"
                 :key="i"
-                :class="`${event.replace(/ /, '')}`"
+                :class="`${event.id.replace(/ /g, '')}`"
               >
-                {{ event }} Event
+                {{ event.id }} Event
               </li>
             </ul>
           </div>
@@ -81,13 +81,10 @@ import {
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import PolygonEnum from '@renderer/core/tutorial/PolygonEnum';
+import { Type } from '@renderer/core/entities/item/enums';
 import { tutorialStore } from '@renderer/core/tutorial/Store';
-import PolygonEnum from '@renderer/core/tutorial//PolygonEnum';
-import { ItemTypeEnum } from '@renderer/core/classes/enums/ItemTypeEnum';
-import { Items } from '@renderer/core/data/Content';
-import DLCsData from '@renderer/core/data/DLCs';
-import EventsData from '@renderer/core/data/Events';
-import { image } from '@renderer/core/utils';
+import { itemsStore } from '@renderer/core/entities/item/store';
 
 const FILTERS = [
   { name: 'all', icon: 'all' },
@@ -104,9 +101,7 @@ defineOptions({ name: 'MCDItemSelect' });
 const root = ref(null);
 const { t } = useI18n();
 
-const props = defineProps({
-  modelValue: { type: Object, required: true },
-});
+const modelValue = defineModel({ type: Object, required: true });
 
 const state = reactive({
   filtersList: FILTERS,
@@ -117,37 +112,39 @@ const state = reactive({
 
 const State = computed(() => ({
   filteredItemList: (() => {
-    const baseFilterFn = (itemData) => !itemData.disabled && itemData.name !== props.modelValue.data.type && t(`MCD.Game.Items.${itemData.name}`).toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0;
+    const baseFilterFn = (data) => !data.disabled
+      && data.id !== modelValue.value.data.type
+      && data.getI18n('name').toLowerCase().indexOf(state.searchString.toLowerCase()) >= 0;
 
-    if (props.modelValue.isEquipped()) {
-      const slot = (props.modelValue.isGear() ? props.modelValue.gearType : 'Artefact');
+    if (modelValue.value.isEquipped()) {
+      const slot = (modelValue.value.isGear() ? modelValue.value.gearType : 'Artefact');
       return Object
-        .values(Items)
-        .filter((itemData) => itemData.type === slot && baseFilterFn(itemData))
+        .values(itemsStore.items.value)
+        .filter((data) => data.type === slot && baseFilterFn(data))
       ;
     }
     if (state.filter === 'all') {
       return Object
-        .values(Items)
+        .values(itemsStore.items.value)
         .filter(baseFilterFn)
       ;
     }
     if (state.filter === 'Event') {
       return Object
-        .values(Items)
-        .filter((itemData) => itemData.events && baseFilterFn(itemData))
-        .sort((a, b) => EventsData[a.events[0]].startedAt.getTime() - EventsData[b.events[0]].startedAt.getTime())
+        .values(itemsStore.items.value)
+        .filter((itemData) => !!itemData.events.length && baseFilterFn(itemData))
+        .sort((a, b) => a.events[0].startedAt.getTime() - b.events[0].startedAt.getTime())
       ;
     }
     if (state.filter === 'DLC') {
       return Object
-        .values(Items)
-        .filter((itemData) => itemData.dlc && baseFilterFn(itemData))
-        .sort((a, b) => DLCsData[a.dlc].releasedAt.getTime() - DLCsData[b.dlc].releasedAt.getTime())
+        .values(itemsStore.items.value)
+        .filter((itemData) => itemData.dlcId && baseFilterFn(itemData))
+        .sort((a, b) => a.dlc.releasedAt.getTime() - b.dlc.releasedAt.getTime())
       ;
     }
     return Object
-      .values(Items)
+      .values(itemsStore.items.value)
       .filter((itemData) => itemData.type === state.filter && baseFilterFn(itemData))
     ;
   })(),
@@ -159,8 +156,8 @@ const actions = {
   },
   selectItem(itemData) {
     document.body.classList.remove('modal'); // Force update before re-render component
-    props.modelValue.convertTo(itemData);
-    if (itemData.type === ItemTypeEnum.ARTEFACT || (itemData.type !== ItemTypeEnum.ARTEFACT && itemData.rarity.length === 1)) {
+    modelValue.value.convertTo(itemData);
+    if (itemData.type === Type.ARTEFACT || (itemData.type !== Type.ARTEFACT && itemData.rarity.length === 1)) {
       tutorialStore.actions.setFullfilled('OpenSelector', null, null, true);
       tutorialStore.actions.setFullfilled('ChooseNewItem', false, 'InvalidItem');
     } else {

@@ -23,6 +23,7 @@ $field-line-gap: 8px;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  height: fit-content;
 
   &:not(:last-of-type) {
     margin-bottom: 8px;

@@ -88,6 +88,13 @@ const emit = defineEmits(['open', 'close', 'accept', 'refuse']);
 
 const root = ref(null);
 
+/**
+ * slots:
+ * - header  : Customize modal header
+ * - default : Modal body
+ * - footer  : Customize modal footer
+ * - close   : Customize close button
+ */
 const props = defineProps({
   name: { type: String, required: true },
   title: { type: String, default: null },
@@ -135,7 +142,9 @@ const actions = {
 };
 
 const handleClickBackdrop = (e) => {
-  if (e.target === root.value) modalStore.actions.hide(props.name);
+  if (e.target === root.value) {
+    actions.handleClose();
+  }
 };
 
 watch(() => state.open, (newVal) => {

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "Spooky Fall",
+    "startedAt": "2020-10-26",
+    "endedAt": "2020-11-03"
+  },
+  {
+    "id": "Chills and Thrills",
+    "startedAt": "2020-12-18",
+    "endedAt": "2020-12-30"
+  },
+  {
+    "id": "First Year Anniversary",
+    "startedAt": "2021-05-26",
+    "endedAt": "2021-06-13"
+  },
+  {
+    "id": "Spookier Fall",
+    "startedAt": "2021-10-13",
+    "endedAt": "2021-11-02"
+  },
+  {
+    "id": "Festival of Frost",
+    "startedAt": "2022-02-08",
+    "endedAt": "2022-02-22"
+  },
+  {
+    "id": "Second Year Anniversary",
+    "startedAt": "2022-05-25",
+    "endedAt": "2022-06-15"
+  },
+  {
+    "id": "Spooky Fall 22",
+    "startedAt": "2022-10-26",
+    "endedAt": "2022-11-09"
+  }
+]

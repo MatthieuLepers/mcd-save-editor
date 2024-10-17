@@ -7,6 +7,10 @@
 <script setup>
 defineOptions({ name: 'FormFieldContainer' });
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   modifiers: { type: Object, default: () => ({}) },
 });

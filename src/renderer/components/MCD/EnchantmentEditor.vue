@@ -16,13 +16,13 @@
       </h2>
       <div class="MCDEnchantmentEditorLeft">
         <p>
-          {{ t(`MCD.Game.Enchants.${globalStore.state.selectedEnchant.enchantIdentifier}.desc`) }}
+          {{ globalStore.state.selectedEnchant.enchantData.getI18n('desc') }}
         </p>
         <div class="TierContainer" v-if="globalStore.state.selectedEnchant.enchantIdentifier !== 'Unset'">
           <h3>{{ t('MCD.EnchantmentEditor.upgradeTiers') }}</h3>
           <ul>
             <li
-              v-for="(level, index) in tm(`MCD.Game.Enchants.${globalStore.state.selectedEnchant.enchantIdentifier}.level`)"
+              v-for="(level, index) in globalStore.state.selectedEnchant.enchantData.getI18n('level')"
               :key="`${globalStore.state.selectedEnchant.enchantIdentifier}lvl${index}`"
               :class="{ checked: globalStore.state.selectedEnchant.level >= index + 1 }"
             >
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="MCDEnchantmentEditorRight">
-        <img :src="image(globalStore.state.selectedEnchant.enchantData.image)" :alt="globalStore.state.selectedEnchant.enchantIdentifier" />
+        <img :src="globalStore.state.selectedEnchant.enchantData.image" :alt="globalStore.state.selectedEnchant.enchantIdentifier" />
         <div class="MCDEnchantmentEditorCost" v-if="!globalStore.state.selectedEnchant.netherite && globalStore.state.selectedEnchant.level < 3">
           <span>Enchant Cost</span>
           <p><img :src="image('img/UI/EnchantmentPoint.png')" alt="Enchantment point" /> {{ globalStore.state.selectedEnchant.getInvestmentCostForLevel(globalStore.state.selectedEnchant.level + 1) }}</p>
@@ -71,7 +71,7 @@ import { image } from '@renderer/core/utils';
 defineOptions({ name: 'MCDEnchantmentEditor' });
 
 const $uid = ref(getCurrentInstance().uid);
-const { t, tm } = useI18n();
+const { t } = useI18n();
 
 const actions = {
   setLevel(e, level) {

@@ -17,14 +17,14 @@ import MCDButton from '@renderer/components/MCD/Button.vue';
 
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { filteredInventoryStore } from '@renderer/core/stores/FilteredInventoryStore';
-import Item from '@renderer/core/classes/Item';
+import GameItem from '@renderer/core/entities/item/game';
 
 defineOptions({ name: 'MCDCloneButton' });
 
 const { t } = useI18n();
 
 const props = defineProps({
-  item: { type: Item, required: true },
+  item: { type: GameItem, required: true },
 });
 
 const actions = {

@@ -2,18 +2,11 @@ import Ajv from 'ajv';
 import get from 'lodash.get';
 
 import i18n from '@renderer/plugins/i18n';
-import { Items } from '@renderer/core/data/Content';
 import ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
-import type { IItem } from '@renderer/core/classes/Item';
-import type { IEnchantment } from '@renderer/core/classes/Enchantment';
-
-function $getEnchantmentChunks(item: IItem): Array<Array<IEnchantment>> {
-  return (item.enchantments ?? []).reduce((acc, val, i) => {
-    const ch = Math.floor(i / 3);
-    acc[ch] = ([] as Array<IEnchantment>).concat((acc[ch] || []), val);
-    return acc;
-  }, [] as Array<Array<IEnchantment>>);
-}
+import { itemsStore } from '@renderer/core/entities/item/store';
+import type { IGameItem } from '@renderer/core/entities/item/i';
+import type { IGameEnchant } from '@renderer/core/entities/enchant/i';
+import { chunkArray } from '@renderer/core/utils';
 
 export default abstract class AbstractValidator<T> {
   public errors: Array<ValidationErrorReport> = [];
@@ -21,7 +14,7 @@ export default abstract class AbstractValidator<T> {
   constructor(public data: T) {
   }
 
-  abstract get items(): Array<IItem>;
+  abstract get items(): Array<IGameItem>;
 
   addErrorReport({ item, error }) {
     this.errors.push(new ValidationErrorReport(item, this.items.indexOf(item), error));
@@ -31,7 +24,7 @@ export default abstract class AbstractValidator<T> {
     return !this.errors.length;
   }
 
-  protected validateBySchema(schema: Object, item: IItem) {
+  protected validateBySchema(schema: Object, item: IGameItem) {
     const ajv = new Ajv({ allErrors: true });
     const validate = ajv.compile(schema);
     const valid = validate(item);
@@ -57,60 +50,60 @@ export default abstract class AbstractValidator<T> {
     }
   }
 
-  protected validateItemType(item: IItem) {
-    if (Items[item.type]) {
-      if (Items[item.type].type === 'Armor' && !item.armorproperties) {
+  protected validateItemType(item: IGameItem) {
+    if (itemsStore.items.value[item.type]) {
+      if (itemsStore.items.value[item.type].type === 'Armor' && !item.armorproperties) {
         this.addErrorReport({
           item,
           error: {
             dataPath: 'armorproperties',
             keyword: 'required',
-            message: i18n.global.t('MCD.DataCorruption.armorproperties.required', { itemType: Items[item.type].type.toLowerCase() }),
+            message: i18n.global.t('MCD.DataCorruption.armorproperties.required', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/required',
           },
         });
       }
-      if (Items[item.type].type === 'Armor' && !item.enchantments) {
+      if (itemsStore.items.value[item.type].type === 'Armor' && !item.enchantments) {
         this.addErrorReport({
           item,
           error: {
             dataPath: 'enchantments',
             keyword: 'required',
-            message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }),
+            message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/enchantments/required',
           },
         });
       }
-      if ((Items[item.type].type === 'Melee' || Items[item.type].type === 'Ranged') && item.armorproperties) {
+      if ((itemsStore.items.value[item.type].type === 'Melee' || itemsStore.items.value[item.type].type === 'Ranged') && item.armorproperties) {
         this.addErrorReport({
           item,
           error: {
             dataPath: 'armorproperties',
             keyword: 'forbbiden',
-            message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
+            message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/forbbiden',
           },
         });
       }
-      if ((Items[item.type].type === 'Melee' || Items[item.type].type === 'Ranged') && !item.enchantments) {
+      if ((itemsStore.items.value[item.type].type === 'Melee' || itemsStore.items.value[item.type].type === 'Ranged') && !item.enchantments) {
         this.addErrorReport({
           item,
           error: {
             dataPath: 'enchantments',
             keyword: 'required',
-            message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: Items[item.type].type.toLowerCase() }),
+            message: i18n.global.t('MCD.DataCorruption.enchantments.required', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
             schemaPath: '#/$defs/item/properties/armorproperties/required',
           },
         });
       }
-      if (Items[item.type].type === 'Artefact') {
+      if (itemsStore.items.value[item.type].type === 'Artefact') {
         if (item.armorproperties) {
           this.addErrorReport({
             item,
             error: {
               dataPath: 'armorproperties',
               keyword: 'forbbiden',
-              message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
+              message: i18n.global.t('MCD.DataCorruption.armorproperties.forbbiden', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/armorproperties/forbbiden',
             },
           });
@@ -121,7 +114,7 @@ export default abstract class AbstractValidator<T> {
             error: {
               dataPath: 'enchantments',
               keyword: 'forbbiden',
-              message: i18n.global.t('MCD.DataCorruption.enchantments.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
+              message: i18n.global.t('MCD.DataCorruption.enchantments.forbbiden', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/enchantments/forbbiden',
             },
           });
@@ -132,7 +125,7 @@ export default abstract class AbstractValidator<T> {
             error: {
               dataPath: 'netheriteEnchant',
               keyword: 'forbbiden',
-              message: i18n.global.t('MCD.DataCorruption.netheriteEnchant.forbbiden', { itemType: Items[item.type].type.toLowerCase() }),
+              message: i18n.global.t('MCD.DataCorruption.netheriteEnchant.forbbiden', { itemType: itemsStore.items.value[item.type].type.toLowerCase() }),
               schemaPath: '#/$defs/item/properties/netheriteEnchant/forbbiden',
             },
           });
@@ -141,11 +134,11 @@ export default abstract class AbstractValidator<T> {
     }
   }
 
-  protected validateEnchantmentChunks(item: IItem) {
+  protected validateEnchantmentChunks(item: IGameItem) {
     if (item.enchantments) {
       const enchantInvested = item.enchantments
-        .filter((ench: IEnchantment) => ench.level > 0)
-        .map((ench: IEnchantment) => ench.id)
+        .filter((ench: IGameEnchant) => ench.level > 0)
+        .map((ench: IGameEnchant) => ench.id)
       ;
       if (enchantInvested.includes('Unset')) {
         this.addErrorReport({
@@ -158,7 +151,7 @@ export default abstract class AbstractValidator<T> {
           },
         });
       }
-      $getEnchantmentChunks(item).forEach((chunk, i) => {
+      chunkArray(item.enchantments ?? [], 3).forEach((chunk, i) => {
         const enchantedItemInChunk = chunk.filter((ench) => ench.level > 0).length;
         if (enchantedItemInChunk > 1) {
           this.addErrorReport({
@@ -190,7 +183,7 @@ export default abstract class AbstractValidator<T> {
     }
   }
 
-  protected validateNetheriteEnchant(item: IItem) {
+  protected validateNetheriteEnchant(item: IGameItem) {
     if (item.netheriteEnchant) {
       const enchantInvested = (item.enchantments ?? [])
         .filter((ench) => ench.level > 0)
@@ -211,7 +204,7 @@ export default abstract class AbstractValidator<T> {
     }
   }
 
-  protected validateArmorProperties(item: IItem) {
+  protected validateArmorProperties(item: IGameItem) {
     if (item.armorproperties) {
       const nonUniqueArmorProperties = item.armorproperties
         .map((armorproperty) => armorproperty.id)

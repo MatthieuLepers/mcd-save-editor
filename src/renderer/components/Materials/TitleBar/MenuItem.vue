@@ -16,6 +16,10 @@ defineOptions({ name: 'TitleBarMenuItem' });
 
 const emit = defineEmits(['click']);
 
+/**
+ * slots:
+ * - default
+ */
 const props = defineProps({
   id: { type: String, required: true },
   label: { type: String, default: '' },

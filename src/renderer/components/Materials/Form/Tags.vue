@@ -8,7 +8,7 @@
     </label>
     <ul class="m-form-tags">
       <li
-        v-for="(tag, i) in props.modelValue"
+        v-for="(tag, i) in modelValue"
         :key="i"
         class="m-form-tags__item"
       >
@@ -50,10 +50,9 @@ import MaterialFormInput from '@renderer/components/Materials/Form/Input.vue';
 
 defineOptions({ name: 'FormTags' });
 
-const emit = defineEmits(['update:modelValue']);
+const modelValue = defineModel({ type: Array, default: () => [] });
 
 const props = defineProps({
-  modelValue: { type: Array, default: () => [] },
   label: { type: String, default: null },
   allowRemove: { type: Boolean, default: true },
   allowAdd: { type: Boolean, default: true },
@@ -68,22 +67,22 @@ const state = reactive({
 });
 
 const State = computed(() => ({
-  canAdd: (props.max !== null && props.modelValue.length <= props.max) || !props.max,
-  canRemove: props.min >= 0 && props.modelValue.length >= props.min,
+  canAdd: (props.max !== null && modelValue.value.length <= props.max) || !props.max,
+  canRemove: props.min >= 0 && modelValue.value.length >= props.min,
 }));
 
 const actions = {
   handleAddTag() {
     if (state.label.length) {
-      const newModelValue = [...props.modelValue, state.label]
+      const newModelValue = [...modelValue.value, state.label]
         .filter((tag, i, arr) => props.allowDuplicate || arr.indexOf(tag) === i)
       ;
-      emit('update:modelValue', newModelValue);
+      modelValue.value = newModelValue;
       state.label = '';
     }
   },
   handleRemoveTag(tag) {
-    emit('update:modelValue', props.modelValue.filter((t) => t !== tag));
+    modelValue.value = modelValue.value.filter((t) => t !== tag);
   },
 };
 </script>
