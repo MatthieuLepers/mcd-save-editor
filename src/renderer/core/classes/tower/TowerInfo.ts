@@ -1,4 +1,4 @@
-import type { IItem } from '@renderer/core/classes/Item';
+import type { IGameItem } from '@renderer/core/entities/item/i';
 import TowerConfig, { type ITowerConfigData } from '@renderer/core/classes/tower/TowerConfig';
 import TowerPlayer, { type ITowerPlayerData } from '@renderer/core/classes/tower/TowerPlayer';
 import type { ITowerInnerInfoData } from '@renderer/core/classes/tower/TowerFloor';
@@ -6,7 +6,7 @@ import type { ITowerInnerInfoData } from '@renderer/core/classes/tower/TowerFloo
 export interface ITowerInfoData {
   towerConfig: ITowerConfigData;
   towerCurrentFloorWasCompleted: boolean;
-  towerFinalRewards: Array<IItem>;
+  towerFinalRewards: Array<IGameItem>;
   towerFinished: boolean;
   towerId: string;
   towerInfo: ITowerInnerInfoData;

@@ -20,7 +20,7 @@
       :class="GenerateModifiers('AppNavigationItem', { Active: route.name === 'Tower' })"
     >
       <router-link :to="{ name: 'Tower' }">
-        <img :src="image('img/UI/Tower.png')" alt="Tower" :title="t('App.Navigation.tower')" />
+        <img :src="image('img/UI/tower.png')" alt="Tower" :title="t('App.Navigation.tower')" />
       </router-link>
     </li>
   </ul>
