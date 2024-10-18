@@ -95,7 +95,6 @@ import {
   reactive,
   computed,
   onBeforeMount,
-  onMounted,
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -105,6 +104,7 @@ import MaterialAppTitleBar from '@renderer/components/App/TitleBar/index.vue';
 import MaterialTabs from '@renderer/components/Materials/Tabs/index.vue';
 import MaterialNotificationList from '@renderer/components/Materials/Notification/List.vue';
 import MaterialModal from '@renderer/components/Materials/Modal/index.vue';
+import MaterialProgressBar from '@renderer/components/Materials/ProgressBar/index.vue';
 import AppNavigation from '@renderer/components/App/Navigation/index.vue';
 import Tutorial from '@renderer/components/Tutorial/index.vue';
 
@@ -237,47 +237,34 @@ watch(() => state.currentTab, (newTab) => {
 
 onBeforeMount(() => {
   api.on('database-ready', async () => {
-<<<<<<< HEAD
     await settingsStore.actions.load();
+
+    await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
+    locale.value = settingsStore.actions.getString('locale', 'en-EN');
+
+    await ancientMobsStore.actions.load();
     await dlcsStore.actions.load();
     await eventsStore.actions.load();
     await armorPropertiesStore.actions.load();
     await enchantsStore.actions.load();
     await itemsStore.actions.load();
 
-    await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
-    locale.value = settingsStore.actions.getString('locale', 'en-EN');
-=======
-    await api.invoke('localeChange', settingsStore.actions.getString('locale'));
-    locale.value = settingsStore.actions.getString('locale');
->>>>>>> d3bd1eb (:sparkles: migration to new data system)
+    if (globalStore.state.profilList.length) {
+      Promise
+        .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))
+        .then((profilList) => {
+          state.ready = true;
+          globalStore.setters.setProfil(profilList[0]);
+          state.currentTab = globalStore.state.selectedCharacter.uuid;
+        })
+      ;
+    } else {
+      state.ready = true;
+      globalStore.actions.loadDemoCharacter();
+      state.currentTab = globalStore.state.selectedCharacter.uuid;
+    }
   });
   if (api.isWeb) api.send('database-ready');
-});
-
-onMounted(async () => {
-  await settingsStore.actions.load();
-  await ancientMobsStore.actions.load();
-  await dlcsStore.actions.load();
-  await eventsStore.actions.load();
-  await armorPropertiesStore.actions.load();
-  await enchantsStore.actions.load();
-  await itemsStore.actions.load();
-
-  if (globalStore.state.profilList.length) {
-    Promise
-      .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))
-      .then((profilList) => {
-        state.ready = true;
-        globalStore.setters.setProfil(profilList[0]);
-        state.currentTab = globalStore.state.selectedCharacter.uuid;
-      })
-    ;
-  } else {
-    state.ready = true;
-    globalStore.actions.loadDemoCharacter();
-    state.currentTab = globalStore.state.selectedCharacter.uuid;
-  }
 });
 </script>
 

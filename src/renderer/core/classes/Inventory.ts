@@ -46,6 +46,7 @@ export default class Inventory extends AbstractItemStorage {
       item[key] = position[key];
     });
     this.items.push(item);
+    globalStore.setters.setItem(item);
     this.checkIntegrity();
   }
 
