@@ -13,6 +13,8 @@ asarUnpack:
   - public/**
 win:
   executableName: mcd-save-editor
+  publish:
+  - github
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
