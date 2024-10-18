@@ -15,8 +15,8 @@ const useSettingsStore = () => {
     getSetting(key: string): Setting | null {
       return state.settings?.[key] ?? null;
     },
-    getString(key: string): string {
-      return state.settings?.[key]?.value ?? '';
+    getString(key: string, defaultValue?: string): string {
+      return state.settings?.[key]?.value ?? defaultValue ?? '';
     },
     async setString(key: string, value: string): Promise<Setting | null> {
       if (state.settings[key]) {
@@ -26,7 +26,7 @@ const useSettingsStore = () => {
       return null;
     },
     getBoolean(key: string): boolean {
-      return state.settings?.[key]?.value === 'true' ?? false;
+      return state.settings?.[key]?.value === 'true';
     },
     async setBoolean(key: string, value: boolean): Promise<Setting | null> {
       if (state.settings[key]) {

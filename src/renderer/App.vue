@@ -95,7 +95,6 @@ import {
   reactive,
   computed,
   onBeforeMount,
-  onMounted,
   watch,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -237,34 +236,32 @@ watch(() => state.currentTab, (newTab) => {
 
 onBeforeMount(() => {
   api.on('database-ready', async () => {
-    await api.invoke('localeChange', settingsStore.actions.getString('locale'));
-    locale.value = settingsStore.actions.getString('locale');
+    await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
+    locale.value = settingsStore.actions.getString('locale', 'en-EN');
+
+    await settingsStore.actions.load();
+    await ancientMobsStore.actions.load();
+    await dlcsStore.actions.load();
+    await eventsStore.actions.load();
+    await armorPropertiesStore.actions.load();
+    await enchantsStore.actions.load();
+    await itemsStore.actions.load();
+
+    if (globalStore.state.profilList.length) {
+      Promise
+        .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))
+        .then((profilList) => {
+          state.ready = true;
+          globalStore.setters.setProfil(profilList[0]);
+          state.currentTab = globalStore.state.selectedCharacter.uuid;
+        })
+      ;
+    } else {
+      state.ready = true;
+      globalStore.actions.loadDemoCharacter();
+      state.currentTab = globalStore.state.selectedCharacter.uuid;
+    }
   });
-});
-
-onMounted(async () => {
-  await settingsStore.actions.load();
-  await ancientMobsStore.actions.load();
-  await dlcsStore.actions.load();
-  await eventsStore.actions.load();
-  await armorPropertiesStore.actions.load();
-  await enchantsStore.actions.load();
-  await itemsStore.actions.load();
-
-  if (globalStore.state.profilList.length) {
-    Promise
-      .all(globalStore.state.profilList.map((profil) => profil.fetchCharacters()))
-      .then((profilList) => {
-        state.ready = true;
-        globalStore.setters.setProfil(profilList[0]);
-        state.currentTab = globalStore.state.selectedCharacter.uuid;
-      })
-    ;
-  } else {
-    state.ready = true;
-    globalStore.actions.loadDemoCharacter();
-    state.currentTab = globalStore.state.selectedCharacter.uuid;
-  }
 });
 </script>
 

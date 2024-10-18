@@ -36,7 +36,13 @@ export class Setting extends Model {
   }
 
   static async set<T>(key: string, value: T): Promise<void> {
-    await Setting.create({ key, value: JSON.stringify(value) });
+    const setting = await Setting.findByPk(key);
+    if (setting) {
+      setting.value = JSON.stringify(value);
+      await setting.save();
+    } else {
+      await Setting.create({ key, value: JSON.stringify(value) });
+    }
   }
 
   static async createDefault(): Promise<void> {
