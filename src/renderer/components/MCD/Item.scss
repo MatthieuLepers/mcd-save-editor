@@ -27,10 +27,19 @@
 
   &--CrossIcon::after {
     @include font-family('Open Sans', 100);
+    @include transition(transform .2s ease);
     transform: rotate(45deg);
     font-size: 60px;
     line-height: 60px;
     color: color(grey500);
+  }
+
+  &--Clickable {
+    cursor: pointer;
+
+    &:hover.MCDItem--CrossIcon::after {
+      transform: none;
+    }
   }
 
   &--Selected {

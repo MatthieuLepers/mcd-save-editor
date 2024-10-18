@@ -4,6 +4,8 @@ import { Type } from '@renderer/core/entities/item/enums';
 import type GameItem from '@renderer/core/entities/item/game';
 import type { IGameItem } from '@renderer/core/entities/item/i';
 
+type TPositionAttribute = { gearType: `${Type}` } | { hotbarSlot: number } | { inventoryIndex: number };
+
 export default class Inventory extends AbstractItemStorage {
   constructor(data: Array<IGameItem>) {
     super(180, data);
@@ -37,6 +39,14 @@ export default class Inventory extends AbstractItemStorage {
 
   get inventory(): Array<GameItem> {
     return this.items.filter((item) => !item.isEquipped());
+  }
+
+  insertAt(item: GameItem, position: TPositionAttribute) {
+    Object.keys(position).forEach((key) => {
+      item[key] = position[key];
+    });
+    this.items.push(item);
+    this.checkIntegrity();
   }
 
   checkIntegrity() {

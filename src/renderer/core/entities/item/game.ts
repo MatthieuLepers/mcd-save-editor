@@ -11,6 +11,49 @@ import { chunkArray } from '@renderer/core/utils';
 export default class GameItem extends AbstractEntity<IGameItem> {
   public $key: number = 0;
 
+  static get SWORD(): GameItem {
+    return new GameItem({
+      enchantments: [...Array(9).keys()].map(() => GameEnchant.UNSET.data),
+      power: 1,
+      rarity: Rarity.COMMON,
+      type: 'Sword',
+      upgraded: false,
+    });
+  }
+
+  static get ARMOR(): GameItem {
+    return new GameItem({
+      armorproperties: [
+        { id: 'IncreasedArrowBundleSize', rarity: Rarity.COMMON },
+        { id: 'RangedDamageBoost', rarity: Rarity.COMMON },
+      ],
+      enchantments: [...Array(9).keys()].map(() => GameEnchant.UNSET.data),
+      power: 1,
+      rarity: Rarity.COMMON,
+      type: 'ArchersStrappings',
+      upgraded: false,
+    });
+  }
+
+  static get BOW(): GameItem {
+    return new GameItem({
+      enchantments: [...Array(9).keys()].map(() => GameEnchant.UNSET.data),
+      power: 1,
+      rarity: Rarity.COMMON,
+      type: 'Bow',
+      upgraded: false,
+    });
+  }
+
+  static get ARTEFACT(): GameItem {
+    return new GameItem({
+      power: 1,
+      rarity: Rarity.COMMON,
+      type: 'FireworksArrowItem',
+      upgraded: false,
+    });
+  }
+
   constructor(data: IGameItem) {
     super(data, ['enchantments', 'netheriteEnchant', 'armorproperties']);
     if (this.data.enchantments && this.data.enchantments.length < 9) {
