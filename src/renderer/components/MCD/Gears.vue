@@ -7,6 +7,7 @@
         :key="i"
         :item="item"
         :itemType="Object.values(Type)[i]"
+        :clickable="true"
       />
     </div>
 
@@ -21,6 +22,7 @@
         :item="item"
         :itemType="Type.ARTEFACT"
         :hotbarSlot="i + 1"
+        :clickable="true"
       />
     </div>
   </div>

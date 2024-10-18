@@ -28,8 +28,10 @@
       <MCDItemEmpty
         v-for="(slot, i) in State.emptySlots"
         :key="filteredInventoryStore.inventory.value.length + i"
+        :index="filteredInventoryStore.inventory.value.length + i"
         :noDragEvent="true"
         :cross="true"
+        :clickable="true"
       />
     </div>
   </div>
