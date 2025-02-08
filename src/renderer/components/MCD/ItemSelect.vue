@@ -156,7 +156,7 @@ const actions = {
   },
   selectItem(itemData) {
     document.body.classList.remove('modal'); // Force update before re-render component
-    modelValue.value.convertTo(itemData);
+    modelValue.value.convertTo(itemData.data);
     if (itemData.type === Type.ARTEFACT || (itemData.type !== Type.ARTEFACT && itemData.rarity.length === 1)) {
       tutorialStore.actions.setFullfilled('OpenSelector', null, null, true);
       tutorialStore.actions.setFullfilled('ChooseNewItem', false, 'InvalidItem');
