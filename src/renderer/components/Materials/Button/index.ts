@@ -3,9 +3,9 @@ export interface ISlots {
   icon(): void;
 }
 
-export type ColorModifiers = 'primary' | 'secondary' | 'grey200' | 'grey400';
+export type ColorModifiers = 'primary' | 'secondary' | 'danger' | 'grey200' | 'grey400';
 
-export type StyleModifiers = 'fill' | 'stroke' | 'squared';
+export type StyleModifiers = 'fill' | 'stroke' | 'inverted' | 'squared';
 
 export type Modifiers = ColorModifiers | StyleModifiers;
 
