@@ -17,29 +17,26 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, computed, getCurrentInstance } from 'vue';
+
+import type { TValue, IProps, IClickEmitDetails, IState } from './Checkbox';
 
 defineOptions({ name: 'FormCheckbox' });
 
-const emit = defineEmits(['click']);
-const $uid = getCurrentInstance().uid;
+const emit = defineEmits<{
+  click: [e: Event, details: IClickEmitDetails ];
+}>();
+const $uid = getCurrentInstance()?.uid;
 
-const modelValue = defineModel({ type: [Array, String, Boolean, Number] });
+const modelValue = defineModel<Array<TValue> | TValue, string>();
 
-const props = defineProps({
-  id: { type: String, default: null },
-  value: { type: [String, Number, Boolean, null], required: true },
-  name: { type: String, default: null },
-  label: { type: String, required: true },
-  disabled: { type: Boolean, default: false },
-  /**
-   * Variant: default, small
-   */
-  variant: { type: String, default: 'default' },
+const props = withDefaults(defineProps<IProps>(), {
+  disabled: false,
+  variant: 'default',
 });
 
-const state = reactive({
+const state = reactive<IState>({
   focused: false,
 });
 
@@ -54,22 +51,15 @@ const State = computed(() => {
 });
 
 const actions = {
-  cast(value, type) {
-    if (type === 'number') {
-      return parseFloat(value);
-    }
-    return value;
-  },
-  handleClick(e) {
-    const { value, checked } = e.target;
-    const castedValue = actions.cast(value, typeof props.value);
+  handleClick(e: Event) {
+    const { checked } = e.target as HTMLInputElement;
 
-    if (checked && !State.value.modelValue.includes(castedValue)) {
-      modelValue.value = [...State.value.modelValue, castedValue];
-    } else if (!checked && State.value.modelValue.includes(castedValue)) {
+    if (checked && !State.value.modelValue.includes(props.value)) {
+      modelValue.value = [...State.value.modelValue, props.value];
+    } else if (!checked && State.value.modelValue.includes(props.value)) {
       modelValue.value = State.value.modelValue.filter((v) => v !== props.value);
     }
-    emit('click', e, { value: castedValue, checked });
+    emit('click', e, { value: props.value, checked });
   },
 };
 </script>

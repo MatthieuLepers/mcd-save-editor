@@ -26,18 +26,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useSlots } from 'vue';
+
+import type { ISlots, IProps } from '.';
 
 defineOptions({ name: 'ProgressBar' });
 
+defineSlots<ISlots>();
+
 const slots = useSlots();
 
-const props = defineProps({
-  label: { type: String, default: null },
-  ariaLabel: { type: String, default: null },
-  percent: { type: Number, default: 0 },
-  modifiers: { type: Object, default: () => ({}) },
+const props = withDefaults(defineProps<IProps>(), {
+  percent: 0,
+  modifiers: () => ({}),
 });
 </script>
 

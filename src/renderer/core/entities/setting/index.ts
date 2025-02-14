@@ -1,5 +1,6 @@
 import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 import { IRemoteSetting, ISetting } from '@renderer/core/entities/setting/i';
+import { api } from '@renderer/core/api';
 
 export default class Setting extends AbstractEntity<ISetting> {
   declare key: string;

@@ -18,7 +18,7 @@ export async function downloadImage(url: string, imagePath: string) {
     }))
     .catch(() => new Promise((resolve, reject) => {
       try {
-        const unset = fs.readFileSync('public/img/unset.png');
+        const unset = `${fs.readFileSync('public/img/unset.png')}`;
         fs.writeFileSync(imagePath, unset);
         resolve(imagePath);
       } catch (err) {

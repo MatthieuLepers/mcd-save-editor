@@ -9,16 +9,16 @@
       />
     </li>
     <li
-      v-for="(page, i) in props.data"
+      v-for="(_page, i) in props.data"
       :key="i"
       :class="GenerateModifiers('m-datatable-pagination__item', {
-        current: modelValue === i,
+        current: modelValue - 1 === i,
         skipped: !(i === 0 || i === props.data.length - 1 || i === modelValue || (modelValue - 2 <= i && modelValue + 2 >= i)),
       })"
     >
       <button
         type="button"
-        @click="modelValue = i"
+        @click="modelValue = i + 1"
       >
         {{ i + 1 }}
       </button>
@@ -34,15 +34,16 @@
   </ul>
 </template>
 
-<script setup>
+<script setup lang="ts" generic="E, T extends Record<string, E>">
 import { computed } from 'vue';
+
+import type { IProps } from './Pagination';
 
 defineOptions({ name: 'DataTablePagination' });
 
-const modelValue = defineModel({ type: Number });
+const modelValue = defineModel({ type: Number, default: 1 });
 
-const props = defineProps({
-  data: { type: Array, required: true },
+const props = withDefaults(defineProps<IProps<T>>(), {
 });
 
 const State = computed(() => ({

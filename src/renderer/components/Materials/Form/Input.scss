@@ -133,7 +133,7 @@
     &.m-form-input {
       @include make-accessibility-shadow {
         height: 32px;
-        width: calc(50% + 1px);
+        width: 66.666%;
         right: 0;
         left: auto;
         top: 0px;
@@ -204,7 +204,7 @@
       color: color(grey000);
       padding: 0 rem(8px);
       outline: none;
-      flex: 1;
+      flex: 0 0 66.666%;
 
       @include placeholder {
         color: color(grey000);
@@ -216,7 +216,7 @@
       &__label {
         @include set-font-scale('xs');
         color: color(grey999);
-        flex: 1;
+        flex: 0 0 33.333%;
         display: flex;
         align-items: center;
         justify-content: flex-end;

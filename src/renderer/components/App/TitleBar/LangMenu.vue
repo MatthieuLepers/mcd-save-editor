@@ -16,10 +16,12 @@ import { useI18n } from 'vue-i18n';
 import ContextMenu from '@renderer/components/Materials/ContextMenu/index.vue';
 import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue';
 
+import { api } from '@/renderer/core/api';
+
 defineOptions({ name: 'AppTitleBarLangMenu' });
 
 const { t, locale, availableLocales } = useI18n();
-const emit = defineEmits(['update:modelValue', 'close']);
+const emit = defineEmits(['close']);
 
 const props = defineProps({
   visible: { type: Boolean, required: true },
@@ -29,7 +31,6 @@ const actions = {
   handleSetLocale(iso) {
     api.invoke('localeChange', iso);
     locale.value = iso;
-    emit('update:modelValue', iso);
     emit('close');
   },
 };

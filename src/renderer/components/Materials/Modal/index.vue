@@ -68,7 +68,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
   reactive,
   computed,
@@ -81,39 +81,32 @@ import {
 import MaterialButton from '@renderer/components/Materials/Button/index.vue';
 
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
+import { IProps, ISlots, IState } from '.';
 
 defineOptions({ name: 'Modal' });
 
-const emit = defineEmits(['open', 'close', 'accept', 'refuse']);
+defineSlots<ISlots>();
 
-const root = ref(null);
+const emit = defineEmits<{
+  open: [];
+  close: [];
+  accept: [];
+  refuse: [];
+}>();
 
-/**
- * slots:
- * - header  : Customize modal header
- * - default : Modal body
- * - footer  : Customize modal footer
- * - close   : Customize close button
- */
-const props = defineProps({
-  name: { type: String, required: true },
-  title: { type: String, default: null },
-  showClose: { type: Boolean, default: true },
-  showFooter: { type: Boolean, default: true },
-  acceptOnly: { type: Boolean, default: false },
-  refuseOnly: { type: Boolean, default: false },
-  acceptLabel: { type: String, default: 'Ok' },
-  refuseLabel: { type: String, default: 'Cancel' },
-  /**
-   * Valid modifiers:
-   * - Modal : paddingLess, rounded
-   * - Body  : centered
-   * - Size  : xs
-   */
-  modifiers: { type: Object, default: () => ({}) },
+const root = ref<HTMLDivElement | null>(null);
+
+const props = withDefaults(defineProps<IProps>(), {
+  showClose: true,
+  showFooter: true,
+  acceptOnly: false,
+  refuseOnly: false,
+  acceptLabel: 'Ok',
+  refuseLabel: 'Cancel',
+  modifiers: () => ({}),
 });
 
-const state = reactive({
+const state = reactive<IState>({
   open: false,
   oldFocusElement: null,
 });
@@ -126,7 +119,7 @@ const actions = {
   handleClose() {
     if (state.open) {
       modalStore.actions.hide(props.name);
-      state.oldFocusElement.focus();
+      state.oldFocusElement?.focus();
       emit('close');
     }
   },
@@ -137,21 +130,21 @@ const actions = {
   handleRefuse() {
     emit('refuse');
     actions.handleClose();
-    state.oldFocusElement.focus();
+    state.oldFocusElement?.focus();
   },
 };
 
-const handleClickBackdrop = (e) => {
+const handleClickBackdrop = (e: MouseEvent | TouchEvent) => {
   if (e.target === root.value) {
     actions.handleClose();
   }
 };
 
-watch(() => state.open, (newVal) => {
-  if (newVal) {
+watch(() => state.open, (open) => {
+  if (open) {
     emit('open');
-    state.oldFocusElement = document.activeElement;
-    root.value.querySelector('input, select, textarea, area, button, a, [tabindex]').focus();
+    state.oldFocusElement = document.activeElement as HTMLElement;
+    root.value?.querySelector<HTMLElement>('input, select, textarea, area, button, a, [tabindex]')?.focus();
   } else {
     actions.handleClose();
   }

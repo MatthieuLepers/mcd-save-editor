@@ -1,7 +1,10 @@
 <template>
   <div
     v-show="props.visible"
-    :class="GenerateModifiers('m-contextmenu-item', { arrowRight: true, Disabled: props.disabled })"
+    :class="GenerateModifiers('m-contextmenu-item', {
+      arrowRight: true,
+      disabled: props.disabled,
+    })"
     @mouseover="emit('over')"
     @mouseout="emit('out')"
   >
@@ -12,18 +15,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { IProps, ISlots } from './SubMenu';
+
 defineOptions({ name: 'ContextSubMenu' });
+
+defineSlots<ISlots>();
 
 const emit = defineEmits(['over', 'out']);
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  disabled: { type: Boolean, default: false },
-  visible: { type: Boolean, default: true },
-  label: { type: String, required: true },
+const props = withDefaults(defineProps<IProps>(), {
+  disabled: false,
+  visible: true,
 });
 </script>

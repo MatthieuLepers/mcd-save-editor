@@ -8,12 +8,14 @@
   right: 0;
   bottom: 0;
   width: calc(100% - 20px);
+  pointer-events: none;
 
   &Title {
     @include font-family('open-sans', 700);
     @include set-font-scale(l);
     text-align: center;
     width: 100%;
+    pointer-events: none;
   }
 
   &Container {
@@ -21,5 +23,6 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 25px;
+    pointer-events: auto;
   }
 }

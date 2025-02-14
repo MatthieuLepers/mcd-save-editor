@@ -8,22 +8,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { ISlots, IProps } from './Row';
+
 defineOptions({ name: 'DataTableRow' });
 
-const emit = defineEmits(['click', 'contextmenu']);
+defineSlots<ISlots>();
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  /**
-   * Valid modifiers
-   * Type : action, selectable, grabbable
-   * State : opened, selected, grabbed
-   */
-  modifiers: { type: Object, default: () => ({}) },
+const emit = defineEmits<{
+  click: [e: MouseEvent];
+  contextmenu: [e: MouseEvent];
+}>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  modifiers: () => ({}),
 });
 </script>
 

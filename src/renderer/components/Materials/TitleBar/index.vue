@@ -15,7 +15,7 @@
         <span v-icon:help />
       </button>
       <button
-        v-if="props.minimizable"
+        v-if="!api.isWeb && props.minimizable"
         type="button"
         class="m-title-bar__button"
         @click="actions.minimize"
@@ -23,14 +23,14 @@
         <span v-icon:minimize />
       </button>
       <button
-        v-if="props.maximizable || props.minimizable"
+        v-if="!api.isWeb && (props.maximizable || props.minimizable)"
         :disabled="!props.maximizable"
         class="m-title-bar__button"
         @click="actions.maximize">
         <span v-icon:maximize />
       </button>
       <button
-        v-if="props.closable"
+        v-if="!api.isWeb && props.closable"
         :class="GenerateModifiers('m-title-bar__button', { close: true })"
         @click="actions.close"
       >
@@ -40,18 +40,25 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { IProps } from '.';
+
+import { api } from '@/renderer/core/api';
+
 defineOptions({ name: 'TitleBar' });
 
-const emit = defineEmits(['help', 'minimize', 'maximize', 'close']);
+const emit = defineEmits<{
+  help: [];
+  minimize: [];
+  maximize: [];
+  close: [];
+}>();
 
-const props = defineProps({
-  name: { type: String, required: true },
-  minimizable: { type: Boolean, default: true },
-  maximizable: { type: Boolean, default: true },
-  closable: { type: Boolean, default: true },
-  showHelp: { type: Boolean, default: true },
-  appTitle: { type: String, default: null },
+const props = withDefaults(defineProps<IProps>(), {
+  minimizable: true,
+  maximizable: true,
+  closable: true,
+  showHelp: true,
 });
 
 const actions = {

@@ -5,7 +5,7 @@ import type { ICharacter } from '@renderer/core/classes/Character';
 export default class CharacterUtils {
   static getXpForLevel(lvl: number): number {
     // eslint-disable-next-line no-nested-ternary
-    const f = (x) => (x <= 1 ? 0 : (x === 2 ? 500 : f(x - 1) + 600));
+    const f = (x: number) => (x <= 1 ? 0 : (x === 2 ? 500 : f(x - 1) + 600));
 
     return f(lvl);
   }

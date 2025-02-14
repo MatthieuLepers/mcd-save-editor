@@ -16,6 +16,7 @@ import { useI18n } from 'vue-i18n';
 import MCDButton from '@renderer/components/MCD/Button.vue';
 
 import GameItem from '@renderer/core/entities/item/game';
+import { api } from '@renderer/core/api';
 
 defineOptions({ name: 'MCDExportButton' });
 

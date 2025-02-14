@@ -73,42 +73,42 @@ export default class PolygonEnum {
 
   static get SELECTED_ENCHANTMENT(): Polygon {
     return [
-      [733 + OFFSET_X, 459 + OFFSET_Y],
-      [744.5 + OFFSET_X, 468.5 + OFFSET_Y],
-      [749.7 + OFFSET_X, 462.7 + OFFSET_Y],
-      [764 + OFFSET_X, 477.4 + OFFSET_Y],
-      [760.3 + OFFSET_X, 483.4 + OFFSET_Y],
-      [769 + OFFSET_X, 496 + OFFSET_Y],
-      [733 + OFFSET_X, 531 + OFFSET_Y],
-      [696 + OFFSET_X, 496 + OFFSET_Y],
-      [733 + OFFSET_X, 459 + OFFSET_Y],
+      [734 + OFFSET_X, 459 + OFFSET_Y - 22],
+      [745.5 + OFFSET_X, 468.5 + OFFSET_Y - 22],
+      [750.7 + OFFSET_X, 462.7 + OFFSET_Y - 22],
+      [765 + OFFSET_X, 477.4 + OFFSET_Y - 22],
+      [761.3 + OFFSET_X, 483.4 + OFFSET_Y - 22],
+      [770 + OFFSET_X, 496 + OFFSET_Y - 22],
+      [734 + OFFSET_X, 531 + OFFSET_Y - 22],
+      [697 + OFFSET_X, 496 + OFFSET_Y - 22],
+      [734 + OFFSET_X, 459 + OFFSET_Y - 22],
     ];
   }
 
   static get ENCHANTMENT_SLOT1(): Polygon {
     return [
-      [709 + OFFSET_X, 473 + OFFSET_Y],
-      [730 + OFFSET_X, 494 + OFFSET_Y],
-      [709 + OFFSET_X, 515 + OFFSET_Y],
-      [689 + OFFSET_X, 494 + OFFSET_Y],
+      [709 + OFFSET_X, 473 + OFFSET_Y - 20],
+      [730 + OFFSET_X, 494 + OFFSET_Y - 20],
+      [709 + OFFSET_X, 515 + OFFSET_Y - 20],
+      [689 + OFFSET_X, 494 + OFFSET_Y - 20],
     ];
   }
 
   static get ENCHANTMENT_SLOT2(): Polygon {
     return [
-      [735 + OFFSET_X, 499 + OFFSET_Y],
-      [756 + OFFSET_X, 519 + OFFSET_Y],
-      [735 + OFFSET_X, 540 + OFFSET_Y],
-      [714 + OFFSET_X, 519 + OFFSET_Y],
+      [735 + OFFSET_X, 499 + OFFSET_Y - 20],
+      [756 + OFFSET_X, 519 + OFFSET_Y - 20],
+      [735 + OFFSET_X, 540 + OFFSET_Y - 20],
+      [714 + OFFSET_X, 519 + OFFSET_Y - 20],
     ];
   }
 
   static get ENCHANTMENT_SLOT3(): Polygon {
     return [
-      [762 + OFFSET_X, 483 + OFFSET_Y],
-      [782 + OFFSET_X, 503 + OFFSET_Y],
-      [762 + OFFSET_X, 523 + OFFSET_Y],
-      [742 + OFFSET_X, 503 + OFFSET_Y],
+      [762 + OFFSET_X, 483 + OFFSET_Y - 20],
+      [782 + OFFSET_X, 503 + OFFSET_Y - 20],
+      [762 + OFFSET_X, 523 + OFFSET_Y - 20],
+      [742 + OFFSET_X, 503 + OFFSET_Y - 20],
     ];
   }
 
@@ -169,7 +169,6 @@ export default class PolygonEnum {
 
   static ENCHANTMENT_SELECTOR(): Polygon {
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect')!;
-    console.log(enchantSelectOuter);
     const { x, y, width, height } = enchantSelectOuter.getBoundingClientRect();
     return [
       [x, (y - 3) + OFFSET_Y],

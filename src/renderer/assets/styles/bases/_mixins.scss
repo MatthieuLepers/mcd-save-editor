@@ -45,7 +45,7 @@
   border-bottom: #{math.div($width, 2)} solid transparent;
 }
 
-@mixin make-accessibility-shadow {
+@mixin make-accessibility-shadow($color: color(secondary200)) {
   outline: none;
 
   &::after {
@@ -65,7 +65,7 @@
 
   &:focus::after,
   &--focus::after {
-    box-shadow: 0 0 0 .125rem color(grey800), 0 0 0 .25rem color(secondary200);
+    box-shadow: 0 0 0 .125rem color(grey800), 0 0 0 .25rem $color;
   }
 }
 

@@ -4,6 +4,7 @@ import Enchant from '@renderer/core/entities/enchant';
 import GameEnchant from '@renderer/core/entities/enchant/game';
 import type { Type } from '@renderer/core/entities/enchant/enums';
 import { shuffleArray } from '@renderer/core/utils';
+import { api } from '@renderer/core/api';
 
 interface IState {
   enchants: Record<string, Enchant>;

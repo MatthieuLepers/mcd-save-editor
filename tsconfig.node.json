@@ -4,13 +4,15 @@
     "electron.vite.config.*",
     "src/main/**/*",
     "src/preload/**/*",
-    "src/renderer/**/*"
+    "src/renderer/core/**/*",
+    "src/renderer/env.d.ts"
   ],
   "compilerOptions": {
     "composite": true,
     "allowJs": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types"
     ],

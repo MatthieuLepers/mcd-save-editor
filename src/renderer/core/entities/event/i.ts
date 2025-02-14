@@ -3,3 +3,7 @@ export interface IEvent {
   startedAt: Date;
   endedAt: Date;
 }
+
+export interface IRemoteEvent {
+  dataValues: IEvent;
+}

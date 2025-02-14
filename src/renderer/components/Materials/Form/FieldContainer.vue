@@ -4,15 +4,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { ISlots, IProps } from './FieldContainer';
+
 defineOptions({ name: 'FormFieldContainer' });
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  modifiers: { type: Object, default: () => ({}) },
+defineSlots<ISlots>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  modifiers: () => ({}),
 });
 </script>
 

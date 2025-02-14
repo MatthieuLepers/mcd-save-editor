@@ -1,12 +1,14 @@
 <template>
-  <span :class="`${props.icon} m-loader-icon`"></span>
+  <span :class="`${props.icon} m-loader-icon`" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { IProps } from './Icon';
+
 defineOptions({ name: 'LoaderIcon' });
 
-const props = defineProps({
-  icon: { type: String, default: 'icon-loader' },
+const props = withDefaults(defineProps<IProps>(), {
+  icon: 'icon-loader',
 });
 </script>
 

@@ -78,7 +78,7 @@ const actions = {
 };
 
 watch(() => state.open, () => {
-  document.body.classList.toggle('modal');
+  document.getElementById('app').classList.toggle('modal');
 });
 
 onMounted(() => {

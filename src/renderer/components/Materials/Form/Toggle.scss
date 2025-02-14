@@ -5,6 +5,8 @@
 
   &--default {
     &.m-form-toggle--left {
+      width: fit-content;
+
       &.m-form-toggle {
         @include make-accessibility-shadow {
           width: 40px;
@@ -51,7 +53,7 @@
         }
 
         &::after {
-          right: 20spx;
+          right: 20px;
         }
       }
     }

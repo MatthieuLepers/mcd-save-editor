@@ -7,7 +7,7 @@
   />
   <main v-if="state.ready" class="Page">
     <MaterialTabs
-      v-if="!State.tabs.length"
+      v-if="State.tabs.length > 0"
       v-model="state.currentTab"
       :tabs="State.tabs"
       @allowMoveFn="() => false">
@@ -37,21 +37,23 @@
             <input v-model="character.data.name"/>
           </MaterialModal>
           <button
+            v-if="!api.isWeb"
             class="CharacterAction CharacterActionReload"
             :class="{ loading: state.loadingTabs.includes(character.id) }"
             :title="t('App.tabs.reload.label')"
             :disabled="state.loadingTabs.includes(character.id)"
             @click="actions.reload(character)"
           >
-            <i class="icon-reload"></i>
+            <span class="icon-reload" />
           </button>
           <button
+            v-if="!api.isWeb"
             class="CharacterAction CharacterActionSave"
             :title="t('App.tabs.save.label')"
             :disabled="state.savingTabs.includes(character.id)"
             @click="actions.save(character)"
           >
-            <i class="icon-save"></i>
+            <span class="icon-save" />
           </button>
         </div>
       </template>
@@ -93,9 +95,9 @@
 
 import {
   reactive,
-  computed,
   onBeforeMount,
   watch,
+  computed,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
@@ -119,6 +121,7 @@ import { armorPropertiesStore } from '@renderer/core/entities/armorProperty/stor
 import { enchantsStore } from '@renderer/core/entities/enchant/store';
 import { itemsStore } from '@renderer/core/entities/item/store';
 import { ancientMobsStore } from '@renderer/core/entities/ancientMob/store';
+import { api } from '@renderer/core/api';
 
 const route = useRoute();
 const { locale, t } = useI18n();
@@ -134,12 +137,10 @@ const state = reactive({
 
 const State = computed(() => ({
   tabs: globalStore.state.profilList.length
-    ? globalStore.state.selectedProfil.characters.reduce((acc, character) => ({
-      ...acc,
-      [character.uuid]: {
-        label: character.data.name,
-      },
-    }), {})
+    ? globalStore.state.selectedProfil.characters.map((character) => ({
+      id: character.uuid,
+      label: character.data.name,
+    }))
     : [],
 }));
 
@@ -234,12 +235,17 @@ watch(() => state.currentTab, (newTab) => {
   globalStore.setters.setCharacter(globalStore.state.selectedProfil.characters.find((ch) => ch.uuid === newTab));
 });
 
+watch(() => globalStore.state.selectedProfil, () => {
+  state.currentTab = globalStore.state.selectedCharacter.uuid;
+});
+
 onBeforeMount(() => {
   api.on('database-ready', async () => {
+    await settingsStore.actions.load();
+
     await api.invoke('localeChange', settingsStore.actions.getString('locale', 'en-EN'));
     locale.value = settingsStore.actions.getString('locale', 'en-EN');
 
-    await settingsStore.actions.load();
     await ancientMobsStore.actions.load();
     await dlcsStore.actions.load();
     await eventsStore.actions.load();
@@ -262,6 +268,7 @@ onBeforeMount(() => {
       state.currentTab = globalStore.state.selectedCharacter.uuid;
     }
   });
+  if (api.isWeb) api.send('database-ready');
 });
 </script>
 

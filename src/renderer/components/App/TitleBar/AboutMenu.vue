@@ -11,6 +11,8 @@
 import ContextMenu from '@renderer/components/Materials/ContextMenu/index.vue';
 import ContextMenuItem from '@renderer/components/Materials/ContextMenu/Item.vue';
 
+import { api } from '@renderer/core/api';
+
 defineOptions({ name: 'AppTitleBarAboutMenu' });
 
 const props = defineProps({

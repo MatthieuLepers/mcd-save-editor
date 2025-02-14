@@ -1,21 +1,24 @@
 @import '~styles/utilities.scss';
 
-@mixin set-button-color($background, $text) {
+@mixin set-button-color($background, $text, $strokeText) {
   background-color: $background;
   color: $text;
 
+  @include make-accessibility-shadow(color(secondary200));
+
   .m-button__icon {
-    background-color: $text;
     color: $background;
+    background-color: color(grey000);
   }
 
   &:focus,
   &:hover {
+    box-shadow: 0 0 10px $background;
     background-color: lighten($background, 10%);
 
     .m-button__icon {
-      background-color: $text;
-      color: $background;
+      color: lighten($background, 10%);
+      background-color: color(grey000);
     }
   }
 
@@ -29,8 +32,7 @@
     color: $background;
 
     .m-button__icon {
-      background-color: $background;
-      color: $text;
+      color: $background;
     }
 
     &:focus,
@@ -75,7 +77,7 @@
 
   &--iconed {
     position: relative;
-  
+
     .m-button__icon {
       font-size: rem(12px);
       position: absolute;
@@ -96,7 +98,7 @@
 
     &.m-button--iconed-left {
       padding-left: rem(32px);
-  
+
       .m-button__icon {
         left: 4px;
       }
@@ -111,27 +113,31 @@
     }
   }
 
-  &--success:not(&--disabled) {
-    @include set-button-color(color(success300), color(grey000));
+  &--success {
+    @include set-button-color(color(success300), color(grey000), color(grey000));
   }
 
-  &--primary:not(&--disabled) {
-    @include set-button-color(color(grey900), color(grey000));
+  &--primary {
+    @include set-button-color(color(grey900), color(grey000), color(grey000));
   }
 
-  &--warning:not(&--disabled) {
-    @include set-button-color(color(warning300), color(grey000));
+  &--secondary  {
+    @include set-button-color(color(secondary100), color(grey000), color(grey000));
   }
 
-  &--danger:not(&--disabled) {
-    @include set-button-color(color(danger300), color(grey000));
+  &--warning {
+    @include set-button-color(color(warning300), color(grey000), color(grey000));
   }
 
-  &--cancel:not(&--disabled) {
-    @include set-button-color(color(grey600), color(grey000));
+  &--danger {
+    @include set-button-color(color(danger300), color(grey000), color(grey000));
+  }
+
+  &--cancel {
+    @include set-button-color(color(grey600), color(grey000), color(grey000));
   }
 
   &--disabled {
-    @include set-button-color(color(grey600), color(grey000));
+    @include set-button-color(color(grey600), color(grey000), color(grey000));
   }
 }

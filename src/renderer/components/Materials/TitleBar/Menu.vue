@@ -6,7 +6,7 @@
         :key="`menu${i}`"
         :id="menuName"
         :label="t(`App.TitleBarMenu.${menuName}.label`)"
-        @click.stop.prevent="(e, menuName) => actions.toggleMenu(menuName)"
+        @click.stop.prevent="(_e, menuName) => actions.toggleMenu(menuName)"
       >
         <slot :name="menuName" :visible="menuName === state.activeMenu" :close="actions.closeMenu" />
       </TitleBarMenuItem>
@@ -14,47 +14,47 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import TitleBarMenuItem from '@renderer/components/Materials/TitleBar/MenuItem.vue';
+import type { ISlots, IProps, IState } from './Menu';
 
 defineOptions({ name: 'TitleBarMenu' });
 
+defineSlots<ISlots>();
+
 const { t } = useI18n();
 
-const root = ref(null);
+const root = ref<HTMLElement | null>(null);
 
-/**
- * slots:
- * - [menuName] : Display [menuName] content
- */
-const props = defineProps({
-  menuList: { type: Array, default: () => [] },
+const props = withDefaults(defineProps<IProps>(), {
+  menuList: () => [],
 });
 
-const state = reactive({
-  activeMenu: null,
+const state = reactive<IState>({
+  activeMenu: undefined,
 });
 
 const actions = {
-  handleWindowClick(e) {
-    if (!e.target.matches('.TitleBarMenuCtn') && !e.target.closest('.TitleBarMenuCtn') && e.target !== root.value) {
-      state.activeMenu = null;
+  handleWindowClick(e: Event) {
+    const target = e.target as HTMLElement;
+    if (!target.matches('.TitleBarMenuCtn') && !target.closest('.TitleBarMenuCtn') && e.target !== root.value) {
+      state.activeMenu = undefined;
       window.removeEventListener('click', actions.handleWindowClick);
     }
   },
-  toggleMenu(menu) {
+  toggleMenu(menu: string) {
     if (state.activeMenu === menu) {
-      state.activeMenu = null;
+      state.activeMenu = undefined;
     } else {
       state.activeMenu = menu;
       window.addEventListener('click', actions.handleWindowClick);
     }
   },
   closeMenu() {
-    state.activeMenu = null;
+    state.activeMenu = undefined;
   },
 };
 </script>

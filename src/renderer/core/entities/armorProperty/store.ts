@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
 import ArmorProperty from '@renderer/core/entities/armorProperty';
+import { api } from '@renderer/core/api';
 
 interface IState {
   properties: Record<string, ArmorProperty>;

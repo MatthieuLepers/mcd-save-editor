@@ -12,7 +12,11 @@
       >
         <DataTableColumn :modifiers="{ action: true }">
           <DataTableButton
-            :modifiers="{ round: true, less: true, shadowed: true }"
+            :modifiers="{
+              round: true,
+              less: true,
+              shadowed: true,
+            }"
             @click.stop="state.open = false"
           />
         </DataTableColumn>
@@ -25,7 +29,11 @@
         :modifiers="{ action: true }"
       >
         <DataTableButton
-          :modifiers="{ round: true, more: true, shadowed: true }"
+          :modifiers="{
+            round: true,
+            more: true,
+            shadowed: true,
+          }"
           @click.stop="state.open = true"
         />
         <slot name="actionColumn" :obj="props.obj" />
@@ -36,48 +44,50 @@
           :key="`column${j}`"
           :class="columnData.className"
           :data-label="columnData.label"
+          :aria-labelledby="`${toCamelCase(columnData.label)}${$uid}`"
         >
           <slot
             :name="column"
             :obj="props.obj"
             :value="props.obj[column]"
-            :column="column"
+            :column="columnData"
           >
             {{ props.obj[column] }}
           </slot>
         </DataTableColumn>
       </DataTableColumn>
     </div>
-    <slot name="secretArea" :obj="props.obj" />
+    <slot name="afterRow" :obj="props.obj" />
   </DataTableRow>
 </template>
 
-<script setup>
-import { reactive } from 'vue';
+<script setup lang="ts" generic="E, T extends Record<string, E>">
+import { reactive, inject } from 'vue';
 
 import DataTableRow from '@renderer/components/Materials/DataTable/Row.vue';
 import DataTableColumn from '@renderer/components/Materials/DataTable/Column.vue';
 import DataTableButton from '@renderer/components/Materials/DataTable/Button.vue';
 
+import { toCamelCase } from '@/renderer/core/utils';
+import type { ISlots, IProps, IState } from './BodyRow';
+
 defineOptions({ name: 'DataTableBodyRow' });
 
-const emit = defineEmits(['contextmenu', 'selectLine']);
+defineSlots<ISlots<T, any>>();
 
-/**
- * slots:
- * - actionColumnInner : Columns in actions row
- * - actionColumn      : Buttons column in actions row
- * - [column]          : column id
- * - secretArea        : After row
- */
-const props = defineProps({
-  columns: { type: Object, default: () => ({}) },
-  obj: { type: Object, default: () => ({}) },
-  showActionRow: { type: Boolean, default: true },
-  showSelectionRow: { type: Boolean, default: false },
+const emit = defineEmits<{
+  contextmenu: [event: MouseEvent, obj: T];
+  selectLine: [obj: T];
+}>();
+
+const $uid = inject('uid');
+
+const props = withDefaults(defineProps<IProps<T>>(), {
+  showActionRow: true,
+  showSelectionRow: false,
 });
 
-const state = reactive({
+const state = reactive<IState>({
   open: false,
 });
 

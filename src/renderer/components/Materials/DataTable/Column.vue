@@ -4,20 +4,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { ISlots, IProps } from './Column';
+
 defineOptions({ name: 'DataTableColumn' });
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  /**
-   * Valid modifiers:
-   * - Position : inner
-   * - Type : noActionRow, action
-   */
-  modifiers: { type: Object, default: () => ({}) },
+defineSlots<ISlots>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  modifiers: () => ({}),
 });
 </script>
 

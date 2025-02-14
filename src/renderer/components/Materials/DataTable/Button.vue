@@ -3,34 +3,25 @@
     <span
       v-if="props.icon"
       :class="['m-datatable-button__icon', props.icon]"
-    ></span>
+    />
     <div class="m-datatable-button__content">
       <slot>
-        <span v-if="props.modifiers.more"></span>
+        <span v-if="props.modifiers.more" />
         <span v-else>{{ props.label }}</span>
       </slot>
     </div>
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ISlots, IProps, Modifiers } from './Button';
+
 defineOptions({ name: 'DataTableButton' });
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  label: { type: String, default: null },
-  icon: { type: String, default: null },
-  /**
-   * Valid modifiers:
-   * - Shape : round, longRound, shadowed
-   * - State : focused
-   * - Type : sort, sortAsc, sortDesc, more, less
-   * - Color : secondary, danger
-   */
-  modifiers: { type: Object, default: () => ({}) },
+defineSlots<ISlots>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  modifiers: () => ({} as Record<Modifiers, boolean>),
 });
 </script>
 

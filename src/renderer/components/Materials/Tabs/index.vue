@@ -2,104 +2,98 @@
   <div :class="GenerateModifiers('m-tabs', props.modifiers)">
     <nav
       class="m-tabs__navigation"
-      ref="tabsNav"
       @wheel="actions.handleMouseWheel"
     >
-      <Draggable
-        :list="[...State.tabs]"
+      <VueDraggableNext
+        v-model="tabs"
         :move="props.allowMoveFn"
         class="m-tabs__navigation-list"
-        itemKey="id"
         tag="ul"
-        @change="actions.handleTabMoved"
+        @change="actions.handleChangeOrder"
       >
-        <template #item="{ element }">
-          <li
-            :data-tab="element.label"
-            :class="GenerateModifiers('m-tabs__navigation-list__item', { current: element.$key === modelValue })"
-          >
-            <button
-              type="button"
-              class="m-tabs__navigation-button"
-              @click="modelValue = element.$key"
-            >
-              <slot :name="`${element.$key}Nav`" :obj="element">
-                {{ element.label }}
-              </slot>
-            </button>
-          </li>
-        </template>
-        <template #footer>
+        <li
+          v-for="(tab, i) in tabs"
+          :key="tab.id"
+          :data-tab="tab.label"
+          :class="GenerateModifiers('m-tabs__navigation-list__item', {
+            current: tab.id === modelValue,
+            hidden: state.offset > i,
+          })"
+        >
           <button
-            v-if="props.allowAdd"
+            type="button"
+            class="m-tabs__navigation-button"
+            @click="modelValue = tab.id"
+          >
+            <slot :name="`${tab.id}Nav`" :tab="tab">
+              {{ tab.label }}
+            </slot>
+          </button>
+        </li>
+        <li
+          v-if="props.allowAdd"
+          class="m-tabs__navigation-list__item"
+        >
+          <button
             type="button"
             class="m-tabs__navigation-list__add"
             @click="emit('newTab')"
           >
             <span class="icon-plus" />
           </button>
-        </template>
-      </Draggable>
+        </li>
+      </VueDraggableNext>
     </nav>
     <div class="m-tabs__container">
-      <slot :name="modelValue" :obj="State.currentTab" />
+      <slot :name="State.currentTab.id" :tab="State.currentTab!" />
     </div>
   </div>
 </template>
 
-<script setup>
-import { reactive, computed, ref } from 'vue';
-import Draggable from 'vuedraggable';
+<script setup lang="ts">
+import { reactive, computed } from 'vue';
+import { VueDraggableNext } from 'vue-draggable-next';
+
+import type {
+  ISlots,
+  IProps,
+  IState,
+  ITab,
+} from '.';
 
 defineOptions({ name: 'Tabs' });
 
-const emit = defineEmits(['orderChange', 'newTab']);
+defineSlots<ISlots>();
 
-const tabsNav = ref(null);
+const emit = defineEmits<{
+  newTab: [];
+}>();
 
-const modelValue = defineModel({ type: String });
+const modelValue = defineModel<string | number, string>();
+const tabs = defineModel<Array<ITab>>('tabs', { default: () => [] });
 
-/**
- * slots:
- * - [tabName]Nav : Customize [tabName] navigation button
- * - [tabName]    : [tabName] panel to display
- */
-const props = defineProps({
-  tabs: { type: Object, default: () => ({}) },
-  modifiers: { type: Object, default: () => ({}) },
-  allowAdd: { type: Boolean, default: false },
-  allowMoveFn: { type: Function, default: () => true },
+const props = withDefaults(defineProps<IProps>(), {
+  allowAdd: false,
+  allowMoveFn: () => true,
+  modifiers: () => ({}),
 });
 
-const state = reactive({
-  index: 0,
+const state = reactive<IState>({
+  offset: 0,
 });
 
 const State = computed(() => ({
-  tabs: Object
-    .keys(props.tabs)
-    .map((tabKey) => {
-      const tab = props.tabs[tabKey];
-      tab.$key = tabKey;
-      return tab;
-    })
-    .slice(state.index),
+  currentTab: tabs.value.find(({ id }) => modelValue.value === id),
 }));
 
 const actions = {
-  handleMouseWheel(e) {
+  handleMouseWheel(e: WheelEvent) {
     const delta = e.deltaY > 0 ? 1 : -1;
-    state.index = Math.max(0, Math.min(Object.keys(props.tabs).length - 1, state.index + delta));
+    state.offset = Math.max(0, Math.min(tabs.value.length - 1, state.offset + delta));
   },
-  handleTabMoved(e) {
-    const { newIndex, oldIndex } = e.moved;
-    const tabs = Object.values(props.tabs);
-    emit('orderChange', {
-      tab: tabs[newIndex],
-      order: oldIndex,
-    }, {
-      tab: tabs[oldIndex],
-      order: newIndex,
+  handleChangeOrder() {
+    tabs.value.forEach((tab, i) => {
+      tab.order = i;
     });
   },
 };

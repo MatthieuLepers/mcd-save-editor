@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column-reverse;
 
+  &--row {
+    flex-direction: row;
+  }
+
   &--end {
     justify-content: flex-end;
   }

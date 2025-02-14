@@ -1,6 +1,17 @@
 import Ajv from 'ajv';
 
-import { Items } from '@renderer/core/data/Content';
+import ArmorData from '@/main/public/Armors.json';
+import ArtefactData from '@/main/public/Artefacts.json';
+import WeaponData from '@/main/public/Weapons.json';
+
+const Items = [
+  ...ArmorData,
+  ...ArtefactData,
+  ...WeaponData,
+].reduce((acc, item) => ({
+  ...acc,
+  [item.id]: item,
+}), {});
 
 function getEnchantmentChunks(item) {
   return item.enchantments.reduce((acc, val, i) => {

@@ -11,18 +11,19 @@
   </li>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { IProps, ISlots } from './MenuItem';
+
 defineOptions({ name: 'TitleBarMenuItem' });
 
-const emit = defineEmits(['click']);
+defineSlots<ISlots>();
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  id: { type: String, required: true },
-  label: { type: String, default: '' },
+const emit = defineEmits<{
+  click: [e: MouseEvent, id: string];
+}>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  label: '',
 });
 </script>
 

@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
 import AncientMob from '@renderer/core/entities/ancientMob';
+import { api } from '@renderer/core/api';
 
 interface IState {
   mobs: Record<string, AncientMob>;

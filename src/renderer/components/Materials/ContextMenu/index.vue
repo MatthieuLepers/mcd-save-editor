@@ -7,22 +7,22 @@
   </ul>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, watch } from 'vue';
+
+import { IProps, IState, type ISlots } from '.';
 
 defineOptions({ name: 'ContextMenu' });
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  visible: { type: Boolean, default: false },
-  anchor: { type: String, default: 'bottom left' },
-  shadowed: { type: Boolean, default: false },
+defineSlots<ISlots>();
+
+const props = withDefaults(defineProps<IProps>(), {
+  visible: false,
+  anchor: 'bottom left',
+  shadowed: false,
 });
 
-const state = reactive({
+const state = reactive<IState>({
   isVisible: props.visible,
 });
 

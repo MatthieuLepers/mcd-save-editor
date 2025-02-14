@@ -1,5 +1,6 @@
 import i18n from '@renderer/plugins/i18n';
 import DateUtils from '@renderer/core/DateUtils';
+import { api } from '@renderer/core/api';
 
 export interface ICharacterBackup {
   filePath: string | null;

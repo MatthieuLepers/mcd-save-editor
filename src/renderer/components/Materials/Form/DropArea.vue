@@ -9,53 +9,53 @@
       @dragleave="state.hover = false"
     >
       {{ t('Materials.Form.DropArea.areaLabel') }}<br />
-      <span class="icon-import"></span>
+      <span class="icon-import" />
     </button>
     <input
       class="m-form-droparea__input"
       tabindex="-1"
       ref="input"
       type="file"
-      :value="state.files"
       @input="actions.handleUploadFiles"
     />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+import type { IEmits, IProps, IState } from './DropArea';
 
 defineOptions({ name: 'FormDropArea' });
 
 const { t } = useI18n();
-const emit = defineEmits(['fileUpload']);
+const emit = defineEmits<IEmits>();
 
-const input = ref(null);
+const input = ref<HTMLInputElement | null>(null);
 
-const props = defineProps({
-  modifiers: { type: Object, default: () => ({}) },
+const props = withDefaults(defineProps<IProps>(), {
+  modifiers: () => ({}),
 });
 
-const state = reactive({
-  files: [],
+const state = reactive<IState>({
   hover: false,
 });
 
 const actions = {
-  handleDrop(e) {
-    const [...droppedFiles] = e.dataTransfer.files;
+  handleDrop(e: DragEvent) {
+    const [...droppedFiles] = e.dataTransfer?.files ?? [];
     if (!droppedFiles) return;
     emit('fileUpload', droppedFiles);
     state.hover = false;
   },
-  handleUploadFiles(e) {
-    const [...droppedFiles] = e.target.files;
+  handleUploadFiles(e: Event) {
+    const [...droppedFiles] = (e.target as HTMLInputElement)?.files ?? [];
     if (!droppedFiles) return;
     emit('fileUpload', droppedFiles);
   },
   handleClick() {
-    input.value.click();
+    input.value?.click();
   },
 };
 </script>

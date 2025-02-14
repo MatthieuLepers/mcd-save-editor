@@ -10,33 +10,35 @@
     :type="props.type"
     :disabled="props.disabled"
   >
-    <span v-if="props.icon" class="m-button__icon" :class="props.icon"></span>
+    <div v-if="props.icon === true" class="m-button__icon">
+      <slot name="icon" />
+    </div>
+    <span
+      v-else-if="props.icon"
+      class="m-button__icon"
+      :class="props.icon"
+      aria-hidden="true"
+    />
     <slot />
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useSlots } from 'vue';
+
+import type { ISlots, IProps } from '.';
 
 defineOptions({ name: 'MButton' });
 
+defineSlots<ISlots>();
+
 const slots = useSlots();
 
-/**
- * slots:
- * - default
- */
-const props = defineProps({
-  type: { type: String, default: 'button' },
-  disabled: { type: Boolean, default: false },
-  icon: { type: String, default: null },
-  iconSide: { type: String, default: 'left' },
-  /**
-   * Valid modifiers:
-   * - Color : success, secondary, warning, danger, cancel
-   * - Style : inverted, squared
-   */
-  modifiers: { type: Object, default: () => ({}) },
+const props = withDefaults(defineProps<IProps>(), {
+  type: 'button',
+  disabled: false,
+  iconSide: 'left',
+  modifiers: () => ({}),
 });
 </script>
 
