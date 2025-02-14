@@ -15,7 +15,7 @@ class EncryptionModule {
       const ext = file.substring(file.lastIndexOf('.') + 1);
       const filePath = file.replace(`.${ext}`, '');
       const fileName = file.substring(file.lastIndexOf('/') + 1).replace(`.${ext}`, '');
-      const fileContent = fs.readFileSync(file);
+      const fileContent = `${fs.readFileSync(file)}`;
       const date = new Date().toISOString().replace(/([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2}).*/, '$1-$2-$3-$4h$5');
       if (!fs.existsSync(filePath)) {
         fs.mkdirSync(filePath);

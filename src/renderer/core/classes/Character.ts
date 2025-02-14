@@ -7,6 +7,7 @@ import { globalStore } from '@renderer/core/stores/GlobalStore';
 import EncryptionService from '@renderer/core/services/EncryptionService';
 import CharacterUtils from '@renderer/core/utils/CharacterUtils';
 import ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
+import { api } from '@renderer/core/api';
 
 export interface ICharacter {
   currency: Array<ICurrency>;

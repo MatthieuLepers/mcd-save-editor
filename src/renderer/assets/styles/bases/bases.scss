@@ -11,6 +11,7 @@ body {
   background-color: color(grey900);
   color: color(grey200);
   outline: none;
+  overflow: hidden;
 }
 
 html,
@@ -139,17 +140,4 @@ button,
 select,
 textarea {
   -webkit-tap-highlight-color: transparent;
-}
-
-body.modal:before {
-  content: '';
-  opacity: .8;
-  background-color: color(grey999);
-  width: 100vw;
-  height: calc(100vh - 30px);
-  position: fixed;
-  top: 30px;
-  left: 0;
-  z-index: 9;
-  cursor: pointer;
 }

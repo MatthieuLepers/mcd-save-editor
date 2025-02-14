@@ -1,4 +1,5 @@
 import { ICharacter } from '@renderer/core/classes/Character';
+import { api } from '@renderer/core/api';
 
 export default class EncryptionService {
   static async encrypt(data: string, file: string, overwrite = true): Promise<boolean> {

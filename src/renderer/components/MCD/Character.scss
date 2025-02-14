@@ -1,9 +1,9 @@
 @import '~styles/utilities.scss';
 
 .MCDCharacter {
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
-  height: calc(100vh - 72px);
+  height: 488px;
   display: grid;
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
   grid-template-rows: 60px 1fr;

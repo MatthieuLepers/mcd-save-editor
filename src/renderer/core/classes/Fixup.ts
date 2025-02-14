@@ -9,6 +9,7 @@ import { itemsStore } from '@renderer/core/entities/item/store';
 import type { IGameItem } from '@renderer/core/entities/item/i';
 import type ValidationErrorReport from '@renderer/core/validators/ValidationErrorReport';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
+import { api } from '@renderer/core/api';
 
 export interface FixupAction {
   label: string;

@@ -24,6 +24,7 @@ export default {
         corruptedError: 'Unable to save, data are corrupted, try to reload.',
       },
     },
+    webMode: 'This feature is not available on the web version.',
     loadingProfils: 'Loading profils...',
     noProfilFound: 'No profil found.',
     Navigation: {
@@ -35,6 +36,8 @@ export default {
       fileMenu: {
         label: 'Files',
         selectProfil: 'Select profil...',
+        open: 'Open...',
+        export: 'Export...',
         exit: 'Exit',
       },
       langMenu: {

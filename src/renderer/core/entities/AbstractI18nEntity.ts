@@ -3,14 +3,14 @@ import AbstractEntity from '@renderer/core/entities/AbstractEntity';
 
 export interface II18nModel {
   locale: string;
-  [key: string]: string;
+  [key: string]: any;
 }
 
 export interface IRemoteI18nModel {
   dataValues: II18nModel;
 }
 
-export default abstract class AbstractI18nEntity<T extends Record<string, any>> extends AbstractEntity<T> {
+export default abstract class AbstractI18nEntity<T extends Record<string, any> & { i18n: Array<IRemoteI18nModel> }> extends AbstractEntity<T> {
   constructor(
     data: T,
     ignoreMapping = [] as string[],
@@ -19,10 +19,10 @@ export default abstract class AbstractI18nEntity<T extends Record<string, any>> 
   }
 
   get i18n(): Record<string, II18nModel> {
-    return this.data.i18n.reduce((acc: Record<string, II18nModel>, remoteObj: IRemoteI18nModel) => ({
+    return this.data.i18n.reduce((acc, remoteObj) => ({
       ...acc,
       [remoteObj.dataValues.locale]: remoteObj.dataValues,
-    }), {});
+    }), {} as Record<string, II18nModel>);
   }
 
   getI18n(field: string, defaultValue = ''): string {

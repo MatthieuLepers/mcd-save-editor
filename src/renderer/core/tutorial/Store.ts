@@ -11,7 +11,7 @@ const useTutorialStore = () => {
   });
 
   const actions = {
-    setFullfilled(objective: string, val: boolean, reasonId: string | null, force = false) {
+    setFullfilled(objective: string, val: boolean, reasonId?: string, force = false) {
       nextTick(() => {
         if (state.stepData.objectiveList[objective]) {
           state.stepData.objectiveList[objective].setFullfilled(val, reasonId ?? null, force);

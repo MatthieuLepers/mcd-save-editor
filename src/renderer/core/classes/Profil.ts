@@ -1,4 +1,5 @@
 import Character from '@renderer/core/classes/Character';
+import { api } from '@renderer/core/api';
 
 export default class Profil {
   public characters: Array<Character> = [];
@@ -12,9 +13,6 @@ export default class Profil {
     return this;
   }
 
-  /**
-   * @return {Profil[]}
-   */
   static getListFromSaveDirectory(): Array<Profil> {
     return api
       .sendSync('fetchProfilFolders')

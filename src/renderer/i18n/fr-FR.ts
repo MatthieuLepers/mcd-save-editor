@@ -24,6 +24,7 @@ export default {
         corruptedError: 'Sauvegarde impossible, les données sont corrompues, essayez de recharger.',
       },
     },
+    webMode: 'Cette fonctionnalité n\'est pas disponible sur la version web.',
     loadingProfils: 'Chargement des profils...',
     noProfilFound: 'Aucun profil trouvé.',
     Navigation: {
@@ -35,6 +36,8 @@ export default {
       fileMenu: {
         label: 'Fichier',
         selectProfil: 'Sélection du profil...',
+        open: 'Ouvrir...',
+        export: 'Exporter...',
         exit: 'Quitter',
       },
       langMenu: {

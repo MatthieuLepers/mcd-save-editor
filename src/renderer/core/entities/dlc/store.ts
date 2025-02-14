@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
 import Dlc from '@renderer/core/entities/dlc';
+import { api } from '@renderer/core/api';
 
 interface IState {
   dlcs: Record<string, Dlc>;

@@ -47,6 +47,7 @@ import GameItem from '@renderer/core/entities/item/game';
 import ItemValidator from '@renderer/core/validators/ItemValidator';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
 import { modalStore } from '@renderer/components/Materials/Modal/Store';
+import { api } from '@renderer/core/api';
 
 defineOptions({ name: 'MCDImportButton' });
 

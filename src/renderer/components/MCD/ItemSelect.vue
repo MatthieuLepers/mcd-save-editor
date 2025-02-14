@@ -155,8 +155,8 @@ const actions = {
     state.filter = filter;
   },
   selectItem(itemData) {
-    document.body.classList.remove('modal'); // Force update before re-render component
-    modelValue.value.convertTo(itemData);
+    document.getElementById('app').classList.remove('modal'); // Force update before re-render component
+    modelValue.value.convertTo(itemData.data);
     if (itemData.type === Type.ARTEFACT || (itemData.type !== Type.ARTEFACT && itemData.rarity.length === 1)) {
       tutorialStore.actions.setFullfilled('OpenSelector', null, null, true);
       tutorialStore.actions.setFullfilled('ChooseNewItem', false, 'InvalidItem');
@@ -177,7 +177,7 @@ const actions = {
 };
 
 watch(() => state.open, (newOpen) => {
-  document.body.classList[newOpen ? 'add' : 'remove']('modal');
+  document.getElementById('app').classList[newOpen ? 'add' : 'remove']('modal');
 });
 
 onMounted(() => {

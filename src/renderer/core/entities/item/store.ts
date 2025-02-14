@@ -2,6 +2,7 @@ import { reactive, computed } from 'vue';
 import Armor from '@renderer/core/entities/armor';
 import Artefact from '@renderer/core/entities/artefact';
 import Weapon from '@renderer/core/entities/weapon';
+import { api } from '@renderer/core/api';
 
 interface IState {
   armors: Record<string, Armor>;

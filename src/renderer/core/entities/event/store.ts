@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
 import Event from '@renderer/core/entities/event';
+import { api } from '@renderer/core/api';
 
 interface IState {
   events: Record<string, Event>;

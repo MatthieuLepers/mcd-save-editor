@@ -54,7 +54,12 @@
 import { reactive, computed } from 'vue';
 import { VueDraggableNext } from 'vue-draggable-next';
 
-import type { ISlots, IProps, IState, ITab } from '.';
+import type {
+  ISlots,
+  IProps,
+  IState,
+  ITab,
+} from '.';
 
 defineOptions({ name: 'Tabs' });
 

@@ -11,6 +11,28 @@
   grid-template-rows: 30px auto;
   height: 100vh;
 
+  &.web {
+    width: 1048px;
+    height: 584px;
+    position: relative;
+    filter: opacity(1);
+    box-shadow: 0 0 1px color(grey000);
+    margin: calc(50vh - 292px) calc(50vw - 524px);
+  }
+
+  &.modal::before {
+    content: '';
+    opacity: .8;
+    background-color: color(grey999);
+    width: 100%;
+    height: calc(100% - 30px);
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 9;
+    cursor: pointer;
+  }
+
   .m-title-bar {
     grid-column: span 2;
     grid-row: 1;
@@ -23,8 +45,8 @@
   }
 
   main {
-    height: calc(100vh - 30px);
-    width: calc(100vw - 80px);
+    height: 100%;
+    width: calc(100% - 80px);
     overflow: hidden;
 
     .WaitBloc {
