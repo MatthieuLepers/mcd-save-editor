@@ -113,101 +113,119 @@ export default class PolygonEnum {
   }
 
   static NETHERITE_ENCHANTMENT_SLOT(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const gildedEnchant = document.querySelector('.MCDGildedEnchant')!;
     const { x, y, width, height } = gildedEnchant.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width, y + OFFSET_Y],
-      [x + width, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 
   static ITEM_SELECTOR(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter')!;
     const { x, y, width, height } = itemSelectOuter.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width, y + OFFSET_Y],
-      [x + width, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 
   static ITEM_SELECTOR_DROPDOWN(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const itemSelectOuter = document.querySelector('.MCDItemSelectOuter')!;
     const { x, y, height } = itemSelectOuter.getBoundingClientRect();
     return [
-      [x, y + height + 9 + OFFSET_Y],
-      [x + 300, y + height + 9 + OFFSET_Y],
-      [x + 300, y + height + 301 + OFFSET_Y],
-      [x, y + height + 301 + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + 9 + OFFSET_Y],
+      [x - appBCR.x + 300, y - appBCR.y + height + 9 + OFFSET_Y],
+      [x - appBCR.x + 300, y - appBCR.y + height + 301 + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + 301 + OFFSET_Y],
     ];
   }
 
   static ITEM_RARITY_LABEL(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const itemRarityLabel = document.querySelector('.MCDRarityLabel')!;
     const { x, y, width, height } = itemRarityLabel.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width, y + OFFSET_Y],
-      [x + width, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 
   static ITEM_POWER_LABEL(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const itemPowerLabel = document.querySelector('.MCDItemTitlePower')!;
     const { x, y, width, height } = itemPowerLabel.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width, y + OFFSET_Y],
-      [x + width, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 
   static ENCHANTMENT_SELECTOR(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect')!;
     const { x, y, width, height } = enchantSelectOuter.getBoundingClientRect();
     return [
-      [x, (y - 3) + OFFSET_Y],
-      [x + width + 10, (y - 3) + OFFSET_Y],
-      [x + width + 10, y + height + 3 + OFFSET_Y],
-      [x, y + height + 3 + OFFSET_Y],
+      [x - appBCR.x, (y - appBCR.y - 3) + OFFSET_Y],
+      [x - appBCR.x + width + 10, (y - appBCR.y - 3) + OFFSET_Y],
+      [x - appBCR.x + width + 10, y - appBCR.y + height + 3 + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + 3 + OFFSET_Y],
     ];
   }
 
   static ENCHANTMENT_SELECTOR_DROPDOWN(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const enchantSelectOuter = document.querySelector('.MCDEnchantSelect')!;
     const { x, y, height } = enchantSelectOuter.getBoundingClientRect();
     return [
-      [x, y + height + 9 + OFFSET_Y],
-      [x + 300, y + height + 9 + OFFSET_Y],
-      [x + 300, y + height + 271 + OFFSET_Y],
-      [x, y + height + 271 + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + 9 + OFFSET_Y],
+      [x - appBCR.x + 300, y - appBCR.y + height + 9 + OFFSET_Y],
+      [x - appBCR.x + 300, y - appBCR.y + height + 271 + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + 271 + OFFSET_Y],
     ];
   }
 
   static ENCHANTMENT_TIER_LIST(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const enchantTierList = document.querySelector('.TierContainer')!;
     const { x, y, width, height } = enchantTierList.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width + 17, y + OFFSET_Y],
-      [x + width + 17, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width + 17, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width + 17, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 
   static ENCHANTMENT_EDITOR_CLOSE_BUTTON(): Polygon {
+    const app = document.getElementById('app')!;
+    const appBCR = app.getBoundingClientRect();
     const closeButton = document.querySelector('.MCDEnchantmentEditor h2 .MCDButton')!;
     const { x, y, width, height } = closeButton.getBoundingClientRect();
     return [
-      [x, y + OFFSET_Y],
-      [x + width, y + OFFSET_Y],
-      [x + width, y + height + OFFSET_Y],
-      [x, y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + OFFSET_Y],
+      [x - appBCR.x + width, y - appBCR.y + height + OFFSET_Y],
+      [x - appBCR.x, y - appBCR.y + height + OFFSET_Y],
     ];
   }
 }
