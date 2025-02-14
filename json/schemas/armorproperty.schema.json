@@ -1,0 +1,26 @@
+{
+  "title": "Armor property",
+  "description": "An armor property",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": ["AllyDamageBoost", "AreaHeal", "Beekeeper", "DodgeCooldownIncrease", "DodgeGhostForm", "DodgeSpeedIncrease", "Heavyweight", "IncreasedArrowBundleSize", "IncreasedMobTargeting", "ItemCooldownDecrease", "ItemCooldownReset", "ItemDamageBoost", "LifeStealAura", "MeleeAttackSpeedBoost", "MeleeDamageBoost", "MissChance", "MoveSpeedAura", "MoveSpeedReduction", "PetBat", "PotionCooldownDecrease", "RangedDamageBoost", "SlowResistance", "SoulGatheringBoost", "SuperbDamageAbsorption", "TeleportChance", "Unknown", "DodgeInvulnerability", "EmeraldShield", "DodgeRoot", "HealingAura", "SquidRollLimited", "SquidRollQuick", "InstantTransmission", "Resonant"],
+      "message": {
+        "type": "id property must be of string type",
+        "required": "Missing required property id",
+        "enum": "Unrecognized armorproperty id"
+      }
+    },
+    "rarity": {
+      "type": "string",
+      "enum": ["Unique", "Common", "Rare"],
+      "message": {
+        "type": "rarity property must be of string type",
+        "required": "Missing required property rarity",
+        "enum": "Unrecognized armorproperty rarity"
+      }
+    }
+  },
+  "required": ["id", "rarity"]
+}
