@@ -16,7 +16,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: npm run build:web
 
       - name: Deploy to build branch
         run: |
