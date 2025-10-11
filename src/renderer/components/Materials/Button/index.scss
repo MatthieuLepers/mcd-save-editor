@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 @mixin set-button-color($background, $text, $strokeText) {
   background-color: $background;
@@ -14,17 +16,17 @@
   &:focus,
   &:hover {
     box-shadow: 0 0 10px $background;
-    background-color: lighten($background, 10%);
+    background-color: color.adjust($background, $lightness: 10%);
 
     .m-button__icon {
-      color: lighten($background, 10%);
+      color: color.adjust($background, $lightness: 10%);
       background-color: color(grey000);
     }
   }
 
   &.m-button--iconed:focus .m-button__icon,
   &.m-button--iconed:hover .m-button__icon {
-    color: lighten($background, 10%);
+    color: color.adjust($background, $lightness: 10%);
   }
 
   &.m-button--inverted {
@@ -37,7 +39,7 @@
 
     &:focus,
     &:hover {
-      background-color: lighten($text, 10%);
+      background-color: color.adjust($text, $lightness: 10%);
 
       .m-button__icon {
         background-color: $background;
@@ -47,7 +49,7 @@
 
     &.m-button--iconed:focus .m-button__icon,
     &.m-button--iconed:hover .m-button__icon {
-      color: lighten($text, 10%);
+      color: color.adjust($text, $lightness: 10%);
     }
   }
 }

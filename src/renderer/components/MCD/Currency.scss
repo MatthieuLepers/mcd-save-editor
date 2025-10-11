@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .MCDCurrency {
   display: flex;
@@ -22,7 +24,7 @@
   }
 
   &Field {
-    border: 1px solid lighten(color(grey900), 11.76);
+    border: 1px solid color.adjust(color(grey900), $lightness: 11.76%);
     width: 110px;
   }
 

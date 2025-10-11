@@ -18,4 +18,4 @@ class CharacterModule {
   }
 }
 
-export default () => CharacterModule;
+export const init = () => CharacterModule;

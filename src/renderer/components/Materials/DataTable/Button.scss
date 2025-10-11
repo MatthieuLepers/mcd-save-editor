@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .m-datatable-button {
   cursor: pointer;
@@ -117,7 +119,7 @@
     &.m-datatable-button--focused,
     &:hover,
     &:focus {
-      box-shadow: 0 0 8px lighten(rgba(color(grey999), 0.5), 10);
+      box-shadow: 0 0 8px color.adjust(rgba(color(grey999), 0.5), $lightness: 10%);
     }
   }
 
@@ -184,10 +186,10 @@
     &.m-datatable-button--focused,
     &:focus,
     &:hover {
-      background-color: lighten(color(danger300), 10);
+      background-color: color.adjust(color(danger300), $lightness: 10%);
 
       &.m-datatable-button--shadowed {
-        box-shadow: 0 0 8px lighten(rgba(color(danger300), 0.5), 10);
+        box-shadow: 0 0 8px color.adjust(rgba(color(danger300), 0.5), $lightness: 10%);
       }
     }
   }
@@ -203,10 +205,10 @@
     &.m-datatable-button--focused,
     &:focus,
     &:hover {
-      background-color: lighten(color(secondary200), 10);
+      background-color: color.adjust(color(secondary200), $lightness: 10%);
 
       &.m-datatable-button--shadowed {
-        box-shadow: 0 0 8px lighten(rgba(color(secondary200), 0.5), 10);
+        box-shadow: 0 0 8px color.adjust(rgba(color(secondary200), 0.5), $lightness: 10%);
       }
     }
   }

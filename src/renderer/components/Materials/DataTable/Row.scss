@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .m-datatable-row {
   display: flex;
@@ -7,7 +9,7 @@
   flex-wrap: wrap;
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid lighten(color(grey900), 5);
+    border-bottom: 1px solid color.adjust(color(grey900), $lightness: 5%);
   }
 
   &--action {

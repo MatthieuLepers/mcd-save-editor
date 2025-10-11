@@ -1,13 +1,11 @@
 import { execFile } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 
 import { IpcHandle } from '@/main/decorators';
 import { SAVE_PATH } from '@/main/utils/Constants';
 import InventoryValidator from '@/main/classes/validation/InventoryValidator';
 import StorageChestValidator from '@/main/classes/validation/StorageChestValidator';
-
-const DTOOLS_PATH = path.resolve(__dirname, '../../public/dtools.exe');
+import { decryptSaveFile, encryptSaveFile } from '@/main/utils/CipherUtils';
 
 class EncryptionModule {
   static makeFileBackup(file: string): boolean {
@@ -39,7 +37,7 @@ class EncryptionModule {
   }
 
   @IpcHandle
-  static async encryptFile(json: string, file: string, overwrite = true): Promise<boolean> {
+  static async encryptFile(json: string, file: string): Promise<boolean> {
     const decryptedFilePath = `${SAVE_PATH}/${file.replace('.dat', '.json')}`;
     const data = JSON.parse(json);
     const inventoryValidator = new InventoryValidator(data);
@@ -52,28 +50,44 @@ class EncryptionModule {
     }
     fs.writeFileSync(decryptedFilePath, JSON.stringify(data, null, 2));
 
-    let success = false;
     if (fs.existsSync(decryptedFilePath)) {
-      success = await EncryptionModule.execFileAsync(DTOOLS_PATH, overwrite ? [decryptedFilePath, '--overwrite=false'] : [decryptedFilePath]);
+      try {
+        const encrypted = await encryptSaveFile(fs.readFileSync(decryptedFilePath));
+        fs.writeFileSync(decryptedFilePath.replace('.json', '.dat'), encrypted);
+
+        return true;
+      } catch {
+        return false;
+      }
     }
-    return success;
+    return false;
   }
 
   @IpcHandle
   static async decryptFile(file: string, force: boolean): Promise<any> {
     const filePath = `${SAVE_PATH}/${file}`;
     const decryptedFilePath = filePath.replace('.dat', '.json');
+
     if (!fs.existsSync(decryptedFilePath) || force) {
-      const success = await EncryptionModule.execFileAsync(DTOOLS_PATH, [filePath]);
-      const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
-      const inventoryValidator = new InventoryValidator(fileContent);
-      const storageChestValidator = new StorageChestValidator(fileContent);
-      const corrupted = !inventoryValidator.isValid() && !storageChestValidator.isValid();
-      if (success && ((!corrupted && EncryptionModule.makeFileBackup(decryptedFilePath)) || corrupted)) {
-        return fileContent;
+      try {
+        const decrypted = await decryptSaveFile(fs.readFileSync(filePath));
+        fs.writeFileSync(decryptedFilePath, decrypted);
+
+        const fileContent = JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
+        const inventoryValidator = new InventoryValidator(fileContent);
+        const storageChestValidator = new StorageChestValidator(fileContent);
+        const corrupted = !inventoryValidator.isValid() && !storageChestValidator.isValid();
+
+        if ((!corrupted && EncryptionModule.makeFileBackup(decryptedFilePath)) || corrupted) {
+          return fileContent;
+        }
+
+        return {};
+      } catch {
+        return {};
       }
-      return {};
     }
+
     return JSON.parse(`${fs.readFileSync(decryptedFilePath)}`);
   }
 
@@ -82,12 +96,18 @@ class EncryptionModule {
     const filePath = `${SAVE_PATH}/${profilId}/Characters/${characterId}/${file}`;
     if (fs.existsSync(filePath)) {
       const destFilePath = `${SAVE_PATH}/${profilId}/Characters/${characterId}.json`;
-      fs.copyFileSync(filePath, destFilePath);
-      const encryptSuccess = await EncryptionModule.execFileAsync(DTOOLS_PATH, [destFilePath]);
-      return encryptSuccess;
+
+      try {
+        const decrypted = await decryptSaveFile(fs.readFileSync(filePath));
+        fs.writeFileSync(destFilePath, decrypted);
+
+        return true;
+      } catch {
+        return false;
+      }
     }
     return false;
   }
 }
 
-export default () => EncryptionModule;
+export const init = () => EncryptionModule;

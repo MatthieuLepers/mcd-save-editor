@@ -35,14 +35,14 @@ app
   .then(async () => {
     electronApp.setAppUserModelId('vite.electron.mcd-save-editor');
 
-    const AppModule = await import('@/main/modules/App');
-    AppModule.default();
-    const CharacterModule = await import('@/main/modules/Character');
-    CharacterModule.default();
-    const EncryptionModule = await import('@/main/modules/Encryption');
-    EncryptionModule.default();
-    const ProfilModule = await import('@/main/modules/Profil');
-    ProfilModule.default();
+    const { init: AppModule } = await import('@/main/modules/App.js');
+    AppModule();
+    const { init: CharacterModule } = await import('@/main/modules/Character.js');
+    CharacterModule();
+    const { init: EncryptionModule } = await import('@/main/modules/Encryption.js');
+    EncryptionModule();
+    const { init: ProfilModule } = await import('@/main/modules/Profil.js');
+    ProfilModule();
 
     createWindow();
 
@@ -70,7 +70,7 @@ app
 
 app.on('window-all-closed', () => {
   if (APP_PLATEFORM === 'darwin') {
-    app.dock.hide();
+    app.dock?.hide();
     app.setActivationPolicy('accessory');
   } else {
     app.quit();
@@ -79,7 +79,7 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   if (APP_PLATEFORM === 'darwin') {
-    app.dock.hide();
+    app.dock?.hide();
     app.setActivationPolicy('accessory');
     app.quit();
   }

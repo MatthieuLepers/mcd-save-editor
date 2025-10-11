@@ -17,6 +17,7 @@ interface StoreData {
   selectedEnchantChunkIndex: number | null;
   key: number;
   isDemo: boolean;
+  isEncrypted?: boolean;
 }
 
 const useGlobalStore = () => {

@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .m-contextmenu-item {
   @include set-font-scale('xs');
@@ -35,7 +37,7 @@
       position: absolute;
       top: calc(50% - 1px);
       right: 15px;
-      background-color: invert(color(grey900));
+      background-color: color.invert(color(grey900));
     }
 
     &::before {

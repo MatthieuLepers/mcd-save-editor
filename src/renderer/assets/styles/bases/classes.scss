@@ -1,5 +1,10 @@
+@use 'sass:list';
+
+@use './fonts' as fonts;
+@use './icons' as icons;
+
 body {
-  @include font-family('Open Sans');
+  @include fonts.font-family('Open Sans');
   font-size: 16px;
 }
 
@@ -20,9 +25,9 @@ body {
 }
 
 /* ICONS */
-@each $iconName, $iconData in $icons {
+@each $iconName, $iconData in icons.$icons {
   .icon-#{$iconName}:before {
-    content: nth($iconData, 2);
-    font-family: nth($iconData, 1) !important;
+    content: list.nth($iconData, 2);
+    font-family: list.nth($iconData, 1) !important;
   }
 }

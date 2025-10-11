@@ -1,9 +1,10 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
 
-@import '~styles/bases/bases.scss';
-@import '~styles/bases/classes.scss';
-@import '~styles/bases/flexy-grid.scss';
+@use '~styles/utilities' as *;
 
+@use '~styles/bases/bases';
+@use '~styles/bases/classes';
+@use '~styles/bases/flexy-grid';
 
 #app {
   display: grid;
@@ -84,10 +85,10 @@
   }
 
   ::-webkit-scrollbar-track {
-    background-color: lighten(color(grey900), 10);
+    background-color: color.adjust(color(grey900), $lightness: 10%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(color(grey000), .4);
+    background-color: color.adjust(color(grey000), $lightness: 0.4%);
   }
 }

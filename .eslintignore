@@ -3,5 +3,5 @@ dist
 out
 .gitignore
 .eslintrc.js
-eletron.vite.config.ts
+*.config.(ts|js)
 **/*.d.ts

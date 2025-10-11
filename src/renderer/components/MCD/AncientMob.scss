@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .MCDAncientMob {
   border: 1px solid #4D4847;

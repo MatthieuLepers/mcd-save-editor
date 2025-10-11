@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 
 @font-face {
   font-family: 'Open Sans';
@@ -100,10 +101,10 @@ $font-heights: (
 }
 
 @mixin set-font-scale($size: 'm', $height: 'auto') {
-  font-size: rem(map-get($font-sizes, $size));
+  font-size: rem(map.get($font-sizes, $size));
   @if $height == 'auto' {
-    line-height: rem(map-get($font-heights, $size));
+    line-height: rem(map.get($font-heights, $size));
   } @else {
-    line-height: rem(map-get($font-heights, $height));
+    line-height: rem(map.get($font-heights, $height));
   }
 }

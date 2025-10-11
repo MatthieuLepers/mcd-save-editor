@@ -1,10 +1,12 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .m-contextmenu {
   list-style: none;
   padding: 8px 0;
   margin: 0;
-  background-color: lighten(desaturate(adjust-hue(color(grey900), 30), 2.67), 4.90);
+  background-color: color.adjust(color(grey900), $lightness: 4.90%, $saturation: -2.67%, $hue: 30deg);
   min-width: 265px;
   position: absolute;
   z-index: 999;

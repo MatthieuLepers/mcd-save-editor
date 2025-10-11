@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .modal .MCDItemSelect.focus .MCDItemSelectOuter {
   z-index: 11;
@@ -104,12 +106,16 @@
 
     &:hover,
     &--Selected {
-      background-color: lighten(color(grey900), 11.76);
+      background-color: color.adjust(color(grey900), $lightness: 11.76%);
     }
 
-    &:first-of-type {margin-top: 0;}
+    &:first-of-type {
+      margin-top: 0;
+    }
 
-    &:last-of-type {margin-bottom: 0;}
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     &Image {
       width: 26px;
@@ -132,9 +138,17 @@
         justify-content: flex-end;
         opacity: .7;
 
-        &.common {color: color(grey500);}
-        &.rare {color: color(rare300);}
-        &.unique {color: color(unique100);}
+        &.common {
+          color: color(grey500);
+        }
+
+        &.rare {
+          color: color(rare300);
+        }
+
+        &.unique {
+          color: color(unique100);
+        }
 
         &>span:not(:last-of-type):after {
           content: ",";
@@ -176,10 +190,10 @@
       @include set-font-scale(s);
       width: calc(100% - 20px);
       margin: 0 10px;
-      background-color: lighten(color(grey900), 11.76);
+      background-color: color.adjust(color(grey900), $lightness: 11.76%);
       padding: 3px 20px 3px 5px;
       color: color(grey000);
-      border: 1px solid lighten(color(grey900), 8.76)
+      border: 1px solid color.adjust(color(grey900), $lightness: 8.76%)
     }
 
     i {

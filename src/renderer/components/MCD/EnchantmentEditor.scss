@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .MCDEnchantmentEditor {
   position: absolute;
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     h3 {
       @include font-family('open-sans', 700);
       margin-bottom: 8px;
@@ -89,7 +89,9 @@
             left: 100%;
           }
 
-          .tier::before {background-color: #428D4F;}
+          .tier::before {
+            background-color: #428D4F;
+          }
 
           input[type="checkbox"]+label {
             color: color(grey999);

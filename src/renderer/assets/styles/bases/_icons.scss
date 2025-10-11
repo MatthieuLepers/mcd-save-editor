@@ -1,3 +1,6 @@
+@use 'sass:list';
+@use 'sass:map';
+
 @font-face {
   font-family: 'icomoon';
   src: url('~fonts/icomoon/icomoon.eot?ws6lg2');
@@ -67,9 +70,9 @@ $icons: (
 );
 
 @mixin icon($iconName) {
-  content: nth(map-get($icons, $iconName), 2);
+  content: list.nth(map.get($icons, $iconName), 2);
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: #{nth(map-get($icons, $iconName), 1)} !important;
+  font-family: #{list.nth(map.get($icons, $iconName), 1)} !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

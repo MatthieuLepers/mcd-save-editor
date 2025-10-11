@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .m-form-tags {
   display: flex;

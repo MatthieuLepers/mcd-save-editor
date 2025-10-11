@@ -65,6 +65,19 @@ export function download(fileName: string, fileContent: string) {
   document.body.removeChild(element);
 }
 
+export function downloadBinary(fileName: string, fileBytes: Uint8Array) {
+  const validBytes = new Uint8Array(fileBytes.buffer as ArrayBuffer, fileBytes.byteOffset, fileBytes.byteLength);
+  const blob = new Blob([validBytes], { type: 'application/octet-stream' });
+  const url = URL.createObjectURL(blob);
+
+  const element = document.createElement('a');
+  element.setAttribute('href', url);
+  element.setAttribute('download', fileName);
+  element.click();
+
+  URL.revokeObjectURL(url);
+}
+
 export function openLink(link: string) {
   const a = document.createElement('a');
   a.setAttribute('href', link);
@@ -78,7 +91,7 @@ export function openLink(link: string) {
   document.body.removeChild(a);
 }
 
-export async function openFile(accept: string = 'application/json'): Promise<FileList | null> {
+export async function openFile(accept: string = '.json,.dat'): Promise<File[]> {
   return new Promise((resolve) => {
     const input = document.createElement('input');
     input.setAttribute('type', 'file');
@@ -88,7 +101,7 @@ export async function openFile(accept: string = 'application/json'): Promise<Fil
     document.body.appendChild(input);
 
     input.addEventListener('change', () => {
-      resolve(input.files);
+      resolve((input.files ?? []) as File[]);
       document.body.removeChild(input);
     });
     input.click();
@@ -96,11 +109,15 @@ export async function openFile(accept: string = 'application/json'): Promise<Fil
 }
 
 export async function readFile(file: File) {
-  return new Promise((resolve) => {
+  return new Promise<ArrayBuffer>((resolve, reject) => {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
-      resolve(reader.result);
+      if (reader.error || !reader.result) {
+        reject();
+      } else {
+        resolve(reader.result as ArrayBuffer);
+      }
     });
-    reader.readAsText(file);
+    reader.readAsArrayBuffer(file);
   });
 }

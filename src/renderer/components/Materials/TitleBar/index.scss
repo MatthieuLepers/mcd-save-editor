@@ -1,11 +1,13 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .m-title-bar {
   user-select: none;
   -webkit-user-select: none;
   -webkit-app-region: drag;
   background-color: color(grey800);
-  color: invert(color(grey900));
+  color: color.invert(color(grey900));
   display: flex;
   justify-content: space-between;
   align-items: center;

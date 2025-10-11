@@ -6,7 +6,7 @@
       @click="actions.handleClickOpen"
     />
     <ContextMenuItem
-      v-if="api.isWeb"
+      v-if="api.isWeb && !globalStore.state.isDemo"
       :label="t('App.TitleBarMenu.fileMenu.export')"
       @click="actions.handleClickExport"
     />
@@ -39,7 +39,7 @@
   </ContextMenu>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive } from 'vue';
 import { useI18n } from 'vue-i18n';
 
@@ -50,23 +50,31 @@ import ContextMenuSeparator from '@renderer/components/Materials/ContextMenu/Sep
 
 import { api } from '@renderer/core/api';
 import { globalStore } from '@renderer/core/stores/GlobalStore';
-import { download, openFile, readFile } from '@renderer/core/utils';
+import {
+  download,
+  downloadBinary,
+  openFile,
+  readFile,
+} from '@renderer/core/utils';
 import { getLocalStorage, setLocalStorage } from '@renderer/core/Storage';
 import Character from '@renderer/core/classes/Character';
 import { notificationStore } from '@renderer/components/Materials/Notification/Store';
 import Profil from '@/renderer/core/classes/Profil';
+import { decryptSaveFile, encryptSaveFile, isFileEncrypted } from '@/renderer/core/aesUtils';
 
 defineOptions({ name: 'AppTitleBarFileMenu' });
 
 const { t } = useI18n();
 const { plateform } = api;
 
-const props = defineProps({
-  visible: { type: Boolean, required: true },
-  name: { type: String, required: true },
-});
+const props = defineProps<{
+  visible: boolean;
+  name: string;
+}>();
 
-const state = reactive({
+const state = reactive<{
+  activeSubMenu: string | null;
+}>({
   activeSubMenu: null,
 });
 
@@ -74,10 +82,10 @@ const actions = {
   closeApp() {
     api.send(`close:${props.name}`);
   },
-  handleClickedProfil(profil) {
+  handleClickedProfil(profil: Profil) {
     globalStore.setters.setProfil(profil);
   },
-  getProfilIcon(profil) {
+  getProfilIcon(profil: Profil) {
     return (globalStore.state.selectedProfil === profil ? 'icon-check' : '');
   },
   async handleClickOpen() {
@@ -85,7 +93,12 @@ const actions = {
     const fileContent = await readFile(file);
 
     try {
-      const characterJson = JSON.parse(fileContent);
+      const isEncrypted = isFileEncrypted(fileContent);
+      const decryptedFile = isEncrypted
+        ? new TextDecoder().decode(decryptSaveFile(fileContent))
+        : new TextDecoder().decode(fileContent)
+      ;
+      const characterJson = JSON.parse(decryptedFile);
       const storage = getLocalStorage();
       storage.character = characterJson;
       storage.file = file.name;
@@ -97,15 +110,22 @@ const actions = {
       globalStore.state.isDemo = false;
       globalStore.state.profilList = [profil];
       globalStore.setters.setProfil(profil);
+      globalStore.state.isEncrypted = isEncrypted;
     } catch {
       notificationStore.actions.error(t('App.TitleBarMenu.fileMenu.invalidFile'));
     }
   },
   handleClickExport() {
-    download(
-      globalStore.state.selectedCharacter.filePath,
-      JSON.stringify(globalStore.state.selectedCharacter.data, null, 2),
-    );
+    if (!globalStore.state.selectedCharacter) return;
+
+    if (globalStore.state.isEncrypted) {
+      const normalizedJson = JSON.stringify(globalStore.state.selectedCharacter.data, null, 2);
+      const encryptedData = encryptSaveFile(new TextEncoder().encode(normalizedJson));
+      downloadBinary(globalStore.state.selectedCharacter.filePath, encryptedData);
+    } else {
+      const encryptedData = JSON.stringify(globalStore.state.selectedCharacter.data, null, 2);
+      download(globalStore.state.selectedCharacter.filePath, encryptedData);
+    }
   },
 };
 </script>

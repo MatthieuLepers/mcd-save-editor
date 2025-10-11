@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $breakpoints: (
   xs :  320px,
   s  :  768px,
@@ -8,7 +10,7 @@ $breakpoints: (
 );
 
 @mixin set-from-screen ($breakpoint) {
-  $max-width: map-get($breakpoints, $breakpoint);
+  $max-width: map.get($breakpoints, $breakpoint);
 
   @media screen and (max-width: #{$max-width - 1px}) {
     @content;

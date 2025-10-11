@@ -86,4 +86,4 @@ class AppModule {
   }
 }
 
-export default () => AppModule;
+export const init = () => AppModule;

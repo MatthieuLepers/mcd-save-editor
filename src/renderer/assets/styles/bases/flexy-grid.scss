@@ -1,5 +1,7 @@
 @use 'sass:math';
 
+@use './breakpoints' as breakpoints;
+
 @mixin grid-row-alignment-horizontal ($name, $spacing) {
   &--#{$name} {
     justify-content: $spacing;
@@ -51,7 +53,7 @@
   @if ($key == 'xs') {
     @content;
   } @else {
-    @include set-from-screen($key) {
+    @include breakpoints.set-from-screen($key) {
       @content;
     }
   }
@@ -61,7 +63,7 @@
   &__col {
     flex: 1 1 0;
 
-    @each $breakpoint, $value in $breakpoints {
+    @each $breakpoint, $value in breakpoints.$breakpoints {
       @include make-viewport ($breakpoint) {
         $viewportModifier: '';
         @if $breakpoint != 'xs' {

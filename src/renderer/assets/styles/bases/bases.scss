@@ -1,3 +1,6 @@
+@use './colors' as colors;
+@use './mixins' as mixins;
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,8 +11,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: color(grey900);
-  color: color(grey200);
+  background-color: colors.color(grey900);
+  color: colors.color(grey200);
   outline: none;
   overflow: hidden;
 }
@@ -95,7 +98,7 @@ textarea {
   font-size: inherit;
 }
 
-@include placeholder {
+@include mixins.placeholder {
 	color: inherit;
 	opacity: 1;
 }

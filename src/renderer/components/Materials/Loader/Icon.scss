@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .m-loader-icon {
   animation: rotate360 1s linear infinite;

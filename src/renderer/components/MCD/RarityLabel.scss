@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .MCDRarityLabel {
   @include font-family('opensans', 700);

@@ -1,4 +1,6 @@
-@import '~styles/utilities.scss';
+@use 'sass:color';
+
+@use '~styles/utilities' as *;
 
 .MCDItem {
   cursor: pointer;
@@ -138,7 +140,7 @@
 
     i {
       @include set-font-scale(xxs);
-      color: darken(color(grey000), 25);
+      color: color.adjust(color(grey000), $lightness: -25%);
     }
   }
 

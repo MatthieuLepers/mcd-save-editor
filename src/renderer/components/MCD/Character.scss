@@ -1,4 +1,4 @@
-@import '~styles/utilities.scss';
+@use '~styles/utilities' as *;
 
 .MCDCharacter {
   overflow: hidden;
@@ -22,11 +22,11 @@
     &--Fst {
       grid-column: 1;
     }
-    
+
     &--Snd {
       grid-column: 2;
     }
-    
+
     &--Trd {
       grid-column: 3;
     }

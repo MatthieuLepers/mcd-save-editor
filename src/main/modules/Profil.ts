@@ -34,4 +34,4 @@ class ProfilModule {
   }
 }
 
-export default () => ProfilModule;
+export const init = () => ProfilModule;
