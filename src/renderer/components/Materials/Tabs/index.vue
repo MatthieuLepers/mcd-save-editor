@@ -45,7 +45,7 @@
       </VueDraggableNext>
     </nav>
     <div class="m-tabs__container">
-      <slot :name="State.currentTab.id" :tab="State.currentTab!" />
+      <slot :name="State.currentTab?.id" :tab="State.currentTab!" />
     </div>
   </div>
 </template>

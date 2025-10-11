@@ -3,7 +3,7 @@ export interface ISlots {
   icon(): void;
 }
 
-export type ColorModifiers = 'primary' | 'secondary' | 'grey200' | 'grey400';
+export type ColorModifiers = 'primary' | 'secondary' | 'danger' | 'grey200' | 'grey400' | 'inverted';
 
 export type StyleModifiers = 'fill' | 'stroke' | 'squared';
 

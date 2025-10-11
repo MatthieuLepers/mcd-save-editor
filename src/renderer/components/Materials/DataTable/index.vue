@@ -56,8 +56,7 @@
               <slot name="actionColumn" :obj="obj" />
             </template>
             <template
-              v-for="(columnName, i) in Object.keys(props.columns)"
-              :key="i"
+              v-for="columnName in Object.keys(props.columns)"
               #[columnName]="{ obj, value, column }"
             >
               <slot
