@@ -3,5 +3,5 @@ dist
 out
 .gitignore
 .eslintrc.js
-*.config.(ts|js)
+*.config.ts
 **/*.d.ts

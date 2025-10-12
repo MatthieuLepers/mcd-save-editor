@@ -1,9 +1,15 @@
 {
   "name": "mcd-save-editor",
   "version": "1.7.0",
-  "description": "An Electron application with Vue and TypeScript",
-  "main": "./out/main/index.js",
   "author": "Matthieu LEPERS",
+  "description": "An Electron application with Vue and TypeScript",
+  "license": "GNU GPLv3",
+  "homepage": "https://github.com/MatthieuLepers/mcd-save-editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthieuLepers/mcd-save-editor.git"
+  },
+  "main": "./out/main/index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.js --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue ./src",
     "lint:fix": "eslint -c .eslintrc.js --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix ./src",
@@ -12,14 +18,18 @@
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
     "postinstall": "electron-builder install-app-deps",
-    "start": "electron-vite preview",
+    "preview": "electron-vite preview",
+    "preview:web": "vite preview",
     "dev": "cross-env NODE_ENV=development electron-vite dev",
     "dev:web": "cross-env NODE_ENV=development vite dev",
     "build": "npm run typecheck && electron-vite build",
     "build:web": "npm run typecheck:web && vite build",
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "npm run build && electron-builder --mac --config",
-    "build:linux": "npm run build && electron-builder --linux --config"
+    "build:linux": "npm run build && electron-builder --linux --config",
+    "publish:win": "npm run build && electron-builder --win --config -p always",
+    "publish:mac": "npm run build && electron-builder --mac --config -p always",
+    "publish:linux": "npm run build && electron-builder --linux --config -p always"
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",

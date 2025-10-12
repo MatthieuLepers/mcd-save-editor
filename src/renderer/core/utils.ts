@@ -1,5 +1,4 @@
 import { api } from '@renderer/core/api';
-import { name } from '../../../package.json';
 
 export function toCamelCase(str: string): string {
   return str
@@ -45,9 +44,8 @@ export function generatePermutations<T>(input: Array<T>, length: number): Array<
 }
 
 export function image(path: string): string {
-  if (api.isDev) return `/${path}`;
-  return process.env.NODE_ENV === 'production'
-    ? `/${name}/${path}`
+  return api.isDev
+    ? `/${path}`
     : path
   ;
 }
